@@ -1,5 +1,5 @@
 ![logo](img/UnHindr_logo.png)
-# Unhindr
+# UnHindr
 
 An IOS utility application dedicated towards connecting people suffering from Parkinson's Disease with their caregivers or family members. 
 
