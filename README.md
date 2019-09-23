@@ -1,4 +1,4 @@
-# Unhindr ![Logo](https://github.com/allantsai3/Unhindr/UnHindr_logo.png)
+# Unhindr ![alt text](https://raw.githubusercontent.com/allantsai3/Unhindr/UnHindr_logo.png)
 
 An IOS utility application dedicated towards connecting people suffering from Parkinson's Disease with their caregivers or family members. 
 
