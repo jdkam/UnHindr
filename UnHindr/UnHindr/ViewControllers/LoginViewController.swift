@@ -53,12 +53,17 @@ class LoginViewController: UIViewController {
         //Push in new view controller for the home menu
         let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         
-        guard let MainNavigationVC = mainStoryboard.instantiateViewController(identifier: "MainNavigationController") as? MainNavigationController else {
+        guard let MainNavigationVC = mainStoryboard.instantiateViewController(identifier: "HomeViewController") as? HomeViewController else {
             return
         }
-        present(MainNavigationVC, animated: true, completion: nil)
-    }
+//        present(MainNavigationVC, animated: false, completion: nil)
+        
+        view.window?.rootViewController = MainNavigationVC
+        view.window?.makeKeyAndVisible()
     
+    }
+
+
     
 }
 

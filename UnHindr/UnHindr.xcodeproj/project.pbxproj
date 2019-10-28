@@ -11,6 +11,7 @@
 		492960D887BDEC9F23A2EB03 /* Pods_UnHindr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F377B48B523E5E1E35E686F5 /* Pods_UnHindr.framework */; };
 		9D3E4E8723639ECE00B5C512 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3E4E8623639ECE00B5C512 /* SignUpViewController.swift */; };
 		9D3E4E892363D9AA00B5C512 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3E4E882363D9A900B5C512 /* HomeViewController.swift */; };
+		9D49171E23666E3600D695C9 /* medicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D49171D23666E3600D695C9 /* medicationViewController.swift */; };
 		9DB7DF1C2361854200FD8AEE /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB7DF1B2361854200FD8AEE /* MainNavigationController.swift */; };
 		9DB7DF1D2361854200FD8AEE /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB7DF1B2361854200FD8AEE /* MainNavigationController.swift */; };
 		9DB7DF1E2361854200FD8AEE /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB7DF1B2361854200FD8AEE /* MainNavigationController.swift */; };
@@ -55,6 +56,7 @@
 		725EAD4385E587E0772C9C68 /* Pods-UnHindrTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindrTests.release.xcconfig"; path = "Target Support Files/Pods-UnHindrTests/Pods-UnHindrTests.release.xcconfig"; sourceTree = "<group>"; };
 		9D3E4E8623639ECE00B5C512 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		9D3E4E882363D9A900B5C512 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9D49171D23666E3600D695C9 /* medicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = medicationViewController.swift; sourceTree = "<group>"; };
 		9DB7DF1B2361854200FD8AEE /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		9DB7DF1F236188D200FD8AEE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9DDB121323558E0100FE2E13 /* UnHindr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnHindr.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +130,7 @@
 				9DB7DF1B2361854200FD8AEE /* MainNavigationController.swift */,
 				9D3E4E8623639ECE00B5C512 /* SignUpViewController.swift */,
 				9D3E4E882363D9A900B5C512 /* HomeViewController.swift */,
+				9D49171D23666E3600D695C9 /* medicationViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 				9DDB121723558E0100FE2E13 /* AppDelegate.swift in Sources */,
 				9DB7DF1C2361854200FD8AEE /* MainNavigationController.swift in Sources */,
 				9DB7DF20236188D200FD8AEE /* LoginViewController.swift in Sources */,
+				9D49171E23666E3600D695C9 /* medicationViewController.swift in Sources */,
 				9D3E4E892363D9AA00B5C512 /* HomeViewController.swift in Sources */,
 				9DDB121923558E0100FE2E13 /* SceneDelegate.swift in Sources */,
 			);

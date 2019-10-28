@@ -156,6 +156,9 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="Create Account"/>
+                                                <connections>
+                                                    <action selector="signUpTapped:" destination="efL-kn-DHO" eventType="touchUpInside" id="j8c-py-l5h"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcK-6x-sQO">
                                                 <rect key="frame" x="0.0" y="65" width="334" height="20"/>
@@ -275,6 +278,9 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <state key="normal" title="Medication"/>
+                                                <connections>
+                                                    <segue destination="jkB-iH-goO" kind="show" id="m86-Jv-AWa"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZBW-Fy-dFW">
                                                 <rect key="frame" x="80" y="362" width="53" height="42"/>
@@ -312,6 +318,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9YC-7N-GXP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5076.811594202899" y="91.741071428571431"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="GcG-Oa-r3l">
+            <objects>
+                <viewController id="jkB-iH-goO" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="USk-Qh-XnL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="VuM-bB-pft"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="EhL-xg-dLj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rIV-w7-QN0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6003" y="92"/>
         </scene>
         <!--Main Navigation Controller-->
         <scene sceneID="QGZ-gt-Voe">
