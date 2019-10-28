@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import Firebase
 @testable import UnHindr
 
 class UnHindrTests: XCTestCase {
@@ -22,6 +23,14 @@ class UnHindrTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+    }
+    
+    func testDatabaseInsertRemove(){
+        let root = Database.database().reference()
+        
+        let caregiverroot = Database.database().reference(withPath: "caregiver")
+        let id002ref = caregiverroot.child("id002")
+//        XCTAssertEqual(<#T##expression1: Equatable##Equatable#>, <#T##expression2: Equatable##Equatable#>)
     }
 
     func testPerformanceExample() {
