@@ -50,16 +50,16 @@ class LoginViewController: UIViewController {
     // Action: If successful -> Navigate to home menu
     //         else not successful -> display error message
     @IBAction func loginTapped(_ sender: Any) {
-        //Push in new view controller for the home menu
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        
-        guard let MainNavigationVC = mainStoryboard.instantiateViewController(identifier: "HomeViewController") as? HomeViewController else {
-            return
-        }
-//        present(MainNavigationVC, animated: false, completion: nil)
-        
-        view.window?.rootViewController = MainNavigationVC
-        view.window?.makeKeyAndVisible()
+//        //Push in new view controller for the home menu
+//        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+//
+//        guard let MainNavigationVC = mainStoryboard.instantiateViewController(identifier: "HomeViewController") as? HomeViewController else {
+//            return
+//        }
+////        present(MainNavigationVC, animated: false, completion: nil)
+//
+//        view.window?.rootViewController = MainNavigationVC
+//        view.window?.makeKeyAndVisible()
     
     }
 

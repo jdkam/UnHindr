@@ -26,10 +26,10 @@ class UnHindrTests: XCTestCase {
     }
     
     func testDatabaseInsertRemove(){
-        let root = Database.database().reference()
-        
-        let caregiverroot = Database.database().reference(withPath: "caregiver")
-        let id002ref = caregiverroot.child("id002")
+//        let root = Database.database().reference()
+//
+//        let caregiverroot = Database.database().reference(withPath: "caregiver")
+//        let id002ref = caregiverroot.child("id002")
 //        XCTAssertEqual(<#T##expression1: Equatable##Equatable#>, <#T##expression2: Equatable##Equatable#>)
     }
 
