@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		294735088BBF85FCCCEF3DD3 /* Pods_UnHindr_UnHindrUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCB6C935B34E6D3DE2F34548 /* Pods_UnHindr_UnHindrUITests.framework */; };
 		492960D887BDEC9F23A2EB03 /* Pods_UnHindr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F377B48B523E5E1E35E686F5 /* Pods_UnHindr.framework */; };
+<<<<<<< HEAD
 		9D3E4E8723639ECE00B5C512 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3E4E8623639ECE00B5C512 /* SignUpViewController.swift */; };
 		9D3E4E892363D9AA00B5C512 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3E4E882363D9A900B5C512 /* HomeViewController.swift */; };
 		9D49171E23666E3600D695C9 /* medicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D49171D23666E3600D695C9 /* medicationViewController.swift */; };
@@ -18,6 +19,8 @@
 		9DB7DF20236188D200FD8AEE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB7DF1F236188D200FD8AEE /* LoginViewController.swift */; };
 		9DB7DF21236188D200FD8AEE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB7DF1F236188D200FD8AEE /* LoginViewController.swift */; };
 		9DB7DF22236188D200FD8AEE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB7DF1F236188D200FD8AEE /* LoginViewController.swift */; };
+=======
+>>>>>>> master
 		9DDB121723558E0100FE2E13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDB121623558E0100FE2E13 /* AppDelegate.swift */; };
 		9DDB121923558E0100FE2E13 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDB121823558E0100FE2E13 /* SceneDelegate.swift */; };
 		9DDB121B23558E0100FE2E13 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDB121A23558E0100FE2E13 /* ViewController.swift */; };
@@ -54,11 +57,14 @@
 		234CBDB7DF1D68FFEA0C9F89 /* Pods-UnHindrTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindrTests.debug.xcconfig"; path = "Target Support Files/Pods-UnHindrTests/Pods-UnHindrTests.debug.xcconfig"; sourceTree = "<group>"; };
 		451F037BC44E4EA3E4692823 /* Pods-UnHindr-UnHindrUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindr-UnHindrUITests.release.xcconfig"; path = "Target Support Files/Pods-UnHindr-UnHindrUITests/Pods-UnHindr-UnHindrUITests.release.xcconfig"; sourceTree = "<group>"; };
 		725EAD4385E587E0772C9C68 /* Pods-UnHindrTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindrTests.release.xcconfig"; path = "Target Support Files/Pods-UnHindrTests/Pods-UnHindrTests.release.xcconfig"; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		9D3E4E8623639ECE00B5C512 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		9D3E4E882363D9A900B5C512 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9D49171D23666E3600D695C9 /* medicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = medicationViewController.swift; sourceTree = "<group>"; };
 		9DB7DF1B2361854200FD8AEE /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		9DB7DF1F236188D200FD8AEE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+=======
+>>>>>>> master
 		9DDB121323558E0100FE2E13 /* UnHindr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnHindr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DDB121623558E0100FE2E13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DDB121823558E0100FE2E13 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +128,7 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		9D3E4E852363901600B5C512 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +142,8 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+=======
+>>>>>>> master
 		9D6A8C27F84795667DAE8A0B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,7 +181,7 @@
 			children = (
 				9DDB121623558E0100FE2E13 /* AppDelegate.swift */,
 				9DDB121823558E0100FE2E13 /* SceneDelegate.swift */,
-				9D3E4E852363901600B5C512 /* ViewControllers */,
+				9DDB121A23558E0100FE2E13 /* ViewController.swift */,
 				9DDB121C23558E0100FE2E13 /* Main.storyboard */,
 				9DDB121F23558E0600FE2E13 /* Assets.xcassets */,
 				9DDB122123558E0600FE2E13 /* LaunchScreen.storyboard */,
@@ -442,13 +451,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D3E4E8723639ECE00B5C512 /* SignUpViewController.swift in Sources */,
 				9DDB121B23558E0100FE2E13 /* ViewController.swift in Sources */,
 				9DDB121723558E0100FE2E13 /* AppDelegate.swift in Sources */,
+<<<<<<< HEAD
 				9DB7DF1C2361854200FD8AEE /* MainNavigationController.swift in Sources */,
 				9DB7DF20236188D200FD8AEE /* LoginViewController.swift in Sources */,
 				9D49171E23666E3600D695C9 /* medicationViewController.swift in Sources */,
 				9D3E4E892363D9AA00B5C512 /* HomeViewController.swift in Sources */,
+=======
+>>>>>>> master
 				9DDB121923558E0100FE2E13 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -457,8 +468,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DB7DF21236188D200FD8AEE /* LoginViewController.swift in Sources */,
-				9DB7DF1D2361854200FD8AEE /* MainNavigationController.swift in Sources */,
 				9DDB122E23558E0600FE2E13 /* UnHindrTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,8 +476,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DB7DF22236188D200FD8AEE /* LoginViewController.swift in Sources */,
-				9DB7DF1E2361854200FD8AEE /* MainNavigationController.swift in Sources */,
 				9DDB123923558E0700FE2E13 /* UnHindrUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
