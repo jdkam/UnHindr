@@ -6,10 +6,12 @@ target 'UnHindr' do
   use_frameworks!
 
   # Pods for UnHindr
-
+  
+  pod 'Firebase/Analytics'
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
+  #pod 'Firebase/Firestore'
 
   target 'UnHindrTests' do
     inherit! :search_paths
