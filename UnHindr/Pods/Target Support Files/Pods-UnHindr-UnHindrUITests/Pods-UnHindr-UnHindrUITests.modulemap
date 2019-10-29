@@ -1,6 +1,0 @@
-framework module Pods_UnHindr_UnHindrUITests {
-  umbrella header "Pods-UnHindr-UnHindrUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}
