@@ -1,6 +1,0 @@
-framework module Pods_UnHindrTests {
-  umbrella header "Pods-UnHindrTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
