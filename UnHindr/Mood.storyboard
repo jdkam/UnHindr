@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="63F-ia-wO8">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--MoodViewController-->
+        <scene sceneID="xRp-D4-G7q">
+            <objects>
+                <viewController id="63F-ia-wO8" userLabel="MoodViewController" customClass="MoodViewController" customModule="UnHindr" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0hy-mM-YXG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <userGuides>
+                            <userLayoutGuide location="355" affinity="maxX"/>
+                            <userLayoutGuide location="355" affinity="minX"/>
+                            <userLayoutGuide location="559" affinity="minY"/>
+                        </userGuides>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="I1j-MW-Djj">
+                                <rect key="frame" x="20" y="60" width="335" height="480"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please choose the most accurate answer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l0U-vI-kx4">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="4uM-r6-f86"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I have difficulty concentrating." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="abG-Oo-wP0">
+                                        <rect key="frame" x="0.0" y="75" width="335" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="6Op-zz-2AR"/>
+                                            <constraint firstAttribute="width" constant="335" id="jn2-h3-Prv"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dCq-uq-v7i" userLabel="StronglyAgree">
+                                        <rect key="frame" x="0.0" y="150" width="335" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="by1-J9-GMu"/>
+                                        </constraints>
+                                        <state key="normal" title="Strongly Agree"/>
+                                        <connections>
+                                            <action selector="SAgreeButtonTapped:" destination="63F-ia-wO8" eventType="touchUpInside" id="bQe-kf-r5d"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NaG-G3-qRf">
+                                        <rect key="frame" x="0.0" y="225" width="335" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="R2Z-NL-7aE"/>
+                                        </constraints>
+                                        <state key="normal" title="Agree"/>
+                                        <connections>
+                                            <action selector="AgreeButtonTapped:" destination="63F-ia-wO8" eventType="touchUpInside" id="JJP-33-M6J"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mpv-qP-3Y2" userLabel="Nuetral">
+                                        <rect key="frame" x="0.0" y="300" width="335" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="bNU-I6-A5g"/>
+                                        </constraints>
+                                        <state key="normal" title="Neutral"/>
+                                        <connections>
+                                            <action selector="NuetralButtonTapped:" destination="63F-ia-wO8" eventType="touchUpInside" id="xfO-fG-k6w"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jbd-g3-QVe">
+                                        <rect key="frame" x="0.0" y="375" width="335" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="qvK-ze-Nov"/>
+                                        </constraints>
+                                        <state key="normal" title="Disagree"/>
+                                        <connections>
+                                            <action selector="disagreeButtonTapped:" destination="63F-ia-wO8" eventType="touchUpInside" id="bKz-r4-Xgm"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nq1-QS-tIb" userLabel="StronglyDisAgree">
+                                        <rect key="frame" x="0.0" y="450" width="335" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="69a-x8-kLx"/>
+                                        </constraints>
+                                        <state key="normal" title="Strongly Disagree"/>
+                                        <connections>
+                                            <action selector="SDisagreeButtonTapped:" destination="63F-ia-wO8" eventType="touchUpInside" id="aL5-Fk-vDd"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vnF-ot-wtk" userLabel="Next">
+                                <rect key="frame" x="20" y="557" width="335" height="50"/>
+                                <color key="backgroundColor" red="0.90683039998009052" green="0.81966580670770073" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="wO7-5L-bJt"/>
+                                </constraints>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="NextButtonTapped:" destination="63F-ia-wO8" eventType="touchUpInside" id="LLb-M6-v8N"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vnF-ot-wtk" firstAttribute="leading" secondItem="wsE-Kq-HOf" secondAttribute="leading" constant="20" id="02E-KT-d76"/>
+                            <constraint firstItem="wsE-Kq-HOf" firstAttribute="trailing" secondItem="vnF-ot-wtk" secondAttribute="trailing" constant="20" id="Fm3-Wu-5Dr"/>
+                            <constraint firstItem="I1j-MW-Djj" firstAttribute="leading" secondItem="wsE-Kq-HOf" secondAttribute="leading" constant="20" id="W4L-jt-1qu"/>
+                            <constraint firstItem="vnF-ot-wtk" firstAttribute="leading" secondItem="I1j-MW-Djj" secondAttribute="leading" id="btt-Qo-7y1"/>
+                            <constraint firstItem="wsE-Kq-HOf" firstAttribute="trailing" secondItem="I1j-MW-Djj" secondAttribute="trailing" constant="20" id="fde-Lr-kVw"/>
+                            <constraint firstItem="I1j-MW-Djj" firstAttribute="top" secondItem="wsE-Kq-HOf" secondAttribute="top" constant="40" id="hJ9-Vd-t4H"/>
+                            <constraint firstItem="wsE-Kq-HOf" firstAttribute="bottom" secondItem="vnF-ot-wtk" secondAttribute="bottom" constant="60" id="xn0-dP-nUZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wsE-Kq-HOf"/>
+                    </view>
+                    <connections>
+                        <outlet property="AgreeButton" destination="NaG-G3-qRf" id="WB6-GP-Lfi"/>
+                        <outlet property="DisagreeButton" destination="jbd-g3-QVe" id="PyI-Cb-Mgu"/>
+                        <outlet property="NuetralButton" destination="Mpv-qP-3Y2" id="Vrb-My-mjs"/>
+                        <outlet property="StronglyAgree" destination="dCq-uq-v7i" id="Sjn-kV-6Ks"/>
+                        <outlet property="StronglyDisagreeButton" destination="Nq1-QS-tIb" id="Rtu-n3-QIc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n9b-0Y-vc4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-119.2" y="119.1904047976012"/>
+        </scene>
+    </scenes>
+</document>
