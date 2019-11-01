@@ -16,27 +16,9 @@ class LoginViewController: UIViewController {
 
     
     // MARK: - View controller lifecycle methods
-    let backgroundImage = UIImageView()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //set background to login screen
-        setBackground()
-        
     }
-    
-    private func setBackground() {
-        view.addSubview(backgroundImage)
-        backgroundImage.translatesAutoresizingMaskIntoConstraints = false
-        backgroundImage.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        backgroundImage.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        backgroundImage.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        backgroundImage.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        
-        backgroundImage.image = UIImage(named: "Bg.png")
-    }
-    
     
     // MARK: - Database methods for login authentication
     // Backend Function
