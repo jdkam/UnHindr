@@ -21,11 +21,11 @@
                             <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="rg0-VH-foh" userLabel="Stack 1">
                                 <rect key="frame" x="20" y="44" width="374" height="232"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f52-Tr-MrN">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f52-Tr-MrN" userLabel="profle">
                                         <rect key="frame" x="0.0" y="0.0" width="186" height="232"/>
                                         <state key="normal" image="Profile"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BjU-9F-vfA">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BjU-9F-vfA" userLabel="EmergencyContact">
                                         <rect key="frame" x="188" y="0.0" width="186" height="232"/>
                                         <state key="normal" image="Emergency"/>
                                     </button>
@@ -34,11 +34,14 @@
                             <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Enp-sU-NVG" userLabel="Stack 2">
                                 <rect key="frame" x="20" y="278" width="374" height="196"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pXs-qU-yVt">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pXs-qU-yVt" userLabel="wellnessTests">
                                         <rect key="frame" x="0.0" y="0.0" width="186" height="196"/>
                                         <state key="normal" image="Wellness"/>
+                                        <connections>
+                                            <action selector="WellnessTapped:" destination="htM-Qi-GRg" eventType="touchUpInside" id="cMb-17-XKC"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugf-Nl-Zuo">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugf-Nl-Zuo" userLabel="medication">
                                         <rect key="frame" x="188" y="0.0" width="186" height="196"/>
                                         <state key="normal" image="Medication"/>
                                     </button>
@@ -47,11 +50,11 @@
                             <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="mim-W5-zYZ" userLabel="Stack 3">
                                 <rect key="frame" x="20" y="476" width="374" height="192"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PYb-qA-KQ8">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PYb-qA-KQ8" userLabel="location">
                                         <rect key="frame" x="0.0" y="0.0" width="186" height="192"/>
                                         <state key="normal" image="Location"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ch-IM-MQm">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ch-IM-MQm" userLabel="chat">
                                         <rect key="frame" x="188" y="0.0" width="186" height="192"/>
                                         <state key="normal" image="Chat"/>
                                     </button>
@@ -60,11 +63,11 @@
                             <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="WMQ-FE-Xei" userLabel="Stack 4">
                                 <rect key="frame" x="20" y="670" width="374" height="192"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2v4-he-ByU">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2v4-he-ByU" userLabel="connect">
                                         <rect key="frame" x="0.0" y="0.0" width="186" height="192"/>
                                         <state key="normal" image="Connect"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gkO-9j-pI0">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gkO-9j-pI0" userLabel="options">
                                         <rect key="frame" x="188" y="0.0" width="186" height="192"/>
                                         <state key="normal" image="Options"/>
                                     </button>

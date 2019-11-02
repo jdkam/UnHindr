@@ -22,6 +22,12 @@ class MoodViewController: UIViewController {
     @IBOutlet weak var DisagreeButton: UIButton!
     @IBOutlet weak var StronglyDisagreeButton: UIButton!
     
+    
+    // MARK: - Visual effects on the choice buttons
+    // Backend Function
+    // Input: None
+    // Output:
+    //      1.The choice buttons now contain a white background
     func clearAllButtonBackgrounds(){
         StronglyAgree.backgroundColor = UIColor.white
         AgreeButton.backgroundColor = UIColor.white

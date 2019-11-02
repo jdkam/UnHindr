@@ -17,6 +17,11 @@ class MoodQ5ViewController: UIViewController {
         clearAllButtonBackgrounds()
     }
     
+    // MARK: - Visual effects on the choice buttons
+    // Backend Function
+    // Input: None
+    // Output:
+    //      1.The choice buttons now contain a white background
     func clearAllButtonBackgrounds(){
         SAB.backgroundColor = UIColor.white
         AB.backgroundColor = UIColor.white
@@ -66,7 +71,10 @@ class MoodQ5ViewController: UIViewController {
         
     }
     
-    //This will transfer the flow to the main screen
+    // MARK - Changes storyboard and view controller to the home screen
+    // Input: None
+    // Output:
+    //      1. Storyboard changes to HomeScreen and displays first view on the storyboard
     func GoToHome(){
         let storyboard = UIStoryboard(name: "HomeScreen", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "HomeScreenViewController") as UIViewController

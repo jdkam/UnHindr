@@ -14,6 +14,12 @@ class HomeScreenViewController : UIViewController {
         super.viewDidLoad()
     }
     
+    @IBAction func WellnessTapped(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Mood", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "MoodViewController") as UIViewController
+        present(vc, animated: true, completion: nil)
+    }
+    
     
     
 }

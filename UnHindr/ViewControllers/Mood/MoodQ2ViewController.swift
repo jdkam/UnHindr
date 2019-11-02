@@ -23,7 +23,11 @@ class MoodQ2ViewController: UIViewController {
     @IBOutlet weak var DB: UIButton!
     @IBOutlet weak var SDB: UIButton!
     
-    
+    // MARK: - Visual effects on the choice buttons
+    // Backend Function
+    // Input: None
+    // Output:
+    //      1.The choice buttons now contain a white background
     func clearAllButtonBackgrounds(){
         SAgree.backgroundColor = UIColor.white
         AgreeB.backgroundColor = UIColor.white
