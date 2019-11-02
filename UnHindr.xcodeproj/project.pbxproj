@@ -293,7 +293,7 @@
 				};
 			};
 			buildConfigurationList = 9DF3F8902367D826003CF8B9 /* Build configuration list for PBXProject "UnHindr" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
