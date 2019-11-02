@@ -19,6 +19,11 @@ class LoginViewController: UIViewController {
     // MARK: - View controller lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configureEmailText()
+        configurePasswordText()
+        
+        configureTapGesture()
     }
     
     // MARK: - Database methods for login authentication
@@ -46,6 +51,23 @@ class LoginViewController: UIViewController {
         }
     }
     
+    private func configureEmailText(){
+        emailTextField.delegate = self
+    }
+    private func configurePasswordText(){
+        passwordTextField.delegate = self
+    }
+    
+    private func configureTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.handleTapOutsideKeyboard))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func handleTapOutsideKeyboard() {
+        view.endEditing(true)
+    }
+
+    
     // MARK - Changes storyboard and view controller to the home screen
     // Input: None
     // Output:
@@ -68,3 +90,9 @@ class LoginViewController: UIViewController {
     
 }
 
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
