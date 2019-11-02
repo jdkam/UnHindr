@@ -14,6 +14,10 @@
 		93FA49CD665592E4B99DB3F3 /* Pods_UnHindr_UnHindrUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6E2B4E2DEF28A4C383CB68F /* Pods_UnHindr_UnHindrUITests.framework */; };
 		98F115D8236CCDF80082A1B1 /* Mood.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98F115D7236CCDF80082A1B1 /* Mood.storyboard */; };
 		98F115DA236CCED00082A1B1 /* MoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F115D9236CCED00082A1B1 /* MoodViewController.swift */; };
+		98F115E5236D23380082A1B1 /* MoodQ2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F115E4236D23380082A1B1 /* MoodQ2ViewController.swift */; };
+		98F115E7236D23520082A1B1 /* MoodQ3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F115E6236D23520082A1B1 /* MoodQ3ViewController.swift */; };
+		98F115E9236D29B50082A1B1 /* MoodQ4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F115E8236D29B50082A1B1 /* MoodQ4ViewController.swift */; };
+		98F115EB236D2B770082A1B1 /* MoodQ5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F115EA236D2B770082A1B1 /* MoodQ5ViewController.swift */; };
 		9DF3F8992367D826003CF8B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF3F8982367D826003CF8B9 /* AppDelegate.swift */; };
 		9DF3F89B2367D826003CF8B9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF3F89A2367D826003CF8B9 /* LoginViewController.swift */; };
 		9DF3F8A02367D82D003CF8B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DF3F89F2367D82D003CF8B9 /* Assets.xcassets */; };
@@ -51,6 +55,10 @@
 		6CD8E5234FA9D115EE968692 /* Pods-UnHindr-UnHindrUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindr-UnHindrUITests.release.xcconfig"; path = "Target Support Files/Pods-UnHindr-UnHindrUITests/Pods-UnHindr-UnHindrUITests.release.xcconfig"; sourceTree = "<group>"; };
 		98F115D7236CCDF80082A1B1 /* Mood.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mood.storyboard; sourceTree = "<group>"; };
 		98F115D9236CCED00082A1B1 /* MoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodViewController.swift; sourceTree = "<group>"; };
+		98F115E4236D23380082A1B1 /* MoodQ2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodQ2ViewController.swift; sourceTree = "<group>"; };
+		98F115E6236D23520082A1B1 /* MoodQ3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodQ3ViewController.swift; sourceTree = "<group>"; };
+		98F115E8236D29B50082A1B1 /* MoodQ4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodQ4ViewController.swift; sourceTree = "<group>"; };
+		98F115EA236D2B770082A1B1 /* MoodQ5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodQ5ViewController.swift; sourceTree = "<group>"; };
 		9DF3F8952367D826003CF8B9 /* UnHindr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnHindr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DF3F8982367D826003CF8B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DF3F89A2367D826003CF8B9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -102,9 +110,9 @@
 		2DD670FC236BBF79005948DF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				98F115E3236D22F90082A1B1 /* Mood */,
 				9DF3F89A2367D826003CF8B9 /* LoginViewController.swift */,
 				2DD67103236BC4C5005948DF /* HomeScreenViewController.swift */,
-				98F115D9236CCED00082A1B1 /* MoodViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -130,6 +138,18 @@
 				03A434C323DEDECA6A4F4E7C /* Pods_UnHindrTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		98F115E3236D22F90082A1B1 /* Mood */ = {
+			isa = PBXGroup;
+			children = (
+				98F115D9236CCED00082A1B1 /* MoodViewController.swift */,
+				98F115E4236D23380082A1B1 /* MoodQ2ViewController.swift */,
+				98F115E6236D23520082A1B1 /* MoodQ3ViewController.swift */,
+				98F115E8236D29B50082A1B1 /* MoodQ4ViewController.swift */,
+				98F115EA236D2B770082A1B1 /* MoodQ5ViewController.swift */,
+			);
+			path = Mood;
 			sourceTree = "<group>";
 		};
 		9DF3F88C2367D826003CF8B9 = {
@@ -431,9 +451,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DF3F89B2367D826003CF8B9 /* LoginViewController.swift in Sources */,
+				98F115EB236D2B770082A1B1 /* MoodQ5ViewController.swift in Sources */,
+				98F115E5236D23380082A1B1 /* MoodQ2ViewController.swift in Sources */,
 				98F115DA236CCED00082A1B1 /* MoodViewController.swift in Sources */,
+				98F115E7236D23520082A1B1 /* MoodQ3ViewController.swift in Sources */,
 				9DF3F8992367D826003CF8B9 /* AppDelegate.swift in Sources */,
 				2DD67104236BC4C5005948DF /* HomeScreenViewController.swift in Sources */,
+				98F115E9236D29B50082A1B1 /* MoodQ4ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
