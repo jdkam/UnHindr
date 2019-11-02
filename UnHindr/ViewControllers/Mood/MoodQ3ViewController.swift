@@ -15,6 +15,7 @@ class MoodQ3ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.score = self.prevScore
+        clearAllButtonBackgrounds()
     }
     @IBOutlet weak var SAB: UIButton!
     @IBOutlet weak var AB: UIButton!

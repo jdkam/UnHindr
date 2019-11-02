@@ -15,6 +15,7 @@ class MoodQ4ViewController: UIViewController {
         
         super.viewDidLoad()
         self.score = self.prevScore
+        clearAllButtonBackgrounds()
     }
     
     func clearAllButtonBackgrounds(){

@@ -14,6 +14,7 @@ class MoodQ5ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.score = self.prevScore
+        clearAllButtonBackgrounds()
     }
     
     func clearAllButtonBackgrounds(){
@@ -65,10 +66,19 @@ class MoodQ5ViewController: UIViewController {
         
     }
     
+    //This will transfer the flow to the main screen
+    func GoToHome(){
+        let storyboard = UIStoryboard(name: "HomeScreen", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "HomeScreenViewController") as UIViewController
+        present(vc, animated: true, completion: nil)
+        
+    }
+    
     @IBAction func NextButtonTapped(_ sender: UIButton) {
         if(self.score != self.prevScore){
-            var toStore = self.score / 5
+            let toStore = self.score / 5
             StoreToDB(toSave: toStore)
+            GoToHome()
         }
         
     }

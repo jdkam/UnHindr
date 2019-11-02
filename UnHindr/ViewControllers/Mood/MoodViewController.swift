@@ -12,7 +12,7 @@ class MoodViewController: UIViewController {
     var score = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        clearAllButtonBackgrounds()
     }
 
     
