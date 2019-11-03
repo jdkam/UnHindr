@@ -378,6 +378,9 @@
                                     <constraint firstAttribute="height" constant="65" id="t9i-Tx-8qH"/>
                                 </constraints>
                                 <state key="normal" image="home-white"/>
+                                <connections>
+                                    <action selector="goToHomeTapped:" destination="hiJ-02-m6Z" eventType="touchUpInside" id="C9E-B2-SEf"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -400,8 +403,9 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f0Q-mV-Ilg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="hiJ-02-m6Z" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2215.9420289855075" y="26.785714285714285"/>
+            <point key="canvasLocation" x="2215.1999999999998" y="26.53673163418291"/>
         </scene>
     </scenes>
     <resources>
