@@ -123,9 +123,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		215C15DD236F73610063F3E4 /* WellnessTestHome */ = {
+			isa = PBXGroup;
+			children = (
+				215C15DB236F6E5F0063F3E4 /* WellnessTestHomeViewController.swift */,
+			);
+			path = WellnessTestHome;
+			sourceTree = "<group>";
+		};
 		2DD670FC236BBF79005948DF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				215C15DD236F73610063F3E4 /* WellnessTestHome */,
 				98F6791B236E847600517099 /* Profile */,
 				CDBC4014236E4FF2008934AF /* Settings */,
 				98F115E3236D22F90082A1B1 /* Mood */,
@@ -226,7 +235,6 @@
 				9DF3F8A42367D82D003CF8B9 /* Info.plist */,
 				CDBC4012236E4FE8008934AF /* Settings.storyboard */,
 				215C15D9236F6E390063F3E4 /* WellnessTestHome.storyboard */,
-				215C15DB236F6E5F0063F3E4 /* WellnessTestHomeViewController.swift */,
 			);
 			path = UnHindr;
 			sourceTree = "<group>";
