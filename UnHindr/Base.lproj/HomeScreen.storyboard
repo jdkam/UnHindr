@@ -70,6 +70,9 @@
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gkO-9j-pI0" userLabel="options">
                                         <rect key="frame" x="188" y="0.0" width="186" height="192"/>
                                         <state key="normal" image="Options"/>
+                                        <connections>
+                                            <action selector="optionsTapped:" destination="htM-Qi-GRg" eventType="touchUpInside" id="GoV-8T-uCt"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
