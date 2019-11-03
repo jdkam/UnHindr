@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SettingsViewController: UIViewController {
 
@@ -17,6 +18,11 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func logoutPressed(_ sender: Any) {
+        do {
+            try Auth.auth().signOut()
+        } catch let signOutError as NSError {
+            print("Error signing out :%@", signOutError)
+        }
         //Switch storyboard to the login screen
         let storyboard = UIStoryboard(name: "Login", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as UIViewController
