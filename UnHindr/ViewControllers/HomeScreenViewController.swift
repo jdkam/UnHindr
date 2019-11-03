@@ -28,11 +28,11 @@ class HomeScreenViewController : UIViewController {
         Auth.auth().removeStateDidChangeListener(Services.handle!)
     }
     
-    @IBAction func WellnessTapped(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "Mood", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "MoodViewController") as UIViewController
-        present(vc, animated: true, completion: nil)
-    }
+//    @IBAction func WellnessTapped(_ sender: UIButton) {
+//        let storyboard = UIStoryboard(name: "WellnessTestHome", bundle: nil)
+//        let vc = storyboard.instantiateViewController(withIdentifier: "WellnessTestHomeViewController") as UIViewController
+//        present(vc, animated: true, completion: nil)
+//    }
     
     @IBAction func optionsTapped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Settings", bundle: nil)
