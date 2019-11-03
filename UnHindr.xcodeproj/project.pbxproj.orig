@@ -19,13 +19,11 @@
 		98F115E7236D23520082A1B1 /* MoodQ3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F115E6236D23520082A1B1 /* MoodQ3ViewController.swift */; };
 		98F115E9236D29B50082A1B1 /* MoodQ4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F115E8236D29B50082A1B1 /* MoodQ4ViewController.swift */; };
 		98F115EB236D2B770082A1B1 /* MoodQ5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F115EA236D2B770082A1B1 /* MoodQ5ViewController.swift */; };
-		98F6791D236E849900517099 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F6791C236E849900517099 /* ProfileViewController.swift */; };
-		98F67921236E85AF00517099 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98F67920236E85AF00517099 /* Profile.storyboard */; };
-		98F67923236E8C5300517099 /* test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98F67922236E8C5300517099 /* test.storyboard */; };
-		98F67925236E8C6000517099 /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F67924236E8C6000517099 /* testViewController.swift */; };
-		98F67927236EA61700517099 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98F67926236EA61600517099 /* Assets.xcassets */; };
+		98F6790F236E552A00517099 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98F6790E236E552A00517099 /* Profile.storyboard */; };
+		98F67912236E556000517099 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F67911236E556000517099 /* ProfileViewController.swift */; };
 		9DF3F8992367D826003CF8B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF3F8982367D826003CF8B9 /* AppDelegate.swift */; };
 		9DF3F89B2367D826003CF8B9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF3F89A2367D826003CF8B9 /* LoginViewController.swift */; };
+		9DF3F8A02367D82D003CF8B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DF3F89F2367D82D003CF8B9 /* Assets.xcassets */; };
 		9DF3F8A32367D82D003CF8B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DF3F8A12367D82D003CF8B9 /* LaunchScreen.storyboard */; };
 		9DF3F8AE2367D82D003CF8B9 /* UnHindrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF3F8AD2367D82D003CF8B9 /* UnHindrTests.swift */; };
 		9DF3F8B92367D82D003CF8B9 /* UnHindrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF3F8B82367D82D003CF8B9 /* UnHindrUITests.swift */; };
@@ -67,14 +65,12 @@
 		98F115E6236D23520082A1B1 /* MoodQ3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodQ3ViewController.swift; sourceTree = "<group>"; };
 		98F115E8236D29B50082A1B1 /* MoodQ4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodQ4ViewController.swift; sourceTree = "<group>"; };
 		98F115EA236D2B770082A1B1 /* MoodQ5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodQ5ViewController.swift; sourceTree = "<group>"; };
-		98F6791C236E849900517099 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		98F67920236E85AF00517099 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
-		98F67922236E8C5300517099 /* test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = test.storyboard; sourceTree = "<group>"; };
-		98F67924236E8C6000517099 /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
-		98F67926236EA61600517099 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		98F6790E236E552A00517099 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		98F67911236E556000517099 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		9DF3F8952367D826003CF8B9 /* UnHindr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnHindr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DF3F8982367D826003CF8B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DF3F89A2367D826003CF8B9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		9DF3F89F2367D82D003CF8B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9DF3F8A22367D82D003CF8B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9DF3F8A42367D82D003CF8B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DF3F8A92367D82D003CF8B9 /* UnHindrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnHindrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,8 +120,11 @@
 		2DD670FC236BBF79005948DF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				98F6791B236E847600517099 /* Profile */,
+<<<<<<< HEAD
+				98F67910236E553300517099 /* Profile */,
+=======
 				CDBC4014236E4FF2008934AF /* Settings */,
+>>>>>>> 4a312628bf6541af9e8b5ddc819029e8ddea2aa1
 				98F115E3236D22F90082A1B1 /* Mood */,
 				9DF3F89A2367D826003CF8B9 /* LoginViewController.swift */,
 				2DD67103236BC4C5005948DF /* HomeScreenViewController.swift */,
@@ -176,13 +175,12 @@
 			path = Mood;
 			sourceTree = "<group>";
 		};
-		98F6791B236E847600517099 /* Profile */ = {
+		98F67910236E553300517099 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				98F6791C236E849900517099 /* ProfileViewController.swift */,
+				98F67911236E556000517099 /* ProfileViewController.swift */,
 			);
-			name = Profile;
-			path = "New Group";
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		9DF3F88C2367D826003CF8B9 = {
@@ -210,20 +208,21 @@
 		9DF3F8972367D826003CF8B9 /* UnHindr */ = {
 			isa = PBXGroup;
 			children = (
-				98F67926236EA61600517099 /* Assets.xcassets */,
 				2DE6A77B236E400A00B76282 /* Helpers */,
 				2DD670FC236BBF79005948DF /* ViewControllers */,
 				9DF3F8982367D826003CF8B9 /* AppDelegate.swift */,
 				98F115D7236CCDF80082A1B1 /* Mood.storyboard */,
-				98F67920236E85AF00517099 /* Profile.storyboard */,
 				2DD67107236BCD41005948DF /* Login.storyboard */,
 				2DD67109236BCD41005948DF /* HomeScreen.storyboard */,
+				9DF3F89F2367D82D003CF8B9 /* Assets.xcassets */,
 				9DF3F8A12367D82D003CF8B9 /* LaunchScreen.storyboard */,
 				9DF3F8C62367D880003CF8B9 /* GoogleService-Info.plist */,
 				9DF3F8A42367D82D003CF8B9 /* Info.plist */,
+<<<<<<< HEAD
+				98F6790E236E552A00517099 /* Profile.storyboard */,
+=======
 				CDBC4012236E4FE8008934AF /* Settings.storyboard */,
-				98F67922236E8C5300517099 /* test.storyboard */,
-				98F67924236E8C6000517099 /* testViewController.swift */,
+>>>>>>> 4a312628bf6541af9e8b5ddc819029e8ddea2aa1
 			);
 			path = UnHindr;
 			sourceTree = "<group>";
@@ -363,14 +362,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98F67921236E85AF00517099 /* Profile.storyboard in Resources */,
 				2DD6710C236BCD41005948DF /* HomeScreen.storyboard in Resources */,
 				98F115D8236CCDF80082A1B1 /* Mood.storyboard in Resources */,
 				2DD6710B236BCD41005948DF /* Login.storyboard in Resources */,
 				9DF3F8A32367D82D003CF8B9 /* LaunchScreen.storyboard in Resources */,
 				9DF3F8C72367D880003CF8B9 /* GoogleService-Info.plist in Resources */,
-				98F67923236E8C5300517099 /* test.storyboard in Resources */,
-				98F67927236EA61700517099 /* Assets.xcassets in Resources */,
+				98F6790F236E552A00517099 /* Profile.storyboard in Resources */,
+				9DF3F8A02367D82D003CF8B9 /* Assets.xcassets in Resources */,
 				CDBC4013236E4FE8008934AF /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -501,16 +499,15 @@
 			files = (
 				9DF3F89B2367D826003CF8B9 /* LoginViewController.swift in Sources */,
 				98F115EB236D2B770082A1B1 /* MoodQ5ViewController.swift in Sources */,
+				98F67912236E556000517099 /* ProfileViewController.swift in Sources */,
 				98F115E5236D23380082A1B1 /* MoodQ2ViewController.swift in Sources */,
 				CDBC4016236E501B008934AF /* SettingsViewController.swift in Sources */,
 				98F115DA236CCED00082A1B1 /* MoodViewController.swift in Sources */,
 				98F115E7236D23520082A1B1 /* MoodQ3ViewController.swift in Sources */,
-				98F67925236E8C6000517099 /* testViewController.swift in Sources */,
 				9DF3F8992367D826003CF8B9 /* AppDelegate.swift in Sources */,
 				2DD67104236BC4C5005948DF /* HomeScreenViewController.swift in Sources */,
 				2DE6A77D236E402B00B76282 /* Services.swift in Sources */,
 				98F115E9236D29B50082A1B1 /* MoodQ4ViewController.swift in Sources */,
-				98F6791D236E849900517099 /* ProfileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
