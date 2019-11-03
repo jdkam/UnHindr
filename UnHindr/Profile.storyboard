@@ -13,7 +13,7 @@
         <!--Profile View Controller-->
         <scene sceneID="nxf-BI-rl8">
             <objects>
-                <viewController storyboardIdentifier="ProfileViewController" id="H1t-Sf-mQ3" customClass="ProfileViewController" customModule="UnHindr" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="H1t-Sf-mQ3" customClass="ProfileViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xg0-Ym-avD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -60,7 +60,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gender" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MMd-Gw-RDQ" customClass="Personal">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gender" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MMd-Gw-RDQ">
                                         <rect key="frame" x="0.0" y="350" width="440" height="40"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>

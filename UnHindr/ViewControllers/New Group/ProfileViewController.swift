@@ -13,6 +13,7 @@ import FirebaseAuth
 
 class ProfileViewController: UIViewController {
     
+    private var datacollection: [String: Any]? = [:]
     var FirstName = "Jack"
     var LastName = "Huncho"
     var Email = "JH@google.com"
@@ -24,38 +25,33 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Services.handle = Auth.auth().addStateDidChangeListener { (auth, user) in
-            Services.getDBUserRef(user, completionHandler: { (userref) in
-                guard let userref = userref else {
-                    print("Unable to get user reference")
-                    return
-                }
-                Services.userRef = userref
-            })
-        }
+        
+    }//view DidLoad()
+    
+    override func viewWillAppear(_ animated: Bool) {
         self.getUserInfo(Services.userRef, completionHandler: { (complete) in
-            guard let complete = complete else {
-                print("Unable to fetch user data")
-                return
-            }
             if complete == true {
-                self.FirstNameTF.text = self.FirstName
-                self.lastNameTF.text = self.LastName
-                self.emailTF.text = self.Email
+                self.addressTF.text = self.datacollection!["address"] as? String
+                self.FirstNameTF.text = self.datacollection!["firstName"] as? String
                 
-                if(self.gender == 0){
+                self.lastNameTF.text = self.datacollection!["lastName"] as? String
+                self.emailTF.text = self.datacollection!["email"] as? String
+                
+                //determine the gender
+                if(self.datacollection!["gender"] as? Int == 0){
                     self.gendreTF.text = "Female"
-                }else if (self.gender == 1){
+                }else if (self.datacollection!["gender"] as? Int == 1){
                     self.gendreTF.text = "Male"
                 }else{
                     self.gendreTF.text = "Undecided"
                 }
-                self.addressTF.text = self.Address
             }
-
+            else{
+                print("----------------Failed to get user data--------------")
+            }
+            
         })
-        
-    }//view DidLoad()
+    }
     
     @IBOutlet weak var FirstNameTF: UITextField!
     @IBOutlet weak var lastNameTF: UITextField!
@@ -82,13 +78,17 @@ class ProfileViewController: UIViewController {
                     print("Error fetching user document")
                     return
                 }
-                self.LastName = document.get("lastName") as! String
-                //self.Email = document.get("email") as! String
-                //self.FirstName = document.get("firstName") as! String
-                //self.Address = document.get("address") as! String
-                //self.City = document.get("city") as! String
-                //self.Country = document.get("coquitlam") as! String
-                completionHandler(true)
+//                self.LastName = document.get("lastName") as! String
+//                self.Email = document.get("email") as! String
+//                self.FirstName = document.get("firstName") as! String
+//                self.Address = document.get("address") as! String
+//                self.City = document.get("city") as! String
+//                self.Country = document.get("coquitlam") as! String
+                self.datacollection = document.data()
+//                print("Type: \(document.data())")
+                
+                let result = true
+                completionHandler(result)
             }
             
         }

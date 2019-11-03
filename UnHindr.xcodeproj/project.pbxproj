@@ -179,6 +179,7 @@
 		98F6791B236E847600517099 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				98F6791C236E849900517099 /* ProfileViewController.swift */,
 			);
 			name = Profile;
 			path = "New Group";
@@ -213,7 +214,6 @@
 				2DE6A77B236E400A00B76282 /* Helpers */,
 				2DD670FC236BBF79005948DF /* ViewControllers */,
 				9DF3F8982367D826003CF8B9 /* AppDelegate.swift */,
-				98F6791C236E849900517099 /* ProfileViewController.swift */,
 				98F115D7236CCDF80082A1B1 /* Mood.storyboard */,
 				98F67920236E85AF00517099 /* Profile.storyboard */,
 				2DD67107236BCD41005948DF /* Login.storyboard */,
