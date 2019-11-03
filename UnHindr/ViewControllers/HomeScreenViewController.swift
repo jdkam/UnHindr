@@ -8,10 +8,24 @@
 
 import Foundation
 import UIKit
+import FirebaseAuth
 
 class HomeScreenViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        Services.handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+            Services.getDBUserRef(user, completionHandler: { (userref) in
+                guard let userref = userref else {
+                    print("Unable to get user reference")
+                    return
+                }
+                Services.userRef = userref
+            })
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        Auth.auth().removeStateDidChangeListener(Services.handle!)
     }
     
     @IBAction func WellnessTapped(_ sender: UIButton) {

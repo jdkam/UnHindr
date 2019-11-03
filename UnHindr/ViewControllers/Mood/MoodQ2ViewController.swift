@@ -9,19 +9,23 @@
 import UIKit
 
 class MoodQ2ViewController: UIViewController {
-    var score = 0
+    // Private variables to keep track of scores
+    private var score = 0
     var prevScore = 0
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.score = self.prevScore
-        clearAllButtonBackgrounds()
-    }
     
+    // Outlets for buttons
     @IBOutlet weak var SAgree: UIButton!
     @IBOutlet weak var AgreeB: UIButton!
     @IBOutlet weak var NB: UIButton!
     @IBOutlet weak var DB: UIButton!
     @IBOutlet weak var SDB: UIButton!
+    
+    // MARK: - View controller lifecycle methods
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.score = self.prevScore
+        clearAllButtonBackgrounds()
+    }
     
     // MARK: - Visual effects on the choice buttons
     // Backend Function
@@ -36,41 +40,80 @@ class MoodQ2ViewController: UIViewController {
         SDB.backgroundColor = UIColor.white
     }
     
-    @IBAction func SApressed(_ sender: UIButton) {
+    // MARK: - Button actions for selecting mood options
+    // Action:
+    //      1. On tap
+    // Output:
+    //      1. Border highlight around strongly agree
+    @IBAction func stronglyAgreeTapped(_ sender: UIButton) {
         score = prevScore + 5
         clearAllButtonBackgrounds()
         SAgree.backgroundColor = UIColor.lightGray
     }
-    @IBAction func Agree(_ sender: UIButton) {
+    
+    // Action:
+    //      1. On tap
+    // Output:
+    //      1. Border highlight around agree
+    @IBAction func agreeTapped(_ sender: UIButton) {
         score = prevScore + 4
         clearAllButtonBackgrounds()
         AgreeB.backgroundColor = UIColor.lightGray
     }
-    @IBAction func Neutral(_ sender: UIButton) {
+    
+    // Action:
+    //      1. On tap
+    // Output:
+    //      1. Border highlight around neutral
+    @IBAction func neutralTapped(_ sender: UIButton) {
         score = prevScore + 3
         clearAllButtonBackgrounds()
         NB.backgroundColor = UIColor.lightGray
     }
-    @IBAction func Disagree(_ sender: UIButton) {
+    
+    // Action:
+    //      1. On tap
+    // Output:
+    //      1. Border highlight around disagree
+    @IBAction func disagreeTapped(_ sender: UIButton) {
         score = prevScore + 2
         clearAllButtonBackgrounds()
         DB.backgroundColor = UIColor.lightGray
     }
-    @IBAction func SA(_ sender: Any) {
+    
+    // Action:
+    //      1. On tap
+    // Output:
+    //      1. Border highlight around strongly disagree
+    @IBAction func stronglyDisagreeTapped(_ sender: Any) {
         score = prevScore + 1
         clearAllButtonBackgrounds()
         SDB.backgroundColor = UIColor.lightGray
     }
     
-    @IBAction func NextButtonTapped(_ sender: UIButton) {
+    // Action:
+    //      1. On tap
+    // Output:
+    //      1. store data to database
+    //      2. Return to home screen
+    @IBAction func nextButtonTapped(_ sender: UIButton) {
         if(self.score != prevScore){
             performSegue(withIdentifier: "Q2ToQ3", sender: self)
         }
     }
-    @IBAction func BackButtonTapped(_ sender: UIButton) {
+    
+    // Action:
+    //      1. On tap
+    // Output:
+    //      1. Return to previous question
+    @IBAction func backButtonTapped(_ sender: UIButton) {
         performSegue(withIdentifier: "Q2ToQ1", sender: self)
     }
     
+    // MARK: - Segue to transition to next controller
+    // Input: None
+    // Output:
+    //      1. Q3 view controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "Q2ToQ3"){
             let vc = segue.destination as! MoodQ3ViewController

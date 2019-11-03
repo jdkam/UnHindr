@@ -55,7 +55,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="SAgreeButtonTapped:" destination="63F-ia-wO8" eventType="touchUpInside" id="bQe-kf-r5d"/>
+                                            <action selector="stronglyAgreeTapped:" destination="63F-ia-wO8" eventType="touchUpInside" id="bQe-kf-r5d"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NaG-G3-qRf">
@@ -68,7 +68,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="AgreeButtonTapped:" destination="63F-ia-wO8" eventType="touchUpInside" id="JJP-33-M6J"/>
+                                            <action selector="agreeTapped:" destination="63F-ia-wO8" eventType="touchUpInside" id="JJP-33-M6J"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mpv-qP-3Y2" userLabel="Nuetral">
@@ -81,7 +81,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="NuetralButtonTapped:" destination="63F-ia-wO8" eventType="touchUpInside" id="xfO-fG-k6w"/>
+                                            <action selector="neutralTapped:" destination="63F-ia-wO8" eventType="touchUpInside" id="xfO-fG-k6w"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jbd-g3-QVe">
@@ -94,7 +94,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="disagreeButtonTapped:" destination="63F-ia-wO8" eventType="touchUpInside" id="bKz-r4-Xgm"/>
+                                            <action selector="disagreeTapped:" destination="63F-ia-wO8" eventType="touchUpInside" id="bKz-r4-Xgm"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nq1-QS-tIb" userLabel="StronglyDisAgree">
@@ -107,7 +107,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="SDisagreeButtonTapped:" destination="63F-ia-wO8" eventType="touchUpInside" id="aL5-Fk-vDd"/>
+                                            <action selector="stronglyDisagreeTapped:" destination="63F-ia-wO8" eventType="touchUpInside" id="aL5-Fk-vDd"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vnF-ot-wtk" userLabel="Next">
@@ -122,7 +122,7 @@
                                             <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="NextButtonTapped:" destination="63F-ia-wO8" eventType="touchUpInside" id="9jy-3e-N7M"/>
+                                            <action selector="nextButtonTapped:" destination="63F-ia-wO8" eventType="touchUpInside" id="9jy-3e-N7M"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -190,7 +190,7 @@
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="SApressed:" destination="cKW-nV-GZc" eventType="touchUpInside" id="FGP-im-sJL"/>
+                                            <action selector="stronglyAgreeTapped:" destination="cKW-nV-GZc" eventType="touchUpInside" id="FGP-im-sJL"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GSN-kP-NNo">
@@ -203,7 +203,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="Agree:" destination="cKW-nV-GZc" eventType="touchUpInside" id="UwU-XR-U7x"/>
+                                            <action selector="agreeTapped:" destination="cKW-nV-GZc" eventType="touchUpInside" id="UwU-XR-U7x"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eWs-H8-DDm" userLabel="Nuetral">
@@ -216,7 +216,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="Neutral:" destination="cKW-nV-GZc" eventType="touchUpInside" id="OiY-UO-IBa"/>
+                                            <action selector="neutralTapped:" destination="cKW-nV-GZc" eventType="touchUpInside" id="OiY-UO-IBa"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PzR-W8-H6U">
@@ -229,7 +229,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="Disagree:" destination="cKW-nV-GZc" eventType="touchUpInside" id="Twg-yt-mwI"/>
+                                            <action selector="disagreeTapped:" destination="cKW-nV-GZc" eventType="touchUpInside" id="Twg-yt-mwI"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WtV-63-evw" userLabel="StronglyDisAgree">
@@ -242,7 +242,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="SA:" destination="cKW-nV-GZc" eventType="touchUpInside" id="HND-E5-LFb"/>
+                                            <action selector="stronglyDisagreeTapped:" destination="cKW-nV-GZc" eventType="touchUpInside" id="HND-E5-LFb"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Fe-sm-Svg" userLabel="Next">
@@ -257,7 +257,7 @@
                                             <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="NextButtonTapped:" destination="cKW-nV-GZc" eventType="touchUpInside" id="AoZ-jq-b3M"/>
+                                            <action selector="nextButtonTapped:" destination="cKW-nV-GZc" eventType="touchUpInside" id="AoZ-jq-b3M"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lz8-MB-FnF" userLabel="back">
@@ -272,7 +272,7 @@
                                             <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="BackButtonTapped:" destination="cKW-nV-GZc" eventType="touchUpInside" id="ghF-8w-ccz"/>
+                                            <action selector="backButtonTapped:" destination="cKW-nV-GZc" eventType="touchUpInside" id="ghF-8w-ccz"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -340,7 +340,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="SApressed:" destination="J0h-Uk-eHJ" eventType="touchUpInside" id="HMv-Oj-93Z"/>
+                                            <action selector="stronglyAgreeTapped:" destination="J0h-Uk-eHJ" eventType="touchUpInside" id="HMv-Oj-93Z"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zmj-Of-mbW">
@@ -353,7 +353,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="APressed:" destination="J0h-Uk-eHJ" eventType="touchUpInside" id="P4o-ns-MrO"/>
+                                            <action selector="agreeTapped:" destination="J0h-Uk-eHJ" eventType="touchUpInside" id="P4o-ns-MrO"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7EV-ZD-oXo" userLabel="Nuetral">
@@ -366,7 +366,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="Npressed:" destination="J0h-Uk-eHJ" eventType="touchUpInside" id="VCK-59-ZSh"/>
+                                            <action selector="neutralTapped:" destination="J0h-Uk-eHJ" eventType="touchUpInside" id="VCK-59-ZSh"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xlG-HQ-xfe">
@@ -379,7 +379,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="Dpressed:" destination="J0h-Uk-eHJ" eventType="touchUpInside" id="b7V-IS-U26"/>
+                                            <action selector="disagreeTapped:" destination="J0h-Uk-eHJ" eventType="touchUpInside" id="b7V-IS-U26"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J5J-fU-FKg" userLabel="StronglyDisAgree">
@@ -392,7 +392,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="SDpressed:" destination="J0h-Uk-eHJ" eventType="touchUpInside" id="JVD-25-HTs"/>
+                                            <action selector="stronglyDisagreeTapped:" destination="J0h-Uk-eHJ" eventType="touchUpInside" id="JVD-25-HTs"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hz6-lA-7da" userLabel="Next">
@@ -407,7 +407,7 @@
                                             <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="NextButtonTapped:" destination="J0h-Uk-eHJ" eventType="touchUpInside" id="KtQ-bf-eOv"/>
+                                            <action selector="nextButtonTapped:" destination="J0h-Uk-eHJ" eventType="touchUpInside" id="KtQ-bf-eOv"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F91-hO-3OT" userLabel="back">
@@ -422,7 +422,7 @@
                                             <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="BackButtonPressed:" destination="J0h-Uk-eHJ" eventType="touchUpInside" id="rdt-mV-4gY"/>
+                                            <action selector="backButtonPressed:" destination="J0h-Uk-eHJ" eventType="touchUpInside" id="rdt-mV-4gY"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -490,7 +490,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="SATapped:" destination="cgY-R1-A2I" eventType="touchUpInside" id="RQX-g1-wmy"/>
+                                            <action selector="stronglyAgreeTapped:" destination="cgY-R1-A2I" eventType="touchUpInside" id="RQX-g1-wmy"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mw2-Yd-bcU">
@@ -503,7 +503,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="Apressed:" destination="cgY-R1-A2I" eventType="touchUpInside" id="3jK-za-7qM"/>
+                                            <action selector="agreeTapped:" destination="cgY-R1-A2I" eventType="touchUpInside" id="3jK-za-7qM"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iwY-ed-IPG" userLabel="Nuetral">
@@ -516,7 +516,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="Npressed:" destination="cgY-R1-A2I" eventType="touchUpInside" id="HK7-Rm-Vmc"/>
+                                            <action selector="neutralTapped:" destination="cgY-R1-A2I" eventType="touchUpInside" id="HK7-Rm-Vmc"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJg-6k-9md">
@@ -529,7 +529,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="Dpressed:" destination="cgY-R1-A2I" eventType="touchUpInside" id="hm0-Yy-Her"/>
+                                            <action selector="disagreeTapped:" destination="cgY-R1-A2I" eventType="touchUpInside" id="hm0-Yy-Her"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r9q-w7-lbh" userLabel="StronglyDisAgree">
@@ -542,7 +542,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="SDpressed:" destination="cgY-R1-A2I" eventType="touchUpInside" id="LaR-gJ-9gw"/>
+                                            <action selector="stronglyDisagreeTapped:" destination="cgY-R1-A2I" eventType="touchUpInside" id="LaR-gJ-9gw"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v9h-wN-zsg" userLabel="Next">
@@ -557,7 +557,7 @@
                                             <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="NextButtonTapped:" destination="cgY-R1-A2I" eventType="touchUpInside" id="Fo1-NS-Xda"/>
+                                            <action selector="nextButtonTapped:" destination="cgY-R1-A2I" eventType="touchUpInside" id="Fo1-NS-Xda"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rHJ-h5-lTK" userLabel="back">
@@ -572,7 +572,7 @@
                                             <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="BackButtonTapped:" destination="cgY-R1-A2I" eventType="touchUpInside" id="2u5-6k-Yz0"/>
+                                            <action selector="backButtonTapped:" destination="cgY-R1-A2I" eventType="touchUpInside" id="2u5-6k-Yz0"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -640,7 +640,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="SApressed:" destination="H3b-yb-cxj" eventType="touchUpInside" id="84d-x3-24W"/>
+                                            <action selector="stronglyAgreeTapped:" destination="H3b-yb-cxj" eventType="touchUpInside" id="84d-x3-24W"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kWi-9L-VrP">
@@ -653,7 +653,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="Apressed:" destination="H3b-yb-cxj" eventType="touchUpInside" id="byp-MY-4jS"/>
+                                            <action selector="agreeTapped:" destination="H3b-yb-cxj" eventType="touchUpInside" id="byp-MY-4jS"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pr6-Rp-k9a" userLabel="Nuetral">
@@ -666,7 +666,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="Npressed:" destination="H3b-yb-cxj" eventType="touchUpInside" id="LW8-Wk-LZ8"/>
+                                            <action selector="neutralTapped:" destination="H3b-yb-cxj" eventType="touchUpInside" id="LW8-Wk-LZ8"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q2l-Ai-dR5">
@@ -679,7 +679,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="Dpressed:" destination="H3b-yb-cxj" eventType="touchUpInside" id="K1o-JS-LRz"/>
+                                            <action selector="disagreeTapped:" destination="H3b-yb-cxj" eventType="touchUpInside" id="K1o-JS-LRz"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8n4-6f-foJ" userLabel="StronglyDisAgree">
@@ -692,7 +692,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="SDpressed:" destination="H3b-yb-cxj" eventType="touchUpInside" id="aZq-KC-YUK"/>
+                                            <action selector="stronglyDisagreeTapped:" destination="H3b-yb-cxj" eventType="touchUpInside" id="aZq-KC-YUK"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oLP-NV-dYA" userLabel="Next">
@@ -707,7 +707,7 @@
                                             <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="NextButtonTapped:" destination="H3b-yb-cxj" eventType="touchUpInside" id="npL-8g-CZt"/>
+                                            <action selector="nextButtonTapped:" destination="H3b-yb-cxj" eventType="touchUpInside" id="npL-8g-CZt"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wYz-qj-9TY" userLabel="back">
@@ -722,7 +722,7 @@
                                             <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="BackButtonPressed:" destination="H3b-yb-cxj" eventType="touchUpInside" id="iIC-oy-QMD"/>
+                                            <action selector="backButtonTapped:" destination="H3b-yb-cxj" eventType="touchUpInside" id="iIC-oy-QMD"/>
                                         </connections>
                                     </button>
                                 </subviews>
