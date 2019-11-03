@@ -14,11 +14,11 @@ import FirebaseAuth
 class ProfileViewController: UIViewController {
     
     private var datacollection: [String: Any]? = [:]
-    var FirstName = "Jack"
-    var LastName = "Huncho"
-    var Email = "JH@google.com"
+    var FirstName = "xxx"
+    var LastName = "xxx"
+    var Email = "xxx"
     var Dob = DateComponents(calendar: Calendar.current, year: 1990, month: 08, day: 01)
-    var gender = 1 //0 female , 1 men , 2 undecided
+    var gender = -1 //0 female , 1 men , 2 undecided
     var Address = "xxxxx"
     var City = "xxxxxx"
     var Country = "xxxx"
@@ -35,6 +35,11 @@ class ProfileViewController: UIViewController {
                 self.FirstNameTF.text = self.datacollection!["firstName"] as? String
                 self.lastNameTF.text = self.datacollection!["lastName"] as? String
                 self.emailTF.text = self.datacollection!["email"] as? String
+                self.cellTF.text = self.datacollection!["cell"] as? String
+                self.addressTF.text = self.datacollection!["address"] as? String
+                self.cityTF.text = self.datacollection!["city"] as? String
+                self.countryTF.text = self.datacollection!["country"] as? String
+
                 
                 // Obtain the firebase dob field as a string
                 let extractedDob = self.datacollection!["dob"] as! Timestamp
@@ -45,6 +50,7 @@ class ProfileViewController: UIViewController {
                 formatter.dateFormat = "dd-MMM-yyyy"
                 let intuitiveDate = formatter.string(from:date1!)
                 self.dobTF.text = intuitiveDate
+                
                 
                 //determine the gender
                 if(self.datacollection!["gender"] as? Int == 0){
@@ -70,6 +76,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var addressTF: UITextField!
     @IBOutlet weak var cityTF: UITextField!
     @IBOutlet weak var countryTF: UITextField!
+    @IBOutlet weak var cellTF: UITextField!
     
     // MARK: - Retrieve reference to a patient's data
     // Input:

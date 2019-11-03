@@ -129,6 +129,7 @@
                     <connections>
                         <outlet property="FirstNameTF" destination="Gmy-l1-6Og" id="LR0-Lc-r36"/>
                         <outlet property="addressTF" destination="8mB-Pe-qs6" id="Q76-GS-a3c"/>
+                        <outlet property="cellTF" destination="BbR-Ks-mQ9" id="9d8-eU-McZ"/>
                         <outlet property="cityTF" destination="2rc-hk-GAf" id="lXA-5j-kQv"/>
                         <outlet property="countryTF" destination="Tks-mP-TAd" id="WBU-rZ-1iA"/>
                         <outlet property="dobTF" destination="OzI-Fz-xrk" id="Syd-zd-tMK"/>
