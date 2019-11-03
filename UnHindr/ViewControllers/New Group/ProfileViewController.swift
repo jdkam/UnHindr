@@ -37,11 +37,14 @@ class ProfileViewController: UIViewController {
                 self.emailTF.text = self.datacollection!["email"] as? String
                 
                 // Obtain the firebase dob field as a string
-                let convertedDob = self.datacollection!["dob"] as! Timestamp
+                let extractedDob = self.datacollection!["dob"] as! Timestamp
                 let formatter = DateFormatter()
                 formatter.dateFormat = "yyyy-MM-dd"
-                let datestring = formatter.string(from: convertedDob.dateValue())
-                self.dobTF.text = datestring
+                let convertedDate = formatter.string(from: extractedDob.dateValue())
+                let date1 = formatter.date(from: convertedDate)
+                formatter.dateFormat = "dd-MMM-yyyy"
+                let intuitiveDate = formatter.string(from:date1!)
+                self.dobTF.text = intuitiveDate
                 
                 //determine the gender
                 if(self.datacollection!["gender"] as? Int == 0){
