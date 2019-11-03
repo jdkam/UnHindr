@@ -19,12 +19,20 @@ class MoodQ5ViewController: UIViewController {
     // Store user object from authentication
     private var user: User?
     
+    // Outlets for buttons
+    @IBOutlet weak var SAB: UIButton!
+    @IBOutlet weak var AB: UIButton!
+    @IBOutlet weak var NB: UIButton!
+    @IBOutlet weak var DB: UIButton!
+    @IBOutlet weak var SDB: UIButton!
+    
     // MARK: - View controller lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
         self.score = self.prevScore
         clearAllButtonBackgrounds()
         
+        // Create authentication listeneing handler
         Services.handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
             if user != nil {
                 self.user = user
@@ -33,6 +41,7 @@ class MoodQ5ViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        // Delete authentication handler
         Auth.auth().removeStateDidChangeListener(Services.handle!)
     }
     
@@ -49,44 +58,63 @@ class MoodQ5ViewController: UIViewController {
         SDB.backgroundColor = UIColor.white
     }
     
-    @IBOutlet weak var SAB: UIButton!
-    @IBOutlet weak var AB: UIButton!
-    @IBOutlet weak var NB: UIButton!
-    @IBOutlet weak var DB: UIButton!
-    @IBOutlet weak var SDB: UIButton!
-    
-    @IBAction func SApressed(_ sender: UIButton) {
+    // MARK: - Button actions for selecting mood options
+    // Action:
+    //      1. On tap
+    // Output:
+    //      1. Border highlight around strongly agree
+    @IBAction func stronglyAgreeTapped(_ sender: UIButton) {
         score = prevScore + 5
         clearAllButtonBackgrounds()
         SAB.backgroundColor = UIColor.lightGray
     }
     
-    @IBAction func Apressed(_ sender: UIButton) {
+    // Action:
+    //      1. On tap
+    // Output:
+    //      1. Border highlight around agree
+    @IBAction func agreeTapped(_ sender: UIButton) {
         score = prevScore + 4
         clearAllButtonBackgrounds()
         AB.backgroundColor = UIColor.lightGray
     }
     
-    @IBAction func Npressed(_ sender: UIButton) {
+    // Action:
+    //      1. On tap
+    // Output:
+    //      1. Border highlight around neutral
+    @IBAction func neutralTapped(_ sender: UIButton) {
         score = prevScore + 3
         clearAllButtonBackgrounds()
         NB.backgroundColor = UIColor.lightGray
     }
     
-    @IBAction func Dpressed(_ sender: UIButton) {
+    // Action:
+    //      1. On tap
+    // Output:
+    //      1. Border highlight around disagree
+    @IBAction func disagreeTapped(_ sender: UIButton) {
         score = prevScore + 2
         clearAllButtonBackgrounds()
         DB.backgroundColor = UIColor.lightGray
     }
     
-    @IBAction func SDpressed(_ sender: UIButton) {
+    // Action:
+    //      1. On tap
+    // Output:
+    //      1. Border highlight around strongly disagree
+    @IBAction func stronglyDisagreeTapped(_ sender: UIButton) {
         score = prevScore + 1
         clearAllButtonBackgrounds()
         SDB.backgroundColor = UIColor.lightGray
     }
     
-    //stores the data to the database
-    func StoreToDB(toSave: Int){
+    // MARK: - Store mood score to the database
+    // Input:
+    //      1. averaged score
+    // Output:
+    //      1. saved to database
+    func storeToDB(toSave: Double){
         //User should be logged in with reference created
         
         // Add a new document with a generated id.
@@ -108,23 +136,32 @@ class MoodQ5ViewController: UIViewController {
     // Input: None
     // Output:
     //      1. Storyboard changes to HomeScreen and displays first view on the storyboard
-    func GoToHome(){
+    func goToHomeScreen(){
         let storyboard = UIStoryboard(name: "HomeScreen", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "HomeScreenViewController") as UIViewController
         present(vc, animated: true, completion: nil)
         
     }
     
-    @IBAction func NextButtonTapped(_ sender: UIButton) {
+    // Action:
+    //      1. On tap
+    // Output:
+    //      1. store data to database
+    //      2. Return to home screen
+    @IBAction func nextButtonTapped(_ sender: UIButton) {
         if(self.score != self.prevScore){
-            let toStore = self.score / 5
-            StoreToDB(toSave: toStore)
-            GoToHome()
+            let toStore = Double(self.score) / 5.0
+            storeToDB(toSave: toStore)
+            goToHomeScreen()
         }
         
     }
     
-    @IBAction func BackButtonPressed(_ sender: UIButton) {
+    // Action:
+    //      1. On tap
+    // Output:
+    //      1. Return to previous question
+    @IBAction func backButtonTapped(_ sender: UIButton) {
           performSegue(withIdentifier: "Q5ToQ4", sender: self)
     }
     
