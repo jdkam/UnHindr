@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="htM-Qi-GRg">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,6 +10,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--WellnessTestHome-->
+        <scene sceneID="qV9-WI-deh">
+            <objects>
+                <viewControllerPlaceholder storyboardName="WellnessTestHome" id="3Zx-zs-cWA" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oRW-w0-Npz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-502" y="43"/>
+        </scene>
         <!--Home Screen View Controller-->
         <scene sceneID="85T-wp-Yw2">
             <objects>
@@ -41,7 +49,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="186" height="196"/>
                                         <state key="normal" image="Wellness"/>
                                         <connections>
-                                            <action selector="WellnessTapped:" destination="htM-Qi-GRg" eventType="touchUpInside" id="cMb-17-XKC"/>
+                                            <segue destination="3Zx-zs-cWA" kind="show" id="9rj-Cz-XIB"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugf-Nl-Zuo" userLabel="medication">
