@@ -379,7 +379,7 @@
                                 </constraints>
                                 <state key="normal" image="home-white"/>
                                 <connections>
-                                    <action selector="goToHomeTapped:" destination="hiJ-02-m6Z" eventType="touchUpInside" id="C9E-B2-SEf"/>
+                                    <segue destination="QQZ-Uk-o3p" kind="show" id="aoB-dy-ooI"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -403,9 +403,16 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f0Q-mV-Ilg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="hiJ-02-m6Z" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2215.1999999999998" y="26.53673163418291"/>
+        </scene>
+        <!--HomeScreen-->
+        <scene sceneID="NxE-0W-fyp">
+            <objects>
+                <viewControllerPlaceholder storyboardName="HomeScreen" id="QQZ-Uk-o3p" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z1A-9f-7qZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2812" y="-86"/>
         </scene>
     </scenes>
     <resources>
@@ -413,7 +420,7 @@
         <image name="Add new" width="195" height="92"/>
         <image name="Cancel" width="158" height="71"/>
         <image name="Full med schedule" width="357" height="107"/>
-        <image name="Menu_BG" width="828" height="240"/>
+        <image name="Menu_BG" width="414" height="120"/>
         <image name="NewMedBackground" width="462" height="1008"/>
         <image name="Remove" width="195" height="92"/>
         <image name="check" width="36" height="36"/>
