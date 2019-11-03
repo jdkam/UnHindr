@@ -17,6 +17,9 @@ class Services {
     // Store reference to current user's stored data
     static var userRef: String!
     
+    // Handle for authentication changes
+    static var handle: AuthStateDidChangeListenerHandle?
+    
     // Static reference to Firestore root
     static let db = Firestore.firestore()
     

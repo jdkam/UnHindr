@@ -45,7 +45,6 @@ class LoginViewController: UIViewController {
                 print("Error with authentication")
                 return
             }
-            
             strongSelf.transitionToHomeScreen()
             
         }

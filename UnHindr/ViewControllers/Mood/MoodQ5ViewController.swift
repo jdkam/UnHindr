@@ -7,14 +7,33 @@
 //
 
 import UIKit
+import FirebaseFirestore
+import FirebaseAuth
+import Firebase
 
 class MoodQ5ViewController: UIViewController {
-    var score = 0
+    // Private variables to keep track of scores
+    private var score = 0
     var prevScore = 0
+    
+    // Store user object from authentication
+    private var user: User?
+    
+    // MARK: - View controller lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
         self.score = self.prevScore
         clearAllButtonBackgrounds()
+        
+        Services.handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
+            if user != nil {
+                self.user = user
+            }
+        })
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        Auth.auth().removeStateDidChangeListener(Services.handle!)
     }
     
     // MARK: - Visual effects on the choice buttons
@@ -68,7 +87,21 @@ class MoodQ5ViewController: UIViewController {
     
     //stores the data to the database
     func StoreToDB(toSave: Int){
+        //User should be logged in with reference created
         
+        // Add a new document with a generated id.
+                
+        var ref: DocumentReference? = nil
+        ref = Services.db.collection("users").document(Services.userRef).collection("Mood").addDocument(data: [
+            "Date": Timestamp(date: Date()),
+            "Score": toSave
+        ]) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(ref!.documentID)")
+            }
+        }
     }
     
     // MARK - Changes storyboard and view controller to the home screen
