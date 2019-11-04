@@ -81,7 +81,7 @@ class MedicationViewController: UIViewController {
         self.MedicationName = medFieldName.text!
         print(daysArr)
         var ref: DocumentReference? = nil
-        ref = Services.db.collection("users").document(Services.userRef).collection("MedicationPlan").addDocument(data: [
+        ref = Services.db.collection("users").document(Services.userRef!).collection("MedicationPlan").addDocument(data: [
             "Dosage": self.Dosage,
             "Medication": self.MedicationName,
             "Quantity": self.Quantity,

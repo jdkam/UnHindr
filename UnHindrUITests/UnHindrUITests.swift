@@ -216,7 +216,15 @@ class UnHindrUITests: XCTestCase {
         let app = XCUIApplication()
         loginToHomeScreen(app)
         
-        // TODO:
+        let optionsButton = app.buttons["Options"]
+        XCTAssert(optionsButton.waitForExistence(timeout: 5))
+        optionsButton.tap()
+        XCTAssert(app.buttons["home white"].exists)
+        app.buttons["home white"].tap()
+        optionsButton.tap()
+        app.buttons["Button"].tap()
+        
+        XCTAssert(app.textFields["Email"].exists)
     }
     
     // MARK: - Helper Functions
