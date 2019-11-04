@@ -1,10 +1,12 @@
-//
-//  ViewController.swift
-//  UnHindr
-//
-//  Created by Allan on 2019-10-28.
-//  Copyright © 2019 Sigma. All rights reserved.
-//
+/*
+ File: [LoginViewController.swift]
+ Creators: [Allan, Jake]
+ Date created: [28/10/2019]
+ Date updated: [3/11/2019]
+ Updater name: [Jake]
+ File description: [Controls funcitonality of the Login screen]
+ */
+
 import Foundation
 import UIKit
 import FirebaseAuth
@@ -62,18 +64,39 @@ class LoginViewController: UIViewController {
         }
     }
     
+    // MARK: - Allows the text field to use the extension function textFieldShouldReturn()
+    // Input:
+    //      None
+    // Output:
+    //      Allows the text field to use the extension function textFieldShouldReturn()
     private func configureEmailText(){
         emailTextField.delegate = self
     }
+    
+    // MARK: - Allows the text field to use the extension function textFieldShouldReturn()
+    // Input:
+    //      None
+    // Output:
+    //      Allows the text field to use the extension function textFieldShouldReturn()
     private func configurePasswordText(){
         passwordTextField.delegate = self
     }
     
+    // MARK: - Enables a tap outside of the keyboard to call handleTapOutsideKeyboard()
+    // Input:
+    //      None
+    // Output:
+    //      Enables a tap outside of the keyboard to call handleTapOutsideKeyboard()
     private func configureTapGesture() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.handleTapOutsideKeyboard))
         view.addGestureRecognizer(tapGesture)
     }
     
+    // MARK: - Causes the keyboard to be dismissed
+    // Input:
+    //      None
+    // Output:
+    //      Causes the keyboard to be dismissed
     @objc func handleTapOutsideKeyboard() {
         view.endEditing(true)
     }
@@ -101,6 +124,11 @@ class LoginViewController: UIViewController {
     
 }
 
+// MARK: - Allows the return button in the keyboard to dismiss the keyboard
+// Input:
+//      None
+// Output:
+//      Allows the return button in the keyboard to dismiss the keyboard
 extension LoginViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
