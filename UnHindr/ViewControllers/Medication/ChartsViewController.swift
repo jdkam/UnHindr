@@ -250,7 +250,7 @@ private func getDBMedicationPlan(_ userdoc: String, completionHandler: @escaping
         // what the user's medication plan and what medication they have taken
         let takeMedCorrectDay = [Bool](repeating: false, count: 7)
         // iterates through the user's medication consumption
-        for (takenMed,takenDay) in dateTaken
+        for (takenMed,_) in dateTaken
         {
             dictDidTakeMed[takenMed] = takeMedCorrectDay // adds the boolean array 'takeMedCorrectDay' for each medication the user has taken
             // converts all dates to a day of the week inside the for loop
@@ -322,7 +322,7 @@ private func getDBMedicationPlan(_ userdoc: String, completionHandler: @escaping
 //        let days: [String] = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
         //
 //        let daysize = days.count
-        for (Med,Day) in dayPlan
+        for (Med,_) in dayPlan
         {
             for i in 0..<dayPlan[Med]!.count
             {
