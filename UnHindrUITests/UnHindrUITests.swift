@@ -9,7 +9,7 @@
 import XCTest
 
 class UnHindrUITests: XCTestCase {
-
+    func a() { print ("something") }
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
 

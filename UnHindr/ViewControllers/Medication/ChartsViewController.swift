@@ -11,6 +11,7 @@
 //  Created by Johnston Yang on 10/29/19.
 //
 
+import Foundation
 import UIKit
 import Charts
 import FirebaseFirestore

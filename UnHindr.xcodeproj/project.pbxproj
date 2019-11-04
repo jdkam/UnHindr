@@ -30,8 +30,8 @@
 		9DF3F89B2367D826003CF8B9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF3F89A2367D826003CF8B9 /* LoginViewController.swift */; };
 		9DF3F8A32367D82D003CF8B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DF3F8A12367D82D003CF8B9 /* LaunchScreen.storyboard */; };
 		9DF3F8AE2367D82D003CF8B9 /* UnHindrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF3F8AD2367D82D003CF8B9 /* UnHindrTests.swift */; };
-		9DF3F8B92367D82D003CF8B9 /* UnHindrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF3F8B82367D82D003CF8B9 /* UnHindrUITests.swift */; };
 		9DF3F8C72367D880003CF8B9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9DF3F8C62367D880003CF8B9 /* GoogleService-Info.plist */; };
+		9DFA139F2370F17D00F8B7B5 /* UnHindrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF3F8B82367D82D003CF8B9 /* UnHindrUITests.swift */; };
 		9DFB75B9236F74D0006321B8 /* Medication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DFB75B7236F74CF006321B8 /* Medication.storyboard */; };
 		9DFB75BD236F7515006321B8 /* MedicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFB75BB236F7515006321B8 /* MedicationViewController.swift */; };
 		9DFB75BE236F7515006321B8 /* mainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFB75BC236F7515006321B8 /* mainTabController.swift */; };
@@ -566,7 +566,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DF3F8B92367D82D003CF8B9 /* UnHindrUITests.swift in Sources */,
+				9DFA139F2370F17D00F8B7B5 /* UnHindrUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
