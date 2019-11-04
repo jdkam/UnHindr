@@ -15,7 +15,7 @@ import FirebaseAuth
 class Services {
     
     // Store reference to current user's stored data
-    static var userRef: String!
+    static var userRef: String?
     
     // Handle for authentication changes
     static var handle: AuthStateDidChangeListenerHandle?

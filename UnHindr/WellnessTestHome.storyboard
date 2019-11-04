@@ -46,7 +46,7 @@
                                             <constraint firstAttribute="height" constant="140" id="Mtg-dM-ssT"/>
                                             <constraint firstAttribute="width" constant="320" id="cE6-Ie-6c0"/>
                                         </constraints>
-                                        <state key="normal" title="Button" image="MoodSurvey2"/>
+                                        <state key="normal" title="Mood Survey Button" image="MoodSurvey2"/>
                                         <connections>
                                             <segue destination="Ujt-mU-H8b" kind="show" id="aYS-Yk-eGZ"/>
                                         </connections>

@@ -29,43 +29,45 @@ class ProfileViewController: UIViewController {
     }//view DidLoad()
     
     override func viewWillAppear(_ animated: Bool) {
-        self.getUserInfo(Services.userRef, completionHandler: { (complete) in
-            if complete == true {
-                self.addressTF.text = self.datacollection!["address"] as? String
-                self.FirstNameTF.text = self.datacollection!["firstName"] as? String
-                self.lastNameTF.text = self.datacollection!["lastName"] as? String
-                self.emailTF.text = self.datacollection!["email"] as? String
-                self.cellTF.text = self.datacollection!["cell"] as? String
-                self.addressTF.text = self.datacollection!["address"] as? String
-                self.cityTF.text = self.datacollection!["city"] as? String
-                self.countryTF.text = self.datacollection!["country"] as? String
+        if (Services.userRef != nil) {
+            self.getUserInfo(Services.userRef!, completionHandler: { (complete) in
+                if complete == true {
+                    self.addressTF.text = self.datacollection!["address"] as? String
+                    self.FirstNameTF.text = self.datacollection!["firstName"] as? String
+                    self.lastNameTF.text = self.datacollection!["lastName"] as? String
+                    self.emailTF.text = self.datacollection!["email"] as? String
+                    self.cellTF.text = self.datacollection!["cell"] as? String
+                    self.addressTF.text = self.datacollection!["address"] as? String
+                    self.cityTF.text = self.datacollection!["city"] as? String
+                    self.countryTF.text = self.datacollection!["country"] as? String
 
-                
-                // Obtain the firebase dob field as a string
-                let extractedDob = self.datacollection!["dob"] as! Timestamp
-                let formatter = DateFormatter()
-                formatter.dateFormat = "yyyy-MM-dd"
-                let convertedDate = formatter.string(from: extractedDob.dateValue())
-                let date1 = formatter.date(from: convertedDate)
-                formatter.dateFormat = "dd-MMM-yyyy"
-                let intuitiveDate = formatter.string(from:date1!)
-                self.dobTF.text = intuitiveDate
-                
-                
-                //determine the gender
-                if(self.datacollection!["gender"] as? Int == 0){
-                    self.gendreTF.text = "Female"
-                }else if (self.datacollection!["gender"] as? Int == 1){
-                    self.gendreTF.text = "Male"
-                }else{
-                    self.gendreTF.text = "Undecided"
+                    
+                    // Obtain the firebase dob field as a string
+                    let extractedDob = self.datacollection!["dob"] as! Timestamp
+                    let formatter = DateFormatter()
+                    formatter.dateFormat = "yyyy-MM-dd"
+                    let convertedDate = formatter.string(from: extractedDob.dateValue())
+                    let date1 = formatter.date(from: convertedDate)
+                    formatter.dateFormat = "dd-MMM-yyyy"
+                    let intuitiveDate = formatter.string(from:date1!)
+                    self.dobTF.text = intuitiveDate
+                    
+                    
+                    //determine the gender
+                    if(self.datacollection!["gender"] as? Int == 0){
+                        self.gendreTF.text = "Female"
+                    }else if (self.datacollection!["gender"] as? Int == 1){
+                        self.gendreTF.text = "Male"
+                    }else{
+                        self.gendreTF.text = "Undecided"
+                    }
                 }
-            }
-            else{
-                print("----------------Failed to get user data--------------")
-            }
-            
-        })
+                else{
+                    print("----------------Failed to get user data--------------")
+                }
+                
+            })
+        }
     }
     
     @IBOutlet weak var FirstNameTF: UITextField!

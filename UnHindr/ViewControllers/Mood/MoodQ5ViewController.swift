@@ -120,7 +120,7 @@ class MoodQ5ViewController: UIViewController {
         // Add a new document with a generated id.
                 
         var ref: DocumentReference? = nil
-        ref = Services.db.collection("users").document(Services.userRef).collection("Mood").addDocument(data: [
+        ref = Services.db.collection("users").document(Services.userRef!).collection("Mood").addDocument(data: [
             "Date": Timestamp(date: Date()),
             "Score": toSave
         ]) { err in

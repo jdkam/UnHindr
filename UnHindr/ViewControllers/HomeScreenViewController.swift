@@ -13,26 +13,13 @@ import FirebaseAuth
 class HomeScreenViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        Services.handle = Auth.auth().addStateDidChangeListener { (auth, user) in
-            Services.getDBUserRef(user, completionHandler: { (userref) in
-                guard let userref = userref else {
-                    print("Unable to get user reference")
-                    return
-                }
-                Services.userRef = userref
-            })
-        }
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        Auth.auth().removeStateDidChangeListener(Services.handle!)
+    @IBAction func WellnessTapped(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "WellnessTestHome", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "WellnessTestHomeViewController") as UIViewController
+        present(vc, animated: true, completion: nil)
     }
-    
-//    @IBAction func WellnessTapped(_ sender: UIButton) {
-//        let storyboard = UIStoryboard(name: "WellnessTestHome", bundle: nil)
-//        let vc = storyboard.instantiateViewController(withIdentifier: "WellnessTestHomeViewController") as UIViewController
-//        present(vc, animated: true, completion: nil)
-//    }
     
     @IBAction func optionsTapped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Settings", bundle: nil)

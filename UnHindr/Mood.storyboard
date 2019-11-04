@@ -20,7 +20,7 @@
                         <userGuides>
                             <userLayoutGuide location="355" affinity="maxX"/>
                             <userLayoutGuide location="356" affinity="minX"/>
-                            <userLayoutGuide location="559" affinity="minY"/>
+                            <userLayoutGuide location="555" affinity="minY"/>
                         </userGuides>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ePx-lx-TP5">
