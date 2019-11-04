@@ -9,6 +9,7 @@ target 'UnHindr' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
+  pod 'Charts', '<=3.2.1'
 
   target 'UnHindrTests' do
     inherit! :search_paths
