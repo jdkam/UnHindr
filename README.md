@@ -28,7 +28,16 @@ TODO
     
 ## Installation and setup
 
-TODO as project progresses
+Built on
+Xcode 10.1
+Swift 4.2
+
+Designed for iPhone XR
+
+To test login use the following login information
+
+User: test@gmail.com
+Password: testtest
 
 ## Built With
 
