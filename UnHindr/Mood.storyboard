@@ -10,6 +10,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--WellnessTestHome-->
+        <scene sceneID="ciD-Zg-lkp">
+            <objects>
+                <viewControllerPlaceholder storyboardName="WellnessTestHome" id="MHY-fX-GPq" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KWe-Rw-oNR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-120" y="528"/>
+        </scene>
         <!--MoodViewController-->
         <scene sceneID="xRp-D4-G7q">
             <objects>
@@ -150,13 +158,12 @@
                                             <constraint firstAttribute="width" constant="335" id="Qj1-4C-Bof"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Home">
+                                        <state key="normal" title="Back">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="backButtonTapped:" destination="cKW-nV-GZc" eventType="touchUpInside" id="ydR-1A-fJp"/>
-                                            <action selector="homeButtonTapped:" destination="63F-ia-wO8" eventType="touchUpInside" id="97D-zv-Vah"/>
+                                            <segue destination="MHY-fX-GPq" kind="presentation" id="DjQ-cu-HpT"/>
                                         </connections>
                                     </button>
                                 </subviews>

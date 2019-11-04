@@ -21,7 +21,7 @@
         <!--WellnessTestHome-->
         <scene sceneID="l7K-oo-jkb">
             <objects>
-                <viewController storyboardIdentifier="WellnessHome" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LjN-Ja-gYC" userLabel="WellnessTestHome" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WellnessHome" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LjN-Ja-gYC" userLabel="WellnessTestHome" customClass="WellnessTestHomeViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0q0-Th-8Ab">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
