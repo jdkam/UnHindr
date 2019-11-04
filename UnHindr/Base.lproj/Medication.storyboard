@@ -299,22 +299,6 @@
             </objects>
             <point key="canvasLocation" x="2215.9420289855075" y="779.46428571428567"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="kMv-EI-DoM">
-            <objects>
-                <viewController id="V6G-2q-PVP" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="wSZ-dG-6fW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="LjY-yr-sYL"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="" image="myLog" selectedImage="myLog" id="Oc3-A0-7Z8"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iE0-WF-HJQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2216" y="-688"/>
-        </scene>
         <!--Main Tab Controller-->
         <scene sceneID="6Qe-Np-k8P">
             <objects>
@@ -326,7 +310,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="qdr-HS-vBK" kind="relationship" relationship="viewControllers" id="4em-wB-8kK"/>
-                        <segue destination="V6G-2q-PVP" kind="relationship" relationship="viewControllers" id="gT8-ZR-2Dq"/>
+                        <segue destination="75M-Ul-Fkj" kind="relationship" relationship="viewControllers" id="yAv-XX-nFc"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Uv-jS-Vek" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -491,6 +475,40 @@
                 <exit id="hiJ-02-m6Z" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2214.4927536231885" y="26.116071428571427"/>
+        </scene>
+        <!--Charts View Controller-->
+        <scene sceneID="EzO-3u-fgQ">
+            <objects>
+                <viewController storyboardIdentifier="ChartsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="75M-Ul-Fkj" customClass="ChartsViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CwL-Oh-9vO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UL0-lG-6Ai" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="35.5" y="134.5" width="343" height="627"/>
+                                <color key="backgroundColor" red="0.9379923147" green="1" blue="0.061156730489999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="TfA-So-nfX"/>
+                                    <constraint firstAttribute="height" constant="627" id="pO7-Yc-Jeh"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="UL0-lG-6Ai" firstAttribute="centerX" secondItem="CwL-Oh-9vO" secondAttribute="centerX" id="qAW-ud-mgA"/>
+                            <constraint firstItem="UL0-lG-6Ai" firstAttribute="centerY" secondItem="CwL-Oh-9vO" secondAttribute="centerY" id="sBF-bq-DlQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="n3m-6E-ljU"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <tabBarItem key="tabBarItem" title="" image="myLog" selectedImage="myLog" id="UlJ-Xh-0eD"/>
+                    <connections>
+                        <outlet property="chtChart" destination="UL0-lG-6Ai" id="UxC-Yt-xeX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sbo-YY-SlP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3045" y="-688"/>
         </scene>
     </scenes>
     <resources>
