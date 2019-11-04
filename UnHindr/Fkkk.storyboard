@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--MedicationHome-->
+        <scene sceneID="PNh-un-A0K">
+            <objects>
+                <viewController storyboardIdentifier="MedicationHome" useStoryboardIdentifierAsRestorationIdentifier="YES" id="h7r-S4-S8a" userLabel="MedicationHome" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="A4X-do-Ugl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Menu_BG" translatesAutoresizingMaskIntoConstraints="NO" id="Dv0-lG-aTn">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="Rfp-8w-5OX"/>
+                                    <constraint firstAttribute="width" constant="414" id="j1x-AO-Tw1"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="aqe-Dn-n61">
+                                <rect key="frame" x="6" y="139" width="402" height="91"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Crc-Qm-L0M">
+                                        <rect key="frame" x="0.0" y="0.0" width="195" height="91"/>
+                                        <state key="normal" image="Add new"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bf-zZ-GkK">
+                                        <rect key="frame" x="207" y="0.0" width="195" height="91"/>
+                                        <state key="normal" image="Remove"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Crc-Qm-L0M" firstAttribute="top" secondItem="aqe-Dn-n61" secondAttribute="top" id="4PG-9m-gCq"/>
+                                    <constraint firstItem="Crc-Qm-L0M" firstAttribute="leading" secondItem="aqe-Dn-n61" secondAttribute="leading" id="5Ic-6L-vs0"/>
+                                    <constraint firstAttribute="bottom" secondItem="Crc-Qm-L0M" secondAttribute="bottom" id="LPB-Ig-jVh"/>
+                                </constraints>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Caregiver button" translatesAutoresizingMaskIntoConstraints="NO" id="qay-nF-MaM">
+                                <rect key="frame" x="34" y="245" width="351.5" height="320"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="147" translatesAutoresizingMaskIntoConstraints="NO" id="rS7-aJ-NH7">
+                                <rect key="frame" x="20" y="51" width="374" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SZD-g7-NCL" userLabel="Home button">
+                                        <rect key="frame" x="0.0" y="0.0" width="83" height="65"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="65" id="Ovv-KO-FYe"/>
+                                            <constraint firstAttribute="width" constant="83" id="hde-iy-mev"/>
+                                        </constraints>
+                                        <state key="normal" image="home-white"/>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myMeds-1" translatesAutoresizingMaskIntoConstraints="NO" id="CUI-Gl-0Dd">
+                                        <rect key="frame" x="230" y="0.0" width="144" height="65"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="blW-1O-jQN">
+                                <rect key="frame" x="42" y="255" width="320" height="300"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="kfc-Lq-No7" userLabel="Clock - label">
+                                        <rect key="frame" x="0.0" y="0.0" width="315" height="130"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Emergency" translatesAutoresizingMaskIntoConstraints="NO" id="tPY-FQ-KQI">
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="130"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="130" id="2yn-Ic-zjB"/>
+                                                    <constraint firstAttribute="width" constant="120" id="BkH-WF-sUa"/>
+                                                </constraints>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="QWz-vk-nZo">
+                                                <rect key="frame" x="127" y="0.0" width="188" height="130"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="MEDICINE BRO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ofz-uN-NyV">
+                                                        <rect key="frame" x="0.0" y="0.0" width="188" height="29"/>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
+                                                        <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dosage: 15mg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PjF-xR-4CL" userLabel="Dosage">
+                                                        <rect key="frame" x="0.0" y="57" width="173.5" height="29"/>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
+                                                        <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="QTY: 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3k-6f-aa7" userLabel="Qty">
+                                                        <rect key="frame" x="0.0" y="114" width="78" height="16"/>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
+                                                        <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.078431372550000003" green="0.46274509800000002" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="0vK-HN-aIW">
+                                        <rect key="frame" x="0.0" y="145" width="320" height="155"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  16:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIq-dU-qSd" userLabel="MedicineTime">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="42"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="465-hY-Zyk">
+                                                <rect key="frame" x="0.0" y="45" width="320" height="110"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YHH-mJ-sss">
+                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="110"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="150" id="0j1-B8-wN0"/>
+                                                            <constraint firstAttribute="height" constant="110" id="JwU-Nv-Bwr"/>
+                                                        </constraints>
+                                                        <state key="normal" image="Checkmark"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRk-JP-y5i">
+                                                        <rect key="frame" x="170" y="0.0" width="150" height="110"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="110" id="X2s-3r-2bF"/>
+                                                            <constraint firstAttribute="width" constant="150" id="mQj-Y7-AnZ"/>
+                                                        </constraints>
+                                                        <state key="normal" image="X"/>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Vj-WB-2k2" userLabel="FullMedicationSched">
+                                <rect key="frame" x="28.5" y="599" width="357" height="108"/>
+                                <state key="normal" image="Full med schedule"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="blW-1O-jQN" firstAttribute="leading" secondItem="JZR-ib-20H" secondAttribute="leading" constant="42" id="3rl-Fg-OTa"/>
+                            <constraint firstItem="qay-nF-MaM" firstAttribute="trailing" secondItem="7Vj-WB-2k2" secondAttribute="trailing" id="4wz-X1-c1w"/>
+                            <constraint firstItem="qay-nF-MaM" firstAttribute="centerY" secondItem="blW-1O-jQN" secondAttribute="centerY" id="9cX-Bh-qnq"/>
+                            <constraint firstItem="7Vj-WB-2k2" firstAttribute="centerX" secondItem="A4X-do-Ugl" secondAttribute="centerX" id="9gy-2y-L15"/>
+                            <constraint firstItem="Dv0-lG-aTn" firstAttribute="centerX" secondItem="A4X-do-Ugl" secondAttribute="centerX" id="Ciq-SV-byW"/>
+                            <constraint firstItem="JZR-ib-20H" firstAttribute="trailing" secondItem="blW-1O-jQN" secondAttribute="trailing" constant="52" id="Kvx-aD-nMW"/>
+                            <constraint firstItem="aqe-Dn-n61" firstAttribute="top" secondItem="Dv0-lG-aTn" secondAttribute="bottom" constant="19" id="L60-YE-iNw"/>
+                            <constraint firstItem="7Vj-WB-2k2" firstAttribute="top" secondItem="blW-1O-jQN" secondAttribute="bottom" constant="44" id="OcM-gI-XcK"/>
+                            <constraint firstItem="blW-1O-jQN" firstAttribute="top" secondItem="aqe-Dn-n61" secondAttribute="bottom" constant="25" id="bRy-e6-ImQ"/>
+                            <constraint firstItem="Dv0-lG-aTn" firstAttribute="top" secondItem="A4X-do-Ugl" secondAttribute="top" id="bVc-WH-Ml2"/>
+                            <constraint firstItem="JZR-ib-20H" firstAttribute="bottom" secondItem="7Vj-WB-2k2" secondAttribute="bottom" constant="106" id="cHF-QV-T5Z"/>
+                            <constraint firstItem="qay-nF-MaM" firstAttribute="leading" secondItem="JZR-ib-20H" secondAttribute="leading" constant="34" id="d44-Lj-IWi"/>
+                            <constraint firstItem="JZR-ib-20H" firstAttribute="bottom" secondItem="7Vj-WB-2k2" secondAttribute="bottom" constant="106" id="dc3-mi-3N1"/>
+                            <constraint firstItem="JZR-ib-20H" firstAttribute="trailing" secondItem="7Vj-WB-2k2" secondAttribute="trailing" constant="28.5" id="h2R-BB-odu"/>
+                            <constraint firstItem="7Vj-WB-2k2" firstAttribute="top" secondItem="qay-nF-MaM" secondAttribute="bottom" constant="34" id="iCb-Qv-dXq"/>
+                            <constraint firstItem="7Vj-WB-2k2" firstAttribute="leading" secondItem="JZR-ib-20H" secondAttribute="leading" constant="28.5" id="jfq-OW-yQR"/>
+                            <constraint firstItem="qay-nF-MaM" firstAttribute="top" secondItem="A4X-do-Ugl" secondAttribute="top" constant="245" id="kpM-IY-B76"/>
+                            <constraint firstItem="aqe-Dn-n61" firstAttribute="centerX" secondItem="A4X-do-Ugl" secondAttribute="centerX" id="thd-Q4-sqW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JZR-ib-20H"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="myMeds" selectedImage="myMeds" id="9FJ-am-Po7"/>
+                    <navigationItem key="navigationItem" id="DDg-kf-RH5"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="URI-aP-tEJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2214.4927536231885" y="26.116071428571427"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Add new" width="195" height="92"/>
+        <image name="Caregiver button" width="297" height="297"/>
+        <image name="Checkmark" width="82" height="64"/>
+        <image name="Emergency" width="204" height="232"/>
+        <image name="Full med schedule" width="357" height="107"/>
+        <image name="Menu_BG" width="414" height="120"/>
+        <image name="Remove" width="195" height="92"/>
+        <image name="X" width="64" height="64"/>
+        <image name="home-white" width="400" height="312"/>
+        <image name="myMeds" width="82" height="84"/>
+        <image name="myMeds-1" width="144" height="42"/>
+    </resources>
+</document>

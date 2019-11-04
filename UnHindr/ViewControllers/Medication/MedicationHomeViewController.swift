@@ -9,27 +9,28 @@
 import UIKit
 
 class MedicationHomeViewController: UIViewController {
-
+    @IBOutlet weak var MedicineLabel: UILabel!
+    @IBOutlet weak var DosageLabel: UILabel!
+    @IBOutlet weak var QuantityLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
+    
+    
+    
+    @IBAction func CheckTapped(_ sender: UIButton) {
+    }
+    
+    @IBAction func CancelTapped(_ sender: UIButton) {
+    }
+    
     
     @IBAction func goToHomeTapped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "HomeScreen", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "HomeScreenViewController") as UIViewController
         present(vc, animated: true, completion: nil)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
