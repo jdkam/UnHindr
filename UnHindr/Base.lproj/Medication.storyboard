@@ -485,7 +485,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UL0-lG-6Ai" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="35.5" y="134.5" width="343" height="627"/>
+                                <rect key="frame" x="35.5" y="116" width="343" height="627"/>
                                 <color key="backgroundColor" red="0.9379923147" green="1" blue="0.061156730489999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="343" id="TfA-So-nfX"/>
@@ -495,8 +495,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="n3m-6E-ljU" firstAttribute="bottom" secondItem="UL0-lG-6Ai" secondAttribute="bottom" constant="70" id="mAM-dU-M62"/>
                             <constraint firstItem="UL0-lG-6Ai" firstAttribute="centerX" secondItem="CwL-Oh-9vO" secondAttribute="centerX" id="qAW-ud-mgA"/>
-                            <constraint firstItem="UL0-lG-6Ai" firstAttribute="centerY" secondItem="CwL-Oh-9vO" secondAttribute="centerY" id="sBF-bq-DlQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="n3m-6E-ljU"/>
                     </view>
