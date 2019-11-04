@@ -15,7 +15,6 @@
 		2DD6710C236BCD41005948DF /* HomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DD67109236BCD41005948DF /* HomeScreen.storyboard */; };
 		2DE6A77D236E402B00B76282 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE6A77C236E402B00B76282 /* Services.swift */; };
 		93FA49CD665592E4B99DB3F3 /* Pods_UnHindr_UnHindrUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6E2B4E2DEF28A4C383CB68F /* Pods_UnHindr_UnHindrUITests.framework */; };
-		98530B8D23700AFC0035C7F9 /* Fkkk.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98530B8C23700AFB0035C7F9 /* Fkkk.storyboard */; };
 		98F115D8236CCDF80082A1B1 /* Mood.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98F115D7236CCDF80082A1B1 /* Mood.storyboard */; };
 		98F115DA236CCED00082A1B1 /* MoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F115D9236CCED00082A1B1 /* MoodViewController.swift */; };
 		98F115E5236D23380082A1B1 /* MoodQ2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F115E4236D23380082A1B1 /* MoodQ2ViewController.swift */; };
@@ -69,7 +68,6 @@
 		2DE6A77C236E402B00B76282 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		3EB3CE85FD97976F3B7E3634 /* Pods_UnHindr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnHindr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CD8E5234FA9D115EE968692 /* Pods-UnHindr-UnHindrUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindr-UnHindrUITests.release.xcconfig"; path = "Target Support Files/Pods-UnHindr-UnHindrUITests/Pods-UnHindr-UnHindrUITests.release.xcconfig"; sourceTree = "<group>"; };
-		98530B8C23700AFB0035C7F9 /* Fkkk.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Fkkk.storyboard; sourceTree = "<group>"; };
 		98F115D7236CCDF80082A1B1 /* Mood.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mood.storyboard; sourceTree = "<group>"; };
 		98F115D9236CCED00082A1B1 /* MoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodViewController.swift; sourceTree = "<group>"; };
 		98F115E4236D23380082A1B1 /* MoodQ2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodQ2ViewController.swift; sourceTree = "<group>"; };
@@ -236,7 +234,6 @@
 				2DE6A77B236E400A00B76282 /* Helpers */,
 				2DD670FC236BBF79005948DF /* ViewControllers */,
 				9DF3F8982367D826003CF8B9 /* AppDelegate.swift */,
-				98530B8C23700AFB0035C7F9 /* Fkkk.storyboard */,
 				9DFB75B7236F74CF006321B8 /* Medication.storyboard */,
 				98F115D7236CCDF80082A1B1 /* Mood.storyboard */,
 				98F67920236E85AF00517099 /* Profile.storyboard */,
@@ -406,7 +403,6 @@
 				215C15DA236F6E390063F3E4 /* WellnessTestHome.storyboard in Resources */,
 				9DF3F8C72367D880003CF8B9 /* GoogleService-Info.plist in Resources */,
 				CDBC4013236E4FE8008934AF /* Settings.storyboard in Resources */,
-				98530B8D23700AFC0035C7F9 /* Fkkk.storyboard in Resources */,
 				9DFB75B9236F74D0006321B8 /* Medication.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
