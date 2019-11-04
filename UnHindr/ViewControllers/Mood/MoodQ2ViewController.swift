@@ -1,10 +1,11 @@
-//
-//  MoodQ2ViewController.swift
-//  UnHindr
-//
-//  Created by Sina Ahmadian Behrouz on 11/1/19.
-//  Copyright © 2019 Sigma. All rights reserved.
-//
+/*
+ File: [MoodQ2ViewController.swift]
+ Creators: [Sina]
+ Date created: [1/11/2019]
+ Date updated: [3/11/2019]
+ Updater name: [Sina]
+ File description: [Controls the functionality for the page with the second question in the Mood Survey]
+ */
 
 import UIKit
 
