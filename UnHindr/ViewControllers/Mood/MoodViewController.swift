@@ -101,6 +101,12 @@ class MoodViewController: UIViewController {
         }
     }
     
+    @IBAction func homeButtonTapped(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "HomeScreen", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "HomeScreenViewController") as UIViewController
+        present(vc, animated: true, completion: nil)
+        
+    }
     // MARK: - Segue to transition to next controller
     // Input: None
     // Output:
