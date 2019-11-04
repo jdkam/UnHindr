@@ -28,64 +28,64 @@
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="yow-rf-kFp">
-                                <rect key="frame" x="10" y="140" width="440" height="750"/>
+                                <rect key="frame" x="10" y="140" width="484" height="750"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gmy-l1-6Og">
-                                        <rect key="frame" x="0.0" y="0.0" width="440" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="484" height="40"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gww-dT-vYd">
-                                        <rect key="frame" x="0.0" y="70" width="440" height="40"/>
+                                        <rect key="frame" x="0.0" y="70" width="484" height="40"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="07F-xK-mtt">
-                                        <rect key="frame" x="0.0" y="140" width="440" height="40"/>
+                                        <rect key="frame" x="0.0" y="140" width="484" height="40"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date of Birth" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OzI-Fz-xrk">
-                                        <rect key="frame" x="0.0" y="210" width="440" height="40"/>
+                                        <rect key="frame" x="0.0" y="210" width="484" height="40"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cell" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BbR-Ks-mQ9" userLabel="CellTF">
-                                        <rect key="frame" x="0.0" y="280" width="440" height="40"/>
+                                        <rect key="frame" x="0.0" y="280" width="484" height="40"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gender" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MMd-Gw-RDQ">
-                                        <rect key="frame" x="0.0" y="350" width="440" height="40"/>
+                                        <rect key="frame" x="0.0" y="350" width="484" height="40"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8mB-Pe-qs6">
-                                        <rect key="frame" x="0.0" y="420" width="440" height="40"/>
+                                        <rect key="frame" x="0.0" y="420" width="484" height="40"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2rc-hk-GAf">
-                                        <rect key="frame" x="0.0" y="490" width="440" height="40"/>
+                                        <rect key="frame" x="0.0" y="490" width="484" height="40"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Country" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tks-mP-TAd">
-                                        <rect key="frame" x="0.0" y="560" width="440" height="40"/>
+                                        <rect key="frame" x="0.0" y="560" width="484" height="40"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="68" translatesAutoresizingMaskIntoConstraints="NO" id="S0p-vc-niJ">
-                                        <rect key="frame" x="0.0" y="630" width="440" height="120"/>
+                                        <rect key="frame" x="0.0" y="630" width="484" height="120"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3p2-aJ-ibl">
                                                 <rect key="frame" x="0.0" y="0.0" width="160" height="120"/>
@@ -93,18 +93,18 @@
                                                     <constraint firstAttribute="height" constant="120" id="Lbj-Dk-ODN"/>
                                                     <constraint firstAttribute="width" constant="160" id="Wtg-0e-inW"/>
                                                 </constraints>
-                                                <state key="normal" title="Button" image="Back"/>
+                                                <state key="normal" title="Back Button" image="Back"/>
                                                 <connections>
                                                     <action selector="backTapped:" destination="H1t-Sf-mQ3" eventType="touchUpInside" id="p39-fB-u4s"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Kx-qr-10P">
-                                                <rect key="frame" x="228" y="0.0" width="212" height="120"/>
+                                                <rect key="frame" x="228" y="0.0" width="256" height="120"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="120" id="8BX-3U-DhR"/>
                                                     <constraint firstAttribute="width" constant="160" id="B4M-Ik-0eT"/>
                                                 </constraints>
-                                                <state key="normal" title="Button" image="Add-1"/>
+                                                <state key="normal" title="Save Button" image="Add-1"/>
                                                 <connections>
                                                     <action selector="saveTapped:" destination="H1t-Sf-mQ3" eventType="touchUpInside" id="UzV-eF-JhE"/>
                                                 </connections>

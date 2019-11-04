@@ -10,10 +10,18 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--HomeScreen-->
+        <scene sceneID="UeX-r1-8K1">
+            <objects>
+                <viewControllerPlaceholder storyboardName="HomeScreen" id="esJ-xm-P8D" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X8G-aE-cuc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="746" y="119"/>
+        </scene>
         <!--WellnessTestHome-->
         <scene sceneID="l7K-oo-jkb">
             <objects>
-                <viewController storyboardIdentifier="WellnessHome" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LjN-Ja-gYC" userLabel="WellnessTestHome" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WellnessHome" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LjN-Ja-gYC" userLabel="WellnessTestHome" customClass="WellnessTestHomeViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0q0-Th-8Ab">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,7 +46,7 @@
                                             <constraint firstAttribute="height" constant="140" id="Mtg-dM-ssT"/>
                                             <constraint firstAttribute="width" constant="320" id="cE6-Ie-6c0"/>
                                         </constraints>
-                                        <state key="normal" title="Button" image="MoodSurvey2"/>
+                                        <state key="normal" title="Mood Survey Button" image="MoodSurvey2"/>
                                         <connections>
                                             <segue destination="Ujt-mU-H8b" kind="show" id="aYS-Yk-eGZ"/>
                                         </connections>
@@ -53,7 +61,7 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Wellness2" translatesAutoresizingMaskIntoConstraints="NO" id="KeU-ey-xKe">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenBG" translatesAutoresizingMaskIntoConstraints="NO" id="KeU-ey-xKe">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="109"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="109" id="7Tv-Yh-2FW"/>
@@ -64,13 +72,39 @@
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="375" id="xvI-HU-z6Q"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="npy-4D-YKI" userLabel="Home button">
+                                <rect key="frame" x="20" y="40" width="83" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="83" id="0Ae-OO-oSp"/>
+                                    <constraint firstAttribute="height" constant="65" id="eAs-Xs-x1Y"/>
+                                </constraints>
+                                <state key="normal" image="home-white"/>
+                                <connections>
+                                    <segue destination="esJ-xm-P8D" kind="show" id="otS-OW-2vr"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wellness" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oMU-WP-rnb">
+                                <rect key="frame" x="220" y="51.5" width="147" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="147" id="FDb-rH-h5D"/>
+                                    <constraint firstAttribute="height" constant="42" id="hsS-uc-2Sb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="OTR-ON-xDP" firstAttribute="trailing" secondItem="oMU-WP-rnb" secondAttribute="trailing" constant="8" id="0OX-JH-VPB"/>
+                            <constraint firstItem="npy-4D-YKI" firstAttribute="top" secondItem="OTR-ON-xDP" secondAttribute="top" constant="20" id="2Q9-xK-L7t"/>
                             <constraint firstItem="KeU-ey-xKe" firstAttribute="leading" secondItem="OTR-ON-xDP" secondAttribute="leading" id="5Pd-qC-cDC"/>
                             <constraint firstItem="KeU-ey-xKe" firstAttribute="trailing" secondItem="OTR-ON-xDP" secondAttribute="trailing" id="9Or-Lv-ZM9"/>
                             <constraint firstItem="Wx8-hi-VR0" firstAttribute="centerX" secondItem="0q0-Th-8Ab" secondAttribute="centerX" id="HeH-ZO-hPG"/>
+                            <constraint firstItem="npy-4D-YKI" firstAttribute="leading" secondItem="OTR-ON-xDP" secondAttribute="leading" constant="20" id="I81-e5-dPK"/>
                             <constraint firstItem="Wx8-hi-VR0" firstAttribute="top" secondItem="KeU-ey-xKe" secondAttribute="bottom" constant="43" id="Kwz-wi-Ymp"/>
+                            <constraint firstItem="Wx8-hi-VR0" firstAttribute="top" secondItem="npy-4D-YKI" secondAttribute="bottom" constant="47" id="ak2-Hg-GmV"/>
+                            <constraint firstItem="oMU-WP-rnb" firstAttribute="centerY" secondItem="npy-4D-YKI" secondAttribute="centerY" id="bps-Xc-gNh"/>
                             <constraint firstItem="KeU-ey-xKe" firstAttribute="top" secondItem="0q0-Th-8Ab" secondAttribute="top" id="eOw-At-nPs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OTR-ON-xDP"/>
@@ -86,13 +120,14 @@
                 <viewControllerPlaceholder storyboardName="Mood" id="Ujt-mU-H8b" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Exd-n2-oua" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="641" y="12"/>
+            <point key="canvasLocation" x="746" y="-103"/>
         </scene>
     </scenes>
     <resources>
         <image name="Cognitive Game2" width="668" height="250"/>
         <image name="MoodSurvey2" width="668" height="250"/>
         <image name="MotorGame" width="334" height="125"/>
-        <image name="Wellness2" width="1242" height="360"/>
+        <image name="greenBG" width="115" height="46"/>
+        <image name="home-white" width="400" height="312"/>
     </resources>
 </document>

@@ -10,18 +10,23 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--WellnessTestHome-->
+        <scene sceneID="ciD-Zg-lkp">
+            <objects>
+                <viewControllerPlaceholder storyboardName="WellnessTestHome" id="MHY-fX-GPq" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KWe-Rw-oNR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-120" y="528"/>
+        </scene>
         <!--MoodViewController-->
         <scene sceneID="xRp-D4-G7q">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="n9b-0Y-vc4" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="MoodViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="63F-ia-wO8" userLabel="MoodViewController" customClass="MoodViewController" customModule="UnHindr" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0hy-mM-YXG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <userGuides>
                             <userLayoutGuide location="355" affinity="maxX"/>
-                            <userLayoutGuide location="358" affinity="minX"/>
-                            <userLayoutGuide location="559" affinity="minY"/>
                         </userGuides>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenBG" translatesAutoresizingMaskIntoConstraints="NO" id="Ept-el-3Nh">
@@ -143,13 +148,12 @@
                                             <constraint firstAttribute="width" constant="335" id="Qj1-4C-Bof"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Home">
+                                        <state key="normal" title="Back">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="backButtonTapped:" destination="cKW-nV-GZc" eventType="touchUpInside" id="ydR-1A-fJp"/>
-                                            <action selector="homeButtonTapped:" destination="63F-ia-wO8" eventType="touchUpInside" id="97D-zv-Vah"/>
+                                            <segue destination="MHY-fX-GPq" kind="presentation" id="1xr-Fq-NZq"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -178,6 +182,7 @@
                         <segue destination="cKW-nV-GZc" kind="presentation" identifier="Q1ToQ2" id="fs1-hl-SVO"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n9b-0Y-vc4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-120.28985507246378" y="117.85714285714285"/>
         </scene>
@@ -843,8 +848,8 @@
         <image name="greenBG" width="414" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="b8M-RN-yZw"/>
+        <segue reference="MZp-q4-Bia"/>
         <segue reference="NMu-Wh-r5G"/>
-        <segue reference="nf9-CT-Sus"/>
+        <segue reference="fs1-hl-SVO"/>
     </inferredMetricsTieBreakers>
 </document>
