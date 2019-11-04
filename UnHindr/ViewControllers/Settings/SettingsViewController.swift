@@ -1,10 +1,11 @@
-//
-//  SettingsViewController.swift
-//  UnHindr
-//
-//  Created by jjpuffer on 2019-11-02.
-//  Copyright © 2019 Sigma. All rights reserved.
-//
+/*
+ File: [SettingsViewController.swift]
+ Creators: [Jake, Jordan]
+ Date created: [2/11/2019]
+ Date updated: [3/11/2019]
+ Updater name: [Jordan]
+ File description: [Controls the functionality of the Options feature]
+ */
 
 import UIKit
 import FirebaseAuth
@@ -17,6 +18,12 @@ class SettingsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    // MARK: - Transitions storyboard to Login screen, authenticates the logout with Firebase
+    // Input:
+    //      Logout button tapped
+    // Output:
+    //      1. Logout succesful: Switch from Settings to Login, authenticate Logout
+    //      2. Logout failed: Print error message for failed logout
     @IBAction func logoutPressed(_ sender: Any) {
         do {
             try Auth.auth().signOut()

@@ -1,10 +1,11 @@
-//
-//  WellnessTestHomeViewController.swift
-//  UnHindr
-//
-//  Created by Lawrence Liu on 2019-11-03.
-//  Copyright © 2019 Sigma. All rights reserved.
-//
+/*
+ File: [WellnessTestHomeViewController.swift]
+ Creators: [Lawrence]
+ Date created: [03/11/2019]
+ Date updated: [03/11/2019]
+ Updater name: [Lawrence]
+ File description: [Controls view for Wellness Test screen]
+ */
 
 import UIKit
 
@@ -18,13 +19,7 @@ class WellnessTestHomeViewController: UIViewController {
     
 
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
+    Wellness Test Home menu navigation done in storyboard
     */
 
 }

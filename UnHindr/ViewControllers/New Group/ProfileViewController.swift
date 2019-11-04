@@ -1,10 +1,11 @@
-//
-//  ProfileViewController.swift
-//  UnHindr
-//
-//  Created by Sina Ahmadian Behrouz on 11/2/19.
-//  Copyright © 2019 Sigma. All rights reserved.
-//
+/*
+ File: [ProfileViewController.swift]
+ Creators: [Sina, Allan, Jake]
+ Date created: [2/11/2019]
+ Date updated: [3/11/2019]
+ Updater name: [Jake]
+ File description: [Controls functionality for Profile feature]
+ */
 
 import UIKit
 import Foundation

@@ -1,11 +1,11 @@
-//
-//  MoodQ4ViewController.swift
-//  UnHindr
-//
-//  Created by Sina Ahmadian Behrouz on 11/1/19.
-//  Copyright © 2019 Sigma. All rights reserved.
-//
-
+/*
+ File: [MoodQ4ViewController.swift]
+ Creators: [Sina]
+ Date created: [1/11/2019]
+ Date updated: [3/11/2019]
+ Updater name: [Sina]
+ File description: [Controls the functionality for the page with the fourth question in the Mood Survey]
+ */
 import UIKit
 
 class MoodQ4ViewController: UIViewController {
