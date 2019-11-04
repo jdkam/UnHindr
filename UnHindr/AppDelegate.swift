@@ -1,10 +1,11 @@
-//
-//  AppDelegate.swift
-//  UnHindr
-//
-//  Created by Allan on 2019-10-28.
-//  Copyright © 2019 Sigma. All rights reserved.
-//
+/*
+ File: [AppDelegate.swift]
+ Creators: [Allen (auto generated code)]
+ Date created: [28/10/2018]
+ Date updated: [28/10/2019]
+ Updater name: [Allan]
+ File description: [*Allan can you explain what this file is*]
+ */
 
 import UIKit
 import Firebase

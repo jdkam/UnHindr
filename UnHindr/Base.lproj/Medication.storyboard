@@ -31,7 +31,7 @@
                                     <constraint firstAttribute="width" constant="269" id="iAp-tQ-vTU"/>
                                 </constraints>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="00:00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iil-vq-vNa">
@@ -364,13 +364,93 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LeO-I8-xOc">
-                                <rect key="frame" x="28.5" y="600" width="357" height="107"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LeO-I8-xOc" userLabel="MedSched">
+                                <rect key="frame" x="32" y="600" width="350" height="107"/>
                                 <state key="normal" image="Full med schedule"/>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myMeds-1" translatesAutoresizingMaskIntoConstraints="NO" id="EjM-1f-z6b">
                                 <rect key="frame" x="250" y="62" width="144" height="42"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BlueBg" translatesAutoresizingMaskIntoConstraints="NO" id="uFe-PG-HGB">
+                                <rect key="frame" x="29" y="249" width="350" height="323"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="323" id="xpg-Fj-qCC"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="uU0-m8-4ex">
+                                <rect key="frame" x="47" y="256" width="333" height="300"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="vFx-UN-Wjr" userLabel="Clock - label">
+                                        <rect key="frame" x="0.0" y="0.0" width="333" height="130"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="hax-ls-fj5">
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="130"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="120" id="1fT-17-D3Z"/>
+                                                    <constraint firstAttribute="height" constant="130" id="YhU-h5-pe2"/>
+                                                </constraints>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="pRX-V8-2Wt">
+                                                <rect key="frame" x="125" y="0.0" width="208" height="130"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="sinemet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbv-yX-gKZ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="115.5" height="35"/>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="30"/>
+                                                        <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dosage: 15mg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qab-CW-Jj5" userLabel="Dosage">
+                                                        <rect key="frame" x="0.0" y="50" width="208" height="35"/>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="30"/>
+                                                        <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="QTY: 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pt5-jD-baB" userLabel="Qty">
+                                                        <rect key="frame" x="0.0" y="100" width="93.5" height="30"/>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="30"/>
+                                                        <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.078431372550000003" green="0.46274509800000002" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="qDG-Ry-7WH">
+                                        <rect key="frame" x="0.0" y="145" width="320" height="155"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  16:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPE-x7-M6e" userLabel="MedicineTime">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="42"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Put-99-zIT">
+                                                <rect key="frame" x="0.0" y="45" width="320" height="110"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zus-R7-Oma">
+                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="110"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="110" id="KW7-Pb-xXl"/>
+                                                            <constraint firstAttribute="width" constant="150" id="VM1-Gr-k12"/>
+                                                        </constraints>
+                                                        <state key="normal" image="Checkmark"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Vn-xh-eaf">
+                                                        <rect key="frame" x="170" y="0.0" width="150" height="110"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="110" id="7Wo-5b-h6l"/>
+                                                            <constraint firstAttribute="width" constant="150" id="Tfe-UU-t6M"/>
+                                                        </constraints>
+                                                        <state key="normal" image="X"/>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BDm-xR-eb9" userLabel="Home button">
                                 <rect key="frame" x="20" y="51" width="83" height="65"/>
                                 <constraints>
@@ -387,12 +467,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="M2H-yf-Sbp" firstAttribute="centerX" secondItem="yqz-xM-FDS" secondAttribute="centerX" id="4B3-FW-7dJ"/>
+                            <constraint firstItem="uFe-PG-HGB" firstAttribute="leading" secondItem="vjt-Nr-QhP" secondAttribute="leading" constant="29" id="Jx7-jY-Cb2"/>
                             <constraint firstItem="vjt-Nr-QhP" firstAttribute="trailing" secondItem="EjM-1f-z6b" secondAttribute="trailing" constant="20" id="Mp7-6M-DfL"/>
                             <constraint firstItem="EjM-1f-z6b" firstAttribute="top" secondItem="vjt-Nr-QhP" secondAttribute="top" constant="18" id="Pnm-Ph-xem"/>
                             <constraint firstItem="M2H-yf-Sbp" firstAttribute="top" secondItem="i85-Zd-rQ8" secondAttribute="bottom" constant="19" id="QAB-4a-0Wx"/>
                             <constraint firstItem="BDm-xR-eb9" firstAttribute="top" secondItem="vjt-Nr-QhP" secondAttribute="top" constant="7" id="Qum-n3-nfC"/>
+                            <constraint firstItem="uFe-PG-HGB" firstAttribute="top" secondItem="M2H-yf-Sbp" secondAttribute="bottom" constant="18" id="Wcj-IX-TS3"/>
                             <constraint firstItem="i85-Zd-rQ8" firstAttribute="centerX" secondItem="yqz-xM-FDS" secondAttribute="centerX" id="Yjk-th-oe0"/>
+                            <constraint firstItem="uFe-PG-HGB" firstAttribute="width" secondItem="LeO-I8-xOc" secondAttribute="width" id="Zuu-E2-hVs"/>
                             <constraint firstItem="vjt-Nr-QhP" firstAttribute="bottom" secondItem="LeO-I8-xOc" secondAttribute="bottom" constant="106" id="b9l-BR-g0w"/>
+                            <constraint firstItem="vjt-Nr-QhP" firstAttribute="trailing" secondItem="uFe-PG-HGB" secondAttribute="trailing" constant="35" id="fkh-E6-hBd"/>
                             <constraint firstItem="BDm-xR-eb9" firstAttribute="leading" secondItem="vjt-Nr-QhP" secondAttribute="leading" constant="20" id="jJH-5z-g1e"/>
                             <constraint firstItem="LeO-I8-xOc" firstAttribute="centerX" secondItem="yqz-xM-FDS" secondAttribute="centerX" id="wJr-sj-Orf"/>
                             <constraint firstItem="i85-Zd-rQ8" firstAttribute="top" secondItem="yqz-xM-FDS" secondAttribute="top" id="zkD-Nu-Zwa"/>
@@ -406,18 +490,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f0Q-mV-Ilg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="hiJ-02-m6Z" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2215.1999999999998" y="26.53673163418291"/>
+            <point key="canvasLocation" x="2214.4927536231885" y="26.116071428571427"/>
         </scene>
     </scenes>
     <resources>
         <image name="Add" width="158" height="71"/>
         <image name="Add new" width="195" height="92"/>
+        <image name="BlueBg" width="1080" height="900"/>
         <image name="Cancel" width="158" height="71"/>
+        <image name="Checkmark" width="82" height="64"/>
         <image name="Full med schedule" width="357" height="107"/>
         <image name="Menu_BG" width="414" height="120"/>
         <image name="NewMedBackground" width="462" height="1008"/>
         <image name="Remove" width="195" height="92"/>
+        <image name="X" width="64" height="64"/>
         <image name="check" width="36" height="36"/>
+        <image name="clock" width="376" height="400"/>
         <image name="friday" width="74" height="73"/>
         <image name="home-white" width="400" height="312"/>
         <image name="monday" width="73" height="73"/>

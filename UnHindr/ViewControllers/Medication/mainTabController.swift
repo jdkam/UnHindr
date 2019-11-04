@@ -1,10 +1,11 @@
-//
-//  mainTabController.swift
-//  UnHindr
-//
-//  Created by Jordan Kam on 11/2/19.
-//  Copyright © 2019 Sigma. All rights reserved.
-//
+/*
+ File: [mainTabController.swift]
+ Creators: [Jordan, Allan]
+ Date created: [2/11/2019]
+ Date updated: [3/11/2019]
+ Updater name: [Allan]
+ File description: [Controlls the tab view for switching between MyMeds screen and the meds graph]
+ */
 
 import Foundation
 import UIKit
