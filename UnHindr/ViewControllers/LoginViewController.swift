@@ -22,8 +22,11 @@ class LoginViewController: UIViewController {
         
         configureEmailText()
         configurePasswordText()
-        
         configureTapGesture()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        Auth.auth().removeStateDidChangeListener(Services.handle!)
     }
     
     // MARK: - Database methods for login authentication
@@ -44,6 +47,15 @@ class LoginViewController: UIViewController {
             if error != nil {
                 print("Error with authentication")
                 return
+            }
+            Services.handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+                Services.getDBUserRef(user, completionHandler: { (userref) in
+                    guard let userref = userref else {
+                        print("Unable to get user reference")
+                        return
+                    }
+                    Services.userRef = userref
+                })
             }
             strongSelf.transitionToHomeScreen()
             
