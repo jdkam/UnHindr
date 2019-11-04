@@ -11,15 +11,20 @@ import FirebaseFirestore
 import FirebaseAuth
 
 class DatabaseTests: XCTestCase {
-
+    
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         let email = "unittestacc@gmail.com"
         let password = "testtest"
+//        var handle = AuthStateDidChangeListenerHandle?
         Auth.auth().signIn(withEmail: email, password: password){ [weak self] authResult, error in
             if error != nil {
                 XCTFail("Unable to sign in")
             }
+            
+//            handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+            
+//            }
         }
         
         

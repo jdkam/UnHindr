@@ -135,14 +135,15 @@ class UnHindrUITests: XCTestCase {
         
         //Check back button behavior
         app.buttons["Back"].tap()
-        XCTAssert(stronglyAgreeButton.waitForExistence(timeout: 5))
+        XCTAssert(app.buttons["Back"].waitForExistence(timeout: 5))
         app.buttons["Back"].tap()
-        XCTAssert(stronglyAgreeButton.waitForExistence(timeout: 5))
+        XCTAssert(app.buttons["Back"].waitForExistence(timeout: 5))
         app.buttons["Back"].tap()
-        XCTAssert(stronglyAgreeButton.waitForExistence(timeout: 5))
+        XCTAssert(app.buttons["Back"].waitForExistence(timeout: 5))
         app.buttons["Back"].tap()
         
         //Finish the test
+        XCTAssert(stronglyDisagreeButton.waitForExistence(timeout: 5))
         stronglyDisagreeButton.tap()
         nextButton.tap()
         stronglyDisagreeButton.tap()
