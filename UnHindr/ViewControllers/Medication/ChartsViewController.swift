@@ -71,13 +71,13 @@ class ChartsViewController: UIViewController {
                     }
                     //grabs medication data from the database
                     self.getDBMedicationData(result, completionHandler: { (count) in
-                        guard let count = count else {
+                        guard count != nil else {
                             print("Unable to fetch med data")
                             return
                         }
                         //grab medication plan from the database
                         self.getDBMedicationPlan(result, completionHandler: { (count) in
-                            guard let count = count else {
+                            guard count != nil else {
                                 print("Unable to fetch med data")
                                 return
                             }
@@ -206,7 +206,7 @@ private func getDBMedicationPlan(_ userdoc: String, completionHandler: @escaping
                 let dayArray = document.data()["Day"] as! [String] // obtains the days the user has to take that medication
                 let quantity = document.get("Quantity") as! Double // obtains the length of the 'dayArray'
                 self.dictMedToTake[med] = quantity // grabs how many of that medication the user is suppose to take
-                var lengthDayArray = dayArray.count // finding the length of the day array
+                let lengthDayArray = dayArray.count // finding the length of the day array
                 for count in 0..<lengthDayArray
                 {
                     let date = dayArray[count] // puts 'dayArray[count]' into the date variable
@@ -248,7 +248,7 @@ private func getDBMedicationPlan(_ userdoc: String, completionHandler: @escaping
     {
         // creates a boolean array with size 7 with all initialized values set as false that will be manipulated depending on
         // what the user's medication plan and what medication they have taken
-        var takeMedCorrectDay = [Bool](repeating: false, count: 7)
+        let takeMedCorrectDay = [Bool](repeating: false, count: 7)
         // iterates through the user's medication consumption
         for (takenMed,takenDay) in dateTaken
         {
@@ -319,9 +319,9 @@ private func getDBMedicationPlan(_ userdoc: String, completionHandler: @escaping
     private func setChartData(medAmount: [String:[Double]],dayPlan: [String:[String]],userTaken: [String:[Bool]], allMedToTake: [String:Double])
     {
         // This days array contains all the days of the week
-        let days: [String] = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+//        let days: [String] = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
         //
-        let daysize = days.count
+//        let daysize = days.count
         for (Med,Day) in dayPlan
         {
             for i in 0..<dayPlan[Med]!.count
@@ -417,7 +417,7 @@ private func getDBMedicationPlan(_ userdoc: String, completionHandler: @escaping
                 {
                     // if the key does not exist in the dictionary
                     // the medication is missed since there is no record of the user taking the medication
-                    var Missed = self.dictMedToTake[Med]
+                    let Missed = self.dictMedToTake[Med]
                     let data = BarChartDataEntry(x: Double(i), yValues: [Taken, Missed ?? 0], data: "Group Chart" as AnyObject)
                     GraphData.append(data)
                 }
@@ -426,7 +426,7 @@ private func getDBMedicationPlan(_ userdoc: String, completionHandler: @escaping
         // changes the strings of the days into double values for the BarChartFormatter
         let formatter = BarChartFormatter(values: dayOfWeek)
         // more chart properties
-        chtChart.xAxis.valueFormatter = formatter
+        chtChart.xAxis.valueFormatter = formatter as IAxisValueFormatter
         let set = BarChartDataSet(values: GraphData, label: "Medication")
         set.drawIconsEnabled = false
         // bar colors are set
@@ -444,8 +444,8 @@ private func getDBMedicationPlan(_ userdoc: String, completionHandler: @escaping
         chtChart.data = chartData
     }
 
-    
-    private class BarChartFormatter: NSObject,AxisValueFormatter {
+    // MARK: - Helper class for XAxis labeling of medication graph
+    private class BarChartFormatter: NSObject, IAxisValueFormatter {
         
         var values : [String]
         required init (values : [String]) {
@@ -453,7 +453,11 @@ private func getDBMedicationPlan(_ userdoc: String, completionHandler: @escaping
             super.init()
         }
         
-        
+        // Function: Convert an array of strings to array of ints
+        // Input:
+        //      1. String array
+        // Output:
+        //      1. The graph will be shown to the user after this function is completed
         func stringForValue(_ value: Double, axis: AxisBase?) -> String {
             return values[Int(value)]
         }

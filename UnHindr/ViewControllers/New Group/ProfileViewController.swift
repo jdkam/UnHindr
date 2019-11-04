@@ -157,7 +157,7 @@ class ProfileViewController: UIViewController {
         let profileRef = Services.db.collection("users").document(Services.userRef!)
         
         // Check to see if update successful
-        var validFields: Bool = true
+        let validFields: Bool = true
         // List of changed fields
         var fields = [String:Any]()
         
