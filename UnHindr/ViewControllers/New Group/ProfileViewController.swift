@@ -7,6 +7,7 @@
  File description: [Controls functionality for Profile feature]
  */
 
+//IMPORT FRAMEWORKS
 import UIKit
 import Foundation
 import FirebaseFirestore
@@ -14,6 +15,7 @@ import FirebaseAuth
 
 class ProfileViewController: UIViewController {
     
+    //Outlets
     @IBOutlet weak var FirstNameTF: UITextField!
     @IBOutlet weak var lastNameTF: UITextField!
     @IBOutlet weak var emailTF: UITextField!
@@ -34,6 +36,7 @@ class ProfileViewController: UIViewController {
     var City = "Burnaby"
     var Country = "Canada"
     
+    // MARK: - View controller lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
         configureFirstnameText()
@@ -57,35 +60,7 @@ class ProfileViewController: UIViewController {
         if (Services.userRef != nil) {
             self.getUserInfo(Services.userRef!, completionHandler: { (complete) in
                 if complete == true {
-                    self.addressTF.text = self.datacollection!["address"] as? String
-                    self.FirstNameTF.text = self.datacollection!["firstName"] as? String
-                    self.lastNameTF.text = self.datacollection!["lastName"] as? String
-                    self.emailTF.text = self.datacollection!["email"] as? String
-                    self.cellTF.text = self.datacollection!["cell"] as? String
-                    self.addressTF.text = self.datacollection!["address"] as? String
-                    self.cityTF.text = self.datacollection!["city"] as? String
-                    self.countryTF.text = self.datacollection!["country"] as? String
-
-                    
-                    // Obtain the firebase dob field as a string
-                    let extractedDob = self.datacollection!["dob"] as! Timestamp
-                    let formatter = DateFormatter()
-                    formatter.dateFormat = "yyyy-MM-dd"
-                    let convertedDate = formatter.string(from: extractedDob.dateValue())
-                    let date1 = formatter.date(from: convertedDate)
-                    formatter.dateFormat = "dd-MMM-yyyy"
-                    let intuitiveDate = formatter.string(from:date1!)
-                    self.dobTF.text = intuitiveDate
-                    
-                    
-                    //determine the gender
-                    if(self.datacollection!["gender"] as? Int == 0){
-                        self.gendreTF.text = "Female"
-                    }else if (self.datacollection!["gender"] as? Int == 1){
-                        self.gendreTF.text = "Male"
-                    }else{
-                        self.gendreTF.text = "Undecided"
-                    }
+                    self.updateTextField()
                 }
                 else{
                     print("----------------Failed to get user data--------------")
@@ -120,6 +95,42 @@ class ProfileViewController: UIViewController {
         }
     }
     
+    // MARK: - Update all the text fields
+    // Input: None
+    // Output:
+    //      1. update all the user text fields
+    func updateTextField(){
+        self.addressTF.text = self.datacollection!["address"] as? String
+        self.FirstNameTF.text = self.datacollection!["firstName"] as? String
+        self.lastNameTF.text = self.datacollection!["lastName"] as? String
+        self.emailTF.text = self.datacollection!["email"] as? String
+        self.cellTF.text = self.datacollection!["cell"] as? String
+        self.addressTF.text = self.datacollection!["address"] as? String
+        self.cityTF.text = self.datacollection!["city"] as? String
+        self.countryTF.text = self.datacollection!["country"] as? String
+        
+        
+        // Obtain the firebase dob field as a string
+        let extractedDob = self.datacollection!["dob"] as! Timestamp
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let convertedDate = formatter.string(from: extractedDob.dateValue())
+        let date1 = formatter.date(from: convertedDate)
+        formatter.dateFormat = "dd-MMM-yyyy"
+        let intuitiveDate = formatter.string(from:date1!)
+        self.dobTF.text = intuitiveDate
+        
+        
+        //determine the gender
+        if(self.datacollection!["gender"] as? Int == 0){
+            self.gendreTF.text = "Female"
+        }else if (self.datacollection!["gender"] as? Int == 1){
+            self.gendreTF.text = "Male"
+        }else{
+            self.gendreTF.text = "Other"
+        }
+    }
+    
     // MARK: - Send flow back to the Home Screen
     // Input: None
     // Output:
@@ -135,7 +146,41 @@ class ProfileViewController: UIViewController {
     // Output:
     //      1. The user's data is persistently stored
     @IBAction func saveTapped(_ sender: UIButton) {
+        self.sendUpdateToDB()
+    }
+    
+    // Input: None
+    // Output:
+    //      1. Reads the text fields for valid input and sends data to firebase
+    private func sendUpdateToDB(){
+        //Reference to current user's settings
+        let profileRef = Services.db.collection("users").document(Services.userRef!)
         
+        // Check to see if update successful
+        var validFields: Bool = true
+        // List of changed fields
+        var fields = [String:Any]()
+        
+        // Check for constraints in address
+//        if (addressTF.text?.trimmingCharacters(in: .whitespaces).isAlphanumeric)! {
+//            fields.updateValue(addressTF.text!, forKey: "address")
+//            addressTF.textColor = UIColor.black
+//        } else {
+//            addressTF.textColor = UIColor.red
+//            validFields = false
+//        }
+        
+        fields.updateValue(addressTF.text!, forKey: "address")
+        fields.updateValue(FirstNameTF.text!, forKey: "firstName")
+        fields.updateValue(lastNameTF.text!, forKey: "lastName")
+        fields.updateValue(emailTF.text!, forKey: "email")
+        fields.updateValue(cityTF.text!, forKey: "city")
+//        fields.updateValue(gendreTF.text!, forKey: "gender")
+        
+        
+        if validFields{
+            profileRef.updateData(fields)
+        }
     }
     
     // MARK: - Allows the text field to use the extension function textFieldShouldReturn()
@@ -249,5 +294,21 @@ extension ProfileViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+}
+
+
+//Extension referenced from https://stackoverflow.com/questions/35992800/check-if-a-string-is-alphanumeric-in-swift
+// Extension for checking for constraints
+extension String {
+    var isAlphanumeric: Bool {
+        return !isEmpty && range(of: "[^a-zA-Z0-9]", options: .regularExpression) == nil
+    }
+    
+    var isAlpha: Bool {
+        return !isEmpty && range(of: "^[a-zA-Z]+$", options: .regularExpression) == nil
+    }
+    var isNumeric: Bool {
+        return !isEmpty && rangeOfCharacter(from: CharacterSet.decimalDigits.inverted) == nil
     }
 }
