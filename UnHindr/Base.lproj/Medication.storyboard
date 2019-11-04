@@ -336,7 +336,7 @@
         <!--MedicationHome-->
         <scene sceneID="c02-pU-jzI">
             <objects>
-                <viewController storyboardIdentifier="MedicationHome" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qdr-HS-vBK" userLabel="MedicationHome" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MedicationHomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qdr-HS-vBK" userLabel="MedicationHome" customClass="MedicationHomeViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yqz-xM-FDS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -380,6 +380,7 @@
                                 <state key="normal" image="home-white"/>
                                 <connections>
                                     <action selector="goToHomeTapped:" destination="hiJ-02-m6Z" eventType="touchUpInside" id="C9E-B2-SEf"/>
+                                    <action selector="goToHomeTapped:" destination="qdr-HS-vBK" eventType="touchUpInside" id="dQc-8G-E0y"/>
                                 </connections>
                             </button>
                         </subviews>

@@ -24,6 +24,8 @@
 		98F115EB236D2B770082A1B1 /* MoodQ5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F115EA236D2B770082A1B1 /* MoodQ5ViewController.swift */; };
 		98F6791D236E849900517099 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F6791C236E849900517099 /* ProfileViewController.swift */; };
 		98F67921236E85AF00517099 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98F67920236E85AF00517099 /* Profile.storyboard */; };
+		9D627A0E236FD4240027B6B7 /* MedicationHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D627A0D236FD4240027B6B7 /* MedicationHomeViewController.swift */; };
+		9DE33C6E236F98BD00855C78 /* DatabaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE33C6D236F98BD00855C78 /* DatabaseTests.swift */; };
 		9DF3F8992367D826003CF8B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF3F8982367D826003CF8B9 /* AppDelegate.swift */; };
 		9DF3F89B2367D826003CF8B9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF3F89A2367D826003CF8B9 /* LoginViewController.swift */; };
 		9DF3F8A32367D82D003CF8B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DF3F8A12367D82D003CF8B9 /* LaunchScreen.storyboard */; };
@@ -76,6 +78,8 @@
 		98F115EA236D2B770082A1B1 /* MoodQ5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodQ5ViewController.swift; sourceTree = "<group>"; };
 		98F6791C236E849900517099 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		98F67920236E85AF00517099 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		9D627A0D236FD4240027B6B7 /* MedicationHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationHomeViewController.swift; sourceTree = "<group>"; };
+		9DE33C6D236F98BD00855C78 /* DatabaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseTests.swift; sourceTree = "<group>"; };
 		9DF3F8952367D826003CF8B9 /* UnHindr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnHindr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DF3F8982367D826003CF8B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DF3F89A2367D826003CF8B9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -229,7 +233,6 @@
 			isa = PBXGroup;
 			children = (
 				215C15D5236F6CA30063F3E4 /* garbage.storyboard */,
-				98F67926236EA61600517099 /* Assets.xcassets */,
 				9DFB75BF236F7B14006321B8 /* Assets.xcassets */,
 				2DE6A77B236E400A00B76282 /* Helpers */,
 				2DD670FC236BBF79005948DF /* ViewControllers */,
@@ -253,6 +256,7 @@
 			children = (
 				9DF3F8AD2367D82D003CF8B9 /* UnHindrTests.swift */,
 				9DF3F8AF2367D82D003CF8B9 /* Info.plist */,
+				9DE33C6D236F98BD00855C78 /* DatabaseTests.swift */,
 			);
 			path = UnHindrTests;
 			sourceTree = "<group>";
@@ -269,6 +273,7 @@
 		9DFB75BA236F7515006321B8 /* Medication */ = {
 			isa = PBXGroup;
 			children = (
+				9D627A0D236FD4240027B6B7 /* MedicationHomeViewController.swift */,
 				9DFB75BB236F7515006321B8 /* MedicationViewController.swift */,
 				9DFB75BC236F7515006321B8 /* mainTabController.swift */,
 			);
@@ -542,6 +547,7 @@
 				9DFB75BE236F7515006321B8 /* mainTabController.swift in Sources */,
 				2DE6A77D236E402B00B76282 /* Services.swift in Sources */,
 				9DFB75BD236F7515006321B8 /* MedicationViewController.swift in Sources */,
+				9D627A0E236FD4240027B6B7 /* MedicationHomeViewController.swift in Sources */,
 				98F115E9236D29B50082A1B1 /* MoodQ4ViewController.swift in Sources */,
 				98F6791D236E849900517099 /* ProfileViewController.swift in Sources */,
 			);
@@ -551,6 +557,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DE33C6E236F98BD00855C78 /* DatabaseTests.swift in Sources */,
 				9DF3F8AE2367D82D003CF8B9 /* UnHindrTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

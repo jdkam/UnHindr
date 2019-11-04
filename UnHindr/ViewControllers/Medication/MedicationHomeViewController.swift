@@ -16,7 +16,12 @@ class MedicationHomeViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func goToHomeTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "HomeScreen", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "HomeScreenViewController") as UIViewController
+        present(vc, animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
