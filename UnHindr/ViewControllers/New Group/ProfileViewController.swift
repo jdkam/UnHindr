@@ -13,21 +13,45 @@ import FirebaseAuth
 
 class ProfileViewController: UIViewController {
     
+    @IBOutlet weak var FirstNameTF: UITextField!
+    @IBOutlet weak var lastNameTF: UITextField!
+    @IBOutlet weak var emailTF: UITextField!
+    @IBOutlet weak var dobTF: UITextField!
+    @IBOutlet weak var gendreTF: UITextField!
+    @IBOutlet weak var addressTF: UITextField!
+    @IBOutlet weak var cityTF: UITextField!
+    @IBOutlet weak var countryTF: UITextField!
+    @IBOutlet weak var cellTF: UITextField!
+    
     private var datacollection: [String: Any]? = [:]
-    var FirstName = "xxx"
-    var LastName = "xxx"
-    var Email = "xxx"
+    var FirstName = "Bob"
+    var LastName = "Smith"
+    var Email = "bs@gmail.com"
     var Dob = DateComponents(calendar: Calendar.current, year: 1990, month: 08, day: 01)
-    var gender = -1 //0 female , 1 men , 2 undecided
-    var Address = "xxxxx"
-    var City = "xxxxxx"
-    var Country = "xxxx"
+    var gender = 0 //0 female , 1 men , 2 undecided
+    var Address = "888 university drive"
+    var City = "Burnaby"
+    var Country = "Canada"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-    }//view DidLoad()
+        configureFirstnameText()
+        configureLastnameText()
+        configureEmailText()
+        configureDOBText()
+        configureGenderText()
+        configureAddressText()
+        configureCityText()
+        configureCountryText()
+        configureCellText()
+        configureTapGesture()
+    }
     
+    // MARK: - Update the user data fields with retrieved data from DB
+    // Input:
+    //      1. animated: A boolean to whether animate the changes
+    // Output:
+    //      1. User data validated and updated into data fields
     override func viewWillAppear(_ animated: Bool) {
         if (Services.userRef != nil) {
             self.getUserInfo(Services.userRef!, completionHandler: { (complete) in
@@ -69,16 +93,7 @@ class ProfileViewController: UIViewController {
             })
         }
     }
-    
-    @IBOutlet weak var FirstNameTF: UITextField!
-    @IBOutlet weak var lastNameTF: UITextField!
-    @IBOutlet weak var emailTF: UITextField!
-    @IBOutlet weak var dobTF: UITextField!
-    @IBOutlet weak var gendreTF: UITextField!
-    @IBOutlet weak var addressTF: UITextField!
-    @IBOutlet weak var cityTF: UITextField!
-    @IBOutlet weak var countryTF: UITextField!
-    @IBOutlet weak var cellTF: UITextField!
+
     
     // MARK: - Retrieve reference to a patient's data
     // Input:
@@ -96,15 +111,7 @@ class ProfileViewController: UIViewController {
                     print("Error fetching user document")
                     return
                 }
-//                self.LastName = document.get("lastName") as! String
-//                self.Email = document.get("email") as! String
-//                self.FirstName = document.get("firstName") as! String
-//                self.Address = document.get("address") as! String
-//                self.City = document.get("city") as! String
-//                self.Country = document.get("coquitlam") as! String
                 self.datacollection = document.data()
-//                print("Type: \(document.data())")
-                
                 let result = true
                 completionHandler(result)
             }
@@ -130,13 +137,116 @@ class ProfileViewController: UIViewController {
         
     }
     
-    // MARK: - Update all the text fields
-    // Input: None
+    // MARK: - Allows the text field to use the extension function textFieldShouldReturn()
+    // Input:
+    //      None
     // Output:
-    //      1. update all the user text fields
-    func updateTextField(){
-        //emailTF.text = self.Email
-        print("FCK:")
+    //      Allows the text field to use the extension function textFieldShouldReturn()
+    private func configureFirstnameText(){
+        FirstNameTF.delegate = self
     }
     
+    // MARK: - Allows the text field to use the extension function textFieldShouldReturn()
+    // Input:
+    //      None
+    // Output:
+    //      Allows the text field to use the extension function textFieldShouldReturn()
+    private func configureLastnameText(){
+        lastNameTF.delegate = self
+    }
+    
+    // MARK: - Allows the text field to use the extension function textFieldShouldReturn()
+    // Input:
+    //      None
+    // Output:
+    //      Allows the text field to use the extension function textFieldShouldReturn()
+    private func configureEmailText(){
+        emailTF.delegate = self
+    }
+    
+    // MARK: - Allows the text field to use the extension function textFieldShouldReturn()
+    // Input:
+    //      None
+    // Output:
+    //      Allows the text field to use the extension function textFieldShouldReturn()
+    private func configureDOBText(){
+        dobTF.delegate = self
+    }
+    
+    // MARK: - Allows the text field to use the extension function textFieldShouldReturn()
+    // Input:
+    //      None
+    // Output:
+    //      Allows the text field to use the extension function textFieldShouldReturn()
+    private func configureGenderText(){
+        gendreTF.delegate = self
+    }
+    
+    // MARK: - Allows the text field to use the extension function textFieldShouldReturn()
+    // Input:
+    //      None
+    // Output:
+    //      Allows the text field to use the extension function textFieldShouldReturn()
+    private func configureAddressText(){
+        addressTF.delegate = self
+    }
+    
+    // MARK: - Allows the text field to use the extension function textFieldShouldReturn()
+    // Input:
+    //      None
+    // Output:
+    //      Allows the text field to use the extension function textFieldShouldReturn()
+    private func configureCityText(){
+        cityTF.delegate = self
+    }
+    
+    // MARK: - Allows the text field to use the extension function textFieldShouldReturn()
+    // Input:
+    //      None
+    // Output:
+    //      Allows the text field to use the extension function textFieldShouldReturn()
+    private func configureCountryText(){
+        countryTF.delegate = self
+    }
+    
+    // MARK: - Allows the text field to use the extension function textFieldShouldReturn()
+    // Input:
+    //      None
+    // Output:
+    //      Allows the text field to use the extension function textFieldShouldReturn()
+    private func configureCellText(){
+        cellTF.delegate = self
+    }
+    
+    // MARK: - Enables a tap outside of the keyboard to call handleTapOutsideKeyboard()
+    // Input:
+    //      None
+    // Output:
+    //      Enables a tap outside of the keyboard to call handleTapOutsideKeyboard()
+    private func configureTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ProfileViewController.handleTapOutsideKeyboard))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    // MARK: - Causes the keyboard to be dismissed
+    // Input:
+    //      None
+    // Output:
+    //      Causes the keyboard to be dismissed
+    @objc func handleTapOutsideKeyboard() {
+        view.endEditing(true)
+    }
+    
+}
+
+// MARK: - Allows the return button in the keyboard to dismiss the keyboard
+// Input:
+//      None
+// Output:
+//      Allows the return button in the keyboard to dismiss the keyboard
+extension ProfileViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
