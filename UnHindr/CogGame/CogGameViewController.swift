@@ -1,11 +1,51 @@
-//
-//  CogGameViewController.swift
-//  UnHindr
-//
-//  Created by Jordan Kam on 2019-11-10.
-//  Copyright © 2019 Sigma. All rights reserved.
-//
+/*
+ File: [CogGameViewController]
+ Creators: [Jordan]
+ Date created: [10/11/2019]
+ Date updated: [10/11/2019]
+ Updater name: [Jordan]
+ File description: [Controls the CogGame View]
+ */
 
-import Foundation
+import UIKit
+import SpriteKit
+import GameplayKit
+
+class MotorGameViewController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if let view = self.view as! SKView? {
+            // Load the SKScene from MotorGameScene.sks
+            if let scene = SKScene(fileNamed: "CogGameScene") {
+                scene.scaleMode = .aspectFit
+                
+                view.presentScene(scene)
+            }
+            
+            view.ignoresSiblingOrder = true
+            
+            view.showsFPS = false
+            view.showsNodeCount = false
+        }
+    }
+    
+    override var shouldAutorotate: Bool {
+        return true
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            return .allButUpsideDown
+        } else {
+            return .all
+        }
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+}
+
 
 
