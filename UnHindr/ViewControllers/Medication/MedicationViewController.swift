@@ -133,7 +133,7 @@ class MedicationViewController: UIViewController {
     @IBAction func monButtonTapped(_ sender: Any) {
         if (self.dayOFWeek["Monday"] == 1){
             self.dayOFWeek["Monday"] = 0
-            monButton.setImage(UIImage(named: "monday.png"), for: UIControl.State.normal)
+            monButton.setImage(UIImage(named: "monNoCheck.png"), for: UIControl.State.normal)
         }
         else {
             monButton.setImage(UIImage(named: "MonCheck.png"), for: UIControl.State.normal)
@@ -150,7 +150,7 @@ class MedicationViewController: UIViewController {
     @IBAction func tuesButtonTapped(_ sender: Any) {
         if (self.dayOFWeek["Tuesday"] == 1){
             self.dayOFWeek["Tuesday"] = 0
-            tuesButton.setImage(UIImage(named: "tuesday.png"), for: UIControl.State.normal)
+            tuesButton.setImage(UIImage(named: "tuesNoCheck.png"), for: UIControl.State.normal)
         }
         else {
             self.dayOFWeek["Tuesday"] = 1
@@ -167,7 +167,7 @@ class MedicationViewController: UIViewController {
     @IBAction func wedButtonTapped(_ sender: Any) {
         if (self.dayOFWeek["Wednesday"] == 1){
             self.dayOFWeek["Wednesday"] = 0
-            wedButton.setImage(UIImage(named: "wednesday.png"), for: UIControl.State.normal)
+            wedButton.setImage(UIImage(named: "wedNoCheck.png"), for: UIControl.State.normal)
         }
         else {
              self.dayOFWeek["Wednesday"] = 1
@@ -184,7 +184,7 @@ class MedicationViewController: UIViewController {
     @IBAction func thursButtonPressed(_ sender: Any) {
         if (self.dayOFWeek["Thursday"] == 1){
             self.dayOFWeek["Thursday"] = 0
-            thursButton.setImage(UIImage(named: "thursday.png"), for: UIControl.State.normal)
+            thursButton.setImage(UIImage(named: "thursNoCheck.png"), for: UIControl.State.normal)
         }
         else {
             self.dayOFWeek["Thursday"] = 1
@@ -201,11 +201,11 @@ class MedicationViewController: UIViewController {
     @IBAction func friButtonPressed(_ sender: Any) {
         if (self.dayOFWeek["Friday"] == 1){
             self.dayOFWeek["Friday"] = 0
-            friButton.setImage(UIImage(named: "friCheck.png"), for: UIControl.State.normal)
+            friButton.setImage(UIImage(named: "friNoCheck.png"), for: UIControl.State.normal)
         }
         else {
             self.dayOFWeek["Friday"] = 1
-            friButton.setImage(UIImage(named: "friday.png"), for: UIControl.State.normal)
+            friButton.setImage(UIImage(named: "friCheck.png"), for: UIControl.State.normal)
         }
         view.endEditing(true)
     }

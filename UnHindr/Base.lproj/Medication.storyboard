@@ -178,7 +178,7 @@
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oap-vS-kso" userLabel="Mon Button">
                                                                 <rect key="frame" x="0.0" y="0.0" width="103" height="73"/>
-                                                                <state key="normal" image="monday">
+                                                                <state key="normal" image="monNoCheck">
                                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 </state>
                                                                 <connections>
@@ -187,7 +187,7 @@
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JsA-Jy-xQk" userLabel="Mon Button">
                                                                 <rect key="frame" x="123" y="0.0" width="103" height="73"/>
-                                                                <state key="normal" image="tuesday">
+                                                                <state key="normal" image="tuesNoCheck">
                                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 </state>
                                                                 <connections>
@@ -196,7 +196,7 @@
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sE8-Kd-qRE" userLabel="Mon Button">
                                                                 <rect key="frame" x="246" y="0.0" width="103" height="73"/>
-                                                                <state key="normal" image="wednesday">
+                                                                <state key="normal" image="wedNoCheck">
                                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 </state>
                                                                 <connections>
@@ -210,7 +210,7 @@
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kdH-3r-TUd" userLabel="Mon Button">
                                                                 <rect key="frame" x="0.0" y="0.0" width="74" height="73"/>
-                                                                <state key="normal" image="thursday">
+                                                                <state key="normal" image="thursNoCheck">
                                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 </state>
                                                                 <connections>
@@ -219,7 +219,7 @@
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1aE-nC-3Vp" userLabel="Mon Button">
                                                                 <rect key="frame" x="91.666666666666686" y="0.0" width="74" height="73"/>
-                                                                <state key="normal" image="friday">
+                                                                <state key="normal" image="friNoCheck">
                                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 </state>
                                                                 <connections>
@@ -228,7 +228,7 @@
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YzE-ci-HQ0" userLabel="Mon Button">
                                                                 <rect key="frame" x="183.33333333333334" y="0.0" width="74.000000000000028" height="73"/>
-                                                                <state key="normal" image="saturday">
+                                                                <state key="normal" image="satNoCheck">
                                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 </state>
                                                                 <connections>
@@ -237,7 +237,7 @@
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j2Q-tl-VPa" userLabel="Mon Button">
                                                                 <rect key="frame" x="275" y="0.0" width="74" height="73"/>
-                                                                <state key="normal" image="sunday">
+                                                                <state key="normal" image="sunNoCheck">
                                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 </state>
                                                                 <connections>
@@ -571,19 +571,19 @@
         <image name="Remove" width="195" height="92"/>
         <image name="X" width="64" height="64"/>
         <image name="clock" width="376" height="400"/>
-        <image name="friday" width="74" height="73"/>
+        <image name="friNoCheck" width="74" height="73"/>
         <image name="home-white" width="400" height="312"/>
-        <image name="monday" width="73" height="73"/>
+        <image name="monNoCheck" width="73.666664123535156" height="73"/>
         <image name="myLog" width="66" height="84"/>
         <image name="myMeds" width="82" height="84"/>
         <image name="myMeds-1" width="144" height="42"/>
-        <image name="saturday" width="74" height="73"/>
-        <image name="sunday" width="74" height="73"/>
-        <image name="thursday" width="74" height="73"/>
-        <image name="tuesday" width="74" height="73"/>
-        <image name="wednesday" width="74" height="73"/>
+        <image name="satNoCheck" width="74" height="73"/>
+        <image name="sunNoCheck" width="74" height="73"/>
+        <image name="thursNoCheck" width="74" height="73"/>
+        <image name="tuesNoCheck" width="74" height="73"/>
+        <image name="wedNoCheck" width="74" height="73"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xhO-gA-bqf"/>
+        <segue reference="jfb-45-Qh1"/>
     </inferredMetricsTieBreakers>
 </document>
