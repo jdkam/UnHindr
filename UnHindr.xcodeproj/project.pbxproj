@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		215C15DA236F6E390063F3E4 /* WellnessTestHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 215C15D9236F6E390063F3E4 /* WellnessTestHome.storyboard */; };
 		215C15DC236F6E5F0063F3E4 /* WellnessTestHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215C15DB236F6E5F0063F3E4 /* WellnessTestHomeViewController.swift */; };
+		21DE49A82378EF0D001BE4B5 /* CaregiverHomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21DE49A72378EF0D001BE4B5 /* CaregiverHomeScreen.storyboard */; };
 		2BB1F3E910641FB171AAA24E /* Pods_UnHindrTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03A434C323DEDECA6A4F4E7C /* Pods_UnHindrTests.framework */; };
 		2DD67104236BC4C5005948DF /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD67103236BC4C5005948DF /* HomeScreenViewController.swift */; };
 		2DD6710B236BCD41005948DF /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DD67107236BCD41005948DF /* Login.storyboard */; };
@@ -63,6 +64,7 @@
 		070601D3D77C38C0722FE935 /* Pods-UnHindrTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindrTests.debug.xcconfig"; path = "Target Support Files/Pods-UnHindrTests/Pods-UnHindrTests.debug.xcconfig"; sourceTree = "<group>"; };
 		215C15D9236F6E390063F3E4 /* WellnessTestHome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WellnessTestHome.storyboard; sourceTree = "<group>"; };
 		215C15DB236F6E5F0063F3E4 /* WellnessTestHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellnessTestHomeViewController.swift; sourceTree = "<group>"; };
+		21DE49A72378EF0D001BE4B5 /* CaregiverHomeScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CaregiverHomeScreen.storyboard; path = UnHindr/CaregiverHomeScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		2DD67103236BC4C5005948DF /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		2DD67108236BCD41005948DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		2DD6710A236BCD41005948DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/HomeScreen.storyboard; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 				98F67920236E85AF00517099 /* Profile.storyboard */,
 				2DD67107236BCD41005948DF /* Login.storyboard */,
 				2DD67109236BCD41005948DF /* HomeScreen.storyboard */,
+				21DE49A72378EF0D001BE4B5 /* CaregiverHomeScreen.storyboard */,
 				9DF3F8A12367D82D003CF8B9 /* LaunchScreen.storyboard */,
 				CDBC4012236E4FE8008934AF /* Settings.storyboard */,
 				215C15D9236F6E390063F3E4 /* WellnessTestHome.storyboard */,
@@ -407,6 +410,7 @@
 				9DF3F8C72367D880003CF8B9 /* GoogleService-Info.plist in Resources */,
 				CDBC4013236E4FE8008934AF /* Settings.storyboard in Resources */,
 				9DFB75B9236F74D0006321B8 /* Medication.storyboard in Resources */,
+				21DE49A82378EF0D001BE4B5 /* CaregiverHomeScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
