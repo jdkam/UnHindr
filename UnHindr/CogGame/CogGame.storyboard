@@ -11,8 +11,8 @@
         <!--Cog Game View Controller-->
         <scene sceneID="7cy-Rq-xXC">
             <objects>
-                <viewController id="k9m-iG-CfT" customClass="CogGameViewController" customModule="UnHindr" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleAspectFit" id="N3i-XS-t8i" customClass="SKView" customModule="UnHindr">
+                <viewController storyboardIdentifier="CogGame" useStoryboardIdentifierAsRestorationIdentifier="YES" id="k9m-iG-CfT" customClass="CogGameViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleAspectFit" id="N3i-XS-t8i" customClass="SKView" customModule="UnHindr" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

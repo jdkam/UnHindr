@@ -18,6 +18,7 @@
 		81B5908E2378F8DD00BA49AF /* CogGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81B5908D2378F8DD00BA49AF /* CogGame.storyboard */; };
 		81B590902378F8F200BA49AF /* CogGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B5908F2378F8F200BA49AF /* CogGameViewController.swift */; };
 		81B590932378F92700BA49AF /* CogGameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 81B590922378F92700BA49AF /* CogGameScene.sks */; };
+		81B590962378FEBE00BA49AF /* CogGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B590952378FEBE00BA49AF /* CogGameScene.swift */; };
 		93FA49CD665592E4B99DB3F3 /* Pods_UnHindr_UnHindrUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6E2B4E2DEF28A4C383CB68F /* Pods_UnHindr_UnHindrUITests.framework */; };
 		98F115D8236CCDF80082A1B1 /* Mood.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98F115D7236CCDF80082A1B1 /* Mood.storyboard */; };
 		98F115DA236CCED00082A1B1 /* MoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F115D9236CCED00082A1B1 /* MoodViewController.swift */; };
@@ -76,6 +77,7 @@
 		81B5908D2378F8DD00BA49AF /* CogGame.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CogGame.storyboard; sourceTree = "<group>"; };
 		81B5908F2378F8F200BA49AF /* CogGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CogGameViewController.swift; sourceTree = "<group>"; };
 		81B590922378F92700BA49AF /* CogGameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CogGameScene.sks; sourceTree = "<group>"; };
+		81B590952378FEBE00BA49AF /* CogGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CogGameScene.swift; sourceTree = "<group>"; };
 		98F115D7236CCDF80082A1B1 /* Mood.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mood.storyboard; sourceTree = "<group>"; };
 		98F115D9236CCED00082A1B1 /* MoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodViewController.swift; sourceTree = "<group>"; };
 		98F115E4236D23380082A1B1 /* MoodQ2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodQ2ViewController.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				81B5908D2378F8DD00BA49AF /* CogGame.storyboard */,
 				81B590922378F92700BA49AF /* CogGameScene.sks */,
 				81B5908F2378F8F200BA49AF /* CogGameViewController.swift */,
+				81B590952378FEBE00BA49AF /* CogGameScene.swift */,
 			);
 			path = CogGame;
 			sourceTree = "<group>";
@@ -559,6 +562,7 @@
 				CDBC4016236E501B008934AF /* SettingsViewController.swift in Sources */,
 				215C15DC236F6E5F0063F3E4 /* WellnessTestHomeViewController.swift in Sources */,
 				98F115DA236CCED00082A1B1 /* MoodViewController.swift in Sources */,
+				81B590962378FEBE00BA49AF /* CogGameScene.swift in Sources */,
 				98F115E7236D23520082A1B1 /* MoodQ3ViewController.swift in Sources */,
 				9DF3F8992367D826003CF8B9 /* AppDelegate.swift in Sources */,
 				2DD67104236BC4C5005948DF /* HomeScreenViewController.swift in Sources */,
