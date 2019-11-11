@@ -67,7 +67,7 @@
                                                 <rect key="frame" x="186" y="0.0" width="185" height="175.66666666666666"/>
                                                 <state key="normal" image="Medication"/>
                                                 <connections>
-                                                    <action selector="medicationTapped:" destination="htM-Qi-GRg" eventType="touchUpInside" id="2P2-nh-X4g"/>
+                                                    <segue destination="noV-tN-kQm" kind="presentation" id="Akn-Nr-GEA"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -118,6 +118,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ArM-DB-9q5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="69.599999999999994" y="130.88455772113943"/>
+        </scene>
+        <!--Medication-->
+        <scene sceneID="62x-SI-xyB">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Medication" id="noV-tN-kQm" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3bg-IS-j1J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="648" y="57"/>
         </scene>
     </scenes>
     <resources>

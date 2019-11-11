@@ -229,8 +229,8 @@
                                                     <constraint firstAttribute="height" constant="66" id="SQ2-Wq-716"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="BlueBg" translatesAutoresizingMaskIntoConstraints="NO" id="7ub-vZ-bl0">
-                                                <rect key="frame" x="9" y="94" width="357" height="893"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BlueBg" translatesAutoresizingMaskIntoConstraints="NO" id="7ub-vZ-bl0">
+                                                <rect key="frame" x="9" y="94" width="357" height="900"/>
                                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="VBZ-bN-wDC">
@@ -392,7 +392,7 @@
                                             <constraint firstItem="7ub-vZ-bl0" firstAttribute="leading" secondItem="Q1g-cd-OlZ" secondAttribute="leading" constant="9" id="UaQ-t0-bQz"/>
                                             <constraint firstItem="0DD-LJ-FKd" firstAttribute="top" secondItem="Q1g-cd-OlZ" secondAttribute="top" id="UeR-h8-zTF"/>
                                             <constraint firstItem="VBZ-bN-wDC" firstAttribute="bottom" secondItem="Q1g-cd-OlZ" secondAttribute="bottomMargin" id="XoJ-0N-MPS"/>
-                                            <constraint firstItem="7ub-vZ-bl0" firstAttribute="top" secondItem="0DD-LJ-FKd" secondAttribute="bottom" constant="46" id="YvB-Nf-CDT"/>
+                                            <constraint firstItem="7ub-vZ-bl0" firstAttribute="top" secondItem="0DD-LJ-FKd" secondAttribute="bottom" constant="28" id="YvB-Nf-CDT"/>
                                             <constraint firstAttribute="height" constant="700" id="gKw-Xh-p2i"/>
                                             <constraint firstItem="0DD-LJ-FKd" firstAttribute="top" secondItem="Q1g-cd-OlZ" secondAttribute="top" id="hZL-Z8-eAv"/>
                                             <constraint firstAttribute="trailing" secondItem="VBZ-bN-wDC" secondAttribute="trailing" constant="16" id="lPO-dH-EDj"/>
