@@ -15,10 +15,11 @@
 		2DD6710C236BCD41005948DF /* HomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DD67109236BCD41005948DF /* HomeScreen.storyboard */; };
 		2DE6A77D236E402B00B76282 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE6A77C236E402B00B76282 /* Services.swift */; };
 		7013CBB92370D00E00A1231F /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7013CBB82370D00E00A1231F /* ChartsViewController.swift */; };
+		8176FAB3237B88D80083B445 /* CogGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8176FAB2237B88D80083B445 /* CogGameViewController.swift */; };
+		8176FAB5237B896B0083B445 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8176FAB4237B896B0083B445 /* CardModel.swift */; };
+		8176FAB7237B8A9C0083B445 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8176FAB6237B8A9C0083B445 /* Card.swift */; };
+		8176FAB9237B94FC0083B445 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8176FAB8237B94FC0083B445 /* CardCollectionViewCell.swift */; };
 		81B5908E2378F8DD00BA49AF /* CogGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81B5908D2378F8DD00BA49AF /* CogGame.storyboard */; };
-		81B590902378F8F200BA49AF /* CogGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B5908F2378F8F200BA49AF /* CogGameViewController.swift */; };
-		81B590932378F92700BA49AF /* CogGameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 81B590922378F92700BA49AF /* CogGameScene.sks */; };
-		81B590962378FEBE00BA49AF /* CogGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B590952378FEBE00BA49AF /* CogGameScene.swift */; };
 		93FA49CD665592E4B99DB3F3 /* Pods_UnHindr_UnHindrUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6E2B4E2DEF28A4C383CB68F /* Pods_UnHindr_UnHindrUITests.framework */; };
 		98F115D8236CCDF80082A1B1 /* Mood.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98F115D7236CCDF80082A1B1 /* Mood.storyboard */; };
 		98F115DA236CCED00082A1B1 /* MoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F115D9236CCED00082A1B1 /* MoodViewController.swift */; };
@@ -74,10 +75,11 @@
 		3EB3CE85FD97976F3B7E3634 /* Pods_UnHindr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnHindr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CD8E5234FA9D115EE968692 /* Pods-UnHindr-UnHindrUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindr-UnHindrUITests.release.xcconfig"; path = "Target Support Files/Pods-UnHindr-UnHindrUITests/Pods-UnHindr-UnHindrUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7013CBB82370D00E00A1231F /* ChartsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
+		8176FAB2237B88D80083B445 /* CogGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CogGameViewController.swift; sourceTree = "<group>"; };
+		8176FAB4237B896B0083B445 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
+		8176FAB6237B8A9C0083B445 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		8176FAB8237B94FC0083B445 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		81B5908D2378F8DD00BA49AF /* CogGame.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CogGame.storyboard; sourceTree = "<group>"; };
-		81B5908F2378F8F200BA49AF /* CogGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CogGameViewController.swift; sourceTree = "<group>"; };
-		81B590922378F92700BA49AF /* CogGameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CogGameScene.sks; sourceTree = "<group>"; };
-		81B590952378FEBE00BA49AF /* CogGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CogGameScene.swift; sourceTree = "<group>"; };
 		98F115D7236CCDF80082A1B1 /* Mood.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mood.storyboard; sourceTree = "<group>"; };
 		98F115D9236CCED00082A1B1 /* MoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodViewController.swift; sourceTree = "<group>"; };
 		98F115E4236D23380082A1B1 /* MoodQ2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodQ2ViewController.swift; sourceTree = "<group>"; };
@@ -198,9 +200,10 @@
 			isa = PBXGroup;
 			children = (
 				81B5908D2378F8DD00BA49AF /* CogGame.storyboard */,
-				81B590922378F92700BA49AF /* CogGameScene.sks */,
-				81B5908F2378F8F200BA49AF /* CogGameViewController.swift */,
-				81B590952378FEBE00BA49AF /* CogGameScene.swift */,
+				8176FAB2237B88D80083B445 /* CogGameViewController.swift */,
+				8176FAB4237B896B0083B445 /* CardModel.swift */,
+				8176FAB6237B8A9C0083B445 /* Card.swift */,
+				8176FAB8237B94FC0083B445 /* CardCollectionViewCell.swift */,
 			);
 			path = CogGame;
 			sourceTree = "<group>";
@@ -417,7 +420,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81B590932378F92700BA49AF /* CogGameScene.sks in Resources */,
 				98F67921236E85AF00517099 /* Profile.storyboard in Resources */,
 				2DD6710C236BCD41005948DF /* HomeScreen.storyboard in Resources */,
 				98F115D8236CCDF80082A1B1 /* Mood.storyboard in Resources */,
@@ -558,18 +560,20 @@
 			files = (
 				9DF3F89B2367D826003CF8B9 /* LoginViewController.swift in Sources */,
 				98F115EB236D2B770082A1B1 /* MoodQ5ViewController.swift in Sources */,
+				8176FAB7237B8A9C0083B445 /* Card.swift in Sources */,
 				98F115E5236D23380082A1B1 /* MoodQ2ViewController.swift in Sources */,
 				CDBC4016236E501B008934AF /* SettingsViewController.swift in Sources */,
 				215C15DC236F6E5F0063F3E4 /* WellnessTestHomeViewController.swift in Sources */,
+				8176FAB5237B896B0083B445 /* CardModel.swift in Sources */,
 				98F115DA236CCED00082A1B1 /* MoodViewController.swift in Sources */,
-				81B590962378FEBE00BA49AF /* CogGameScene.swift in Sources */,
+				8176FAB9237B94FC0083B445 /* CardCollectionViewCell.swift in Sources */,
 				98F115E7236D23520082A1B1 /* MoodQ3ViewController.swift in Sources */,
 				9DF3F8992367D826003CF8B9 /* AppDelegate.swift in Sources */,
 				2DD67104236BC4C5005948DF /* HomeScreenViewController.swift in Sources */,
 				7013CBB92370D00E00A1231F /* ChartsViewController.swift in Sources */,
 				9DFB75BE236F7515006321B8 /* mainTabController.swift in Sources */,
 				2DE6A77D236E402B00B76282 /* Services.swift in Sources */,
-				81B590902378F8F200BA49AF /* CogGameViewController.swift in Sources */,
+				8176FAB3237B88D80083B445 /* CogGameViewController.swift in Sources */,
 				9DFB75BD236F7515006321B8 /* MedicationViewController.swift in Sources */,
 				9D627A0E236FD4240027B6B7 /* MedicationHomeViewController.swift in Sources */,
 				98F115E9236D29B50082A1B1 /* MoodQ4ViewController.swift in Sources */,

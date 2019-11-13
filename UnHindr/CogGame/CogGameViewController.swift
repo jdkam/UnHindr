@@ -1,51 +1,54 @@
-/*
- File: [CogGameViewController]
- Creators: [Jordan]
- Date created: [10/11/2019]
- Date updated: [10/11/2019]
- Updater name: [Jordan]
- File description: [Controls the CogGame View]
- */
+//
+//  CogGameViewController.swift
+//  UnHindr
+//
+//  Created by Jordan Kam on 11/12/19.
+//  Copyright © 2019 Sigma. All rights reserved.
+//
 
+import Foundation
 import UIKit
-import SpriteKit
-import GameplayKit
+import Firebase
+import FirebaseAuth
 
-class MotorGameViewController: UIViewController {
+class CogGameViewController : UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    var model = CardModel()
+    var cardArray = [Card]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let view = self.view as! SKView? {
-            // Load the SKScene from MotorGameScene.sks
-            if let scene = SKScene(fileNamed: "CogGameScene") {
-                scene.scaleMode = .aspectFit
-                
-                view.presentScene(scene)
-            }
-            
-            view.ignoresSiblingOrder = true
-            
-            view.showsFPS = false
-            view.showsNodeCount = false
-        }
+        //call getCards method of the card model
+        cardArray = model.getCards()
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        
+        
     }
     
-    override var shouldAutorotate: Bool {
-        return true
+    // MARK: - UICollectionView Protocol Methods
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return cardArray.count
     }
     
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return .allButUpsideDown
-        } else {
-            return .all
-        }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath)
+        
+        return cell
     }
     
-    override var prefersStatusBarHidden: Bool {
-        return true
+    //when a user taps on a cell in the grid
+    //protocol method is part of UICollectionViewDelegate protocol
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    
     }
+    
 }
-
-
-

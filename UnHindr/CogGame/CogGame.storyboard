@@ -1,27 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="k9m-iG-CfT">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="k9m-iG-CfT">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Cog Game View Controller-->
+        <!--CogGame-->
         <scene sceneID="7cy-Rq-xXC">
             <objects>
-                <viewController storyboardIdentifier="CogGame" useStoryboardIdentifierAsRestorationIdentifier="YES" id="k9m-iG-CfT" customClass="CogGameViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleAspectFit" id="N3i-XS-t8i" customClass="SKView" customModule="UnHindr" customModuleProvider="target">
+                <viewController storyboardIdentifier="CogGame" title="CogGame" useStoryboardIdentifierAsRestorationIdentifier="YES" id="k9m-iG-CfT" customClass="CogGameViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleAspectFit" id="N3i-XS-t8i">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Foreground" translatesAutoresizingMaskIntoConstraints="NO" id="6Yl-Ui-OvG">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YNu-wu-HD3">
+                                <rect key="frame" x="20" y="64" width="374" height="798"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JEs-bl-G3s">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardCell" id="qLf-Qf-qbN" customClass="CardCollectionViewCell" customModule="UnHindr" customModuleProvider="target">
+                                        <rect key="frame" x="76" y="0.0" width="222" height="323"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="222" height="323"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GjC-UU-dor">
+                                                    <rect key="frame" x="0.0" y="0.0" width="222" height="323"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBack" translatesAutoresizingMaskIntoConstraints="NO" id="ekS-YB-SW4">
+                                                    <rect key="frame" x="0.0" y="0.0" width="222" height="323"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="ekS-YB-SW4" secondAttribute="trailing" id="83D-ly-G3S"/>
+                                            <constraint firstAttribute="trailing" secondItem="GjC-UU-dor" secondAttribute="trailing" id="9Vc-yb-bd6"/>
+                                            <constraint firstItem="ekS-YB-SW4" firstAttribute="top" secondItem="qLf-Qf-qbN" secondAttribute="top" id="MPW-B8-abs"/>
+                                            <constraint firstItem="GjC-UU-dor" firstAttribute="leading" secondItem="qLf-Qf-qbN" secondAttribute="leading" id="OZF-Rf-kgO"/>
+                                            <constraint firstItem="ekS-YB-SW4" firstAttribute="leading" secondItem="qLf-Qf-qbN" secondAttribute="leading" id="YcR-tA-OBg"/>
+                                            <constraint firstAttribute="bottom" secondItem="ekS-YB-SW4" secondAttribute="bottom" id="aTj-xp-xmD"/>
+                                            <constraint firstItem="GjC-UU-dor" firstAttribute="top" secondItem="qLf-Qf-qbN" secondAttribute="top" id="pZj-69-9t1"/>
+                                            <constraint firstAttribute="bottom" secondItem="GjC-UU-dor" secondAttribute="bottom" id="tuD-8o-Jtj"/>
+                                        </constraints>
+                                        <size key="customSize" width="222" height="323"/>
+                                        <connections>
+                                            <outlet property="backImageView" destination="ekS-YB-SW4" id="umn-t0-KL2"/>
+                                            <outlet property="frontImageView" destination="GjC-UU-dor" id="an2-XI-Bis"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="YNu-wu-HD3" secondAttribute="trailing" id="A7z-7d-Ndq"/>
+                            <constraint firstAttribute="trailing" secondItem="6Yl-Ui-OvG" secondAttribute="trailing" id="NNQ-bv-Ddn"/>
+                            <constraint firstItem="6Yl-Ui-OvG" firstAttribute="leading" secondItem="N3i-XS-t8i" secondAttribute="leading" id="Nwe-iZ-lZb"/>
+                            <constraint firstItem="6Yl-Ui-OvG" firstAttribute="top" secondItem="N3i-XS-t8i" secondAttribute="top" id="Ub1-5R-5Qm"/>
+                            <constraint firstItem="YNu-wu-HD3" firstAttribute="top" secondItem="N3i-XS-t8i" secondAttribute="topMargin" constant="20" id="YIC-h6-ZRg"/>
+                            <constraint firstItem="YNu-wu-HD3" firstAttribute="leading" secondItem="N3i-XS-t8i" secondAttribute="leadingMargin" id="Zfr-VJ-jPE"/>
+                            <constraint firstAttribute="bottom" secondItem="6Yl-Ui-OvG" secondAttribute="bottom" id="xNP-pn-BQB"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="YNu-wu-HD3" secondAttribute="bottom" id="xkc-fp-b7y"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="1BF-u5-iJu"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="YNu-wu-HD3" id="vIh-jd-2G4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pbz-ks-o0d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1" y="108"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Foreground" width="345" height="405"/>
+        <image name="cardBack" width="157" height="238"/>
+    </resources>
 </document>
