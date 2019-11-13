@@ -20,7 +20,7 @@ class CardModel {
         var generatedCardsArray = [Card]()
         
         //randomly generate pairs of cards
-        for _ in 1...8 {
+        for _ in 1...9 {
             
             //get a random number
            let randomNumber = arc4random_uniform(39) + 1

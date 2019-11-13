@@ -10,6 +10,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--HomeScreen-->
+        <scene sceneID="IrH-xQ-Kro">
+            <objects>
+                <viewControllerPlaceholder storyboardName="HomeScreen" id="Yo8-tQ-5R2" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LmK-0e-sXb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-721" y="339"/>
+        </scene>
         <!--CogGame-->
         <scene sceneID="7cy-Rq-xXC">
             <objects>
@@ -64,12 +72,21 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Olo-Zq-TKz">
+                                <rect key="frame" x="143" y="754" width="128" height="108"/>
+                                <state key="normal" image="Home"/>
+                                <connections>
+                                    <segue destination="Yo8-tQ-5R2" kind="show" id="fzX-AB-1lh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="1BF-u5-iJu" firstAttribute="bottom" secondItem="Olo-Zq-TKz" secondAttribute="bottom" id="2pM-41-AXo"/>
                             <constraint firstAttribute="trailingMargin" secondItem="YNu-wu-HD3" secondAttribute="trailing" id="A7z-7d-Ndq"/>
                             <constraint firstAttribute="trailing" secondItem="6Yl-Ui-OvG" secondAttribute="trailing" id="NNQ-bv-Ddn"/>
                             <constraint firstItem="6Yl-Ui-OvG" firstAttribute="leading" secondItem="N3i-XS-t8i" secondAttribute="leading" id="Nwe-iZ-lZb"/>
+                            <constraint firstItem="Olo-Zq-TKz" firstAttribute="centerX" secondItem="N3i-XS-t8i" secondAttribute="centerX" id="SzB-K0-BFx"/>
                             <constraint firstItem="6Yl-Ui-OvG" firstAttribute="top" secondItem="N3i-XS-t8i" secondAttribute="top" id="Ub1-5R-5Qm"/>
                             <constraint firstItem="YNu-wu-HD3" firstAttribute="top" secondItem="N3i-XS-t8i" secondAttribute="topMargin" constant="20" id="YIC-h6-ZRg"/>
                             <constraint firstItem="YNu-wu-HD3" firstAttribute="leading" secondItem="N3i-XS-t8i" secondAttribute="leadingMargin" id="Zfr-VJ-jPE"/>
@@ -89,6 +106,7 @@
     </scenes>
     <resources>
         <image name="Foreground" width="345" height="405"/>
+        <image name="Home" width="128" height="108"/>
         <image name="cardBack" width="157" height="238"/>
     </resources>
 </document>
