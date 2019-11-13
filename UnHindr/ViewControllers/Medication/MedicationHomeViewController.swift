@@ -28,6 +28,10 @@ class MedicationHomeViewController: UIViewController {
         present(vc, animated: true, completion: nil)
     }
     
+    
+    @IBOutlet weak var myMedTapped: UIImageView!
+    
+    
     /*
      // MARK: - Navigation
      
