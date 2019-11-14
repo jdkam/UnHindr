@@ -2,8 +2,8 @@
  File: [MedicationViewController.swift]
  Creators: [Jake, Sina]
  Date created: [29/10/2019]
- Date updated: [03/11/2019]
- Updater name: [Sina]
+ Date updated: [10/11/2019]
+ Updater name: [Sina, Allan]
  File description: [Controls the Add New Med screen]
  */
 
@@ -124,8 +124,16 @@ class MedicationViewController: UIViewController {
     @objc func timeChanged(timePicker: UIDatePicker) {
         let timeFormatter = DateFormatter()
         timeFormatter.dateFormat = "hh:mm a"
-         self.ReminderTime = timeFormatter.string(from: timePicker.date)
-         timeInputTextField.text = self.ReminderTime
+        
+        let timeString = timeFormatter.string(from: timePicker.date)
+        timeInputTextField.text = timeString
+        
+        // Change the database time storing into 24H format
+        var arr = timeString.components(separatedBy: [":", " "])
+        if arr[2] == "PM" {
+            arr[0] = String(Int(arr[0])! + 12)
+        }
+        self.ReminderTime = arr[0] + ":" + arr[1]
     }
     
     // MARK - Tapping Mon box toggles checkmark between shown and hidden. Store value in day array

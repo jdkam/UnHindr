@@ -25,6 +25,7 @@
 		98F6791D236E849900517099 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F6791C236E849900517099 /* ProfileViewController.swift */; };
 		98F67921236E85AF00517099 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98F67920236E85AF00517099 /* Profile.storyboard */; };
 		9D627A0E236FD4240027B6B7 /* MedicationHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D627A0D236FD4240027B6B7 /* MedicationHomeViewController.swift */; };
+		9D6C641C2378B50F00F0C058 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6C641B2378B50F00F0C058 /* Constants.swift */; };
 		9DE33C6E236F98BD00855C78 /* DatabaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE33C6D236F98BD00855C78 /* DatabaseTests.swift */; };
 		9DF3F8992367D826003CF8B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF3F8982367D826003CF8B9 /* AppDelegate.swift */; };
 		9DF3F89B2367D826003CF8B9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF3F89A2367D826003CF8B9 /* LoginViewController.swift */; };
@@ -79,6 +80,7 @@
 		98F6791C236E849900517099 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		98F67920236E85AF00517099 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		9D627A0D236FD4240027B6B7 /* MedicationHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationHomeViewController.swift; sourceTree = "<group>"; };
+		9D6C641B2378B50F00F0C058 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9DE33C6D236F98BD00855C78 /* DatabaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseTests.swift; sourceTree = "<group>"; };
 		9DF3F8952367D826003CF8B9 /* UnHindr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnHindr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DF3F8982367D826003CF8B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				2DE6A77C236E402B00B76282 /* Services.swift */,
+				9D6C641B2378B50F00F0C058 /* Constants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DF3F89B2367D826003CF8B9 /* LoginViewController.swift in Sources */,
+				9D6C641C2378B50F00F0C058 /* Constants.swift in Sources */,
 				98F115EB236D2B770082A1B1 /* MoodQ5ViewController.swift in Sources */,
 				98F115E5236D23380082A1B1 /* MoodQ2ViewController.swift in Sources */,
 				CDBC4016236E501B008934AF /* SettingsViewController.swift in Sources */,
