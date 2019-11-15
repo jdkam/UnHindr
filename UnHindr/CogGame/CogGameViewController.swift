@@ -15,8 +15,16 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var timerLabel: UILabel!
+    
     var model = CardModel()
     var cardArray = [Card]()
+    
+    var timer : Timer?
+    var seconds = 30
+    
+    
+    var firstFlippedCardIndex:IndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +35,22 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        //create timer
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerElapsed), userInfo: nil, repeats: true)
+        
+    }
+    
+    //MARK: Timer Methods
+    
+    @objc func timerElapsed(){
+        
+        seconds -= 1
+        
+        //convert to seconds
+        //let seconds = String(format: "", seconds)
+        
+        //set label
+        timerLabel.text = "Time Remaining: \(seconds)"
         
         
     }
@@ -86,29 +110,94 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
         //get card that user selected
         let card = cardArray[indexPath.row]
         
-        if card.isFlipped == false
+        if card.isFlipped == false && card.isMatched == false
         {
+            //flip the card
             cell.flip()
             
             //set status of the card
             card.isFlipped = true
+            
+            //determine if its the first card or second card thats flipped over
+            if firstFlippedCardIndex == nil {
+                
+                //this is the first card being flipped
+                firstFlippedCardIndex = indexPath
+                
+            }
+            else
+            {
+                //this is the second card being flipped
+                
+                //TODO: performs the matching logic
+                checkForMatches(indexPath)
+            }
         }
         else
         {
-            cell.flipBack()
-            
-            //set status of the card
-            card.isFlipped = false
+          
         }
         
         
        
     
+    } //end of the didSelectItemAt method
+    
+    //MARK: - Game Logic Methods
+    
+    func checkForMatches(_ secondFlippedCardIndex:IndexPath){
+        
+        
+        //get the cells for the two cards that were revealed
+        let cardOneCell = collectionView.cellForItem(at: firstFlippedCardIndex!) as? CardCollectionViewCell
+        
+        let cardTwoCell = collectionView.cellForItem(at: secondFlippedCardIndex) as? CardCollectionViewCell
+        
+        //get the cards for the two cards that were revealed
+        let cardOne = cardArray[firstFlippedCardIndex!.row]
+        let cardTwo = cardArray[secondFlippedCardIndex.row]
+        
+        //compare the two cards
+        if cardOne.imageName == cardTwo.imageName {
+            
+            //its a match
+            
+            
+            //set status of the cards
+            cardOne.isMatched = true
+            cardTwo.isMatched = true
+            
+            //remove the cards from the grid
+            cardOneCell?.remove()
+            cardTwoCell?.remove()
+        }
+        else
+        {
+            
+            //its not a match
+            
+            //set the statuses of the cards
+            cardOne.isFlipped = false
+            cardTwo.isFlipped = false
+            
+            //flip both cards back
+            cardOneCell?.flipBack()
+            cardTwoCell?.flipBack()
+            
+            
+        }
+        
+        //tell the collectionView to reload the cell of the first card if it is nil
+        if cardOneCell == nil {
+            collectionView.reloadItems(at: [firstFlippedCardIndex!])
+        }
+        
+        
+        //reset the property that tracks the first card flipped
+        firstFlippedCardIndex = nil
     }
-    
-    
     
     
 
     
-}
+} //end of viewController class
