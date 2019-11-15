@@ -169,10 +169,14 @@ class UnHindrUITests: XCTestCase {
         XCTAssert(app.buttons["Medication"].waitForExistence(timeout: 5))
         app.buttons["Medication"].tap()
         
-        //Check tab bars
-        let tabBarsQuery = app.tabBars
-        tabBarsQuery.children(matching: .button).element(boundBy: 1).tap()
-        tabBarsQuery.children(matching: .button).element(boundBy: 0).tap()
+        //Check medication graph
+        XCTAssert(app.buttons["MyMedsButton"].waitForExistence(timeout: 5))
+        app.buttons["MyMedsButton"].tap()
+        
+        // TODO: Additional checks with medication graph
+        
+        XCTAssert(app.buttons["MyLogButton"].waitForExistence(timeout: 5))
+        app.buttons["MyLogButton"].tap()
         
         //Navigate to add new medication plan
         XCTAssert(app.buttons["Add new"].exists)
