@@ -21,7 +21,7 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
     var cardArray = [Card]()
     
     var timer : Timer?
-    var seconds = 30
+    var seconds = 60
     
     
     var firstFlippedCardIndex:IndexPath?
@@ -37,6 +37,7 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
         
         //create timer
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerElapsed), userInfo: nil, repeats: true)
+        RunLoop.main.add(timer!, forMode: .common)
         
     }
     
@@ -51,6 +52,14 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
         
         //set label
         timerLabel.text = "Time Remaining: \(seconds)"
+        
+        if seconds <= 0 {
+            timer?.invalidate()
+            timerLabel.textColor = UIColor.red
+            
+            //check if there any cards unmatched
+            checkGameEnded()
+        }
         
         
     }
@@ -103,6 +112,10 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
     //when a user taps on a cell in the grid
     //protocol method is part of UICollectionViewDelegate protocol
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if seconds <= 0 {
+            return
+        }
         
         //get cell that user selected
         let cell = collectionView.cellForItem(at: indexPath) as! CardCollectionViewCell
@@ -170,6 +183,10 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
             //remove the cards from the grid
             cardOneCell?.remove()
             cardTwoCell?.remove()
+            
+            
+            //check if there any cards left unmatched
+            checkGameEnded()
         }
         else
         {
@@ -195,6 +212,85 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
         
         //reset the property that tracks the first card flipped
         firstFlippedCardIndex = nil
+    }
+    
+    func checkGameEnded() {
+        
+        //determine if there any cards left unmatched
+        var isWon = true
+        var numMatches = 0
+        var timeRemaining = 0
+        var score = 0
+        
+        for card in cardArray {
+            
+            if card.isMatched == false {
+                
+                isWon = false
+                break
+            }
+            else
+            {
+                //if card isMatched  is true, then increment
+                numMatches += 1
+            }
+        }
+        
+        //calculate total number of matched cards
+        if numMatches > 0 {
+            numMatches = numMatches/2
+        }
+        
+        timeRemaining = seconds
+        print("Seconds Finished With: \(timeRemaining)")
+        
+        print("number of matches: \(numMatches)")
+        
+        score = timeRemaining + numMatches
+        print("Score: \(score)")
+        
+        //messaging variables
+        var title = ""
+        var message = ""
+        
+        //if not then user has won, stop timer
+        if isWon == true {
+            
+            if seconds > 0 {
+                timer?.invalidate()
+                
+            }
+            
+            title = "Congratulations!"
+            message = "You've Won! \nYou Matched: \(numMatches) Cards in \(60-timeRemaining) seconds!\nYour Score is: \(score)"
+            
+        }
+        else {
+            //if there are unmatched cards check if there are any cards left
+
+            if seconds > 0 {
+                return
+            }
+            
+            title = "Game Over"
+            message = "You've Lost\nYou Matched: \(numMatches) Cards in \(60-timeRemaining) seconds!\nYour Score is: \(score)"
+            
+        }
+        
+        //show won or lost message
+        showAlert(title, message)
+        
+    }
+    
+    func showAlert(_ title:String, _ message: String){
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let alertAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        
+        alert.addAction(alertAction)
+        
+        present(alert, animated: true, completion: nil)
     }
     
     
