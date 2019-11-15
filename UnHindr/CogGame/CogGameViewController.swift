@@ -64,7 +64,14 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
     //collectionView asks dataSource (viewController) for new data to display - for each individual cell to be displayed
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath)
+        //get a cardCollectionViewCell object
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as! CardCollectionViewCell
+        
+        //get the card that the collection view is trying to display
+        let card = cardArray[indexPath.row]
+        
+        //set the card for that cell
+        cell.setCard(card)
         
         return cell
     }
@@ -72,6 +79,30 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
     //when a user taps on a cell in the grid
     //protocol method is part of UICollectionViewDelegate protocol
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        //get cell that user selected
+        let cell = collectionView.cellForItem(at: indexPath) as! CardCollectionViewCell
+        
+        //get card that user selected
+        let card = cardArray[indexPath.row]
+        
+        if card.isFlipped == false
+        {
+            cell.flip()
+            
+            //set status of the card
+            card.isFlipped = true
+        }
+        else
+        {
+            cell.flipBack()
+            
+            //set status of the card
+            card.isFlipped = false
+        }
+        
+        
+       
     
     }
     
