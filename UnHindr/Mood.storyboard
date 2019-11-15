@@ -38,7 +38,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleAspectFit" misplaced="YES" axis="vertical" distribution="fillProportionally" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="I1j-MW-Djj">
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillProportionally" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="I1j-MW-Djj">
                                 <rect key="frame" x="40" y="154" width="335" height="537"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please choose the most accurate answer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l0U-vI-kx4">
@@ -165,7 +165,7 @@
                             <constraint firstItem="B7B-sL-Rqo" firstAttribute="leading" secondItem="wsE-Kq-HOf" secondAttribute="leading" constant="27" id="IcH-SB-Iv5"/>
                             <constraint firstItem="Ept-el-3Nh" firstAttribute="top" secondItem="0hy-mM-YXG" secondAttribute="top" id="Njn-YR-U7x"/>
                             <constraint firstItem="B7B-sL-Rqo" firstAttribute="bottom" secondItem="Ept-el-3Nh" secondAttribute="bottom" constant="-10" id="bRM-qv-oQm"/>
-                            <constraint firstItem="I1j-MW-Djj" firstAttribute="top" secondItem="Ept-el-3Nh" secondAttribute="bottom" constant="20" id="daL-9M-WKn"/>
+                            <constraint firstItem="I1j-MW-Djj" firstAttribute="top" secondItem="Ept-el-3Nh" secondAttribute="bottom" constant="34" id="daL-9M-WKn"/>
                             <constraint firstItem="I1j-MW-Djj" firstAttribute="centerX" secondItem="0hy-mM-YXG" secondAttribute="centerX" id="lcY-TO-iGV"/>
                             <constraint firstItem="Ept-el-3Nh" firstAttribute="centerX" secondItem="0hy-mM-YXG" secondAttribute="centerX" id="nkf-ac-WsT"/>
                             <constraint firstItem="wsE-Kq-HOf" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="I1j-MW-Djj" secondAttribute="bottom" constant="5" id="vDv-HP-dY0"/>
@@ -481,7 +481,7 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Question III" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLg-Zd-6eJ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question III" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLg-Zd-6eJ">
                                 <rect key="frame" x="20" y="77" width="145" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -490,9 +490,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="tLg-Zd-6eJ" firstAttribute="bottom" secondItem="bOb-sg-0WO" secondAttribute="bottom" constant="-10" id="0Ij-vG-ksE"/>
+                            <constraint firstItem="tLg-Zd-6eJ" firstAttribute="bottom" secondItem="bOb-sg-0WO" secondAttribute="bottom" constant="-7" id="0Ij-vG-ksE"/>
                             <constraint firstItem="eCo-M6-i5L" firstAttribute="top" secondItem="bOb-sg-0WO" secondAttribute="bottom" constant="20" id="9OR-Z7-dPY"/>
-                            <constraint firstItem="tLg-Zd-6eJ" firstAttribute="leading" secondItem="snL-WD-G6Z" secondAttribute="leading" constant="27" id="Qw1-kg-TA8"/>
+                            <constraint firstItem="tLg-Zd-6eJ" firstAttribute="leading" secondItem="snL-WD-G6Z" secondAttribute="leading" constant="20" id="Qw1-kg-TA8"/>
                             <constraint firstItem="eCo-M6-i5L" firstAttribute="centerX" secondItem="xgw-GL-D42" secondAttribute="centerX" id="T4K-cI-2yc"/>
                             <constraint firstItem="bOb-sg-0WO" firstAttribute="top" secondItem="xgw-GL-D42" secondAttribute="top" id="WoB-rq-NCa"/>
                             <constraint firstItem="bOb-sg-0WO" firstAttribute="leading" secondItem="snL-WD-G6Z" secondAttribute="leading" id="qkD-eb-sg9"/>
@@ -848,8 +848,8 @@
         <image name="greenBG" width="414" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="b8M-RN-yZw"/>
+        <segue reference="MZp-q4-Bia"/>
         <segue reference="JgE-uC-FgB"/>
-        <segue reference="nf9-CT-Sus"/>
+        <segue reference="fs1-hl-SVO"/>
     </inferredMetricsTieBreakers>
 </document>

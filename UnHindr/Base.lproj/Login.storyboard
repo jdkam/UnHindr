@@ -27,6 +27,9 @@
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AfK-3e-csx" userLabel="Signup button">
                                 <rect key="frame" x="34" y="771" width="346" height="76"/>
                                 <state key="normal" image="Sign up button"/>
+                                <connections>
+                                    <action selector="signUpTapped:" destination="GTy-FM-gi5" eventType="touchUpInside" id="inz-iB-gZ0"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dont have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfE-f1-1jh">
                                 <rect key="frame" x="107" y="737" width="200" height="24"/>
