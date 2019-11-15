@@ -12,6 +12,9 @@ import UIKit
 import FirebaseAuth
 
 class LoginViewController: UIViewController {
+    
+    private var isSignUp = 0
+    
     // MARK: - Outlets
     //Input fields for username and password
     @IBOutlet weak var emailTextField: UITextField!
@@ -28,7 +31,10 @@ class LoginViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        Auth.auth().removeStateDidChangeListener(Services.handle!)
+        if(isSignUp==0){
+            Auth.auth().removeStateDidChangeListener(Services.handle!)
+        }
+
     }
     
     // MARK: - Database methods for login authentication
@@ -120,6 +126,18 @@ class LoginViewController: UIViewController {
     //         else not successful -> display error message
     @IBAction func loginTapped(_ sender: Any) {
         authenticateLogin()
+    }
+    
+    // MARK: - Segue functions for navigation to adjacent views
+    // UI Component
+    // Activation: When pressed
+    // Action: If successful -> Navigate to ModeChoice
+    @IBAction func signUpTapped(_ sender: UIButton) {
+        self.isSignUp = 1
+        let storyboard = UIStoryboard(name: "ModeChoice", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ModeChoiceViewController") as UIViewController
+        present(vc, animated: true, completion: nil)
+
     }
     
 }

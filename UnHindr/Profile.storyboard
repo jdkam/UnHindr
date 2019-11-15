@@ -18,6 +18,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="408" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Menu BG" translatesAutoresizingMaskIntoConstraints="NO" id="f9i-cB-rxW">
+                                <rect key="frame" x="0.0" y="-20" width="414" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bMV-wG-LEx">
                                 <rect key="frame" x="0.0" y="20" width="408" height="980"/>
                                 <subviews>
