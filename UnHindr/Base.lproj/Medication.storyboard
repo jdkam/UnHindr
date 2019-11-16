@@ -470,7 +470,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="mlE-n5-JCW" userLabel="MedDescView">
-                                                        <rect key="frame" x="114" y="16" width="160" height="135"/>
+                                                        <rect key="frame" x="114" y="8" width="160" height="135"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="No Meds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SYX-vX-wCi" userLabel="MedName">
                                                                 <rect key="frame" x="0.0" y="0.0" width="126.33333333333333" height="35"/>
@@ -493,14 +493,25 @@
                                                         </subviews>
                                                     </stackView>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="a35-il-uyb">
-                                                        <rect key="frame" x="21" y="16" width="77" height="83"/>
+                                                        <rect key="frame" x="23" y="8" width="77" height="83"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="83" id="eaK-wh-eVM"/>
                                                             <constraint firstAttribute="width" constant="77" id="zeW-FY-E4D"/>
                                                         </constraints>
                                                     </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XcF-3B-oWj" userLabel="CheckButton">
+                                                        <rect key="frame" x="101" y="190" width="130" height="100"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="100" id="16f-Jm-4HW"/>
+                                                            <constraint firstAttribute="width" constant="130" id="mD4-x0-MCs"/>
+                                                        </constraints>
+                                                        <state key="normal" image="Checkmark"/>
+                                                        <connections>
+                                                            <action selector="checkmarkTapped:" destination="Eei-6T-tte" eventType="touchUpInside" id="Xaz-tb-1F7"/>
+                                                        </connections>
+                                                    </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="None" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bv-Km-FrJ" userLabel="MedicineTime">
-                                                        <rect key="frame" x="6" y="100" width="114" height="51"/>
+                                                        <rect key="frame" x="0.0" y="151" width="152" height="51"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="51" id="UMX-Ts-7Es"/>
                                                         </constraints>
@@ -508,30 +519,22 @@
                                                         <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XcF-3B-oWj" userLabel="CheckButton">
-                                                        <rect key="frame" x="103.66666666666666" y="185" width="130" height="100"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="100" id="16f-Jm-4HW"/>
-                                                            <constraint firstAttribute="width" constant="130" id="mD4-x0-MCs"/>
-                                                        </constraints>
-                                                        <state key="normal" image="Checkmark"/>
-                                                    </button>
                                                 </subviews>
                                                 <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstItem="a35-il-uyb" firstAttribute="top" secondItem="mlE-n5-JCW" secondAttribute="top" id="0gI-EZ-ffS"/>
-                                                    <constraint firstItem="7bv-Km-FrJ" firstAttribute="leading" secondItem="eAj-4S-mWl" secondAttribute="leading" constant="6" id="2DI-W8-Mzw"/>
+                                                    <constraint firstItem="7bv-Km-FrJ" firstAttribute="leading" secondItem="eAj-4S-mWl" secondAttribute="leading" id="2DI-W8-Mzw"/>
                                                     <constraint firstItem="FkW-ZK-xki" firstAttribute="top" secondItem="eAj-4S-mWl" secondAttribute="top" id="G3D-2f-RgV"/>
-                                                    <constraint firstItem="a35-il-uyb" firstAttribute="top" secondItem="eAj-4S-mWl" secondAttribute="top" constant="16" id="PjU-gd-sPR"/>
+                                                    <constraint firstItem="a35-il-uyb" firstAttribute="top" secondItem="eAj-4S-mWl" secondAttribute="top" constant="8" id="PjU-gd-sPR"/>
                                                     <constraint firstItem="FkW-ZK-xki" firstAttribute="leading" secondItem="eAj-4S-mWl" secondAttribute="leading" constant="4" id="YOU-UH-1Tk"/>
-                                                    <constraint firstItem="a35-il-uyb" firstAttribute="centerX" secondItem="7bv-Km-FrJ" secondAttribute="centerX" constant="-3.5" id="cd4-5d-Z98"/>
+                                                    <constraint firstItem="a35-il-uyb" firstAttribute="centerX" secondItem="7bv-Km-FrJ" secondAttribute="centerX" constant="-14.5" id="cd4-5d-Z98"/>
                                                     <constraint firstItem="FkW-ZK-xki" firstAttribute="centerX" secondItem="eAj-4S-mWl" secondAttribute="centerX" constant="2" id="heC-Rv-kFY"/>
-                                                    <constraint firstItem="7bv-Km-FrJ" firstAttribute="bottom" secondItem="mlE-n5-JCW" secondAttribute="bottom" id="jua-eh-2Hs"/>
+                                                    <constraint firstItem="7bv-Km-FrJ" firstAttribute="bottom" secondItem="mlE-n5-JCW" secondAttribute="bottom" constant="59" id="jua-eh-2Hs"/>
                                                     <constraint firstAttribute="bottom" secondItem="FkW-ZK-xki" secondAttribute="bottom" id="l6y-3B-wQf"/>
-                                                    <constraint firstItem="XcF-3B-oWj" firstAttribute="centerX" secondItem="FkW-ZK-xki" secondAttribute="centerX" id="m6v-pK-foD"/>
-                                                    <constraint firstItem="mlE-n5-JCW" firstAttribute="leading" secondItem="a35-il-uyb" secondAttribute="trailing" constant="16" id="mQE-X6-sRj"/>
-                                                    <constraint firstItem="XcF-3B-oWj" firstAttribute="top" secondItem="mlE-n5-JCW" secondAttribute="bottom" constant="34" id="qMe-dM-9Ig"/>
-                                                    <constraint firstItem="a35-il-uyb" firstAttribute="leading" secondItem="eAj-4S-mWl" secondAttribute="leading" constant="21" id="zRQ-Dk-fby"/>
+                                                    <constraint firstItem="XcF-3B-oWj" firstAttribute="centerX" secondItem="FkW-ZK-xki" secondAttribute="centerX" constant="-2.5" id="m6v-pK-foD"/>
+                                                    <constraint firstItem="mlE-n5-JCW" firstAttribute="leading" secondItem="a35-il-uyb" secondAttribute="trailing" constant="14" id="mQE-X6-sRj"/>
+                                                    <constraint firstItem="XcF-3B-oWj" firstAttribute="top" secondItem="mlE-n5-JCW" secondAttribute="bottom" constant="47" id="qMe-dM-9Ig"/>
+                                                    <constraint firstItem="a35-il-uyb" firstAttribute="leading" secondItem="eAj-4S-mWl" secondAttribute="leading" constant="23" id="zRQ-Dk-fby"/>
                                                 </constraints>
                                                 <connections>
                                                     <outletCollection property="gestureRecognizers" destination="RFu-Sp-1Ba" appends="YES" id="rc6-e2-AbR"/>
