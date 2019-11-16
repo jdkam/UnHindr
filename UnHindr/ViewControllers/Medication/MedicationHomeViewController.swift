@@ -196,11 +196,17 @@ class MedicationHomeViewController: UIViewController {
         let timeString = planSnapshot?.documents[cardIndex].get("ReminderTime") as? String
         var arr = timeString!.components(separatedBy: [":"])
         var amPmVar = "AM"
-        if Int(arr[0])! > 12 {
-            arr[0] = String(Int(arr[0])! - 12)
-            amPmVar = "PM"
+        // if no medication time
+        if (arr[0] == "") {
+            reminderTime.text = "None"
         }
-        reminderTime.text = arr[0] + ":" + arr[1] + amPmVar
+        else {
+            if Int(arr[0])! > 12 {
+                arr[0] = String(Int(arr[0])! - 12)
+                amPmVar = "PM"
+            }
+            reminderTime.text = arr[0] + ":" + arr[1] + amPmVar
+        }
         // Set the dosage value
         let nextDosage = planSnapshot?.documents[cardIndex].get("Dosage") as? Int
         medicationDosage.text = "Dosage: \(nextDosage!)"
