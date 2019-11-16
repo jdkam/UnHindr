@@ -290,6 +290,18 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
             title = "Congratulations!"
             message = "You Won!\n\nYou Matched: \(matches) Cards\nTime Remaining: \(timeRemaining) Seconds\n\nYour Score is:\n\(matches) (Matched Cards) + \(timeRemaining) (Time Bonus) = \(score)"
             
+            var ref: DocumentReference? = nil
+            ref = Services.db.collection("users").document(Services.userRef!).collection("CogGameData").addDocument(data: [
+                "Date": Timestamp(date: Date()),
+                "Score": score
+            ]) { err in
+                if let err = err {
+                    print("Error adding document: \(err)")
+                } else {
+                    print("Document added with ID: \(ref!.documentID)")
+                }
+            }
+            
         }
         else {
             //if there are unmatched cards check if there are any cards left
@@ -303,6 +315,18 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
             
             title = "Game Over"
             message = "You've Lost\n\nYou Matched: \(matches) Cards\nTime Remaining: \(timeRemaining) Seconds\n\nYour Score is:\n\(matches) (Matched Cards) + \(timeRemaining) (Time Bonus) = \(score)"
+            
+            var ref: DocumentReference? = nil
+            ref = Services.db.collection("users").document(Services.userRef!).collection("CogGameData").addDocument(data: [
+                "Date": Timestamp(date: Date()),
+                "Score": score
+            ]) { err in
+                if let err = err {
+                    print("Error adding document: \(err)")
+                } else {
+                    print("Document added with ID: \(ref!.documentID)")
+                }
+            }
             
         }
         
