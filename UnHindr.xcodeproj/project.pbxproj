@@ -38,6 +38,7 @@
 		9E4EAB32237E5E8400FC051B /* CaregiverHomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E4EAB30237E5E8400FC051B /* CaregiverHomeScreen.storyboard */; };
 		9E4EAB33237E5E8400FC051B /* ModeChoice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E4EAB31237E5E8400FC051B /* ModeChoice.storyboard */; };
 		9E4EAB35237E5FDE00FC051B /* ModeChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4EAB34237E5FDE00FC051B /* ModeChoiceViewController.swift */; };
+		9EE42465237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE42464237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift */; };
 		CBE5CD7485E703281E2757D0 /* Pods_UnHindr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB3CE85FD97976F3B7E3634 /* Pods_UnHindr.framework */; };
 		CDBC4013236E4FE8008934AF /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDBC4012236E4FE8008934AF /* Settings.storyboard */; };
 		CDBC4016236E501B008934AF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBC4015236E501B008934AF /* SettingsViewController.swift */; };
@@ -100,6 +101,7 @@
 		9E4EAB30237E5E8400FC051B /* CaregiverHomeScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CaregiverHomeScreen.storyboard; sourceTree = "<group>"; };
 		9E4EAB31237E5E8400FC051B /* ModeChoice.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ModeChoice.storyboard; sourceTree = "<group>"; };
 		9E4EAB34237E5FDE00FC051B /* ModeChoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeChoiceViewController.swift; sourceTree = "<group>"; };
+		9EE42464237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaregiverHomeScreenViewController.swift; sourceTree = "<group>"; };
 		A6E2B4E2DEF28A4C383CB68F /* Pods_UnHindr_UnHindrUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnHindr_UnHindrUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4A52706C5DFD3854AB3653D /* Pods-UnHindr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindr.debug.xcconfig"; path = "Target Support Files/Pods-UnHindr/Pods-UnHindr.debug.xcconfig"; sourceTree = "<group>"; };
 		BC2051C061649210EBAEDB5D /* Pods-UnHindrTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindrTests.release.xcconfig"; path = "Target Support Files/Pods-UnHindrTests/Pods-UnHindrTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				98F115E3236D22F90082A1B1 /* Mood */,
 				9DF3F89A2367D826003CF8B9 /* LoginViewController.swift */,
 				2DD67103236BC4C5005948DF /* HomeScreenViewController.swift */,
+				9EE42464237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EE42465237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift in Sources */,
 				9DF3F89B2367D826003CF8B9 /* LoginViewController.swift in Sources */,
 				98F115EB236D2B770082A1B1 /* MoodQ5ViewController.swift in Sources */,
 				98F115E5236D23380082A1B1 /* MoodQ2ViewController.swift in Sources */,
@@ -759,8 +763,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H5FTKK29SB;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = UnHindr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -780,8 +784,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H5FTKK29SB;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = UnHindr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

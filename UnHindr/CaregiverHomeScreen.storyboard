@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8FY-gC-Gvs">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -18,10 +18,10 @@
             </objects>
             <point key="canvasLocation" x="-479" y="-130"/>
         </scene>
-        <!--Home Screen View Controller-->
+        <!--Caregiver Home Screen View Controller-->
         <scene sceneID="1O3-64-2SW">
             <objects>
-                <viewController storyboardIdentifier="HomeScreenViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8FY-gC-Gvs" customClass="HomeScreenViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CaregiverHomeScreenViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8FY-gC-Gvs" customClass="CaregiverHomeScreenViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleAspectFit" id="3Wd-0R-JdL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -77,6 +77,9 @@
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wnh-Dt-kMM" userLabel="options">
                                                 <rect key="frame" x="186" y="0.0" width="185" height="151"/>
                                                 <state key="normal" image="Options"/>
+                                                <connections>
+                                                    <segue destination="IkE-yx-Ksk" kind="presentation" id="mkB-l2-bkK"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -97,6 +100,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qq1-lo-8Cr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="69.599999999999994" y="130.88455772113943"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="WwD-co-uJT">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Settings" id="IkE-yx-Ksk" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="65Q-0W-QfO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="513" y="437"/>
         </scene>
     </scenes>
     <resources>

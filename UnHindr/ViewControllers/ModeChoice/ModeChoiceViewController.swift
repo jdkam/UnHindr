@@ -10,10 +10,13 @@
 import UIKit
 
 class ModeChoiceViewController: UIViewController {
+    private var isPatient = 0
     @IBAction func careGiverTapped(_ sender: UIButton) {
+        self.isPatient = 0
     }
     
     @IBAction func pdTapped(_ sender: UIButton) {
+        self.isPatient = 1
     }
     
     override func viewDidLoad() {
