@@ -105,7 +105,7 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
     
     //sets spacing for items
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 20
+        return 25
     }
     
     
@@ -286,7 +286,7 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
             }
             
             title = "Congratulations!"
-            message = "You Won!\nYou Matched: \(numMatches) Cards\nTime Remaining: \(timeRemaining) Seconds\nYour Score is: \(numMatches) (Matched Cards) + \(timeRemaining) (Time Bonus) = \(score)"
+            message = "You Won!\n\nYou Matched: \(numMatches) Cards\nTime Remaining: \(timeRemaining) Seconds\n\nYour Score is:\n\(numMatches) (Matched Cards) + \(timeRemaining) (Time Bonus) = \(score)"
             
         }
         else {
@@ -297,7 +297,7 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
             }
             
             title = "Game Over"
-            message = "You've Lost\nYou Matched: \(numMatches) Cards\nTime Remaining: \(timeRemaining) Seconds\nYour Score is: \(numMatches) (Matched Cards) + \(timeRemaining) (Time Bonus) = \(score)"
+            message = "You've Lost\n\nYou Matched: \(numMatches) Cards\nTime Remaining: \(timeRemaining) Seconds\n\nYour Score is:\n\(numMatches) (Matched Cards) + \(timeRemaining) (Time Bonus) = \(score)"
             
         }
         

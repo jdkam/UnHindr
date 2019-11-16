@@ -23,7 +23,7 @@ class CardModel {
         for _ in 1...9 {
             
             //get a random number
-           let randomNumber = arc4random_uniform(39) + 1
+           let randomNumber = arc4random_uniform(13) + 1
             
             print(randomNumber)
             

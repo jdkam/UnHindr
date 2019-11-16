@@ -20,6 +20,10 @@
 		8176FAB7237B8A9C0083B445 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8176FAB6237B8A9C0083B445 /* Card.swift */; };
 		8176FAB9237B94FC0083B445 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8176FAB8237B94FC0083B445 /* CardCollectionViewCell.swift */; };
 		81B5908E2378F8DD00BA49AF /* CogGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81B5908D2378F8DD00BA49AF /* CogGame.storyboard */; };
+		81BDBD9F237F8E9C00F4C970 /* shuffle.wav in Resources */ = {isa = PBXBuildFile; fileRef = 81BDBD9B237F8E9B00F4C970 /* shuffle.wav */; };
+		81BDBDA0237F8E9C00F4C970 /* dingcorrect.wav in Resources */ = {isa = PBXBuildFile; fileRef = 81BDBD9C237F8E9B00F4C970 /* dingcorrect.wav */; };
+		81BDBDA1237F8E9C00F4C970 /* dingwrong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 81BDBD9D237F8E9C00F4C970 /* dingwrong.wav */; };
+		81BDBDA2237F8E9C00F4C970 /* cardflip.wav in Resources */ = {isa = PBXBuildFile; fileRef = 81BDBD9E237F8E9C00F4C970 /* cardflip.wav */; };
 		93FA49CD665592E4B99DB3F3 /* Pods_UnHindr_UnHindrUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6E2B4E2DEF28A4C383CB68F /* Pods_UnHindr_UnHindrUITests.framework */; };
 		98F115D8236CCDF80082A1B1 /* Mood.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98F115D7236CCDF80082A1B1 /* Mood.storyboard */; };
 		98F115DA236CCED00082A1B1 /* MoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F115D9236CCED00082A1B1 /* MoodViewController.swift */; };
@@ -80,6 +84,10 @@
 		8176FAB6237B8A9C0083B445 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		8176FAB8237B94FC0083B445 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		81B5908D2378F8DD00BA49AF /* CogGame.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CogGame.storyboard; sourceTree = "<group>"; };
+		81BDBD9B237F8E9B00F4C970 /* shuffle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shuffle.wav; sourceTree = "<group>"; };
+		81BDBD9C237F8E9B00F4C970 /* dingcorrect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dingcorrect.wav; sourceTree = "<group>"; };
+		81BDBD9D237F8E9C00F4C970 /* dingwrong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dingwrong.wav; sourceTree = "<group>"; };
+		81BDBD9E237F8E9C00F4C970 /* cardflip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardflip.wav; sourceTree = "<group>"; };
 		98F115D7236CCDF80082A1B1 /* Mood.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mood.storyboard; sourceTree = "<group>"; };
 		98F115D9236CCED00082A1B1 /* MoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodViewController.swift; sourceTree = "<group>"; };
 		98F115E4236D23380082A1B1 /* MoodQ2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodQ2ViewController.swift; sourceTree = "<group>"; };
@@ -199,6 +207,7 @@
 		81B590912378F8F900BA49AF /* CogGame */ = {
 			isa = PBXGroup;
 			children = (
+				81BDBD9A237F8E4600F4C970 /* Sounds */,
 				81B5908D2378F8DD00BA49AF /* CogGame.storyboard */,
 				8176FAB2237B88D80083B445 /* CogGameViewController.swift */,
 				8176FAB4237B896B0083B445 /* CardModel.swift */,
@@ -206,6 +215,17 @@
 				8176FAB8237B94FC0083B445 /* CardCollectionViewCell.swift */,
 			);
 			path = CogGame;
+			sourceTree = "<group>";
+		};
+		81BDBD9A237F8E4600F4C970 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				81BDBD9E237F8E9C00F4C970 /* cardflip.wav */,
+				81BDBD9C237F8E9B00F4C970 /* dingcorrect.wav */,
+				81BDBD9D237F8E9C00F4C970 /* dingwrong.wav */,
+				81BDBD9B237F8E9B00F4C970 /* shuffle.wav */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 		98F115E3236D22F90082A1B1 /* Mood */ = {
@@ -420,17 +440,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81BDBD9F237F8E9C00F4C970 /* shuffle.wav in Resources */,
 				98F67921236E85AF00517099 /* Profile.storyboard in Resources */,
 				2DD6710C236BCD41005948DF /* HomeScreen.storyboard in Resources */,
 				98F115D8236CCDF80082A1B1 /* Mood.storyboard in Resources */,
+				81BDBDA0237F8E9C00F4C970 /* dingcorrect.wav in Resources */,
 				2DD6710B236BCD41005948DF /* Login.storyboard in Resources */,
 				9DFB75C0236F7B15006321B8 /* Assets.xcassets in Resources */,
 				81B5908E2378F8DD00BA49AF /* CogGame.storyboard in Resources */,
+				81BDBDA1237F8E9C00F4C970 /* dingwrong.wav in Resources */,
 				9DF3F8A32367D82D003CF8B9 /* LaunchScreen.storyboard in Resources */,
 				215C15DA236F6E390063F3E4 /* WellnessTestHome.storyboard in Resources */,
 				9DF3F8C72367D880003CF8B9 /* GoogleService-Info.plist in Resources */,
 				CDBC4013236E4FE8008934AF /* Settings.storyboard in Resources */,
 				9DFB75B9236F74D0006321B8 /* Medication.storyboard in Resources */,
+				81BDBDA2237F8E9C00F4C970 /* cardflip.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
