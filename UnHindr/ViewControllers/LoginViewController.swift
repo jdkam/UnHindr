@@ -14,7 +14,7 @@ import FirebaseFirestore
 
 class LoginViewController: UIViewController {
     //used to navigate user to the correct homescreen
-    private var isPatinet = 0
+    private var isPatient = true
     // to determine which button is pressed (login/signup) - used in viewWillDisappear
     private var isSignUp = 0
     //place holder for users data
@@ -123,7 +123,7 @@ class LoginViewController: UIViewController {
     // Output:
     //      1. Storyboard changes to HomeScreen and displays first view on the storyboard
     private func transitionToHomeScreen(){
-        if(self.isPatinet == 0){
+        if(!self.isPatient){
             //Switch storyboard to the home menu
             let storyboard = UIStoryboard(name: "CaregiverHomeScreen", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "CaregiverHomeScreenViewController") as UIViewController
@@ -146,7 +146,7 @@ class LoginViewController: UIViewController {
         if (Services.userRef != nil) {
             self.getUserInfo(Services.userRef!, completionHandler: { (complete) in
                 if complete == true {
-                    self.isPatinet = (self.datacollection?["IsPatient"] as? Int)!
+                    self.isPatient = (self.datacollection?["isPatient"] as? Bool)!
                 }
                 else{
                     print("----------------Failed to get user data--------------")
