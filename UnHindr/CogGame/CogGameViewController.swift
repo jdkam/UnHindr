@@ -22,8 +22,10 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
     var cardArray = [Card]()
     
     var timer : Timer?
-    var seconds = 60
+    var seconds = 120
     var matches = 0
+    
+    
     
     
     var firstFlippedCardIndex:IndexPath?
@@ -43,9 +45,12 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
         
         scoreElapsed()
         
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
         
-        
-        
+        SoundManager.playSound(.shuffle)
     }
     
     @objc func scoreElapsed() {
@@ -108,8 +113,7 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
         return 25
     }
     
-    
-    
+
     
     
     // MARK: - UICollectionView Protocol Methods
@@ -152,6 +156,10 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
         {
             //flip the card
             cell.flip()
+            
+            //play the flip sound
+            SoundManager.playSound(.flip)
+            
             
             //set status of the card
             card.isFlipped = true
@@ -196,6 +204,8 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
             
             //its a match
             
+            //Play sound
+            SoundManager.playSound(.match)
             
             //set status of the cards
             cardOne.isMatched = true
@@ -216,6 +226,9 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
         {
             
             //its not a match
+            
+            //play sound
+            SoundManager.playSound(.nomatch)
             
             //set the statuses of the cards
             cardOne.isFlipped = false
@@ -246,6 +259,7 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
         var timeRemaining = 0
         var score = 0
         
+        //check that every card in the array is matched, if so, then game is won
         for card in cardArray {
             
             if card.isMatched == false {
@@ -253,25 +267,9 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
                 isWon = false
                 break
             }
-            else
-            {
-                //if card isMatched  is true, then increment
-                numMatches += 1
-            }
+            
         }
         
-        //calculate total number of matched cards
-        if numMatches > 0 {
-            numMatches = numMatches/2
-        }
-        
-        timeRemaining = seconds
-        print("Seconds Finished With: \(timeRemaining)")
-        
-        print("number of matches: \(numMatches)")
-        
-        score = timeRemaining + numMatches
-        print("Score: \(score)")
         
         //Initialize messaging variables
         var title = ""
@@ -280,24 +278,31 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
         //if not, then user has won, stop timer
         if isWon == true {
             
+            timeRemaining = seconds
+            score = timeRemaining + matches
+            
+            
             if seconds > 0 {
                 timer?.invalidate()
                 
             }
             
             title = "Congratulations!"
-            message = "You Won!\n\nYou Matched: \(numMatches) Cards\nTime Remaining: \(timeRemaining) Seconds\n\nYour Score is:\n\(numMatches) (Matched Cards) + \(timeRemaining) (Time Bonus) = \(score)"
+            message = "You Won!\n\nYou Matched: \(matches) Cards\nTime Remaining: \(timeRemaining) Seconds\n\nYour Score is:\n\(matches) (Matched Cards) + \(timeRemaining) (Time Bonus) = \(score)"
             
         }
         else {
             //if there are unmatched cards check if there are any cards left
 
+            timeRemaining = seconds
+            score = timeRemaining + matches
+            
             if seconds > 0 {
                 return
             }
             
             title = "Game Over"
-            message = "You've Lost\n\nYou Matched: \(numMatches) Cards\nTime Remaining: \(timeRemaining) Seconds\n\nYour Score is:\n\(numMatches) (Matched Cards) + \(timeRemaining) (Time Bonus) = \(score)"
+            message = "You've Lost\n\nYou Matched: \(matches) Cards\nTime Remaining: \(timeRemaining) Seconds\n\nYour Score is:\n\(matches) (Matched Cards) + \(timeRemaining) (Time Bonus) = \(score)"
             
         }
         

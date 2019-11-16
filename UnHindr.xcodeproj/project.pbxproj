@@ -24,6 +24,8 @@
 		81BDBDA0237F8E9C00F4C970 /* dingcorrect.wav in Resources */ = {isa = PBXBuildFile; fileRef = 81BDBD9C237F8E9B00F4C970 /* dingcorrect.wav */; };
 		81BDBDA1237F8E9C00F4C970 /* dingwrong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 81BDBD9D237F8E9C00F4C970 /* dingwrong.wav */; };
 		81BDBDA2237F8E9C00F4C970 /* cardflip.wav in Resources */ = {isa = PBXBuildFile; fileRef = 81BDBD9E237F8E9C00F4C970 /* cardflip.wav */; };
+		81BDBDA4237F8F9000F4C970 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BDBDA3237F8F9000F4C970 /* AVFoundation.framework */; };
+		81BDBDA6237F8FDB00F4C970 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BDBDA5237F8FDB00F4C970 /* SoundManager.swift */; };
 		93FA49CD665592E4B99DB3F3 /* Pods_UnHindr_UnHindrUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6E2B4E2DEF28A4C383CB68F /* Pods_UnHindr_UnHindrUITests.framework */; };
 		98F115D8236CCDF80082A1B1 /* Mood.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98F115D7236CCDF80082A1B1 /* Mood.storyboard */; };
 		98F115DA236CCED00082A1B1 /* MoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F115D9236CCED00082A1B1 /* MoodViewController.swift */; };
@@ -88,6 +90,8 @@
 		81BDBD9C237F8E9B00F4C970 /* dingcorrect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dingcorrect.wav; sourceTree = "<group>"; };
 		81BDBD9D237F8E9C00F4C970 /* dingwrong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dingwrong.wav; sourceTree = "<group>"; };
 		81BDBD9E237F8E9C00F4C970 /* cardflip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardflip.wav; sourceTree = "<group>"; };
+		81BDBDA3237F8F9000F4C970 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		81BDBDA5237F8FDB00F4C970 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		98F115D7236CCDF80082A1B1 /* Mood.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mood.storyboard; sourceTree = "<group>"; };
 		98F115D9236CCED00082A1B1 /* MoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodViewController.swift; sourceTree = "<group>"; };
 		98F115E4236D23380082A1B1 /* MoodQ2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodQ2ViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81BDBDA4237F8F9000F4C970 /* AVFoundation.framework in Frameworks */,
 				CBE5CD7485E703281E2757D0 /* Pods_UnHindr.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -197,6 +202,7 @@
 		7AC9719345D1AB48A6CAA879 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				81BDBDA3237F8F9000F4C970 /* AVFoundation.framework */,
 				3EB3CE85FD97976F3B7E3634 /* Pods_UnHindr.framework */,
 				A6E2B4E2DEF28A4C383CB68F /* Pods_UnHindr_UnHindrUITests.framework */,
 				03A434C323DEDECA6A4F4E7C /* Pods_UnHindrTests.framework */,
@@ -213,6 +219,7 @@
 				8176FAB4237B896B0083B445 /* CardModel.swift */,
 				8176FAB6237B8A9C0083B445 /* Card.swift */,
 				8176FAB8237B94FC0083B445 /* CardCollectionViewCell.swift */,
+				81BDBDA5237F8FDB00F4C970 /* SoundManager.swift */,
 			);
 			path = CogGame;
 			sourceTree = "<group>";
@@ -587,6 +594,7 @@
 				8176FAB7237B8A9C0083B445 /* Card.swift in Sources */,
 				98F115E5236D23380082A1B1 /* MoodQ2ViewController.swift in Sources */,
 				CDBC4016236E501B008934AF /* SettingsViewController.swift in Sources */,
+				81BDBDA6237F8FDB00F4C970 /* SoundManager.swift in Sources */,
 				215C15DC236F6E5F0063F3E4 /* WellnessTestHomeViewController.swift in Sources */,
 				8176FAB5237B896B0083B445 /* CardModel.swift in Sources */,
 				98F115DA236CCED00082A1B1 /* MoodViewController.swift in Sources */,
