@@ -36,6 +36,8 @@
 		98F6791D236E849900517099 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F6791C236E849900517099 /* ProfileViewController.swift */; };
 		98F67921236E85AF00517099 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98F67920236E85AF00517099 /* Profile.storyboard */; };
 		9D627A0E236FD4240027B6B7 /* MedicationHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D627A0D236FD4240027B6B7 /* MedicationHomeViewController.swift */; };
+		9D6C641C2378B50F00F0C058 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6C641B2378B50F00F0C058 /* Constants.swift */; };
+		9DAEB52E237FC408008A94BD /* FullMedicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAEB52D237FC407008A94BD /* FullMedicationViewController.swift */; };
 		9DE33C6E236F98BD00855C78 /* DatabaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE33C6D236F98BD00855C78 /* DatabaseTests.swift */; };
 		9DF3F8992367D826003CF8B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF3F8982367D826003CF8B9 /* AppDelegate.swift */; };
 		9DF3F89B2367D826003CF8B9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF3F89A2367D826003CF8B9 /* LoginViewController.swift */; };
@@ -104,6 +106,8 @@
 		98F6791C236E849900517099 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		98F67920236E85AF00517099 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		9D627A0D236FD4240027B6B7 /* MedicationHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationHomeViewController.swift; sourceTree = "<group>"; };
+		9D6C641B2378B50F00F0C058 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9DAEB52D237FC407008A94BD /* FullMedicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullMedicationViewController.swift; sourceTree = "<group>"; };
 		9DE33C6D236F98BD00855C78 /* DatabaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseTests.swift; sourceTree = "<group>"; };
 		9DF3F8952367D826003CF8B9 /* UnHindr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnHindr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DF3F8982367D826003CF8B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -190,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				2DE6A77C236E402B00B76282 /* Services.swift */,
+				9D6C641B2378B50F00F0C058 /* Constants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -335,6 +340,7 @@
 				7013CBB82370D00E00A1231F /* ChartsViewController.swift */,
 				9D627A0D236FD4240027B6B7 /* MedicationHomeViewController.swift */,
 				9DFB75BB236F7515006321B8 /* MedicationViewController.swift */,
+				9DAEB52D237FC407008A94BD /* FullMedicationViewController.swift */,
 			);
 			path = Medication;
 			sourceTree = "<group>";
@@ -610,6 +616,7 @@
 			files = (
 				9EE42465237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift in Sources */,
 				9DF3F89B2367D826003CF8B9 /* LoginViewController.swift in Sources */,
+				9D6C641C2378B50F00F0C058 /* Constants.swift in Sources */,
 				98F115EB236D2B770082A1B1 /* MoodQ5ViewController.swift in Sources */,
 				8176FAB7237B8A9C0083B445 /* Card.swift in Sources */,
 				98F115E5236D23380082A1B1 /* MoodQ2ViewController.swift in Sources */,
@@ -617,6 +624,7 @@
 				81BDBDA6237F8FDB00F4C970 /* SoundManager.swift in Sources */,
 				215C15DC236F6E5F0063F3E4 /* WellnessTestHomeViewController.swift in Sources */,
 				8176FAB5237B896B0083B445 /* CardModel.swift in Sources */,
+				9DAEB52E237FC408008A94BD /* FullMedicationViewController.swift in Sources */,
 				98F115DA236CCED00082A1B1 /* MoodViewController.swift in Sources */,
 				8176FAB9237B94FC0083B445 /* CardCollectionViewCell.swift in Sources */,
 				98F115E7236D23520082A1B1 /* MoodQ3ViewController.swift in Sources */,
