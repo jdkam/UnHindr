@@ -16,12 +16,14 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
     
     var model = CardModel()
     var cardArray = [Card]()
     
     var timer : Timer?
     var seconds = 60
+    var matches = 0
     
     
     var firstFlippedCardIndex:IndexPath?
@@ -39,7 +41,21 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerElapsed), userInfo: nil, repeats: true)
         RunLoop.main.add(timer!, forMode: .common)
         
+        scoreElapsed()
+        
+        
+        
+        
     }
+    
+    @objc func scoreElapsed() {
+        
+        scoreLabel.text = "Cards Matched: \(matches)"
+        
+    }
+    
+    
+    
     
     //MARK: Timer Methods
     
@@ -63,6 +79,11 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
         
         
     }
+    
+    
+    
+    
+    //MARK: - CollectionViewCell Formatting
    
     //sets the number of items on a row
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -86,6 +107,10 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 20
     }
+    
+    
+    
+    
     
     // MARK: - UICollectionView Protocol Methods
     
@@ -142,19 +167,15 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
             {
                 //this is the second card being flipped
                 
-                //TODO: performs the matching logic
+                //performs the matching logic
                 checkForMatches(indexPath)
             }
         }
-        else
-        {
-          
-        }
         
-        
-       
-    
     } //end of the didSelectItemAt method
+    
+    
+    
     
     //MARK: - Game Logic Methods
     
@@ -179,6 +200,9 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
             //set status of the cards
             cardOne.isMatched = true
             cardTwo.isMatched = true
+            
+            matches += 1
+            scoreElapsed()
             
             //remove the cards from the grid
             cardOneCell?.remove()
@@ -249,11 +273,11 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
         score = timeRemaining + numMatches
         print("Score: \(score)")
         
-        //messaging variables
+        //Initialize messaging variables
         var title = ""
         var message = ""
         
-        //if not then user has won, stop timer
+        //if not, then user has won, stop timer
         if isWon == true {
             
             if seconds > 0 {
@@ -262,7 +286,7 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
             }
             
             title = "Congratulations!"
-            message = "You've Won! \nYou Matched: \(numMatches) Cards in \(60-timeRemaining) seconds!\nYour Score is: \(score)"
+            message = "You Won!\nYou Matched: \(numMatches) Cards\nTime Remaining: \(timeRemaining) Seconds\nYour Score is: \(numMatches) (Matched Cards) + \(timeRemaining) (Time Bonus) = \(score)"
             
         }
         else {
@@ -273,7 +297,7 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
             }
             
             title = "Game Over"
-            message = "You've Lost\nYou Matched: \(numMatches) Cards in \(60-timeRemaining) seconds!\nYour Score is: \(score)"
+            message = "You've Lost\nYou Matched: \(numMatches) Cards\nTime Remaining: \(timeRemaining) Seconds\nYour Score is: \(numMatches) (Matched Cards) + \(timeRemaining) (Time Bonus) = \(score)"
             
         }
         
@@ -282,6 +306,8 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
         
     }
     
+    //Configures how the alert will be displayed to screen
+    //Takes in a title and message parameter and displays alert to screen
     func showAlert(_ title:String, _ message: String){
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
