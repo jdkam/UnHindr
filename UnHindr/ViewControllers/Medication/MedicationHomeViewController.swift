@@ -265,14 +265,15 @@ class MedicationHomeViewController: UIViewController {
             ])
         
         // Update view
-        self.card!.alpha = 0
+        self.MedCardView.alpha = 0
+//        self.card!.alpha = 0
         // Update fields on card with next card view
         if (self.indexToNextUnusedCard()) {
             assert(self.fetchAndUpdateCard())
             //Move the card back to the center
             self.card!.center = self.medViewCenter!
             UIView.animate(withDuration: 1) {
-                self.card!.alpha = 1
+                self.MedCardView.alpha = 1
             }
         }
     }
