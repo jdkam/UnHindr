@@ -25,7 +25,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connect" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jL-3X-aOq">
-                                <rect key="frame" x="274.5" y="61" width="119.5" height="36"/>
+                                <rect key="frame" x="274" y="61" width="120" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -56,9 +56,8 @@
                                     <action selector="checkTapped:" destination="3pH-Fv-RT3" eventType="touchUpInside" id="9Ut-oe-wdd"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9Tq-bt-g29">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9Tq-bt-g29">
                                 <rect key="frame" x="20" y="370" width="374" height="437"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" red="0.63231766219999996" green="0.19565311069999999" blue="0.86733120679999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
@@ -75,9 +74,11 @@
                                     <outlet property="dataSource" destination="3pH-Fv-RT3" id="ZWz-XR-v8H"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJn-0S-8tx">
-                                <rect key="frame" x="20" y="313" width="374" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJn-0S-8tx">
+                                <rect key="frame" x="20" y="313" width="503.5" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="KuT-Uv-NVY"/>
+                                </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="Connections                                        ">
                                         <attributes>
@@ -92,10 +93,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="kJn-0S-8tx" firstAttribute="leading" secondItem="vG3-n5-MWc" secondAttribute="leading" id="1cs-qq-y4b"/>
+                            <constraint firstItem="Xa7-n7-PED" firstAttribute="bottom" secondItem="9Tq-bt-g29" secondAttribute="bottom" constant="55" id="1iG-ha-GMG"/>
                             <constraint firstItem="1jL-3X-aOq" firstAttribute="top" secondItem="IuD-K6-4oH" secondAttribute="bottom" constant="-59" id="9Pw-Rn-vq4"/>
                             <constraint firstItem="aVf-yp-mBe" firstAttribute="width" secondItem="IuD-K6-4oH" secondAttribute="width" multiplier="0.2" id="NtF-Wn-3Kb"/>
                             <constraint firstItem="IuD-K6-4oH" firstAttribute="leading" secondItem="Xa7-n7-PED" secondAttribute="leading" id="RKK-UO-E8J"/>
                             <constraint firstItem="vG3-n5-MWc" firstAttribute="top" secondItem="IuD-K6-4oH" secondAttribute="bottom" constant="29" id="ahb-GR-f2j"/>
+                            <constraint firstItem="kJn-0S-8tx" firstAttribute="top" secondItem="5E3-bB-lxH" secondAttribute="top" constant="313" id="bjW-eI-gKC"/>
+                            <constraint firstItem="9Tq-bt-g29" firstAttribute="top" secondItem="kJn-0S-8tx" secondAttribute="bottom" constant="17" id="cgj-Xz-psa"/>
+                            <constraint firstItem="9Tq-bt-g29" firstAttribute="leading" secondItem="Xa7-n7-PED" secondAttribute="leading" constant="20" id="d1i-Nb-nSX"/>
+                            <constraint firstItem="Xa7-n7-PED" firstAttribute="trailing" secondItem="9Tq-bt-g29" secondAttribute="trailing" constant="20" id="eT8-RI-jns"/>
                             <constraint firstItem="IuD-K6-4oH" firstAttribute="trailing" secondItem="Xa7-n7-PED" secondAttribute="trailing" id="f0z-am-6aS"/>
                             <constraint firstItem="aVf-yp-mBe" firstAttribute="top" secondItem="IuD-K6-4oH" secondAttribute="bottom" constant="-77" id="oIz-i2-kfJ"/>
                             <constraint firstItem="Xa7-n7-PED" firstAttribute="trailing" secondItem="1jL-3X-aOq" secondAttribute="trailing" constant="20" id="rSE-L9-5RP"/>

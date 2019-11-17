@@ -69,15 +69,7 @@ class LoginViewController: UIViewController {
                         return
                     }
                     Services.userRef = userref
-                    // Obtain the mode status (see if patient or caregiver)
-                    Services.fetchModeStatus(Services.userRef!) { (result) in
-                        if (result!){
-                            strongSelf.transitionToHomeScreen(result!)
-                        }
-                        else {
-                            // Error fetching user mode
-                        }
-                    }
+                    Services.transitionHome(self!)
                 })
                 
             }

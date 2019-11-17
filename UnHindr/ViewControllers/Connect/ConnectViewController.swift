@@ -12,25 +12,28 @@ import FirebaseFirestore
 
 class ConnectViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var connectionsTable: UITableView!
     @IBOutlet weak var connectEmail: UITextField!
+    
     //list of user's connections
     var list = [""]
     
+    //determines number of sections for UITableView
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+    //set number of rows in for UITableView
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (list.count)
     }
-    
+   
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell" )
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = list[indexPath.row]
         return (cell)
     }
     
-    
+    // MARK: - View controller lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
         //apply the magnifying glass image to the search bar
@@ -38,7 +41,7 @@ class ConnectViewController: UIViewController, UITableViewDelegate, UITableViewD
         addImageLeftSide(txtField: connectEmail, andImage: mailImage!)
     }
 
-    @IBOutlet weak var connectionsTable: UITableView!
+    
     
     override func viewWillAppear(_ animated: Bool) {
         getConnections(Services.userRef!) { (querySnapshot) in
@@ -59,17 +62,7 @@ class ConnectViewController: UIViewController, UITableViewDelegate, UITableViewD
     // Output:
     //      1. transition to the correct home page based on user's mode
     @IBAction func homeButtonTapped(_ sender: Any) {
-        Services.fetchModeStatus(Services.userRef!) { (result) in
-            if (result!) {
-                let storyboard = UIStoryboard(name: "HomeScreen", bundle: nil)
-                let vc = storyboard.instantiateViewController(withIdentifier: "HomeScreenViewController") as UIViewController
-                self.present(vc, animated: true, completion: nil)
-            }else{
-                let storyboard = UIStoryboard(name: "CaregiverHomeScreen", bundle: nil)
-                let vc = storyboard.instantiateViewController(withIdentifier: "CaregiverHomeScreenViewController") as UIViewController
-                self.present(vc, animated: true, completion: nil)
-            }
-        }
+        Services.transitionHome(self)
     }
     
     
@@ -80,7 +73,6 @@ class ConnectViewController: UIViewController, UITableViewDelegate, UITableViewD
     //      1. Reference to connection
     func getConnections(_ userdoc: String, completionHandler: @escaping (_ result: QuerySnapshot? ) -> Void){
         Services.connectionRef.getDocuments { (querySnapshot, error) in
-            
             if error != nil {
                 //error
             }
@@ -89,10 +81,8 @@ class ConnectViewController: UIViewController, UITableViewDelegate, UITableViewD
                     print("Error fetching user document")
                     return
                 }
-                
                 completionHandler(query)
             }
-            
         }
     }
     
@@ -116,8 +106,7 @@ class ConnectViewController: UIViewController, UITableViewDelegate, UITableViewD
                         self.storeToDB(pairedUID, pairedEmail)
                     } else {
                         // Display an error message
-                        self.showAlert("You're already paired with \(pairedEmail)", "")
-                        //print("User is already paired with \(pairedEmail)")
+                        Services.showAlert("You're already paired with \(pairedEmail)", "", vc: self)
                     }
                 })
             }
@@ -164,18 +153,12 @@ class ConnectViewController: UIViewController, UITableViewDelegate, UITableViewD
             if err != nil {
                 // error
             } else {
+                if querySnapshot!.isEmpty {
+                    Services.showAlert("The Entered Email Does not Exist!", "", vc: self)
+                }
                 completionHandler(querySnapshot!)
             }
         }
-    }
-    
-    //Configures how the alert will be displayed to screen
-    //Takes in a title and message parameter and displays alert to screen
-    func showAlert(_ title:String, _ message: String){
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-        alert.addAction(alertAction)
-        present(alert, animated: true, completion: nil)
     }
     
     //Input1: The text field which image should apply to

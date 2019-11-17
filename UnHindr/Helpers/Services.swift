@@ -58,8 +58,33 @@ class Services {
                 }
         }
     }
+    //Configures how the alert will be displayed to screen
+    //input:
+    //      1.Takes in a title and message parameter and displays alert to screen
+    //output:
+    //      1. output the alert to the screen
+    static func showAlert(_ title:String, _ message: String, vc: UIViewController){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alert.addAction(alertAction)
+        vc.present(alert, animated: true, completion: nil)
+    }
     
-
+    static func transitionHome(_ UIVC: UIViewController){
+        Services.fetchModeStatus(Services.userRef!) { (result) in
+            if (result!) {
+                let storyboard = UIStoryboard(name: "HomeScreen", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "HomeScreenViewController") as UIViewController
+                UIVC.present(vc, animated: true, completion: nil)
+            }else{
+                let storyboard = UIStoryboard(name: "CaregiverHomeScreen", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "CaregiverHomeScreenViewController") as UIViewController
+                UIVC.present(vc, animated: true, completion: nil)
+            }
+        }
+        
+    }
+    
     
     // Fetch caregiver mode status using a completion handler
     // Input:
