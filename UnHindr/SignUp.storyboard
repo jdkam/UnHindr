@@ -43,7 +43,7 @@
                                 <rect key="frame" x="43" y="244" width="330" height="1000"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="zOc-MK-YAS">
-                                        <rect key="frame" x="12" y="8" width="297" height="1165"/>
+                                        <rect key="frame" x="12" y="8" width="297" height="1062"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="752" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name              Required" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1eM-lk-c92">
                                                 <rect key="frame" x="0.0" y="0.0" width="297" height="37"/>
@@ -167,7 +167,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ruv-BJ-fiv">
-                                                <rect key="frame" x="0.0" y="959" width="297" height="206"/>
+                                                <rect key="frame" x="0.0" y="959" width="297" height="103"/>
                                                 <state key="normal" image="Create account"/>
                                             </button>
                                         </subviews>
@@ -242,6 +242,7 @@
                     <size key="freeformSize" width="414" height="2000"/>
                     <connections>
                         <outlet property="DatePicker" destination="RJq-SD-Mo2" id="0Lw-2w-Pjk"/>
+                        <outlet property="Gender" destination="GXq-1I-rBu" id="ePt-r9-ej8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TE7-oA-fHT" userLabel="First Responder" sceneMemberID="firstResponder"/>
