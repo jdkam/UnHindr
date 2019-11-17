@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="Q5h-Jr-wYC">
             <objects>
-                <viewController id="ffN-YL-B4K" sceneMemberID="viewController">
+                <viewController id="ffN-YL-B4K" customClass="SignUpViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DFD-jL-gPj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="2000"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -43,7 +43,7 @@
                                 <rect key="frame" x="43" y="244" width="330" height="1000"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="zOc-MK-YAS">
-                                        <rect key="frame" x="12" y="8" width="297" height="1062"/>
+                                        <rect key="frame" x="12" y="8" width="297" height="1165"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="752" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name              Required" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1eM-lk-c92">
                                                 <rect key="frame" x="0.0" y="0.0" width="297" height="37"/>
@@ -167,7 +167,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ruv-BJ-fiv">
-                                                <rect key="frame" x="0.0" y="959" width="297" height="103"/>
+                                                <rect key="frame" x="0.0" y="959" width="297" height="206"/>
                                                 <state key="normal" image="Create account"/>
                                             </button>
                                         </subviews>
@@ -240,6 +240,9 @@
                         <viewLayoutGuide key="safeArea" id="Xf1-7j-avD"/>
                     </view>
                     <size key="freeformSize" width="414" height="2000"/>
+                    <connections>
+                        <outlet property="DatePicker" destination="RJq-SD-Mo2" id="0Lw-2w-Pjk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TE7-oA-fHT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
