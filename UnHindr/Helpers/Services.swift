@@ -24,6 +24,9 @@ class Services {
     // Static reference to Firestore root
     static let db = Firestore.firestore()
     
+    // Reference to all users
+    static let fullUserRef = db.collection("users")
+    
     // User profile reference
     static let userProfileRef = db.collection("users").document(userRef!)
     
@@ -32,6 +35,9 @@ class Services {
     
     // Medication history reference
     static let medicationHistoryRef = db.collection("users").document(userRef!).collection("Medication")
+    
+    // Connections reference
+    static let connectionRef = db.collection("users").document(userRef!).collection("Connections")
     
     // MARK: - Retrieve reference to a patient's data
     // Input:
@@ -53,6 +59,31 @@ class Services {
         }
     }
     
+
+    
+    // Fetch caregiver mode status using a completion handler
+    // Input:
+    //      1. User reference
+    // Output:
+    //      1. returns true if user is a patient else false
+    static func fetchModeStatus(_ userdoc: String, completionHandler: @escaping (_ result: Bool? ) -> Void){
+        Services.userProfileRef.getDocument { (documentSnapshot, err) in
+            if err != nil {
+                //error
+            }
+            else{
+                guard let document = documentSnapshot else {
+                    print("Error fetching user document")
+                    return
+                }
+                
+                let status = document.get("isPatient") as! Bool
+
+                completionHandler(status)
+            }
+            
+        }
+    }
 }
 
 extension Date {
