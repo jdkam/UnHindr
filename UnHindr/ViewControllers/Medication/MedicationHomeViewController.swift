@@ -10,7 +10,7 @@
 import UIKit
 import FirebaseFirestore
 
-class MedicationHomeViewController: UIViewController {
+class MedicationHomeViewController: UIViewController, NewMedDelegate {
     // Card index
     var cardIndex: Int = 0
     
@@ -21,7 +21,7 @@ class MedicationHomeViewController: UIViewController {
     var medViewCenter: CGPoint?
     
     // Snapshot to medication plan for the current day
-    var planSnapshot: QuerySnapshot?
+    var planSnapshot: QuerySnapshot? = nil
     
     // Outlets
     @IBOutlet weak var medicationQty: UILabel!
@@ -35,19 +35,15 @@ class MedicationHomeViewController: UIViewController {
     // MARK: - View controller lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
         // Define the center of the card view
         medViewCenter = MedCardView!.center
-    
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        
+        
         // Retrieve all meds taken for the current date (fetches a remote copy for data persistence on reboot)
         // Must be done before getDBMedicationPlan to retrieve the self.usedCards data
         self.getDBPlanTaken { (medTaken, timestamp) in
             print(Date.isToday(timestamp))
+            // Need to update the indices if new meds are added for the current day
             if (Date.isToday(timestamp)){
                 self.usedCards = medTaken
                 print(self.usedCards)
@@ -66,6 +62,11 @@ class MedicationHomeViewController: UIViewController {
             self.planSnapshot = querySnapshot!
             self.switchToNextCard(self.MedCardView)
         }
+    
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
     
     // MARK: - Transitions storyboard to Home Menu
@@ -115,19 +116,41 @@ class MedicationHomeViewController: UIViewController {
     // Output:
     //      1. querysnapshot of medication plan
     private func getDBMedicationPlan(completionHandler: @escaping (_ result: QuerySnapshot?) -> Void){
+        
         Services.medicationPlanRef
             .whereField("Day", arrayContains: Date.getDayOfWeek(Timestamp.init()).rawValue)
             .order(by: "ReminderTime")
-            .getDocuments { (querySnapshot, err) in
-            // the program will go into this if statement if the user authentication fails
-            if err != nil {
-                print("Error getting medication data")
-            }
-            else {
-                //
+            .addSnapshotListener { (querySnapshot, err) in
+                if err != nil {
+                    print("Error getting medication plan")
+                    completionHandler(nil)
+                }
+                querySnapshot!.documentChanges.forEach { diff in
+                    if (diff.type == .added){
+                        print("NEW PLAN ADDED")
+                    }
+                    if (diff.type == .modified){
+                        print("MEDICAtION PLAN CHANGED")
+                    }
+                    if (diff.type == .removed){
+                        // TODO for edit medication
+                    }
+                }
                 completionHandler(querySnapshot!)
-            }
         }
+//        Services.medicationPlanRef
+//            .whereField("Day", arrayContains: Date.getDayOfWeek(Timestamp.init()).rawValue)
+//            .order(by: "ReminderTime")
+//            .getDocuments { (querySnapshot, err) in
+//            // the program will go into this if statement if the user authentication fails
+//            if err != nil {
+//                print("Error getting medication data")
+//            }
+//            else {
+//                //
+//                completionHandler(querySnapshot!)
+//            }
+//        }
     }
     
     // Get a snapshot of the taken medicine for a given timestamp
@@ -150,6 +173,38 @@ class MedicationHomeViewController: UIViewController {
                 completionHandler(medPlanArr, timestamp)
             }
         }
+    }
+    
+    // MARK: - Medication Card functions
+    // Precondition:
+    //          1. Needs to be public function
+    // Input:
+    //          1. Data passed from MedicationViewController using protocols
+    // Output:
+    //          1. Sorts the usedCards array
+    func onMedAdded(documentID: String) {
+        print("Data received: \(documentID)")
+        // Update the remote array
+        var count: Int = 0
+        self.getDBMedicationPlan { (querySnapshot) in
+            for document in querySnapshot!.documents {
+                if document.documentID == documentID {
+                    break
+                }
+                count += 1
+            }
+            
+            // Modify the usedCard array based on the index location
+            for i in 0..<(self.usedCards.count) {
+                if (self.usedCards[i] >= count) {
+                    self.usedCards[i] += 1
+                }
+            }
+            
+            // Store new array to DB
+            self.updateMedPlanTakenArray()
+        }
+        
     }
     
     // Function that attempts to switch to next card
@@ -247,6 +302,7 @@ class MedicationHomeViewController: UIViewController {
             }
         }while(self.usedCards.contains(cardIndex) && self.usedCards.count < queryLength)
         
+        print(self.usedCards)
         print("Querylength: \(queryLength)")
         print("New card index: \(cardIndex)")
         
@@ -271,13 +327,24 @@ class MedicationHomeViewController: UIViewController {
         
         print("New used cards list: \(self.usedCards)")
         
+        self.updateMedPlanTakenArray()
+        
+        self.switchToNextCard(self.MedCardView)
+    }
+    
+    private func updateMedPlanTakenArray() {
         // Add to MedPlan array and update timestamp
         Services.userProfileRef.updateData([
             "MedPlanTimestamp": Timestamp(date: Date()),
             "MedPlan": self.usedCards
             ])
-        
-        self.switchToNextCard(self.MedCardView)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "addMedSegue" {
+            let addMedVC: MedicationViewController = segue.destination as! MedicationViewController
+            addMedVC.delegate = self
+        }
     }
 
 }
