@@ -15,13 +15,6 @@ import Firebase
 
 
 class MedicationViewController: UIViewController {
-//    @IBOutlet weak var checkMon: UIImageView!
-//    @IBOutlet weak var checkTues: UIImageView!
-//    @IBOutlet weak var checkWed: UIImageView!
-//    @IBOutlet weak var checkThur: UIImageView!
-//    @IBOutlet weak var checkFri: UIImageView!
-//    @IBOutlet weak var checkSat: UIImageView!
-//    @IBOutlet weak var checkSun: UIImageView!
     
     @IBOutlet weak var monButton: UIButton!
     @IBOutlet weak var tuesButton: UIButton!

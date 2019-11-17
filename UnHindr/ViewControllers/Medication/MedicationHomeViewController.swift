@@ -2,7 +2,7 @@
  File: [MedicationHomeViewController.swift]
  Creators: [Allan, Jordan]
  Date created: [03/11/2019]
- Date updated: [10/11/2019]
+ Date updated: [17/11/2019]
  Updater name: [Allan, Jordan]
  File description: [Controls the MyMeds screen in UnHindr]
  */
@@ -13,9 +13,6 @@ import FirebaseFirestore
 class MedicationHomeViewController: UIViewController {
     // Card index
     var cardIndex: Int = 0
-    
-    // UIView for medication plan card view
-    var card: UIView?
     
     // Index of used cards for today
     var usedCards = [Int]()
@@ -31,6 +28,8 @@ class MedicationHomeViewController: UIViewController {
     @IBOutlet weak var medicationDosage: UILabel!
     @IBOutlet weak var medicationName: UILabel!
     @IBOutlet weak var reminderTime: UILabel!
+    
+    // Card view for panning
     @IBOutlet weak var MedCardView: UIView!
     
     // MARK: - View controller lifecycle methods
@@ -45,14 +44,8 @@ class MedicationHomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        // Retrieve snapshot of med plans for current date
-        self.getDBMedicationPlan { (querySnapshot) in
-            self.planSnapshot = querySnapshot!
-            if (!self.fetchAndUpdateCard()) {
-                self.card!.alpha = 0
-            }
-        }
-        // Retrieve all meds taken for the current date
+        // Retrieve all meds taken for the current date (fetches a remote copy for data persistence on reboot)
+        // Must be done before getDBMedicationPlan to retrieve the self.usedCards data
         self.getDBPlanTaken { (medTaken, timestamp) in
             print(Date.isToday(timestamp))
             if (Date.isToday(timestamp)){
@@ -67,10 +60,12 @@ class MedicationHomeViewController: UIViewController {
                     "MedPlan": []
                     ])
             }
-            
         }
-        
-        
+        // Retrieve snapshot of med plans for current date
+        self.getDBMedicationPlan { (querySnapshot) in
+            self.planSnapshot = querySnapshot!
+            self.switchToNextCard(self.MedCardView)
+        }
     }
     
     // MARK: - Transitions storyboard to Home Menu
@@ -92,20 +87,20 @@ class MedicationHomeViewController: UIViewController {
     @IBAction func PanMedCard(_ sender: UIPanGestureRecognizer) {
         // If there is at least 1 card
         if ( self.planSnapshot!.count != 0) {
-            self.card = sender.view!
+            self.MedCardView = sender.view!
             let point = sender.translation(in: view)
-            self.card!.center = CGPoint(x: self.medViewCenter!.x + point.x, y: self.medViewCenter!.y)
+            self.MedCardView!.center = CGPoint(x: self.medViewCenter!.x + point.x, y: self.medViewCenter!.y)
             
             //Check for state to see if user has let go of the screen
             if sender.state == UIGestureRecognizer.State.ended {
                 // Check for velocity to switch
                 let velocity = sender.velocity(in: view)
                 if (Double(abs(velocity.x)) > Constants.medicationVelocityThreshold) {
-                    self.switchToNextCard(self.card!, sender)
+                    self.switchToNextCard(self.MedCardView!)
                 }
                 else{
                     UIView.animate(withDuration: 1) {
-                        self.card!.center = self.medViewCenter!
+                        self.MedCardView!.center = self.medViewCenter!
                     }
                 }
                 
@@ -157,43 +152,50 @@ class MedicationHomeViewController: UIViewController {
         }
     }
     
+    // Function that attempts to switch to next card
+    // Preconditions:
+    //      1. self.usedCards is updated with the current remote value
     // Input:
     //      1. None
     // Output:
     //      1. Switch to next available card
-    private func switchToNextCard(_ card: UIView,_ sender: UIPanGestureRecognizer) {
+    private func switchToNextCard(_ card: UIView) {
         //Check if there are any medication plans for today
-        // update card if card index changes
+        // Update view
+        self.MedCardView.alpha = 0
+        
+        // Update fields on card with next card view
         if (self.indexToNextUnusedCard()) {
-            // Update card
             assert(self.fetchAndUpdateCard())
-            
-            //Animate the popping in
-            card.alpha = 0
             //Move the card back to the center
-            card.center = self.medViewCenter!
+            self.MedCardView!.center = self.medViewCenter!
             UIView.animate(withDuration: 1) {
-                card.alpha = 1
+                self.MedCardView.alpha = 1
             }
         }
         
     }
     
-    // Input:
+    // Function that updates the med card given the condition that a card is available
+    // Preconditions:
     //      1. Global planSnapshot is defined
+    //      2. Card index is updated with the new medication
+    //      3. A medication is defined and untaken for the current day
+    // Inputs:
+    //      None
     // Output:
-    //      1. True -> card is successfully updated
+    //      1. True -> card is successfully updated with
     //      2. False -> There is no cards left or plan is not loaded properly
     private func fetchAndUpdateCard() -> Bool{
         // No cards
-        if (planSnapshot?.count == 0 || planSnapshot?.count == nil) {
+        if (planSnapshot!.count == 0) {
             return false
         }
 
         // Set the card values to the next card value
-        medicationName.text = planSnapshot?.documents[cardIndex].get("Medication") as? String
+        medicationName.text = planSnapshot!.documents[cardIndex].get("Medication") as? String
         // Parse medication time into 12H format
-        let timeString = planSnapshot?.documents[cardIndex].get("ReminderTime") as? String
+        let timeString = planSnapshot!.documents[cardIndex].get("ReminderTime") as? String
         var arr = timeString!.components(separatedBy: [":"])
         var amPmVar = "AM"
         // if no medication time
@@ -216,12 +218,19 @@ class MedicationHomeViewController: UIViewController {
         return true
     }
     
+    // Helper function that attempts to index to the next unused card if available for the current day
+    // Input:
+    //      1. planSnapshot must be defined
+    // Output:
+    //      1. True -> 1 or more medication has not been taken for the current day (cycles the index to the next available medication)
+    //      2. False -> No medication plan for the current day or all meds are taken for the current day ( Resets the card to the center of the screen)
     private func indexToNextUnusedCard() -> Bool {
-        let queryLength = planSnapshot?.count
-        if (queryLength == nil || queryLength == 1) {
+        let queryLength = planSnapshot!.count
+        // If there is no medication plan or only 1 plan for the current day
+        if (queryLength == 1 || self.usedCards.count == queryLength) {
             // Return the card to center
             UIView.animate(withDuration: 1) {
-                self.card!.center = self.medViewCenter!
+                self.MedCardView!.center = self.medViewCenter!
             }
             return false
         }
@@ -229,22 +238,26 @@ class MedicationHomeViewController: UIViewController {
         // cycle through cards if med is already taken
         repeat {
             // Check if we are at the end of the medication plan list
-            if (cardIndex >= queryLength!-1) {
+            if (cardIndex >= queryLength-1) {
                 cardIndex = 0
             }
             else{
                 print("Adding to card index")
                 cardIndex += 1
             }
-        }while(self.usedCards.contains(cardIndex) && self.usedCards.count < queryLength!)
+        }while(self.usedCards.contains(cardIndex) && self.usedCards.count < queryLength)
         
-        print("Querylength: \(queryLength!)")
+        print("Querylength: \(queryLength)")
         print("New card index: \(cardIndex)")
         
         return true
     }
     
-    // TODO:
+    // MARK: - Action that acknowledges the status of the current med card as taken
+    // Input:
+    //      1. Must have 1 or more cards for the current day (self.usedCard.count < planSnapshot?.count)
+    // Output:
+    //      1. Adds the current card to the usedCard list and and attempts to fetch the next card
     @IBAction func checkmarkTapped(_ sender: UIButton) {
         // Add new document to medication history
         Services.medicationHistoryRef.addDocument(data:[
@@ -264,18 +277,7 @@ class MedicationHomeViewController: UIViewController {
             "MedPlan": self.usedCards
             ])
         
-        // Update view
-        self.MedCardView.alpha = 0
-//        self.card!.alpha = 0
-        // Update fields on card with next card view
-        if (self.indexToNextUnusedCard()) {
-            assert(self.fetchAndUpdateCard())
-            //Move the card back to the center
-            self.card!.center = self.medViewCenter!
-            UIView.animate(withDuration: 1) {
-                self.MedCardView.alpha = 1
-            }
-        }
+        self.switchToNextCard(self.MedCardView)
     }
 
 }
