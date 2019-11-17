@@ -1,10 +1,11 @@
-//
-//  CardCollectionViewCell.swift
-//  UnHindr
-//
-//  Created by Jordan Kam on 11/12/19.
-//  Copyright © 2019 Sigma. All rights reserved.
-//
+/*
+File: [CardCollectionViewCell.swift]
+Creators: [Jordan]
+Date created: [11/14/2019]
+Date updated: [11/15/2019]
+Updater name: [Jordan]
+File description: [Controls the UI behavior of the collectionViewCells for the cards. Used for flipping animations]
+*/
 
 import UIKit
 
@@ -15,7 +16,9 @@ class CardCollectionViewCell: UICollectionViewCell {
     
     var card:Card?
     
-    //a function for managing the flipping the selected card
+    //Input: Selected Card object
+    //Output: Manages the flipping of the selected card
+    //Card disappears if matched
     func setCard(_ card:Card){
         
         //keeps tracks of the card that gets passed in
@@ -52,12 +55,15 @@ class CardCollectionViewCell: UICollectionViewCell {
         
     }
     
-    //flips from back image view to front image view
+    //Input: None
+    //Output: Flips from back image view to front image view
     func flip() {
         
         UIView.transition(from: backImageView, to: frontImageView, duration: 0.3, options: [.transitionFlipFromLeft, .showHideTransitionViews], completion: nil)
     }
     
+    //Input: none
+    //Output: Flips from backImageView to frontImageView
     func flipBack() {
         
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.2) {
@@ -68,6 +74,9 @@ class CardCollectionViewCell: UICollectionViewCell {
         
     }
     
+    
+    //input: none
+    //Output: removes both imageViews with fade out animation
     func remove() {
         
         //removes both image views from being visible

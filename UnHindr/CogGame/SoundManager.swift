@@ -1,10 +1,11 @@
-//
-//  SoundManager.swift
-//  UnHindr
-//
-//  Created by Jordan Kam on 2019-11-15.
-//  Copyright © 2019 Sigma. All rights reserved.
-//
+/*
+File: [SoundManager.swift]
+Creators: [Jordan]
+Date created: [11/14/2019]
+Date updated: [11/15/2019]
+Updater name: [Jordan]
+File description: [Manages the sounds used in the card game]
+*/
 
 import Foundation
 import AVFoundation
@@ -23,6 +24,10 @@ class SoundManager {
     
     }
     
+    
+    //Input: a SoundEffect name
+    //Output: sets the soundFile to play
+    //Plays the sound
     static func playSound(_ effect:SoundEffect) {
         
         var soundFilename = ""
