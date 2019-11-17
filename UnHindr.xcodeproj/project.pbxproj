@@ -10,6 +10,7 @@
 		215C15DA236F6E390063F3E4 /* WellnessTestHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 215C15D9236F6E390063F3E4 /* WellnessTestHome.storyboard */; };
 		215C15DC236F6E5F0063F3E4 /* WellnessTestHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215C15DB236F6E5F0063F3E4 /* WellnessTestHomeViewController.swift */; };
 		2BB1F3E910641FB171AAA24E /* Pods_UnHindrTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03A434C323DEDECA6A4F4E7C /* Pods_UnHindrTests.framework */; };
+		2DA6698E2381EAA60050AE42 /* MedicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA6698D2381EAA60050AE42 /* MedicationTests.swift */; };
 		2DD67104236BC4C5005948DF /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD67103236BC4C5005948DF /* HomeScreenViewController.swift */; };
 		2DD6710B236BCD41005948DF /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DD67107236BCD41005948DF /* Login.storyboard */; };
 		2DD6710C236BCD41005948DF /* HomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DD67109236BCD41005948DF /* HomeScreen.storyboard */; };
@@ -81,6 +82,7 @@
 		070601D3D77C38C0722FE935 /* Pods-UnHindrTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindrTests.debug.xcconfig"; path = "Target Support Files/Pods-UnHindrTests/Pods-UnHindrTests.debug.xcconfig"; sourceTree = "<group>"; };
 		215C15D9236F6E390063F3E4 /* WellnessTestHome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WellnessTestHome.storyboard; sourceTree = "<group>"; };
 		215C15DB236F6E5F0063F3E4 /* WellnessTestHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellnessTestHomeViewController.swift; sourceTree = "<group>"; };
+		2DA6698D2381EAA60050AE42 /* MedicationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationTests.swift; sourceTree = "<group>"; };
 		2DD67103236BC4C5005948DF /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		2DD67108236BCD41005948DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		2DD6710A236BCD41005948DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/HomeScreen.storyboard; sourceTree = "<group>"; };
@@ -327,6 +329,7 @@
 				9DF3F8AD2367D82D003CF8B9 /* UnHindrTests.swift */,
 				9DF3F8AF2367D82D003CF8B9 /* Info.plist */,
 				9DE33C6D236F98BD00855C78 /* DatabaseTests.swift */,
+				2DA6698D2381EAA60050AE42 /* MedicationTests.swift */,
 			);
 			path = UnHindrTests;
 			sourceTree = "<group>";
@@ -663,6 +666,7 @@
 			files = (
 				9DE33C6E236F98BD00855C78 /* DatabaseTests.swift in Sources */,
 				9DF3F8AE2367D82D003CF8B9 /* UnHindrTests.swift in Sources */,
+				2DA6698E2381EAA60050AE42 /* MedicationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
