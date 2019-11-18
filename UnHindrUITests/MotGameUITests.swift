@@ -47,8 +47,10 @@ class MotGameUITests: XCTestCase {
     // Output:
     //      1. Motor Game is entered, Home Button is pressed
     func testMotorGameHomeButton() {
-        testNavigationToMotorGame()
         let app = XCUIApplication()
+        loginToHomeScreen(app)
+        app.buttons["Wellness"].tap()
+        XCTAssert(app.buttons["MotorGameButton"].waitForExistence(timeout: 5))
         app.buttons["MotorGameButton"].tap()
         XCTAssert(app.buttons["MotorGameHomeButton"].waitForExistence(timeout: 5))
         app.buttons["MotorGameHomeButton"].tap()
@@ -61,8 +63,10 @@ class MotGameUITests: XCTestCase {
     // Output:
     //      1. Motor Game is entered, start label text appears
     func testStartLabelText() {
-        testNavigationToMotorGame()
         let app = XCUIApplication()
+        loginToHomeScreen(app)
+        app.buttons["Wellness"].tap()
+        XCTAssert(app.buttons["MotorGameButton"].waitForExistence(timeout: 5))
         app.buttons["MotorGameButton"].tap()
         XCTAssert(app.staticTexts["StartGameLabel"].waitForExistence(timeout: 5))
     }
@@ -73,9 +77,13 @@ class MotGameUITests: XCTestCase {
     // Output:
     //      1. Motor Game is finished, end label text, retry, and quit buttons appear
     func testEndGameFeatureAppearances() {
-        testStartLabelText()
         let app = XCUIApplication()
-        app.staticTexts["StartGameLabel"].tap()
+        loginToHomeScreen(app)
+        app.buttons["Wellness"].tap()
+        XCTAssert(app.buttons["MotorGameButton"].waitForExistence(timeout: 5))
+        app.buttons["MotorGameButton"].tap()
+        XCTAssert(app.staticTexts["StartGameLabel"].waitForExistence(timeout: 5))
+        app.tap()
         XCTAssert(app.staticTexts["EndGameLabel"].waitForExistence(timeout: 5))
         XCTAssert(app.buttons["RestartButton"].waitForExistence(timeout: 5))
         XCTAssert(app.buttons["QuitButton"].waitForExistence(timeout: 5))
