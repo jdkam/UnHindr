@@ -42,6 +42,13 @@ To test login use the following login information
 User: test@gmail.com
 Password: testtest
 
+## XCUI and XCUnit Testing Setup Environment
+
+In the XCode Simulator, Navigate to "Hardware" -> "Keyboard" -> "Connect Hardware Keyboard"
+Ensure that "Connect Hardware Keyboard" is turned OFF
+
+Perform these steps before running any UI or Unit testing modules
+
 ## Built With
 
 Swift on Xcode IDE
