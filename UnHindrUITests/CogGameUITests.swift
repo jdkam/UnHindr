@@ -94,6 +94,12 @@ class CogGameUITests: XCTestCase {
         let back15Element = collectionViewsQuery.children(matching: .cell).element(boundBy: 14).otherElements.containing(.image, identifier:"back-1").element
         
         let back16Element = collectionViewsQuery.children(matching: .cell).element(boundBy: 15).otherElements.containing(.image, identifier:"back-1").element
+        
+        let back17Element = collectionViewsQuery.children(matching: .cell).element(boundBy: 16).otherElements.containing(.image, identifier:"back-1").element
+        
+        let back18Element = collectionViewsQuery.children(matching: .cell).element(boundBy: 17).otherElements.containing(.image, identifier:"back-1").element
+
+
     
      
         //test all cards elements
@@ -113,6 +119,9 @@ class CogGameUITests: XCTestCase {
         XCTAssert(back14Element.exists)
         XCTAssert(back15Element.exists)
         XCTAssert(back16Element.exists)
+        XCTAssert(back17Element.exists)
+        XCTAssert(back18Element.exists)
+
     
         
 
@@ -166,24 +175,10 @@ class CogGameUITests: XCTestCase {
         
         let back16Element = collectionViewsQuery.children(matching: .cell).element(boundBy: 15).otherElements.containing(.image, identifier:"back-1").element
         
-        
-        //test all cards elements
-        XCTAssert(back1Element.exists)
-        XCTAssert(back2Element.exists)
-        XCTAssert(back3Element.exists)
-        XCTAssert(back4Element.exists)
-        XCTAssert(back5Element.exists)
-        XCTAssert(back6Element.exists)
-        XCTAssert(back7Element.exists)
-        XCTAssert(back8Element.exists)
-        XCTAssert(back9Element.exists)
-        XCTAssert(back10Element.exists)
-        XCTAssert(back11Element.exists)
-        XCTAssert(back12Element.exists)
-        XCTAssert(back13Element.exists)
-        XCTAssert(back14Element.exists)
-        XCTAssert(back15Element.exists)
-        XCTAssert(back16Element.exists)
+        let back17Element = collectionViewsQuery.children(matching: .cell).element(boundBy: 16).otherElements.containing(.image, identifier:"back-1").element
+
+        let back18Element = collectionViewsQuery.children(matching: .cell).element(boundBy: 17).otherElements.containing(.image, identifier:"back-1").element
+
         
         var elementArray: [XCUIElement] = []
         
@@ -203,6 +198,9 @@ class CogGameUITests: XCTestCase {
         elementArray.append(back14Element)
         elementArray.append(back15Element)
         elementArray.append(back16Element)
+        elementArray.append(back17Element)
+        elementArray.append(back18Element)
+
         
         
         //Check Card 1 matches
@@ -254,6 +252,12 @@ class CogGameUITests: XCTestCase {
         XCTAssert(elementArray[15].waitForExistence(timeout: 5))
         elementArray[15].tap()
         
+        XCTAssert(elementArray[16].waitForExistence(timeout: 5))
+        elementArray[16].tap()
+        
+        XCTAssert(elementArray[17].waitForExistence(timeout: 5))
+        elementArray[17].tap()
+     
 
 
     }
