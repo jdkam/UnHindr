@@ -24,6 +24,8 @@
 	<string>test</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Login</string>
+	<key>CFBundleDisplayName</key>
+	<string></string>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 	<key>UIRequiredDeviceCapabilities</key>
