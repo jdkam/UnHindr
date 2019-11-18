@@ -1,10 +1,11 @@
-//
-//  CogGameTest.swift
-//  UnHindrTests
-//
-//  Created by Jordan Kam on 2019-11-17.
-//  Copyright © 2019 Sigma. All rights reserved.
-//
+/*
+ File: [CogGameTests.swift]
+ Creators: [Jordan Kam]
+ Date created: [11/17/2019]
+ Date updated: [11/17/2019]
+ Updater name: [Jordan Kam]
+ File description: [Unit testing of the functions and methods contained in the Cognitive Game Module]
+ */
 
 import XCTest
 @testable import UnHindr
@@ -24,6 +25,8 @@ class CogGameTest: XCTestCase {
     }
     
 
+    //Input: None
+    //Output: Tests that the Card array used for the game is populated and not empty
     func testCardGenerationPopulated() {
         
         let model = CardModel()
@@ -37,7 +40,8 @@ class CogGameTest: XCTestCase {
     }
     
     
-    
+    //Input: None
+    //Output: Tests that the images are properly assigned to each card object generated
     func testCardImageGenerated() {
         let model = CardModel()
         var cardArray = [Card]()
@@ -55,6 +59,8 @@ class CogGameTest: XCTestCase {
         
     }
     
+    //Input: None
+    //Output: Tests that the soundManager properly checks the validity of soundFile
     func testSoundManager() {
         let soundFilename = "cardflip"
         
@@ -64,14 +70,6 @@ class CogGameTest: XCTestCase {
         else {
             XCTFail("Couldnt find sound file in the bundle")
             return
-        }
-    }
-    
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
         }
     }
 

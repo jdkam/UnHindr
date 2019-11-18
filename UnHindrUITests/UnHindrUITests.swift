@@ -1,10 +1,11 @@
-//
-//  UnHindrUITests.swift
-//  UnHindrUITests
-//
-//  Created by Allan on 2019-10-28.
-//  Copyright © 2019 Sigma. All rights reserved.
-//
+/*
+ File: [UnHindrUITests.swift]
+ Creators: [Allan Tsai]
+ Date created: [10/28/2019]
+ Date updated: [11/17/2019]
+ Updater name: [Jordan, Allan]
+ File description: [Tests the UI navigation for the Core UI of the app]
+ */
 
 import XCTest
 @testable import UnHindr

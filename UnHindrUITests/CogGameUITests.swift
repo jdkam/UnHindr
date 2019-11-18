@@ -1,10 +1,11 @@
-//
-//  CogGameUITests.swift
-//  UnHindrUITests
-//
-//  Created by Jordan Kam on 2019-11-17.
-//  Copyright © 2019 Sigma. All rights reserved.
-//
+/*
+ File: [CogGameUITests.swift]
+ Creators: [Jordan]
+ Date created: [11/17/2019]
+ Date updated: [11/17/2019]
+ Updater name: [Jordan]
+ File description: [Tests the UI for the cognitive game]
+ */
 
 import XCTest
 @testable import UnHindr
@@ -30,11 +31,12 @@ class CogGameUITests: XCTestCase {
     }
     
     
-
+    //MARK: - Test navigation to the Cognitive Game
+    //Input: none
+    //Output: Navigates from the login screen to the HomeScreen and then the Cognitive game
     func testNavToGame() {
         let app = XCUIApplication()
         loginToHomeScreen(app)
-        
         
         XCTAssert(app.buttons["Wellness"].waitForExistence(timeout: 5))
         app.buttons["Wellness"].tap()
@@ -44,6 +46,10 @@ class CogGameUITests: XCTestCase {
         
     }
     
+    
+    //MARK: - Tests loading in of cards to view
+    //Input: None
+    //Output: Ensures the cards exists in the UIView
     func testCards() {
         let app = XCUIApplication()
         loginToHomeScreen(app)
@@ -112,6 +118,9 @@ class CogGameUITests: XCTestCase {
 
     }
     
+    //MARK: - Test Card Flipping
+    //Input: None
+    //Output: Tests the flipping user interactibility of each card on the UIView
     func testCardFlip(){
         let app = XCUIApplication()
         loginToHomeScreen(app)
