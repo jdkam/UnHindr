@@ -39,6 +39,9 @@ class Services {
     // Connections reference
     static let connectionRef = db.collection("users").document(userRef!).collection("Connections")
     
+    // Motor Game reference
+    static let motorGameRef = db.collection("users").document(userRef!).collection("MotorGameData")
+    
     // MARK: - Retrieve reference to a patient's data
     // Input:
     //      1. unique UID of a user
