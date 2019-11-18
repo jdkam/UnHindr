@@ -22,10 +22,6 @@
                                     <constraint firstAttribute="height" constant="120" id="KWL-Dm-n5B"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TOq-sw-AKZ" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="339.5" width="414" height="522.5"/>
-                                <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sXT-Qz-Abs">
                                 <rect key="frame" x="0.0" y="311" width="42" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -83,6 +79,10 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TOq-sw-AKZ" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="339.5" width="414" height="522.5"/>
+                                <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -290,7 +290,7 @@
                                 </state>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A8j-tT-Sib" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="339.5" width="414" height="556.5"/>
+                                <rect key="frame" x="0.0" y="339.5" width="414" height="522.5"/>
                                 <color key="backgroundColor" red="0.99607843137254903" green="0.79607843137254897" blue="0.18431372549019609" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BnU-d9-aq9">
@@ -319,7 +319,7 @@
                             <constraint firstItem="enO-7f-3Yk" firstAttribute="trailing" secondItem="03w-M7-tMY" secondAttribute="trailing" constant="20" id="aTh-h6-WZE"/>
                             <constraint firstItem="03w-M7-tMY" firstAttribute="top" secondItem="wGR-nn-4PP" secondAttribute="bottom" constant="40" id="fAY-F1-Jxb"/>
                             <constraint firstItem="jlA-aX-jHM" firstAttribute="leading" secondItem="enO-7f-3Yk" secondAttribute="leading" constant="20" id="gLa-vD-pXe"/>
-                            <constraint firstAttribute="bottom" secondItem="A8j-tT-Sib" secondAttribute="bottom" id="haE-tZ-f7F"/>
+                            <constraint firstItem="enO-7f-3Yk" firstAttribute="bottom" secondItem="A8j-tT-Sib" secondAttribute="bottom" id="haE-tZ-f7F"/>
                             <constraint firstItem="jlA-aX-jHM" firstAttribute="top" secondItem="dK2-CW-ioh" secondAttribute="bottom" constant="25" id="iXo-rI-mKf"/>
                             <constraint firstItem="A8j-tT-Sib" firstAttribute="trailing" secondItem="enO-7f-3Yk" secondAttribute="trailing" id="kKb-A8-PAl"/>
                             <constraint firstItem="dK2-CW-ioh" firstAttribute="trailing" secondItem="enO-7f-3Yk" secondAttribute="trailing" id="nyk-yF-DtQ"/>
@@ -359,9 +359,9 @@
         <image name="greenBG" width="414" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="smJ-fa-eie"/>
+        <segue reference="QPF-tG-42D"/>
         <segue reference="1AC-Wh-h4k"/>
-        <segue reference="QCe-Qi-Eqz"/>
-        <segue reference="owg-Ys-esR"/>
+        <segue reference="Wlm-5f-dGp"/>
+        <segue reference="15N-q6-oZc"/>
     </inferredMetricsTieBreakers>
 </document>

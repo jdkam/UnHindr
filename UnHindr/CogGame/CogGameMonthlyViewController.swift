@@ -147,7 +147,7 @@ class CogGameMonthlyViewController: UIViewController {
                         i += 1
                     }
                     // finalize setup of graph after the data has been inputted
-                    let set = BarChartDataSet(values: self.GraphData, label: "Mood")
+                    let set = BarChartDataSet(values: self.GraphData, label: "Cog Score")
                     set.colors = [UIColor.green]
                     let chartData = BarChartData(dataSet: set)
                     self.cogMonthGraph.fitBars = true
