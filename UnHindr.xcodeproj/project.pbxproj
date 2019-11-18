@@ -65,16 +65,16 @@
 		9DFB75B9236F74D0006321B8 /* Medication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DFB75B7236F74CF006321B8 /* Medication.storyboard */; };
 		9DFB75BD236F7515006321B8 /* MedicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFB75BB236F7515006321B8 /* MedicationViewController.swift */; };
 		9DFB75C0236F7B15006321B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DFB75BF236F7B14006321B8 /* Assets.xcassets */; };
+		9E286A2F2382957600473055 /* MotorGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E286A2B2382957600473055 /* MotorGameViewController.swift */; };
+		9E286A302382957600473055 /* MotorGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E286A2C2382957600473055 /* MotorGameScene.swift */; };
+		9E286A312382957600473055 /* MotorGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E286A2D2382957600473055 /* MotorGame.storyboard */; };
+		9E286A322382957600473055 /* MotorGameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9E286A2E2382957600473055 /* MotorGameScene.sks */; };
+		9E286A352382968A00473055 /* MotGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E286A342382968A00473055 /* MotGameUITests.swift */; };
 		9E4EAB32237E5E8400FC051B /* CaregiverHomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E4EAB30237E5E8400FC051B /* CaregiverHomeScreen.storyboard */; };
 		9E4EAB33237E5E8400FC051B /* ModeChoice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E4EAB31237E5E8400FC051B /* ModeChoice.storyboard */; };
 		9E4EAB35237E5FDE00FC051B /* ModeChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4EAB34237E5FDE00FC051B /* ModeChoiceViewController.swift */; };
 		9E9138992380D5B5006AD1F9 /* Connect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E9138982380D5B5006AD1F9 /* Connect.storyboard */; };
 		9E91389C2380D6C5006AD1F9 /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E91389B2380D6C5006AD1F9 /* ConnectViewController.swift */; };
-		9ED859FF23828B33008392F8 /* MotorGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED859FB23828B33008392F8 /* MotorGameScene.swift */; };
-		9ED85A0023828B33008392F8 /* MotorGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9ED859FC23828B33008392F8 /* MotorGame.storyboard */; };
-		9ED85A0123828B33008392F8 /* MotorGameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9ED859FD23828B33008392F8 /* MotorGameScene.sks */; };
-		9ED85A0223828B33008392F8 /* MotorGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED859FE23828B33008392F8 /* MotorGameViewController.swift */; };
-		9ED85A0423828B49008392F8 /* MotGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED85A0323828B49008392F8 /* MotGameUITests.swift */; };
 		9EE42465237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE42464237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift */; };
 		CBE5CD7485E703281E2757D0 /* Pods_UnHindr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB3CE85FD97976F3B7E3634 /* Pods_UnHindr.framework */; };
 		CDBC4013236E4FE8008934AF /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDBC4012236E4FE8008934AF /* Settings.storyboard */; };
@@ -165,16 +165,16 @@
 		9DFB75B8236F74CF006321B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Medication.storyboard; sourceTree = "<group>"; };
 		9DFB75BB236F7515006321B8 /* MedicationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationViewController.swift; sourceTree = "<group>"; };
 		9DFB75BF236F7B14006321B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9E286A2B2382957600473055 /* MotorGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotorGameViewController.swift; sourceTree = "<group>"; };
+		9E286A2C2382957600473055 /* MotorGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotorGameScene.swift; sourceTree = "<group>"; };
+		9E286A2D2382957600473055 /* MotorGame.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MotorGame.storyboard; sourceTree = "<group>"; };
+		9E286A2E2382957600473055 /* MotorGameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MotorGameScene.sks; sourceTree = "<group>"; };
+		9E286A342382968A00473055 /* MotGameUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotGameUITests.swift; sourceTree = "<group>"; };
 		9E4EAB30237E5E8400FC051B /* CaregiverHomeScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CaregiverHomeScreen.storyboard; sourceTree = "<group>"; };
 		9E4EAB31237E5E8400FC051B /* ModeChoice.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ModeChoice.storyboard; sourceTree = "<group>"; };
 		9E4EAB34237E5FDE00FC051B /* ModeChoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeChoiceViewController.swift; sourceTree = "<group>"; };
 		9E9138982380D5B5006AD1F9 /* Connect.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Connect.storyboard; sourceTree = "<group>"; };
 		9E91389B2380D6C5006AD1F9 /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
-		9ED859FB23828B33008392F8 /* MotorGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MotorGameScene.swift; path = ../../../Desktop/jake/MotorGame/MotorGameScene.swift; sourceTree = "<group>"; };
-		9ED859FC23828B33008392F8 /* MotorGame.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MotorGame.storyboard; path = ../../../Desktop/jake/MotorGame/MotorGame.storyboard; sourceTree = "<group>"; };
-		9ED859FD23828B33008392F8 /* MotorGameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = MotorGameScene.sks; path = ../../../Desktop/jake/MotorGame/MotorGameScene.sks; sourceTree = "<group>"; };
-		9ED859FE23828B33008392F8 /* MotorGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MotorGameViewController.swift; path = ../../../Desktop/jake/MotorGame/MotorGameViewController.swift; sourceTree = "<group>"; };
-		9ED85A0323828B49008392F8 /* MotGameUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MotGameUITests.swift; path = ../../Desktop/jake/MotGameUITests.swift; sourceTree = "<group>"; };
 		9EE42464237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaregiverHomeScreenViewController.swift; sourceTree = "<group>"; };
 		A6E2B4E2DEF28A4C383CB68F /* Pods_UnHindr_UnHindrUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnHindr_UnHindrUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4A52706C5DFD3854AB3653D /* Pods-UnHindr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindr.debug.xcconfig"; path = "Target Support Files/Pods-UnHindr/Pods-UnHindr.debug.xcconfig"; sourceTree = "<group>"; };
@@ -225,6 +225,7 @@
 		2DD670FC236BBF79005948DF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				9E286A33238295F800473055 /* MotorGame */,
 				707E9F6D23827F76006A3AF5 /* MotorGameGraphViewController.swift */,
 				707E9F6B23827F76006A3AF5 /* MotorGameMonthlyViewController.swift */,
 				707E9F6C23827F76006A3AF5 /* MotorGameYearlyViewController.swift */,
@@ -353,7 +354,7 @@
 		9DF3F8972367D826003CF8B9 /* UnHindr */ = {
 			isa = PBXGroup;
 			children = (
-				9ED859FA23828AFF008392F8 /* MotorGame */,
+				9E286A2D2382957600473055 /* MotorGame.storyboard */,
 				707E9F5D23827EF2006A3AF5 /* CogGameGraphs.storyboard */,
 				707E9F5923827EF0006A3AF5 /* MoodGraphs.storyboard */,
 				707E9F5C23827EF1006A3AF5 /* MotorGameGraph.storyboard */,
@@ -395,7 +396,7 @@
 		9DF3F8B72367D82D003CF8B9 /* UnHindrUITests */ = {
 			isa = PBXGroup;
 			children = (
-				9ED85A0323828B49008392F8 /* MotGameUITests.swift */,
+				9E286A342382968A00473055 /* MotGameUITests.swift */,
 				9DF3F8B82367D82D003CF8B9 /* UnHindrUITests.swift */,
 				9DF3F8BA2367D82D003CF8B9 /* Info.plist */,
 				81A7340D238200320069FE24 /* CogGameUITests.swift */,
@@ -414,6 +415,16 @@
 			path = Medication;
 			sourceTree = "<group>";
 		};
+		9E286A33238295F800473055 /* MotorGame */ = {
+			isa = PBXGroup;
+			children = (
+				9E286A2E2382957600473055 /* MotorGameScene.sks */,
+				9E286A2C2382957600473055 /* MotorGameScene.swift */,
+				9E286A2B2382957600473055 /* MotorGameViewController.swift */,
+			);
+			path = MotorGame;
+			sourceTree = "<group>";
+		};
 		9E4EAB36237E5FE400FC051B /* ModeChoice */ = {
 			isa = PBXGroup;
 			children = (
@@ -428,18 +439,6 @@
 				9E91389B2380D6C5006AD1F9 /* ConnectViewController.swift */,
 			);
 			path = Connect;
-			sourceTree = "<group>";
-		};
-		9ED859FA23828AFF008392F8 /* MotorGame */ = {
-			isa = PBXGroup;
-			children = (
-				9ED859FC23828B33008392F8 /* MotorGame.storyboard */,
-				9ED859FD23828B33008392F8 /* MotorGameScene.sks */,
-				9ED859FB23828B33008392F8 /* MotorGameScene.swift */,
-				9ED859FE23828B33008392F8 /* MotorGameViewController.swift */,
-			);
-			name = MotorGame;
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		CDBC4014236E4FF2008934AF /* Settings */ = {
@@ -572,12 +571,12 @@
 				81BDBDA1237F8E9C00F4C970 /* dingwrong.wav in Resources */,
 				707E9F6223827EF2006A3AF5 /* CogGameGraphs.storyboard in Resources */,
 				707E9F6023827EF2006A3AF5 /* WellnessGraphs.storyboard in Resources */,
-				9ED85A0023828B33008392F8 /* MotorGame.storyboard in Resources */,
+				9E286A312382957600473055 /* MotorGame.storyboard in Resources */,
 				9DF3F8A32367D82D003CF8B9 /* LaunchScreen.storyboard in Resources */,
 				9DF3F8C72367D880003CF8B9 /* GoogleService-Info.plist in Resources */,
 				9E4EAB33237E5E8400FC051B /* ModeChoice.storyboard in Resources */,
 				CDBC4013236E4FE8008934AF /* Settings.storyboard in Resources */,
-				9ED85A0123828B33008392F8 /* MotorGameScene.sks in Resources */,
+				9E286A322382957600473055 /* MotorGameScene.sks in Resources */,
 				9DFB75B9236F74D0006321B8 /* Medication.storyboard in Resources */,
 				9E9138992380D5B5006AD1F9 /* Connect.storyboard in Resources */,
 				707E9F5F23827EF2006A3AF5 /* WellnessTestHome.storyboard in Resources */,
@@ -710,13 +709,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9ED859FF23828B33008392F8 /* MotorGameScene.swift in Sources */,
 				707E9F6E23827F77006A3AF5 /* MotorGameMonthlyViewController.swift in Sources */,
 				707E9F6723827F6B006A3AF5 /* CogGameMonthlyViewController.swift in Sources */,
+				9E286A302382957600473055 /* MotorGameScene.swift in Sources */,
 				707E9F7523827F85006A3AF5 /* MoodGraphsViewController.swift in Sources */,
 				9EE42465237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift in Sources */,
 				9DF3F89B2367D826003CF8B9 /* LoginViewController.swift in Sources */,
-				9ED85A0223828B33008392F8 /* MotorGameViewController.swift in Sources */,
 				9D6C641C2378B50F00F0C058 /* Constants.swift in Sources */,
 				98F115EB236D2B770082A1B1 /* MoodQ5ViewController.swift in Sources */,
 				8176FAB7237B8A9C0083B445 /* Card.swift in Sources */,
@@ -726,6 +724,7 @@
 				CDBC4016236E501B008934AF /* SettingsViewController.swift in Sources */,
 				81BDBDA6237F8FDB00F4C970 /* SoundManager.swift in Sources */,
 				215C15DC236F6E5F0063F3E4 /* WellnessTestHomeViewController.swift in Sources */,
+				9E286A2F2382957600473055 /* MotorGameViewController.swift in Sources */,
 				8176FAB5237B896B0083B445 /* CardModel.swift in Sources */,
 				9DAEB52E237FC408008A94BD /* FullMedicationViewController.swift in Sources */,
 				707E9F6823827F6B006A3AF5 /* CogGameGraphViewController.swift in Sources */,
@@ -766,7 +765,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DFA139F2370F17D00F8B7B5 /* UnHindrUITests.swift in Sources */,
-				9ED85A0423828B49008392F8 /* MotGameUITests.swift in Sources */,
+				9E286A352382968A00473055 /* MotGameUITests.swift in Sources */,
 				81A7340E238200320069FE24 /* CogGameUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
