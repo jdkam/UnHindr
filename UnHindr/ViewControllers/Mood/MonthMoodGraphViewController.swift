@@ -1,15 +1,8 @@
-//File: [ChartsViewController]
+//File: [MonthMoodGraphViewController.swift]
 //Creators: [Johnston]
 //Date created: [11/10/2019]
 //Updater name: [Johnston]
 //File description: [Reads values from the data]
-//
-//
-//  MonthMoodGraphViewController.swift
-//
-//
-//  Created by Johnston Yang on 11/10/19.
-//
 
 import UIKit
 import Foundation
@@ -79,10 +72,10 @@ class MonthMoodGraphViewController: UIViewController {
                 else
                 {
                     // testing other months
-//                    let otherdate = DateFormatter()
-//                    otherdate.dateFormat = "yyyy/MM/dd HH:mm"
-//                    let someDateTime = otherdate.date(from: "2019/10/3 22:31")
-//                    let currentMonth = 10
+                    // let otherdate = DateFormatter()
+                    // otherdate.dateFormat = "yyyy/MM/dd HH:mm"
+                    // let someDateTime = otherdate.date(from: "2019/10/3 22:31")
+                    // let currentMonth = 10
                     // grabs today's date
                     let today = Date()
                     let calendar = Calendar.current
@@ -159,14 +152,6 @@ class MonthMoodGraphViewController: UIViewController {
             }
     }
 }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 

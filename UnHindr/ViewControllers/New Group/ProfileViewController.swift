@@ -155,23 +155,13 @@ class ProfileViewController: UIViewController {
         let validFields: Bool = true
         // List of changed fields
         var fields = [String:Any]()
-        
-        // Check for constraints in address
-//        if (addressTF.text?.trimmingCharacters(in: .whitespaces).isAlphanumeric)! {
-//            fields.updateValue(addressTF.text!, forKey: "address")
-//            addressTF.textColor = UIColor.black
-//        } else {
-//            addressTF.textColor = UIColor.red
-//            validFields = false
-//        }
-        
+    
         fields.updateValue(addressTF.text!, forKey: "address")
         fields.updateValue(FirstNameTF.text!, forKey: "firstName")
         fields.updateValue(lastNameTF.text!, forKey: "lastName")
         fields.updateValue(emailTF.text!, forKey: "email")
         fields.updateValue(cityTF.text!, forKey: "city")
-//        fields.updateValue(gendreTF.text!, forKey: "gender")
-        
+        // fields.updateValue(gendreTF.text!, forKey: "gender")
         
         if validFields{
             Services.userProfileRef.updateData(fields)
@@ -299,7 +289,6 @@ extension String {
     var isAlphanumeric: Bool {
         return !isEmpty && range(of: "[^a-zA-Z0-9]", options: .regularExpression) == nil
     }
-    
     var isAlpha: Bool {
         return !isEmpty && range(of: "^[a-zA-Z]+$", options: .regularExpression) == nil
     }

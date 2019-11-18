@@ -16,7 +16,6 @@ class WellnessTestHomeViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
 
     /*
     Wellness Test Home menu navigation done in storyboard

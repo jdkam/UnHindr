@@ -3,13 +3,6 @@
 //Date created: [29/10/2019]
 //Updater name: [Johnston]
 //File description: [Reads values from the data]
-//
-//
-//  ChartsViewController.swift
-//  
-//
-//  Created by Johnston Yang on 10/29/19.
-//
 
 import Foundation
 import UIKit
@@ -123,6 +116,7 @@ class ChartsViewController: UIViewController {
         l.formToTextSpace = 8
         l.xEntrySpace = 6
     }
+    
     // MARK: - Obtain medication data
     // Input:
     //      1. Document ID of unique user
@@ -185,14 +179,14 @@ class ChartsViewController: UIViewController {
         } //end of getDBMedicationData function
     }
     
+    
     // MARK: - Obtain medication plan of each user
     // Input:
     //      1. Document ID of unique user
     // Output:
     //      1. Places medication taken by the user into dictionary 'dictMedToTake'
     //      2. The date and time the medication was taken is put into dictionary 'dictDayPlan'
-private func getDBMedicationPlan(_ userdoc: String, completionHandler: @escaping (_ result: Int?) -> Void)
-{
+    private func getDBMedicationPlan(_ userdoc: String, completionHandler: @escaping (_ result: Int?) -> Void){
     //Obtain all user documents that is under the 'MedicationPlan' collection
     Services.db.collection("users").document(userdoc).collection("MedicationPlan")
         .getDocuments()
@@ -243,6 +237,7 @@ private func getDBMedicationPlan(_ userdoc: String, completionHandler: @escaping
         }
     }
 }
+    
     // MARK: - Compare the dates between the user taking the medication and the day the user is suppose to be taking the medication
     //       - This checks whether or not the user has missed any of their medications
     //
@@ -318,6 +313,7 @@ private func getDBMedicationPlan(_ userdoc: String, completionHandler: @escaping
         }
     }
     
+    
     // MARK: - Uses the data from the previous functions and creates the stacked bar chart.
     //       - Some of the graph settings has been set in this function such as the color of the bars, the legend, and what values to put into the graph
     // Input:
@@ -329,9 +325,9 @@ private func getDBMedicationPlan(_ userdoc: String, completionHandler: @escaping
     private func setChartData(medAmount: [String:[Double]],dayPlan: [String:[String]],userTaken: [String:[Bool]], allMedToTake: [String:Double])
     {
         // This days array contains all the days of the week
-//        let days: [String] = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+        //let days: [String] = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
         //
-//        let daysize = days.count
+        //let daysize = days.count
         for (Med,_) in dayPlan
         {
             for i in 0..<dayPlan[Med]!.count
