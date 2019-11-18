@@ -116,41 +116,18 @@ class MedicationHomeViewController: UIViewController, NewMedDelegate {
     // Output:
     //      1. querysnapshot of medication plan
     private func getDBMedicationPlan(completionHandler: @escaping (_ result: QuerySnapshot?) -> Void){
-        
         Services.medicationPlanRef
             .whereField("Day", arrayContains: Date.getDayOfWeek(Timestamp.init()).rawValue)
             .order(by: "ReminderTime")
-            .addSnapshotListener { (querySnapshot, err) in
-                if err != nil {
-                    print("Error getting medication plan")
-                    completionHandler(nil)
-                }
-                querySnapshot!.documentChanges.forEach { diff in
-                    if (diff.type == .added){
-                        print("NEW PLAN ADDED")
-                    }
-                    if (diff.type == .modified){
-                        print("MEDICAtION PLAN CHANGED")
-                    }
-                    if (diff.type == .removed){
-                        // TODO for edit medication
-                    }
-                }
+            .getDocuments { (querySnapshot, err) in
+            // the program will go into this if statement if the user authentication fails
+            if err != nil {
+                print("Error getting medication data")
+            }
+            else {
                 completionHandler(querySnapshot!)
+            }
         }
-//        Services.medicationPlanRef
-//            .whereField("Day", arrayContains: Date.getDayOfWeek(Timestamp.init()).rawValue)
-//            .order(by: "ReminderTime")
-//            .getDocuments { (querySnapshot, err) in
-//            // the program will go into this if statement if the user authentication fails
-//            if err != nil {
-//                print("Error getting medication data")
-//            }
-//            else {
-//                //
-//                completionHandler(querySnapshot!)
-//            }
-//        }
     }
     
     // Get a snapshot of the taken medicine for a given timestamp
