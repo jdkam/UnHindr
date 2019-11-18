@@ -11,13 +11,13 @@
         <!--Motor Game Yearly View Controller-->
         <scene sceneID="g2A-gb-Ce4">
             <objects>
-                <viewController storyboardIdentifier="MotorGameYearlyViewController" id="dKu-7z-dd7" customClass="MotorGameYearlyViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MotorGameYearlyViewController" modalPresentationStyle="fullScreen" id="dKu-7z-dd7" customClass="MotorGameYearlyViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JJY-Oi-AjF">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S5t-BS-zbq" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="258.5" width="414" height="549.5"/>
+                                <rect key="frame" x="0.0" y="258.5" width="414" height="603.5"/>
                                 <color key="backgroundColor" red="0.99607843139999996" green="0.79607843140000001" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="414" id="gUZ-Ki-D3n"/>
@@ -136,13 +136,13 @@
         <!--Motor Game Monthly View Controller-->
         <scene sceneID="7pt-l9-trc">
             <objects>
-                <viewController storyboardIdentifier="MotorGameMonthlyViewController" id="Md6-OM-5eA" customClass="MotorGameMonthlyViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MotorGameMonthlyViewController" modalPresentationStyle="fullScreen" id="Md6-OM-5eA" customClass="MotorGameMonthlyViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="msB-o6-PGs">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NGJ-v7-Owa" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="258.5" width="414" height="549.5"/>
+                                <rect key="frame" x="0.0" y="258.5" width="414" height="603.5"/>
                                 <color key="backgroundColor" red="0.99607843139999996" green="0.79607843140000001" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="414" id="GAj-lt-a0h"/>
@@ -253,13 +253,13 @@
         <!--Motor Game Graph View Controller-->
         <scene sceneID="WzJ-0T-RJl">
             <objects>
-                <viewController storyboardIdentifier="MotorGameGraphViewController" id="tLe-i6-rUF" customClass="MotorGameGraphViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MotorGameGraphViewController" modalPresentationStyle="fullScreen" id="tLe-i6-rUF" customClass="MotorGameGraphViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Uva-id-q4g">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nc8-mp-Thz" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="258.5" width="414" height="549.5"/>
+                                <rect key="frame" x="0.0" y="258.5" width="414" height="603.5"/>
                                 <color key="backgroundColor" red="0.99607843139999996" green="0.79607843140000001" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="414" id="3iE-ZE-V96"/>
@@ -373,9 +373,9 @@
         <image name="greenBG" width="414" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RSB-Bo-mVW"/>
-        <segue reference="Pca-54-k00"/>
-        <segue reference="Xgc-IW-q8z"/>
-        <segue reference="q8a-M3-Mbn"/>
+        <segue reference="nnx-jG-tUt"/>
+        <segue reference="1ha-tl-ME5"/>
+        <segue reference="Enq-nB-NyG"/>
+        <segue reference="lAa-Pe-SEE"/>
     </inferredMetricsTieBreakers>
 </document>

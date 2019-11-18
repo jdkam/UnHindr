@@ -19,13 +19,13 @@
         <!--Cog Game Graph View Controller-->
         <scene sceneID="6It-R1-HZ3">
             <objects>
-                <viewController storyboardIdentifier="CogGameGraphViewController" id="4Wl-Ag-GVd" customClass="CogGameGraphViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CogGameGraphViewController" modalPresentationStyle="fullScreen" id="4Wl-Ag-GVd" customClass="CogGameGraphViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EUs-Zm-mCS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qbj-vX-sxq" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="258.5" width="414" height="549.5"/>
+                                <rect key="frame" x="0.0" y="258.5" width="414" height="603.5"/>
                                 <color key="backgroundColor" red="0.99607843139999996" green="0.79607843140000001" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="414" id="mHY-4z-vpI"/>
@@ -136,13 +136,13 @@
         <!--Cog Game Monthly View Controller-->
         <scene sceneID="rSs-o1-Khx">
             <objects>
-                <viewController storyboardIdentifier="CogGameMonthlyViewController" id="zHA-PJ-HeT" customClass="CogGameMonthlyViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CogGameMonthlyViewController" modalPresentationStyle="fullScreen" id="zHA-PJ-HeT" customClass="CogGameMonthlyViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7J9-HC-2ss">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hX4-WM-NIy" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="261" width="414" height="547"/>
+                                <rect key="frame" x="0.0" y="261" width="414" height="601"/>
                                 <color key="backgroundColor" red="0.99607843139999996" green="0.79607843140000001" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VkD-X4-BAI">
@@ -251,13 +251,13 @@
         <!--Cog Yearly Graph View Controller-->
         <scene sceneID="RYL-rJ-F3w">
             <objects>
-                <viewController storyboardIdentifier="cogYearlyGraphViewController" id="mr2-On-MtB" customClass="cogYearlyGraphViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="cogYearlyGraphViewController" modalPresentationStyle="fullScreen" id="mr2-On-MtB" customClass="cogYearlyGraphViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Jr-ar-Tgo">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6nY-ZE-i7o" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="261" width="414" height="547"/>
+                                <rect key="frame" x="0.0" y="261" width="414" height="601"/>
                                 <color key="backgroundColor" red="0.99607843139999996" green="0.79607843140000001" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAR-fM-wZd">

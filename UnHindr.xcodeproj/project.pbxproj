@@ -22,7 +22,6 @@
 		707E9F6223827EF2006A3AF5 /* CogGameGraphs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 707E9F5D23827EF2006A3AF5 /* CogGameGraphs.storyboard */; };
 		707E9F6723827F6B006A3AF5 /* CogGameMonthlyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707E9F6323827F6A006A3AF5 /* CogGameMonthlyViewController.swift */; };
 		707E9F6823827F6B006A3AF5 /* CogGameGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707E9F6423827F6A006A3AF5 /* CogGameGraphViewController.swift */; };
-		707E9F6923827F6B006A3AF5 /* CogGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707E9F6523827F6A006A3AF5 /* CogGameScene.swift */; };
 		707E9F6A23827F6B006A3AF5 /* cogYearlyGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707E9F6623827F6B006A3AF5 /* cogYearlyGraphViewController.swift */; };
 		707E9F6E23827F77006A3AF5 /* MotorGameMonthlyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707E9F6B23827F76006A3AF5 /* MotorGameMonthlyViewController.swift */; };
 		707E9F6F23827F77006A3AF5 /* MotorGameYearlyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707E9F6C23827F76006A3AF5 /* MotorGameYearlyViewController.swift */; };
@@ -117,7 +116,6 @@
 		707E9F5D23827EF2006A3AF5 /* CogGameGraphs.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CogGameGraphs.storyboard; sourceTree = "<group>"; };
 		707E9F6323827F6A006A3AF5 /* CogGameMonthlyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CogGameMonthlyViewController.swift; sourceTree = "<group>"; };
 		707E9F6423827F6A006A3AF5 /* CogGameGraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CogGameGraphViewController.swift; sourceTree = "<group>"; };
-		707E9F6523827F6A006A3AF5 /* CogGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CogGameScene.swift; sourceTree = "<group>"; };
 		707E9F6623827F6B006A3AF5 /* cogYearlyGraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cogYearlyGraphViewController.swift; sourceTree = "<group>"; };
 		707E9F6B23827F76006A3AF5 /* MotorGameMonthlyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotorGameMonthlyViewController.swift; sourceTree = "<group>"; };
 		707E9F6C23827F76006A3AF5 /* MotorGameYearlyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotorGameYearlyViewController.swift; sourceTree = "<group>"; };
@@ -279,7 +277,6 @@
 			children = (
 				707E9F6423827F6A006A3AF5 /* CogGameGraphViewController.swift */,
 				707E9F6323827F6A006A3AF5 /* CogGameMonthlyViewController.swift */,
-				707E9F6523827F6A006A3AF5 /* CogGameScene.swift */,
 				707E9F6623827F6B006A3AF5 /* cogYearlyGraphViewController.swift */,
 				81BDBD9A237F8E4600F4C970 /* Sounds */,
 				81B5908D2378F8DD00BA49AF /* CogGame.storyboard */,
@@ -736,7 +733,6 @@
 				8176FAB5237B896B0083B445 /* CardModel.swift in Sources */,
 				9DAEB52E237FC408008A94BD /* FullMedicationViewController.swift in Sources */,
 				707E9F6823827F6B006A3AF5 /* CogGameGraphViewController.swift in Sources */,
-				707E9F6923827F6B006A3AF5 /* CogGameScene.swift in Sources */,
 				98F115DA236CCED00082A1B1 /* MoodViewController.swift in Sources */,
 				8176FAB9237B94FC0083B445 /* CardCollectionViewCell.swift in Sources */,
 				98F115E7236D23520082A1B1 /* MoodQ3ViewController.swift in Sources */,

@@ -214,8 +214,8 @@ class UnHindrUITests: XCTestCase {
         XCTAssert(app.buttons["home white"].exists)
         app.buttons["home white"].tap()
         optionsButton.tap()
-        app.buttons["Button"].tap()
-        
+        app.buttons["LogoutButton"].tap()
+                
         XCTAssert(app.textFields["Email"].exists)
     }
     //Basic UI test for connect UI view
@@ -246,7 +246,7 @@ class UnHindrUITests: XCTestCase {
     //test the scroll view in the profile
     func testProfileScrollView(){
         let app = XCUIApplication()
-        loginToHomeScreen(app)
+        loginAsCaregiver(app)
         app.buttons["CaregiverProfile"].tap()
         
          XCTAssert(app.buttons["Save Button"].exists)
@@ -257,27 +257,17 @@ class UnHindrUITests: XCTestCase {
         let elementsQuery = scrollViewsQuery.otherElements
         let backButtonButton = elementsQuery.buttons["Back Button"]
         backButtonButton.tap()
-        app.buttons["Profile"].tap()
+        app.buttons["CaregiverProfile"].tap()
         
-        let dateOfBirthTextField = elementsQuery.textFields["Date of Birth"]
-        dateOfBirthTextField.swipeUp()
-        elementsQuery.textFields["City"].tap()
-        elementsQuery.textFields["Country"].tap()
-        elementsQuery.textFields["Address"].tap()
-        elementsQuery.textFields["Gender"].tap()
-        elementsQuery.textFields["Cell"].tap()
-        dateOfBirthTextField.tap()
-        
-        let emailNameTextField = elementsQuery.textFields["Email Name"]
-        emailNameTextField.tap()
-        element.swipeDown()
-        element.tap()
-        emailNameTextField.tap()
-        elementsQuery.textFields["Last Name"].tap()
-        elementsQuery.textFields["First Name"].tap()
-        element.swipeUp()
-        elementsQuery.buttons["Save Button"].tap()
-        backButtonButton.tap()
+        XCTAssert(app.textFields["First Name"].exists)
+        XCTAssert(app.textFields["Last Name"].exists)
+        XCTAssert(app.textFields["Email Name"].exists)
+        XCTAssert(app.textFields["Date of Birth"].exists)
+        XCTAssert(app.textFields["Cell"].exists)
+        XCTAssert(app.textFields["Gender"].exists)
+        XCTAssert(app.textFields["Address"].exists)
+        XCTAssert(app.buttons["Save Button"].exists)
+        XCTAssert(app.buttons["Back Button"].exists)
         
         
     }
@@ -297,6 +287,22 @@ class UnHindrUITests: XCTestCase {
         app.buttons["Login Button"].tap()
         //Wait
         XCTAssert(app.buttons["Options"].waitForExistence(timeout: 5))
+    }
+    
+    // Input:
+    //      1. Current application instance
+    // Output:
+    //      1. Home screen with wait (Warning: dependent on profile button)
+    //Login in caregiver usermode
+    func loginAsCaregiver(_ app: XCUIApplication){
+        // Login to the home screen
+        app.textFields["Email"].tap()
+        app.textFields["Email"].typeText("unittestacc1@gmail.com\n")
+        app.secureTextFields["Password"].tap()
+        app.secureTextFields["Password"].typeText("testtest1\n")
+        app.buttons["Login Button"].tap()
+        //Wait
+        XCTAssert(app.buttons["OptionsButton"].waitForExistence(timeout: 5))
     }
 
 }

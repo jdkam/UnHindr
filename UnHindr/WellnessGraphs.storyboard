@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="W5b-vx-Yyi">
             <objects>
-                <viewController id="N5x-Nl-hwv" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="N5x-Nl-hwv" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qtD-Ec-Q5z">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
