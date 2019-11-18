@@ -58,8 +58,11 @@ class ProfileViewController: UIViewController {
     //      1. User data validated and updated into data fields
     override func viewWillAppear(_ animated: Bool) {
         if (Services.userRef != nil) {
-            self.getUserInfo(Services.userRef!, completionHandler: { (complete) in
-                if complete == true {
+            getUserInfo(completionHandler: { (documentSnapshot) in
+                if documentSnapshot != nil {
+                    print("Getting profile data of: \(Services.userRef!)")
+                    self.datacollection = documentSnapshot!.data()
+                    print(self.datacollection)
                     self.updateTextField()
                 }
                 else{
@@ -76,8 +79,8 @@ class ProfileViewController: UIViewController {
     //      1. unique UID of a user
     // Output:
     //      1. Reference to user data
-    func getUserInfo(_ userdoc: String, completionHandler: @escaping (_ result: Bool? ) -> Void){
-        Services.userProfileRef.addSnapshotListener { (documentSnapshot, error) in
+    func getUserInfo(completionHandler: @escaping (_ result: DocumentSnapshot? ) -> Void){
+        Services.userProfileRef.getDocument { (documentSnapshot, error) in
             
             if error != nil {
                 //error
@@ -87,9 +90,12 @@ class ProfileViewController: UIViewController {
                     print("Error fetching user document")
                     return
                 }
-                self.datacollection = document.data()
-                let result = true
-                completionHandler(result)
+                print("-----------------------")
+                print("UserData: \(document.data())")
+                completionHandler(document)
+//                self.datacollection = document.data()
+//                let result = true
+//                completionHandler(result)
             }
             
         }
@@ -99,7 +105,7 @@ class ProfileViewController: UIViewController {
     // Input: None
     // Output:
     //      1. update all the user text fields
-    func updateTextField(){
+    private func updateTextField(){
         self.addressTF.text = self.datacollection!["address"] as? String
         self.FirstNameTF.text = self.datacollection!["firstName"] as? String
         self.lastNameTF.text = self.datacollection!["lastName"] as? String
@@ -108,8 +114,7 @@ class ProfileViewController: UIViewController {
         self.addressTF.text = self.datacollection!["address"] as? String
         self.cityTF.text = self.datacollection!["city"] as? String
         self.countryTF.text = self.datacollection!["country"] as? String
-        
-        
+
         // Obtain the firebase dob field as a string
         let extractedDob = self.datacollection!["dob"] as! Timestamp
         let formatter = DateFormatter()
