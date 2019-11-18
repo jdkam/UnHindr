@@ -59,7 +59,7 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
     //Output: Plays a shuffle sound
     override func viewDidAppear(_ animated: Bool) {
         
-        SoundManager.playSound(.shuffle)
+        _ = SoundManager.playSound(.shuffle)
     }
     
     
@@ -157,7 +157,7 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
         let card = cardArray[indexPath.row]
         
         //set the card for that cell
-        cell.setCard(card)
+        _ = cell.setCard(card)
         
         return cell
     }
@@ -184,7 +184,7 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
             cell.flip()
             
             //play the flip sound
-            SoundManager.playSound(.flip)
+            _ = SoundManager.playSound(.flip)
             
             
             //set status of the card
@@ -238,7 +238,7 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
             //its a match
             
             //Play sound
-            SoundManager.playSound(.match)
+            _ = SoundManager.playSound(.match)
             
             //set status of the cards
             cardOne.isMatched = true
@@ -261,7 +261,7 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
             //its not a match
             
             //play sound
-            SoundManager.playSound(.nomatch)
+            _ = SoundManager.playSound(.nomatch)
             
             //set the statuses of the cards
             cardOne.isFlipped = false

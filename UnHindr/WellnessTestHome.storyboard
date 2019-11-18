@@ -76,7 +76,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="TAw-zl-MbT">
                                         <rect key="frame" x="41.333333333333343" y="0.0" width="331.33333333333326" height="620"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tx2-vr-pV0">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tx2-vr-pV0" userLabel="CogGameButton">
                                                 <rect key="frame" x="0.0" y="0.0" width="331.33333333333331" height="140"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="140" id="gne-Rw-9Eq"/>
@@ -96,7 +96,7 @@
                                                     <segue destination="Ujt-mU-H8b" kind="show" id="LFJ-Q6-0bU"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JAr-J1-Cqf">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JAr-J1-Cqf" userLabel="MotorGameButton">
                                                 <rect key="frame" x="0.0" y="320" width="331.33333333333331" height="140"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="140" id="U4B-eB-Bvj"/>
