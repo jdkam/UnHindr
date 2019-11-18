@@ -18,6 +18,14 @@
             </objects>
             <point key="canvasLocation" x="-479" y="-130"/>
         </scene>
+        <!--Connect-->
+        <scene sceneID="TiA-Pt-i1B">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Connect" id="Pd2-Hw-0sx" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nMO-JS-eWE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-416" y="394"/>
+        </scene>
         <!--Caregiver Home Screen View Controller-->
         <scene sceneID="1O3-64-2SW">
             <objects>
@@ -74,6 +82,9 @@
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0oG-a3-qpK" userLabel="connect">
                                                 <rect key="frame" x="0.0" y="0.0" width="174.5" height="186.5"/>
                                                 <state key="normal" image="Connect"/>
+                                                <connections>
+                                                    <segue destination="Pd2-Hw-0sx" kind="presentation" id="fDk-ae-Vah"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wnh-Dt-kMM" userLabel="options">
                                                 <rect key="frame" x="176.5" y="0.0" width="194.5" height="186.5"/>

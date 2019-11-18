@@ -228,7 +228,7 @@ class MedicationViewController: UIViewController {
     @IBAction func satButtonPressed(_ sender: Any) {
         if (self.dayOFWeek["Saturday"] == 1){
             self.dayOFWeek["Saturday"] = 0
-            satButton.setImage(UIImage(named: "saturday.png"), for: UIControl.State.normal)
+            satButton.setImage(UIImage(named: "satNoCheck.png"), for: UIControl.State.normal)
         }
         else {
             self.dayOFWeek["Saturday"] = 1
@@ -246,7 +246,7 @@ class MedicationViewController: UIViewController {
     @IBAction func sunButtonPressed(_ sender: Any) {
         if (self.dayOFWeek["Sunday"] == 1){
             self.dayOFWeek["Sunday"] = 0
-            sunButton.setImage(UIImage(named: "sunday.png"), for: UIControl.State.normal)
+            sunButton.setImage(UIImage(named: "sunNoCheck.png"), for: UIControl.State.normal)
         }
         else {
             self.dayOFWeek["Sunday"] = 1

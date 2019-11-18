@@ -164,7 +164,7 @@ class ConnectViewController: UIViewController, UITableViewDelegate, UITableViewD
     //Input1: The text field which image should apply to
     //input2: The inserting image reference
     func addImageLeftSide(txtField: UITextField, andImage img: UIImage){
-        let leftImageView = UIImageView(frame: CGRect(x: 0.0, y: 0.0, width: img.size.width, height: img.size.width))
+        let leftImageView = UIImageView(frame: CGRect(x: 100, y: 0.0, width: img.size.width, height: img.size.height))
         leftImageView.image = img
         txtField.leftView = leftImageView
         txtField.leftViewMode = .always
