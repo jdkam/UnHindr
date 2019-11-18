@@ -20,6 +20,8 @@
 		8176FAB5237B896B0083B445 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8176FAB4237B896B0083B445 /* CardModel.swift */; };
 		8176FAB7237B8A9C0083B445 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8176FAB6237B8A9C0083B445 /* Card.swift */; };
 		8176FAB9237B94FC0083B445 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8176FAB8237B94FC0083B445 /* CardCollectionViewCell.swift */; };
+		81A7340C2381E0840069FE24 /* CogGameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A7340B2381E0840069FE24 /* CogGameTest.swift */; };
+		81A7340E238200320069FE24 /* CogGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A7340D238200320069FE24 /* CogGameUITests.swift */; };
 		81B5908E2378F8DD00BA49AF /* CogGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81B5908D2378F8DD00BA49AF /* CogGame.storyboard */; };
 		81BDBD9F237F8E9C00F4C970 /* shuffle.wav in Resources */ = {isa = PBXBuildFile; fileRef = 81BDBD9B237F8E9B00F4C970 /* shuffle.wav */; };
 		81BDBDA0237F8E9C00F4C970 /* dingcorrect.wav in Resources */ = {isa = PBXBuildFile; fileRef = 81BDBD9C237F8E9B00F4C970 /* dingcorrect.wav */; };
@@ -95,6 +97,8 @@
 		8176FAB4237B896B0083B445 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		8176FAB6237B8A9C0083B445 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		8176FAB8237B94FC0083B445 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
+		81A7340B2381E0840069FE24 /* CogGameTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CogGameTest.swift; sourceTree = "<group>"; };
+		81A7340D238200320069FE24 /* CogGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CogGameUITests.swift; sourceTree = "<group>"; };
 		81B5908D2378F8DD00BA49AF /* CogGame.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CogGame.storyboard; sourceTree = "<group>"; };
 		81BDBD9B237F8E9B00F4C970 /* shuffle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shuffle.wav; sourceTree = "<group>"; };
 		81BDBD9C237F8E9B00F4C970 /* dingcorrect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dingcorrect.wav; sourceTree = "<group>"; };
@@ -331,6 +335,7 @@
 				9DF3F8AD2367D82D003CF8B9 /* UnHindrTests.swift */,
 				9DF3F8AF2367D82D003CF8B9 /* Info.plist */,
 				9DE33C6D236F98BD00855C78 /* DatabaseTests.swift */,
+				81A7340B2381E0840069FE24 /* CogGameTest.swift */,
 				2DA6698D2381EAA60050AE42 /* MedicationTests.swift */,
 			);
 			path = UnHindrTests;
@@ -342,6 +347,7 @@
 				9DF3F8B82367D82D003CF8B9 /* UnHindrUITests.swift */,
 				9DF3F8BA2367D82D003CF8B9 /* Info.plist */,
 				9E9F0B95238267B5003F06CD /* CaregiverUITests.swift */,
+				81A7340D238200320069FE24 /* CogGameUITests.swift */,
 			);
 			path = UnHindrUITests;
 			sourceTree = "<group>";
@@ -669,6 +675,7 @@
 			files = (
 				9DE33C6E236F98BD00855C78 /* DatabaseTests.swift in Sources */,
 				9DF3F8AE2367D82D003CF8B9 /* UnHindrTests.swift in Sources */,
+				81A7340C2381E0840069FE24 /* CogGameTest.swift in Sources */,
 				2DA6698E2381EAA60050AE42 /* MedicationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -679,6 +686,7 @@
 			files = (
 				9E9F0B96238267B5003F06CD /* CaregiverUITests.swift in Sources */,
 				9DFA139F2370F17D00F8B7B5 /* UnHindrUITests.swift in Sources */,
+				81A7340E238200320069FE24 /* CogGameUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
