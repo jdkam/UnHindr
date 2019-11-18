@@ -84,8 +84,8 @@ class UnHindrUITests: XCTestCase {
         app.buttons["Wellness"].tap()
         
         // Wellness page homescreen
-        XCTAssert(app.buttons["Mood Survey Button"].waitForExistence(timeout: 5))
-        app.buttons["Mood Survey Button"].tap()
+        XCTAssert(app.buttons["MoodSurveyButton"].waitForExistence(timeout: 5))
+        app.buttons["MoodSurveyButton"].tap()
         
         // Q1
         XCTAssert(stronglyAgreeButton.waitForExistence(timeout: 5))
