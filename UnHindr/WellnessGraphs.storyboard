@@ -20,31 +20,31 @@
                                 <rect key="frame" x="0.0" y="39" width="414" height="818"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="Vlh-CC-4CE">
-                                        <rect key="frame" x="31" y="30" width="352" height="1214"/>
+                                        <rect key="frame" x="31" y="30" width="352" height="1316"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdd-Lq-6j6" userLabel="Mood">
-                                                <rect key="frame" x="0.0" y="0.0" width="352" height="262"/>
-                                                <state key="normal" image="MoodGraph"/>
-                                                <connections>
-                                                    <segue destination="WUz-gb-EjB" kind="show" id="WaK-9j-MBb"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sLH-Hv-FxY" userLabel="Cog">
-                                                <rect key="frame" x="0.0" y="322" width="352" height="242"/>
-                                                <state key="normal" image="CogGraph"/>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sLH-Hv-FxY" userLabel="Cog">
+                                                <rect key="frame" x="0.0" y="0.0" width="352" height="290"/>
+                                                <state key="normal" image="CogGame graph button"/>
                                                 <connections>
                                                     <segue destination="5Tg-Zv-11V" kind="show" id="iSI-wc-H8V"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNr-dU-86G" userLabel="Motor">
-                                                <rect key="frame" x="0.0" y="624" width="352" height="264"/>
-                                                <state key="normal" image="MotorGraph"/>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdd-Lq-6j6" userLabel="Mood">
+                                                <rect key="frame" x="0.0" y="350" width="352" height="290"/>
+                                                <state key="normal" image="Mood Graph Button"/>
+                                                <connections>
+                                                    <segue destination="WUz-gb-EjB" kind="show" id="WaK-9j-MBb"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNr-dU-86G" userLabel="Motor">
+                                                <rect key="frame" x="0.0" y="700" width="352" height="290"/>
+                                                <state key="normal" image="Motorgame graph button"/>
                                                 <connections>
                                                     <segue destination="85w-Ie-q5Z" kind="show" id="fcf-pJ-VOj"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x92-QH-AAe" userLabel="Back">
-                                                <rect key="frame" x="0.0" y="948" width="352" height="266"/>
+                                                <rect key="frame" x="0.0" y="1050" width="352" height="266"/>
                                                 <state key="normal" image="Back2">
                                                     <color key="titleColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                 </state>
@@ -113,8 +113,8 @@
     </scenes>
     <resources>
         <image name="Back2" width="374" height="133"/>
-        <image name="CogGraph" width="443" height="121"/>
-        <image name="MoodGraph" width="388" height="131"/>
-        <image name="MotorGraph" width="400" height="132"/>
+        <image name="CogGame graph button" width="308" height="145"/>
+        <image name="Mood Graph Button" width="308" height="145"/>
+        <image name="Motorgame graph button" width="308" height="145"/>
     </resources>
 </document>

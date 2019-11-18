@@ -259,42 +259,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nc8-mp-Thz" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="258.5" width="414" height="603.5"/>
+                                <rect key="frame" x="0.0" y="339.5" width="414" height="522.5"/>
                                 <color key="backgroundColor" red="0.99607843139999996" green="0.79607843140000001" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="414" id="3iE-ZE-V96"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4rp-gP-gwo">
-                                <rect key="frame" x="30" y="145" width="90" height="75"/>
-                                <color key="backgroundColor" red="0.35487467049999999" green="0.78544253109999995" blue="0.98154765369999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4rp-gP-gwo">
+                                <rect key="frame" x="20" y="145" width="111" height="156"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="4rp-gP-gwo" secondAttribute="height" multiplier="65:54" id="bqX-Pf-h0O"/>
+                                    <constraint firstAttribute="width" constant="111" id="on2-JL-Qpb"/>
                                 </constraints>
-                                <state key="normal" title="Week">
+                                <state key="normal" title="Week" image="Week 1">
                                     <color key="titleColor" red="0.1215686277" green="0.1294117719" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qtq-4r-G4t">
-                                <rect key="frame" x="162" y="145" width="90" height="75"/>
-                                <color key="backgroundColor" red="0.35487467049999999" green="0.78544253109999995" blue="0.98154765369999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qtq-4r-G4t">
+                                <rect key="frame" x="151.5" y="145" width="111" height="156"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="Qtq-4r-G4t" secondAttribute="height" multiplier="65:54" id="FHg-VL-2ES"/>
+                                    <constraint firstAttribute="width" constant="111" id="64q-4g-DoH"/>
                                 </constraints>
-                                <state key="normal" title="Month">
+                                <state key="normal" image="Month 1">
                                     <color key="titleColor" red="0.1215686277" green="0.1294117719" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="Md6-OM-5eA" kind="show" id="Pca-54-k00"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pig-6j-FYH">
-                                <rect key="frame" x="294" y="145" width="90" height="75"/>
-                                <color key="backgroundColor" red="0.35487467049999999" green="0.78544253109999995" blue="0.98154765369999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pig-6j-FYH">
+                                <rect key="frame" x="283" y="145" width="111" height="156"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="pig-6j-FYH" secondAttribute="height" multiplier="65:54" id="pQg-B8-dz9"/>
+                                    <constraint firstAttribute="width" constant="111" id="lIY-pL-pSj"/>
                                 </constraints>
-                                <state key="normal" title="Year">
+                                <state key="normal" image="Year 1">
                                     <color key="titleColor" red="0.1215686277" green="0.1294117719" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -324,7 +321,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTc-49-n5O">
-                                <rect key="frame" x="0.0" y="230" width="42" height="20.5"/>
+                                <rect key="frame" x="0.0" y="311" width="42" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -332,20 +329,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="pig-6j-FYH" firstAttribute="width" secondItem="dLm-L4-9l3" secondAttribute="width" multiplier="1.5" id="0Cd-Ey-sZh"/>
                             <constraint firstItem="nc8-mp-Thz" firstAttribute="leading" secondItem="tpH-Sh-dZu" secondAttribute="leading" id="0y0-Fb-PZf"/>
-                            <constraint firstItem="4rp-gP-gwo" firstAttribute="leading" secondItem="tpH-Sh-dZu" secondAttribute="leading" constant="30" id="18X-b1-i36"/>
+                            <constraint firstItem="4rp-gP-gwo" firstAttribute="leading" secondItem="tpH-Sh-dZu" secondAttribute="leading" constant="20" id="18X-b1-i36"/>
                             <constraint firstItem="4rp-gP-gwo" firstAttribute="top" secondItem="YzH-1F-0ba" secondAttribute="bottom" constant="25" id="6KJ-qn-oRV"/>
                             <constraint firstItem="tpH-Sh-dZu" firstAttribute="trailing" secondItem="fKb-RJ-Tec" secondAttribute="trailing" constant="15" id="6M4-tf-8BN"/>
                             <constraint firstItem="dLm-L4-9l3" firstAttribute="height" secondItem="YzH-1F-0ba" secondAttribute="height" multiplier="0.5" id="8Bc-hZ-snG"/>
                             <constraint firstItem="nc8-mp-Thz" firstAttribute="trailing" secondItem="tpH-Sh-dZu" secondAttribute="trailing" id="MBA-p8-95n"/>
-                            <constraint firstItem="tpH-Sh-dZu" firstAttribute="trailing" secondItem="pig-6j-FYH" secondAttribute="trailing" constant="30" id="MKL-xi-ZXn"/>
+                            <constraint firstItem="tpH-Sh-dZu" firstAttribute="trailing" secondItem="pig-6j-FYH" secondAttribute="trailing" constant="20" id="MKL-xi-ZXn"/>
                             <constraint firstItem="pig-6j-FYH" firstAttribute="top" secondItem="YzH-1F-0ba" secondAttribute="bottom" constant="25" id="Paq-Sr-svw"/>
                             <constraint firstItem="dLm-L4-9l3" firstAttribute="leading" secondItem="tpH-Sh-dZu" secondAttribute="leading" constant="9" id="RJE-hu-kAT"/>
                             <constraint firstItem="nc8-mp-Thz" firstAttribute="top" secondItem="gTc-49-n5O" secondAttribute="bottom" constant="8" id="RVF-2f-zCy"/>
-                            <constraint firstItem="4rp-gP-gwo" firstAttribute="width" secondItem="dLm-L4-9l3" secondAttribute="width" multiplier="1.5" id="RYs-kf-6dN"/>
                             <constraint firstItem="Qtq-4r-G4t" firstAttribute="top" secondItem="fKb-RJ-Tec" secondAttribute="bottom" constant="40" id="T4N-9m-UX7"/>
-                            <constraint firstItem="Qtq-4r-G4t" firstAttribute="width" secondItem="dLm-L4-9l3" secondAttribute="width" multiplier="1.5" id="b3U-Q1-VvW"/>
                             <constraint firstItem="YzH-1F-0ba" firstAttribute="trailing" secondItem="tpH-Sh-dZu" secondAttribute="trailing" id="ciX-Kx-5cO"/>
                             <constraint firstItem="Qtq-4r-G4t" firstAttribute="centerX" secondItem="Uva-id-q4g" secondAttribute="centerX" id="dBQ-8r-UhG"/>
                             <constraint firstItem="YzH-1F-0ba" firstAttribute="top" secondItem="Uva-id-q4g" secondAttribute="top" id="kM2-In-eJj"/>
@@ -370,12 +364,15 @@
     </scenes>
     <resources>
         <image name="Back3" width="237" height="237"/>
+        <image name="Month 1" width="111" height="78"/>
+        <image name="Week 1" width="111" height="78"/>
+        <image name="Year 1" width="111" height="78"/>
         <image name="greenBG" width="414" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="nnx-jG-tUt"/>
-        <segue reference="1ha-tl-ME5"/>
-        <segue reference="Enq-nB-NyG"/>
-        <segue reference="lAa-Pe-SEE"/>
+        <segue reference="Pca-54-k00"/>
+        <segue reference="Xgc-IW-q8z"/>
+        <segue reference="q8a-M3-Mbn"/>
     </inferredMetricsTieBreakers>
 </document>
