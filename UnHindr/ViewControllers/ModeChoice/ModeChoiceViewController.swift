@@ -11,17 +11,24 @@ import UIKit
 
 class ModeChoiceViewController: UIViewController {
     private var isPatient = 0
+    
+    // Input:
+    //      1. Triggered by careGiver Button being tapped
+    // Output:
+    //      1. update the isPatient field to 0
     @IBAction func careGiverTapped(_ sender: UIButton) {
         self.isPatient = 0
     }
     
+    // Input:
+    //      1. Triggered by PD Button being tapped
+    // Output:
+    //      1. update the isPatient field to 1
     @IBAction func pdTapped(_ sender: UIButton) {
         self.isPatient = 1
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 }

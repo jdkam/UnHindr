@@ -1,10 +1,11 @@
-//
-//  CaregiverHomeScreenViewController.swift
-//  UnHindr
-//
-//  Created by Sina Behrouz on 2019-11-15.
-//  Copyright © 2019 Sigma. All rights reserved.
-//
+/*
+ File: [CaregiverHomeScreenViewController.swift]
+ Creators: [Sina]
+ Date created: [14/11/2019]
+ Date updated: [14/11/2019]
+ Updater name: [Sina]
+ File description: [Controls the Home Menu for CareGiver]
+ */
 
 import UIKit
 
