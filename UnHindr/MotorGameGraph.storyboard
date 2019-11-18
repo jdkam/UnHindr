@@ -318,7 +318,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="dLm-L4-9l3" secondAttribute="height" multiplier="1:1" id="GCk-0l-2G4"/>
                                 </constraints>
-                                <state key="normal" image="Add new"/>
+                                <state key="normal" image="Back3"/>
                                 <connections>
                                     <segue destination="H0Q-W9-gc1" kind="show" id="Xgc-IW-q8z"/>
                                 </connections>
@@ -369,7 +369,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Add new" width="195" height="92"/>
         <image name="Back3" width="237" height="237"/>
         <image name="greenBG" width="414" height="120"/>
     </resources>

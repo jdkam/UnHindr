@@ -106,7 +106,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="140" id="M6O-Eg-p0A"/>
                                                 </constraints>
-                                                <state key="normal" title="Graph" image="Add-1"/>
+                                                <state key="normal" title="Graph" image="Graph"/>
                                                 <connections>
                                                     <segue destination="wue-3W-rPN" kind="show" id="0x9-9f-OBj"/>
                                                 </connections>
@@ -159,8 +159,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Add-1" width="158" height="71"/>
         <image name="Cognitive Game2" width="668" height="250"/>
+        <image name="Graph" width="351" height="148"/>
         <image name="MoodSurvey2" width="668" height="250"/>
         <image name="MotorGame" width="334" height="125"/>
         <image name="greenBG" width="414" height="120"/>
