@@ -75,7 +75,7 @@ class MedicationViewController: UIViewController {
     // Input: None
     // Output:
     //      1. User's medication data is persistently stored in database
-    private func storeToDB(){
+    private func storeToDB(completionHandler: @escaping (_ result: Bool) -> Void){
         //User should be logged in with reference created
         // Add a new document with a generated id.
         let daysArr = initArrayToPassDays()
@@ -91,10 +91,12 @@ class MedicationViewController: UIViewController {
         ]) { err in
             if let err = err {
                 print("Error adding document: \(err)")
+                completionHandler(false)
             } else {
                 print("Document added with ID: \(ref!.documentID)")
                 // Send data back to Medication Main View Controller
                 self.delegate?.onMedAdded(documentID: ref!.documentID)
+                completionHandler(true)
             }
         }
     }
@@ -259,10 +261,13 @@ class MedicationViewController: UIViewController {
     // Output:
     //      1. Calls storeToDB() in order to save the medication, returns User to MyMeds screen (done in storyboard)
     @IBAction func addMedTapped(_ sender: Any) {
-        self.storeToDB()
-        view.endEditing(true)
-        
-         performSegue(withIdentifier: "ToMedHome", sender: self)
+        self.storeToDB { (ret) in
+            if (ret) {
+                self.view.endEditing(true)
+                self.performSegue(withIdentifier: "ToMedHome", sender: self)
+            }
+            //Error storing data
+        }
     }
     
     // MARK - Cancels medication, saves no data
