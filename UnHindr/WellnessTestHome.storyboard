@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6go-Rn-ixY">
-    <device id="retina5_5" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6go-Rn-ixY">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,7 +14,7 @@
                 <viewControllerPlaceholder storyboardName="HomeScreen" id="esJ-xm-P8D" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X8G-aE-cuc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1283" y="8"/>
+            <point key="canvasLocation" x="1151" y="-131"/>
         </scene>
         <!--WellnessGraphs-->
         <scene sceneID="3SY-V5-Nlf">
@@ -24,7 +22,7 @@
                 <viewControllerPlaceholder storyboardName="WellnessGraphs" id="wue-3W-rPN" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jtA-qd-gVE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1115" y="-347"/>
+            <point key="canvasLocation" x="1139" y="223"/>
         </scene>
         <!--CogGame-->
         <scene sceneID="DCF-92-mvE">
@@ -34,12 +32,12 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Lx-5n-bpR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1146" y="-210"/>
+            <point key="canvasLocation" x="1140" y="-46"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="z1P-WB-qJ7">
             <objects>
-                <viewController id="6go-Rn-ixY" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="6go-Rn-ixY" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="y9Y-08-bwN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -78,30 +76,33 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tx2-vr-pV0" userLabel="CogGameButton">
                                                 <rect key="frame" x="0.0" y="0.0" width="331.33333333333331" height="140"/>
+                                                <accessibility key="accessibilityConfiguration" label="CogGameButton"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="140" id="gne-Rw-9Eq"/>
                                                 </constraints>
-                                                <state key="normal" title="Button" image="Cognitive Game2"/>
+                                                <state key="normal" title="CogGameButton" image="Cognitive Game2"/>
                                                 <connections>
                                                     <segue destination="Zcz-UQ-JWb" kind="show" id="qXA-qV-ip5"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GJF-ZD-Sme">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GJF-ZD-Sme" userLabel="MoodSurveyButton">
                                                 <rect key="frame" x="0.0" y="160" width="331.33333333333331" height="140"/>
+                                                <accessibility key="accessibilityConfiguration" label="MoodSurveyButton"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="140" id="N2J-BJ-MsW"/>
                                                 </constraints>
-                                                <state key="normal" title="Mood Survey Button" image="MoodSurvey2"/>
+                                                <state key="normal" title="MoodSurveyButton" image="MoodSurvey2"/>
                                                 <connections>
                                                     <segue destination="Ujt-mU-H8b" kind="show" id="LFJ-Q6-0bU"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JAr-J1-Cqf" userLabel="MotorGameButton">
                                                 <rect key="frame" x="0.0" y="320" width="331.33333333333331" height="140"/>
+                                                <accessibility key="accessibilityConfiguration" label="MotorGameButton"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="140" id="U4B-eB-Bvj"/>
                                                 </constraints>
-                                                <state key="normal" title="Button" image="MotorGame"/>
+                                                <state key="normal" title="MotorGameButton" image="MotorGame"/>
                                                 <connections>
                                                     <segue destination="Itp-fM-LIf" kind="show" id="EiO-xc-mcH"/>
                                                 </connections>
@@ -160,7 +161,7 @@
                 <viewControllerPlaceholder storyboardName="MotorGame" id="Itp-fM-LIf" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="77d-lw-HbY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1140" y="110"/>
+            <point key="canvasLocation" x="1146" y="124"/>
         </scene>
         <!--Mood-->
         <scene sceneID="RoG-yn-ieU">
@@ -168,7 +169,7 @@
                 <viewControllerPlaceholder storyboardName="Mood" id="Ujt-mU-H8b" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Exd-n2-oua" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1101" y="-65"/>
+            <point key="canvasLocation" x="1139" y="18"/>
         </scene>
     </scenes>
     <resources>
