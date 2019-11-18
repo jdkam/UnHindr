@@ -28,7 +28,7 @@ class SoundManager {
     //Input: a SoundEffect name
     //Output: sets the soundFile to play
     //Plays the sound
-    static func playSound(_ effect:SoundEffect) {
+    static func playSound(_ effect:SoundEffect) ->Bool {
         
         var soundFilename = ""
         
@@ -55,7 +55,7 @@ class SoundManager {
         
         guard bundlePath != nil else {
             print("Couldnt find the sound file \(soundFilename) in the bundle")
-            return
+            return false
         }
         
         //create a URL object from this string path
@@ -75,6 +75,6 @@ class SoundManager {
         }
         
         
-        
+        return true
     }
 }

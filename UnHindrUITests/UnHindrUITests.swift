@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import UnHindr
 
 class UnHindrUITests: XCTestCase {
     func a() { print ("something") }
