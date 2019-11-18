@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6go-Rn-ixY">
-    <device id="retina5_5" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6go-Rn-ixY">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -100,6 +102,9 @@
                                                     <constraint firstAttribute="height" constant="140" id="U4B-eB-Bvj"/>
                                                 </constraints>
                                                 <state key="normal" title="Button" image="MotorGame"/>
+                                                <connections>
+                                                    <segue destination="Itp-fM-LIf" kind="show" id="EiO-xc-mcH"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="51S-Jh-8f7">
                                                 <rect key="frame" x="0.0" y="480" width="331.33333333333331" height="140"/>
@@ -148,6 +153,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U7f-xB-tl6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="437.68115942028987" y="17.934782608695652"/>
+        </scene>
+        <!--MotorGame-->
+        <scene sceneID="4Bu-j2-2Yf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MotorGame" id="Itp-fM-LIf" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="77d-lw-HbY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1140" y="110"/>
         </scene>
         <!--Mood-->
         <scene sceneID="RoG-yn-ieU">
