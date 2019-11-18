@@ -285,8 +285,6 @@ class UnHindrUITests: XCTestCase {
         app.secureTextFields["Password"].tap()
         app.secureTextFields["Password"].typeText("testtest\n")
         app.buttons["Login Button"].tap()
-        //Wait
-        XCTAssert(app.buttons["Options"].waitForExistence(timeout: 5))
     }
     
     // Input:
