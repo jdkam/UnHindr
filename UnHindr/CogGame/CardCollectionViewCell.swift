@@ -8,6 +8,7 @@ File description: [Controls the UI behavior of the collectionViewCells for the c
 */
 
 import UIKit
+import Foundation
 
 class CardCollectionViewCell: UICollectionViewCell {
     
@@ -19,7 +20,7 @@ class CardCollectionViewCell: UICollectionViewCell {
     //Input: Selected Card object
     //Output: Manages the flipping of the selected card
     //Card disappears if matched
-    func setCard(_ card:Card){
+    func setCard(_ card:Card) -> Bool{
         
         //keeps tracks of the card that gets passed in
         self.card = card
@@ -30,7 +31,7 @@ class CardCollectionViewCell: UICollectionViewCell {
             backImageView.alpha = 0
             frontImageView.alpha = 0
             
-            return
+            return true
         }
         else
         {
@@ -51,6 +52,8 @@ class CardCollectionViewCell: UICollectionViewCell {
             //make sure the backImageview is on top
             UIView.transition(from: frontImageView, to: backImageView, duration: 0, options: [.showHideTransitionViews, .transitionFlipFromLeft], completion: nil)
         }
+        
+        return false
         
         
     }

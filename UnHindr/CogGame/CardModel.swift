@@ -55,9 +55,21 @@ class CardModel {
             
             //optional: to generate unique card number
         }
-                
-        //return the array
+        
+        
+        
         return generatedCardsArray.shuffled()
+        
+        
+    
+        
+
+        
+        
+       
+        //return the array
+        //return generatedCardsArray.shuffled()
         
     }
 }
+

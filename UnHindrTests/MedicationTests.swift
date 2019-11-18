@@ -27,6 +27,7 @@ class MedicationTests: XCTestCase {
                 Services.getDBUserRef(user, completionHandler: { (userRef) in
                     guard userRef != nil else {
                         XCTFail("Unable to get user reference")
+                        return
                     }
                     Services.userRef = userRef
                 })
