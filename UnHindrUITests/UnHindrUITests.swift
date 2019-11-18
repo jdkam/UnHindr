@@ -218,7 +218,31 @@ class UnHindrUITests: XCTestCase {
         
         XCTAssert(app.textFields["Email"].exists)
     }
-    
+    //Basic UI test for connect UI view
+    func testConnect(){
+        
+        let app = XCUIApplication()
+        loginToHomeScreen(app)
+        app.buttons["Connect"].tap()
+        XCTAssert(app.buttons["addfriend"].exists)
+        XCTAssert(app.buttons["home white"].exists)
+        app.textFields["Add new contact by email"].tap()
+        app.textFields["Add new contact by email"].typeText("FAKEEMAIL@123.com\n")
+        app.buttons["addfriend"].tap()
+        app.alerts["The Entered Email Does not Exist!"].buttons["Ok"].tap()
+        app.buttons["home white"].tap()
+        XCTAssert(app.buttons["Options"].waitForExistence(timeout: 5))
+        
+        app.buttons["Connect"].tap()
+        XCTAssert(app.buttons["addfriend"].exists)
+        XCTAssert(app.buttons["home white"].exists)
+        app.textFields["Add new contact by email"].tap()
+        app.textFields["Add new contact by email"].typeText("unittestacc1@gmail.com\n")
+        app.buttons["addfriend"].tap()
+        app.alerts["You're already paired with unittestacc1@gmail.com"].buttons["Ok"].tap()
+        app.buttons["home white"].tap()
+        XCTAssert(app.buttons["Options"].waitForExistence(timeout: 5))
+    }
     //test the scroll view in the profile
     func testProfileScrollView(){
         let app = XCUIApplication()
