@@ -33,6 +33,9 @@
 		8176FAB5237B896B0083B445 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8176FAB4237B896B0083B445 /* CardModel.swift */; };
 		8176FAB7237B8A9C0083B445 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8176FAB6237B8A9C0083B445 /* Card.swift */; };
 		8176FAB9237B94FC0083B445 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8176FAB8237B94FC0083B445 /* CardCollectionViewCell.swift */; };
+		817B5F6723889CB5009BF125 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 817B5F6623889CB5009BF125 /* Chat.storyboard */; };
+		817B5F6923889CE9009BF125 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817B5F6823889CE9009BF125 /* ChatViewController.swift */; };
+		817B5F6C2388A478009BF125 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817B5F6B2388A478009BF125 /* Message.swift */; };
 		81A7340C2381E0840069FE24 /* CogGameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A7340B2381E0840069FE24 /* CogGameTest.swift */; };
 		81A7340E238200320069FE24 /* CogGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A7340D238200320069FE24 /* CogGameUITests.swift */; };
 		81B5908E2378F8DD00BA49AF /* CogGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81B5908D2378F8DD00BA49AF /* CogGame.storyboard */; };
@@ -127,6 +130,9 @@
 		8176FAB4237B896B0083B445 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		8176FAB6237B8A9C0083B445 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		8176FAB8237B94FC0083B445 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
+		817B5F6623889CB5009BF125 /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
+		817B5F6823889CE9009BF125 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		817B5F6B2388A478009BF125 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		81A7340B2381E0840069FE24 /* CogGameTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CogGameTest.swift; sourceTree = "<group>"; };
 		81A7340D238200320069FE24 /* CogGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CogGameUITests.swift; sourceTree = "<group>"; };
 		81B5908D2378F8DD00BA49AF /* CogGame.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CogGame.storyboard; sourceTree = "<group>"; };
@@ -272,6 +278,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		817B5F6A2388A010009BF125 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				817B5F6623889CB5009BF125 /* Chat.storyboard */,
+				817B5F6823889CE9009BF125 /* ChatViewController.swift */,
+				817B5F6B2388A478009BF125 /* Message.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
 		81B590912378F8F900BA49AF /* CogGame */ = {
 			isa = PBXGroup;
 			children = (
@@ -349,6 +365,7 @@
 		9DF3F8972367D826003CF8B9 /* UnHindr */ = {
 			isa = PBXGroup;
 			children = (
+				817B5F6A2388A010009BF125 /* Chat */,
 				9E286A2D2382957600473055 /* MotorGame.storyboard */,
 				707E9F5D23827EF2006A3AF5 /* CogGameGraphs.storyboard */,
 				707E9F5923827EF0006A3AF5 /* MoodGraphs.storyboard */,
@@ -576,6 +593,7 @@
 				81BDBDA1237F8E9C00F4C970 /* dingwrong.wav in Resources */,
 				707E9F6223827EF2006A3AF5 /* CogGameGraphs.storyboard in Resources */,
 				707E9F6023827EF2006A3AF5 /* WellnessGraphs.storyboard in Resources */,
+				817B5F6723889CB5009BF125 /* Chat.storyboard in Resources */,
 				9E286A312382957600473055 /* MotorGame.storyboard in Resources */,
 				9DF3F8A32367D82D003CF8B9 /* LaunchScreen.storyboard in Resources */,
 				9DF3F8C72367D880003CF8B9 /* GoogleService-Info.plist in Resources */,
@@ -721,6 +739,7 @@
 				9EE42465237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift in Sources */,
 				9DF3F89B2367D826003CF8B9 /* LoginViewController.swift in Sources */,
 				9D6C641C2378B50F00F0C058 /* Constants.swift in Sources */,
+				817B5F6C2388A478009BF125 /* Message.swift in Sources */,
 				98F115EB236D2B770082A1B1 /* MoodQ5ViewController.swift in Sources */,
 				8176FAB7237B8A9C0083B445 /* Card.swift in Sources */,
 				9E91389C2380D6C5006AD1F9 /* ConnectViewController.swift in Sources */,
@@ -747,6 +766,7 @@
 				9DFB75BD236F7515006321B8 /* MedicationViewController.swift in Sources */,
 				9D627A0E236FD4240027B6B7 /* MedicationHomeViewController.swift in Sources */,
 				98F115E9236D29B50082A1B1 /* MoodQ4ViewController.swift in Sources */,
+				817B5F6923889CE9009BF125 /* ChatViewController.swift in Sources */,
 				707E9F7023827F77006A3AF5 /* MotorGameGraphViewController.swift in Sources */,
 				707E9F6F23827F77006A3AF5 /* MotorGameYearlyViewController.swift in Sources */,
 				98F6791D236E849900517099 /* ProfileViewController.swift in Sources */,
