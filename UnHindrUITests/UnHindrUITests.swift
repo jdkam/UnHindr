@@ -44,7 +44,7 @@ class UnHindrUITests: XCTestCase {
         let app = XCUIApplication()
         loginToHomeScreen(app)
 
-        XCTAssert(app.buttons["Profile"].exists)
+        XCTAssert(app.buttons["Profile"].waitForExistence(timeout: 5))
         app.buttons["Profile"].tap()
         //Check to see if all element exists
         XCTAssert(app.textFields["First Name"].exists)
@@ -83,8 +83,9 @@ class UnHindrUITests: XCTestCase {
         XCTAssert(app.buttons["Wellness"].waitForExistence(timeout: 5))
         app.buttons["Wellness"].tap()
         
+        XCTAssert(app.scrollViews.otherElements.buttons["MoodSurveyButton"].waitForExistence(timeout: 5))
         // Wellness page homescreen
-        XCTAssert(app.buttons["MoodSurveyButton"].waitForExistence(timeout: 5))
+//        XCTAssert(app.buttons["Mood Survey Button"].waitForExistence(timeout: 5))
         app.buttons["MoodSurveyButton"].tap()
         
         // Q1
@@ -213,6 +214,7 @@ class UnHindrUITests: XCTestCase {
         optionsButton.tap()
         XCTAssert(app.buttons["home white"].exists)
         app.buttons["home white"].tap()
+        XCTAssert(optionsButton.waitForExistence(timeout: 5))
         optionsButton.tap()
         app.buttons["LogoutButton"].tap()
                 
@@ -220,11 +222,16 @@ class UnHindrUITests: XCTestCase {
     }
     //Basic UI test for connect UI view
     func testConnect(){
-        
         let app = XCUIApplication()
         loginToHomeScreen(app)
+        XCTAssert(app.buttons["Connect"].waitForExistence(timeout: 5))
         app.buttons["Connect"].tap()
+        
         XCTAssert(app.buttons["addfriend"].exists)
+        app.buttons["addfriend"].tap()
+        XCTAssert(app.alerts["The Entered Email Does not Exist!"].buttons["Ok"].waitForExistence(timeout: 5))
+        app.alerts["The Entered Email Does not Exist!"].buttons["Ok"].tap()
+        
         XCTAssert(app.buttons["home white"].exists)
         app.textFields["Add new contact by email"].tap()
         app.textFields["Add new contact by email"].typeText("FAKEEMAIL@123.com\n")
@@ -243,13 +250,15 @@ class UnHindrUITests: XCTestCase {
         app.buttons["home white"].tap()
         XCTAssert(app.buttons["Options"].waitForExistence(timeout: 5))
     }
-    //test the scroll view in the profile
+    //test the scroll view in the profile for caregiver and patient
     func testProfileScrollView(){
         let app = XCUIApplication()
-        loginAsCaregiver(app)
-        app.buttons["CaregiverProfile"].tap()
+        loginToHomeScreen(app)
         
-         XCTAssert(app.buttons["Save Button"].exists)
+        XCTAssert(app.buttons["Profile"].waitForExistence(timeout: 5))
+        app.buttons["Profile"].tap()
+        
+        XCTAssert(app.buttons["Save Button"].exists)
         let scrollViewsQuery = app.scrollViews
         let element = scrollViewsQuery.otherElements.containing(.image, identifier:"Menu BG").children(matching: .other).element
         element.swipeUp()
@@ -257,6 +266,16 @@ class UnHindrUITests: XCTestCase {
         let elementsQuery = scrollViewsQuery.otherElements
         let backButtonButton = elementsQuery.buttons["Back Button"]
         backButtonButton.tap()
+        
+        XCTAssert(app.buttons["Options"].waitForExistence(timeout: 5))
+        app.buttons["Options"].tap()
+        XCTAssert(app.buttons["LogoutButton"].waitForExistence(timeout: 5))
+        app.buttons["LogoutButton"].tap()
+        
+        loginAsCaregiver(app)
+        
+        
+        XCTAssert(app.buttons["CaregiverProfile"].waitForExistence(timeout: 5))
         app.buttons["CaregiverProfile"].tap()
         
         XCTAssert(app.textFields["First Name"].exists)
