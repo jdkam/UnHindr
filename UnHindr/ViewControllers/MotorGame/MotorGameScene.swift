@@ -357,10 +357,6 @@ class MotorGameScene: SKScene, SKPhysicsContactDelegate {
     
     
     
-    
-    // MARK: - The fllowing code was taken from Stack Overflow: Written by Dominique Vial, https://stackoverflow.com/questions/34293575/is-it-possible-to-use-xcode-ui-testing-on-an-app-using-spritekit/42676977#42676977
-    // The code's purpose is to make elements of Sprite Kit accessbile to XCUITest for the purpose of UI testing.
-    
     override func accessibilityElementCount() -> Int {
         initAccessibility()
         return accessibleElements.count
@@ -381,6 +377,8 @@ class MotorGameScene: SKScene, SKPhysicsContactDelegate {
         return accessibleElements.index(of: element as! UIAccessibilityElement)!
     }
     
+    // MARK: - The following code was taken from Stack Overflow: Written by Dominique Vial, https://stackoverflow.com/questions/34293575/is-it-possible-to-use-xcode-ui-testing-on-an-app-using-spritekit/42676977#42676977
+    // The code's purpose is to make elements of Sprite Kit accessbile to XCUITest for the purpose of UI testing.
     func initAccessibility() {
         if accessibleElements.count == 0 {
             let elemForEndGameLabel = UIAccessibilityElement(accessibilityContainer: self.view!)

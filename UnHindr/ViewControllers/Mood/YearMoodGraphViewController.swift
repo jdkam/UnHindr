@@ -1,15 +1,8 @@
-//File: [YearMoodGraphViewController]
+//File: [YearMoodGraphViewController.swift]
 //Creators: [Johnston]
 //Date created: [11/10/2019]
 //Updater name: [Johnston]
 //File description: [Reads mood data values from fireabse]
-//
-//  YearMoodGraphViewController.swift
-//  UnHindr
-//
-//  Created by Johnston Yang on 11/10/19.
-//  Copyright © 2019 Sigma. All rights reserved.
-//
 
 import UIKit
 import Foundation
@@ -173,16 +166,5 @@ class YearMoodGraphViewController: UIViewController {
             return values[Int(value)]
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 
 }

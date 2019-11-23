@@ -11,7 +11,7 @@
         <!--Connect View Controller-->
         <scene sceneID="7bm-KX-uoe">
             <objects>
-                <viewController storyboardIdentifier="ConnectViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3pH-Fv-RT3" customClass="ConnectViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ConnectViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3pH-Fv-RT3" customClass="ConnectViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5E3-bB-lxH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

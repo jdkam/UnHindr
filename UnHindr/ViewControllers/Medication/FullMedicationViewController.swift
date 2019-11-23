@@ -1,10 +1,12 @@
-//
-//  FullMedicationViewController.swift
-//  UnHindr
-//
-//  Created by Allan on 2019-11-15.
-//  Copyright © 2019 Sigma. All rights reserved.
-//
+/*
+ File: [FullMedicationViewController.swift]
+ Creators: [Allan]
+ Date created: [29/10/2019]
+ Date updated: [17/11/2019]
+ Updater name: [Sina, Allan]
+ File description: [Controls all aspects of viewing list of Medication]
+ */
+
 
 import UIKit
 
@@ -16,15 +18,4 @@ class FullMedicationViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

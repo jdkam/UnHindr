@@ -30,9 +30,6 @@ class MotorGameViewController: UIViewController {
         }
     }
     
-
-    
-    
     override var shouldAutorotate: Bool {
         return true
     }
@@ -44,7 +41,7 @@ class MotorGameViewController: UIViewController {
             return .all
         }
     }
-    
+
     override var prefersStatusBarHidden: Bool {
         return true
     }

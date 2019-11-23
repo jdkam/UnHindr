@@ -150,6 +150,10 @@ class ConnectViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
+    // Input:
+    //
+    // Output:
+    //      1. Gets The pairs UID based on email
     private func getPairedUID(completionHandler: @escaping (_ result: QuerySnapshot?) -> Void) {
         Services.fullUserRef.whereField("email", isEqualTo: connectEmail.text!).getDocuments { (querySnapshot, err) in
             if err != nil {
