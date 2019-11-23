@@ -23,7 +23,9 @@
 	<key>UILaunchStoryboardName</key>
 	<string>test</string>
 	<key>UIMainStoryboardFile</key>
-	<string>Login</string>
+	<string>SignUp</string>
+	<key>NSHumanReadableCopyright</key>
+	<string></string>
 	<key>CFBundleGetInfoString</key>
 	<string></string>
 	<key>CFBundleDisplayName</key>
