@@ -83,9 +83,10 @@ class UnHindrUITests: XCTestCase {
         XCTAssert(app.buttons["Wellness"].waitForExistence(timeout: 5))
         app.buttons["Wellness"].tap()
         
+        XCTAssert(app.scrollViews.otherElements.buttons["Mood Survey Button"].waitForExistence(timeout: 5))
         // Wellness page homescreen
-        XCTAssert(app.buttons["MoodSurveyButton"].waitForExistence(timeout: 5))
-        app.buttons["MoodSurveyButton"].tap()
+//        XCTAssert(app.buttons["Mood Survey Button"].waitForExistence(timeout: 5))
+        app.buttons["Mood Survey Button"].tap()
         
         // Q1
         XCTAssert(stronglyAgreeButton.waitForExistence(timeout: 5))
@@ -247,7 +248,8 @@ class UnHindrUITests: XCTestCase {
     func testProfileScrollView(){
         let app = XCUIApplication()
         loginToHomeScreen(app)
-        app.buttons["CaregiverProfile"].tap()
+        
+        app.buttons["Profile"].tap()
         
          XCTAssert(app.buttons["Save Button"].exists)
         let scrollViewsQuery = app.scrollViews

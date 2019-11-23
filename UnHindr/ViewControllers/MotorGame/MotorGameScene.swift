@@ -23,6 +23,8 @@ struct PhysicsCategory {
 
 class MotorGameScene: SKScene, SKPhysicsContactDelegate {
     
+    let motorGameRef = Services.fullUserRef.document(Services.userRef!).collection(Services.motorGameName)
+    
     // MARK: - Enumerator holding cases describing which side of the screen the walls will spawn from
     enum wallSpawnPoint :CaseIterable{
         case right
@@ -216,7 +218,7 @@ class MotorGameScene: SKScene, SKPhysicsContactDelegate {
                     //If the user taps the "Quit" button, save score and timestamp data to Firebase and exit to the Home Menu
                     else if quitButton.contains(location) {
                         var ref: DocumentReference? = nil
-                        ref = Services.motorGameRef
+                        ref = motorGameRef
                             .addDocument(data: [
                             "Time": Timestamp(date: Date()),
                             "Score": scoreCounter

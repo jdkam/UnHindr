@@ -12,6 +12,8 @@ import FirebaseFirestore
 
 class ConnectViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    let connectionRef = Services.fullUserRef.document(Services.userRef!).collection(Services.connectionName)
+    
     @IBOutlet weak var connectionsTable: UITableView!
     @IBOutlet weak var connectEmail: UITextField!
     
@@ -72,7 +74,7 @@ class ConnectViewController: UIViewController, UITableViewDelegate, UITableViewD
     // Output:
     //      1. Reference to connection
     func getConnections(_ userdoc: String, completionHandler: @escaping (_ result: QuerySnapshot? ) -> Void){
-        Services.connectionRef.getDocuments { (querySnapshot, error) in
+        connectionRef.getDocuments { (querySnapshot, error) in
             if error != nil {
                 //error
             }
@@ -120,7 +122,7 @@ class ConnectViewController: UIViewController, UITableViewDelegate, UITableViewD
     //      1. Store user pair information for the current user
     private func storeToDB(_ pairedUID: String, _ pairedEmail: String){
         var ref: DocumentReference? = nil
-        ref = Services.connectionRef.addDocument(data: [
+        ref = connectionRef.addDocument(data: [
             "uid": pairedUID,
             "email": pairedEmail
         ]){err in
@@ -134,7 +136,7 @@ class ConnectViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     // Check to see if the connection already exists in the current user
     private func checkPairable(_ email: String, completionHandler: @escaping (_ result: Bool) -> Void) {
-        Services.connectionRef.whereField("email", isEqualTo: email).getDocuments { (querySnapshot, err) in
+        connectionRef.whereField("email", isEqualTo: email).getDocuments { (querySnapshot, err) in
             if err != nil {
                 // Error
             } else {

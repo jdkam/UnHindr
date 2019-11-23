@@ -14,6 +14,8 @@ import FirebaseFirestore
 import FirebaseAuth
 
 class ProfileViewController: UIViewController {
+    
+    let userProfileRef = Services.fullUserRef.document(Services.userRef!)
 
     //Outlets
     @IBOutlet weak var FirstNameTF: UITextField!
@@ -62,7 +64,6 @@ class ProfileViewController: UIViewController {
                 if documentSnapshot != nil {
                     print("Getting profile data of: \(Services.userRef!)")
                     self.datacollection = documentSnapshot!.data()
-                    print(self.datacollection)
                     self.updateTextField()
                 }
                 else{
@@ -80,7 +81,7 @@ class ProfileViewController: UIViewController {
     // Output:
     //      1. Reference to user data
     func getUserInfo(completionHandler: @escaping (_ result: DocumentSnapshot? ) -> Void){
-        Services.userProfileRef.getDocument { (documentSnapshot, error) in
+        userProfileRef.getDocument { (documentSnapshot, error) in
             
             if error != nil {
                 //error
@@ -91,11 +92,8 @@ class ProfileViewController: UIViewController {
                     return
                 }
                 print("-----------------------")
-                print("UserData: \(document.data())")
+//                print("UserData: \(document.data())")
                 completionHandler(document)
-//                self.datacollection = document.data()
-//                let result = true
-//                completionHandler(result)
             }
             
         }
@@ -179,7 +177,7 @@ class ProfileViewController: UIViewController {
         
         
         if validFields{
-            Services.userProfileRef.updateData(fields)
+            userProfileRef.updateData(fields)
         }
     }
     

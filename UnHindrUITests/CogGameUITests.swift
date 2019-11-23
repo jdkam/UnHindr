@@ -41,8 +41,14 @@ class CogGameUITests: XCTestCase {
         XCTAssert(app.buttons["Wellness"].waitForExistence(timeout: 5))
         app.buttons["Wellness"].tap()
         
-        XCTAssert(app.buttons["CogGameButton"].waitForExistence(timeout: 5))
-        app.buttons["CogGameButton"].tap()
+        XCTAssert(app.scrollViews.otherElements.children(matching: .button).matching(identifier: "Button").element(boundBy: 0).waitForExistence(timeout: 5))
+        
+//        XCTAssert(app.buttons["CogGameButton"].waitForExistence(timeout: 5))
+//        app.buttons["CogGameButton"].tap()
+        
+        app.scrollViews.otherElements.children(matching: .button).matching(identifier: "Button").element(boundBy: 0).tap()
+        XCTAssert(app.buttons["Exit Game Button"].waitForExistence(timeout: 5))
+        app.buttons["Exit Game Button"].tap()
         
     }
     
@@ -58,8 +64,11 @@ class CogGameUITests: XCTestCase {
         XCTAssert(app.buttons["Wellness"].waitForExistence(timeout: 5))
         app.buttons["Wellness"].tap()
         
-        XCTAssert(app.buttons["CogGameButton"].waitForExistence(timeout: 5))
-        app.buttons["CogGameButton"].tap()
+//        XCTAssert(app.buttons["CogGameButton"].waitForExistence(timeout: 5))
+//        app.buttons["CogGameButton"].tap()
+        
+        XCTAssert(app.scrollViews.otherElements.children(matching: .button).matching(identifier: "Button").element(boundBy: 0).waitForExistence(timeout: 5))
+        app.scrollViews.otherElements.children(matching: .button).matching(identifier: "Button").element(boundBy: 0).tap()
         
         
         let collectionViewsQuery = app.collectionViews
@@ -138,8 +147,10 @@ class CogGameUITests: XCTestCase {
         XCTAssert(app.buttons["Wellness"].waitForExistence(timeout: 5))
         app.buttons["Wellness"].tap()
         
-        XCTAssert(app.buttons["CogGameButton"].waitForExistence(timeout: 5))
-        app.buttons["CogGameButton"].tap()
+//        XCTAssert(app.buttons["CogGameButton"].waitForExistence(timeout: 5))
+//        app.buttons["CogGameButton"].tap()
+        XCTAssert(app.scrollViews.otherElements.children(matching: .button).matching(identifier: "Button").element(boundBy: 0).waitForExistence(timeout: 5))
+        app.scrollViews.otherElements.children(matching: .button).matching(identifier: "Button").element(boundBy: 0).tap()
         
         
         let collectionViewsQuery = app.collectionViews
