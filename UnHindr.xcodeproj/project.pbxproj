@@ -36,6 +36,8 @@
 		817B5F6723889CB5009BF125 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 817B5F6623889CB5009BF125 /* Chat.storyboard */; };
 		817B5F6923889CE9009BF125 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817B5F6823889CE9009BF125 /* ChatViewController.swift */; };
 		817B5F6C2388A478009BF125 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817B5F6B2388A478009BF125 /* Message.swift */; };
+		817B5F6F2388C117009BF125 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817B5F6D2388C117009BF125 /* MessageCell.swift */; };
+		817B5F702388C117009BF125 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 817B5F6E2388C117009BF125 /* MessageCell.xib */; };
 		81A7340C2381E0840069FE24 /* CogGameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A7340B2381E0840069FE24 /* CogGameTest.swift */; };
 		81A7340E238200320069FE24 /* CogGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A7340D238200320069FE24 /* CogGameUITests.swift */; };
 		81B5908E2378F8DD00BA49AF /* CogGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81B5908D2378F8DD00BA49AF /* CogGame.storyboard */; };
@@ -133,6 +135,8 @@
 		817B5F6623889CB5009BF125 /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		817B5F6823889CE9009BF125 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		817B5F6B2388A478009BF125 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		817B5F6D2388C117009BF125 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		817B5F6E2388C117009BF125 /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
 		81A7340B2381E0840069FE24 /* CogGameTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CogGameTest.swift; sourceTree = "<group>"; };
 		81A7340D238200320069FE24 /* CogGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CogGameUITests.swift; sourceTree = "<group>"; };
 		81B5908D2378F8DD00BA49AF /* CogGame.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CogGame.storyboard; sourceTree = "<group>"; };
@@ -284,6 +288,8 @@
 				817B5F6623889CB5009BF125 /* Chat.storyboard */,
 				817B5F6823889CE9009BF125 /* ChatViewController.swift */,
 				817B5F6B2388A478009BF125 /* Message.swift */,
+				817B5F6D2388C117009BF125 /* MessageCell.swift */,
+				817B5F6E2388C117009BF125 /* MessageCell.xib */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -583,6 +589,7 @@
 				81BDBD9F237F8E9C00F4C970 /* shuffle.wav in Resources */,
 				98F67921236E85AF00517099 /* Profile.storyboard in Resources */,
 				2DD6710C236BCD41005948DF /* HomeScreen.storyboard in Resources */,
+				817B5F702388C117009BF125 /* MessageCell.xib in Resources */,
 				98F115D8236CCDF80082A1B1 /* Mood.storyboard in Resources */,
 				81BDBDA0237F8E9C00F4C970 /* dingcorrect.wav in Resources */,
 				2DD6710B236BCD41005948DF /* Login.storyboard in Resources */,
@@ -749,6 +756,7 @@
 				81BDBDA6237F8FDB00F4C970 /* SoundManager.swift in Sources */,
 				215C15DC236F6E5F0063F3E4 /* WellnessTestHomeViewController.swift in Sources */,
 				9E286A2F2382957600473055 /* MotorGameViewController.swift in Sources */,
+				817B5F6F2388C117009BF125 /* MessageCell.swift in Sources */,
 				8176FAB5237B896B0083B445 /* CardModel.swift in Sources */,
 				9DAEB52E237FC408008A94BD /* FullMedicationViewController.swift in Sources */,
 				707E9F6823827F6B006A3AF5 /* CogGameGraphViewController.swift in Sources */,
