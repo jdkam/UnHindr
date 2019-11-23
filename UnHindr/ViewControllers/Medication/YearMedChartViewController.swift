@@ -1,10 +1,8 @@
-//
-//  YearMedChartViewController.swift
-//  UnHindr
-//
-//  Created by Johnston Yang on 2019-11-22.
-//  Copyright © 2019 Sigma. All rights reserved.
-//
+//File: [YearMedChartViewController]
+//Creators: [Johnston]
+//Date created: [22/11/2019]
+//Updater name: [Johnston]
+//File description: [Reads medication data and properly graphs them for an entire year]
 
 import UIKit
 import Foundation
@@ -12,6 +10,7 @@ import Charts
 import FirebaseFirestore
 import FirebaseAuth
 
+// MARK: - Class to create the graphs for the amount of medication taken in one month for a one year period
 class YearMedChartViewController: UIViewController {
 
     @IBOutlet weak var yearMedGraph: BarChartView!
@@ -20,7 +19,7 @@ class YearMedChartViewController: UIViewController {
     // storing the graph data
     var GraphData: [BarChartDataEntry] = []
     
-    var yearCogValues: [String:Double] = [:]
+    var yearMedValues: [String:Double] = [:]
 
     // this array is to set the x axis values as strings
     let months = ["January","February","March","April","May","June","July","August","September","October","November","December"]
@@ -29,7 +28,7 @@ class YearMedChartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getCogData()
+        getMedData()
         
         // Sets up the chart properties
         self.title = "Bar Chart"
@@ -56,12 +55,12 @@ class YearMedChartViewController: UIViewController {
         yearMedGraph.xAxis.labelRotationAngle = -45
     }
     
-    // MARK: - Obtain the yearly cognitive data from firebase
+    // MARK: - Obtain the yearly medication data from firebase
     // Input:
     //      1. None
     // Output:
-    //      1. The yearly cognitive graph is created and displayed for the user to see
-    func getCogData()
+    //      1. The yearly medication graph is created and displayed for the user to see
+    func getMedData()
     {
         // gets all the documents for this particular user
         medRef.getDocuments()
@@ -97,16 +96,16 @@ class YearMedChartViewController: UIViewController {
                         if(dbYear == currentYear)
                         {
                             // checks if the month already exists in the dictionary
-                            let keyExists = self.yearCogValues[monthName] != nil
+                            let keyExists = self.yearMedValues[monthName] != nil
                             if(keyExists)
                             {
                                 // when the key exists, add the score on top of the value that is already in the dictionary
-                                self.yearCogValues[monthName] = (self.yearCogValues[monthName]!) + (document.get("Quantity") as! Double)
+                                self.yearMedValues[monthName] = (self.yearMedValues[monthName]!) + (document.get("Quantity") as! Double)
                             }
                             else
                             {
                                 // creates the new key with the score from the database as its value
-                                self.yearCogValues[monthName] = (document.get("Quantity") as! Double)
+                                self.yearMedValues[monthName] = (document.get("Quantity") as! Double)
                             }
                         }
                     }
@@ -115,11 +114,11 @@ class YearMedChartViewController: UIViewController {
                     for i in self.months
                     {
                         // checks if that month exists inside the dictionary
-                        let dayExists = self.yearCogValues[i] != nil
+                        let dayExists = self.yearMedValues[i] != nil
                         if(dayExists)
                         {
                             // sets the data value as the average from yearMoodValue[i] and dictMonthAvg[i] and appends the data to the GraphData array
-                            let data = BarChartDataEntry(x: Double(j),y: Double(self.yearCogValues[i]!))
+                            let data = BarChartDataEntry(x: Double(j),y: Double(self.yearMedValues[i]!))
                             self.GraphData.append(data)
                         }
                         else{

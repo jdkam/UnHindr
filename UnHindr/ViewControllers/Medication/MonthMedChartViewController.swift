@@ -1,10 +1,8 @@
-//
-//  MonthMedChartViewController.swift
-//  UnHindr
-//
-//  Created by Johnston Yang on 2019-11-22.
-//  Copyright © 2019 Sigma. All rights reserved.
-//
+//File: [MonthMedChartViewController]
+//Creators: [Johnston]
+//Date created: [22/11/2019]
+//Updater name: [Johnston]
+//File description: [Reads medication data and properly graphs them for an entire month]
 
 import Foundation
 import UIKit
@@ -12,6 +10,7 @@ import Charts
 import FirebaseFirestore
 import FirebaseAuth
 
+// MARK: - Class to create the graphs for the amount of medication taken for each day in a one month period
 class MonthMedChartViewController: UIViewController {
 
     @IBOutlet weak var monthChart: BarChartView!
@@ -21,16 +20,13 @@ class MonthMedChartViewController: UIViewController {
     
     var GraphData: [BarChartDataEntry] = []
     
-    var monthMotorValues: [Int:Double] = [:]
-    var dayAverage = Array(repeating: 0, count: 31)
-    var dictDayAvg: [Int:Int] = [:]
-    
+    var monthMedValues: [Int:Double] = [:]
     
     // MARK: - View controller lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getMotorGameData()
+        getMedData()
         
         // Sets up the chart properties
         self.title = "Bar Chart"
@@ -56,12 +52,12 @@ class MonthMedChartViewController: UIViewController {
         xAxis.drawGridLinesEnabled = false
     }
     
-    // MARK: - Obtain the months motor data from firebase
+    // MARK: - Obtain the months medication data from firebase
     // Input:
     //      1. None
     // Output:
-    //      1. The monthly motor graph is created and displayed for the user to see
-    func getMotorGameData()
+    //      1. The monthly medication graph is created and displayed for the user to see
+    func getMedData()
     {
         medRef.getDocuments()
             {
@@ -101,15 +97,15 @@ class MonthMedChartViewController: UIViewController {
                         if(dbMonth == currentMonth)
                         {
                             // checks if dbDay is already inside weekMoodValues dictionary
-                            let keyExists = self.monthMotorValues[dbDay] != nil
+                            let keyExists = self.monthMedValues[dbDay] != nil
                             if(keyExists)
                             {
                                 // adds the score found from dbDay into the correct spot in the dictionary
-                                self.monthMotorValues[dbDay] = (self.monthMotorValues[dbDay]!) + (document.get("Quantity") as! Double)
+                                self.monthMedValues[dbDay] = (self.monthMedValues[dbDay]!) + (document.get("Quantity") as! Double)
                             }
                             else{
                                 // sets the value of the new dbDay key to equal to the score
-                                self.monthMotorValues[dbDay] = (document.get("Quantity") as! Double)
+                                self.monthMedValues[dbDay] = (document.get("Quantity") as! Double)
                             }
                         }
                     }
@@ -119,15 +115,15 @@ class MonthMedChartViewController: UIViewController {
                     
                     var i = 1
                     // goes through all of the days of the month
-                    // checks each day inside the monthMotorValues dictionary
+                    // checks each day inside the monthMedValues dictionary
                     while (i <= numDays)
                     {
                         // checks if the day exists in the dictionary
-                        let dayExists = self.monthMotorValues[i] != nil
+                        let dayExists = self.monthMedValues[i] != nil
                         if(dayExists)
                         {
                             // sets data as the average of all database values of that particular day
-                            let data = BarChartDataEntry(x: Double(i), y: (self.monthMotorValues[i]!))
+                            let data = BarChartDataEntry(x: Double(i), y: (self.monthMedValues[i]!))
                             self.GraphData.append(data)
                         }
                         else{

@@ -2,7 +2,7 @@
 //Creators: [Allan, Johnston]
 //Date created: [29/10/2019]
 //Updater name: [Johnston]
-//File description: [Reads values from the data]
+//File description: [Reads medication data and properly graphs them for a week]
 
 import Foundation
 import UIKit
@@ -10,6 +10,7 @@ import Charts
 import FirebaseFirestore
 import FirebaseAuth
 
+// MARK: - Class to create the graphs for the amount of medication taken for each day in a one week period
 class ChartsViewController: UIViewController {
     
     //Outlet for displaying chart
@@ -59,7 +60,7 @@ class ChartsViewController: UIViewController {
     // Input:
     //      1. None
     // Output:
-    //      1. Motor Graph is created using the data from the user in firebase
+    //      1. Medication Graph displays data from one week ago
     func getMedicationData()
     {
         // gets all the documents for this particular user
@@ -79,7 +80,7 @@ class ChartsViewController: UIViewController {
                     dateFormatter.dateFormat = "LLLL"
                     let nameOfMonth = dateFormatter.string(from: Date())
                     
-                    // commented out block from line 90 - 101 is a test for other dates
+                    // commented out block from line 83 - 93 is a test for other dates
                     //let otherdate = DateFormatter()
                     //otherdate.dateFormat = "yyyy/MM/dd HH:mm"
                     //let someDateTime = otherdate.date(from: "2019/11/3 22:31")
