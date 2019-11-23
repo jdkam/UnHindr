@@ -272,6 +272,13 @@ class UnHindrUITests: XCTestCase {
         
     }
     
+    func testNavigationtoMedWeekGraph()
+    {
+        let app = XCUIApplication()
+        loginToHomeScreen(app)
+        
+    }
+    
     
     // MARK: - Helper Functions
     // Input:
