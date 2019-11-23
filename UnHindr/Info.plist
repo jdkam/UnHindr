@@ -23,7 +23,7 @@
 	<key>UILaunchStoryboardName</key>
 	<string>test</string>
 	<key>UIMainStoryboardFile</key>
-	<string>Login</string>
+	<string>Chat</string>
 	<key>CFBundleGetInfoString</key>
 	<string></string>
 	<key>CFBundleDisplayName</key>
