@@ -15,6 +15,7 @@ import FirebaseAuth
 class MonthMedChartViewController: UIViewController {
 
     @IBOutlet weak var monthChart: BarChartView!
+    @IBOutlet weak var monthLabel: UILabel!
     
     let medRef = Services.db.collection("users").document(Services.userRef!).collection("Medication")
     
@@ -83,7 +84,7 @@ class MonthMedChartViewController: UIViewController {
                     // gets name of the current month
                     let currentMonthName = DateFormatter().monthSymbols[currentMonth-1]
                     // sets the monthLabel to be the name of the month
-                    //self.monthLabel.text = "\(currentMonthName)"
+                    self.monthLabel.text = "\(currentMonthName)"
                     
                     // iterates through all of the documents for this user
                     for document in querySnapshot!.documents
@@ -138,7 +139,7 @@ class MonthMedChartViewController: UIViewController {
                     }
                     // finalize setup of graph after the data has been inputted
                     let set = BarChartDataSet(values: self.GraphData, label: "Medication Graph")
-                    set.colors = [UIColor.blue]
+                    set.colors = [UIColor.init(displayP3Red: 0/255, green: 128/255, blue: 255/255, alpha: 1)]
                     let chartData = BarChartData(dataSet: set)
                     self.monthChart.fitBars = true
                     self.monthChart.data = chartData

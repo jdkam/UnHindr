@@ -174,7 +174,7 @@ class MotorGameGraphViewController: UIViewController {
                         self.motorWeeklyGraph.xAxis.valueFormatter = dayFormat as IAxisValueFormatter
                         // formatting the graph
                         let set = BarChartDataSet(values: self.GraphData, label: "Mood")
-                        set.colors = [UIColor.green]
+                        set.colors = [UIColor.init(displayP3Red: 21/255, green: 187/255, blue: 18/255, alpha: 1)]
                         let chartData = BarChartData(dataSet: set)
                         self.motorWeeklyGraph.fitBars = true
                         self.motorWeeklyGraph.data = chartData
@@ -233,7 +233,7 @@ class MotorGameGraphViewController: UIViewController {
                     }
                     // formatting the graph
                     let set = BarChartDataSet(values: self.GraphData, label: "Motor Score")
-                    set.colors = [UIColor.green]
+                    set.colors = [UIColor.init(displayP3Red: 21/255, green: 187/255, blue: 18/255, alpha: 1)]
                     let chartData = BarChartData(dataSet: set)
                     self.motorWeeklyGraph.fitBars = true
                     self.motorWeeklyGraph.data = chartData

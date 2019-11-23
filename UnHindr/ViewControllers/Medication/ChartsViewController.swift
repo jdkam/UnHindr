@@ -14,6 +14,7 @@ class ChartsViewController: UIViewController {
     
     //Outlet for displaying chart
     @IBOutlet weak var chtChart: BarChartView!
+    @IBOutlet weak var monthLabel: UILabel!
     
     // gets the correct user database values
     let medRef = Services.db.collection("users").document(Services.userRef!).collection("Medication")
@@ -109,7 +110,7 @@ class ChartsViewController: UIViewController {
                     {
                         // function that gets how many days are in the last month and puts those days into stringDays and days array
                         self.daysInMonth(inMonth: currentMonth, inYear: currentYear, inDay: lastWeekDay)
-                        //self.monthLabel.text = "\(previousMonthName)-\(nameOfMonth)"
+                        self.monthLabel.text = "\(previousMonthName)-\(nameOfMonth)"
                         // iterates through all of the documents for this user
                         for document in querySnapshot!.documents
                         {
@@ -161,7 +162,7 @@ class ChartsViewController: UIViewController {
                         self.chtChart.xAxis.valueFormatter = dayFormat as IAxisValueFormatter
                         // formatting the graph
                         let set = BarChartDataSet(values: self.GraphData, label: "Medication Taken")
-                        set.colors = [UIColor.blue]
+                        set.colors = [UIColor.init(displayP3Red: 0/255, green: 128/255, blue: 255/255, alpha: 1)]
                         let chartData = BarChartData(dataSet: set)
                         self.chtChart.fitBars = true
                         self.chtChart.data = chartData
@@ -169,7 +170,7 @@ class ChartsViewController: UIViewController {
                     else
                     {
                         // if lastweekday is a positive value
-//                        self.monthLabel.text = "\(nameOfMonth)"
+                        self.monthLabel.text = "\(nameOfMonth)"
                         for document in querySnapshot!.documents
                         {
                             // grabs the timestamp and gets the date of that timestamp
@@ -218,7 +219,7 @@ class ChartsViewController: UIViewController {
                     }
                     // formatting the graph
                     let set = BarChartDataSet(values: self.GraphData, label: "Medication Taken")
-                    set.colors = [UIColor.blue]
+                    set.colors = [UIColor.init(displayP3Red: 0/255, green: 128/255, blue: 255/255, alpha: 1)]
                     let chartData = BarChartData(dataSet: set)
                     self.chtChart.fitBars = true
                     self.chtChart.data = chartData

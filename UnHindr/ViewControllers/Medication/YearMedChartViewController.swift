@@ -134,7 +134,7 @@ class YearMedChartViewController: UIViewController {
                     self.yearMedGraph.xAxis.valueFormatter = monthFormat as IAxisValueFormatter
                     // finalize any other chart properties
                     let set = BarChartDataSet(values: self.GraphData, label: "Medication Data")
-                    set.colors = [UIColor.blue]
+                    set.colors = [UIColor.init(displayP3Red: 0/255, green: 128/255, blue: 255/255, alpha: 1)]
                     let chartData = BarChartData(dataSet: set)
                     self.yearMedGraph.fitBars = true
                     self.yearMedGraph.data = chartData
