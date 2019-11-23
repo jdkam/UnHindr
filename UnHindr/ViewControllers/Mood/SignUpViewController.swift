@@ -13,26 +13,23 @@ import UIKit
 class SignUpViewController: UIViewController , UIPickerViewDataSource,UIPickerViewDelegate {
 
     //initializing outlets for all the text fields
-    
     @IBOutlet weak var ScrollView: UIScrollView!
     @IBOutlet weak var firstNameTF: UITextField!
     @IBOutlet weak var lastNameTF: UITextField!
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var dateTF: UITextField!
     @IBOutlet weak var cellTF: UITextField!
-    //@IBOutlet weak var genderTF: UITextField!
     @IBOutlet weak var genderTF: UITextField!
-    
     @IBOutlet weak var addressTF: UITextField!
     @IBOutlet weak var cityTF: UIButton!
     @IBOutlet weak var countryTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
     @IBOutlet weak var passConfirmTF: UITextField!
 
-
     private var datePicker: UIDatePicker?
     var gender = ["Male", "Female", "Undefined"]
     var picker = UIPickerView()
+    //isPatient will be set by ModeChoice Screen
     var isPatient = false
 
     
@@ -51,6 +48,9 @@ class SignUpViewController: UIViewController , UIPickerViewDataSource,UIPickerVi
         view.addGestureRecognizer(tapGesture)
 
         dateTF.inputView = datePicker
+        print("*********")
+        print(isPatient)
+        print("*********")
     }
   
 
@@ -81,12 +81,14 @@ class SignUpViewController: UIViewController , UIPickerViewDataSource,UIPickerVi
     }
 
     @IBAction func createAccountTapped(_ sender: Any) {
-        //let isFieldsComplete = self.validateFields()
-        //if(isFieldsComplete){
-            //store to DB and go to the home page
-        //}
+        let isFieldsComplete = self.validateFields()
+        if(isFieldsComplete == true){
+            //create new user and go to login
+        }
     }
 
+    
+    
     //input:
     //      1. None
     //output:

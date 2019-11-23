@@ -64,7 +64,6 @@
 		9DFB75B9236F74D0006321B8 /* Medication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DFB75B7236F74CF006321B8 /* Medication.storyboard */; };
 		9DFB75BD236F7515006321B8 /* MedicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFB75BB236F7515006321B8 /* MedicationViewController.swift */; };
 		9DFB75C0236F7B15006321B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DFB75BF236F7B14006321B8 /* Assets.xcassets */; };
-		9E04C0892389DA6A0011A572 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E04C0882389DA6A0011A572 /* SignUp.storyboard */; };
 		9E04C08B2389DA840011A572 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E04C08A2389DA840011A572 /* SignUpViewController.swift */; };
 		9E286A2F2382957600473055 /* MotorGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E286A2B2382957600473055 /* MotorGameViewController.swift */; };
 		9E286A302382957600473055 /* MotorGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E286A2C2382957600473055 /* MotorGameScene.swift */; };
@@ -165,7 +164,6 @@
 		9DFB75B8236F74CF006321B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Medication.storyboard; sourceTree = "<group>"; };
 		9DFB75BB236F7515006321B8 /* MedicationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationViewController.swift; sourceTree = "<group>"; };
 		9DFB75BF236F7B14006321B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9E04C0882389DA6A0011A572 /* SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		9E04C08A2389DA840011A572 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = /Users/sinabehrouz/UnHindr/UnHindr/ViewControllers/Mood/SignUpViewController.swift; sourceTree = "<absolute>"; };
 		9E286A2B2382957600473055 /* MotorGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotorGameViewController.swift; sourceTree = "<group>"; };
 		9E286A2C2382957600473055 /* MotorGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotorGameScene.swift; sourceTree = "<group>"; };
@@ -227,7 +225,6 @@
 		2DD670FC236BBF79005948DF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				9E04C08A2389DA840011A572 /* SignUpViewController.swift */,
 				9E286A36238299FF00473055 /* MotorGameGraphs */,
 				9E286A33238295F800473055 /* MotorGame */,
 				9E91389A2380D6B6006AD1F9 /* Connect */,
@@ -354,7 +351,6 @@
 		9DF3F8972367D826003CF8B9 /* UnHindr */ = {
 			isa = PBXGroup;
 			children = (
-				9E04C0882389DA6A0011A572 /* SignUp.storyboard */,
 				9E286A2D2382957600473055 /* MotorGame.storyboard */,
 				707E9F5D23827EF2006A3AF5 /* CogGameGraphs.storyboard */,
 				707E9F5923827EF0006A3AF5 /* MoodGraphs.storyboard */,
@@ -439,6 +435,7 @@
 		9E4EAB36237E5FE400FC051B /* ModeChoice */ = {
 			isa = PBXGroup;
 			children = (
+				9E04C08A2389DA840011A572 /* SignUpViewController.swift */,
 				9E4EAB34237E5FDE00FC051B /* ModeChoiceViewController.swift */,
 			);
 			path = ModeChoice;
@@ -583,7 +580,6 @@
 				707E9F6223827EF2006A3AF5 /* CogGameGraphs.storyboard in Resources */,
 				707E9F6023827EF2006A3AF5 /* WellnessGraphs.storyboard in Resources */,
 				9E286A312382957600473055 /* MotorGame.storyboard in Resources */,
-				9E04C0892389DA6A0011A572 /* SignUp.storyboard in Resources */,
 				9DF3F8A32367D82D003CF8B9 /* LaunchScreen.storyboard in Resources */,
 				9DF3F8C72367D880003CF8B9 /* GoogleService-Info.plist in Resources */,
 				9E4EAB33237E5E8400FC051B /* ModeChoice.storyboard in Resources */,
