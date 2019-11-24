@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21590CF0238A1B910086EB16 /* Location.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21590CEF238A1B910086EB16 /* Location.storyboard */; };
+		21590CF6238A1DE00086EB16 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21590CF5238A1DE00086EB16 /* LocationViewController.swift */; };
 		215C15DA236F6E390063F3E4 /* WellnessTestHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 215C15D9236F6E390063F3E4 /* WellnessTestHome.storyboard */; };
 		215C15DC236F6E5F0063F3E4 /* WellnessTestHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215C15DB236F6E5F0063F3E4 /* WellnessTestHomeViewController.swift */; };
 		217A3FF32380D8320012BFA2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217A3FF22380D8320012BFA2 /* SignUpViewController.swift */; };
@@ -66,6 +68,8 @@
 /* Begin PBXFileReference section */
 		03A434C323DEDECA6A4F4E7C /* Pods_UnHindrTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnHindrTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		070601D3D77C38C0722FE935 /* Pods-UnHindrTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindrTests.debug.xcconfig"; path = "Target Support Files/Pods-UnHindrTests/Pods-UnHindrTests.debug.xcconfig"; sourceTree = "<group>"; };
+		21590CEF238A1B910086EB16 /* Location.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Location.storyboard; sourceTree = "<group>"; };
+		21590CF5238A1DE00086EB16 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		215C15D9236F6E390063F3E4 /* WellnessTestHome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WellnessTestHome.storyboard; sourceTree = "<group>"; };
 		215C15DB236F6E5F0063F3E4 /* WellnessTestHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellnessTestHomeViewController.swift; sourceTree = "<group>"; };
 		217A3FF22380D8320012BFA2 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +147,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		21590CF7238A1DE90086EB16 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				21590CF5238A1DE00086EB16 /* LocationViewController.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
 		215C15DD236F73610063F3E4 /* WellnessTestHome */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +175,7 @@
 		2DD670FC236BBF79005948DF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				21590CF7238A1DE90086EB16 /* Location */,
 				9E4EAB36237E5FE400FC051B /* ModeChoice */,
 				215C15DD236F73610063F3E4 /* WellnessTestHome */,
 				9DFB75BA236F7515006321B8 /* Medication */,
@@ -269,6 +282,7 @@
 				CDBC4012236E4FE8008934AF /* Settings.storyboard */,
 				9E4EAB31237E5E8400FC051B /* ModeChoice.storyboard */,
 				215C15D9236F6E390063F3E4 /* WellnessTestHome.storyboard */,
+				21590CEF238A1B910086EB16 /* Location.storyboard */,
 				9DF3F8C62367D880003CF8B9 /* GoogleService-Info.plist */,
 				9DF3F8A42367D82D003CF8B9 /* Info.plist */,
 			);
@@ -440,6 +454,7 @@
 				9DF3F8C72367D880003CF8B9 /* GoogleService-Info.plist in Resources */,
 				9E4EAB33237E5E8400FC051B /* ModeChoice.storyboard in Resources */,
 				CDBC4013236E4FE8008934AF /* Settings.storyboard in Resources */,
+				21590CF0238A1B910086EB16 /* Location.storyboard in Resources */,
 				9DFB75B9236F74D0006321B8 /* Medication.storyboard in Resources */,
 				9E4EAB32237E5E8400FC051B /* CaregiverHomeScreen.storyboard in Resources */,
 			);
@@ -576,6 +591,7 @@
 				CDBC4016236E501B008934AF /* SettingsViewController.swift in Sources */,
 				215C15DC236F6E5F0063F3E4 /* WellnessTestHomeViewController.swift in Sources */,
 				217A3FF32380D8320012BFA2 /* SignUpViewController.swift in Sources */,
+				21590CF6238A1DE00086EB16 /* LocationViewController.swift in Sources */,
 				98F115DA236CCED00082A1B1 /* MoodViewController.swift in Sources */,
 				98F115E7236D23520082A1B1 /* MoodQ3ViewController.swift in Sources */,
 				9DF3F8992367D826003CF8B9 /* AppDelegate.swift in Sources */,
