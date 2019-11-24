@@ -64,14 +64,64 @@ class FullMedicationViewController: UIViewController, UITableViewDataSource {
         }
         
         let med = self.medList?.documents[indexPath.row]
+        
+        let medPlan = generatePlan(medPlan: med!)
         // Configure cell
-        cell.medicationNameLabel.text = med?.get("Medication") as? String
-        cell.dosageLabel.text = "Dosage: \(med?.get("Dosage") as! Int)"
-        cell.quantityLabel.text = "Quantity: \(med?.get("Quantity") as! Int)"
-//        cell.reminderTimeLabel
-        //cell.dayOfWeekLabel
+        cell.medicationNameLabel.text = medPlan.medName
+        cell.dosageLabel.text = "Dosage: \(medPlan.dosage)"
+        cell.quantityLabel.text = "Quantity: \(medPlan.quantity)"
+        // Parse the reminder time
+        cell.reminderTimeLabel.text = medPlan.ReminderTime
+        var dayOfWeek: String = ""
+        for i in 0..<medPlan.Day.count{
+            // Grab additional characters for days that start with T or S
+            let prefix = String(medPlan.Day[i].prefix(1))
+            if (prefix == "T" || prefix == "S") {
+                dayOfWeek.append(String(medPlan.Day[i].prefix(2)))
+            }
+            else {
+                dayOfWeek.append(String(medPlan.Day[i].prefix(1)))
+            }
+            if (i != medPlan.Day.count - 1) {
+                dayOfWeek.append(",")
+            }
+        }
+        cell.dayOfWeekLabel.text = dayOfWeek
         
         return cell
+    }
+    
+    private func generatePlan(medPlan: QueryDocumentSnapshot) -> Medication{
+        let medName = medPlan.get("Medication") as! String
+        let dosage = medPlan.get("Dosage") as! Int
+        let quantity = medPlan.get("Quantity") as! Int
+        
+        // Parse the reminder time
+        let timeString = medPlan.get("ReminderTime") as? String
+        var arr = timeString!.components(separatedBy: [":", " "])
+        if (arr.count == 2){
+            if Int(arr[0])! > 12 {
+                arr[0] = String(Int(arr[0])! - 12)
+                arr.append("PM")
+            }
+            else {
+                arr.append("AM")
+            }
+        }
+        else {
+            print("Error parsing reminder time from firestore")
+        }
+        let timeStr = arr[0] + ":" + arr[1] + " " + arr[2]
+        
+        // Parse the days of the week
+        let dayArr = medPlan.get("Day") as! [String]
+        print(dayArr.count)
+        //cell.dayOfWeekLabel
+        
+        return Medication (medName: medName, dosage: dosage, quantity: quantity, reminderTime: timeStr, days: dayArr)
+//        var dict: [String: String] = [:]
+//        dict["medName"] = medPlan.get("Medication") as? String
+//        dict["dosage"]
     }
     
 

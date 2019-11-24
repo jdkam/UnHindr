@@ -22,7 +22,8 @@ class MedicationTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        dayOfWeekLabel.lineBreakMode = .byWordWrapping
+//        dayOfWeekLabel.lineBreakMode = .byWordWrapping
+//        dayOfWeekLabel.numberOfLines = 0
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

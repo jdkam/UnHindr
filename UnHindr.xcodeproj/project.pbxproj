@@ -11,6 +11,7 @@
 		2BB1F3E910641FB171AAA24E /* Pods_UnHindrTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03A434C323DEDECA6A4F4E7C /* Pods_UnHindrTests.framework */; };
 		2D5BBA772389E7B20074A202 /* FullMedicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5BBA762389E7B20074A202 /* FullMedicationViewController.swift */; };
 		2D5BBA792389F4530074A202 /* MedicationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5BBA782389F4530074A202 /* MedicationTableViewCell.swift */; };
+		2D7A40E6238B316100958659 /* Medication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A40E5238B316100958659 /* Medication.swift */; };
 		2DA6698E2381EAA60050AE42 /* MedicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA6698D2381EAA60050AE42 /* MedicationTests.swift */; };
 		2DD67104236BC4C5005948DF /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD67103236BC4C5005948DF /* HomeScreenViewController.swift */; };
 		2DD6710B236BCD41005948DF /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DD67107236BCD41005948DF /* Login.storyboard */; };
@@ -104,6 +105,7 @@
 		215C15DB236F6E5F0063F3E4 /* WellnessTestHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellnessTestHomeViewController.swift; sourceTree = "<group>"; };
 		2D5BBA762389E7B20074A202 /* FullMedicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullMedicationViewController.swift; sourceTree = "<group>"; };
 		2D5BBA782389F4530074A202 /* MedicationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationTableViewCell.swift; sourceTree = "<group>"; };
+		2D7A40E5238B316100958659 /* Medication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medication.swift; sourceTree = "<group>"; };
 		2DA6698D2381EAA60050AE42 /* MedicationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationTests.swift; sourceTree = "<group>"; };
 		2DD67103236BC4C5005948DF /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		2DD67108236BCD41005948DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
@@ -409,6 +411,7 @@
 				9DFB75BB236F7515006321B8 /* MedicationViewController.swift */,
 				2D5BBA762389E7B20074A202 /* FullMedicationViewController.swift */,
 				2D5BBA782389F4530074A202 /* MedicationTableViewCell.swift */,
+				2D7A40E5238B316100958659 /* Medication.swift */,
 			);
 			path = Medication;
 			sourceTree = "<group>";
@@ -729,6 +732,7 @@
 				9E91389C2380D6C5006AD1F9 /* ConnectViewController.swift in Sources */,
 				707E9F7423827F85006A3AF5 /* MonthMoodGraphViewController.swift in Sources */,
 				98F115E5236D23380082A1B1 /* MoodQ2ViewController.swift in Sources */,
+				2D7A40E6238B316100958659 /* Medication.swift in Sources */,
 				CDBC4016236E501B008934AF /* SettingsViewController.swift in Sources */,
 				81BDBDA6237F8FDB00F4C970 /* SoundManager.swift in Sources */,
 				215C15DC236F6E5F0063F3E4 /* WellnessTestHomeViewController.swift in Sources */,
