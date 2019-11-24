@@ -69,7 +69,7 @@ class LoginViewController: UIViewController {
                         return
                     }
                     Services.userRef = userref
-                    Services.transitionHome(self!)
+                    Services.transitionHome(strongSelf)
                 })
                 
             }
