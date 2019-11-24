@@ -87,8 +87,8 @@ class SignUpViewController: UIViewController , UIPickerViewDataSource,UIPickerVi
     //      1. Creates an account for the requesting user and navigate to Login
     //         else display error
     @IBAction func createAccountTapped(_ sender: Any) {
-        //let isFieldsComplete = self.validateFields()
-        if(/*isFieldsComplete ==*/ true){
+        let isFieldsComplete = self.validateFields()
+        if(isFieldsComplete == true){
             let ToPassEmail: String = emailTF.text!
             let toPassPassword: String = passwordTF.text!
             self.signUpNewUser(email: ToPassEmail, password: toPassPassword) { (success) in
@@ -109,27 +109,24 @@ class SignUpViewController: UIViewController , UIPickerViewDataSource,UIPickerVi
                     }else{genderTemp = 2}
 
                     let db = Firestore.firestore()
-//                    db.collection("users").addDocument(data: ["firstName": self.firstNameTF.text!,
-//                                                              "lastName": self.lastNameTF.text!,
-//                                                              "email": self.emailTF.text!,
-//                                                              "cell": self.cellTF.text!,
-//                                                              "address": self.addressTF.text!,
-//                                                              "country": self.countryTF.text!,
-//                                                              "city": self.cityTF.text!,
-//                                                              "gender": genderTemp,
-//                                                              "isPatient": isPatientTemp,
-//                                                              "dob": date!,
-//                                                              "uid": self.UID
-//                                                              ])
-                    Services.showAlert("Successfully made account", "", vc: self)
+                    db.collection("users").addDocument(data: ["firstName": self.firstNameTF.text!,
+                                                              "lastName": self.lastNameTF.text!,
+                                                              "email": self.emailTF.text!,
+                                                              "cell": self.cellTF.text!,
+                                                              "address": self.addressTF.text!,
+                                                              "country": self.countryTF.text!,
+                                                              "city": self.cityTF.text!,
+                                                              "gender": genderTemp,
+                                                              "isPatient": self.isPatient,
+                                                              "dob": date!,
+                                                              "uid": self.UID
+                                                              ])
                     //go back to login
                     let storyboard = UIStoryboard(name: "Login", bundle: nil)
                     let vc = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as UIViewController
                     self.present(vc, animated: true, completion: nil)
                 }
             }
-            //create new user and go to login
-            
         }
     }
     
