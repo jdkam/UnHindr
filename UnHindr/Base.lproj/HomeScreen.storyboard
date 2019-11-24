@@ -89,7 +89,7 @@
                                                 <rect key="frame" x="187" y="0.0" width="184" height="173"/>
                                                 <state key="normal" image="Chat"/>
                                                 <connections>
-                                                    <segue destination="AY9-6t-nRW" kind="show" id="PgL-JO-wpy"/>
+                                                    <segue destination="Lae-QK-ce8" kind="show" id="ZLK-Gz-84y"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -141,14 +141,14 @@
             <point key="canvasLocation" x="648" y="57"/>
         </scene>
         <!--Chat-->
-        <scene sceneID="qui-Xx-DmU">
+        <scene sceneID="XbC-EY-4jT">
             <objects>
-                <viewControllerPlaceholder storyboardName="Chat" id="AY9-6t-nRW" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="AJN-Ry-MeU"/>
+                <viewControllerPlaceholder storyboardName="Chat" id="Lae-QK-ce8" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="5qq-gA-D5j"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gtR-fw-FOy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gvm-aC-17F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="770" y="281"/>
+            <point key="canvasLocation" x="757" y="375"/>
         </scene>
     </scenes>
     <resources>
