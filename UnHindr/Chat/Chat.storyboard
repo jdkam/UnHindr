@@ -28,6 +28,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxe-8H-A16">
                                 <rect key="frame" x="20" y="45" width="70" height="70"/>
                                 <state key="normal" image="Nav Back button"/>
+                                <connections>
+                                    <action selector="homeButtonTapped:" destination="c3e-YE-c3D" eventType="touchUpInside" id="vPP-9p-5my"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ChatBoxBG" translatesAutoresizingMaskIntoConstraints="NO" id="Tcn-ib-vCd">
                                 <rect key="frame" x="-5" y="672" width="385" height="146"/>

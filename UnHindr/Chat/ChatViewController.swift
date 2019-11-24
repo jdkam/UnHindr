@@ -28,9 +28,15 @@ class ChatViewController: UIViewController {
         loadMessages()
     }
     
+    @IBAction func homeButtonTapped(_ sender: Any) {
+        Services.transitionHome(self)
+    }
+    
     func loadMessages() {
         
-        Services.fullUserRef.document(Services.userRef!).collection("messages").addSnapshotListener { (querySnapshot, error) in
+        Services.fullUserRef.document(Services.userRef!).collection("messages")
+            .order(by: "date")
+            .addSnapshotListener { (querySnapshot, error) in
             self.messages = []
 
             if let e = error {
