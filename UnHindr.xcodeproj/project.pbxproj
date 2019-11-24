@@ -65,6 +65,7 @@
 		9DFB75BD236F7515006321B8 /* MedicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFB75BB236F7515006321B8 /* MedicationViewController.swift */; };
 		9DFB75C0236F7B15006321B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DFB75BF236F7B14006321B8 /* Assets.xcassets */; };
 		9E04C08B2389DA840011A572 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E04C08A2389DA840011A572 /* SignUpViewController.swift */; };
+		9E04C08E238A1D5B0011A572 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E04C08D238A1D5B0011A572 /* User.swift */; };
 		9E286A2F2382957600473055 /* MotorGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E286A2B2382957600473055 /* MotorGameViewController.swift */; };
 		9E286A302382957600473055 /* MotorGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E286A2C2382957600473055 /* MotorGameScene.swift */; };
 		9E286A312382957600473055 /* MotorGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E286A2D2382957600473055 /* MotorGame.storyboard */; };
@@ -165,6 +166,7 @@
 		9DFB75BB236F7515006321B8 /* MedicationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationViewController.swift; sourceTree = "<group>"; };
 		9DFB75BF236F7B14006321B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9E04C08A2389DA840011A572 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = /Users/sinabehrouz/UnHindr/UnHindr/ViewControllers/Mood/SignUpViewController.swift; sourceTree = "<absolute>"; };
+		9E04C08D238A1D5B0011A572 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9E286A2B2382957600473055 /* MotorGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotorGameViewController.swift; sourceTree = "<group>"; };
 		9E286A2C2382957600473055 /* MotorGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotorGameScene.swift; sourceTree = "<group>"; };
 		9E286A2D2382957600473055 /* MotorGame.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MotorGame.storyboard; sourceTree = "<group>"; };
@@ -437,6 +439,7 @@
 			children = (
 				9E04C08A2389DA840011A572 /* SignUpViewController.swift */,
 				9E4EAB34237E5FDE00FC051B /* ModeChoiceViewController.swift */,
+				9E04C08D238A1D5B0011A572 /* User.swift */,
 			);
 			path = ModeChoice;
 			sourceTree = "<group>";
@@ -735,6 +738,7 @@
 				9E286A2F2382957600473055 /* MotorGameViewController.swift in Sources */,
 				8176FAB5237B896B0083B445 /* CardModel.swift in Sources */,
 				9DAEB52E237FC408008A94BD /* FullMedicationViewController.swift in Sources */,
+				9E04C08E238A1D5B0011A572 /* User.swift in Sources */,
 				707E9F6823827F6B006A3AF5 /* CogGameGraphViewController.swift in Sources */,
 				98F115DA236CCED00082A1B1 /* MoodViewController.swift in Sources */,
 				8176FAB9237B94FC0083B445 /* CardCollectionViewCell.swift in Sources */,
