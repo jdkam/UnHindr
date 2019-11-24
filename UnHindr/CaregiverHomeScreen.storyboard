@@ -14,7 +14,7 @@
                 <viewControllerPlaceholder storyboardName="Profile" id="iFK-xo-Cvy" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kvD-yi-Y4S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-479" y="-130"/>
+            <point key="canvasLocation" x="-733" y="-101"/>
         </scene>
         <!--Connect-->
         <scene sceneID="TiA-Pt-i1B">
@@ -22,7 +22,7 @@
                 <viewControllerPlaceholder storyboardName="Connect" id="Pd2-Hw-0sx" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nMO-JS-eWE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-416" y="394"/>
+            <point key="canvasLocation" x="-732" y="351"/>
         </scene>
         <!--Caregiver Home Screen View Controller-->
         <scene sceneID="1O3-64-2SW">
@@ -58,6 +58,9 @@
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ACE-xh-bIr" userLabel="medication">
                                                 <rect key="frame" x="186" y="0.0" width="185" height="160.5"/>
                                                 <state key="normal" image="Medication"/>
+                                                <connections>
+                                                    <segue destination="45A-36-NSF" kind="show" id="Mjr-27-8W7"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -112,13 +115,23 @@
             </objects>
             <point key="canvasLocation" x="69.599999999999994" y="130.88455772113943"/>
         </scene>
+        <!--CaregiverMedicationScreen-->
+        <scene sceneID="tGA-uF-8K0">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CaregiverMedicationScreen" id="45A-36-NSF" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="9EQ-ZT-oN3"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vQ5-Ql-zys" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="789" y="92"/>
+        </scene>
         <!--Settings-->
         <scene sceneID="WwD-co-uJT">
             <objects>
                 <viewControllerPlaceholder storyboardName="Settings" id="IkE-yx-Ksk" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="65Q-0W-QfO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="513" y="437"/>
+            <point key="canvasLocation" x="790" y="373"/>
         </scene>
     </scenes>
     <resources>

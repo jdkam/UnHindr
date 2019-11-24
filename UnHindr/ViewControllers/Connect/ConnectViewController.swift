@@ -10,16 +10,21 @@
 import UIKit
 import FirebaseFirestore
 
+public var user_ID: String = ""
+var list: [String] = []
+
 class ConnectViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let connectionRef = Services.fullUserRef.document(Services.userRef!).collection(Services.connectionName)
+    
+    var connectionSnapshot: QuerySnapshot?
     
     @IBOutlet weak var connectionsTable: UITableView!
     @IBOutlet weak var connectEmail: UITextField!
     
     //list of user's connections
-    var list = [""]
-    
+//    var list = [""]
+
     //determines number of sections for UITableView
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -35,12 +40,26 @@ class ConnectViewController: UIViewController, UITableViewDelegate, UITableViewD
         return (cell)
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedPatient = list[indexPath.row] as! String
+        print(selectedPatient)
+        getRefFromEmail(selectedPatient) { (ref) in
+            if ref != "" {
+                user_ID = ref
+            }
+        }
+        print(user_ID)
+    }
+    
     // MARK: - View controller lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
         //apply the magnifying glass image to the search bar
         let mailImage = UIImage(named: "search1")
         addImageLeftSide(txtField: connectEmail, andImage: mailImage!)
+        connectionsTable.dataSource = self
+        connectionsTable.delegate = self
+        
     }
 
     
@@ -48,10 +67,10 @@ class ConnectViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewWillAppear(_ animated: Bool) {
         getConnections(Services.userRef!) { (querySnapshot) in
             for document in querySnapshot!.documents {
-                self.list.append(document.get("email") as! String)
+                list.append(document.get("email") as! String)
                 self.connectionsTable.beginUpdates()
                 self.connectionsTable.insertRows(at: [
-                    NSIndexPath(row: self.list.count-1, section: 0) as IndexPath], with: .automatic)
+                    NSIndexPath(row: list.count-1, section: 0) as IndexPath], with: .automatic)
                 self.connectionsTable.endUpdates()
             }
         }
@@ -175,4 +194,18 @@ class ConnectViewController: UIViewController, UITableViewDelegate, UITableViewD
         txtField.leftView = leftImageView
         txtField.leftViewMode = .always
     }
+    
+    func getRefFromEmail(_ connectedEmail: String, completionHandler: @escaping (String) -> Void) {
+        Services.fullUserRef
+            .whereField("email", isEqualTo: connectedEmail)
+            .getDocuments() { (querySnapshot, err) in
+                if err != nil {
+                    completionHandler("")
+                }
+                else {
+                    completionHandler((querySnapshot?.documents[0].documentID)!)
+                }
+            }
+    }
+    
 }
