@@ -23,6 +23,11 @@ class ChatViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         
+        //get the current users UID///
+        let myUserID = Auth.auth().currentUser!.uid
+        print("auth: \(myUserID)")
+        print("otherUID: \(otherUID)")
+        
         tableView.register(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: "ReusableCell")
         
         loadMessages()
@@ -125,5 +130,6 @@ extension ChatViewController: UITableViewDataSource {
     }
     
 }
+
 
 
