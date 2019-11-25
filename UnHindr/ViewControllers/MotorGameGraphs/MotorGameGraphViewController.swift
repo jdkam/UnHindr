@@ -25,6 +25,8 @@ class MotorGameGraphViewController: UIViewController {
     // gets the correct user database values
     let motorRef = Services.db.collection("users").document(Services.userRef!).collection("MotorGameData")
     
+    //let motorRef = Services.fullUserRef.document(user_ID).collection(Services.motorGameName)
+    
     // storing the graph data
     var GraphData: [BarChartDataEntry] = []
     var motorData: [Int:Double] = [:]
@@ -32,13 +34,33 @@ class MotorGameGraphViewController: UIViewController {
     var days: [Int] = []
     var stringDays: [String] = []
     var dictDayAvg: [Int:Int] = [:]
+    var isPatient: Bool = false
     
     // MARK: - View controller lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        getMotorData()
         
+        let motorRef = Services.checkUserIDMotorGame()
+    
+        Services.getisPatient() {(success) in
+            if (success)
+            {
+                self.getMotorData(reference: motorRef)
+            }
+            else
+            {
+                if(user_ID != "")
+                {
+                    self.getMotorData(reference: motorRef)
+                }
+                else
+                {
+                    self.motorWeeklyGraph.noDataText = "Please choose a patient in the Connect Screen"
+                    self.monthLabel.text = "No Data"
+                }
+                
+            }
+        }
         // Sets up the chart properties
         self.title = "Cog Bar Chart"
         motorWeeklyGraph.maxVisibleCount = 40
@@ -68,10 +90,10 @@ class MotorGameGraphViewController: UIViewController {
     //      1. None
     // Output:
     //      1. Motor Graph is created using the data from the user in firebase
-    func getMotorData()
+    func getMotorData(reference: CollectionReference)
     {
         // gets all the documents for this particular user
-        motorRef.getDocuments()
+        reference.getDocuments()
             {
                 (querySnapshot,err) in
                 // the program will go into this if statement if the user authentication fails
