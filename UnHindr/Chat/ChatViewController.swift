@@ -83,9 +83,6 @@ class ChatViewController: UIViewController {
     
 }
 
-    
-
-
 //Protocol for managing the populating of the tableView
 extension ChatViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -93,9 +90,31 @@ extension ChatViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableCell", for: indexPath) as! MessageCell
+        let message = messages[indexPath.row]
         
-        cell.label.text = messages[indexPath.row].body
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableCell", for: indexPath) as! MessageCell
+        cell.label.text = message.body
+
+        
+        //This is a message from the current user
+        if message.sender == Auth.auth().currentUser?.email {
+            print("Current User Message")
+            cell.leftImageView.isHidden = true
+            cell.rightImageView.isHidden = false
+            cell.messageBubble.backgroundColor = UIColor(named: "BrandBlue")
+            cell.label.textColor = UIColor.white
+            
+        }
+        else //message from the sender
+        {
+            print("Sender User message")
+            cell.leftImageView.isHidden = false
+            cell.rightImageView.isHidden = true
+            cell.messageBubble.backgroundColor = UIColor(named: "lightGrey")
+            cell.label.textColor = UIColor.black
+        }
+        
+        
         return cell
     }
     
