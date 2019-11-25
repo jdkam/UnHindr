@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         
-        messaging.messaging().delegate = self
+        Messaging.messaging().delegate = self
         
         if #available(iOS 10.0, *) {
             // For iOS 10 display notification (sent via APNS)
