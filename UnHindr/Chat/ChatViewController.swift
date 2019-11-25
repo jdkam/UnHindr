@@ -55,6 +55,8 @@ class ChatViewController: UIViewController {
                             
                             DispatchQueue.main.async {
                                 self.tableView.reloadData()
+                                let indexPath = IndexPath(row: self.messages.count - 1, section: 0)
+                                self.tableView.scrollToRow(at: indexPath, at: .top, animated: false)
                             }
                         }
                     }
@@ -68,6 +70,7 @@ class ChatViewController: UIViewController {
     //When user presses send button, store the message to firestore
     @IBAction func sendPressed(_ sender: UIButton) {
         
+        
         //if neither of these fields are not nil, then send data to firestore
         if let messageBody = messageTextField.text, let messageSender = Auth.auth().currentUser?.email {
             Services.fullUserRef.document(Services.userRef!).collection("messages").addDocument(data: ["sender":messageSender, "body": messageBody, "date": Date().timeIntervalSince1970]) { (error) in
@@ -76,6 +79,9 @@ class ChatViewController: UIViewController {
                 }
                 else {
                     print("Successfully saved data.")
+                    DispatchQueue.main.async {
+                    self.messageTextField.text = ""
+                    }
                 }
             }
         }
