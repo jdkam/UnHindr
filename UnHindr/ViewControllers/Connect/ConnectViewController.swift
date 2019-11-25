@@ -125,10 +125,7 @@ class ConnectViewController: UIViewController, UITableViewDelegate, UITableViewD
                 // Add to connections firestore
                 let pairedUID = querySnapshot!.documents[0].get("uid") as! String
                 let pairedEmail = querySnapshot!.documents[0].get("email") as! String
-                
-                //update the global connection variable
-                otherUID = pairedUID
-                
+                                
                 self.checkPairable(pairedEmail, completionHandler: { (ret) in
                     if ret {
                         self.storeToDB(pairedUID, pairedEmail)

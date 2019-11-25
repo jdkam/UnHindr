@@ -26,7 +26,7 @@ class ChatViewController: UIViewController {
         //get the current users UID///
         let myUserID = Auth.auth().currentUser!.uid
         print("auth: \(myUserID)")
-        print("otherUID: \(otherUID)")
+        print("otherUID: \(user_ID)")
         
         tableView.register(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: "ReusableCell")
         
