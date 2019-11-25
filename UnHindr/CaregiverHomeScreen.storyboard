@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8FY-gC-Gvs">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8FY-gC-Gvs">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,6 +18,14 @@
             </objects>
             <point key="canvasLocation" x="-733" y="-101"/>
         </scene>
+        <!--WellnessGraphs-->
+        <scene sceneID="HpR-Io-XLR">
+            <objects>
+                <viewControllerPlaceholder storyboardName="WellnessGraphs" id="4xU-9e-LM5" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lwr-da-B3R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-734" y="85"/>
+        </scene>
         <!--Connect-->
         <scene sceneID="TiA-Pt-i1B">
             <objects>
@@ -27,19 +37,19 @@
         <!--Caregiver Home Screen View Controller-->
         <scene sceneID="1O3-64-2SW">
             <objects>
-                <viewController storyboardIdentifier="CaregiverHomeScreenViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8FY-gC-Gvs" customClass="CaregiverHomeScreenViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CaregiverHomeScreenViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8FY-gC-Gvs" customClass="CaregiverHomeScreenViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleAspectFit" id="3Wd-0R-JdL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="lfA-Gz-Aq4">
-                                <rect key="frame" x="2" y="0.0" width="371" height="667"/>
+                                <rect key="frame" x="2" y="20" width="371" height="647"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="ARl-UQ-oBS" userLabel="Stack 1">
-                                        <rect key="frame" x="0.0" y="0.0" width="371" height="187.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="371" height="181.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IaD-PH-cn9" userLabel="profle">
-                                                <rect key="frame" x="0.0" y="0.0" width="371" height="187.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="371" height="181.5"/>
                                                 <accessibility key="accessibilityConfiguration" label="CaregiverProfile"/>
                                                 <state key="normal" image="CaregiverProfile"/>
                                                 <connections>
@@ -49,46 +59,46 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="IYU-7X-Gk2" userLabel="Stack 2">
-                                        <rect key="frame" x="0.0" y="189.5" width="371" height="160.5"/>
+                                        <rect key="frame" x="0.0" y="183.5" width="371" height="156"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kkf-nf-Fg4" userLabel="wellnessTests">
-                                                <rect key="frame" x="0.0" y="0.0" width="184" height="160.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="184" height="156"/>
                                                 <state key="normal" image="Wellness"/>
+                                                <connections>
+                                                    <segue destination="4xU-9e-LM5" kind="show" id="cYo-g2-o2K"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ACE-xh-bIr" userLabel="medication">
-                                                <rect key="frame" x="186" y="0.0" width="185" height="160.5"/>
+                                                <rect key="frame" x="186" y="0.0" width="185" height="156"/>
                                                 <state key="normal" image="Medication"/>
-                                                <connections>
-                                                    <segue destination="45A-36-NSF" kind="show" id="Mjr-27-8W7"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="udB-X3-yWh" userLabel="Stack 3">
-                                        <rect key="frame" x="0.0" y="352" width="371" height="157"/>
+                                        <rect key="frame" x="0.0" y="341.5" width="371" height="152.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="35k-tz-ct9" userLabel="location">
-                                                <rect key="frame" x="0.0" y="0.0" width="184.5" height="157"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="184.5" height="152.5"/>
                                                 <state key="normal" image="Location"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2jQ-Zw-CcF" userLabel="chat">
-                                                <rect key="frame" x="186.5" y="0.0" width="184.5" height="157"/>
+                                                <rect key="frame" x="186.5" y="0.0" width="184.5" height="152.5"/>
                                                 <state key="normal" image="Chat"/>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Uv0-Pv-ZMR" userLabel="Stack 4">
-                                        <rect key="frame" x="0.0" y="511" width="371" height="156"/>
+                                        <rect key="frame" x="0.0" y="496" width="371" height="151"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0oG-a3-qpK" userLabel="connect">
-                                                <rect key="frame" x="0.0" y="0.0" width="184" height="156"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="184" height="151"/>
                                                 <state key="normal" image="Connect"/>
                                                 <connections>
                                                     <segue destination="Pd2-Hw-0sx" kind="presentation" id="fDk-ae-Vah"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wnh-Dt-kMM" userLabel="OptionsButton">
-                                                <rect key="frame" x="186" y="0.0" width="185" height="156"/>
+                                                <rect key="frame" x="186" y="0.0" width="185" height="151"/>
                                                 <accessibility key="accessibilityConfiguration" label="OptionsButton"/>
                                                 <state key="normal" image="Options"/>
                                                 <connections>
@@ -114,16 +124,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qq1-lo-8Cr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="69.599999999999994" y="130.88455772113943"/>
-        </scene>
-        <!--CaregiverMedicationScreen-->
-        <scene sceneID="tGA-uF-8K0">
-            <objects>
-                <viewControllerPlaceholder storyboardName="CaregiverMedicationScreen" id="45A-36-NSF" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="9EQ-ZT-oN3"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vQ5-Ql-zys" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="789" y="92"/>
         </scene>
         <!--Settings-->
         <scene sceneID="WwD-co-uJT">

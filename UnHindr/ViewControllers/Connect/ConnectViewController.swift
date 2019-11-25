@@ -48,7 +48,6 @@ class ConnectViewController: UIViewController, UITableViewDelegate, UITableViewD
                 user_ID = ref
             }
         }
-        print(user_ID)
     }
     
     // MARK: - View controller lifecycle methods
@@ -74,6 +73,10 @@ class ConnectViewController: UIViewController, UITableViewDelegate, UITableViewD
                 self.connectionsTable.endUpdates()
             }
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        list.removeAll()
     }
     
     

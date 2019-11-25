@@ -116,6 +116,22 @@ class Services {
             
         }
     }
+    
+    static func getisPatient(completionHandler: @escaping (_ result: Bool) -> Void)
+    {
+        Services.db.collection("users").whereField("email", isEqualTo: userEmail).whereField("isPatient", isEqualTo: true).getDocuments() {
+            (querySnapshot,err) in
+            if querySnapshot!.isEmpty {
+                dump(querySnapshot!.isEmpty)
+                completionHandler(false)
+            }
+            else
+            {
+                completionHandler(true)
+            }
+        }
+    }
+    
 }
 
 extension Date {

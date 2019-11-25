@@ -12,6 +12,9 @@ import UIKit
 import FirebaseAuth
 import FirebaseFirestore
 
+
+public var userEmail: String = ""
+
 class LoginViewController: UIViewController {
     // to determine which button is pressed (login/signup) - used in viewWillDisappear
     private var isSignUp = false
@@ -70,6 +73,8 @@ class LoginViewController: UIViewController {
                     }
                     Services.userRef = userref
                     Services.transitionHome(strongSelf)
+                    userEmail = email
+                    print(userEmail)
                 })
                 
             }
