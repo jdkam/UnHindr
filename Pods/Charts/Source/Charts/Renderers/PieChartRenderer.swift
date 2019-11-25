@@ -118,7 +118,7 @@ open class PieChartRenderer: DataRenderer
         let phaseY = animator.phaseY
 
         let entryCount = dataSet.entryCount
-        let drawAngles = chart.drawAngles
+        var drawAngles = chart.drawAngles
         let center = chart.centerCircleBox
         let radius = chart.radius
         let drawInnerArc = chart.drawHoleEnabled && !chart.drawSlicesUnderHoleEnabled
@@ -702,8 +702,8 @@ open class PieChartRenderer: DataRenderer
         var angle: CGFloat = 0.0
         let rotationAngle = chart.rotationAngle
 
-        let drawAngles = chart.drawAngles
-        let absoluteAngles = chart.absoluteAngles
+        var drawAngles = chart.drawAngles
+        var absoluteAngles = chart.absoluteAngles
         let center = chart.centerCircleBox
         let radius = chart.radius
         let drawInnerArc = chart.drawHoleEnabled && !chart.drawSlicesUnderHoleEnabled
