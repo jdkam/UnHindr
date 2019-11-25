@@ -231,7 +231,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8hb-L6-iRL" customClass="BarChartView" customModule="Charts">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8hb-L6-iRL" customClass="BarChartView" customModule="Charts">
                                 <rect key="frame" x="0.0" y="261.5" width="414" height="601.5"/>
                                 <color key="backgroundColor" red="0.93735582750000002" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -305,7 +305,8 @@
                             <constraint firstItem="c0Z-Cp-mYY" firstAttribute="top" secondItem="n7y-Rx-2E2" secondAttribute="bottom" constant="25.5" id="R03-on-yyE"/>
                             <constraint firstItem="hJl-8y-IlF" firstAttribute="top" secondItem="pvw-N6-nJu" secondAttribute="top" constant="233" id="Rkh-KN-HRN"/>
                             <constraint firstItem="6Ra-M5-rnc" firstAttribute="leading" secondItem="D8p-GH-Nkf" secondAttribute="leading" constant="12" id="XoT-0g-bnP"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="8hb-L6-iRL" secondAttribute="bottom" constant="-2" id="h5g-47-QzG"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="8hb-L6-iRL" secondAttribute="bottom" constant="-1" id="h5g-47-QzG"/>
+                            <constraint firstItem="D8p-GH-Nkf" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hJl-8y-IlF" secondAttribute="trailing" symbolic="YES" id="jOV-L1-eVU"/>
                             <constraint firstItem="8hb-L6-iRL" firstAttribute="trailing" secondItem="n7y-Rx-2E2" secondAttribute="trailing" id="pg9-Wo-lmi"/>
                             <constraint firstItem="hJl-8y-IlF" firstAttribute="leading" secondItem="8hb-L6-iRL" secondAttribute="leading" id="tNw-06-n4I"/>
                             <constraint firstItem="AUq-CT-fbz" firstAttribute="top" secondItem="n7y-Rx-2E2" secondAttribute="bottom" constant="26" id="zv2-ys-fnF"/>
@@ -894,9 +895,9 @@
         <image name="wedNoCheck" width="74" height="73"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="S0s-as-yc3"/>
-        <segue reference="o3N-z0-r3r"/>
-        <segue reference="Gvb-cv-EC0"/>
-        <segue reference="g2W-fu-jIw"/>
+        <segue reference="xPc-xc-6tf"/>
+        <segue reference="C72-I3-26c"/>
+        <segue reference="9XW-up-xpu"/>
+        <segue reference="69s-Ef-ViR"/>
     </inferredMetricsTieBreakers>
 </document>
