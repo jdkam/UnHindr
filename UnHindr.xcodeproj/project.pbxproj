@@ -29,6 +29,8 @@
 		707E9F7423827F85006A3AF5 /* MonthMoodGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707E9F7123827F85006A3AF5 /* MonthMoodGraphViewController.swift */; };
 		707E9F7523827F85006A3AF5 /* MoodGraphsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707E9F7223827F85006A3AF5 /* MoodGraphsViewController.swift */; };
 		707E9F7623827F85006A3AF5 /* YearMoodGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707E9F7323827F85006A3AF5 /* YearMoodGraphViewController.swift */; };
+		70B46FB02389E4B80088D1FD /* CaregiverMedicationScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70B46FAF2389E4B80088D1FD /* CaregiverMedicationScreen.storyboard */; };
+		70B46FB42389F2440088D1FD /* CaregiverPatientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B46FB32389F2440088D1FD /* CaregiverPatientsViewController.swift */; };
 		8176FAB3237B88D80083B445 /* CogGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8176FAB2237B88D80083B445 /* CogGameViewController.swift */; };
 		8176FAB5237B896B0083B445 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8176FAB4237B896B0083B445 /* CardModel.swift */; };
 		8176FAB7237B8A9C0083B445 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8176FAB6237B8A9C0083B445 /* Card.swift */; };
@@ -130,6 +132,8 @@
 		707E9F7123827F85006A3AF5 /* MonthMoodGraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthMoodGraphViewController.swift; sourceTree = "<group>"; };
 		707E9F7223827F85006A3AF5 /* MoodGraphsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodGraphsViewController.swift; sourceTree = "<group>"; };
 		707E9F7323827F85006A3AF5 /* YearMoodGraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YearMoodGraphViewController.swift; sourceTree = "<group>"; };
+		70B46FAF2389E4B80088D1FD /* CaregiverMedicationScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CaregiverMedicationScreen.storyboard; sourceTree = "<group>"; };
+		70B46FB32389F2440088D1FD /* CaregiverPatientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaregiverPatientsViewController.swift; sourceTree = "<group>"; };
 		8176FAB2237B88D80083B445 /* CogGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CogGameViewController.swift; sourceTree = "<group>"; };
 		8176FAB4237B896B0083B445 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		8176FAB6237B8A9C0083B445 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
@@ -397,6 +401,8 @@
 				2DD67107236BCD41005948DF /* Login.storyboard */,
 				2DD67109236BCD41005948DF /* HomeScreen.storyboard */,
 				9E4EAB30237E5E8400FC051B /* CaregiverHomeScreen.storyboard */,
+				70B46FAF2389E4B80088D1FD /* CaregiverMedicationScreen.storyboard */,
+				70B46FB32389F2440088D1FD /* CaregiverPatientsViewController.swift */,
 				9DF3F8A12367D82D003CF8B9 /* LaunchScreen.storyboard */,
 				CDBC4012236E4FE8008934AF /* Settings.storyboard */,
 				9E4EAB31237E5E8400FC051B /* ModeChoice.storyboard */,
@@ -615,6 +621,7 @@
 				9DF3F8A32367D82D003CF8B9 /* LaunchScreen.storyboard in Resources */,
 				9DF3F8C72367D880003CF8B9 /* GoogleService-Info.plist in Resources */,
 				9E4EAB33237E5E8400FC051B /* ModeChoice.storyboard in Resources */,
+				70B46FB02389E4B80088D1FD /* CaregiverMedicationScreen.storyboard in Resources */,
 				CDBC4013236E4FE8008934AF /* Settings.storyboard in Resources */,
 				9E286A322382957600473055 /* MotorGameScene.sks in Resources */,
 				9DFB75B9236F74D0006321B8 /* Medication.storyboard in Resources */,
@@ -779,6 +786,7 @@
 				2DD67104236BC4C5005948DF /* HomeScreenViewController.swift in Sources */,
 				CDD946F4238B41C600A865D0 /* SignUpViewController.swift in Sources */,
 				7013CBB92370D00E00A1231F /* ChartsViewController.swift in Sources */,
+				70B46FB42389F2440088D1FD /* CaregiverPatientsViewController.swift in Sources */,
 				707E9F7623827F85006A3AF5 /* YearMoodGraphViewController.swift in Sources */,
 				2DE6A77D236E402B00B76282 /* Services.swift in Sources */,
 				8176FAB3237B88D80083B445 /* CogGameViewController.swift in Sources */,

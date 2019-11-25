@@ -17,10 +17,9 @@ class MotorGameMonthlyViewController: UIViewController {
     @IBOutlet weak var motorMonthGraph: BarChartView!
     
     // gets the correct user database values
-    let motorRef = Services.db.collection("users").document(Services.userRef!).collection("MotorGameData")
+    
     // storing the graph data
     var GraphData: [BarChartDataEntry] = []
-    
     var monthMotorValues: [Int:Double] = [:]
     var dayAverage = Array(repeating: 0, count: 31)
     var dictDayAvg: [Int:Int] = [:]
@@ -29,8 +28,28 @@ class MotorGameMonthlyViewController: UIViewController {
     // MARK: - View controller lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        let motorRef = Services.checkUserIDMotorGame()
+        
+        Services.getisPatient() {(success) in
+            if (success)
+            {
+                self.getMotorGameData(reference: motorRef)
+            }
+            else
+            {
+                if(user_ID != "")
+                {
+                    self.getMotorGameData(reference: motorRef)
+                }
+                else
+                {
+                    self.motorMonthGraph.noDataText = "Please choose a patient in the Connect Screen"
+                    self.monthLabel.text = "No Data"
+                }
+                
+            }
+        }
 
-        getMotorGameData()
         
         // Sets up the chart properties
         self.title = "Bar Chart"
@@ -61,9 +80,9 @@ class MotorGameMonthlyViewController: UIViewController {
     //      1. None
     // Output:
     //      1. The monthly motor graph is created and displayed for the user to see
-    func getMotorGameData()
+    func getMotorGameData(reference: CollectionReference)
     {
-        motorRef.getDocuments()
+        reference.getDocuments()
             {
                 (querySnapshot,err) in
                 if err != nil{
