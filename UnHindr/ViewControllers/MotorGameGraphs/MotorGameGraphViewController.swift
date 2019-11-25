@@ -40,7 +40,7 @@ class MotorGameGraphViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let motorRef = checkUserID()
+        let motorRef = Services.checkUserIDMotorGame()
     
         Services.getisPatient() {(success) in
             if (success)
@@ -83,21 +83,6 @@ class MotorGameGraphViewController: UIViewController {
         l.formToTextSpace = 8
         l.xEntrySpace = 6
         xAxis.drawGridLinesEnabled = false
-    }
-    
-    
-    func checkUserID() -> CollectionReference
-    {
-        var motorRef: CollectionReference
-        if (user_ID == "")
-        {
-                motorRef = Services.db.collection("users").document(Services.userRef!).collection("MotorGameData")
-        }
-        else
-        {
-            motorRef = Services.fullUserRef.document(user_ID).collection(Services.motorGameName)
-        }
-        return motorRef
     }
     
     // MARK: - Obtain motor data from firebase

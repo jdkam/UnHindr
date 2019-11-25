@@ -117,12 +117,18 @@ class Services {
         }
     }
     
+    
+    // Checks whether the current logged in user is a patient or not
+    // Input:
+    //      1. None
+    // Output:
+    //      1. returns true if user is a patient
+    //      2. returns false if user is a caregiver
     static func getisPatient(completionHandler: @escaping (_ result: Bool) -> Void)
     {
         Services.db.collection("users").whereField("email", isEqualTo: userEmail).whereField("isPatient", isEqualTo: true).getDocuments() {
             (querySnapshot,err) in
             if querySnapshot!.isEmpty {
-                dump(querySnapshot!.isEmpty)
                 completionHandler(false)
             }
             else
@@ -130,6 +136,20 @@ class Services {
                 completionHandler(true)
             }
         }
+    }
+    
+    static func checkUserIDMotorGame() -> CollectionReference
+    {
+        var motorRef: CollectionReference
+        if (user_ID == "")
+        {
+            motorRef = Services.db.collection("users").document(Services.userRef!).collection("MotorGameData")
+        }
+        else
+        {
+            motorRef = Services.fullUserRef.document(user_ID).collection(Services.motorGameName)
+        }
+        return motorRef
     }
     
 }
