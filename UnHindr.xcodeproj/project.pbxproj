@@ -33,6 +33,11 @@
 		8176FAB5237B896B0083B445 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8176FAB4237B896B0083B445 /* CardModel.swift */; };
 		8176FAB7237B8A9C0083B445 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8176FAB6237B8A9C0083B445 /* Card.swift */; };
 		8176FAB9237B94FC0083B445 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8176FAB8237B94FC0083B445 /* CardCollectionViewCell.swift */; };
+		817B5F6723889CB5009BF125 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 817B5F6623889CB5009BF125 /* Chat.storyboard */; };
+		817B5F6923889CE9009BF125 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817B5F6823889CE9009BF125 /* ChatViewController.swift */; };
+		817B5F6C2388A478009BF125 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817B5F6B2388A478009BF125 /* Message.swift */; };
+		817B5F6F2388C117009BF125 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817B5F6D2388C117009BF125 /* MessageCell.swift */; };
+		817B5F702388C117009BF125 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 817B5F6E2388C117009BF125 /* MessageCell.xib */; };
 		81A7340C2381E0840069FE24 /* CogGameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A7340B2381E0840069FE24 /* CogGameTest.swift */; };
 		81A7340E238200320069FE24 /* CogGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A7340D238200320069FE24 /* CogGameUITests.swift */; };
 		81B5908E2378F8DD00BA49AF /* CogGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81B5908D2378F8DD00BA49AF /* CogGame.storyboard */; };
@@ -42,6 +47,7 @@
 		81BDBDA2237F8E9C00F4C970 /* cardflip.wav in Resources */ = {isa = PBXBuildFile; fileRef = 81BDBD9E237F8E9C00F4C970 /* cardflip.wav */; };
 		81BDBDA4237F8F9000F4C970 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BDBDA3237F8F9000F4C970 /* AVFoundation.framework */; };
 		81BDBDA6237F8FDB00F4C970 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BDBDA5237F8FDB00F4C970 /* SoundManager.swift */; };
+		81D15232238B5E6E00A762A7 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81D15231238B5E6E00A762A7 /* IQKeyboardManagerSwift.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		917005C6FF22DCC60112BF31 /* Pods_UnHindr_UnHindrUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60A7EE0DF36D68CB24C9574E /* Pods_UnHindr_UnHindrUITests.framework */; };
 		98F115D8236CCDF80082A1B1 /* Mood.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98F115D7236CCDF80082A1B1 /* Mood.storyboard */; };
 		98F115DA236CCED00082A1B1 /* MoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F115D9236CCED00082A1B1 /* MoodViewController.swift */; };
@@ -128,6 +134,11 @@
 		8176FAB4237B896B0083B445 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		8176FAB6237B8A9C0083B445 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		8176FAB8237B94FC0083B445 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
+		817B5F6623889CB5009BF125 /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
+		817B5F6823889CE9009BF125 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		817B5F6B2388A478009BF125 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		817B5F6D2388C117009BF125 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		817B5F6E2388C117009BF125 /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
 		81A7340B2381E0840069FE24 /* CogGameTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CogGameTest.swift; sourceTree = "<group>"; };
 		81A7340D238200320069FE24 /* CogGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CogGameUITests.swift; sourceTree = "<group>"; };
 		81B5908D2378F8DD00BA49AF /* CogGame.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CogGame.storyboard; sourceTree = "<group>"; };
@@ -137,6 +148,7 @@
 		81BDBD9E237F8E9C00F4C970 /* cardflip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardflip.wav; sourceTree = "<group>"; };
 		81BDBDA3237F8F9000F4C970 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		81BDBDA5237F8FDB00F4C970 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		81D15231238B5E6E00A762A7 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9500CD9CD9F0148DE44F8BF8 /* Pods-UnHindr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindr.debug.xcconfig"; path = "Target Support Files/Pods-UnHindr/Pods-UnHindr.debug.xcconfig"; sourceTree = "<group>"; };
 		98F115D7236CCDF80082A1B1 /* Mood.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mood.storyboard; sourceTree = "<group>"; };
 		98F115D9236CCED00082A1B1 /* MoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodViewController.swift; sourceTree = "<group>"; };
@@ -192,6 +204,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81D15232238B5E6E00A762A7 /* IQKeyboardManagerSwift.framework in Frameworks */,
 				81BDBDA4237F8F9000F4C970 /* AVFoundation.framework in Frameworks */,
 				A2B5644B1E4149E09D599F82 /* Pods_UnHindr.framework in Frameworks */,
 			);
@@ -268,12 +281,25 @@
 		7AC9719345D1AB48A6CAA879 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				81D15231238B5E6E00A762A7 /* IQKeyboardManagerSwift.framework */,
 				81BDBDA3237F8F9000F4C970 /* AVFoundation.framework */,
 				F7EAE4472764465EE4B52BD6 /* Pods_UnHindr.framework */,
 				60A7EE0DF36D68CB24C9574E /* Pods_UnHindr_UnHindrUITests.framework */,
 				4E98EBEE8A222DA52CA9D297 /* Pods_UnHindrTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		817B5F6A2388A010009BF125 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				817B5F6623889CB5009BF125 /* Chat.storyboard */,
+				817B5F6823889CE9009BF125 /* ChatViewController.swift */,
+				817B5F6B2388A478009BF125 /* Message.swift */,
+				817B5F6D2388C117009BF125 /* MessageCell.swift */,
+				817B5F6E2388C117009BF125 /* MessageCell.xib */,
+			);
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		81B590912378F8F900BA49AF /* CogGame */ = {
@@ -353,6 +379,7 @@
 		9DF3F8972367D826003CF8B9 /* UnHindr */ = {
 			isa = PBXGroup;
 			children = (
+				817B5F6A2388A010009BF125 /* Chat */,
 				9E286A2D2382957600473055 /* MotorGame.storyboard */,
 				707E9F5D23827EF2006A3AF5 /* CogGameGraphs.storyboard */,
 				707E9F5923827EF0006A3AF5 /* MoodGraphs.storyboard */,
@@ -572,6 +599,7 @@
 				81BDBD9F237F8E9C00F4C970 /* shuffle.wav in Resources */,
 				98F67921236E85AF00517099 /* Profile.storyboard in Resources */,
 				2DD6710C236BCD41005948DF /* HomeScreen.storyboard in Resources */,
+				817B5F702388C117009BF125 /* MessageCell.xib in Resources */,
 				98F115D8236CCDF80082A1B1 /* Mood.storyboard in Resources */,
 				81BDBDA0237F8E9C00F4C970 /* dingcorrect.wav in Resources */,
 				2DD6710B236BCD41005948DF /* Login.storyboard in Resources */,
@@ -582,6 +610,7 @@
 				81BDBDA1237F8E9C00F4C970 /* dingwrong.wav in Resources */,
 				707E9F6223827EF2006A3AF5 /* CogGameGraphs.storyboard in Resources */,
 				707E9F6023827EF2006A3AF5 /* WellnessGraphs.storyboard in Resources */,
+				817B5F6723889CB5009BF125 /* Chat.storyboard in Resources */,
 				9E286A312382957600473055 /* MotorGame.storyboard in Resources */,
 				9DF3F8A32367D82D003CF8B9 /* LaunchScreen.storyboard in Resources */,
 				9DF3F8C72367D880003CF8B9 /* GoogleService-Info.plist in Resources */,
@@ -727,6 +756,7 @@
 				9EE42465237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift in Sources */,
 				9DF3F89B2367D826003CF8B9 /* LoginViewController.swift in Sources */,
 				9D6C641C2378B50F00F0C058 /* Constants.swift in Sources */,
+				817B5F6C2388A478009BF125 /* Message.swift in Sources */,
 				98F115EB236D2B770082A1B1 /* MoodQ5ViewController.swift in Sources */,
 				8176FAB7237B8A9C0083B445 /* Card.swift in Sources */,
 				9E91389C2380D6C5006AD1F9 /* ConnectViewController.swift in Sources */,
@@ -736,6 +766,7 @@
 				81BDBDA6237F8FDB00F4C970 /* SoundManager.swift in Sources */,
 				215C15DC236F6E5F0063F3E4 /* WellnessTestHomeViewController.swift in Sources */,
 				9E286A2F2382957600473055 /* MotorGameViewController.swift in Sources */,
+				817B5F6F2388C117009BF125 /* MessageCell.swift in Sources */,
 				8176FAB5237B896B0083B445 /* CardModel.swift in Sources */,
 				9DAEB52E237FC408008A94BD /* FullMedicationViewController.swift in Sources */,
 				9E04C08E238A1D5B0011A572 /* User.swift in Sources */,
@@ -755,6 +786,7 @@
 				9DFB75BD236F7515006321B8 /* MedicationViewController.swift in Sources */,
 				9D627A0E236FD4240027B6B7 /* MedicationHomeViewController.swift in Sources */,
 				98F115E9236D29B50082A1B1 /* MoodQ4ViewController.swift in Sources */,
+				817B5F6923889CE9009BF125 /* ChatViewController.swift in Sources */,
 				707E9F7023827F77006A3AF5 /* MotorGameGraphViewController.swift in Sources */,
 				707E9F6F23827F77006A3AF5 /* MotorGameYearlyViewController.swift in Sources */,
 				98F6791D236E849900517099 /* ProfileViewController.swift in Sources */,
@@ -958,6 +990,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = UnHindr/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -979,6 +1012,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = UnHindr/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
