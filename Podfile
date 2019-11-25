@@ -10,8 +10,6 @@ target 'UnHindr' do
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
   pod 'Charts', '<=3.2.1'
-  pod 'Firebase/Messaging'
-  pod 'IQKeyboardManagerSwift', '6.2.1'
 
   target 'UnHindrTests' do
     inherit! :search_paths
