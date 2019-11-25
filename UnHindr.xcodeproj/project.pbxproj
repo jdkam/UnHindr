@@ -69,6 +69,7 @@
 		9DFB75B9236F74D0006321B8 /* Medication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DFB75B7236F74CF006321B8 /* Medication.storyboard */; };
 		9DFB75BD236F7515006321B8 /* MedicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFB75BB236F7515006321B8 /* MedicationViewController.swift */; };
 		9DFB75C0236F7B15006321B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DFB75BF236F7B14006321B8 /* Assets.xcassets */; };
+		9E04C08E238A1D5B0011A572 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E04C08D238A1D5B0011A572 /* User.swift */; };
 		9E286A2F2382957600473055 /* MotorGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E286A2B2382957600473055 /* MotorGameViewController.swift */; };
 		9E286A302382957600473055 /* MotorGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E286A2C2382957600473055 /* MotorGameScene.swift */; };
 		9E286A312382957600473055 /* MotorGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E286A2D2382957600473055 /* MotorGame.storyboard */; };
@@ -83,6 +84,7 @@
 		CBE5CD7485E703281E2757D0 /* Pods_UnHindr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB3CE85FD97976F3B7E3634 /* Pods_UnHindr.framework */; };
 		CDBC4013236E4FE8008934AF /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDBC4012236E4FE8008934AF /* Settings.storyboard */; };
 		CDBC4016236E501B008934AF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBC4015236E501B008934AF /* SettingsViewController.swift */; };
+		CDD946F4238B41C600A865D0 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD946F3238B41C600A865D0 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -173,6 +175,7 @@
 		9DFB75B8236F74CF006321B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Medication.storyboard; sourceTree = "<group>"; };
 		9DFB75BB236F7515006321B8 /* MedicationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationViewController.swift; sourceTree = "<group>"; };
 		9DFB75BF236F7B14006321B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9E04C08D238A1D5B0011A572 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9E286A2B2382957600473055 /* MotorGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotorGameViewController.swift; sourceTree = "<group>"; };
 		9E286A2C2382957600473055 /* MotorGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotorGameScene.swift; sourceTree = "<group>"; };
 		9E286A2D2382957600473055 /* MotorGame.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MotorGame.storyboard; sourceTree = "<group>"; };
@@ -189,6 +192,7 @@
 		BC2051C061649210EBAEDB5D /* Pods-UnHindrTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindrTests.release.xcconfig"; path = "Target Support Files/Pods-UnHindrTests/Pods-UnHindrTests.release.xcconfig"; sourceTree = "<group>"; };
 		CDBC4012236E4FE8008934AF /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		CDBC4015236E501B008934AF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		CDD946F3238B41C600A865D0 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		D67DC310DD2C16DCFB8FDD88 /* Pods-UnHindr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindr.release.xcconfig"; path = "Target Support Files/Pods-UnHindr/Pods-UnHindr.release.xcconfig"; sourceTree = "<group>"; };
 		F1C3785DD264C27DA744F93C /* Pods-UnHindr-UnHindrUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindr-UnHindrUITests.debug.xcconfig"; path = "Target Support Files/Pods-UnHindr-UnHindrUITests/Pods-UnHindr-UnHindrUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -456,7 +460,9 @@
 		9E4EAB36237E5FE400FC051B /* ModeChoice */ = {
 			isa = PBXGroup;
 			children = (
+				CDD946F3238B41C600A865D0 /* SignUpViewController.swift */,
 				9E4EAB34237E5FDE00FC051B /* ModeChoiceViewController.swift */,
+				9E04C08D238A1D5B0011A572 /* User.swift */,
 			);
 			path = ModeChoice;
 			sourceTree = "<group>";
@@ -759,6 +765,7 @@
 				817B5F6F2388C117009BF125 /* MessageCell.swift in Sources */,
 				8176FAB5237B896B0083B445 /* CardModel.swift in Sources */,
 				9DAEB52E237FC408008A94BD /* FullMedicationViewController.swift in Sources */,
+				9E04C08E238A1D5B0011A572 /* User.swift in Sources */,
 				707E9F6823827F6B006A3AF5 /* CogGameGraphViewController.swift in Sources */,
 				98F115DA236CCED00082A1B1 /* MoodViewController.swift in Sources */,
 				8176FAB9237B94FC0083B445 /* CardCollectionViewCell.swift in Sources */,
@@ -766,6 +773,7 @@
 				9DF3F8992367D826003CF8B9 /* AppDelegate.swift in Sources */,
 				9E4EAB35237E5FDE00FC051B /* ModeChoiceViewController.swift in Sources */,
 				2DD67104236BC4C5005948DF /* HomeScreenViewController.swift in Sources */,
+				CDD946F4238B41C600A865D0 /* SignUpViewController.swift in Sources */,
 				7013CBB92370D00E00A1231F /* ChartsViewController.swift in Sources */,
 				707E9F7623827F85006A3AF5 /* YearMoodGraphViewController.swift in Sources */,
 				2DE6A77D236E402B00B76282 /* Services.swift in Sources */,

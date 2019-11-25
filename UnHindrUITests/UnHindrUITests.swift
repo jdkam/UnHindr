@@ -287,7 +287,22 @@ class UnHindrUITests: XCTestCase {
         XCTAssert(app.textFields["Address"].exists)
         XCTAssert(app.buttons["Save Button"].exists)
         XCTAssert(app.buttons["Back Button"].exists)
+    }
+    
+    //test basic UI functionalities of SignUp
+    func testSignUp(){
         
+        let app = XCUIApplication()
+        app.buttons["Sign up button"].tap()
+        app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .button).matching(identifier: "Button").element(boundBy: 0).tap()
+        
+        let scrollViewsQuery = app.scrollViews
+        scrollViewsQuery.otherElements.containing(.textField, identifier:"First Name              Required").element.swipeUp()
+        
+        let elementsQuery = scrollViewsQuery.otherElements
+        elementsQuery.buttons["Create account"].tap()
+        app.alerts["Please Enter Your First Name"].buttons["Ok"].tap()
+        elementsQuery.buttons["GO TO LOGIN"].tap()
         
     }
     
