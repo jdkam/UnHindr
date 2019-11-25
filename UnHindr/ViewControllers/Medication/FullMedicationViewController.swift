@@ -19,6 +19,7 @@ class FullMedicationViewController: UIViewController, UITableViewDataSource {
     
     var medList: QuerySnapshot?
     
+    // MARK: - Controller lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -47,6 +48,7 @@ class FullMedicationViewController: UIViewController, UITableViewDataSource {
         }
     }
     
+    // MARK: - Table View delegate
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -90,6 +92,32 @@ class FullMedicationViewController: UIViewController, UITableViewDataSource {
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = UIContextualAction(style: .normal, title: "Delete") { (action, view, nil) in
+            print("Delete")
+        }
+        return UISwipeActionsConfiguration(actions: [delete])
+    }
+    
+//    func deleteAction(at indexPath: IndexPath) -> UIContextualAction {
+//        let del = UIContextualAction(style: .normal, title: "Delete") { (action, view, nil) in
+////            let documentID = self.medList?.documents[indexPath.row].documentID
+////            self.medicationPlanRef.document(documentID!).delete(completion: { (err) in
+////                if let err = err {
+////                    print("Error deleting medication \(err)")
+////                }
+////                else {
+////
+////                }
+////            })
+//            print("Delete")
+//            
+////            completion(true)
+//        }
+//        del.backgroundColor = .red
+//        return del
+//    }
     
     private func generatePlan(medPlan: QueryDocumentSnapshot) -> Medication{
         let medName = medPlan.get("Medication") as! String
