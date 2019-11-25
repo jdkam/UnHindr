@@ -324,7 +324,7 @@ open class HorizontalBarChartRenderer: BarChartRenderer
                 let barData = dataProvider.barData
                 else { return }
             
-            let dataSets = barData.dataSets
+            var dataSets = barData.dataSets
             
             let textAlign = NSTextAlignment.left
             
