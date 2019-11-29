@@ -46,6 +46,9 @@ class Services {
     static let motorGameName = "MotorGameData"
 //    static var motorGameRef = db.collection("users").document(userRef!).collection("MotorGameData")
     
+    // Cognitive Game reference
+    static let cogGameName = "CogGameData"
+    
     // MARK: - Retrieve reference to a patient's data
     // Input:
     //      1. unique UID of a user
@@ -150,6 +153,19 @@ class Services {
             motorRef = Services.fullUserRef.document(user_ID).collection(Services.motorGameName)
         }
         return motorRef
+    }
+    
+    static func checkUserIDCogGame() -> CollectionReference
+    {
+        var cogRef: CollectionReference
+        if (user_ID == "")
+        {
+            cogRef = Services.fullUserRef.document(Services.userRef!).collection(Services.cogGameName)
+        }
+        else{
+            cogRef = Services.fullUserRef.document(user_ID).collection(Services.cogGameName)
+        }
+        return cogRef
     }
     
 }

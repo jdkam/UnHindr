@@ -23,12 +23,12 @@ class CogGameGraphViewController: UIViewController {
     @IBOutlet weak var month: UILabel!
     
     // gets the correct user database values
-    let cogRef = Services.db.collection(user_ID).document(Services.userRef!).collection("CogGameData")
+    //let cogRef = Services.db.collection(user_ID).document(Services.userRef!).collection("CogGameData")
     
     // storing the graph data
     var GraphData: [BarChartDataEntry] = []
     var cogData: [Int:Double] = [:]
-    var dayAverage = Array(repeating: 0, count: 8)
+    var dayAverage = Array(repeating: 0, count: 7)
     var days: [Int] = []
     var stringDays: [String] = []
     
@@ -37,7 +37,27 @@ class CogGameGraphViewController: UIViewController {
     // MARK: - View controller lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        getCogData()
+        
+        let cogRef = Services.checkUserIDCogGame()
+        
+        Services.getisPatient(){(success) in
+            if (success)
+            {
+                self.getCogData(reference: cogRef)
+            }
+            else
+            {
+                if(user_ID != "")
+                {
+                    self.getCogData(reference: cogRef)
+                }
+                else
+                {
+                    self.cogGraph.noDataText = "Please choose a patient in the Connect Screen"
+                    self.month.text = ""
+                }
+            }
+        }
                
         // Sets up the chart properties
         self.title = "Cog Bar Chart"
@@ -68,10 +88,10 @@ class CogGameGraphViewController: UIViewController {
     //      1. None
     // Output:
     //      1. Cognitive Graph is created using the data from the user in firebase
-    func getCogData()
+        func getCogData(reference: CollectionReference)
     {
         // gets all the documents for this particular user
-        cogRef.getDocuments()
+        reference.getDocuments()
         {
             (querySnapshot,err) in
             // the program will go into this if statement if the user authentication fails
@@ -108,7 +128,7 @@ class CogGameGraphViewController: UIViewController {
                     let currentMonth = calendar.component(.month, from: today)
                     let currentYear = calendar.component(.year, from: today)
                     // calculates 7 days in the past and gets the previous month's name
-                    let lastWeekDay = currentDay - 7
+                    let lastWeekDay = currentDay - 6
                     let previousMonth = currentMonth - 1
                     let previousMonthName = DateFormatter().monthSymbols[previousMonth-1]
                     

@@ -23,7 +23,7 @@ class cogYearlyGraphViewController: UIViewController {
     @IBOutlet weak var yearLabel: UILabel!
     
     // gets the correct user database values
-    let cogRef = Services.db.collection("users").document(Services.userRef!).collection("CogGameData")
+    //let cogRef = Services.db.collection("users").document(Services.userRef!).collection("CogGameData")
     // storing the graph data
     var GraphData: [BarChartDataEntry] = []
     
@@ -37,7 +37,26 @@ class cogYearlyGraphViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getCogData()
+        let cogRef = Services.checkUserIDCogGame()
+        
+        Services.getisPatient() {(success) in
+            if (success)
+            {
+                self.getCogData(reference: cogRef)
+            }
+            else
+            {
+                if(user_ID != "")
+                {
+                    self.getCogData(reference: cogRef)
+                }
+                else
+                {
+                    self.cogYearlyGraph.noDataText = "Please choose a patient in the Connect Screen"
+                    self.yearLabel.text = ""
+                }
+            }
+        }
         
         // Sets up the chart properties
         self.title = "Bar Chart"
@@ -69,10 +88,10 @@ class cogYearlyGraphViewController: UIViewController {
     //      1. None
     // Output:
     //      1. The yearly cognitive graph is created and displayed for the user to see
-    func getCogData()
+    func getCogData(reference: CollectionReference)
     {
         // gets all the documents for this particular user
-        cogRef.getDocuments()
+        reference.getDocuments()
             {
                 (querySnapshot, err) in
                 if err != nil // the program will go into this if statement if the user authentication fails

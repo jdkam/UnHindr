@@ -34,7 +34,28 @@ class CogGameMonthlyViewController: UIViewController {
     // MARK: - View controller lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        getCogGameData()
+        
+        let cogRef = Services.checkUserIDCogGame()
+        
+        Services.getisPatient() {(success) in
+            if(success)
+            {
+                self.getCogGameData(reference: cogRef)
+            }
+            else
+            {
+                if(user_ID != "")
+                {
+                    self.getCogGameData(reference: cogRef)
+                }
+                else
+                {
+                    self.cogMonthGraph.noDataText = "Please choose a patient in the Connect Screen"
+                    self.month.text = ""
+                }
+            }
+        }
+        //getCogGameData()
         
         //Sets up the chart properties
         self.title = "Bar Chart"
@@ -65,10 +86,10 @@ class CogGameMonthlyViewController: UIViewController {
     //      1. None
     // Output:
     //      1. The monthly cognitive graph is created and displayed for the user to see
-    func getCogGameData()
+    func getCogGameData(reference: CollectionReference)
     {
         // gets all the documents for this particular user
-        cogRef.getDocuments()
+        reference.getDocuments()
             {
                 // gets all the documents for this particular user
                 (querySnapshot,err) in
