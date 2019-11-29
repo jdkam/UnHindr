@@ -13,7 +13,7 @@ import FirebaseAuth
 class MoodGraphsViewController: UIViewController {
      
     // gets the correct user database values
-    let moodRef = Services.db.collection("users").document(userID).collection("Mood")
+    //let moodRef = Services.db.collection("users").document(userID).collection("Mood")
     
     @IBOutlet weak var moodChart: BarChartView!
     @IBOutlet weak var month: UILabel!
@@ -31,10 +31,27 @@ class MoodGraphsViewController: UIViewController {
     // MARK: - View controller lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let moodRef = Services.checkUserIDMood()
         
-        print(user_ID)
-        
-        getMoodData()
+        Services.getisPatient(){(success) in
+            if (success)
+            {
+                self.getMoodData(reference: moodRef)
+            }
+            else
+            {
+                if(user_ID != "")
+                {
+                    self.getMoodData(reference: moodRef)
+                }
+                else
+                {
+                    self.moodChart.noDataText = "Please choose a patient in the Connect Screen"
+                    self.month.text = ""
+                }
+            }
+        }
         
         //Sets up the chart properties
         self.title = "Mood Bar Chart"
@@ -65,10 +82,10 @@ class MoodGraphsViewController: UIViewController {
     //      1. None
     // Output:
     //      1. Mood Graph is created using the data from the user in firebase
-    func getMoodData()
+    func getMoodData(reference: CollectionReference)
     {
         // gets all the documents for this particular user
-        moodRef.getDocuments()
+        reference.getDocuments()
         {
             (querySnapshot, err) in
             // the program will go into this if statement if the user authentication fails

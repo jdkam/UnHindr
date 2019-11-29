@@ -13,7 +13,7 @@ import FirebaseAuth
 class YearMoodGraphViewController: UIViewController {
 
     // gets the correct user database values
-    let moodRef = Services.db.collection("users").document(Services.userRef!).collection("Mood")
+    //let moodRef = Services.db.collection("users").document(Services.userRef!).collection("Mood")
     // storing the graph data
     var GraphData: [BarChartDataEntry] = []
     var yearMoodValues: [String:Double] = [:]
@@ -28,7 +28,27 @@ class YearMoodGraphViewController: UIViewController {
     // MARK: - View controller lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        getMoodData()
+       
+        let moodRef = Services.checkUserIDMood()
+        
+        Services.getisPatient() {(success) in
+            if (success)
+            {
+                self.getMoodData(reference: moodRef)
+            }
+            else
+            {
+                if(user_ID != "")
+                {
+                    self.getMoodData(reference: moodRef)
+                }
+                else
+                {
+                    self.yearGraph.noDataText = "Please choose a patient in the Connect Screen"
+                    self.numYear.text = ""
+                }
+            }
+        }
         
         // Sets up the chart properties
         self.title = "Bar Chart"
@@ -60,10 +80,10 @@ class YearMoodGraphViewController: UIViewController {
     //      1. None
     // Output:
     //      1. The yearly mood graph is created and displayed for the user to see
-    func getMoodData()
+    func getMoodData(reference: CollectionReference)
     {
         // gets all the documents for this particular user
-        moodRef.getDocuments()
+        reference.getDocuments()
             {
                 (querySnapshot, err) in
                 if err != nil
