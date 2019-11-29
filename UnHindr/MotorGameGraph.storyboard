@@ -63,6 +63,7 @@
                                 </constraints>
                                 <state key="normal" image="Back3"/>
                                 <connections>
+                                    <action selector="backHomeYear:" destination="qt9-zV-wtS" eventType="touchUpInside" id="gDs-Pr-AQz"/>
                                     <segue destination="H0Q-W9-gc1" kind="show" id="Enq-nB-NyG"/>
                                 </connections>
                             </button>
@@ -116,6 +117,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xch-hY-E1g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="qt9-zV-wtS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="429" y="-234"/>
         </scene>
@@ -194,6 +196,7 @@
                                 </constraints>
                                 <state key="normal" image="Back3"/>
                                 <connections>
+                                    <action selector="backHomeMonth:" destination="QaS-On-B8o" eventType="touchUpInside" id="96i-at-b7e"/>
                                     <segue destination="H0Q-W9-gc1" kind="show" id="Hdk-8K-MWL"/>
                                 </connections>
                             </button>
@@ -235,6 +238,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N6h-fP-UFk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="QaS-On-B8o" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-551" y="-14"/>
         </scene>
@@ -305,6 +309,7 @@
                                 </constraints>
                                 <state key="normal" image="Back3"/>
                                 <connections>
+                                    <action selector="backHome:" destination="tLe-i6-rUF" eventType="touchUpInside" id="7wQ-2C-Lgt"/>
                                     <segue destination="H0Q-W9-gc1" kind="show" id="Xgc-IW-q8z"/>
                                 </connections>
                             </button>
@@ -358,9 +363,9 @@
         <image name="greenBG" width="414" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RSB-Bo-mVW"/>
+        <segue reference="nnx-jG-tUt"/>
         <segue reference="1ha-tl-ME5"/>
-        <segue reference="Hdk-8K-MWL"/>
+        <segue reference="Enq-nB-NyG"/>
         <segue reference="lAa-Pe-SEE"/>
     </inferredMetricsTieBreakers>
 </document>

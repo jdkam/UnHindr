@@ -189,8 +189,9 @@ class MoodGraphsViewController: UIViewController {
                         let dbDate: Date = timestamp.dateValue()
                         // converts the date into a day
                         let dbDay = calendar.component(.day, from: dbDate)
+                        let dbMonth = calendar.component(.month, from: dbDate)
                         // checks if dbDay is greater than or equal to lastweekday and if dbDay is less than or equal to the currentDay
-                        if (dbDay >= lastWeekDay && dbDay <= currentDay)
+                        if (dbDay >= lastWeekDay && dbDay <= currentDay && dbMonth == currentMonth)
                         {
                             // checks if dbDay exists in the dictionary already
                             let keyExists = self.weekMoodValues[dbDay] != nil

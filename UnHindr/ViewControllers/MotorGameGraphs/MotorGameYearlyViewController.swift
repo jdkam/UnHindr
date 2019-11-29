@@ -47,7 +47,7 @@ class MotorGameYearlyViewController: UIViewController {
                 else
                 {
                     self.motorYearlyGraph.noDataText = "Please choose a patient in the Connect Screen"
-                    self.yearLabel.text = "No Data"
+                    self.yearLabel.text = ""
                 }
                 
             }

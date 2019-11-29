@@ -2,7 +2,7 @@
 //Creators: [Johnston]
 //Date created: [11/10/2019]
 //Updater name: [Johnston]
-//File description: [Reads values from the data]
+//File description: [Reads values from the data from firebase]
 
 import UIKit
 import Foundation
