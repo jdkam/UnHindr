@@ -37,7 +37,7 @@ class MonthMoodGraphViewController: UIViewController {
             }
             else
             {
-                if(user_ID == "")
+                if(user_ID != "")
                 {
                     self.getMoodData(reference:moodRef)
                 }
