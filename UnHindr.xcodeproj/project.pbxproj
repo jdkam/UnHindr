@@ -77,6 +77,7 @@
 		9E91389C2380D6C5006AD1F9 /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E91389B2380D6C5006AD1F9 /* ConnectViewController.swift */; };
 		9EE42465237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE42464237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift */; };
 		A2B5644B1E4149E09D599F82 /* Pods_UnHindr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7EAE4472764465EE4B52BD6 /* Pods_UnHindr.framework */; };
+		CD4A840D23932C6E00189605 /* EmergContactUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4A840C23932C6E00189605 /* EmergContactUITests.swift */; };
 		CDBC4013236E4FE8008934AF /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDBC4012236E4FE8008934AF /* Settings.storyboard */; };
 		CDBC4016236E501B008934AF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBC4015236E501B008934AF /* SettingsViewController.swift */; };
 		CDD946F4238B41C600A865D0 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD946F3238B41C600A865D0 /* SignUpViewController.swift */; };
@@ -180,17 +181,16 @@
 		9E9138982380D5B5006AD1F9 /* Connect.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Connect.storyboard; sourceTree = "<group>"; };
 		9E91389B2380D6C5006AD1F9 /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
 		9EE42464237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaregiverHomeScreenViewController.swift; sourceTree = "<group>"; };
+		CD4A840C23932C6E00189605 /* EmergContactUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergContactUITests.swift; sourceTree = "<group>"; };
 		CDBC4012236E4FE8008934AF /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		CDBC4015236E501B008934AF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		CDD946F3238B41C600A865D0 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		CDECEE9A2389D29D0074620D /* EmergencyContact.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmergencyContact.storyboard; sourceTree = "<group>"; };
+		CDECEE9C2389D2CE0074620D /* EmergencyContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyContactViewController.swift; sourceTree = "<group>"; };
 		D63F99425B3E2EFCA5604695 /* Pods-UnHindrTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindrTests.debug.xcconfig"; path = "Target Support Files/Pods-UnHindrTests/Pods-UnHindrTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DED04B884E18297F4A8774D1 /* Pods-UnHindrTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindrTests.release.xcconfig"; path = "Target Support Files/Pods-UnHindrTests/Pods-UnHindrTests.release.xcconfig"; sourceTree = "<group>"; };
 		DFCCB05E78CA6EE40144300E /* Pods-UnHindr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindr.release.xcconfig"; path = "Target Support Files/Pods-UnHindr/Pods-UnHindr.release.xcconfig"; sourceTree = "<group>"; };
 		F7EAE4472764465EE4B52BD6 /* Pods_UnHindr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnHindr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CDECEE9A2389D29D0074620D /* EmergencyContact.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmergencyContact.storyboard; sourceTree = "<group>"; };
-		CDECEE9C2389D2CE0074620D /* EmergencyContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyContactViewController.swift; sourceTree = "<group>"; };
-		D67DC310DD2C16DCFB8FDD88 /* Pods-UnHindr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindr.release.xcconfig"; path = "Target Support Files/Pods-UnHindr/Pods-UnHindr.release.xcconfig"; sourceTree = "<group>"; };
-		F1C3785DD264C27DA744F93C /* Pods-UnHindr-UnHindrUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindr-UnHindrUITests.debug.xcconfig"; path = "Target Support Files/Pods-UnHindr-UnHindrUITests/Pods-UnHindr-UnHindrUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -407,6 +407,7 @@
 				9DF3F8B82367D82D003CF8B9 /* UnHindrUITests.swift */,
 				9DF3F8BA2367D82D003CF8B9 /* Info.plist */,
 				81A7340D238200320069FE24 /* CogGameUITests.swift */,
+				CD4A840C23932C6E00189605 /* EmergContactUITests.swift */,
 			);
 			path = UnHindrUITests;
 			sourceTree = "<group>";
@@ -787,6 +788,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DFA139F2370F17D00F8B7B5 /* UnHindrUITests.swift in Sources */,
+				CD4A840D23932C6E00189605 /* EmergContactUITests.swift in Sources */,
 				9E286A352382968A00473055 /* MotGameUITests.swift in Sources */,
 				81A7340E238200320069FE24 /* CogGameUITests.swift in Sources */,
 			);
