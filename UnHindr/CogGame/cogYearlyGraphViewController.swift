@@ -165,7 +165,7 @@ class cogYearlyGraphViewController: UIViewController {
                     self.cogYearlyGraph.xAxis.valueFormatter = monthFormat as IAxisValueFormatter
                     // finalize any other chart properties
                     let set = BarChartDataSet(values: self.GraphData, label: "Cog Score")
-                    set.colors = [UIColor.green]
+                    set.colors = [UIColor.init(displayP3Red: 21/255, green: 187/255, blue: 18/255, alpha: 1)]
                     let chartData = BarChartData(dataSet: set)
                     self.cogYearlyGraph.fitBars = true
                     self.cogYearlyGraph.data = chartData

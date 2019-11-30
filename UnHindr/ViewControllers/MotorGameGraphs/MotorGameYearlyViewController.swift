@@ -160,7 +160,7 @@ class MotorGameYearlyViewController: UIViewController {
                     self.motorYearlyGraph.xAxis.valueFormatter = monthFormat as IAxisValueFormatter
                     // finalize any other chart properties
                     let set = BarChartDataSet(values: self.GraphData, label: "Motor Score")
-                    set.colors = [UIColor.green]
+                    set.colors = [UIColor.init(displayP3Red: 21/255, green: 187/255, blue: 18/255, alpha: 1)]
                     let chartData = BarChartData(dataSet: set)
                     self.motorYearlyGraph.fitBars = true
                     self.motorYearlyGraph.data = chartData

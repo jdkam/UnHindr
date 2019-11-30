@@ -158,7 +158,7 @@ class YearMoodGraphViewController: UIViewController {
                     self.yearGraph.xAxis.valueFormatter = monthFormat as IAxisValueFormatter
                     // finialize any other chart properties
                     let set = BarChartDataSet(values: self.GraphData, label: "Mood Score")
-                    set.colors = [UIColor.green]
+                    set.colors = [UIColor.init(displayP3Red: 21/255, green: 187/255, blue: 18/255, alpha: 1)]
                     let chartData = BarChartData(dataSet: set)
                     self.yearGraph.fitBars = true
                     self.yearGraph.data = chartData
