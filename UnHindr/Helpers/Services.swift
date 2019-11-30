@@ -112,6 +112,21 @@ class Services {
             
         }
     }
+    
+//    static func checkUserIDMed() -> CollectionReference
+//    {
+//        var medRef: CollectionReference
+//        if (user_ID == "")
+//        {
+//            medRef = Services.fullUserRef.document(Services.userRef!).collection(Services.medicationHistoryRef)
+//        }
+//        else
+//        {
+//            medRef = Services.fullUserRef.document(Services.userRef!).collection(Services.medicationHistoryRef)
+//        }
+//        return medRef
+//    }
+    
 }
 
 extension Date {

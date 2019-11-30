@@ -14,6 +14,7 @@ import FirebaseAuth
 class YearMedChartViewController: UIViewController {
 
     @IBOutlet weak var yearMedGraph: BarChartView!
+    @IBOutlet weak var yearLabel: UILabel!
     
     let medRef = Services.db.collection("users").document(Services.userRef!).collection("Medication")
     // storing the graph data
@@ -27,6 +28,26 @@ class YearMedChartViewController: UIViewController {
     // MARK: - View controller lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //        let medRef = Services.checkUserIDMed(){(success) in
+        //            if(success)
+        //            {
+        //                self.getMedData(reference: medRef)
+        //            }
+        //            else
+        //            {
+        //                if(user_ID == "")
+        //                {
+        //                    self.getMedData(reference: medRef)
+        //                }
+        //                else
+        //                {
+        //                    self.monthChart.noDataText = "Please choose a patient in the Conncet Screen"
+        //                    self.yearLabel.text = ""
+        //                }
+        //            }
+        //        }
+        
         
         getMedData()
         
@@ -60,6 +81,7 @@ class YearMedChartViewController: UIViewController {
     //      1. None
     // Output:
     //      1. The yearly medication graph is created and displayed for the user to see
+    // func getMedData(reference: CollectionReference)
     func getMedData()
     {
         // gets all the documents for this particular user
@@ -78,7 +100,7 @@ class YearMedChartViewController: UIViewController {
                     // finds the year from today's date
                     let currentYear = calendar.component(.year, from: today)
                     // sets the label to be the currentYear
-                    //self.yearLabel.text = "\(currentYear)"
+                    self.yearLabel.text = "\(currentYear)"
                     // iterates through all of the documents for that user
                     for document in querySnapshot!.documents
                     {

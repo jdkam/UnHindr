@@ -30,6 +30,26 @@ class ChartsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        let medRef = Services.checkUserIDMed(){(success) in
+//            if(success)
+//            {
+//                self.getMedicationData(reference: medRef)
+//            }
+//            else
+//            {
+//                if(user_ID == "")
+//                {
+//                    self.getMedicationData(reference: medRef)
+//                }
+//                else
+//                {
+//                    self.chtChart.noDataText = "Please choose a patient in the Conncet Screen"
+//                    self.monthLabel.text = ""
+//                }
+//            }
+//        }
+        
+        
         getMedicationData()
         
         // Sets up the chart properties
@@ -61,6 +81,7 @@ class ChartsViewController: UIViewController {
     //      1. None
     // Output:
     //      1. Medication Graph displays data from one week ago
+    // func getMedcationData(reference: CollectionReference)
     func getMedicationData()
     {
         // gets all the documents for this particular user

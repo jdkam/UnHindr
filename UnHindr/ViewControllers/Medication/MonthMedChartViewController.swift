@@ -26,6 +26,26 @@ class MonthMedChartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //        let medRef = Services.checkUserIDMed(){(success) in
+        //            if(success)
+        //            {
+        //                self.getMedData(reference: medRef)
+        //            }
+        //            else
+        //            {
+        //                if(user_ID == "")
+        //                {
+        //                    self.getMedData(reference: medRef)
+        //                }
+        //                else
+        //                {
+        //                    self.monthChart.noDataText = "Please choose a patient in the Conncet Screen"
+        //                    self.monthLabel.text = ""
+        //                }
+        //            }
+        //        }
+        
+        
         getMedData()
         
         // Sets up the chart properties
@@ -57,6 +77,7 @@ class MonthMedChartViewController: UIViewController {
     //      1. None
     // Output:
     //      1. The monthly medication graph is created and displayed for the user to see
+    // func getMedData(reference: CollectionReference)
     func getMedData()
     {
         medRef.getDocuments()
