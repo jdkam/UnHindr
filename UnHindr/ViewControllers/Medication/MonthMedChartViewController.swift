@@ -1,69 +1,66 @@
-//File: [MotorGameMonthlyViewController]
+//File: [MonthMedChartViewController]
 //Creators: [Johnston]
-//Date created: [11/17/2019]
+//Date created: [22/11/2019]
 //Updater name: [Johnston]
-//File description: [Reads cognitive data values from fireabse]
+//File description: [Reads medication data and properly graphs them for an entire month]
 
-
-import UIKit
 import Foundation
+import UIKit
 import Charts
 import FirebaseFirestore
 import FirebaseAuth
 
-class MotorGameMonthlyViewController: UIViewController {
-    
+// MARK: - Class to create the graphs for the amount of medication taken for each day in a one month period
+class MonthMedChartViewController: UIViewController {
+
+    @IBOutlet weak var monthChart: BarChartView!
     @IBOutlet weak var monthLabel: UILabel!
-    @IBOutlet weak var motorMonthGraph: BarChartView!
     
-    // gets the correct user database values
+    let medRef = Services.db.collection("users").document(Services.userRef!).collection("Medication")
     
-    // storing the graph data
     var GraphData: [BarChartDataEntry] = []
-    var monthMotorValues: [Int:Double] = [:]
-    var dayAverage = Array(repeating: 0, count: 31)
-    var dictDayAvg: [Int:Int] = [:]
     
+    var monthMedValues: [Int:Double] = [:]
     
     // MARK: - View controller lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        let motorRef = Services.checkUserIDMotorGame()
         
-        Services.getisPatient() {(success) in
-            if (success)
-            {
-                self.getMotorGameData(reference: motorRef)
-            }
-            else
-            {
-                if(user_ID != "")
-                {
-                    self.getMotorGameData(reference: motorRef)
-                }
-                else
-                {
-                    self.motorMonthGraph.noDataText = "Please choose a patient in the Connect Screen"
-                    self.monthLabel.text = "No Data"
-                }
-                
-            }
-        }
-
+        //        let medRef = Services.checkUserIDMed(){(success) in
+        //            if(success)
+        //            {
+        //                self.getMedData(reference: medRef)
+        //            }
+        //            else
+        //            {
+        //                if(user_ID == "")
+        //                {
+        //                    self.getMedData(reference: medRef)
+        //                }
+        //                else
+        //                {
+        //                    self.monthChart.noDataText = "Please choose a patient in the Conncet Screen"
+        //                    self.monthLabel.text = ""
+        //                }
+        //            }
+        //        }
+        
+        
+        getMedData()
         
         // Sets up the chart properties
         self.title = "Bar Chart"
-        motorMonthGraph.maxVisibleCount = 40
-        motorMonthGraph.drawBarShadowEnabled = false
-        motorMonthGraph.drawValueAboveBarEnabled = true
-        motorMonthGraph.highlightFullBarEnabled = false
-        motorMonthGraph.doubleTapToZoomEnabled = false
-        let leftAxis = motorMonthGraph.leftAxis
+        monthChart.maxVisibleCount = 40
+        monthChart.drawBarShadowEnabled = false
+        monthChart.drawValueAboveBarEnabled = true
+        monthChart.highlightFullBarEnabled = false
+        monthChart.doubleTapToZoomEnabled = false
+        let leftAxis = monthChart.leftAxis
         leftAxis.axisMinimum = 0
-        motorMonthGraph.rightAxis.enabled = false
-        let xAxis = motorMonthGraph.xAxis
+        monthChart.rightAxis.enabled = false
+        let xAxis = monthChart.xAxis
         xAxis.labelPosition = .bottom
-        let l = motorMonthGraph.legend
+        let l = monthChart.legend
         l.horizontalAlignment = .center
         l.verticalAlignment = .bottom
         l.orientation = .horizontal
@@ -71,18 +68,19 @@ class MotorGameMonthlyViewController: UIViewController {
         l.form = .square
         l.formToTextSpace = 8
         l.xEntrySpace = 6
-        motorMonthGraph.animate(xAxisDuration: 1.0, yAxisDuration: 2.0)
+        monthChart.animate(xAxisDuration: 1.0, yAxisDuration: 2.0)
         xAxis.drawGridLinesEnabled = false
     }
     
-    // MARK: - Obtain the months motor data from firebase
+    // MARK: - Obtain the months medication data from firebase
     // Input:
     //      1. None
     // Output:
-    //      1. The monthly motor graph is created and displayed for the user to see
-    func getMotorGameData(reference: CollectionReference)
+    //      1. The monthly medication graph is created and displayed for the user to see
+    // func getMedData(reference: CollectionReference)
+    func getMedData()
     {
-        reference.getDocuments()
+        medRef.getDocuments()
             {
                 (querySnapshot,err) in
                 if err != nil{
@@ -109,7 +107,7 @@ class MotorGameMonthlyViewController: UIViewController {
                     for document in querySnapshot!.documents
                     {
                         // gets the date numbers of the timestamp from firebase
-                        let timestamp: Timestamp = document.get("Time") as! Timestamp
+                        let timestamp: Timestamp = document.get("Date") as! Timestamp
                         // gets the date of the timestamp
                         let dbDate: Date = timestamp.dateValue()
                         // gets the month of the timestamp
@@ -120,19 +118,15 @@ class MotorGameMonthlyViewController: UIViewController {
                         if(dbMonth == currentMonth)
                         {
                             // checks if dbDay is already inside weekMoodValues dictionary
-                            let keyExists = self.monthMotorValues[dbDay] != nil
+                            let keyExists = self.monthMedValues[dbDay] != nil
                             if(keyExists)
                             {
                                 // adds the score found from dbDay into the correct spot in the dictionary
-                                self.monthMotorValues[dbDay] = (self.monthMotorValues[dbDay]!) + (document.get("Score") as! Double)
-                                // increments the average by one
-                                self.dictDayAvg[dbDay]! += 1
+                                self.monthMedValues[dbDay] = (self.monthMedValues[dbDay]!) + (document.get("Quantity") as! Double)
                             }
                             else{
                                 // sets the value of the new dbDay key to equal to the score
-                                self.monthMotorValues[dbDay] = (document.get("Score") as! Double)
-                                // sets the average to 1
-                                self.dictDayAvg[dbDay] = 1
+                                self.monthMedValues[dbDay] = (document.get("Quantity") as! Double)
                             }
                         }
                     }
@@ -142,15 +136,15 @@ class MotorGameMonthlyViewController: UIViewController {
                     
                     var i = 1
                     // goes through all of the days of the month
-                    // checks each day inside the monthMotorValues dictionary
+                    // checks each day inside the monthMedValues dictionary
                     while (i <= numDays)
                     {
                         // checks if the day exists in the dictionary
-                        let dayExists = self.monthMotorValues[i] != nil
+                        let dayExists = self.monthMedValues[i] != nil
                         if(dayExists)
                         {
                             // sets data as the average of all database values of that particular day
-                            let data = BarChartDataEntry(x: Double(i), y: (self.monthMotorValues[i]!)/Double(self.dictDayAvg[i]!))
+                            let data = BarChartDataEntry(x: Double(i), y: (self.monthMedValues[i]!))
                             self.GraphData.append(data)
                         }
                         else{
@@ -161,15 +155,14 @@ class MotorGameMonthlyViewController: UIViewController {
                         i += 1
                     }
                     // finalize setup of graph after the data has been inputted
-                    let set = BarChartDataSet(values: self.GraphData, label: "Motor Score")
-                    set.colors = [UIColor.init(displayP3Red: 21/255, green: 187/255, blue: 18/255, alpha: 1)]
+                    let set = BarChartDataSet(values: self.GraphData, label: "Medication Graph")
+                    set.colors = [UIColor.init(displayP3Red: 0/255, green: 128/255, blue: 255/255, alpha: 1)]
                     let chartData = BarChartData(dataSet: set)
-                    self.motorMonthGraph.fitBars = true
-                    self.motorMonthGraph.data = chartData
-                    self.motorMonthGraph.setVisibleXRangeMaximum(7)
-                    self.motorMonthGraph.moveViewToX(Double(numDays-7))
+                    self.monthChart.fitBars = true
+                    self.monthChart.data = chartData
+                    self.monthChart.setVisibleXRangeMaximum(7)
+                    self.monthChart.moveViewToX(Double(numDays-7))
                 }
         }
     }
-
 }

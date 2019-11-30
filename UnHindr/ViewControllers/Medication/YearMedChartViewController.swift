@@ -1,8 +1,8 @@
-//File: [YearMoodGraphViewController.swift]
+//File: [YearMedChartViewController]
 //Creators: [Johnston]
-//Date created: [11/10/2019]
+//Date created: [22/11/2019]
 //Updater name: [Johnston]
-//File description: [Reads mood data values from fireabse]
+//File description: [Reads medication data and properly graphs them for an entire year]
 
 import UIKit
 import Foundation
@@ -10,40 +10,61 @@ import Charts
 import FirebaseFirestore
 import FirebaseAuth
 
-class YearMoodGraphViewController: UIViewController {
+// MARK: - Class to create the graphs for the amount of medication taken in one month for a one year period
+class YearMedChartViewController: UIViewController {
 
-    // gets the correct user database values
-    let moodRef = Services.db.collection("users").document(Services.userRef!).collection("Mood")
+    @IBOutlet weak var yearMedGraph: BarChartView!
+    @IBOutlet weak var yearLabel: UILabel!
+    
+    let medRef = Services.db.collection("users").document(Services.userRef!).collection("Medication")
     // storing the graph data
     var GraphData: [BarChartDataEntry] = []
-    var yearMoodValues: [String:Double] = [:]
-    var monthAverage = Array(repeating: 0, count: 12)
-    var dictMonthAvg: [String:Double] = [:]
+    
+    var yearMedValues: [String:Double] = [:]
+
     // this array is to set the x axis values as strings
     let months = ["January","February","March","April","May","June","July","August","September","October","November","December"]
-    
-    @IBOutlet weak var yearGraph: BarChartView!
-    @IBOutlet weak var numYear: UILabel!
     
     // MARK: - View controller lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        getMoodData()
+        
+        //        let medRef = Services.checkUserIDMed(){(success) in
+        //            if(success)
+        //            {
+        //                self.getMedData(reference: medRef)
+        //            }
+        //            else
+        //            {
+        //                if(user_ID == "")
+        //                {
+        //                    self.getMedData(reference: medRef)
+        //                }
+        //                else
+        //                {
+        //                    self.monthChart.noDataText = "Please choose a patient in the Conncet Screen"
+        //                    self.yearLabel.text = ""
+        //                }
+        //            }
+        //        }
+        
+        
+        getMedData()
         
         // Sets up the chart properties
         self.title = "Bar Chart"
-        yearGraph.maxVisibleCount = 40
-        yearGraph.drawBarShadowEnabled = false
-        yearGraph.drawValueAboveBarEnabled = true
-        yearGraph.highlightFullBarEnabled = false
-        yearGraph.doubleTapToZoomEnabled = false
-        yearGraph.animate(xAxisDuration: 1.0, yAxisDuration: 2.0)
-        let leftAxis = yearGraph.leftAxis
+        yearMedGraph.maxVisibleCount = 40
+        yearMedGraph.drawBarShadowEnabled = false
+        yearMedGraph.drawValueAboveBarEnabled = true
+        yearMedGraph.highlightFullBarEnabled = false
+        yearMedGraph.doubleTapToZoomEnabled = false
+        yearMedGraph.animate(xAxisDuration: 1.0, yAxisDuration: 2.0)
+        let leftAxis = yearMedGraph.leftAxis
         leftAxis.axisMinimum = 0
-        yearGraph.rightAxis.enabled = false
-        let xAxis = yearGraph.xAxis
+        yearMedGraph.rightAxis.enabled = false
+        let xAxis = yearMedGraph.xAxis
         xAxis.labelPosition = .bottom
-        let l = yearGraph.legend
+        let l = yearMedGraph.legend
         l.horizontalAlignment = .center
         l.verticalAlignment = .bottom
         l.orientation = .horizontal
@@ -52,24 +73,24 @@ class YearMoodGraphViewController: UIViewController {
         l.formToTextSpace = 8
         l.xEntrySpace = 6
         xAxis.drawGridLinesEnabled = false
-        yearGraph.xAxis.labelRotationAngle = -45
+        yearMedGraph.xAxis.labelRotationAngle = -45
     }
     
-    // MARK: - Obtain the yearly mood data from firebase
+    // MARK: - Obtain the yearly medication data from firebase
     // Input:
     //      1. None
     // Output:
-    //      1. The yearly mood graph is created and displayed for the user to see
-    func getMoodData()
+    //      1. The yearly medication graph is created and displayed for the user to see
+    // func getMedData(reference: CollectionReference)
+    func getMedData()
     {
         // gets all the documents for this particular user
-        moodRef.getDocuments()
+        medRef.getDocuments()
             {
                 (querySnapshot, err) in
-                if err != nil
-                    // the program will go into this if statement if the user authentication fails
+                if err != nil // the program will go into this if statement if the user authentication fails
                 {
-                    print("Error getting yearly mood data")
+                    print("Error getting yearly cognitive data")
                 }
                 else
                 {
@@ -79,7 +100,7 @@ class YearMoodGraphViewController: UIViewController {
                     // finds the year from today's date
                     let currentYear = calendar.component(.year, from: today)
                     // sets the label to be the currentYear
-                    self.numYear.text = "\(currentYear)"
+                    self.yearLabel.text = "\(currentYear)"
                     // iterates through all of the documents for that user
                     for document in querySnapshot!.documents
                     {
@@ -97,20 +118,16 @@ class YearMoodGraphViewController: UIViewController {
                         if(dbYear == currentYear)
                         {
                             // checks if the month already exists in the dictionary
-                            let keyExists = self.yearMoodValues[monthName] != nil
+                            let keyExists = self.yearMedValues[monthName] != nil
                             if(keyExists)
                             {
                                 // when the key exists, add the score on top of the value that is already in the dictionary
-                                self.yearMoodValues[monthName] = (self.yearMoodValues[monthName]!) + (document.get("Score") as! Double)
-                                // increment the average for that month
-                                self.dictMonthAvg[monthName]! += 1
+                                self.yearMedValues[monthName] = (self.yearMedValues[monthName]!) + (document.get("Quantity") as! Double)
                             }
                             else
                             {
                                 // creates the new key with the score from the database as its value
-                                self.yearMoodValues[monthName] = (document.get("Score") as! Double)
-                                // sets the average as 1
-                                self.dictMonthAvg[monthName] = 1
+                                self.yearMedValues[monthName] = (document.get("Quantity") as! Double)
                             }
                         }
                     }
@@ -119,11 +136,11 @@ class YearMoodGraphViewController: UIViewController {
                     for i in self.months
                     {
                         // checks if that month exists inside the dictionary
-                        let dayExists = self.yearMoodValues[i] != nil
+                        let dayExists = self.yearMedValues[i] != nil
                         if(dayExists)
                         {
                             // sets the data value as the average from yearMoodValue[i] and dictMonthAvg[i] and appends the data to the GraphData array
-                            let data = BarChartDataEntry(x: Double(j),y: Double(self.yearMoodValues[i]!/self.dictMonthAvg[i]!))
+                            let data = BarChartDataEntry(x: Double(j),y: Double(self.yearMedValues[i]!))
                             self.GraphData.append(data)
                         }
                         else{
@@ -133,21 +150,21 @@ class YearMoodGraphViewController: UIViewController {
                         }
                         j += 1
                     }
-                    // calls on the helper function to set the xaxis values as strings
+                    // calls on the helper function to set the x axis values as strings
                     let monthFormat = BarChartFormatter(values: self.months)
-                    self.yearGraph.xAxis.valueFormatter = monthFormat as IAxisValueFormatter
-                    // finialize any other chart properties
-                    let set = BarChartDataSet(values: self.GraphData, label: "Mood Score")
-                    set.colors = [UIColor.init(displayP3Red: 21/255, green: 187/255, blue: 18/255, alpha: 1)]
+                    self.yearMedGraph.xAxis.valueFormatter = monthFormat as IAxisValueFormatter
+                    // finalize any other chart properties
+                    let set = BarChartDataSet(values: self.GraphData, label: "Medication Data")
+                    set.colors = [UIColor.init(displayP3Red: 0/255, green: 128/255, blue: 255/255, alpha: 1)]
                     let chartData = BarChartData(dataSet: set)
-                    self.yearGraph.fitBars = true
-                    self.yearGraph.data = chartData
-                    self.yearGraph.setVisibleXRangeMaximum(6)
-                    self.yearGraph.moveViewToX(6)
+                    self.yearMedGraph.fitBars = true
+                    self.yearMedGraph.data = chartData
+                    self.yearMedGraph.setVisibleXRangeMaximum(6)
+                    self.yearMedGraph.moveViewToX(6)
                 }
-            }
+        }
     }
-
+    
     // MARK: - Helper class for XAxis labeling of medication graph
     private class BarChartFormatter: NSObject, IAxisValueFormatter {
         

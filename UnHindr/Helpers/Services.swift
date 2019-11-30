@@ -117,6 +117,19 @@ class Services {
         }
     }
     
+//    static func checkUserIDMed() -> CollectionReference
+//    {
+//        var medRef: CollectionReference
+//        if (user_ID == "")
+//        {
+//            medRef = Services.fullUserRef.document(Services.userRef!).collection(Services.medicationHistoryRef)
+//        }
+//        else
+//        {
+//            medRef = Services.fullUserRef.document(Services.userRef!).collection(Services.medicationHistoryRef)
+//        }
+//        return medRef
+//    }
     
     // Checks whether the current logged in user is a patient or not
     // Input:

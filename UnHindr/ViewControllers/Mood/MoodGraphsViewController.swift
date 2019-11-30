@@ -172,7 +172,7 @@ class MoodGraphsViewController: UIViewController {
                     self.moodChart.xAxis.valueFormatter = dayFormat as IAxisValueFormatter
                     // formatting the graph
                     let set = BarChartDataSet(values: self.GraphData, label: "Mood")
-                    set.colors = [UIColor.green]
+                    set.colors = [UIColor.init(displayP3Red: 21/255, green: 187/255, blue: 18/255, alpha: 1)]
                     let chartData = BarChartData(dataSet: set)
                     self.moodChart.fitBars = true
                     self.moodChart.data = chartData
@@ -232,7 +232,7 @@ class MoodGraphsViewController: UIViewController {
                 }
                 // formatting the graph
                 let set = BarChartDataSet(values: self.GraphData, label: "Mood")
-                set.colors = [UIColor.green]
+                set.colors = [UIColor.init(displayP3Red: 21/255, green: 187/255, blue: 18/255, alpha: 1)]
                 let chartData = BarChartData(dataSet: set)
                 self.moodChart.fitBars = true
                 self.moodChart.data = chartData

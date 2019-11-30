@@ -175,7 +175,7 @@ class CogGameGraphViewController: UIViewController {
                         self.cogGraph.xAxis.valueFormatter = dayFormat as IAxisValueFormatter
                         // formatting the graph
                         let set = BarChartDataSet(values: self.GraphData, label: "Mood")
-                        set.colors = [UIColor.green]
+                        set.colors = [UIColor.init(displayP3Red: 21/255, green: 187/255, blue: 18/255, alpha: 1)]
                         let chartData = BarChartData(dataSet: set)
                         self.cogGraph.fitBars = true
                         self.cogGraph.data = chartData
@@ -235,7 +235,7 @@ class CogGameGraphViewController: UIViewController {
                     }
                     // formatting the graph
                     let set = BarChartDataSet(values: self.GraphData, label: "Cog Score")
-                    set.colors = [UIColor.green]
+                    set.colors = [UIColor.init(displayP3Red: 21/255, green: 187/255, blue: 18/255, alpha: 1)]
                     let chartData = BarChartData(dataSet: set)
                     self.cogGraph.fitBars = true
                     self.cogGraph.data = chartData
