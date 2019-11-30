@@ -83,6 +83,8 @@
 		9E4EAB35237E5FDE00FC051B /* ModeChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4EAB34237E5FDE00FC051B /* ModeChoiceViewController.swift */; };
 		9E9138992380D5B5006AD1F9 /* Connect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E9138982380D5B5006AD1F9 /* Connect.storyboard */; };
 		9E91389C2380D6C5006AD1F9 /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E91389B2380D6C5006AD1F9 /* ConnectViewController.swift */; };
+		9EB086902393314000C6DDC0 /* Location.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EB0868F2393314000C6DDC0 /* Location.storyboard */; };
+		9EB08695239332C800C6DDC0 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB08694239332C800C6DDC0 /* LocationViewController.swift */; };
 		9EE42465237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE42464237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift */; };
 		A2B5644B1E4149E09D599F82 /* Pods_UnHindr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7EAE4472764465EE4B52BD6 /* Pods_UnHindr.framework */; };
 		CDBC4013236E4FE8008934AF /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDBC4012236E4FE8008934AF /* Settings.storyboard */; };
@@ -193,6 +195,8 @@
 		9E4EAB34237E5FDE00FC051B /* ModeChoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeChoiceViewController.swift; sourceTree = "<group>"; };
 		9E9138982380D5B5006AD1F9 /* Connect.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Connect.storyboard; sourceTree = "<group>"; };
 		9E91389B2380D6C5006AD1F9 /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
+		9EB0868F2393314000C6DDC0 /* Location.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Location.storyboard; sourceTree = "<group>"; };
+		9EB08694239332C800C6DDC0 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		9EE42464237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaregiverHomeScreenViewController.swift; sourceTree = "<group>"; };
 		CDBC4012236E4FE8008934AF /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		CDBC4015236E501B008934AF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -244,6 +248,7 @@
 		2DD670FC236BBF79005948DF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				9EB086932393329600C6DDC0 /* Location */,
 				9E286A36238299FF00473055 /* MotorGameGraphs */,
 				9E286A33238295F800473055 /* MotorGame */,
 				9E91389A2380D6B6006AD1F9 /* Connect */,
@@ -383,6 +388,7 @@
 		9DF3F8972367D826003CF8B9 /* UnHindr */ = {
 			isa = PBXGroup;
 			children = (
+				9EB0868F2393314000C6DDC0 /* Location.storyboard */,
 				817B5F6A2388A010009BF125 /* Chat */,
 				9E286A2D2382957600473055 /* MotorGame.storyboard */,
 				707E9F5D23827EF2006A3AF5 /* CogGameGraphs.storyboard */,
@@ -483,6 +489,14 @@
 				9E91389B2380D6C5006AD1F9 /* ConnectViewController.swift */,
 			);
 			path = Connect;
+			sourceTree = "<group>";
+		};
+		9EB086932393329600C6DDC0 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				9EB08694239332C800C6DDC0 /* LocationViewController.swift */,
+			);
+			path = Location;
 			sourceTree = "<group>";
 		};
 		CDBC4014236E4FF2008934AF /* Settings */ = {
@@ -613,6 +627,7 @@
 				9DFB75C0236F7B15006321B8 /* Assets.xcassets in Resources */,
 				707E9F6123827EF2006A3AF5 /* MotorGameGraph.storyboard in Resources */,
 				81B5908E2378F8DD00BA49AF /* CogGame.storyboard in Resources */,
+				9EB086902393314000C6DDC0 /* Location.storyboard in Resources */,
 				81BDBDA1237F8E9C00F4C970 /* dingwrong.wav in Resources */,
 				707E9F6223827EF2006A3AF5 /* CogGameGraphs.storyboard in Resources */,
 				707E9F6023827EF2006A3AF5 /* WellnessGraphs.storyboard in Resources */,
@@ -767,6 +782,7 @@
 				98F115EB236D2B770082A1B1 /* MoodQ5ViewController.swift in Sources */,
 				8176FAB7237B8A9C0083B445 /* Card.swift in Sources */,
 				9E91389C2380D6C5006AD1F9 /* ConnectViewController.swift in Sources */,
+				9EB08695239332C800C6DDC0 /* LocationViewController.swift in Sources */,
 				707E9F7423827F85006A3AF5 /* MonthMoodGraphViewController.swift in Sources */,
 				98F115E5236D23380082A1B1 /* MoodQ2ViewController.swift in Sources */,
 				CDBC4016236E501B008934AF /* SettingsViewController.swift in Sources */,

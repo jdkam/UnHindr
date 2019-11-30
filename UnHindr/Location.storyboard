@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="crd-WC-LTS">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--HomeScreen-->
+        <scene sceneID="iRm-ij-5y8">
+            <objects>
+                <viewControllerPlaceholder storyboardName="HomeScreen" id="qKt-ys-SEO" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="hRZ-CX-1k5"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xOh-6l-QDc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-712" y="-106"/>
+        </scene>
+        <!--Location View Controller-->
+        <scene sceneID="rw0-gT-PB9">
+            <objects>
+                <viewController id="crd-WC-LTS" customClass="LocationViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="D9b-bo-t7R">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsScale="YES" showsTraffic="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mqv-mE-u7F">
+                                <rect key="frame" x="0.0" y="120" width="414" height="776"/>
+                            </mapView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LocationBG" translatesAutoresizingMaskIntoConstraints="NO" id="D6X-A4-znW">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="FBY-BF-4Kx"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2zI-so-g0m" userLabel="Home button">
+                                <rect key="frame" x="20" y="37" width="83" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="2zI-so-g0m" secondAttribute="height" multiplier="83:65" id="8tH-hk-OI7"/>
+                                    <constraint firstAttribute="width" constant="83" id="A8V-fr-xBK"/>
+                                    <constraint firstAttribute="height" constant="65" id="BYj-ag-7cI"/>
+                                </constraints>
+                                <state key="normal" image="home-white"/>
+                                <connections>
+                                    <segue destination="qKt-ys-SEO" kind="show" id="5XF-x7-ldN"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SEa-3W-6cu">
+                                <rect key="frame" x="257" y="60" width="147" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="kdd-QT-lji"/>
+                                    <constraint firstAttribute="width" constant="147" id="uFP-Xb-WaZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BrL-D7-h3G">
+                                <rect key="frame" x="323" y="634" width="60" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="eject" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NcY-yd-Jy7">
+                                <rect key="frame" x="311" y="695" width="83" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="location.circle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="Center:" destination="crd-WC-LTS" eventType="touchUpInside" id="GJM-AY-lXr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="2zI-so-g0m" firstAttribute="top" secondItem="D6X-A4-znW" secondAttribute="bottom" constant="-83" id="4qe-z4-ec9"/>
+                            <constraint firstItem="D6X-A4-znW" firstAttribute="leading" secondItem="MKI-iN-x9k" secondAttribute="leading" id="9ZP-1N-eS0"/>
+                            <constraint firstItem="D6X-A4-znW" firstAttribute="trailing" secondItem="MKI-iN-x9k" secondAttribute="trailing" id="A6R-Mw-1tH"/>
+                            <constraint firstItem="SEa-3W-6cu" firstAttribute="top" secondItem="D6X-A4-znW" secondAttribute="bottom" constant="-60" id="JbF-16-yry"/>
+                            <constraint firstItem="2zI-so-g0m" firstAttribute="leading" secondItem="MKI-iN-x9k" secondAttribute="leading" constant="20" id="Jmv-2G-dUK"/>
+                            <constraint firstItem="mqv-mE-u7F" firstAttribute="top" secondItem="D6X-A4-znW" secondAttribute="bottom" id="X5A-Hy-sWx"/>
+                            <constraint firstItem="MKI-iN-x9k" firstAttribute="trailing" secondItem="mqv-mE-u7F" secondAttribute="trailing" id="cFm-Po-dR9"/>
+                            <constraint firstItem="D6X-A4-znW" firstAttribute="top" secondItem="D9b-bo-t7R" secondAttribute="top" id="dHc-8t-OEb"/>
+                            <constraint firstItem="MKI-iN-x9k" firstAttribute="bottom" secondItem="mqv-mE-u7F" secondAttribute="bottom" constant="-34" id="fX1-lN-Cv7"/>
+                            <constraint firstItem="MKI-iN-x9k" firstAttribute="trailing" secondItem="SEa-3W-6cu" secondAttribute="trailing" constant="10" id="gsK-mG-9Zy"/>
+                            <constraint firstItem="mqv-mE-u7F" firstAttribute="leading" secondItem="MKI-iN-x9k" secondAttribute="leading" id="qbL-EK-zHH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MKI-iN-x9k"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="mqv-mE-u7F" id="XdB-PO-ITd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uVj-FR-asB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="105.79710144927537" y="57.589285714285708"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="LocationBG" width="563" height="195"/>
+        <image name="eject" catalog="system" width="64" height="56"/>
+        <image name="home-white" width="400" height="312"/>
+        <image name="location.circle" catalog="system" width="64" height="60"/>
+    </resources>
+</document>
