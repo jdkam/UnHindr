@@ -27,20 +27,24 @@ class Services {
     // Reference to all users
     static let fullUserRef = db.collection("users")
     
-    // User profile reference
-    static let userProfileRef = db.collection("users").document(userRef!)
-    
-    // Medication plan reference
-    static let medicationPlanRef = db.collection("users").document(userRef!).collection("MedicationPlan")
-    
-    // Medication history reference
-    static let medicationHistoryRef = db.collection("users").document(userRef!).collection("Medication")
-    
-    // Connections reference
-    static let connectionRef = db.collection("users").document(userRef!).collection("Connections")
-    
-    // Motor Game reference
-    static let motorGameRef = db.collection("users").document(userRef!).collection("MotorGameData")
+//    // User profile reference
+//    static var userProfileRef: DocumentReference?//db.collection("users").document(userRef!)
+//
+//    // Medication plan reference
+    static let medPlanName = "MedicationPlan"
+//    static var medicationPlanRef = db.collection("users").document(userRef!).collection("MedicationPlan")
+
+//    // Medication history reference
+    static let medHistoryName = "Medication"
+//    static var medicationHistoryRef = db.collection("users").document(userRef!).collection("Medication")
+
+//    // Connections reference
+    static let connectionName = "Connections"
+//    static var connectionRef = db.collection("users").document(userRef!).collection("Connections")
+
+//    // Motor Game reference
+    static let motorGameName = "MotorGameData"
+//    static var motorGameRef = db.collection("users").document(userRef!).collection("MotorGameData")
     
     // MARK: - Retrieve reference to a patient's data
     // Input:
@@ -95,7 +99,7 @@ class Services {
     // Output:
     //      1. returns true if user is a patient else false
     static func fetchModeStatus(_ userdoc: String, completionHandler: @escaping (_ result: Bool? ) -> Void){
-        Services.userProfileRef.getDocument { (documentSnapshot, err) in
+        fullUserRef.document(userRef!).getDocument { (documentSnapshot, err) in
             if err != nil {
                 //error
             }
@@ -126,6 +130,40 @@ class Services {
 //        }
 //        return medRef
 //    }
+    
+    // Checks whether the current logged in user is a patient or not
+    // Input:
+    //      1. None
+    // Output:
+    //      1. returns true if user is a patient
+    //      2. returns false if user is a caregiver
+    static func getisPatient(completionHandler: @escaping (_ result: Bool) -> Void)
+    {
+        Services.db.collection("users").whereField("email", isEqualTo: userEmail).whereField("isPatient", isEqualTo: true).getDocuments() {
+            (querySnapshot,err) in
+            if querySnapshot!.isEmpty {
+                completionHandler(false)
+            }
+            else
+            {
+                completionHandler(true)
+            }
+        }
+    }
+    
+    static func checkUserIDMotorGame() -> CollectionReference
+    {
+        var motorRef: CollectionReference
+        if (user_ID == "")
+        {
+            motorRef = Services.db.collection("users").document(Services.userRef!).collection("MotorGameData")
+        }
+        else
+        {
+            motorRef = Services.fullUserRef.document(user_ID).collection(Services.motorGameName)
+        }
+        return motorRef
+    }
     
 }
 

@@ -90,6 +90,9 @@
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ch-IM-MQm" userLabel="chat">
                                                 <rect key="frame" x="176.66666666666663" y="0.0" width="194.33333333333337" height="171.66666666666666"/>
                                                 <state key="normal" image="Chat"/>
+                                                <connections>
+                                                    <segue destination="Lae-QK-ce8" kind="show" id="ZLK-Gz-84y"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -138,6 +141,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3bg-IS-j1J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="648" y="57"/>
+        </scene>
+        <!--Chat-->
+        <scene sceneID="XbC-EY-4jT">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Chat" id="Lae-QK-ce8" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="5qq-gA-D5j"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gvm-aC-17F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="757" y="375"/>
         </scene>
     </scenes>
     <resources>

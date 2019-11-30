@@ -44,6 +44,9 @@ class CogGameUITests: XCTestCase {
         XCTAssert(app.buttons["CogGameButton"].waitForExistence(timeout: 5))
         app.buttons["CogGameButton"].tap()
         
+        XCTAssert(app.buttons["Exit Game Button"].waitForExistence(timeout: 5))
+        app.buttons["Exit Game Button"].tap()
+        
     }
     
     
@@ -60,6 +63,9 @@ class CogGameUITests: XCTestCase {
         
         XCTAssert(app.buttons["CogGameButton"].waitForExistence(timeout: 5))
         app.buttons["CogGameButton"].tap()
+        
+//        XCTAssert(app.scrollViews.otherElements.children(matching: .button).matching(identifier: "Button").element(boundBy: 0).waitForExistence(timeout: 5))
+//        app.scrollViews.otherElements.children(matching: .button).matching(identifier: "Button").element(boundBy: 0).tap()
         
         
         let collectionViewsQuery = app.collectionViews

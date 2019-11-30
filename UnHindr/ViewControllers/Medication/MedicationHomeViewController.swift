@@ -11,6 +11,10 @@ import UIKit
 import FirebaseFirestore
 
 class MedicationHomeViewController: UIViewController, NewMedDelegate {
+    
+    let userProfileRef = Services.fullUserRef.document(Services.userRef!)
+    let medicationPlanRef = Services.fullUserRef.document(Services.userRef!).collection(Services.medPlanName)
+    let medicationHistoryRef = Services.fullUserRef.document(Services.userRef!).collection(Services.medHistoryName)
     // Card index
     var cardIndex: Int = 0
     
@@ -51,7 +55,7 @@ class MedicationHomeViewController: UIViewController, NewMedDelegate {
             else {
                 self.usedCards = []
                 // Reset timestamp and usedcards on firestore
-                Services.userProfileRef.updateData([
+                self.userProfileRef.updateData([
                     "MedPlanTimestamp": Timestamp(date: Date()),
                     "MedPlan": []
                     ])
@@ -116,7 +120,7 @@ class MedicationHomeViewController: UIViewController, NewMedDelegate {
     // Output:
     //      1. querysnapshot of medication plan
     private func getDBMedicationPlan(completionHandler: @escaping (_ result: QuerySnapshot?) -> Void){
-        Services.medicationPlanRef
+        medicationPlanRef
             .whereField("Day", arrayContains: Date.getDayOfWeek(Timestamp.init()).rawValue)
             .order(by: "ReminderTime")
             .getDocuments { (querySnapshot, err) in
@@ -136,7 +140,7 @@ class MedicationHomeViewController: UIViewController, NewMedDelegate {
     // Output:
     //      1. array of taken meds and timestamp
     private func getDBPlanTaken(completionHandler: @escaping (_ result: [Int], Timestamp) -> Void){
-        Services.userProfileRef.getDocument { (documentSnapshot, error) in
+        userProfileRef.getDocument { (documentSnapshot, error) in
             if error != nil {
                 // Error
             }
@@ -293,11 +297,12 @@ class MedicationHomeViewController: UIViewController, NewMedDelegate {
     //      1. Adds the current card to the usedCard list and and attempts to fetch the next card
     @IBAction func checkmarkTapped(_ sender: UIButton) {
         // Add new document to medication history
-        Services.medicationHistoryRef.addDocument(data:[
+        // TODO: check if fields are filled out
+        medicationHistoryRef.addDocument(data:[
             "Date": Timestamp(date: Date()),
-            "Dosage": planSnapshot!.documents[cardIndex].get("Dosage") as? Int,
-            "Medication": planSnapshot!.documents[cardIndex].get("Medication") as? String,
-            "Quantity": planSnapshot!.documents[cardIndex].get("Quantity") as? Int
+            "Dosage": planSnapshot!.documents[cardIndex].get("Dosage") as? Int ?? 0,
+            "Medication": planSnapshot!.documents[cardIndex].get("Medication") as? String ?? "None",
+            "Quantity": planSnapshot!.documents[cardIndex].get("Quantity") as? Int ?? 0
             ])
         // Add card to read list
         self.usedCards.append(cardIndex)
@@ -311,7 +316,7 @@ class MedicationHomeViewController: UIViewController, NewMedDelegate {
     
     private func updateMedPlanTakenArray() {
         // Add to MedPlan array and update timestamp
-        Services.userProfileRef.updateData([
+        userProfileRef.updateData([
             "MedPlanTimestamp": Timestamp(date: Date()),
             "MedPlan": self.usedCards
             ])

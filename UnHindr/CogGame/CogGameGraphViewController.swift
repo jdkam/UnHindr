@@ -23,7 +23,7 @@ class CogGameGraphViewController: UIViewController {
     @IBOutlet weak var month: UILabel!
     
     // gets the correct user database values
-    let cogRef = Services.db.collection("users").document(Services.userRef!).collection("CogGameData")
+    let cogRef = Services.db.collection(user_ID).document(Services.userRef!).collection("CogGameData")
     
     // storing the graph data
     var GraphData: [BarChartDataEntry] = []
@@ -38,7 +38,7 @@ class CogGameGraphViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getCogData()
-        
+               
         // Sets up the chart properties
         self.title = "Cog Bar Chart"
         cogGraph.maxVisibleCount = 40

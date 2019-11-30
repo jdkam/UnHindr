@@ -17,7 +17,7 @@ class MotorGameYearlyViewController: UIViewController {
     @IBOutlet weak var motorYearlyGraph: BarChartView!
     
     // gets the correct user database values
-    let motorRef = Services.db.collection("users").document(Services.userRef!).collection("MotorGameData")
+    
     
     // storing the graph data
     var GraphData: [BarChartDataEntry] = []
@@ -31,8 +31,27 @@ class MotorGameYearlyViewController: UIViewController {
     // MARK: - View controller lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        getMotorData()
+        let motorRef = Services.checkUserIDMotorGame()
+        
+        Services.getisPatient() {(success) in
+            if (success)
+            {
+                self.getMotorData(reference: motorRef)
+            }
+            else
+            {
+                if(user_ID != "")
+                {
+                    self.getMotorData(reference: motorRef)
+                }
+                else
+                {
+                    self.motorYearlyGraph.noDataText = "Please choose a patient in the Connect Screen"
+                    self.yearLabel.text = "No Data"
+                }
+                
+            }
+        }
         
         // Sets up the chart properties
         self.title = "Bar Chart"
@@ -64,10 +83,10 @@ class MotorGameYearlyViewController: UIViewController {
     //      1. None
     // Output:
     //      1. The yearly motor graph is created and displayed for the user to see
-    func getMotorData()
+    func getMotorData(reference: CollectionReference)
     {
         // gets all the documents for this particular user
-        motorRef.getDocuments()
+        reference.getDocuments()
             {
                 (querySnapshot, err) in
                 if err != nil // the program will go into this if statement if the user authentication fails

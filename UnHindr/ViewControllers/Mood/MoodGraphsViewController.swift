@@ -11,9 +11,9 @@ import FirebaseFirestore
 import FirebaseAuth
 
 class MoodGraphsViewController: UIViewController {
-    
+     
     // gets the correct user database values
-    let moodRef = Services.db.collection("users").document(Services.userRef!).collection("Mood")
+    let moodRef = Services.db.collection("users").document(userID).collection("Mood")
     
     @IBOutlet weak var moodChart: BarChartView!
     @IBOutlet weak var month: UILabel!
@@ -31,6 +31,9 @@ class MoodGraphsViewController: UIViewController {
     // MARK: - View controller lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(user_ID)
+        
         getMoodData()
         
         //Sets up the chart properties
