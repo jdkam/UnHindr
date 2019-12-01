@@ -18,7 +18,7 @@ class ChartsViewController: UIViewController {
     @IBOutlet weak var monthLabel: UILabel!
     
     // gets the correct user database values
-    let medRef = Services.db.collection("users").document(Services.userRef!).collection("Medication")
+    //let medRef = Services.db.collection("users").document(Services.userRef!).collection("Medication")
     
     // storing the graph data
     var GraphData: [BarChartDataEntry] = []
@@ -30,27 +30,29 @@ class ChartsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let medRef = Services.checkUserIDMed(){(success) in
-//            if(success)
-//            {
-//                self.getMedicationData(reference: medRef)
-//            }
-//            else
-//            {
-//                if(user_ID == "")
-//                {
-//                    self.getMedicationData(reference: medRef)
-//                }
-//                else
-//                {
-//                    self.chtChart.noDataText = "Please choose a patient in the Conncet Screen"
-//                    self.monthLabel.text = ""
-//                }
-//            }
-//        }
+        let (_,medRef) = Services.checkUserIDMed()
         
+        print("USER_ID: \(user_ID)")
+        Services.getisPatient(){(success) in
+            if(success)
+            {
+                self.getMedicationData(reference: medRef)
+            }
+            else
+            {
+                if(user_ID != "")
+                {
+                    self.getMedicationData(reference: medRef)
+                }
+                else
+                {
+                    self.chtChart.noDataText = "Please choose a patient in the Conncet Screen"
+                    self.monthLabel.text = ""
+                }
+            }
+        }
         
-        getMedicationData()
+//        getMedicationData()
         
         // Sets up the chart properties
         self.title = "Medication Bar Chart"
@@ -81,11 +83,11 @@ class ChartsViewController: UIViewController {
     //      1. None
     // Output:
     //      1. Medication Graph displays data from one week ago
-    // func getMedcationData(reference: CollectionReference)
-    func getMedicationData()
+    func getMedicationData(reference: CollectionReference)
+    //func getMedicationData()
     {
         // gets all the documents for this particular user
-        medRef.getDocuments()
+        reference.getDocuments()
             {
                 (querySnapshot,err) in
                 // the program will go into this if statement if the user authentication fails

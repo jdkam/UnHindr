@@ -12,9 +12,13 @@ import FirebaseFirestore
 
 class MedicationHomeViewController: UIViewController, NewMedDelegate {
     
-    let userProfileRef = Services.fullUserRef.document(Services.userRef!)
-    let medicationPlanRef = Services.fullUserRef.document(Services.userRef!).collection(Services.medPlanName)
-    let medicationHistoryRef = Services.fullUserRef.document(Services.userRef!).collection(Services.medHistoryName)
+    //let userProfileRef = Services.fullUserRef.document(Services.userRef!)
+    //let medicationPlanRef = Services.fullUserRef.document(Services.userRef!).collection(Services.medPlanName)
+    //let medicationHistoryRef = Services.fullUserRef.document(Services.userRef!).collection(Services.medHistoryName)
+    
+    let (medicationPlanRef,medicationHistoryRef) = Services.checkUserIDMed()
+    let userProfileRef = Services.checkUserProfileID()
+    	
     // Card index
     var cardIndex: Int = 0
     
@@ -39,9 +43,13 @@ class MedicationHomeViewController: UIViewController, NewMedDelegate {
     // MARK: - View controller lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(userProfileRef)
+        print(medicationPlanRef)
+        print(medicationHistoryRef)
+        
         // Define the center of the card view
         medViewCenter = MedCardView!.center
-        
         
         // Retrieve all meds taken for the current date (fetches a remote copy for data persistence on reboot)
         // Must be done before getDBMedicationPlan to retrieve the self.usedCards data
@@ -167,7 +175,7 @@ class MedicationHomeViewController: UIViewController, NewMedDelegate {
         print("Data received: \(documentID)")
         // Update the remote array
         var count: Int = 0
-        self.getDBMedicationPlan { (querySnapshot) in
+        getDBMedicationPlan { (querySnapshot) in
             for document in querySnapshot!.documents {
                 if document.documentID == documentID {
                     break

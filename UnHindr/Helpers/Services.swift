@@ -122,19 +122,22 @@ class Services {
         }
     }
     
-//    static func checkUserIDMed() -> CollectionReference
-//    {
-//        var medRef: CollectionReference
-//        if (user_ID == "")
-//        {
-//            medRef = Services.fullUserRef.document(Services.userRef!).collection(Services.medicationHistoryRef)
-//        }
-//        else
-//        {
-//            medRef = Services.fullUserRef.document(Services.userRef!).collection(Services.medicationHistoryRef)
-//        }
-//        return medRef
-//    }
+    static func checkUserIDMed() -> (CollectionReference,CollectionReference)
+    {
+        var medPlan: CollectionReference
+        var medHistory: CollectionReference
+        if (user_ID == "")
+        {
+            medPlan = Services.fullUserRef.document(Services.userRef!).collection(Services.medPlanName)
+            medHistory = Services.fullUserRef.document(Services.userRef!).collection(Services.medHistoryName)
+        }
+        else
+        {
+            medPlan = Services.fullUserRef.document(user_ID).collection(Services.medPlanName)
+            medHistory = Services.fullUserRef.document(user_ID).collection(Services.medHistoryName)
+        }
+        return (medPlan,medHistory)
+    }
     
     // Checks whether the current logged in user is a patient or not
     // Input:
@@ -195,6 +198,20 @@ class Services {
             moodRef = Services.fullUserRef.document(user_ID).collection(Services.moodName)
         }
         return moodRef
+    }
+    
+    static func checkUserProfileID() -> DocumentReference
+    {
+        var userRef: DocumentReference
+        if(user_ID == "")
+        {
+            userRef = Services.fullUserRef.document(Services.userRef!)
+        }
+        else
+        {
+            userRef = Services.fullUserRef.document(user_ID)
+        }
+        return userRef
     }
     
 }

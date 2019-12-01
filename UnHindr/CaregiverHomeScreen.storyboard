@@ -71,6 +71,9 @@
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ACE-xh-bIr" userLabel="medication">
                                                 <rect key="frame" x="186" y="0.0" width="185" height="156"/>
                                                 <state key="normal" image="Medication"/>
+                                                <connections>
+                                                    <segue destination="ppK-x3-VzO" kind="show" id="UAJ-Qv-4iv"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -124,6 +127,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qq1-lo-8Cr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="69.599999999999994" y="130.88455772113943"/>
+        </scene>
+        <!--Medication-->
+        <scene sceneID="b7y-L2-lyi">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Medication" id="ppK-x3-VzO" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oqN-Jm-cjh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="724" y="63"/>
         </scene>
         <!--Settings-->
         <scene sceneID="WwD-co-uJT">
