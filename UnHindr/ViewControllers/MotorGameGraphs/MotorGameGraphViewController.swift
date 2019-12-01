@@ -21,11 +21,7 @@ class MotorGameGraphViewController: UIViewController {
 
     @IBOutlet weak var motorWeeklyGraph: BarChartView!
     @IBOutlet weak var monthLabel: UILabel!
-    
-    // gets the correct user database values
-    //let motorRef = Services.db.collection("users").document(Services.userRef!).collection("MotorGameData")
-    
-    //let motorRef = Services.fullUserRef.document(user_ID).collection(Services.motorGameName)
+
     
     // storing the graph data
     var GraphData: [BarChartDataEntry] = []
@@ -40,24 +36,31 @@ class MotorGameGraphViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        // grabs the correct user_ID for a given user
         let motorRef = Services.checkUserIDMotorGame()
+        
+        // checks whether the current user is a patient or caregiver
         Services.getisPatient() {(success) in
             if (success)
             {
+                // the user is a patient
                 self.getMotorData(reference: motorRef)
             }
             else
             {
+                // the user is a caregiver
                 if(user_ID != "")
                 {
+                    // if the caregiver has selected a user
                     self.getMotorData(reference: motorRef)
                 }
                 else
                 {
+                    // if the caregiver has not selected a user
                     self.motorWeeklyGraph.noDataText = "Please choose a patient in the Connect Screen"
                     self.monthLabel.text = ""
                 }
-                
             }
         }
         // Sets up the chart properties
@@ -86,7 +89,7 @@ class MotorGameGraphViewController: UIViewController {
     
     // MARK: - Obtain motor data from firebase
     // Input:
-    //      1. None
+    //      1. The collection reference for the specific user
     // Output:
     //      1. Motor Graph is created using the data from the user in firebase
     func getMotorData(reference: CollectionReference)

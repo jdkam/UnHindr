@@ -31,21 +31,28 @@ class MotorGameYearlyViewController: UIViewController {
     // MARK: - View controller lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // grabs the correct user_ID for a giver user
         let motorRef = Services.checkUserIDMotorGame()
         
+        // checks whether the current user is a patient or caregiver
         Services.getisPatient() {(success) in
             if (success)
             {
+                // the user is a patient
                 self.getMotorData(reference: motorRef)
             }
             else
             {
+                // the user is a caregiver
                 if(user_ID != "")
                 {
+                    // if the caregiver has seleceted a user
                     self.getMotorData(reference: motorRef)
                 }
                 else
                 {
+                    // if the caregiver has not selected a user
                     self.motorYearlyGraph.noDataText = "Please choose a patient in the Connect Screen"
                     self.yearLabel.text = ""
                 }
@@ -80,7 +87,7 @@ class MotorGameYearlyViewController: UIViewController {
     
     // MARK: - Obtain the yearly motor data from firebase
     // Input:
-    //      1. None
+    //      1. The collection reference for the specific user
     // Output:
     //      1. The yearly motor graph is created and displayed for the user to see
     func getMotorData(reference: CollectionReference)

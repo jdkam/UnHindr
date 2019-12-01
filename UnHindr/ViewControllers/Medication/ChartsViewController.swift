@@ -17,9 +17,6 @@ class ChartsViewController: UIViewController {
     @IBOutlet weak var chtChart: BarChartView!
     @IBOutlet weak var monthLabel: UILabel!
     
-    // gets the correct user database values
-    //let medRef = Services.db.collection("users").document(Services.userRef!).collection("Medication")
-    
     // storing the graph data
     var GraphData: [BarChartDataEntry] = []
     var medData: [Int:Double] = [:]
@@ -30,29 +27,32 @@ class ChartsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // grabbing the medication reference for the specific patient
         let (_,medRef) = Services.checkUserIDMed()
         
-        print("USER_ID: \(user_ID)")
+        // determines if the current user is a patient or caregiver
         Services.getisPatient(){(success) in
             if(success)
             {
+                // if the user is a patient
                 self.getMedicationData(reference: medRef)
             }
             else
             {
+                // if the user is a caregiver
                 if(user_ID != "")
                 {
+                    // if the caregiver selected a patient
                     self.getMedicationData(reference: medRef)
                 }
                 else
                 {
+                    // if the caregiver has not selected a patient
                     self.chtChart.noDataText = "Please choose a patient in the Conncet Screen"
                     self.monthLabel.text = ""
                 }
             }
         }
-        
-//        getMedicationData()
         
         // Sets up the chart properties
         self.title = "Medication Bar Chart"
@@ -80,7 +80,7 @@ class ChartsViewController: UIViewController {
     
     // MARK: - Obtain motor data from firebase
     // Input:
-    //      1. None
+    //      1. The collection reference for the specific user
     // Output:
     //      1. Medication Graph displays data from one week ago
     func getMedicationData(reference: CollectionReference)

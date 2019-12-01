@@ -21,10 +21,7 @@ class CogGameGraphViewController: UIViewController {
 
     @IBOutlet weak var cogGraph: BarChartView!
     @IBOutlet weak var month: UILabel!
-    
-    // gets the correct user database values
-    //let cogRef = Services.db.collection(user_ID).document(Services.userRef!).collection("CogGameData")
-    
+
     // storing the graph data
     var GraphData: [BarChartDataEntry] = []
     var cogData: [Int:Double] = [:]
@@ -38,21 +35,27 @@ class CogGameGraphViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // grabs the correct cognitive reference for the user
         let cogRef = Services.checkUserIDCogGame()
         
+        // determines if the user is a patient or caregiver
         Services.getisPatient(){(success) in
             if (success)
             {
+                // if the user is a patient
                 self.getCogData(reference: cogRef)
             }
             else
             {
+                // if the user is a caregiver
                 if(user_ID != "")
                 {
+                    // if the caregiver has selected a patient
                     self.getCogData(reference: cogRef)
                 }
                 else
                 {
+                    // if the caregiver has not selected a patient
                     self.cogGraph.noDataText = "Please choose a patient in the Connect Screen"
                     self.month.text = ""
                 }
@@ -85,7 +88,7 @@ class CogGameGraphViewController: UIViewController {
     
     // MARK: - Obtain cognitive data from firebase
     // Input:
-    //      1. None
+    //      1. The collection reference for the specific user
     // Output:
     //      1. Cognitive Graph is created using the data from the user in firebase
         func getCogData(reference: CollectionReference)
