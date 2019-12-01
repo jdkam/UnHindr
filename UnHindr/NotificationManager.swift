@@ -4,7 +4,7 @@
  Date created: [30/11/2019]
  Date updated: [30/11/2019]
  Updater name: [Jake]
- File description: [Controls functionality for sending local notifications]
+ File description: [Controls functionality for scheduling local notifications]
  */
 
 import UIKit
@@ -17,8 +17,9 @@ struct NotificationStruct {
     var datetime:DateComponents
 }
 
-// MARK: - The following code was taken from learnappmaking.com: Written by Reinder de Vries, https://learnappmaking.com/local-notifications-scheduling-swift/#scheduling-local-notifications
-// The code's purpose is to enable the scheduling of local notifications
+// MARK: - The following code was taken and adapted from learnappmaking.com: Written by Reinder de Vries, https://learnappmaking.com/local-notifications-scheduling-swift/#scheduling-local-notifications
+// The code's purpose is to handle the scheduling of local notifications
+
 class NotificationManager: NSObject {
     var notifications = [NotificationStruct]()
     

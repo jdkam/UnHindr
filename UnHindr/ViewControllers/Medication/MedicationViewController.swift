@@ -3,7 +3,7 @@
  Creators: [Jake, Sina]
  Date created: [29/10/2019]
  Date updated: [17/11/2019]
- Updater name: [Sina, Allan]
+ Updater name: [Sina, Allan, Jake]
  File description: [Controls the Add New Med screen]
  */
 
@@ -332,6 +332,11 @@ class MedicationViewController: UIViewController {
         view.addGestureRecognizer(tapGesture)
     }
     
+    // MARK: - Configures local notifications for the Medication and calls NotificationManager methods to schedule the notifications
+    // Input:
+    //      None
+    // Output:
+    //      Local notifications for medicaiton are scheduled for the specified time and days
     private func setMedNotifications() {
         let manager = NotificationManager()
         
@@ -370,16 +375,17 @@ class MedicationViewController: UIViewController {
                 sendingDate = Date.today().next(.Saturday)
                 dayNum = 7
             default:
-                print("O")
+                print("ERROR: INVALID DAY")
             }
             if (dayNum == currentWeekday) {
                 sendingDate = Date.today()
             }
-            print("####DATE FOR SEND : \(sendingDate) ###########")
+
             let components = Calendar(identifier: .gregorian).dateComponents([.year, .month, .day], from: sendingDate)
             manager.notifications.append(NotificationStruct(id: "\(self.MedicationName) - \(day)", title: self.MedicationName, datetime: DateComponents(calendar: Calendar.current, year: components.year, month: components.month, day: components.day, hour: notifHour, minute: notifMinute)))
             
         }
+
         manager.schedule()
     }
 }
