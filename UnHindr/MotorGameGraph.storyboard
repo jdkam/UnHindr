@@ -46,7 +46,7 @@
                                     <color key="titleColor" red="0.1215686277" green="0.1294117719" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenBG" translatesAutoresizingMaskIntoConstraints="NO" id="NId-og-twA">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenBG" translatesAutoresizingMaskIntoConstraints="NO" id="NId-og-twA">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="vrj-fd-NI8"/>
@@ -179,7 +179,7 @@
                                     <segue destination="dKu-7z-dd7" kind="show" id="lAa-Pe-SEE"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenBG" translatesAutoresizingMaskIntoConstraints="NO" id="e1c-um-sBV">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenBG" translatesAutoresizingMaskIntoConstraints="NO" id="e1c-um-sBV">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="LYU-mV-DGd"/>
@@ -292,7 +292,7 @@
                                     <segue destination="dKu-7z-dd7" kind="show" id="q8a-M3-Mbn"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenBG" translatesAutoresizingMaskIntoConstraints="NO" id="YzH-1F-0ba">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenBG" translatesAutoresizingMaskIntoConstraints="NO" id="YzH-1F-0ba">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="ReR-5Y-JCF"/>
@@ -364,9 +364,9 @@
         <image name="greenBG" width="414" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RSB-Bo-mVW"/>
-        <segue reference="Pca-54-k00"/>
-        <segue reference="31w-5W-iuN"/>
-        <segue reference="q8a-M3-Mbn"/>
+        <segue reference="nnx-jG-tUt"/>
+        <segue reference="1ha-tl-ME5"/>
+        <segue reference="Enq-nB-NyG"/>
+        <segue reference="lAa-Pe-SEE"/>
     </inferredMetricsTieBreakers>
 </document>
