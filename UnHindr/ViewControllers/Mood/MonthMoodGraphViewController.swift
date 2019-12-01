@@ -2,7 +2,7 @@
 //Creators: [Johnston]
 //Date created: [11/10/2019]
 //Updater name: [Johnston]
-//File description: [Reads values from the data]
+//File description: [Reads values from the data from firebase]
 
 import UIKit
 import Foundation
@@ -16,7 +16,7 @@ class MonthMoodGraphViewController: UIViewController {
     @IBOutlet weak var monthName: UILabel!
     
     // gets the correct user database values
-    let moodRef = Services.db.collection("users").document(Services.userRef!).collection("Mood")
+    //let moodRef = Services.db.collection("users").document(Services.userRef!).collection("Mood")
     // storing the graph data
     var GraphData: [BarChartDataEntry] = []
     
@@ -27,7 +27,27 @@ class MonthMoodGraphViewController: UIViewController {
     // MARK: - View controller lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        getMoodData()
+        
+        let moodRef = Services.checkUserIDMood()
+        
+        Services.getisPatient(){(success) in
+            if(success)
+            {
+                self.getMoodData(reference: moodRef)
+            }
+            else
+            {
+                if(user_ID != "")
+                {
+                    self.getMoodData(reference:moodRef)
+                }
+                else
+                {
+                    self.monthGraph.noDataText = "Please choose a patient in the Connect Screen"
+                    self.monthName.text = ""
+                }
+            }
+        }
         
         //Sets up the chart properties
         self.title = "Bar Chart"
@@ -58,10 +78,10 @@ class MonthMoodGraphViewController: UIViewController {
     //      1. None
     // Output:
     //      1. The monthly mood graph is created and displayed for the user to see
-    func getMoodData()
+    func getMoodData(reference: CollectionReference)
     {
         // gets all the documents for this particular user
-        moodRef.getDocuments()
+        reference.getDocuments()
             {
                 (querySnapshot, err) in
                 if err != nil
@@ -141,7 +161,8 @@ class MonthMoodGraphViewController: UIViewController {
                     }
                     // finialize setup of graph after the data has been inputted
                     let set = BarChartDataSet(values: self.GraphData, label: "Mood")
-                    set.colors = [UIColor.green]
+                    
+                    set.colors = [UIColor.init(displayP3Red: 21/255, green: 187/255, blue: 18/255, alpha: 1)]
                     let chartData = BarChartData(dataSet: set)
                     self.monthGraph.fitBars = true
                     self.monthGraph.data = chartData

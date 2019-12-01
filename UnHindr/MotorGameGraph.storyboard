@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tLe-i6-rUF">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tLe-i6-rUF">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,20 +13,20 @@
         <!--Motor Game Yearly View Controller-->
         <scene sceneID="g2A-gb-Ce4">
             <objects>
-                <viewController storyboardIdentifier="MotorGameYearlyViewController" modalPresentationStyle="fullScreen" id="dKu-7z-dd7" customClass="MotorGameYearlyViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MotorGameYearlyViewController" id="dKu-7z-dd7" customClass="MotorGameYearlyViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JJY-Oi-AjF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S5t-BS-zbq" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="339.5" width="414" height="522.5"/>
+                                <rect key="frame" x="0.0" y="205.5" width="414" height="656.5"/>
                                 <color key="backgroundColor" red="0.99607843139999996" green="0.79607843140000001" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="414" id="gUZ-Ki-D3n"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ms-an-qI0">
-                                <rect key="frame" x="20" y="145" width="111" height="156"/>
+                                <rect key="frame" x="20" y="145" width="111" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="111" id="ovo-R3-t6q"/>
                                 </constraints>
@@ -36,7 +38,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MSB-EC-k6d">
-                                <rect key="frame" x="283" y="145" width="111" height="156"/>
+                                <rect key="frame" x="283" y="145" width="111" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="111" id="XQR-Vg-4jY"/>
                                 </constraints>
@@ -63,17 +65,18 @@
                                 </constraints>
                                 <state key="normal" image="Back3"/>
                                 <connections>
+                                    <action selector="backHomeYear:" destination="qt9-zV-wtS" eventType="touchUpInside" id="gDs-Pr-AQz"/>
                                     <segue destination="H0Q-W9-gc1" kind="show" id="Enq-nB-NyG"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9KD-c7-PQH">
-                                <rect key="frame" x="0.0" y="311" width="42" height="20.5"/>
+                                <rect key="frame" x="0.0" y="177" width="42" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UaV-Bi-Jav">
-                                <rect key="frame" x="151.5" y="145" width="111" height="156"/>
+                                <rect key="frame" x="151.5" y="145" width="111" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="111" id="MdU-gY-Hiq"/>
                                 </constraints>
@@ -116,6 +119,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xch-hY-E1g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="qt9-zV-wtS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="429" y="-234"/>
         </scene>
@@ -130,20 +134,20 @@
         <!--Motor Game Monthly View Controller-->
         <scene sceneID="7pt-l9-trc">
             <objects>
-                <viewController storyboardIdentifier="MotorGameMonthlyViewController" modalPresentationStyle="fullScreen" id="Md6-OM-5eA" customClass="MotorGameMonthlyViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MotorGameMonthlyViewController" id="Md6-OM-5eA" customClass="MotorGameMonthlyViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="msB-o6-PGs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NGJ-v7-Owa" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="336.5" width="414" height="525.5"/>
+                                <rect key="frame" x="0.0" y="202.5" width="414" height="659.5"/>
                                 <color key="backgroundColor" red="0.99607843139999996" green="0.79607843140000001" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="414" id="GAj-lt-a0h"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9m0-P7-k3r">
-                                <rect key="frame" x="20" y="145" width="111" height="156"/>
+                                <rect key="frame" x="20" y="145" width="111" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="111" id="9Mk-Wj-mIy"/>
                                 </constraints>
@@ -155,7 +159,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fh9-37-Flu">
-                                <rect key="frame" x="151.5" y="145" width="111" height="156"/>
+                                <rect key="frame" x="151.5" y="145" width="111" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="111" id="k2Q-sF-lHD"/>
                                 </constraints>
@@ -164,7 +168,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rZ8-9h-R2g">
-                                <rect key="frame" x="283" y="145" width="111" height="156"/>
+                                <rect key="frame" x="283" y="145" width="111" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="111" id="1RM-D6-1Vl"/>
                                 </constraints>
@@ -194,11 +198,12 @@
                                 </constraints>
                                 <state key="normal" image="Back3"/>
                                 <connections>
+                                    <action selector="backHomeMonth:" destination="QaS-On-B8o" eventType="touchUpInside" id="96i-at-b7e"/>
                                     <segue destination="H0Q-W9-gc1" kind="show" id="Hdk-8K-MWL"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUR-gQ-Vp4">
-                                <rect key="frame" x="0.0" y="308" width="42" height="20.5"/>
+                                <rect key="frame" x="0.0" y="174" width="42" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -235,26 +240,27 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N6h-fP-UFk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="QaS-On-B8o" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-551" y="-14"/>
         </scene>
         <!--Motor Game Graph View Controller-->
         <scene sceneID="WzJ-0T-RJl">
             <objects>
-                <viewController storyboardIdentifier="MotorGameGraphViewController" modalPresentationStyle="fullScreen" id="tLe-i6-rUF" customClass="MotorGameGraphViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MotorGameGraphViewController" id="tLe-i6-rUF" customClass="MotorGameGraphViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Uva-id-q4g">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nc8-mp-Thz" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="339.5" width="414" height="522.5"/>
+                                <rect key="frame" x="0.0" y="205.5" width="414" height="656.5"/>
                                 <color key="backgroundColor" red="0.99607843139999996" green="0.79607843140000001" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="414" id="3iE-ZE-V96"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4rp-gP-gwo">
-                                <rect key="frame" x="20" y="145" width="111" height="156"/>
+                                <rect key="frame" x="20" y="145" width="111" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="111" id="on2-JL-Qpb"/>
                                 </constraints>
@@ -263,7 +269,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qtq-4r-G4t">
-                                <rect key="frame" x="151.5" y="145" width="111" height="156"/>
+                                <rect key="frame" x="151.5" y="145" width="111" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="111" id="64q-4g-DoH"/>
                                 </constraints>
@@ -275,7 +281,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pig-6j-FYH">
-                                <rect key="frame" x="283" y="145" width="111" height="156"/>
+                                <rect key="frame" x="283" y="145" width="111" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="111" id="lIY-pL-pSj"/>
                                 </constraints>
@@ -305,11 +311,11 @@
                                 </constraints>
                                 <state key="normal" image="Back3"/>
                                 <connections>
-                                    <segue destination="H0Q-W9-gc1" kind="show" id="Xgc-IW-q8z"/>
+                                    <segue destination="H0Q-W9-gc1" kind="show" id="31w-5W-iuN"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTc-49-n5O">
-                                <rect key="frame" x="0.0" y="311" width="42" height="20.5"/>
+                                <rect key="frame" x="0.0" y="177" width="42" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -347,7 +353,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zpH-sr-fV5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1536" y="-234"/>
+            <point key="canvasLocation" x="-1636" y="-234"/>
         </scene>
     </scenes>
     <resources>
@@ -359,8 +365,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="RSB-Bo-mVW"/>
-        <segue reference="1ha-tl-ME5"/>
-        <segue reference="Hdk-8K-MWL"/>
-        <segue reference="lAa-Pe-SEE"/>
+        <segue reference="Pca-54-k00"/>
+        <segue reference="31w-5W-iuN"/>
+        <segue reference="q8a-M3-Mbn"/>
     </inferredMetricsTieBreakers>
 </document>

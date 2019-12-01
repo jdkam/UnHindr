@@ -23,22 +23,43 @@ class MotorGameGraphViewController: UIViewController {
     @IBOutlet weak var monthLabel: UILabel!
     
     // gets the correct user database values
-    let motorRef = Services.db.collection("users").document(Services.userRef!).collection("MotorGameData")
+    //let motorRef = Services.db.collection("users").document(Services.userRef!).collection("MotorGameData")
+    
+    //let motorRef = Services.fullUserRef.document(user_ID).collection(Services.motorGameName)
     
     // storing the graph data
     var GraphData: [BarChartDataEntry] = []
     var motorData: [Int:Double] = [:]
-    var dayAverage = Array(repeating: 0, count: 8)
+    var dayAverage = Array(repeating: 0, count: 7)
     var days: [Int] = []
     var stringDays: [String] = []
     var dictDayAvg: [Int:Int] = [:]
+    var isPatient: Bool = false
     
     // MARK: - View controller lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        getMotorData()
         
+        let motorRef = Services.checkUserIDMotorGame()
+        Services.getisPatient() {(success) in
+            if (success)
+            {
+                self.getMotorData(reference: motorRef)
+            }
+            else
+            {
+                if(user_ID != "")
+                {
+                    self.getMotorData(reference: motorRef)
+                }
+                else
+                {
+                    self.motorWeeklyGraph.noDataText = "Please choose a patient in the Connect Screen"
+                    self.monthLabel.text = ""
+                }
+                
+            }
+        }
         // Sets up the chart properties
         self.title = "Cog Bar Chart"
         motorWeeklyGraph.maxVisibleCount = 40
@@ -68,10 +89,10 @@ class MotorGameGraphViewController: UIViewController {
     //      1. None
     // Output:
     //      1. Motor Graph is created using the data from the user in firebase
-    func getMotorData()
+    func getMotorData(reference: CollectionReference)
     {
         // gets all the documents for this particular user
-        motorRef.getDocuments()
+        reference.getDocuments()
             {
                 (querySnapshot,err) in
                 // the program will go into this if statement if the user authentication fails
@@ -108,7 +129,7 @@ class MotorGameGraphViewController: UIViewController {
                     let currentMonth = calendar.component(.month, from: today)
                     let currentYear = calendar.component(.year, from: today)
                     // calculates 7 days in the past and gets the previous month's name
-                    let lastWeekDay = currentDay - 7
+                    let lastWeekDay = currentDay - 6
                     let previousMonth = currentMonth - 1
                     let previousMonthName = DateFormatter().monthSymbols[previousMonth-1]
                     
@@ -174,7 +195,7 @@ class MotorGameGraphViewController: UIViewController {
                         self.motorWeeklyGraph.xAxis.valueFormatter = dayFormat as IAxisValueFormatter
                         // formatting the graph
                         let set = BarChartDataSet(values: self.GraphData, label: "Mood")
-                        set.colors = [UIColor.green]
+                        set.colors = [UIColor.init(displayP3Red: 21/255, green: 187/255, blue: 18/255, alpha: 1)]
                         let chartData = BarChartData(dataSet: set)
                         self.motorWeeklyGraph.fitBars = true
                         self.motorWeeklyGraph.data = chartData
@@ -188,15 +209,18 @@ class MotorGameGraphViewController: UIViewController {
                             // grabs the timestamp and gets the date of that timestamp
                             let timestamp: Timestamp = document.get("Time") as! Timestamp
                             let dbDate: Date = timestamp.dateValue()
+                            let dbMonth = calendar.component(.month, from: dbDate)
+                            
                             // converts the date into a day
                             let dbDay = calendar.component(.day, from: dbDate)
                             // checks if dbDay is greater than or equal to lastweekday and if dbDay is less than or equal to the currentDay
-                            if (dbDay >= lastWeekDay && dbDay <= currentDay)
+                            if (dbDay >= lastWeekDay && dbDay <= currentDay && currentMonth == dbMonth)
                             {
                                 // checks if dbDay exists in the dictionary already
                                 let keyExists = self.motorData[dbDay] != nil
                                 if(keyExists)
                                 {
+                                    //print(dbDate)
                                     // if the key exists add the score from the database on top of the value found in the dictionary
                                     self.motorData[dbDay] = (self.motorData[dbDay]!) + (document.get("Score") as! Double)
                                     // increments the correct value inside the dayAverage array
@@ -233,7 +257,7 @@ class MotorGameGraphViewController: UIViewController {
                     }
                     // formatting the graph
                     let set = BarChartDataSet(values: self.GraphData, label: "Motor Score")
-                    set.colors = [UIColor.green]
+                    set.colors = [UIColor.init(displayP3Red: 21/255, green: 187/255, blue: 18/255, alpha: 1)]
                     let chartData = BarChartData(dataSet: set)
                     self.motorWeeklyGraph.fitBars = true
                     self.motorWeeklyGraph.data = chartData
@@ -312,5 +336,4 @@ class MotorGameGraphViewController: UIViewController {
             return values[Int(value)]
         }
     }
-
 }

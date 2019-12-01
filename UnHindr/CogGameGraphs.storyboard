@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4Wl-Ag-GVd">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4Wl-Ag-GVd">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,20 +21,20 @@
         <!--Cog Game Graph View Controller-->
         <scene sceneID="6It-R1-HZ3">
             <objects>
-                <viewController storyboardIdentifier="CogGameGraphViewController" modalPresentationStyle="fullScreen" id="4Wl-Ag-GVd" customClass="CogGameGraphViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CogGameGraphViewController" id="4Wl-Ag-GVd" customClass="CogGameGraphViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EUs-Zm-mCS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qbj-vX-sxq" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="339.5" width="414" height="522.5"/>
+                                <rect key="frame" x="0.0" y="205.5" width="414" height="656.5"/>
                                 <color key="backgroundColor" red="0.99607843139999996" green="0.79607843140000001" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="414" id="mHY-4z-vpI"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="10H-Wq-E0y">
-                                <rect key="frame" x="20" y="145" width="111" height="156"/>
+                                <rect key="frame" x="20" y="145" width="111" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="111" id="fSn-5R-kkd"/>
                                 </constraints>
@@ -41,7 +43,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0WO-ud-WYe">
-                                <rect key="frame" x="151.5" y="145" width="111" height="156"/>
+                                <rect key="frame" x="151.5" y="145" width="111" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="111" id="VQf-fM-Tpc"/>
                                 </constraints>
@@ -53,7 +55,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yVK-uQ-vHw">
-                                <rect key="frame" x="283" y="145" width="111" height="156"/>
+                                <rect key="frame" x="283" y="145" width="111" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="111" id="r5i-3K-Uzj"/>
                                 </constraints>
@@ -87,7 +89,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="26g-kQ-onV">
-                                <rect key="frame" x="0.0" y="311" width="42" height="20.5"/>
+                                <rect key="frame" x="0.0" y="177" width="42" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -130,17 +132,17 @@
         <!--Cog Game Monthly View Controller-->
         <scene sceneID="rSs-o1-Khx">
             <objects>
-                <viewController storyboardIdentifier="CogGameMonthlyViewController" modalPresentationStyle="fullScreen" id="zHA-PJ-HeT" customClass="CogGameMonthlyViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CogGameMonthlyViewController" id="zHA-PJ-HeT" customClass="CogGameMonthlyViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7J9-HC-2ss">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hX4-WM-NIy" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="339.5" width="414" height="522.5"/>
+                                <rect key="frame" x="0.0" y="205.5" width="414" height="656.5"/>
                                 <color key="backgroundColor" red="0.99607843139999996" green="0.79607843140000001" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VkD-X4-BAI">
-                                <rect key="frame" x="20" y="145" width="111" height="156"/>
+                                <rect key="frame" x="20" y="145" width="111" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="111" id="XwS-9U-n0R"/>
                                 </constraints>
@@ -152,7 +154,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YSQ-7Q-7XA">
-                                <rect key="frame" x="151.5" y="145" width="111" height="156"/>
+                                <rect key="frame" x="151.5" y="145" width="111" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="111" id="vfn-3N-S2e"/>
                                 </constraints>
@@ -161,7 +163,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mnD-kJ-XKU">
-                                <rect key="frame" x="283" y="145" width="111" height="156"/>
+                                <rect key="frame" x="283" y="145" width="111" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="111" id="p32-uD-hTJ"/>
                                 </constraints>
@@ -190,7 +192,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQP-rd-0sn">
-                                <rect key="frame" x="0.0" y="311" width="42" height="20.5"/>
+                                <rect key="frame" x="0.0" y="177" width="42" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -239,17 +241,17 @@
         <!--Cog Yearly Graph View Controller-->
         <scene sceneID="RYL-rJ-F3w">
             <objects>
-                <viewController storyboardIdentifier="cogYearlyGraphViewController" modalPresentationStyle="fullScreen" id="mr2-On-MtB" customClass="cogYearlyGraphViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="cogYearlyGraphViewController" id="mr2-On-MtB" customClass="cogYearlyGraphViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Jr-ar-Tgo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6nY-ZE-i7o" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="339.5" width="414" height="522.5"/>
+                                <rect key="frame" x="0.0" y="205.5" width="414" height="656.5"/>
                                 <color key="backgroundColor" red="0.99607843139999996" green="0.79607843140000001" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAR-fM-wZd">
-                                <rect key="frame" x="20" y="145" width="111" height="156"/>
+                                <rect key="frame" x="20" y="145" width="111" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="111" id="iL2-3T-rFM"/>
                                 </constraints>
@@ -261,7 +263,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9p0-xw-hEG">
-                                <rect key="frame" x="151.5" y="145" width="111" height="156"/>
+                                <rect key="frame" x="151.5" y="145" width="111" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="111" id="t9f-Zb-yDs"/>
                                 </constraints>
@@ -273,7 +275,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="45f-0C-H7R">
-                                <rect key="frame" x="283" y="145" width="111" height="156"/>
+                                <rect key="frame" x="283" y="145" width="111" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="111" id="kDq-bY-LeA"/>
                                 </constraints>
@@ -299,7 +301,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="47Z-On-i9g">
-                                <rect key="frame" x="0.0" y="311" width="42" height="20.5"/>
+                                <rect key="frame" x="0.0" y="177" width="42" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
