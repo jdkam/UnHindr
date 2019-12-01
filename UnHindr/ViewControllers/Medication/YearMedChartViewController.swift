@@ -187,4 +187,7 @@ class YearMedChartViewController: UIViewController {
         }
     }
 
+    @IBAction func homeButton(_ sender: Any) {
+        Services.transitionHome(self)
+    }
 }

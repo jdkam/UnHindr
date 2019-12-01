@@ -322,4 +322,10 @@ class ChartsViewController: UIViewController {
             return values[Int(value)]
         }
     }
+    
+    @IBAction func homeButton(_ sender: Any) {
+        Services.transitionHome(self)
+    }
+    
+    
  }

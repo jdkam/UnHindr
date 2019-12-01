@@ -36,7 +36,7 @@
                                         <state key="normal" image="home-white"/>
                                         <connections>
                                             <action selector="goToHomeTapped:" destination="Eei-6T-tte" eventType="touchUpInside" id="57R-5c-V9K"/>
-                                            <segue destination="JSU-kt-RCA" kind="show" id="xPc-xc-6tf"/>
+                                            <action selector="homeButton:" destination="75M-Ul-Fkj" eventType="touchUpInside" id="dJN-TG-Dh2"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myMeds-1" translatesAutoresizingMaskIntoConstraints="NO" id="l7A-06-660">
@@ -142,7 +142,7 @@
                                         </constraints>
                                         <state key="normal" title="Button" image="home-white"/>
                                         <connections>
-                                            <segue destination="JSU-kt-RCA" kind="show" id="3un-06-nUV"/>
+                                            <action selector="homeButton:" destination="og3-Wz-cPL" eventType="touchUpInside" id="ECb-bA-80g"/>
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myMeds-1" translatesAutoresizingMaskIntoConstraints="NO" id="kP7-RT-8ft">
@@ -253,7 +253,7 @@
                                         </constraints>
                                         <state key="normal" title="Button" image="home-white"/>
                                         <connections>
-                                            <segue destination="JSU-kt-RCA" kind="showDetail" id="S0s-as-yc3"/>
+                                            <action selector="homeButton:" destination="Vwd-Ft-hIY" eventType="touchUpInside" id="PPc-wi-bZ8"/>
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myMeds-1" translatesAutoresizingMaskIntoConstraints="NO" id="s4Q-Lf-joT">
@@ -648,23 +648,23 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Menu_BG" translatesAutoresizingMaskIntoConstraints="NO" id="LCy-Ia-Nf1">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="93"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="119"/>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="bPQ-HG-tYb" userLabel="HeaderStack">
-                                                <rect key="frame" x="22" y="38" width="433" height="39"/>
+                                                <rect key="frame" x="22" y="38" width="433" height="65"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r36-Y5-L4A" userLabel="Home button">
-                                                        <rect key="frame" x="0.0" y="17" width="83" height="22"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="83" height="65"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="83" id="eSl-ef-fmq"/>
                                                         </constraints>
                                                         <state key="normal" image="home-white"/>
                                                         <connections>
-                                                            <action selector="goToHomeTapped:" destination="Eei-6T-tte" eventType="touchUpInside" id="kFm-NA-ity"/>
+                                                            <action selector="homeButton:" destination="Eei-6T-tte" eventType="touchUpInside" id="JdK-8y-G2Z"/>
                                                         </connections>
                                                     </button>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myMeds-1" translatesAutoresizingMaskIntoConstraints="NO" id="2AO-mi-nOm">
-                                                        <rect key="frame" x="163" y="23" width="270" height="16"/>
+                                                        <rect key="frame" x="163" y="23" width="270" height="42"/>
                                                     </imageView>
                                                 </subviews>
                                                 <constraints>
@@ -672,17 +672,17 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="s0h-uB-EhZ" userLabel="Add/Edit">
-                                                <rect key="frame" x="20" y="111" width="374" height="106"/>
+                                                <rect key="frame" x="20" y="137" width="374" height="80"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bUH-Nf-ohR" userLabel="Add">
-                                                        <rect key="frame" x="0.0" y="0.0" width="173.5" height="106"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="173.5" height="80"/>
                                                         <state key="normal" image="Add new"/>
                                                         <connections>
                                                             <segue destination="YOv-1n-TsM" kind="presentation" identifier="addMedSegue" id="xAK-QJ-HId"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXh-lR-rUW" userLabel="Edit">
-                                                        <rect key="frame" x="200.5" y="0.0" width="173.5" height="106"/>
+                                                        <rect key="frame" x="200.5" y="0.0" width="173.5" height="80"/>
                                                         <state key="normal" image="Edit"/>
                                                     </button>
                                                 </subviews>
@@ -785,14 +785,14 @@
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="det-5R-9ty" userLabel="Footer">
-                                                <rect key="frame" x="20" y="681" width="374" height="22"/>
+                                                <rect key="frame" x="20" y="681" width="374" height="84"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFo-Du-NM0" userLabel="MyMedsButton">
-                                                        <rect key="frame" x="0.0" y="0.0" width="254" height="22"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="204" height="84"/>
                                                         <state key="normal" title="Button" image="myMeds"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e6P-vQ-dU2" userLabel="MyLogButton">
-                                                        <rect key="frame" x="304" y="0.0" width="70" height="22"/>
+                                                        <rect key="frame" x="254" y="0.0" width="120" height="84"/>
                                                         <state key="normal" title="Button" image="myLog"/>
                                                         <connections>
                                                             <segue destination="75M-Ul-Fkj" kind="presentation" id="sYE-w9-QPI"/>
@@ -863,16 +863,6 @@
             </objects>
             <point key="canvasLocation" x="2210.144927536232" y="28.794642857142854"/>
         </scene>
-        <!--HomeScreen-->
-        <scene sceneID="Xq2-s3-Vxo">
-            <objects>
-                <viewControllerPlaceholder storyboardName="HomeScreen" id="JSU-kt-RCA" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="VE0-2L-BLB"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mCK-Uk-2J6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4313" y="-541"/>
-        </scene>
     </scenes>
     <resources>
         <image name="Add" width="158" height="71"/>
@@ -901,9 +891,8 @@
         <image name="wedNoCheck" width="74" height="73"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xPc-xc-6tf"/>
-        <segue reference="C72-I3-26c"/>
-        <segue reference="9XW-up-xpu"/>
+        <segue reference="o3N-z0-r3r"/>
+        <segue reference="Gvb-cv-EC0"/>
         <segue reference="sYE-w9-QPI"/>
     </inferredMetricsTieBreakers>
 </document>

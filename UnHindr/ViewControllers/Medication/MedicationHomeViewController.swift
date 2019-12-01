@@ -86,11 +86,11 @@ class MedicationHomeViewController: UIViewController, NewMedDelegate {
     //      Home button tapped
     // Output:
     //      Switch from Medication to Home menu
-    @IBAction func goToHomeTapped(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "HomeScreen", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "HomeScreenViewController") as UIViewController
-        present(vc, animated: true, completion: nil)
-    }
+//    @IBAction func goToHomeTapped(_ sender: Any) {
+//        let storyboard = UIStoryboard(name: "HomeScreen", bundle: nil)
+//        let vc = storyboard.instantiateViewController(withIdentifier: "HomeScreenViewController") as UIViewController
+//        present(vc, animated: true, completion: nil)
+//    }
     
     // Pan gesture handler for panning medication cards
     // Input:
@@ -336,5 +336,9 @@ class MedicationHomeViewController: UIViewController, NewMedDelegate {
             addMedVC.delegate = self
         }
     }
-
+    
+    @IBAction func homeButton(_ sender: Any) {
+        Services.transitionHome(self)
+    }
+    
 }
