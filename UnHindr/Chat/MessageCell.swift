@@ -1,13 +1,15 @@
-//
-//  MessageCell.swift
-//  UnHindr
-//
-//  Created by Jordan Kam on 2019-11-22.
-//  Copyright © 2019 Sigma. All rights reserved.
-//
+/*
+ File: [MessageCell.swift]
+ Creators: [Jordan]
+ Date created: [24/11/2019]
+ Date updated: [1/12/2019]
+ Updater name: [Jordan]
+ File description: [A class inheriting the TableViewCell that configures a custom tableViewCell. Used to Create a custom chat bubble for our messages to appear]
+ */
 
 import UIKit
 
+//Used in conjuction with our MessageCell.xib file to have a custom appearance for our chat bubbles
 class MessageCell: UITableViewCell {
 
     @IBOutlet weak var messageBubble: UIView!
