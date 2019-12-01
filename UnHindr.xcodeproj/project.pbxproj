@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		185E08EB515929A3C41DCA06 /* Pods_UnHindrTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E98EBEE8A222DA52CA9D297 /* Pods_UnHindrTests.framework */; };
+		2128337A23938D4F00C661CA /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2128337923938D4F00C661CA /* Patient.swift */; };
 		215C15DC236F6E5F0063F3E4 /* WellnessTestHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215C15DB236F6E5F0063F3E4 /* WellnessTestHomeViewController.swift */; };
 		2DA6698E2381EAA60050AE42 /* MedicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA6698D2381EAA60050AE42 /* MedicationTests.swift */; };
 		2DD67104236BC4C5005948DF /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD67103236BC4C5005948DF /* HomeScreenViewController.swift */; };
@@ -113,6 +114,7 @@
 
 /* Begin PBXFileReference section */
 		1470CE3451D5AB4F262D5392 /* Pods-UnHindr-UnHindrUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindr-UnHindrUITests.debug.xcconfig"; path = "Target Support Files/Pods-UnHindr-UnHindrUITests/Pods-UnHindr-UnHindrUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2128337923938D4F00C661CA /* Patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
 		215C15DB236F6E5F0063F3E4 /* WellnessTestHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellnessTestHomeViewController.swift; sourceTree = "<group>"; };
 		2DA6698D2381EAA60050AE42 /* MedicationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationTests.swift; sourceTree = "<group>"; };
 		2DD67103236BC4C5005948DF /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
@@ -501,6 +503,7 @@
 			children = (
 				9EB08694239332C800C6DDC0 /* LocationViewController.swift */,
 				9EBEEDDC2393602C0065DFEB /* CGLocationViewController.swift */,
+				2128337923938D4F00C661CA /* Patient.swift */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -807,6 +810,7 @@
 				9DF3F8992367D826003CF8B9 /* AppDelegate.swift in Sources */,
 				9E4EAB35237E5FDE00FC051B /* ModeChoiceViewController.swift in Sources */,
 				2DD67104236BC4C5005948DF /* HomeScreenViewController.swift in Sources */,
+				2128337A23938D4F00C661CA /* Patient.swift in Sources */,
 				CDD946F4238B41C600A865D0 /* SignUpViewController.swift in Sources */,
 				7013CBB92370D00E00A1231F /* ChartsViewController.swift in Sources */,
 				70B46FB42389F2440088D1FD /* CaregiverPatientsViewController.swift in Sources */,

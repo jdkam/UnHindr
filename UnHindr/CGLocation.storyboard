@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hbd-pC-zAU">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hbd-pC-zAU">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -47,22 +49,16 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qcj-NB-tN4">
-                                <rect key="frame" x="323" y="634" width="60" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="eject" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fff-fW-Thh">
-                                <rect key="frame" x="311" y="695" width="83" height="93"/>
+                                <rect key="frame" x="323" y="802" width="71" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="location.circle" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
-                                </state>
+                                <state key="normal" image="LocationCenter"/>
+                                <connections>
+                                    <action selector="centerAtPatient:" destination="Hbd-pC-zAU" eventType="touchUpInside" id="nii-Li-zim"/>
+                                </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="hME-AT-ida" firstAttribute="leading" secondItem="swF-jj-Jkj" secondAttribute="leading" constant="20" id="2Z2-gS-uuF"/>
                             <constraint firstItem="u4W-wI-7ns" firstAttribute="leading" secondItem="swF-jj-Jkj" secondAttribute="leading" id="4B6-Ub-OfH"/>
@@ -78,6 +74,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="swF-jj-Jkj"/>
                     </view>
+                    <connections>
+                        <outlet property="Caregivermap" destination="278-a6-m64" id="95E-MI-kK2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xf5-8S-HLf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -86,8 +85,7 @@
     </scenes>
     <resources>
         <image name="LocationBG" width="563" height="195"/>
-        <image name="eject" catalog="system" width="64" height="56"/>
+        <image name="LocationCenter" width="238" height="212"/>
         <image name="home-white" width="400" height="312"/>
-        <image name="location.circle" catalog="system" width="64" height="60"/>
     </resources>
 </document>

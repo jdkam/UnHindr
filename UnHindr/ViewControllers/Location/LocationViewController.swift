@@ -19,10 +19,10 @@ import Firebase
 class LocationViewController: UIViewController {
     let regionRadius: CLLocationDistance = 1000
     var locationSnapshot: QuerySnapshot?
-    fileprivate let locationManager:CLLocationManager = CLLocationManager()
+    
     
     @IBOutlet weak var mapView: MKMapView!
-    
+    fileprivate let locationManager:CLLocationManager = CLLocationManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()

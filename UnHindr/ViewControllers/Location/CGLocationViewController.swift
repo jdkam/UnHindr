@@ -16,13 +16,21 @@ import FirebaseAuth
 import Firebase
 
 class CGLocationViewController: UIViewController {
+    let regionRadius: CLLocationDistance = 1000
     private var longitude = 0.0
     private var latitude  = 0.0
     var locationSnapshot: QuerySnapshot? // locationSnapshot?.documents[0].documentID
 
+    @IBOutlet weak var Caregivermap: MKMapView!
+    fileprivate let locationManager:CLLocationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        locationManager.requestWhenInUseAuthorization()//Ask user for authorisation.
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.distanceFilter = kCLDistanceFilterNone
+        locationManager.startUpdatingLocation()
+        Caregivermap.showsUserLocation = true
         /***grab the query of the user***/
         
         if(user_ID == ""){
@@ -53,10 +61,21 @@ class CGLocationViewController: UIViewController {
         }
         /**********/
         
-        
-        
+        Caregivermap.delegate = self
+        let patient = Patient(title: "Patient",
+                              locationName: "Patient",
+                              discipline: "none",
+                              coordinate: CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
+        Caregivermap.addAnnotation(patient)
         // Do any additional setup after loading the view.
+    }//viewDidLoad
+    
+    @IBAction func centerAtPatient(_ sender: UIButton) {
+        let coordinateRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: latitude, longitude: longitude),latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
+        Caregivermap.setRegion(coordinateRegion, animated: true)
+        //Recenter to user's location
     }
+    
     
     
     // Input:
@@ -82,4 +101,36 @@ class CGLocationViewController: UIViewController {
     }
     
     
+}
+
+extension CGLocationViewController: MKMapViewDelegate {
+    // 1
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        // 2
+        guard let annotation = annotation as? Patient else { return nil }
+        // 3
+        let identifier = "marker"
+        var view: MKMarkerAnnotationView
+        // 4
+        if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+            as? MKMarkerAnnotationView {
+            dequeuedView.annotation = annotation
+            view = dequeuedView
+        } else {
+            // 5
+            view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            view.canShowCallout = true
+            view.calloutOffset = CGPoint(x: -5, y: 5)
+            view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+        }
+        return view
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView,
+                 calloutAccessoryControlTapped control: UIControl) {
+        let location = view.annotation as! Patient
+        let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+        location.mapItem().openInMaps(launchOptions: launchOptions)
+    }
+
 }
