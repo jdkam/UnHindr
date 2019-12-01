@@ -46,6 +46,8 @@ class Services {
     static let motorGameName = "MotorGameData"
 //    static var motorGameRef = db.collection("users").document(userRef!).collection("MotorGameData")
     
+    static let locationName = "Location"
+    
     // MARK: - Retrieve reference to a patient's data
     // Input:
     //      1. unique UID of a user

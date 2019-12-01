@@ -63,6 +63,9 @@
                                 <state key="normal" image="eject" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
                                 </state>
+                                <connections>
+                                    <action selector="UpdateCoordinatesPressed:" destination="crd-WC-LTS" eventType="touchUpInside" id="jzP-uC-mj2"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NcY-yd-Jy7">
                                 <rect key="frame" x="311" y="695" width="83" height="93"/>
