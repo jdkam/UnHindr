@@ -11,11 +11,14 @@ import UIKit
 import FirebaseFirestore
 
 /// Class for managing the full medication view controller
-class FullMedicationViewController: UIViewController, UITableViewDataSource {
+class FullMedicationViewController: UIViewController {
     
     @IBOutlet weak var medTableView: UITableView!
     
     let medicationPlanRef = Services.fullUserRef.document(Services.userRef!).collection(Services.medPlanName)
+    
+    // Create the batch writing
+    let batch = Services.db.batch()
     
     var medList: QuerySnapshot?
     
@@ -25,10 +28,21 @@ class FullMedicationViewController: UIViewController, UITableViewDataSource {
 
         // Do any additional setup after loading the view.
         medTableView.dataSource = self
+        medTableView.delegate = self
         
         getAllMedicationPlans(Services.userRef!) { (success) in
             if (success) {
                 self.medTableView.reloadData()
+            }
+        }
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        // Update remote firebase with new medication list
+        batch.commit() { err in
+            if err != nil {
+                print("Error writing batch")
             }
         }
     }
@@ -48,6 +62,44 @@ class FullMedicationViewController: UIViewController, UITableViewDataSource {
         }
     }
     
+    private func generatePlan(medPlan: QueryDocumentSnapshot) -> Medication{
+        let medName = medPlan.get("Medication") as! String
+        let dosage = medPlan.get("Dosage") as! Int
+        let quantity = medPlan.get("Quantity") as! Int
+        
+        // Parse the reminder time
+        let timeString = medPlan.get("ReminderTime") as? String
+        var arr = timeString!.components(separatedBy: [":", " "])
+        if (arr.count == 2){
+            if Int(arr[0])! > 12 {
+                arr[0] = String(Int(arr[0])! - 12)
+                arr.append("PM")
+            }
+            else {
+                arr.append("AM")
+            }
+        }
+        else {
+            print("Error parsing reminder time from firestore")
+        }
+        let timeStr = arr[0] + ":" + arr[1] + " " + arr[2]
+        
+        // Parse the days of the week
+        let dayArr = medPlan.get("Day") as! [String]
+        print(dayArr.count)
+        //cell.dayOfWeekLabel
+        
+        return Medication (medName: medName, dosage: dosage, quantity: quantity, reminderTime: timeStr, days: dayArr)
+//        var dict: [String: String] = [:]
+//        dict["medName"] = medPlan.get("Medication") as? String
+//        dict["dosage"]
+    }
+    
+
+}
+
+
+extension FullMedicationViewController: UITableViewDataSource, UITableViewDelegate {
     // MARK: - Table View delegate
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -92,70 +144,26 @@ class FullMedicationViewController: UIViewController, UITableViewDataSource {
         
         return cell
     }
+
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let delete = UIContextualAction(style: .normal, title: "Delete") { (action, view, nil) in
-            print("Delete")
-        }
-        return UISwipeActionsConfiguration(actions: [delete])
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete", handler: { (ac: UIContextualAction, view: UIView, success:(Bool) -> Void) in
+            let docRef = self.medicationPlanRef.document(self.medList!.documents[indexPath.row].documentID)
+            self.batch.deleteDocument(docRef)
+            ///////////////////DEBUG //////////////
+            print("Added medication with name: \(self.medList!.documents[indexPath.row].get("Medication"))")
+            success(true)
+        })
+        
+        let editAction = UIContextualAction(style: .normal, title: "Edit", handler: {(ac: UIContextualAction, view: UIView, success:(Bool) -> Void) in
+            print("Edit")
+            success(true)
+        })
+
+        deleteAction.backgroundColor = .red
+        editAction.backgroundColor = .green
+        let configuration = UISwipeActionsConfiguration(actions: [deleteAction, editAction])
+        return configuration
     }
-    
-//    func deleteAction(at indexPath: IndexPath) -> UIContextualAction {
-//        let del = UIContextualAction(style: .normal, title: "Delete") { (action, view, nil) in
-////            let documentID = self.medList?.documents[indexPath.row].documentID
-////            self.medicationPlanRef.document(documentID!).delete(completion: { (err) in
-////                if let err = err {
-////                    print("Error deleting medication \(err)")
-////                }
-////                else {
-////
-////                }
-////            })
-//            print("Delete")
-//            
-////            completion(true)
-//        }
-//        del.backgroundColor = .red
-//        return del
-//    }
-    
-    private func generatePlan(medPlan: QueryDocumentSnapshot) -> Medication{
-        let medName = medPlan.get("Medication") as! String
-        let dosage = medPlan.get("Dosage") as! Int
-        let quantity = medPlan.get("Quantity") as! Int
-        
-        // Parse the reminder time
-        let timeString = medPlan.get("ReminderTime") as? String
-        var arr = timeString!.components(separatedBy: [":", " "])
-        if (arr.count == 2){
-            if Int(arr[0])! > 12 {
-                arr[0] = String(Int(arr[0])! - 12)
-                arr.append("PM")
-            }
-            else {
-                arr.append("AM")
-            }
-        }
-        else {
-            print("Error parsing reminder time from firestore")
-        }
-        let timeStr = arr[0] + ":" + arr[1] + " " + arr[2]
-        
-        // Parse the days of the week
-        let dayArr = medPlan.get("Day") as! [String]
-        print(dayArr.count)
-        //cell.dayOfWeekLabel
-        
-        return Medication (medName: medName, dosage: dosage, quantity: quantity, reminderTime: timeStr, days: dayArr)
-//        var dict: [String: String] = [:]
-//        dict["medName"] = medPlan.get("Medication") as? String
-//        dict["dosage"]
-    }
-    
 
 }
-
-
-//extension FullMedicationViewController : UITableViewDataSource {
-//
-//}
