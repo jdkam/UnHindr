@@ -21,6 +21,7 @@ class CogGameMonthlyViewController: UIViewController {
 
     @IBOutlet weak var month: UILabel!
     @IBOutlet weak var cogMonthGraph: BarChartView!
+    @IBOutlet weak var monthView: UILabel!
     
     // gets the correct user database values
     let cogRef = Services.db.collection("users").document(Services.userRef!).collection("CogGameData")
@@ -34,6 +35,8 @@ class CogGameMonthlyViewController: UIViewController {
     // MARK: - View controller lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.monthView.text = "Month"
         
         let cogRef = Services.checkUserIDCogGame()
         
