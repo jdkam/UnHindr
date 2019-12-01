@@ -44,7 +44,7 @@ class MotorGameMonthlyViewController: UIViewController {
                 else
                 {
                     self.motorMonthGraph.noDataText = "Please choose a patient in the Connect Screen"
-                    self.monthLabel.text = "No Data"
+                    self.monthLabel.text = ""
                 }
                 
             }
