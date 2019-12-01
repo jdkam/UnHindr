@@ -24,9 +24,10 @@ class ChatViewController: UIViewController {
         tableView.dataSource = self
         
         //get the current users UID///
-        let myUserID = Auth.auth().currentUser!.uid
-        print("auth: \(myUserID)")
-        print("otherUID: \(user_ID)")
+        //let myUserID = Auth.auth().currentUser!.uid
+        let myUserID = Services.userRef!
+        print("CurrentUserID: \(myUserID)")
+        print("user2DocumentID: \(user_ID)")
         
         tableView.register(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: "ReusableCell")
         
@@ -109,7 +110,7 @@ extension ChatViewController: UITableViewDataSource {
         
         //This is a message from the current user
         if message.sender == Auth.auth().currentUser?.email {
-            print("Current User Message")
+            //print("Current User Message")
             cell.leftImageView.isHidden = true
             cell.rightImageView.isHidden = false
             cell.messageBubble.backgroundColor = UIColor(named: "BrandBlue")
@@ -118,7 +119,7 @@ extension ChatViewController: UITableViewDataSource {
         }
         else //message from the sender
         {
-            print("Sender User message")
+            //print("Sender User message")
             cell.leftImageView.isHidden = false
             cell.rightImageView.isHidden = true
             cell.messageBubble.backgroundColor = UIColor(named: "lightGrey")
