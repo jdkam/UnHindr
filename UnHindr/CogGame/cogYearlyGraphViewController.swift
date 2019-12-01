@@ -21,6 +21,7 @@ class cogYearlyGraphViewController: UIViewController {
 
     @IBOutlet weak var cogYearlyGraph: BarChartView!
     @IBOutlet weak var yearLabel: UILabel!
+    @IBOutlet weak var yearView: UILabel!
     
     // gets the correct user database values
     //let cogRef = Services.db.collection("users").document(Services.userRef!).collection("CogGameData")
@@ -36,6 +37,8 @@ class cogYearlyGraphViewController: UIViewController {
     // MARK: - View controller lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.yearView.text = "Year"
         
         let cogRef = Services.checkUserIDCogGame()
         

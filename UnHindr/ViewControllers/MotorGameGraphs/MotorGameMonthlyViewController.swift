@@ -15,6 +15,7 @@ class MotorGameMonthlyViewController: UIViewController {
     
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var motorMonthGraph: BarChartView!
+    @IBOutlet weak var monthView: UILabel!
     
     // gets the correct user database values
     
@@ -29,6 +30,8 @@ class MotorGameMonthlyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let motorRef = Services.checkUserIDMotorGame()
+        
+        self.monthView.text = "Month"
         
         Services.getisPatient() {(success) in
             if (success)

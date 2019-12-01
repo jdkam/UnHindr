@@ -14,6 +14,7 @@ class MonthMoodGraphViewController: UIViewController {
 
     @IBOutlet weak var monthGraph: BarChartView!
     @IBOutlet weak var monthName: UILabel!
+    @IBOutlet weak var monthView: UILabel!
     
     // gets the correct user database values
     //let moodRef = Services.db.collection("users").document(Services.userRef!).collection("Mood")
@@ -27,6 +28,8 @@ class MonthMoodGraphViewController: UIViewController {
     // MARK: - View controller lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.monthView.text = "Month"
         
         let moodRef = Services.checkUserIDMood()
         

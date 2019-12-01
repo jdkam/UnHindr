@@ -15,6 +15,7 @@ class MotorGameYearlyViewController: UIViewController {
     
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var motorYearlyGraph: BarChartView!
+    @IBOutlet weak var yearView: UILabel!
     
     // gets the correct user database values
     
@@ -33,6 +34,7 @@ class MotorGameYearlyViewController: UIViewController {
         super.viewDidLoad()
         let motorRef = Services.checkUserIDMotorGame()
         
+        self.yearView.text = "Year"
         Services.getisPatient() {(success) in
             if (success)
             {
