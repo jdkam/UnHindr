@@ -48,6 +48,12 @@ class Services {
     
     static let locationName = "Location"
     
+    // Cognitive Game reference
+    static let cogGameName = "CogGameData"
+    
+    static let moodName = "Mood"
+
+    
     // MARK: - Retrieve reference to a patient's data
     // Input:
     //      1. unique UID of a user
@@ -135,6 +141,19 @@ class Services {
         }
     }
     
+//    static func checkUserIDMed() -> CollectionReference
+//    {
+//        var medRef: CollectionReference
+//        if (user_ID == "")
+//        {
+//            medRef = Services.fullUserRef.document(Services.userRef!).collection(Services.medicationHistoryRef)
+//        }
+//        else
+//        {
+//            medRef = Services.fullUserRef.document(Services.userRef!).collection(Services.medicationHistoryRef)
+//        }
+//        return medRef
+//    }
     
     // Checks whether the current logged in user is a patient or not
     // Input:
@@ -161,13 +180,40 @@ class Services {
         var motorRef: CollectionReference
         if (user_ID == "")
         {
-            motorRef = Services.db.collection("users").document(Services.userRef!).collection("MotorGameData")
+            motorRef = Services.db.collection("users").document(Services.userRef!).collection(Services.motorGameName)
         }
         else
         {
             motorRef = Services.fullUserRef.document(user_ID).collection(Services.motorGameName)
         }
         return motorRef
+    }
+    
+    static func checkUserIDCogGame() -> CollectionReference
+    {
+        var cogRef: CollectionReference
+        if (user_ID == "")
+        {
+            cogRef = Services.fullUserRef.document(Services.userRef!).collection(Services.cogGameName)
+        }
+        else{
+            cogRef = Services.fullUserRef.document(user_ID).collection(Services.cogGameName)
+        }
+        return cogRef
+    }
+    
+    static func checkUserIDMood() -> CollectionReference
+    {
+        var moodRef: CollectionReference
+        if(user_ID == "")
+        {
+            moodRef = Services.fullUserRef.document(Services.userRef!).collection(Services.moodName)
+        }
+        else
+        {
+            moodRef = Services.fullUserRef.document(user_ID).collection(Services.moodName)
+        }
+        return moodRef
     }
     
 }

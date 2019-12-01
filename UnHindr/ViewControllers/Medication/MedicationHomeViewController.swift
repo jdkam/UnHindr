@@ -46,11 +46,11 @@ class MedicationHomeViewController: UIViewController, NewMedDelegate {
         // Retrieve all meds taken for the current date (fetches a remote copy for data persistence on reboot)
         // Must be done before getDBMedicationPlan to retrieve the self.usedCards data
         self.getDBPlanTaken { (medTaken, timestamp) in
-            print(Date.isToday(timestamp))
+//            print(Date.isToday(timestamp))
             // Need to update the indices if new meds are added for the current day
             if (Date.isToday(timestamp)){
                 self.usedCards = medTaken
-                print(self.usedCards)
+//                print(self.usedCards)
             }
             else {
                 self.usedCards = []
@@ -60,11 +60,18 @@ class MedicationHomeViewController: UIViewController, NewMedDelegate {
                     "MedPlan": []
                     ])
             }
-        }
-        // Retrieve snapshot of med plans for current date
-        self.getDBMedicationPlan { (querySnapshot) in
-            self.planSnapshot = querySnapshot!
-            self.switchToNextCard(self.MedCardView)
+            
+            // Retrieve snapshot of med plans for current date
+                self.getDBMedicationPlan { (querySnapshot) in
+                self.planSnapshot = querySnapshot!
+                    // See if the first card is valid
+                    if (self.usedCards.contains(0)){
+                        self.switchToNextCard(self.MedCardView)
+                    }
+                    else{
+                        assert(self.fetchAndUpdateCard())
+                    }
+            }
         }
     
     }
@@ -122,7 +129,7 @@ class MedicationHomeViewController: UIViewController, NewMedDelegate {
     private func getDBMedicationPlan(completionHandler: @escaping (_ result: QuerySnapshot?) -> Void){
         medicationPlanRef
             .whereField("Day", arrayContains: Date.getDayOfWeek(Timestamp.init()).rawValue)
-            .order(by: "ReminderTime")
+            .order(by: "ReminderTime", descending: false)
             .getDocuments { (querySnapshot, err) in
             // the program will go into this if statement if the user authentication fails
             if err != nil {
@@ -164,7 +171,7 @@ class MedicationHomeViewController: UIViewController, NewMedDelegate {
     // Output:
     //          1. Sorts the usedCards array
     func onMedAdded(documentID: String) {
-        print("Data received: \(documentID)")
+//        print("Data received: \(documentID)")
         // Update the remote array
         var count: Int = 0
         self.getDBMedicationPlan { (querySnapshot) in
@@ -278,14 +285,14 @@ class MedicationHomeViewController: UIViewController, NewMedDelegate {
                 cardIndex = 0
             }
             else{
-                print("Adding to card index")
+//                print("Adding to card index")
                 cardIndex += 1
             }
         }while(self.usedCards.contains(cardIndex) && self.usedCards.count < queryLength)
         
-        print(self.usedCards)
-        print("Querylength: \(queryLength)")
-        print("New card index: \(cardIndex)")
+//        print(self.usedCards)
+//        print("Querylength: \(queryLength)")
+//        print("New card index: \(cardIndex)")
         
         return true
     }
@@ -306,8 +313,9 @@ class MedicationHomeViewController: UIViewController, NewMedDelegate {
             ])
         // Add card to read list
         self.usedCards.append(cardIndex)
+        self.usedCards.sort()
         
-        print("New used cards list: \(self.usedCards)")
+//        print("New used cards list: \(self.usedCards)")
         
         self.updateMedPlanTakenArray()
         

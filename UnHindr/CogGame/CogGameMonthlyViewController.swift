@@ -34,7 +34,28 @@ class CogGameMonthlyViewController: UIViewController {
     // MARK: - View controller lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        getCogGameData()
+        
+        let cogRef = Services.checkUserIDCogGame()
+        
+        Services.getisPatient() {(success) in
+            if(success)
+            {
+                self.getCogGameData(reference: cogRef)
+            }
+            else
+            {
+                if(user_ID != "")
+                {
+                    self.getCogGameData(reference: cogRef)
+                }
+                else
+                {
+                    self.cogMonthGraph.noDataText = "Please choose a patient in the Connect Screen"
+                    self.month.text = ""
+                }
+            }
+        }
+        //getCogGameData()
         
         //Sets up the chart properties
         self.title = "Bar Chart"
@@ -65,10 +86,10 @@ class CogGameMonthlyViewController: UIViewController {
     //      1. None
     // Output:
     //      1. The monthly cognitive graph is created and displayed for the user to see
-    func getCogGameData()
+    func getCogGameData(reference: CollectionReference)
     {
         // gets all the documents for this particular user
-        cogRef.getDocuments()
+        reference.getDocuments()
             {
                 // gets all the documents for this particular user
                 (querySnapshot,err) in
@@ -148,7 +169,7 @@ class CogGameMonthlyViewController: UIViewController {
                     }
                     // finalize setup of graph after the data has been inputted
                     let set = BarChartDataSet(values: self.GraphData, label: "Cog Score")
-                    set.colors = [UIColor.green]
+                    set.colors = [UIColor.init(displayP3Red: 21/255, green: 187/255, blue: 18/255, alpha: 1)]
                     let chartData = BarChartData(dataSet: set)
                     self.cogMonthGraph.fitBars = true
                     self.cogMonthGraph.data = chartData

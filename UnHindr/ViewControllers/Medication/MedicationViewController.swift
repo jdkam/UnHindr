@@ -18,6 +18,7 @@ protocol NewMedDelegate: class {
     func onMedAdded(documentID: String)
 }
 
+/// Class for the determining the behavior of the initial medication view
 class MedicationViewController: UIViewController {
     
     @IBOutlet weak var monButton: UIButton!
