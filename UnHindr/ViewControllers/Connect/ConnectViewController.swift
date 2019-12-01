@@ -41,8 +41,9 @@ class ConnectViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedPatient = list[indexPath.row] as! String
+        let selectedPatient = list[indexPath.row]
         print(selectedPatient)
+        Services.showAlert("Successfully Connected to User!", "You can now message using the Chat feature and data sharing is now enabled.", vc: self)
         getRefFromEmail(selectedPatient) { (ref) in
             if ref != "" {
                 user_ID = ref
