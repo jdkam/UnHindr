@@ -2,14 +2,14 @@
 File: [MedicationTableViewCell.swift]
 Creators: [Allan]
 Date created: [23/11/2019]
-Date updated: [23/11/2019]
-Updater name: []
-File description: [Controls what is displayed for each table view cell]
+Date updated: [30/11/2019]
+Updater name: [Allan]
+File description: [Defines the template for each cell under full medication list]
 */
 
 import UIKit
 
-// Class for managing each instance of table view cell
+// Class for managing each instance of table view cell under full medication list
 class MedicationTableViewCell: UITableViewCell {
 
     // Properties
@@ -19,13 +19,12 @@ class MedicationTableViewCell: UITableViewCell {
     @IBOutlet weak var reminderTimeLabel: UILabel!
     @IBOutlet weak var dayOfWeekLabel: UILabel!
     
+    // MARK: - UITableViewCell lifecycle functions
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-//        dayOfWeekLabel.lineBreakMode = .byWordWrapping
-//        dayOfWeekLabel.numberOfLines = 0
-    }
 
+    }
+    // Default function
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

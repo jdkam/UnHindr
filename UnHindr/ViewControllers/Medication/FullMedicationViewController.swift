@@ -1,9 +1,9 @@
 /*
 File: [FullMedicationViewController.swift]
 Creators: [Allan]
-Date created: [23/11/2019]
-Date updated: [23/11/2019]
-Updater name: []
+Date created: [11/23/2019]
+Date updated: [11/30/2019]
+Updater name: [Allan]
 File description: [Controls the full medication list]
 */
 
@@ -13,13 +13,16 @@ import FirebaseFirestore
 /// Class for managing the full medication view controller
 class FullMedicationViewController: UIViewController {
     
+    // Reference to the UITableView under full medication view controller
     @IBOutlet weak var medTableView: UITableView!
     
+    // Static reference to the current user's medication plan
     let medicationPlanRef = Services.fullUserRef.document(Services.userRef!).collection(Services.medPlanName)
     
     // Create the batch writing
     let batch = Services.db.batch()
     
+    // Snapshot of the current user's medication plan
     var medList: QuerySnapshot?
     
     // MARK: - Controller lifecycle methods
@@ -47,6 +50,13 @@ class FullMedicationViewController: UIViewController {
         }
     }
     
+    // MARK: - Helper function to retrieve data from firestore
+    // Function to retrieve the full medication plan for a given user
+    // Input:
+    //      1. User reference
+    // Output:
+    //      1. True -> medication plan is fetched and stored into the query snapshot
+    //      2. False -> unable to fetch plan
     func getAllMedicationPlans(_ userRef: String, completionHandler: @escaping (Bool) -> Void){
         Services.fullUserRef.document(userRef).collection(Services.medPlanName)
             .order(by: "Medication")
@@ -62,6 +72,11 @@ class FullMedicationViewController: UIViewController {
         }
     }
     
+    // Function to generate a Medication entry
+    // Input:
+    //      1. Query snapshot of medication
+    // Output:
+    //      1. A Medication class object
     private func generatePlan(medPlan: QueryDocumentSnapshot) -> Medication{
         let medName = medPlan.get("Medication") as! String
         let dosage = medPlan.get("Dosage") as! Int
@@ -98,17 +113,21 @@ class FullMedicationViewController: UIViewController {
 
 }
 
-
+// Extension to control the swiping and showing of data on the UIViewTable
 extension FullMedicationViewController: UITableViewDataSource, UITableViewDelegate {
-    // MARK: - Table View delegate
+    // MARK: - Table View functions
+    // Returns the number of sections of the UITableView
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
+    // Output:
+    //      1. The number of medication for the current day
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.medList?.count ?? 0
     }
     
+    // Populates each instance of the table view with its corresponding medication plan
     func tableView( _ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Determine the identifier for each cell (set in storyboard)
         let cellIdentifier = "MedicationTableViewCell"
@@ -145,13 +164,11 @@ extension FullMedicationViewController: UITableViewDataSource, UITableViewDelega
         return cell
     }
 
-    
+    // Enables swiping gesture for editting and deleting medication from the full medication list
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete", handler: { (ac: UIContextualAction, view: UIView, success:(Bool) -> Void) in
             let docRef = self.medicationPlanRef.document(self.medList!.documents[indexPath.row].documentID)
             self.batch.deleteDocument(docRef)
-            ///////////////////DEBUG //////////////
-            print("Added medication with name: \(self.medList!.documents[indexPath.row].get("Medication"))")
             success(true)
         })
         
