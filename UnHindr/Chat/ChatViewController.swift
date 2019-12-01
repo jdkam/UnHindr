@@ -21,6 +21,8 @@ class ChatViewController: UIViewController {
     var messages: [Message] = []
     
     var thread = ""
+    let myUserID = Services.userRef!
+    let theirUserID = user_ID
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,32 +30,22 @@ class ChatViewController: UIViewController {
         
         //get the current users UID///
         //let myUserID = Auth.auth().currentUser!.uid
-        let myUserID = Services.userRef!
-        let theirUserID = user_ID
+        
         print("CurrentUserID: \(myUserID)")
         print("user2DocumentID: \(user_ID)")
         
         thread = setOnetoOneChat(ID1: myUserID, ID2: theirUserID)
         
-//        if theirUserID != "" {
-//        let docRef = Services.db.collection("messages").document(thread)
-//        docRef.getDocument { (document, error) in
-//            if document!.exists {
-//                print("Document already exists")
-//            } else {
-//                print("Document does not exist")
-//                Services.db.collection("messages").document(self.thread)
-//                //self.db.collection("messages").document(self.thread).collection("ChatHistory").addDocument(data: )
-//            }
-//        }
-//        }
-        print(thread)
-        
         tableView.register(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: "ReusableCell")
         
-        //TODO: Add a check for if the user is connected to another user
         if(theirUserID != ""){
         loadMessages()
+        }
+        else
+        {
+            let title = "Oops"
+            let message = "Please connect to a user first using the 'Connect' Feature to send and view messages."
+            showAlert(title, message)
         }
     }
     
@@ -71,9 +63,20 @@ class ChatViewController: UIViewController {
         }
     }
     
+    func showAlert(_ title:String, _ message: String){
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let alertAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        
+        alert.addAction(alertAction)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
     func loadMessages() {
         
-        Services.fullUserRef.document(Services.userRef!).collection("messages")
+        Services.db.collection("messages").document(thread).collection("ChatHistory")
             .order(by: "date")
             .addSnapshotListener { (querySnapshot, error) in
             self.messages = []
