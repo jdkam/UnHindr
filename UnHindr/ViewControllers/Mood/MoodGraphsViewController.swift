@@ -13,7 +13,7 @@ import FirebaseAuth
 class MoodGraphsViewController: UIViewController {
      
     // gets the correct user database values
-    let moodRef = Services.db.collection("users").document(userID).collection("Mood")
+    //let moodRef = Services.db.collection("users").document(userID).collection("Mood")
     
     @IBOutlet weak var moodChart: BarChartView!
     @IBOutlet weak var month: UILabel!
@@ -31,10 +31,27 @@ class MoodGraphsViewController: UIViewController {
     // MARK: - View controller lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let moodRef = Services.checkUserIDMood()
         
-        print(user_ID)
-        
-        getMoodData()
+        Services.getisPatient(){(success) in
+            if (success)
+            {
+                self.getMoodData(reference: moodRef)
+            }
+            else
+            {
+                if(user_ID != "")
+                {
+                    self.getMoodData(reference: moodRef)
+                }
+                else
+                {
+                    self.moodChart.noDataText = "Please choose a patient in the Connect Screen"
+                    self.month.text = ""
+                }
+            }
+        }
         
         //Sets up the chart properties
         self.title = "Mood Bar Chart"
@@ -65,10 +82,10 @@ class MoodGraphsViewController: UIViewController {
     //      1. None
     // Output:
     //      1. Mood Graph is created using the data from the user in firebase
-    func getMoodData()
+    func getMoodData(reference: CollectionReference)
     {
         // gets all the documents for this particular user
-        moodRef.getDocuments()
+        reference.getDocuments()
         {
             (querySnapshot, err) in
             // the program will go into this if statement if the user authentication fails
@@ -172,7 +189,7 @@ class MoodGraphsViewController: UIViewController {
                     self.moodChart.xAxis.valueFormatter = dayFormat as IAxisValueFormatter
                     // formatting the graph
                     let set = BarChartDataSet(values: self.GraphData, label: "Mood")
-                    set.colors = [UIColor.green]
+                    set.colors = [UIColor.init(displayP3Red: 21/255, green: 187/255, blue: 18/255, alpha: 1)]
                     let chartData = BarChartData(dataSet: set)
                     self.moodChart.fitBars = true
                     self.moodChart.data = chartData
@@ -189,8 +206,9 @@ class MoodGraphsViewController: UIViewController {
                         let dbDate: Date = timestamp.dateValue()
                         // converts the date into a day
                         let dbDay = calendar.component(.day, from: dbDate)
+                        let dbMonth = calendar.component(.month, from: dbDate)
                         // checks if dbDay is greater than or equal to lastweekday and if dbDay is less than or equal to the currentDay
-                        if (dbDay >= lastWeekDay && dbDay <= currentDay)
+                        if (dbDay >= lastWeekDay && dbDay <= currentDay && dbMonth == currentMonth)
                         {
                             // checks if dbDay exists in the dictionary already
                             let keyExists = self.weekMoodValues[dbDay] != nil
@@ -232,7 +250,7 @@ class MoodGraphsViewController: UIViewController {
                 }
                 // formatting the graph
                 let set = BarChartDataSet(values: self.GraphData, label: "Mood")
-                set.colors = [UIColor.green]
+                set.colors = [UIColor.init(displayP3Red: 21/255, green: 187/255, blue: 18/255, alpha: 1)]
                 let chartData = BarChartData(dataSet: set)
                 self.moodChart.fitBars = true
                 self.moodChart.data = chartData

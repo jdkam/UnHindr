@@ -1,9 +1,8 @@
-//File: [MotorGameYearlyViewController]
+//File: [YearMedChartViewController]
 //Creators: [Johnston]
-//Date created: [11/17/2019]
+//Date created: [22/11/2019]
 //Updater name: [Johnston]
-//File description: [Reads cognitive data values from fireabse]
-
+//File description: [Reads medication data and properly graphs them for an entire year]
 
 import UIKit
 import Foundation
@@ -11,62 +10,61 @@ import Charts
 import FirebaseFirestore
 import FirebaseAuth
 
-class MotorGameYearlyViewController: UIViewController {
-    
+// MARK: - Class to create the graphs for the amount of medication taken in one month for a one year period
+class YearMedChartViewController: UIViewController {
+
+    @IBOutlet weak var yearMedGraph: BarChartView!
     @IBOutlet weak var yearLabel: UILabel!
-    @IBOutlet weak var motorYearlyGraph: BarChartView!
     
-    // gets the correct user database values
-    
-    
+    let medRef = Services.db.collection("users").document(Services.userRef!).collection("Medication")
     // storing the graph data
     var GraphData: [BarChartDataEntry] = []
     
-    var yearMotorValues: [String:Double] = [:]
-    var monthAverage = Array(repeating: 0, count: 12)
-    var dictMonthAvg: [String:Double] = [:]
+    var yearMedValues: [String:Double] = [:]
+
     // this array is to set the x axis values as strings
     let months = ["January","February","March","April","May","June","July","August","September","October","November","December"]
     
     // MARK: - View controller lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        let motorRef = Services.checkUserIDMotorGame()
         
-        Services.getisPatient() {(success) in
-            if (success)
-            {
-                self.getMotorData(reference: motorRef)
-            }
-            else
-            {
-                if(user_ID != "")
-                {
-                    self.getMotorData(reference: motorRef)
-                }
-                else
-                {
-                    self.motorYearlyGraph.noDataText = "Please choose a patient in the Connect Screen"
-                    self.yearLabel.text = ""
-                }
-                
-            }
-        }
+        //        let medRef = Services.checkUserIDMed(){(success) in
+        //            if(success)
+        //            {
+        //                self.getMedData(reference: medRef)
+        //            }
+        //            else
+        //            {
+        //                if(user_ID == "")
+        //                {
+        //                    self.getMedData(reference: medRef)
+        //                }
+        //                else
+        //                {
+        //                    self.monthChart.noDataText = "Please choose a patient in the Conncet Screen"
+        //                    self.yearLabel.text = ""
+        //                }
+        //            }
+        //        }
+        
+        
+        getMedData()
         
         // Sets up the chart properties
         self.title = "Bar Chart"
-        motorYearlyGraph.maxVisibleCount = 40
-        motorYearlyGraph.drawBarShadowEnabled = false
-        motorYearlyGraph.drawValueAboveBarEnabled = true
-        motorYearlyGraph.highlightFullBarEnabled = false
-        motorYearlyGraph.doubleTapToZoomEnabled = false
-        motorYearlyGraph.animate(xAxisDuration: 1.0, yAxisDuration: 2.0)
-        let leftAxis = motorYearlyGraph.leftAxis
+        yearMedGraph.maxVisibleCount = 40
+        yearMedGraph.drawBarShadowEnabled = false
+        yearMedGraph.drawValueAboveBarEnabled = true
+        yearMedGraph.highlightFullBarEnabled = false
+        yearMedGraph.doubleTapToZoomEnabled = false
+        yearMedGraph.animate(xAxisDuration: 1.0, yAxisDuration: 2.0)
+        let leftAxis = yearMedGraph.leftAxis
         leftAxis.axisMinimum = 0
-        motorYearlyGraph.rightAxis.enabled = false
-        let xAxis = motorYearlyGraph.xAxis
+        yearMedGraph.rightAxis.enabled = false
+        let xAxis = yearMedGraph.xAxis
         xAxis.labelPosition = .bottom
-        let l = motorYearlyGraph.legend
+        let l = yearMedGraph.legend
         l.horizontalAlignment = .center
         l.verticalAlignment = .bottom
         l.orientation = .horizontal
@@ -75,23 +73,24 @@ class MotorGameYearlyViewController: UIViewController {
         l.formToTextSpace = 8
         l.xEntrySpace = 6
         xAxis.drawGridLinesEnabled = false
-        motorYearlyGraph.xAxis.labelRotationAngle = -45
+        yearMedGraph.xAxis.labelRotationAngle = -45
     }
     
-    // MARK: - Obtain the yearly motor data from firebase
+    // MARK: - Obtain the yearly medication data from firebase
     // Input:
     //      1. None
     // Output:
-    //      1. The yearly motor graph is created and displayed for the user to see
-    func getMotorData(reference: CollectionReference)
+    //      1. The yearly medication graph is created and displayed for the user to see
+    // func getMedData(reference: CollectionReference)
+    func getMedData()
     {
         // gets all the documents for this particular user
-        reference.getDocuments()
+        medRef.getDocuments()
             {
                 (querySnapshot, err) in
                 if err != nil // the program will go into this if statement if the user authentication fails
                 {
-                    print("Error getting yearly motor data")
+                    print("Error getting yearly cognitive data")
                 }
                 else
                 {
@@ -106,7 +105,7 @@ class MotorGameYearlyViewController: UIViewController {
                     for document in querySnapshot!.documents
                     {
                         // creates the timestamp for each document
-                        let timestamp: Timestamp = document.get("Time") as! Timestamp
+                        let timestamp: Timestamp = document.get("Date") as! Timestamp
                         // finds the date of that timestamp
                         let dbDate: Date = timestamp.dateValue()
                         // finds the month of that timestamp
@@ -119,20 +118,16 @@ class MotorGameYearlyViewController: UIViewController {
                         if(dbYear == currentYear)
                         {
                             // checks if the month already exists in the dictionary
-                            let keyExists = self.yearMotorValues[monthName] != nil
+                            let keyExists = self.yearMedValues[monthName] != nil
                             if(keyExists)
                             {
                                 // when the key exists, add the score on top of the value that is already in the dictionary
-                                self.yearMotorValues[monthName] = (self.yearMotorValues[monthName]!) + (document.get("Score") as! Double)
-                                // increment the average for that month
-                                self.dictMonthAvg[monthName]! += 1
+                                self.yearMedValues[monthName] = (self.yearMedValues[monthName]!) + (document.get("Quantity") as! Double)
                             }
                             else
                             {
                                 // creates the new key with the score from the database as its value
-                                self.yearMotorValues[monthName] = (document.get("Score") as! Double)
-                                // sets the average as 1
-                                self.dictMonthAvg[monthName] = 1
+                                self.yearMedValues[monthName] = (document.get("Quantity") as! Double)
                             }
                         }
                     }
@@ -141,11 +136,11 @@ class MotorGameYearlyViewController: UIViewController {
                     for i in self.months
                     {
                         // checks if that month exists inside the dictionary
-                        let dayExists = self.yearMotorValues[i] != nil
+                        let dayExists = self.yearMedValues[i] != nil
                         if(dayExists)
                         {
-                            // sets the data value as the average from yearMotorValues[i] and dictMonthAvg[i] and appends the data to the GraphData array
-                            let data = BarChartDataEntry(x: Double(j),y: Double(self.yearMotorValues[i]!/self.dictMonthAvg[i]!))
+                            // sets the data value as the average from yearMoodValue[i] and dictMonthAvg[i] and appends the data to the GraphData array
+                            let data = BarChartDataEntry(x: Double(j),y: Double(self.yearMedValues[i]!))
                             self.GraphData.append(data)
                         }
                         else{
@@ -157,15 +152,15 @@ class MotorGameYearlyViewController: UIViewController {
                     }
                     // calls on the helper function to set the x axis values as strings
                     let monthFormat = BarChartFormatter(values: self.months)
-                    self.motorYearlyGraph.xAxis.valueFormatter = monthFormat as IAxisValueFormatter
+                    self.yearMedGraph.xAxis.valueFormatter = monthFormat as IAxisValueFormatter
                     // finalize any other chart properties
-                    let set = BarChartDataSet(values: self.GraphData, label: "Motor Score")
-                    set.colors = [UIColor.init(displayP3Red: 21/255, green: 187/255, blue: 18/255, alpha: 1)]
+                    let set = BarChartDataSet(values: self.GraphData, label: "Medication Data")
+                    set.colors = [UIColor.init(displayP3Red: 0/255, green: 128/255, blue: 255/255, alpha: 1)]
                     let chartData = BarChartData(dataSet: set)
-                    self.motorYearlyGraph.fitBars = true
-                    self.motorYearlyGraph.data = chartData
-                    self.motorYearlyGraph.setVisibleXRangeMaximum(6)
-                    self.motorYearlyGraph.moveViewToX(6)
+                    self.yearMedGraph.fitBars = true
+                    self.yearMedGraph.data = chartData
+                    self.yearMedGraph.setVisibleXRangeMaximum(6)
+                    self.yearMedGraph.moveViewToX(6)
                 }
         }
     }

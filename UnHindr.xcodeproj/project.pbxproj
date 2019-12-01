@@ -29,6 +29,8 @@
 		707E9F7423827F85006A3AF5 /* MonthMoodGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707E9F7123827F85006A3AF5 /* MonthMoodGraphViewController.swift */; };
 		707E9F7523827F85006A3AF5 /* MoodGraphsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707E9F7223827F85006A3AF5 /* MoodGraphsViewController.swift */; };
 		707E9F7623827F85006A3AF5 /* YearMoodGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707E9F7323827F85006A3AF5 /* YearMoodGraphViewController.swift */; };
+		70C1FCEB23887E0600BF1CC6 /* MonthMedChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C1FCEA23887E0600BF1CC6 /* MonthMedChartViewController.swift */; };
+		70C1FCEF238884E700BF1CC6 /* YearMedChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C1FCEE238884E700BF1CC6 /* YearMedChartViewController.swift */; };
 		70B46FB02389E4B80088D1FD /* CaregiverMedicationScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70B46FAF2389E4B80088D1FD /* CaregiverMedicationScreen.storyboard */; };
 		70B46FB42389F2440088D1FD /* CaregiverPatientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B46FB32389F2440088D1FD /* CaregiverPatientsViewController.swift */; };
 		8176FAB3237B88D80083B445 /* CogGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8176FAB2237B88D80083B445 /* CogGameViewController.swift */; };
@@ -85,9 +87,12 @@
 		9E91389C2380D6C5006AD1F9 /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E91389B2380D6C5006AD1F9 /* ConnectViewController.swift */; };
 		9EE42465237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE42464237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift */; };
 		A2B5644B1E4149E09D599F82 /* Pods_UnHindr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7EAE4472764465EE4B52BD6 /* Pods_UnHindr.framework */; };
+		CD4A840D23932C6E00189605 /* EmergContactUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4A840C23932C6E00189605 /* EmergContactUITests.swift */; };
 		CDBC4013236E4FE8008934AF /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDBC4012236E4FE8008934AF /* Settings.storyboard */; };
 		CDBC4016236E501B008934AF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBC4015236E501B008934AF /* SettingsViewController.swift */; };
 		CDD946F4238B41C600A865D0 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD946F3238B41C600A865D0 /* SignUpViewController.swift */; };
+		CDECEE9B2389D29D0074620D /* EmergencyContact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDECEE9A2389D29D0074620D /* EmergencyContact.storyboard */; };
+		CDECEE9D2389D2CE0074620D /* EmergencyContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECEE9C2389D2CE0074620D /* EmergencyContactViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +137,8 @@
 		707E9F7123827F85006A3AF5 /* MonthMoodGraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthMoodGraphViewController.swift; sourceTree = "<group>"; };
 		707E9F7223827F85006A3AF5 /* MoodGraphsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodGraphsViewController.swift; sourceTree = "<group>"; };
 		707E9F7323827F85006A3AF5 /* YearMoodGraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YearMoodGraphViewController.swift; sourceTree = "<group>"; };
+		70C1FCEA23887E0600BF1CC6 /* MonthMedChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthMedChartViewController.swift; sourceTree = "<group>"; };
+		70C1FCEE238884E700BF1CC6 /* YearMedChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearMedChartViewController.swift; sourceTree = "<group>"; };
 		70B46FAF2389E4B80088D1FD /* CaregiverMedicationScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CaregiverMedicationScreen.storyboard; sourceTree = "<group>"; };
 		70B46FB32389F2440088D1FD /* CaregiverPatientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaregiverPatientsViewController.swift; sourceTree = "<group>"; };
 		8176FAB2237B88D80083B445 /* CogGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CogGameViewController.swift; sourceTree = "<group>"; };
@@ -194,9 +201,12 @@
 		9E9138982380D5B5006AD1F9 /* Connect.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Connect.storyboard; sourceTree = "<group>"; };
 		9E91389B2380D6C5006AD1F9 /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
 		9EE42464237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaregiverHomeScreenViewController.swift; sourceTree = "<group>"; };
+		CD4A840C23932C6E00189605 /* EmergContactUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergContactUITests.swift; sourceTree = "<group>"; };
 		CDBC4012236E4FE8008934AF /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		CDBC4015236E501B008934AF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		CDD946F3238B41C600A865D0 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		CDECEE9A2389D29D0074620D /* EmergencyContact.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmergencyContact.storyboard; sourceTree = "<group>"; };
+		CDECEE9C2389D2CE0074620D /* EmergencyContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyContactViewController.swift; sourceTree = "<group>"; };
 		D63F99425B3E2EFCA5604695 /* Pods-UnHindrTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindrTests.debug.xcconfig"; path = "Target Support Files/Pods-UnHindrTests/Pods-UnHindrTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DED04B884E18297F4A8774D1 /* Pods-UnHindrTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindrTests.release.xcconfig"; path = "Target Support Files/Pods-UnHindrTests/Pods-UnHindrTests.release.xcconfig"; sourceTree = "<group>"; };
 		DFCCB05E78CA6EE40144300E /* Pods-UnHindr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindr.release.xcconfig"; path = "Target Support Files/Pods-UnHindr/Pods-UnHindr.release.xcconfig"; sourceTree = "<group>"; };
@@ -256,6 +266,7 @@
 				9DF3F89A2367D826003CF8B9 /* LoginViewController.swift */,
 				2DD67103236BC4C5005948DF /* HomeScreenViewController.swift */,
 				9EE42464237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift */,
+				CDECEE9C2389D2CE0074620D /* EmergencyContactViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -409,6 +420,7 @@
 				9E9138982380D5B5006AD1F9 /* Connect.storyboard */,
 				9DF3F8C62367D880003CF8B9 /* GoogleService-Info.plist */,
 				9DF3F8A42367D82D003CF8B9 /* Info.plist */,
+				CDECEE9A2389D29D0074620D /* EmergencyContact.storyboard */,
 			);
 			path = UnHindr;
 			sourceTree = "<group>";
@@ -432,6 +444,7 @@
 				9DF3F8B82367D82D003CF8B9 /* UnHindrUITests.swift */,
 				9DF3F8BA2367D82D003CF8B9 /* Info.plist */,
 				81A7340D238200320069FE24 /* CogGameUITests.swift */,
+				CD4A840C23932C6E00189605 /* EmergContactUITests.swift */,
 			);
 			path = UnHindrUITests;
 			sourceTree = "<group>";
@@ -440,9 +453,11 @@
 			isa = PBXGroup;
 			children = (
 				7013CBB82370D00E00A1231F /* ChartsViewController.swift */,
+				70C1FCEA23887E0600BF1CC6 /* MonthMedChartViewController.swift */,
 				9D627A0D236FD4240027B6B7 /* MedicationHomeViewController.swift */,
 				9DFB75BB236F7515006321B8 /* MedicationViewController.swift */,
 				9DAEB52D237FC407008A94BD /* FullMedicationViewController.swift */,
+				70C1FCEE238884E700BF1CC6 /* YearMedChartViewController.swift */,
 			);
 			path = Medication;
 			sourceTree = "<group>";
@@ -625,6 +640,7 @@
 				CDBC4013236E4FE8008934AF /* Settings.storyboard in Resources */,
 				9E286A322382957600473055 /* MotorGameScene.sks in Resources */,
 				9DFB75B9236F74D0006321B8 /* Medication.storyboard in Resources */,
+				CDECEE9B2389D29D0074620D /* EmergencyContact.storyboard in Resources */,
 				9E9138992380D5B5006AD1F9 /* Connect.storyboard in Resources */,
 				707E9F5F23827EF2006A3AF5 /* WellnessTestHome.storyboard in Resources */,
 				81BDBDA2237F8E9C00F4C970 /* cardflip.wav in Resources */,
@@ -760,6 +776,7 @@
 				707E9F6723827F6B006A3AF5 /* CogGameMonthlyViewController.swift in Sources */,
 				9E286A302382957600473055 /* MotorGameScene.swift in Sources */,
 				707E9F7523827F85006A3AF5 /* MoodGraphsViewController.swift in Sources */,
+				70C1FCEF238884E700BF1CC6 /* YearMedChartViewController.swift in Sources */,
 				9EE42465237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift in Sources */,
 				9DF3F89B2367D826003CF8B9 /* LoginViewController.swift in Sources */,
 				9D6C641C2378B50F00F0C058 /* Constants.swift in Sources */,
@@ -781,6 +798,7 @@
 				98F115DA236CCED00082A1B1 /* MoodViewController.swift in Sources */,
 				8176FAB9237B94FC0083B445 /* CardCollectionViewCell.swift in Sources */,
 				98F115E7236D23520082A1B1 /* MoodQ3ViewController.swift in Sources */,
+				70C1FCEB23887E0600BF1CC6 /* MonthMedChartViewController.swift in Sources */,
 				9DF3F8992367D826003CF8B9 /* AppDelegate.swift in Sources */,
 				9E4EAB35237E5FDE00FC051B /* ModeChoiceViewController.swift in Sources */,
 				2DD67104236BC4C5005948DF /* HomeScreenViewController.swift in Sources */,
@@ -790,6 +808,7 @@
 				707E9F7623827F85006A3AF5 /* YearMoodGraphViewController.swift in Sources */,
 				2DE6A77D236E402B00B76282 /* Services.swift in Sources */,
 				8176FAB3237B88D80083B445 /* CogGameViewController.swift in Sources */,
+				CDECEE9D2389D2CE0074620D /* EmergencyContactViewController.swift in Sources */,
 				707E9F6A23827F6B006A3AF5 /* cogYearlyGraphViewController.swift in Sources */,
 				9DFB75BD236F7515006321B8 /* MedicationViewController.swift in Sources */,
 				9D627A0E236FD4240027B6B7 /* MedicationHomeViewController.swift in Sources */,
@@ -817,6 +836,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DFA139F2370F17D00F8B7B5 /* UnHindrUITests.swift in Sources */,
+				CD4A840D23932C6E00189605 /* EmergContactUITests.swift in Sources */,
 				9E286A352382968A00473055 /* MotGameUITests.swift in Sources */,
 				81A7340E238200320069FE24 /* CogGameUITests.swift in Sources */,
 			);
