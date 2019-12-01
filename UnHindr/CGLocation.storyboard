@@ -49,9 +49,11 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fff-fW-Thh">
-                                <rect key="frame" x="323" y="802" width="71" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fff-fW-Thh">
+                                <rect key="frame" x="290.5" y="766" width="103.5" height="87.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Fff-fW-Thh" secondAttribute="height" multiplier="71:60" id="B48-DV-sKd"/>
+                                </constraints>
                                 <state key="normal" image="LocationCenter"/>
                                 <connections>
                                     <action selector="centerAtPatient:" destination="Hbd-pC-zAU" eventType="touchUpInside" id="nii-Li-zim"/>
@@ -66,10 +68,13 @@
                             <constraint firstItem="u4W-wI-7ns" firstAttribute="top" secondItem="Jmx-A3-e49" secondAttribute="top" id="Gnu-Vs-eFd"/>
                             <constraint firstItem="swF-jj-Jkj" firstAttribute="bottom" secondItem="278-a6-m64" secondAttribute="bottom" constant="-34" id="HIQ-KK-bHM"/>
                             <constraint firstItem="u4W-wI-7ns" firstAttribute="trailing" secondItem="swF-jj-Jkj" secondAttribute="trailing" id="IOl-nj-b1w"/>
+                            <constraint firstItem="Fff-fW-Thh" firstAttribute="top" secondItem="278-a6-m64" secondAttribute="bottom" constant="-130" id="LLZ-Y1-PmA"/>
                             <constraint firstItem="278-a6-m64" firstAttribute="leading" secondItem="swF-jj-Jkj" secondAttribute="leading" id="O1R-Ly-del"/>
+                            <constraint firstItem="swF-jj-Jkj" firstAttribute="trailing" secondItem="Fff-fW-Thh" secondAttribute="trailing" constant="20" id="OKN-Sf-7p2"/>
                             <constraint firstItem="swF-jj-Jkj" firstAttribute="trailing" secondItem="aky-pG-lRn" secondAttribute="trailing" constant="10" id="Yjz-Ye-waA"/>
                             <constraint firstItem="hME-AT-ida" firstAttribute="top" secondItem="u4W-wI-7ns" secondAttribute="bottom" constant="-83" id="aII-gk-vJB"/>
                             <constraint firstItem="aky-pG-lRn" firstAttribute="top" secondItem="u4W-wI-7ns" secondAttribute="bottom" constant="-60" id="dRD-Yg-Kb3"/>
+                            <constraint firstItem="Fff-fW-Thh" firstAttribute="width" secondItem="278-a6-m64" secondAttribute="width" multiplier="0.25" id="ic2-dN-IsH"/>
                             <constraint firstItem="swF-jj-Jkj" firstAttribute="trailing" secondItem="278-a6-m64" secondAttribute="trailing" id="mS7-Cj-2YW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="swF-jj-Jkj"/>
