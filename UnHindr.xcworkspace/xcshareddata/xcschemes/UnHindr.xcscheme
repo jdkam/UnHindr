@@ -26,17 +26,8 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      systemAttachmentLifetime = "keepAlways">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9DF3F8942367D826003CF8B9"
-            BuildableName = "UnHindr.app"
-            BlueprintName = "UnHindr"
-            ReferencedContainer = "container:UnHindr.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
+      systemAttachmentLifetime = "keepAlways"
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -59,6 +50,17 @@
             </BuildableReference>
          </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "9DF3F8942367D826003CF8B9"
+            BuildableName = "UnHindr.app"
+            BlueprintName = "UnHindr"
+            ReferencedContainer = "container:UnHindr.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
+      <AdditionalOptions>
+      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -80,9 +82,11 @@
             ReferencedContainer = "container:UnHindr.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <AdditionalOptions>
+      </AdditionalOptions>
       <LocationScenarioReference
-         identifier = "San Francisco, CA, USA"
-         referenceType = "1">
+         identifier = "../../../Downloads/SFU.gpx"
+         referenceType = "0">
       </LocationScenarioReference>
    </LaunchAction>
    <ProfileAction
