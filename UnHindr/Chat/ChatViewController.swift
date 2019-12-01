@@ -13,11 +13,14 @@ import Firebase
 
 class ChatViewController: UIViewController {
     
-    let db = Firestore.firestore()
+    //let db = Firestore.firestore()
+
     
     @IBOutlet weak var tableView: UITableView!
     
     var messages: [Message] = []
+    
+    var thread = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,16 +29,46 @@ class ChatViewController: UIViewController {
         //get the current users UID///
         //let myUserID = Auth.auth().currentUser!.uid
         let myUserID = Services.userRef!
+        let theirUserID = user_ID
         print("CurrentUserID: \(myUserID)")
         print("user2DocumentID: \(user_ID)")
         
+        thread = setOnetoOneChat(ID1: myUserID, ID2: theirUserID)
+        
+//        if theirUserID != "" {
+//        let docRef = Services.db.collection("messages").document(thread)
+//        docRef.getDocument { (document, error) in
+//            if document!.exists {
+//                print("Document already exists")
+//            } else {
+//                print("Document does not exist")
+//                Services.db.collection("messages").document(self.thread)
+//                //self.db.collection("messages").document(self.thread).collection("ChatHistory").addDocument(data: )
+//            }
+//        }
+//        }
+        print(thread)
+        
         tableView.register(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: "ReusableCell")
         
+        //TODO: Add a check for if the user is connected to another user
+        if(theirUserID != ""){
         loadMessages()
+        }
     }
     
     @IBAction func homeButtonTapped(_ sender: Any) {
         Services.transitionHome(self)
+    }
+    
+    func setOnetoOneChat(ID1:String, ID2:String) -> String
+    {
+        if(ID1 < ID2){
+            return ID1+ID2;
+        }
+        else{
+            return ID2+ID1;
+        }
     }
     
     func loadMessages() {
@@ -76,10 +109,11 @@ class ChatViewController: UIViewController {
     //When user presses send button, store the message to firestore
     @IBAction func sendPressed(_ sender: UIButton) {
         
-        
         //if neither of these fields are not nil, then send data to firestore
         if let messageBody = messageTextField.text, let messageSender = Auth.auth().currentUser?.email {
-            Services.fullUserRef.document(Services.userRef!).collection("messages").addDocument(data: ["sender":messageSender, "body": messageBody, "date": Date().timeIntervalSince1970]) { (error) in
+            Services.db.collection("messages").document(thread).collection("ChatHistory").addDocument(data: ["sender":messageSender, "body": messageBody, "date": Date().timeIntervalSince1970]) {
+                (error) in
+            //db.collection("messages").addDocument(data: ["sender":messageSender, "body": messageBody, "date": Date().timeIntervalSince1970]) { (error) in
                 if let e = error {
                     print("There was an issue saving data to firestore. \(e)")
                 }
