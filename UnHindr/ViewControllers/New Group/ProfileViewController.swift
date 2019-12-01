@@ -33,7 +33,7 @@ class ProfileViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     var LastName = "Smith"
     var Email = "bs@gmail.com"
     var Dob = DateComponents(calendar: Calendar.current, year: 1990, month: 08, day: 01)
-    var gender = 0 //0 female , 1 men , 2 undecided
+    var gender = 0 //0 female , 1 men , 2 others
     var Address = "888 university drive"
     var City = "Burnaby"
     var Country = "Canada"
@@ -77,7 +77,7 @@ class ProfileViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     @objc func dateChanged(datePicker: UIDatePicker) {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM/dd/yyyy"
+        dateFormatter.dateFormat = "MM-dd-yyyy"
         dobTF.text = dateFormatter.string(from: datePicker.date)
     }
     
@@ -147,7 +147,7 @@ class ProfileViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
                     return
                 }
                 print("-----------------------")
-//                print("UserData: \(document.data())")
+                // print("UserData: \(document.data())")
                 completionHandler(document)
             }
             
@@ -203,6 +203,7 @@ class ProfileViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     //      1. The user's data is persistently stored
     @IBAction func saveTapped(_ sender: UIButton) {
         self.sendUpdateToDB()
+        Services.showAlert("Data is Saved", "", vc: self)
     }
     
     // Input: None
@@ -214,13 +215,18 @@ class ProfileViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         // List of changed fields
         var fields = [String:Any]()
     
+        let yourDate = self.dobTF.text
+        let dfmatter = DateFormatter()
+        dfmatter.dateFormat = "MM/dd/yyyy"
+        let DOB_to_pass = dfmatter.date(from: yourDate!)
+        
         fields.updateValue(addressTF.text!, forKey: "address")
         fields.updateValue(FirstNameTF.text!, forKey: "firstName")
         fields.updateValue(lastNameTF.text!, forKey: "lastName")
-        fields.updateValue(emailTF.text!, forKey: "email")
+        //fields.updateValue(emailTF.text!, forKey: "email")
         fields.updateValue(cityTF.text!, forKey: "city")
         fields.updateValue(gender, forKey: "gender")
-        // fields.updateValue(gendreTF.text!, forKey: "gender")
+        fields.updateValue(DOB_to_pass, forKey: "dob")
         
         if validFields{
             userProfileRef.updateData(fields)
