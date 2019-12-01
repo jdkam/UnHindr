@@ -1,5 +1,5 @@
 /*
-File: [ConnectViewController.swift]
+File: [LocationViewController.swift]
 Creators: [Sina]
 Date created: [20/11/2019]
 Date updated: [22/11/2019]
@@ -19,13 +19,14 @@ import Firebase
 class LocationViewController: UIViewController {
     let regionRadius: CLLocationDistance = 1000
     var locationSnapshot: QuerySnapshot?
+    fileprivate let locationManager:CLLocationManager = CLLocationManager()
     
     @IBOutlet weak var mapView: MKMapView!
-    fileprivate let locationManager:CLLocationManager = CLLocationManager()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         locationManager.requestWhenInUseAuthorization()//Ask user for authorisation.
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.distanceFilter = kCLDistanceFilterNone
