@@ -13,28 +13,70 @@ import Firebase
 
 class ChatViewController: UIViewController {
     
-    let db = Firestore.firestore()
+    //let db = Firestore.firestore()
+
     
     @IBOutlet weak var tableView: UITableView!
     
     var messages: [Message] = []
     
+    var thread = ""
+    let myUserID = Services.userRef!
+    let theirUserID = user_ID
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         
+        //get the current users UID///
+        //let myUserID = Auth.auth().currentUser!.uid
+        
+        print("CurrentUserID: \(myUserID)")
+        print("user2DocumentID: \(user_ID)")
+        
+        thread = setOnetoOneChat(ID1: myUserID, ID2: theirUserID)
+        
         tableView.register(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: "ReusableCell")
         
+        if(theirUserID != ""){
         loadMessages()
+        }
+        else
+        {
+            let title = "Oops"
+            let message = "Please connect to a user first using the 'Connect' Feature to send and view messages."
+            showAlert(title, message)
+        }
     }
     
     @IBAction func homeButtonTapped(_ sender: Any) {
         Services.transitionHome(self)
     }
     
+    func setOnetoOneChat(ID1:String, ID2:String) -> String
+    {
+        if(ID1 < ID2){
+            return ID1+ID2;
+        }
+        else{
+            return ID2+ID1;
+        }
+    }
+    
+    func showAlert(_ title:String, _ message: String){
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let alertAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        
+        alert.addAction(alertAction)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
     func loadMessages() {
         
-        Services.fullUserRef.document(Services.userRef!).collection("messages")
+        Services.db.collection("messages").document(thread).collection("ChatHistory")
             .order(by: "date")
             .addSnapshotListener { (querySnapshot, error) in
             self.messages = []
@@ -70,10 +112,11 @@ class ChatViewController: UIViewController {
     //When user presses send button, store the message to firestore
     @IBAction func sendPressed(_ sender: UIButton) {
         
-        
         //if neither of these fields are not nil, then send data to firestore
         if let messageBody = messageTextField.text, let messageSender = Auth.auth().currentUser?.email {
-            Services.fullUserRef.document(Services.userRef!).collection("messages").addDocument(data: ["sender":messageSender, "body": messageBody, "date": Date().timeIntervalSince1970]) { (error) in
+            Services.db.collection("messages").document(thread).collection("ChatHistory").addDocument(data: ["sender":messageSender, "body": messageBody, "date": Date().timeIntervalSince1970]) {
+                (error) in
+            //db.collection("messages").addDocument(data: ["sender":messageSender, "body": messageBody, "date": Date().timeIntervalSince1970]) { (error) in
                 if let e = error {
                     print("There was an issue saving data to firestore. \(e)")
                 }
@@ -104,7 +147,7 @@ extension ChatViewController: UITableViewDataSource {
         
         //This is a message from the current user
         if message.sender == Auth.auth().currentUser?.email {
-            print("Current User Message")
+            //print("Current User Message")
             cell.leftImageView.isHidden = true
             cell.rightImageView.isHidden = false
             cell.messageBubble.backgroundColor = UIColor(named: "BrandBlue")
@@ -113,7 +156,7 @@ extension ChatViewController: UITableViewDataSource {
         }
         else //message from the sender
         {
-            print("Sender User message")
+            //print("Sender User message")
             cell.leftImageView.isHidden = false
             cell.rightImageView.isHidden = true
             cell.messageBubble.backgroundColor = UIColor(named: "lightGrey")
@@ -125,5 +168,6 @@ extension ChatViewController: UITableViewDataSource {
     }
     
 }
+
 
 

@@ -26,6 +26,14 @@
             </objects>
             <point key="canvasLocation" x="-502" y="43"/>
         </scene>
+        <!--Location-->
+        <scene sceneID="1HY-tG-k2u">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Location" id="i16-AT-Re1" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8kO-0K-aUS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-466" y="188"/>
+        </scene>
         <!--Connect-->
         <scene sceneID="ZSB-aq-iaf">
             <objects>
@@ -89,6 +97,9 @@
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PYb-qA-KQ8" userLabel="location">
                                                 <rect key="frame" x="0.0" y="0.0" width="174.66666666666666" height="171.66666666666666"/>
                                                 <state key="normal" image="Location"/>
+                                                <connections>
+                                                    <segue destination="i16-AT-Re1" kind="presentation" id="lSx-9j-Ebp"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ch-IM-MQm" userLabel="chat">
                                                 <rect key="frame" x="176.66666666666663" y="0.0" width="194.33333333333337" height="171.66666666666666"/>
