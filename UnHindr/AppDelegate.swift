@@ -14,7 +14,7 @@ import UserNotifications
 import FirebaseMessaging
 
 @UIApplicationMain
- class AppDelegate: UIResponder, UIApplicationDelegate {
+ class AppDelegate: UIResponder, UIApplicationDelegate{
 
     var window: UIWindow?
     
@@ -28,6 +28,8 @@ import FirebaseMessaging
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
         
         Messaging.messaging().delegate = self
+        
+        //UNUserNotificationCenter.current().delegate = self
         
         if #available(iOS 10.0, *) {
             // For iOS 10 display notification (sent via APNS)
@@ -98,6 +100,7 @@ import FirebaseMessaging
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        UIApplication.shared.applicationIconBadgeNumber = 0
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
