@@ -44,6 +44,7 @@ class MedicationViewController: UIViewController {
     // Link to Medication Home View Controller
     weak var delegate: NewMedDelegate? = nil
 
+    var daysArr: [String]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,7 +79,7 @@ class MedicationViewController: UIViewController {
     private func storeToDB(completionHandler: @escaping (_ result: Bool) -> Void){
         //User should be logged in with reference created
         // Add a new document with a generated id.
-        let daysArr = initArrayToPassDays()
+        daysArr = initArrayToPassDays()
         self.MedicationName = medFieldName.text!
         print(daysArr)
         var ref: DocumentReference? = nil
@@ -264,6 +265,7 @@ class MedicationViewController: UIViewController {
         self.storeToDB { (ret) in
             if (ret) {
                 self.view.endEditing(true)
+                self.setMedNotifications()
                 self.performSegue(withIdentifier: "ToMedHome", sender: self)
             }
             //Error storing data
@@ -328,6 +330,57 @@ class MedicationViewController: UIViewController {
     private func configureTapGesture() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(MedicationViewController.handleTapOutsideKeyboard))
         view.addGestureRecognizer(tapGesture)
+    }
+    
+    private func setMedNotifications() {
+        let manager = NotificationManager()
+        
+        var sendingDate = Date()
+        
+        let currentWeekday = Calendar.current.component(.weekday, from: sendingDate)
+        var dayNum = 0
+
+        var arr = timeInputTextField.text?.components(separatedBy: [":", " "])
+        if arr![2] == "PM" {
+            arr![0] = String(Int(arr![0])! + 12)
+        }
+        let notifHour = Int(arr![0])
+        let notifMinute = Int(arr![1])
+        for day in self.daysArr!{
+            switch day {
+            case "Sunday":
+                sendingDate = Date.today().next(.Sunday)
+                dayNum = 1
+            case "Monday":
+                sendingDate = Date.today().next(.Monday)
+                dayNum = 2
+            case "Tuesday":
+                sendingDate = Date.today().next(.Tuesday)
+                dayNum = 3
+            case "Wednesday":
+                sendingDate = Date.today().next(.Wednesday)
+                dayNum = 4
+            case "Thursday":
+                sendingDate = Date.today().next(.Thursday)
+                dayNum = 5
+            case "Friday":
+                sendingDate = Date.today().next(.Friday)
+                dayNum = 6
+            case "Saturday":
+                sendingDate = Date.today().next(.Saturday)
+                dayNum = 7
+            default:
+                print("O")
+            }
+            if (dayNum == currentWeekday) {
+                sendingDate = Date.today()
+            }
+            print("####DATE FOR SEND : \(sendingDate) ###########")
+            let components = Calendar(identifier: .gregorian).dateComponents([.year, .month, .day], from: sendingDate)
+            manager.notifications.append(NotificationStruct(id: "\(self.MedicationName) - \(day)", title: self.MedicationName, datetime: DateComponents(calendar: Calendar.current, year: components.year, month: components.month, day: components.day, hour: notifHour, minute: notifMinute)))
+            
+        }
+        manager.schedule()
     }
 }
 

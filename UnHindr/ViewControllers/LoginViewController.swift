@@ -31,6 +31,7 @@ class LoginViewController: UIViewController {
         configureEmailText()
         configurePasswordText()
         configureTapGesture()
+        print(Date())
     }
     
     //Mark: Destructor for the view
