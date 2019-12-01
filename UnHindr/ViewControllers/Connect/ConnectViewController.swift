@@ -11,10 +11,10 @@ import UIKit
 import FirebaseFirestore
 
 public var user_ID: String = ""
-var list: [String] = []
+
 
 class ConnectViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+    var list: [String] = []
     let connectionRef = Services.fullUserRef.document(Services.userRef!).collection(Services.connectionName)
     
     var connectionSnapshot: QuerySnapshot?
@@ -67,10 +67,10 @@ class ConnectViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewWillAppear(_ animated: Bool) {
         getConnections(Services.userRef!) { (querySnapshot) in
             for document in querySnapshot!.documents {
-                list.append(document.get("email") as! String)
+                self.list.append(document.get("email") as! String)
                 self.connectionsTable.beginUpdates()
                 self.connectionsTable.insertRows(at: [
-                    NSIndexPath(row: list.count-1, section: 0) as IndexPath], with: .automatic)
+                    NSIndexPath(row: self.list.count-1, section: 0) as IndexPath], with: .automatic)
                 self.connectionsTable.endUpdates()
             }
         }
