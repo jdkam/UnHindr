@@ -8,7 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		185E08EB515929A3C41DCA06 /* Pods_UnHindrTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E98EBEE8A222DA52CA9D297 /* Pods_UnHindrTests.framework */; };
+		2128337A23938D4F00C661CA /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2128337923938D4F00C661CA /* Patient.swift */; };
 		215C15DC236F6E5F0063F3E4 /* WellnessTestHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215C15DB236F6E5F0063F3E4 /* WellnessTestHomeViewController.swift */; };
+		2BB1F3E910641FB171AAA24E /* Pods_UnHindrTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03A434C323DEDECA6A4F4E7C /* Pods_UnHindrTests.framework */; };
+		2D2E7E7A2393617900BC32A9 /* FullMedicationList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D2E7E792393617900BC32A9 /* FullMedicationList.storyboard */; };
+		2D5BBA772389E7B20074A202 /* FullMedicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5BBA762389E7B20074A202 /* FullMedicationViewController.swift */; };
+		2D5BBA792389F4530074A202 /* MedicationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5BBA782389F4530074A202 /* MedicationTableViewCell.swift */; };
+		2D7A40E6238B316100958659 /* Medication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A40E5238B316100958659 /* Medication.swift */; };
 		2DA6698E2381EAA60050AE42 /* MedicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA6698D2381EAA60050AE42 /* MedicationTests.swift */; };
 		2DD67104236BC4C5005948DF /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD67103236BC4C5005948DF /* HomeScreenViewController.swift */; };
 		2DD6710B236BCD41005948DF /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DD67107236BCD41005948DF /* Login.storyboard */; };
@@ -63,7 +69,6 @@
 		98F67921236E85AF00517099 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98F67920236E85AF00517099 /* Profile.storyboard */; };
 		9D627A0E236FD4240027B6B7 /* MedicationHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D627A0D236FD4240027B6B7 /* MedicationHomeViewController.swift */; };
 		9D6C641C2378B50F00F0C058 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6C641B2378B50F00F0C058 /* Constants.swift */; };
-		9DAEB52E237FC408008A94BD /* FullMedicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAEB52D237FC407008A94BD /* FullMedicationViewController.swift */; };
 		9DE33C6E236F98BD00855C78 /* DatabaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE33C6D236F98BD00855C78 /* DatabaseTests.swift */; };
 		9DF3F8992367D826003CF8B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF3F8982367D826003CF8B9 /* AppDelegate.swift */; };
 		9DF3F89B2367D826003CF8B9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF3F89A2367D826003CF8B9 /* LoginViewController.swift */; };
@@ -85,11 +90,18 @@
 		9E4EAB35237E5FDE00FC051B /* ModeChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4EAB34237E5FDE00FC051B /* ModeChoiceViewController.swift */; };
 		9E9138992380D5B5006AD1F9 /* Connect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E9138982380D5B5006AD1F9 /* Connect.storyboard */; };
 		9E91389C2380D6C5006AD1F9 /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E91389B2380D6C5006AD1F9 /* ConnectViewController.swift */; };
+		9EB086902393314000C6DDC0 /* Location.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EB0868F2393314000C6DDC0 /* Location.storyboard */; };
+		9EB08695239332C800C6DDC0 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB08694239332C800C6DDC0 /* LocationViewController.swift */; };
+		9EBEEDDB23935FDC0065DFEB /* CGLocation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EBEEDDA23935FDC0065DFEB /* CGLocation.storyboard */; };
+		9EBEEDDD2393602C0065DFEB /* CGLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBEEDDC2393602C0065DFEB /* CGLocationViewController.swift */; };
 		9EE42465237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE42464237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift */; };
 		A2B5644B1E4149E09D599F82 /* Pods_UnHindr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7EAE4472764465EE4B52BD6 /* Pods_UnHindr.framework */; };
+		CD4A840D23932C6E00189605 /* EmergContactUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4A840C23932C6E00189605 /* EmergContactUITests.swift */; };
 		CDBC4013236E4FE8008934AF /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDBC4012236E4FE8008934AF /* Settings.storyboard */; };
 		CDBC4016236E501B008934AF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBC4015236E501B008934AF /* SettingsViewController.swift */; };
 		CDD946F4238B41C600A865D0 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD946F3238B41C600A865D0 /* SignUpViewController.swift */; };
+		CDECEE9B2389D29D0074620D /* EmergencyContact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDECEE9A2389D29D0074620D /* EmergencyContact.storyboard */; };
+		CDECEE9D2389D2CE0074620D /* EmergencyContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECEE9C2389D2CE0074620D /* EmergencyContactViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,7 +123,12 @@
 
 /* Begin PBXFileReference section */
 		1470CE3451D5AB4F262D5392 /* Pods-UnHindr-UnHindrUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindr-UnHindrUITests.debug.xcconfig"; path = "Target Support Files/Pods-UnHindr-UnHindrUITests/Pods-UnHindr-UnHindrUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2128337923938D4F00C661CA /* Patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
 		215C15DB236F6E5F0063F3E4 /* WellnessTestHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellnessTestHomeViewController.swift; sourceTree = "<group>"; };
+		2D2E7E792393617900BC32A9 /* FullMedicationList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FullMedicationList.storyboard; sourceTree = "<group>"; };
+		2D5BBA762389E7B20074A202 /* FullMedicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullMedicationViewController.swift; sourceTree = "<group>"; };
+		2D5BBA782389F4530074A202 /* MedicationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationTableViewCell.swift; sourceTree = "<group>"; };
+		2D7A40E5238B316100958659 /* Medication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medication.swift; sourceTree = "<group>"; };
 		2DA6698D2381EAA60050AE42 /* MedicationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationTests.swift; sourceTree = "<group>"; };
 		2DD67103236BC4C5005948DF /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		2DD67108236BCD41005948DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
@@ -169,7 +186,6 @@
 		9CC98A083DBCA38C513B60AD /* Pods-UnHindr-UnHindrUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindr-UnHindrUITests.release.xcconfig"; path = "Target Support Files/Pods-UnHindr-UnHindrUITests/Pods-UnHindr-UnHindrUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9D627A0D236FD4240027B6B7 /* MedicationHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationHomeViewController.swift; sourceTree = "<group>"; };
 		9D6C641B2378B50F00F0C058 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		9DAEB52D237FC407008A94BD /* FullMedicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullMedicationViewController.swift; sourceTree = "<group>"; };
 		9DE33C6D236F98BD00855C78 /* DatabaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseTests.swift; sourceTree = "<group>"; };
 		9DF3F8952367D826003CF8B9 /* UnHindr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnHindr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DF3F8982367D826003CF8B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -197,10 +213,17 @@
 		9E4EAB34237E5FDE00FC051B /* ModeChoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeChoiceViewController.swift; sourceTree = "<group>"; };
 		9E9138982380D5B5006AD1F9 /* Connect.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Connect.storyboard; sourceTree = "<group>"; };
 		9E91389B2380D6C5006AD1F9 /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
+		9EB0868F2393314000C6DDC0 /* Location.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Location.storyboard; sourceTree = "<group>"; };
+		9EB08694239332C800C6DDC0 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		9EBEEDDA23935FDC0065DFEB /* CGLocation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CGLocation.storyboard; sourceTree = "<group>"; };
+		9EBEEDDC2393602C0065DFEB /* CGLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGLocationViewController.swift; sourceTree = "<group>"; };
 		9EE42464237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaregiverHomeScreenViewController.swift; sourceTree = "<group>"; };
+		CD4A840C23932C6E00189605 /* EmergContactUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergContactUITests.swift; sourceTree = "<group>"; };
 		CDBC4012236E4FE8008934AF /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		CDBC4015236E501B008934AF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		CDD946F3238B41C600A865D0 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		CDECEE9A2389D29D0074620D /* EmergencyContact.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmergencyContact.storyboard; sourceTree = "<group>"; };
+		CDECEE9C2389D2CE0074620D /* EmergencyContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyContactViewController.swift; sourceTree = "<group>"; };
 		D63F99425B3E2EFCA5604695 /* Pods-UnHindrTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindrTests.debug.xcconfig"; path = "Target Support Files/Pods-UnHindrTests/Pods-UnHindrTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DED04B884E18297F4A8774D1 /* Pods-UnHindrTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindrTests.release.xcconfig"; path = "Target Support Files/Pods-UnHindrTests/Pods-UnHindrTests.release.xcconfig"; sourceTree = "<group>"; };
 		DFCCB05E78CA6EE40144300E /* Pods-UnHindr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindr.release.xcconfig"; path = "Target Support Files/Pods-UnHindr/Pods-UnHindr.release.xcconfig"; sourceTree = "<group>"; };
@@ -248,6 +271,7 @@
 		2DD670FC236BBF79005948DF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				9EB086932393329600C6DDC0 /* Location */,
 				9E286A36238299FF00473055 /* MotorGameGraphs */,
 				9E286A33238295F800473055 /* MotorGame */,
 				9E91389A2380D6B6006AD1F9 /* Connect */,
@@ -260,6 +284,7 @@
 				9DF3F89A2367D826003CF8B9 /* LoginViewController.swift */,
 				2DD67103236BC4C5005948DF /* HomeScreenViewController.swift */,
 				9EE42464237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift */,
+				CDECEE9C2389D2CE0074620D /* EmergencyContactViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -387,6 +412,8 @@
 		9DF3F8972367D826003CF8B9 /* UnHindr */ = {
 			isa = PBXGroup;
 			children = (
+				9EB0868F2393314000C6DDC0 /* Location.storyboard */,
+				9EBEEDDA23935FDC0065DFEB /* CGLocation.storyboard */,
 				817B5F6A2388A010009BF125 /* Chat */,
 				9E286A2D2382957600473055 /* MotorGame.storyboard */,
 				707E9F5D23827EF2006A3AF5 /* CogGameGraphs.storyboard */,
@@ -413,6 +440,7 @@
 				9E9138982380D5B5006AD1F9 /* Connect.storyboard */,
 				9DF3F8C62367D880003CF8B9 /* GoogleService-Info.plist */,
 				9DF3F8A42367D82D003CF8B9 /* Info.plist */,
+				CDECEE9A2389D29D0074620D /* EmergencyContact.storyboard */,
 			);
 			path = UnHindr;
 			sourceTree = "<group>";
@@ -436,6 +464,7 @@
 				9DF3F8B82367D82D003CF8B9 /* UnHindrUITests.swift */,
 				9DF3F8BA2367D82D003CF8B9 /* Info.plist */,
 				81A7340D238200320069FE24 /* CogGameUITests.swift */,
+				CD4A840C23932C6E00189605 /* EmergContactUITests.swift */,
 			);
 			path = UnHindrUITests;
 			sourceTree = "<group>";
@@ -447,6 +476,10 @@
 				70C1FCEA23887E0600BF1CC6 /* MonthMedChartViewController.swift */,
 				9D627A0D236FD4240027B6B7 /* MedicationHomeViewController.swift */,
 				9DFB75BB236F7515006321B8 /* MedicationViewController.swift */,
+				2D5BBA762389E7B20074A202 /* FullMedicationViewController.swift */,
+				2D5BBA782389F4530074A202 /* MedicationTableViewCell.swift */,
+				2D7A40E5238B316100958659 /* Medication.swift */,
+				2D2E7E792393617900BC32A9 /* FullMedicationList.storyboard */,
 				9DAEB52D237FC407008A94BD /* FullMedicationViewController.swift */,
 				70C1FCEE238884E700BF1CC6 /* YearMedChartViewController.swift */,
 			);
@@ -489,6 +522,16 @@
 				9E91389B2380D6C5006AD1F9 /* ConnectViewController.swift */,
 			);
 			path = Connect;
+			sourceTree = "<group>";
+		};
+		9EB086932393329600C6DDC0 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				9EB08694239332C800C6DDC0 /* LocationViewController.swift */,
+				9EBEEDDC2393602C0065DFEB /* CGLocationViewController.swift */,
+				2128337923938D4F00C661CA /* Patient.swift */,
+			);
+			path = Location;
 			sourceTree = "<group>";
 		};
 		CDBC4014236E4FF2008934AF /* Settings */ = {
@@ -619,6 +662,7 @@
 				9DFB75C0236F7B15006321B8 /* Assets.xcassets in Resources */,
 				707E9F6123827EF2006A3AF5 /* MotorGameGraph.storyboard in Resources */,
 				81B5908E2378F8DD00BA49AF /* CogGame.storyboard in Resources */,
+				9EB086902393314000C6DDC0 /* Location.storyboard in Resources */,
 				81BDBDA1237F8E9C00F4C970 /* dingwrong.wav in Resources */,
 				707E9F6223827EF2006A3AF5 /* CogGameGraphs.storyboard in Resources */,
 				707E9F6023827EF2006A3AF5 /* WellnessGraphs.storyboard in Resources */,
@@ -630,7 +674,10 @@
 				70B46FB02389E4B80088D1FD /* CaregiverMedicationScreen.storyboard in Resources */,
 				CDBC4013236E4FE8008934AF /* Settings.storyboard in Resources */,
 				9E286A322382957600473055 /* MotorGameScene.sks in Resources */,
+				9EBEEDDB23935FDC0065DFEB /* CGLocation.storyboard in Resources */,
+				2D2E7E7A2393617900BC32A9 /* FullMedicationList.storyboard in Resources */,
 				9DFB75B9236F74D0006321B8 /* Medication.storyboard in Resources */,
+				CDECEE9B2389D29D0074620D /* EmergencyContact.storyboard in Resources */,
 				9E9138992380D5B5006AD1F9 /* Connect.storyboard in Resources */,
 				707E9F5F23827EF2006A3AF5 /* WellnessTestHome.storyboard in Resources */,
 				81BDBDA2237F8E9C00F4C970 /* cardflip.wav in Resources */,
@@ -774,8 +821,10 @@
 				98F115EB236D2B770082A1B1 /* MoodQ5ViewController.swift in Sources */,
 				8176FAB7237B8A9C0083B445 /* Card.swift in Sources */,
 				9E91389C2380D6C5006AD1F9 /* ConnectViewController.swift in Sources */,
+				9EB08695239332C800C6DDC0 /* LocationViewController.swift in Sources */,
 				707E9F7423827F85006A3AF5 /* MonthMoodGraphViewController.swift in Sources */,
 				98F115E5236D23380082A1B1 /* MoodQ2ViewController.swift in Sources */,
+				2D7A40E6238B316100958659 /* Medication.swift in Sources */,
 				CDBC4016236E501B008934AF /* SettingsViewController.swift in Sources */,
 				81BDBDA6237F8FDB00F4C970 /* SoundManager.swift in Sources */,
 				215C15DC236F6E5F0063F3E4 /* WellnessTestHomeViewController.swift in Sources */,
@@ -792,16 +841,21 @@
 				9DF3F8992367D826003CF8B9 /* AppDelegate.swift in Sources */,
 				9E4EAB35237E5FDE00FC051B /* ModeChoiceViewController.swift in Sources */,
 				2DD67104236BC4C5005948DF /* HomeScreenViewController.swift in Sources */,
+				2128337A23938D4F00C661CA /* Patient.swift in Sources */,
+				2D5BBA772389E7B20074A202 /* FullMedicationViewController.swift in Sources */,
 				CDD946F4238B41C600A865D0 /* SignUpViewController.swift in Sources */,
 				7013CBB92370D00E00A1231F /* ChartsViewController.swift in Sources */,
 				70B46FB42389F2440088D1FD /* CaregiverPatientsViewController.swift in Sources */,
 				707E9F7623827F85006A3AF5 /* YearMoodGraphViewController.swift in Sources */,
+				2D5BBA792389F4530074A202 /* MedicationTableViewCell.swift in Sources */,
 				2DE6A77D236E402B00B76282 /* Services.swift in Sources */,
 				8176FAB3237B88D80083B445 /* CogGameViewController.swift in Sources */,
+				CDECEE9D2389D2CE0074620D /* EmergencyContactViewController.swift in Sources */,
 				707E9F6A23827F6B006A3AF5 /* cogYearlyGraphViewController.swift in Sources */,
 				9DFB75BD236F7515006321B8 /* MedicationViewController.swift in Sources */,
 				9D627A0E236FD4240027B6B7 /* MedicationHomeViewController.swift in Sources */,
 				98F115E9236D29B50082A1B1 /* MoodQ4ViewController.swift in Sources */,
+				9EBEEDDD2393602C0065DFEB /* CGLocationViewController.swift in Sources */,
 				817B5F6923889CE9009BF125 /* ChatViewController.swift in Sources */,
 				707E9F7023827F77006A3AF5 /* MotorGameGraphViewController.swift in Sources */,
 				707E9F6F23827F77006A3AF5 /* MotorGameYearlyViewController.swift in Sources */,
@@ -825,6 +879,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DFA139F2370F17D00F8B7B5 /* UnHindrUITests.swift in Sources */,
+				CD4A840D23932C6E00189605 /* EmergContactUITests.swift in Sources */,
 				9E286A352382968A00473055 /* MotGameUITests.swift in Sources */,
 				81A7340E238200320069FE24 /* CogGameUITests.swift in Sources */,
 			);
