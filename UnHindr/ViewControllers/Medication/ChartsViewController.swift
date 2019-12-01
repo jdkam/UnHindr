@@ -2,7 +2,7 @@
 //Creators: [Allan, Johnston]
 //Date created: [29/10/2019]
 //Updater name: [Johnston]
-//File description: [Reads values from the data]
+//File description: [Reads medication data and properly graphs them for a week]
 
 import Foundation
 import UIKit
@@ -10,98 +10,56 @@ import Charts
 import FirebaseFirestore
 import FirebaseAuth
 
+// MARK: - Class to create the graphs for the amount of medication taken for each day in a one week period
 class ChartsViewController: UIViewController {
-    // Handle for auth state changes
-    
-    private var handle: AuthStateDidChangeListenerHandle?
-    
     
     //Outlet for displaying chart
     @IBOutlet weak var chtChart: BarChartView!
+    @IBOutlet weak var monthLabel: UILabel!
     
-    //Formatting the values of the chart
-    lazy var formatter: NumberFormatter = {
-        let formatter = NumberFormatter()
-        formatter.maximumFractionDigits = 1
-        formatter.negativeSuffix = ""
-        formatter.positiveSuffix = ""
-        
-        return formatter
-    }()
-    var MedTaken: [Double] = []
-    var DateTaken: [Date] = []
-    var medDayPlan: [String] = []
+    // gets the correct user database values
+    let medRef = Services.db.collection("users").document(Services.userRef!).collection("Medication")
+    
+    // storing the graph data
     var GraphData: [BarChartDataEntry] = []
-    let dayOfWeek: [String] = ["MON","TUES","WED","THURS","FRI","SAT","SUN"]
-    
-    var dictMedTaken: [String:[Double]] = [:]
-    var dictDateTaken: [String:[Date]] = [:]
-    var dictDayPlan: [String:[String]] = [:]
-    var dictDidTakeMed: [String:[Bool]] = [:]
-    var dictMedToTake: [String:Double] = [:]
-
-    
-    var documents: [DocumentSnapshot] = []
+    var medData: [Int:Double] = [:]
+    var days: [Int] = []
+    var stringDays: [String] = []
     
     // MARK: - View controller lifecycle methods
-    override func viewWillAppear(_ animated: Bool) {
-        // user authentication
-        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
-        }
-    }
-    override func viewWillDisappear(_ animated: Bool)
-    {
-        Auth.auth().removeStateDidChangeListener(handle!)
-        self.MedTaken.removeAll()
-        self.DateTaken.removeAll()
-        self.medDayPlan.removeAll()
-        self.GraphData.removeAll()
-        self.dictMedTaken.removeAll()
-        self.dictDateTaken.removeAll()
-        self.dictDidTakeMed.removeAll()
-        self.dictDayPlan.removeAll()
-        self.documents.removeAll()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        Auth.auth().addStateDidChangeListener { (auth, user) in
-            if user != nil {
-                Services.getDBUserRef(user, completionHandler: { (result) in
-                    guard let result = result else {
-                        print("Failed to fetch ref")
-                        return
-                    }
-                    //grabs medication data from the database
-                    self.getDBMedicationData(result, completionHandler: { (count) in
-                        guard count != nil else {
-                            print("Unable to fetch med data")
-                            return
-                        }
-                        //grab medication plan from the database
-                        self.getDBMedicationPlan(result, completionHandler: { (count) in
-                            guard count != nil else {
-                                print("Unable to fetch med data")
-                                return
-                            }
-                            // compares the day between the the day the user has taken to the days they are suppose to take it
-                            self.compareDate(dateTaken: self.dictDateTaken,dayPlan: self.dictDayPlan)
-                            // begins plotting the data to the stacked bar chart
-                            self.setChartData(medAmount: self.dictMedTaken,dayPlan: self.dictDayPlan,userTaken: self.dictDidTakeMed, allMedToTake: self.dictMedToTake)
-                        })
-                    })
-                })
-            }
-            
-        }
-        // Setting up the stacked bar chart properties
-        self.title = "Stacked Bar Chart"
+        
+//        let medRef = Services.checkUserIDMed(){(success) in
+//            if(success)
+//            {
+//                self.getMedicationData(reference: medRef)
+//            }
+//            else
+//            {
+//                if(user_ID == "")
+//                {
+//                    self.getMedicationData(reference: medRef)
+//                }
+//                else
+//                {
+//                    self.chtChart.noDataText = "Please choose a patient in the Conncet Screen"
+//                    self.monthLabel.text = ""
+//                }
+//            }
+//        }
+        
+        
+        getMedicationData()
+        
+        // Sets up the chart properties
+        self.title = "Medication Bar Chart"
         chtChart.maxVisibleCount = 40
         chtChart.drawBarShadowEnabled = false
-        chtChart.drawValueAboveBarEnabled = false
+        chtChart.drawValueAboveBarEnabled = true
         chtChart.highlightFullBarEnabled = false
         chtChart.doubleTapToZoomEnabled = false
-        chtChart.animate(xAxisDuration: 3.0, yAxisDuration: 3.0)
+        chtChart.animate(xAxisDuration: 2.0, yAxisDuration: 3.0)
         let leftAxis = chtChart.leftAxis
         leftAxis.axisMinimum = 0
         chtChart.rightAxis.enabled = false
@@ -115,342 +73,236 @@ class ChartsViewController: UIViewController {
         l.form = .square
         l.formToTextSpace = 8
         l.xEntrySpace = 6
+        xAxis.drawGridLinesEnabled = false
     }
     
-    // MARK: - Obtain medication data
+    // MARK: - Obtain motor data from firebase
     // Input:
-    //      1. Document ID of unique user
+    //      1. None
     // Output:
-    //      1. Places medication taken by the user into the dictionary 'dictMedTaken'
-    //      2. The date and time of the user taking the medication is placed into the dictionary 'dictDateTaken'
-    private func getDBMedicationData(_ userdoc: String, completionHandler: @escaping (_ result: Int?) -> Void)
+    //      1. Medication Graph displays data from one week ago
+    // func getMedcationData(reference: CollectionReference)
+    func getMedicationData()
     {
-        //Obtain all the documents of the user under the 'Medication' collection
-        Services.db.collection("users").document(userdoc).collection("Medication")
-            .getDocuments()
-        {
-                (querySnapshot, err) in
-                if err != nil // the program will go into this if statement if the user authentication fails
+        // gets all the documents for this particular user
+        medRef.getDocuments()
+            {
+                (querySnapshot,err) in
+                // the program will go into this if statement if the user authentication fails
+                if err != nil
                 {
-                    print("Error getting medication data")
+                    print("Error getting motor data")
                 }
                 else
-                { // the program will go into this else statment if the user authentication is successful
-                    var i = 0
-                    // the for loop will go through each doucment and look at the data that is inside each document
-                    for document in querySnapshot!.documents
-                    {
-                        self.MedTaken.removeAll() // removes all data that is already inside the array 'MedTaken'
-                        self.DateTaken.removeAll() // removes all data that is already inside the array 'DateTaken'
-                        let med = document.get("Medication") as! String
-                        let quantity = document.get("Quantity")
-                        self.MedTaken.append(quantity as! Double)
-                        if let timestamp = document.get("Date") as? Timestamp
-                        {
-                            let date = timestamp.dateValue()
-                            self.DateTaken.append(date)
-                        }
-                        i += 1
-                        let keyExists = self.dictMedTaken[med] != nil // checks if that particular key exists in the dictionary 'MedTaken'
-                        if(keyExists)
-                        { // the key already exists in the dictionary
-                            if var arr = self.dictMedTaken[med] // arr gets the current values inside 'dictMedTaken' with a certain key value 'med'
-                            {
-                                for count in 0..<(arr.count)
-                                {
-                                    arr.append(self.MedTaken[0]) // the new medication is appended to the arr array
-                                }
-                                self.dictMedTaken[med] = arr // the modified arr is the new value of 'dictMedTaken[med]'
-                            }
-                            if var arr = self.dictDateTaken[med] // arr gets the current values inside 'dictDateTaken' with a certain key value 'med'
-                            {
-                                arr.append(self.DateTaken[0]) // the new date is appended to the arr array
-                                self.dictDateTaken[med] = arr // the modified arr is the new value of 'dictDateTaken[med]'
-                            }
-                        }
-                        else
-                        { // the key does not exist in the dictionary
-                            self.dictMedTaken[med] = self.MedTaken // add the new medication to the dictMedTaken
-                            self.dictDateTaken[med] = self.DateTaken // add the new medication to the dictDateTaken
-                        }
-                    }
-                    completionHandler(i) // this function allows getDBMedicationData to return properly once the for loop is completed
-                }
-        } //end of getDBMedicationData function
-    }
-    
-    
-    // MARK: - Obtain medication plan of each user
-    // Input:
-    //      1. Document ID of unique user
-    // Output:
-    //      1. Places medication taken by the user into dictionary 'dictMedToTake'
-    //      2. The date and time the medication was taken is put into dictionary 'dictDayPlan'
-    private func getDBMedicationPlan(_ userdoc: String, completionHandler: @escaping (_ result: Int?) -> Void){
-    //Obtain all user documents that is under the 'MedicationPlan' collection
-    Services.db.collection("users").document(userdoc).collection("MedicationPlan")
-        .getDocuments()
-    {
-        (querySnapshot, err) in
-        if err != nil
-        { // the program will go into this if statement if the user authentication fails
-            print("Error getting medication data")
-        }
-        else
-        { // the program will go into this else statement if the user authentication is successful
-            var i = 0
-            var tmpDayArray: [String] = [] // array is used to append any values into the 'dictDayPlan' for a certain medication
-            // goes through each document and retrieves the data  for each document
-            for document in querySnapshot!.documents
-            {
-                // removes any data that is inside 'tmpDayArray'
-                tmpDayArray.removeAll()
-                i += 1
-                let med = document.get("Medication") as! String // obtains the medication that the user has to take
-                let dayArray = document.data()["Day"] as! [String] // obtains the days the user has to take that medication
-                let quantity = document.get("Quantity") as! Double // obtains the length of the 'dayArray'
-                self.dictMedToTake[med] = quantity // grabs how many of that medication the user is suppose to take
-                let lengthDayArray = dayArray.count // finding the length of the day array
-                for count in 0..<lengthDayArray
                 {
-                    let date = dayArray[count] // puts 'dayArray[count]' into the date variable
-                    tmpDayArray.append(date) //date variable is appended to the 'tmpDayArray'
-                }
-                let keyExists = self.dictDayPlan[med] != nil // grabs a boolean to see if the key 'dictDayPlan[med]' already exists
-                if(keyExists)
-                { // the key already exists in the dictionary
-                    if var arr = self.dictDayPlan[med] // arr gets the current values inside 'dictDayPlan' with a certain key value 'med'
+                    // the program will go into this else statement if the user authentication succeeds
+                    // the next three lines recieves the current month
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "LLLL"
+                    let nameOfMonth = dateFormatter.string(from: Date())
+                    
+                    // commented out block from line 83 - 93 is a test for other dates
+                    //let otherdate = DateFormatter()
+                    //otherdate.dateFormat = "yyyy/MM/dd HH:mm"
+                    //let someDateTime = otherdate.date(from: "2019/11/3 22:31")
+                    //let calendar = Calendar.current
+                    
+                    //let currentDay = calendar.component(.day, from: someDateTime!)
+                    //let currentMonth = calendar.component(.month, from: someDateTime!)
+                    //var previousMonth = currentMonth - 1
+                    //let previousMonthName = DateFormatter().monthSymbols[previousMonth-1]
+                    //let currentYear = calendar.component(.year, from: someDateTime!)
+                    //let lastWeekDay = currentDay - 7
+                    
+                    // grabs todays date
+                    let today = Date()
+                    let calendar = Calendar.current
+                    // breaks up the date into day month and year components
+                    let currentDay = calendar.component(.day, from: today)
+                    let currentMonth = calendar.component(.month, from: today)
+                    let currentYear = calendar.component(.year, from: today)
+                    // calculates 7 days in the past and gets the previous month's name
+                    let lastWeekDay = currentDay - 7
+                    let previousMonth = currentMonth - 1
+                    let previousMonthName = DateFormatter().monthSymbols[previousMonth-1]
+                    
+                    // checks if the lastWeekDay variable is negative.
+                    // If it is negative or 0, that means it needs to get the previous months as well
+                    if(lastWeekDay <= 0)
                     {
-                        for count in 0..<(arr.count)
+                        // function that gets how many days are in the last month and puts those days into stringDays and days array
+                        self.daysInMonth(inMonth: currentMonth, inYear: currentYear, inDay: lastWeekDay)
+                        self.monthLabel.text = "\(previousMonthName)-\(nameOfMonth)"
+                        // iterates through all of the documents for this user
+                        for document in querySnapshot!.documents
                         {
-                            arr.append(self.medDayPlan[count]) // appends the new 'medDayPlan[count]' to the arr variable
+                            // gets the date numbers of the timestamp
+                            let timestamp: Timestamp = document.get("Date") as! Timestamp
+                            let dbDate: Date = timestamp.dateValue()
+                            // gets the date of the database value
+                            let dbDay = calendar.component(.day, from: dbDate)
+                            // checks if dbDay is inside the days array
+                            // if dbDay is not inside the days array skip this entire if statement
+                            if (self.days.contains(dbDay))
+                            {
+                                // checks if dbDay is already inside medData dictionary
+                                let keyExists = self.medData[dbDay] != nil
+                                if(keyExists)
+                                {
+                                    // adds the score found from dbDay into the correct spot in the dictionary
+                                    self.medData[dbDay] = (self.medData[dbDay]!) + (document.get("Quantity") as! Double)
+                                }
+                                else{
+                                    // sets the value of the new dbDay key to equal to the score
+                                    self.medData[dbDay] = (document.get("Quantity") as! Double)
+                                }
+                            }
                         }
-                        self.dictDayPlan[med] = arr // places the modified array into the 'dictDayPlan' after adding a new Day
+                        // while loop is to place the mood values into the bar chart
+                        var i = 0
+                        while(i < self.days.count)
+                        {
+                            // checks if a key value of days[i] exists inside the dictionary
+                            let dayExists = self.medData[self.days[i]] != nil
+                            if(dayExists)
+                            {
+                                // places data into the graph data array
+                                let data = BarChartDataEntry(x: Double(i), y: (self.medData[self.days[i]]!))
+                                self.GraphData.append(data)
+                                
+                            }
+                            else
+                            {
+                                // if the key value days[i] does not exist, set the value equal to 0 for that day
+                                let data = BarChartDataEntry(x: Double(i), y: 0)
+                                self.GraphData.append(data)
+                            }
+                            i += 1
+                        }
+                        // formats the x values to have the correct values
+                        let dayFormat = BarChartFormatter(values: self.stringDays)
+                        self.chtChart.xAxis.valueFormatter = dayFormat as IAxisValueFormatter
+                        // formatting the graph
+                        let set = BarChartDataSet(values: self.GraphData, label: "Medication Taken")
+                        set.colors = [UIColor.init(displayP3Red: 0/255, green: 128/255, blue: 255/255, alpha: 1)]
+                        let chartData = BarChartData(dataSet: set)
+                        self.chtChart.fitBars = true
+                        self.chtChart.data = chartData
                     }
+                    else
+                    {
+                        // if lastweekday is a positive value
+                        self.monthLabel.text = "\(nameOfMonth)"
+                        for document in querySnapshot!.documents
+                        {
+                            // grabs the timestamp and gets the date of that timestamp
+                            let timestamp: Timestamp = document.get("Date") as! Timestamp
+                            let dbDate: Date = timestamp.dateValue()
+                            // converts the date into a day
+                            let dbDay = calendar.component(.day, from: dbDate)
+                            // checks if dbDay is greater than or equal to lastweekday and if dbDay is less than or equal to the currentDay
+                            if (dbDay >= lastWeekDay && dbDay <= currentDay)
+                            {
+                                // checks if dbDay exists in the dictionary already
+                                let keyExists = self.medData[dbDay] != nil
+                                if(keyExists)
+                                {
+                                    // if the key exists add the score from the database on top of the value found in the dictionary
+                                    self.medData[dbDay] = (self.medData[dbDay]!) + (document.get("Quantity") as! Double)
+                                    // increments the correct value inside the dayAverage array
+                                    // self.dayAverage[(currentDay-dbDay)] += 1
+                                }
+                                else{
+                                    // if the key does not exist
+                                    // make a new key of dbDay with the score value found from the database
+                                    self.medData[dbDay] = (document.get("Quantity") as! Double)
+                                }
+                            }
+                        }
+                        // insert the data values into the graphData array
+                        for i in lastWeekDay...currentDay
+                        {
+                            // checks if the that day already exists in the medData
+                            let dayExists = self.medData[i] != nil
+                            if(dayExists)
+                            {
+                                // inserts the data into the graphData array
+                                let data = BarChartDataEntry(x: Double(i), y: (self.medData[i]!))
+                                self.GraphData.append(data)
+                                
+                            }
+                            else
+                            {
+                                // inserts the default value of zero for keys that do not exist
+                                let data = BarChartDataEntry(x: Double(i), y: 0)
+                                self.GraphData.append(data)
+                            }
+                        }
+                    }
+                    // formatting the graph
+                    let set = BarChartDataSet(values: self.GraphData, label: "Medication Taken")
+                    set.colors = [UIColor.init(displayP3Red: 0/255, green: 128/255, blue: 255/255, alpha: 1)]
+                    let chartData = BarChartData(dataSet: set)
+                    self.chtChart.fitBars = true
+                    self.chtChart.data = chartData
                 }
-                else
-                { // the key does not exist in the dictionary
-                    self.dictDayPlan[med] = tmpDayArray // adds a new dictionary value for the medication and the days they are suppose to be taken
-                }
-            }
-            completionHandler(i) // this function allows getDBMedicationPlan to return properly once the for loop is completed
         }
     }
-}
     
-    // MARK: - Compare the dates between the user taking the medication and the day the user is suppose to be taking the medication
-    //       - This checks whether or not the user has missed any of their medications
-    //
+    // MARK: - Create the day and stringDay arrays
     // Input:
-    //      1. A dictionary dateTaken [String:[Date]]. This is used to see what medication the user has taken and at what day they have taken the medication
-    //      2. A dictionary dayPlan [String:[String]]. This is used to compare with the day from dayPlan
-    //         to the day from dateTaken to see if the user has taken the medication on time.
+    //      1. The month as an int
+    //      2. The year as an int
+    //      3. The day as an int
     // Output:
-    //      1. Places medication taken by the user into dictionary 'dictMedToTake'. The dictionary value contains a boolean array.
-    //         The indexes represent a day of the week.
-    //         For example, index 0 is Monday, index 1 is Tuesday, index 2 is Wednesday, etc.
-    private func compareDate(dateTaken: [String:[Date]],dayPlan: [String:[String]])
+    //      1. day array with all the days in the week
+    //      2. stringDay array with all the days in the week as a string
+    func daysInMonth(inMonth: Int, inYear: Int, inDay: Int)
     {
-        // creates a boolean array with size 7 with all initialized values set as false that will be manipulated depending on
-        // what the user's medication plan and what medication they have taken
-        let takeMedCorrectDay = [Bool](repeating: false, count: 7)
-        // iterates through the user's medication consumption
-        for (takenMed,_) in dateTaken
+        // grabs the previous month
+        var previousMonth = inMonth-1
+        var year = inYear
+        var day = inDay
+        let forwardDay = inDay
+        var i = 1
+        // if the previous month was January of that year
+        if(previousMonth == 0)
         {
-            dictDidTakeMed[takenMed] = takeMedCorrectDay // adds the boolean array 'takeMedCorrectDay' for each medication the user has taken
-            // converts all dates to a day of the week inside the for loop
-            for count in 0..<dateTaken[takenMed]!.count
-            {// converts timestamp to a day of the week
-                let date = dateTaken[takenMed]![count] // grabs each timestamp in the medication
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "EEEE" // formats the date into a day of the week
-                let currentDateString: String = dateFormatter.string(from: date) // currentDateString is storing the day of the week
-                // iterates through the entire medication plan and compares the currentDateString to the dayplan
-                for count in 0..<dayPlan[takenMed]!.count
-                {
-                    // check if the i-th value in the array of dayPlan matchces with the currentDateString
-                        if(dayPlan[takenMed]![count] == currentDateString)
-                        {
-                            // arr variable gets the boolean array of 'dictDidTakeMed'
-                            if var arr = dictDidTakeMed[takenMed]
-                            {
-                                // each if statement will be compar currentDateString to a day
-                                // if the currentDateString matches with a day the array position will be updated to have a boolean true value
-                                if(currentDateString == "Monday")
-                                {
-                                    arr[0] = true
-                                }
-                                else if (currentDateString == "Tuesday")
-                                {
-                                    arr[1] = true
-                                }
-                                else if (currentDateString == "Wednesday")
-                                {
-                                    arr[2] = true
-                                }
-                                else if (currentDateString == "Thursday")
-                                {
-                                    arr[3] = true
-                                }
-                                else if (currentDateString == "Friday")
-                                {
-                                    arr[4] = true
-                                }
-                                else if (currentDateString == "Saturday")
-                                {
-                                    arr[5] = true
-                                }
-                                else if (currentDateString == "Sunday")
-                                {
-                                    arr[6] = true
-                                }
-                                // after the if statement the arr array which contains all the boolean values for that medication will be added to the dictionary
-                                dictDidTakeMed[takenMed] = arr
-                            }
-                        }
-                }
-            }
+            // sets the previous month to December
+            previousMonth = 12
+            // gets the previous year
+            year = year - 1
         }
-    }
-    
-    
-    // MARK: - Uses the data from the previous functions and creates the stacked bar chart.
-    //       - Some of the graph settings has been set in this function such as the color of the bars, the legend, and what values to put into the graph
-    // Input:
-    //      1. The medAmount dictionary which is of type [String:[Double]]
-    //      2. The dayPlan dictionary which is of type [String:[String]]
-    //      3. The allMedToTake dictionary which is of type [String:Double]
-    // Output:
-    //      1. The graph will be shown to the user after this function is completed
-    private func setChartData(medAmount: [String:[Double]],dayPlan: [String:[String]],userTaken: [String:[Bool]], allMedToTake: [String:Double])
-    {
-        // This days array contains all the days of the week
-        //let days: [String] = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
-        //
-        //let daysize = days.count
-        for (Med,_) in dayPlan
+        // grabs the date components of the year and the previousMonth
+        let dateComponents = DateComponents(year: year, month: previousMonth)
+        let calendar = Calendar.current
+        let date = calendar.date(from: dateComponents)!
+        // counts the number of days for that month and stores the value in numDays
+        let range = calendar.range(of: .day, in: .month, for: date)!
+        var numDays = range.count
+        // appends the day values into the days array on the current month
+        while(abs(forwardDay)-i > 0)
         {
-            for i in 0..<dayPlan[Med]!.count
-            {
-                let keyExists = self.dictMedTaken[Med] != nil // checks if the key exists inside the dictionary 'dictMedTaken'
-                var Taken: Double = 0
-                var Missed: Double = 0
-                if(keyExists)
-                { // if the exists in the dictionary
-                let date: String = dayPlan[Med]![i] //days of the medication plan
-                if(date == "Monday") //compare medication plan day to each day of the week
-                {
-                    if(userTaken[Med]![0] == true) // if the medication plan day and day of week matches and the user has taken the medication
-                    {
-                        Taken = medAmount[Med]![0] // sets the taken value to how much the user has taken
-                    }
-                    else //didnt take medication
-                    {
-                        Missed = medAmount[Med]![0] // sets the missed value to how much the user has taken
-                    }
-                }
-                else if(date == "Tuesday")
-                {
-                    if(userTaken[Med]![1] == true) // if the medication plan day and day of week matches and the user has taken the medication
-                    {
-                        Taken = medAmount[Med]![0] // sets the taken value to how much the user has taken
-                    }
-                    else //didnt take medication
-                    {
-                        Missed = medAmount[Med]![0] // sets the missed value to how much the user has taken
-                    }
-                }
-                else if(date == "Wednesday")
-                {
-                    if(userTaken[Med]![2] == true) // if the medication plan day and day of week matches and the user has taken the medication
-                    {
-                        Taken = medAmount[Med]![0] // sets the taken value to how much the user has taken
-                    }
-                    else // if the medication plan day and day of week does not matches and the user has taken the medication
-                    {
-                        Missed = medAmount[Med]![0] // sets the missed value to how much the user has taken
-                    }
-                }
-                else if(date == "Thursday")
-                {
-                    if(userTaken[Med]![3] == true) // if the medication plan day and day of week matches and the user has taken the medication
-                    {
-                        Taken = medAmount[Med]![0] // sets the taken value to how much the user has taken
-                    }
-                    else // if the medication plan day and day of week does not matches and the user has taken the medication
-                    {
-                        Missed = medAmount[Med]![0] // sets the missed value to how much the user has taken
-                    }
-                }
-                else if(date == "Friday")
-                {
-                    if(userTaken[Med]![4] == true) // if the medication plan day and day of week matches and the user has taken the medication
-                    {
-                        Taken = medAmount[Med]![0] // sets the taken value to how much the user has taken
-                    }
-                    else // if the medication plan day and day of week does not matches and the user has taken the medication
-                    {
-                        Missed = medAmount[Med]![0] // sets the missed value to how much the user has taken
-                    }
-                }
-                else if(date == "Saturday")
-                {
-                    if(userTaken[Med]![5] == true) // if the medication plan day and day of week matches and the user has taken the medication
-                    {
-                        Taken = medAmount[Med]![0] // sets the taken value to how much the user has taken
-                    }
-                    else // if the medication plan day and day of week does not matches and the user has taken the medication
-                    {
-                        Missed = medAmount[Med]![0] // sets the missed value to how much the user has taken
-                    }
-                }
-                else if(date == "Sunday")
-                {
-                    if(userTaken[Med]![6] == true) // if the medication plan day and day of week matches and the user has taken the medication
-                    {
-                        Taken = medAmount[Med]![0] // sets the taken value to how much the user has taken
-                    }
-                    else // if the medication plan day and day of week does not matches and the user has taken the medication
-                    {
-                        Missed = medAmount[Med]![0] // sets the missed value to how much the user has taken
-                    }
-                }
-                        // takes all the data and enters it into the barchartdataentry function
-                        let data = BarChartDataEntry(x: Double(i), yValues: [Taken, Missed], data: "Group Chart" as AnyObject)
-                        GraphData.append(data) // appends the data into the graph
-                }
-            else
-                {
-                    // if the key does not exist in the dictionary
-                    // the medication is missed since there is no record of the user taking the medication
-                    let Missed = self.dictMedToTake[Med]
-                    let data = BarChartDataEntry(x: Double(i), yValues: [Taken, Missed ?? 0], data: "Group Chart" as AnyObject)
-                    GraphData.append(data)
-                }
-            }
+            days.append(abs(forwardDay)-i)
+            i += 1
         }
-        // changes the strings of the days into double values for the BarChartFormatter
-        let formatter = BarChartFormatter(values: dayOfWeek)
-        // more chart properties
-        chtChart.xAxis.valueFormatter = formatter as IAxisValueFormatter
-        let set = BarChartDataSet(values: GraphData, label: "Medication")
-        set.drawIconsEnabled = false
-        // bar colors are set
-        set.colors = [UIColor.green,UIColor.red]
-        // label the colored bar graph
-        set.stackLabels = ["Taken", "Missed"]
-
-        let chartData = BarChartData(dataSet: set)
-        chartData.setValueFont(.systemFont(ofSize: 7, weight: .light))
-//        chartData.setValueFormatter(DefaultValueFormatter(formatter: formatter))
-        chartData.setValueTextColor(.white)
-        
-        // starts charting the bars
-        chtChart.fitBars = true
-        chtChart.data = chartData
+        // appends the day values into the days array on the previous month
+        while(day <= 0)
+        {
+            days.append(numDays)
+            day += 1
+            numDays -= 1
+        }
+        // takes the days values and reverses the order for stringDays array
+        var j = 7
+        while(j >= 0)
+        {
+            stringDays.append(String(days[j]))
+            j -= 1
+        }
     }
-
-    // MARK: - Helper class for XAxis labeling of medication graph
+    
+    // MARK: - Helper class for XAxis labeling of mood graph
     private class BarChartFormatter: NSObject, IAxisValueFormatter {
         
         var values : [String]

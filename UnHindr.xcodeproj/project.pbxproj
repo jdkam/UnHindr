@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		185E08EB515929A3C41DCA06 /* Pods_UnHindrTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E98EBEE8A222DA52CA9D297 /* Pods_UnHindrTests.framework */; };
 		215C15DC236F6E5F0063F3E4 /* WellnessTestHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215C15DB236F6E5F0063F3E4 /* WellnessTestHomeViewController.swift */; };
 		2BB1F3E910641FB171AAA24E /* Pods_UnHindrTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03A434C323DEDECA6A4F4E7C /* Pods_UnHindrTests.framework */; };
 		2D2E7E7A2393617900BC32A9 /* FullMedicationList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D2E7E792393617900BC32A9 /* FullMedicationList.storyboard */; };
@@ -33,10 +34,19 @@
 		707E9F7423827F85006A3AF5 /* MonthMoodGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707E9F7123827F85006A3AF5 /* MonthMoodGraphViewController.swift */; };
 		707E9F7523827F85006A3AF5 /* MoodGraphsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707E9F7223827F85006A3AF5 /* MoodGraphsViewController.swift */; };
 		707E9F7623827F85006A3AF5 /* YearMoodGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707E9F7323827F85006A3AF5 /* YearMoodGraphViewController.swift */; };
+		70C1FCEB23887E0600BF1CC6 /* MonthMedChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C1FCEA23887E0600BF1CC6 /* MonthMedChartViewController.swift */; };
+		70C1FCEF238884E700BF1CC6 /* YearMedChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C1FCEE238884E700BF1CC6 /* YearMedChartViewController.swift */; };
+		70B46FB02389E4B80088D1FD /* CaregiverMedicationScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70B46FAF2389E4B80088D1FD /* CaregiverMedicationScreen.storyboard */; };
+		70B46FB42389F2440088D1FD /* CaregiverPatientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B46FB32389F2440088D1FD /* CaregiverPatientsViewController.swift */; };
 		8176FAB3237B88D80083B445 /* CogGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8176FAB2237B88D80083B445 /* CogGameViewController.swift */; };
 		8176FAB5237B896B0083B445 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8176FAB4237B896B0083B445 /* CardModel.swift */; };
 		8176FAB7237B8A9C0083B445 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8176FAB6237B8A9C0083B445 /* Card.swift */; };
 		8176FAB9237B94FC0083B445 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8176FAB8237B94FC0083B445 /* CardCollectionViewCell.swift */; };
+		817B5F6723889CB5009BF125 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 817B5F6623889CB5009BF125 /* Chat.storyboard */; };
+		817B5F6923889CE9009BF125 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817B5F6823889CE9009BF125 /* ChatViewController.swift */; };
+		817B5F6C2388A478009BF125 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817B5F6B2388A478009BF125 /* Message.swift */; };
+		817B5F6F2388C117009BF125 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817B5F6D2388C117009BF125 /* MessageCell.swift */; };
+		817B5F702388C117009BF125 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 817B5F6E2388C117009BF125 /* MessageCell.xib */; };
 		81A7340C2381E0840069FE24 /* CogGameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A7340B2381E0840069FE24 /* CogGameTest.swift */; };
 		81A7340E238200320069FE24 /* CogGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A7340D238200320069FE24 /* CogGameUITests.swift */; };
 		81B5908E2378F8DD00BA49AF /* CogGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81B5908D2378F8DD00BA49AF /* CogGame.storyboard */; };
@@ -46,7 +56,8 @@
 		81BDBDA2237F8E9C00F4C970 /* cardflip.wav in Resources */ = {isa = PBXBuildFile; fileRef = 81BDBD9E237F8E9C00F4C970 /* cardflip.wav */; };
 		81BDBDA4237F8F9000F4C970 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BDBDA3237F8F9000F4C970 /* AVFoundation.framework */; };
 		81BDBDA6237F8FDB00F4C970 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BDBDA5237F8FDB00F4C970 /* SoundManager.swift */; };
-		93FA49CD665592E4B99DB3F3 /* Pods_UnHindr_UnHindrUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6E2B4E2DEF28A4C383CB68F /* Pods_UnHindr_UnHindrUITests.framework */; };
+		81D15232238B5E6E00A762A7 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81D15231238B5E6E00A762A7 /* IQKeyboardManagerSwift.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		917005C6FF22DCC60112BF31 /* Pods_UnHindr_UnHindrUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60A7EE0DF36D68CB24C9574E /* Pods_UnHindr_UnHindrUITests.framework */; };
 		98F115D8236CCDF80082A1B1 /* Mood.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98F115D7236CCDF80082A1B1 /* Mood.storyboard */; };
 		98F115DA236CCED00082A1B1 /* MoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F115D9236CCED00082A1B1 /* MoodViewController.swift */; };
 		98F115E5236D23380082A1B1 /* MoodQ2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F115E4236D23380082A1B1 /* MoodQ2ViewController.swift */; };
@@ -67,6 +78,7 @@
 		9DFB75B9236F74D0006321B8 /* Medication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DFB75B7236F74CF006321B8 /* Medication.storyboard */; };
 		9DFB75BD236F7515006321B8 /* MedicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFB75BB236F7515006321B8 /* MedicationViewController.swift */; };
 		9DFB75C0236F7B15006321B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DFB75BF236F7B14006321B8 /* Assets.xcassets */; };
+		9E04C08E238A1D5B0011A572 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E04C08D238A1D5B0011A572 /* User.swift */; };
 		9E286A2F2382957600473055 /* MotorGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E286A2B2382957600473055 /* MotorGameViewController.swift */; };
 		9E286A302382957600473055 /* MotorGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E286A2C2382957600473055 /* MotorGameScene.swift */; };
 		9E286A312382957600473055 /* MotorGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E286A2D2382957600473055 /* MotorGame.storyboard */; };
@@ -78,9 +90,13 @@
 		9E9138992380D5B5006AD1F9 /* Connect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E9138982380D5B5006AD1F9 /* Connect.storyboard */; };
 		9E91389C2380D6C5006AD1F9 /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E91389B2380D6C5006AD1F9 /* ConnectViewController.swift */; };
 		9EE42465237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE42464237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift */; };
-		CBE5CD7485E703281E2757D0 /* Pods_UnHindr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB3CE85FD97976F3B7E3634 /* Pods_UnHindr.framework */; };
+		A2B5644B1E4149E09D599F82 /* Pods_UnHindr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7EAE4472764465EE4B52BD6 /* Pods_UnHindr.framework */; };
+		CD4A840D23932C6E00189605 /* EmergContactUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4A840C23932C6E00189605 /* EmergContactUITests.swift */; };
 		CDBC4013236E4FE8008934AF /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDBC4012236E4FE8008934AF /* Settings.storyboard */; };
 		CDBC4016236E501B008934AF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBC4015236E501B008934AF /* SettingsViewController.swift */; };
+		CDD946F4238B41C600A865D0 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD946F3238B41C600A865D0 /* SignUpViewController.swift */; };
+		CDECEE9B2389D29D0074620D /* EmergencyContact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDECEE9A2389D29D0074620D /* EmergencyContact.storyboard */; };
+		CDECEE9D2389D2CE0074620D /* EmergencyContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDECEE9C2389D2CE0074620D /* EmergencyContactViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,8 +117,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		03A434C323DEDECA6A4F4E7C /* Pods_UnHindrTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnHindrTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		070601D3D77C38C0722FE935 /* Pods-UnHindrTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindrTests.debug.xcconfig"; path = "Target Support Files/Pods-UnHindrTests/Pods-UnHindrTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1470CE3451D5AB4F262D5392 /* Pods-UnHindr-UnHindrUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindr-UnHindrUITests.debug.xcconfig"; path = "Target Support Files/Pods-UnHindr-UnHindrUITests/Pods-UnHindr-UnHindrUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		215C15DB236F6E5F0063F3E4 /* WellnessTestHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellnessTestHomeViewController.swift; sourceTree = "<group>"; };
 		2D2E7E792393617900BC32A9 /* FullMedicationList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FullMedicationList.storyboard; sourceTree = "<group>"; };
 		2D5BBA762389E7B20074A202 /* FullMedicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullMedicationViewController.swift; sourceTree = "<group>"; };
@@ -113,8 +128,8 @@
 		2DD67108236BCD41005948DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		2DD6710A236BCD41005948DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/HomeScreen.storyboard; sourceTree = "<group>"; };
 		2DE6A77C236E402B00B76282 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
-		3EB3CE85FD97976F3B7E3634 /* Pods_UnHindr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnHindr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6CD8E5234FA9D115EE968692 /* Pods-UnHindr-UnHindrUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindr-UnHindrUITests.release.xcconfig"; path = "Target Support Files/Pods-UnHindr-UnHindrUITests/Pods-UnHindr-UnHindrUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4E98EBEE8A222DA52CA9D297 /* Pods_UnHindrTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnHindrTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		60A7EE0DF36D68CB24C9574E /* Pods_UnHindr_UnHindrUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnHindr_UnHindrUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7013CBB82370D00E00A1231F /* ChartsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
 		707E9F5923827EF0006A3AF5 /* MoodGraphs.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MoodGraphs.storyboard; sourceTree = "<group>"; };
 		707E9F5A23827EF1006A3AF5 /* WellnessTestHome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WellnessTestHome.storyboard; sourceTree = "<group>"; };
@@ -130,10 +145,19 @@
 		707E9F7123827F85006A3AF5 /* MonthMoodGraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthMoodGraphViewController.swift; sourceTree = "<group>"; };
 		707E9F7223827F85006A3AF5 /* MoodGraphsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodGraphsViewController.swift; sourceTree = "<group>"; };
 		707E9F7323827F85006A3AF5 /* YearMoodGraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YearMoodGraphViewController.swift; sourceTree = "<group>"; };
+		70C1FCEA23887E0600BF1CC6 /* MonthMedChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthMedChartViewController.swift; sourceTree = "<group>"; };
+		70C1FCEE238884E700BF1CC6 /* YearMedChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearMedChartViewController.swift; sourceTree = "<group>"; };
+		70B46FAF2389E4B80088D1FD /* CaregiverMedicationScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CaregiverMedicationScreen.storyboard; sourceTree = "<group>"; };
+		70B46FB32389F2440088D1FD /* CaregiverPatientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaregiverPatientsViewController.swift; sourceTree = "<group>"; };
 		8176FAB2237B88D80083B445 /* CogGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CogGameViewController.swift; sourceTree = "<group>"; };
 		8176FAB4237B896B0083B445 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		8176FAB6237B8A9C0083B445 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		8176FAB8237B94FC0083B445 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
+		817B5F6623889CB5009BF125 /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
+		817B5F6823889CE9009BF125 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		817B5F6B2388A478009BF125 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		817B5F6D2388C117009BF125 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		817B5F6E2388C117009BF125 /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
 		81A7340B2381E0840069FE24 /* CogGameTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CogGameTest.swift; sourceTree = "<group>"; };
 		81A7340D238200320069FE24 /* CogGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CogGameUITests.swift; sourceTree = "<group>"; };
 		81B5908D2378F8DD00BA49AF /* CogGame.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CogGame.storyboard; sourceTree = "<group>"; };
@@ -143,6 +167,8 @@
 		81BDBD9E237F8E9C00F4C970 /* cardflip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardflip.wav; sourceTree = "<group>"; };
 		81BDBDA3237F8F9000F4C970 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		81BDBDA5237F8FDB00F4C970 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		81D15231238B5E6E00A762A7 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9500CD9CD9F0148DE44F8BF8 /* Pods-UnHindr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindr.debug.xcconfig"; path = "Target Support Files/Pods-UnHindr/Pods-UnHindr.debug.xcconfig"; sourceTree = "<group>"; };
 		98F115D7236CCDF80082A1B1 /* Mood.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mood.storyboard; sourceTree = "<group>"; };
 		98F115D9236CCED00082A1B1 /* MoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodViewController.swift; sourceTree = "<group>"; };
 		98F115E4236D23380082A1B1 /* MoodQ2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodQ2ViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +177,7 @@
 		98F115EA236D2B770082A1B1 /* MoodQ5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodQ5ViewController.swift; sourceTree = "<group>"; };
 		98F6791C236E849900517099 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		98F67920236E85AF00517099 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		9CC98A083DBCA38C513B60AD /* Pods-UnHindr-UnHindrUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindr-UnHindrUITests.release.xcconfig"; path = "Target Support Files/Pods-UnHindr-UnHindrUITests/Pods-UnHindr-UnHindrUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9D627A0D236FD4240027B6B7 /* MedicationHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationHomeViewController.swift; sourceTree = "<group>"; };
 		9D6C641B2378B50F00F0C058 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9DE33C6D236F98BD00855C78 /* DatabaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseTests.swift; sourceTree = "<group>"; };
@@ -169,6 +196,7 @@
 		9DFB75B8236F74CF006321B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Medication.storyboard; sourceTree = "<group>"; };
 		9DFB75BB236F7515006321B8 /* MedicationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationViewController.swift; sourceTree = "<group>"; };
 		9DFB75BF236F7B14006321B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9E04C08D238A1D5B0011A572 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9E286A2B2382957600473055 /* MotorGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotorGameViewController.swift; sourceTree = "<group>"; };
 		9E286A2C2382957600473055 /* MotorGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotorGameScene.swift; sourceTree = "<group>"; };
 		9E286A2D2382957600473055 /* MotorGame.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MotorGame.storyboard; sourceTree = "<group>"; };
@@ -180,13 +208,16 @@
 		9E9138982380D5B5006AD1F9 /* Connect.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Connect.storyboard; sourceTree = "<group>"; };
 		9E91389B2380D6C5006AD1F9 /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
 		9EE42464237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaregiverHomeScreenViewController.swift; sourceTree = "<group>"; };
-		A6E2B4E2DEF28A4C383CB68F /* Pods_UnHindr_UnHindrUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnHindr_UnHindrUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B4A52706C5DFD3854AB3653D /* Pods-UnHindr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindr.debug.xcconfig"; path = "Target Support Files/Pods-UnHindr/Pods-UnHindr.debug.xcconfig"; sourceTree = "<group>"; };
-		BC2051C061649210EBAEDB5D /* Pods-UnHindrTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindrTests.release.xcconfig"; path = "Target Support Files/Pods-UnHindrTests/Pods-UnHindrTests.release.xcconfig"; sourceTree = "<group>"; };
+		CD4A840C23932C6E00189605 /* EmergContactUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergContactUITests.swift; sourceTree = "<group>"; };
 		CDBC4012236E4FE8008934AF /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		CDBC4015236E501B008934AF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		D67DC310DD2C16DCFB8FDD88 /* Pods-UnHindr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindr.release.xcconfig"; path = "Target Support Files/Pods-UnHindr/Pods-UnHindr.release.xcconfig"; sourceTree = "<group>"; };
-		F1C3785DD264C27DA744F93C /* Pods-UnHindr-UnHindrUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindr-UnHindrUITests.debug.xcconfig"; path = "Target Support Files/Pods-UnHindr-UnHindrUITests/Pods-UnHindr-UnHindrUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CDD946F3238B41C600A865D0 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		CDECEE9A2389D29D0074620D /* EmergencyContact.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmergencyContact.storyboard; sourceTree = "<group>"; };
+		CDECEE9C2389D2CE0074620D /* EmergencyContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyContactViewController.swift; sourceTree = "<group>"; };
+		D63F99425B3E2EFCA5604695 /* Pods-UnHindrTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindrTests.debug.xcconfig"; path = "Target Support Files/Pods-UnHindrTests/Pods-UnHindrTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DED04B884E18297F4A8774D1 /* Pods-UnHindrTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindrTests.release.xcconfig"; path = "Target Support Files/Pods-UnHindrTests/Pods-UnHindrTests.release.xcconfig"; sourceTree = "<group>"; };
+		DFCCB05E78CA6EE40144300E /* Pods-UnHindr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindr.release.xcconfig"; path = "Target Support Files/Pods-UnHindr/Pods-UnHindr.release.xcconfig"; sourceTree = "<group>"; };
+		F7EAE4472764465EE4B52BD6 /* Pods_UnHindr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnHindr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,8 +225,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81D15232238B5E6E00A762A7 /* IQKeyboardManagerSwift.framework in Frameworks */,
 				81BDBDA4237F8F9000F4C970 /* AVFoundation.framework in Frameworks */,
-				CBE5CD7485E703281E2757D0 /* Pods_UnHindr.framework in Frameworks */,
+				A2B5644B1E4149E09D599F82 /* Pods_UnHindr.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,7 +235,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BB1F3E910641FB171AAA24E /* Pods_UnHindrTests.framework in Frameworks */,
+				185E08EB515929A3C41DCA06 /* Pods_UnHindrTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,7 +243,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93FA49CD665592E4B99DB3F3 /* Pods_UnHindr_UnHindrUITests.framework in Frameworks */,
+				917005C6FF22DCC60112BF31 /* Pods_UnHindr_UnHindrUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +273,7 @@
 				9DF3F89A2367D826003CF8B9 /* LoginViewController.swift */,
 				2DD67103236BC4C5005948DF /* HomeScreenViewController.swift */,
 				9EE42464237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift */,
+				CDECEE9C2389D2CE0074620D /* EmergencyContactViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -257,12 +290,12 @@
 		637501236AFF794AA0B0DF59 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B4A52706C5DFD3854AB3653D /* Pods-UnHindr.debug.xcconfig */,
-				D67DC310DD2C16DCFB8FDD88 /* Pods-UnHindr.release.xcconfig */,
-				F1C3785DD264C27DA744F93C /* Pods-UnHindr-UnHindrUITests.debug.xcconfig */,
-				6CD8E5234FA9D115EE968692 /* Pods-UnHindr-UnHindrUITests.release.xcconfig */,
-				070601D3D77C38C0722FE935 /* Pods-UnHindrTests.debug.xcconfig */,
-				BC2051C061649210EBAEDB5D /* Pods-UnHindrTests.release.xcconfig */,
+				9500CD9CD9F0148DE44F8BF8 /* Pods-UnHindr.debug.xcconfig */,
+				DFCCB05E78CA6EE40144300E /* Pods-UnHindr.release.xcconfig */,
+				1470CE3451D5AB4F262D5392 /* Pods-UnHindr-UnHindrUITests.debug.xcconfig */,
+				9CC98A083DBCA38C513B60AD /* Pods-UnHindr-UnHindrUITests.release.xcconfig */,
+				D63F99425B3E2EFCA5604695 /* Pods-UnHindrTests.debug.xcconfig */,
+				DED04B884E18297F4A8774D1 /* Pods-UnHindrTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -270,12 +303,25 @@
 		7AC9719345D1AB48A6CAA879 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				81D15231238B5E6E00A762A7 /* IQKeyboardManagerSwift.framework */,
 				81BDBDA3237F8F9000F4C970 /* AVFoundation.framework */,
-				3EB3CE85FD97976F3B7E3634 /* Pods_UnHindr.framework */,
-				A6E2B4E2DEF28A4C383CB68F /* Pods_UnHindr_UnHindrUITests.framework */,
-				03A434C323DEDECA6A4F4E7C /* Pods_UnHindrTests.framework */,
+				F7EAE4472764465EE4B52BD6 /* Pods_UnHindr.framework */,
+				60A7EE0DF36D68CB24C9574E /* Pods_UnHindr_UnHindrUITests.framework */,
+				4E98EBEE8A222DA52CA9D297 /* Pods_UnHindrTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		817B5F6A2388A010009BF125 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				817B5F6623889CB5009BF125 /* Chat.storyboard */,
+				817B5F6823889CE9009BF125 /* ChatViewController.swift */,
+				817B5F6B2388A478009BF125 /* Message.swift */,
+				817B5F6D2388C117009BF125 /* MessageCell.swift */,
+				817B5F6E2388C117009BF125 /* MessageCell.xib */,
+			);
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		81B590912378F8F900BA49AF /* CogGame */ = {
@@ -355,6 +401,7 @@
 		9DF3F8972367D826003CF8B9 /* UnHindr */ = {
 			isa = PBXGroup;
 			children = (
+				817B5F6A2388A010009BF125 /* Chat */,
 				9E286A2D2382957600473055 /* MotorGame.storyboard */,
 				707E9F5D23827EF2006A3AF5 /* CogGameGraphs.storyboard */,
 				707E9F5923827EF0006A3AF5 /* MoodGraphs.storyboard */,
@@ -372,12 +419,15 @@
 				2DD67107236BCD41005948DF /* Login.storyboard */,
 				2DD67109236BCD41005948DF /* HomeScreen.storyboard */,
 				9E4EAB30237E5E8400FC051B /* CaregiverHomeScreen.storyboard */,
+				70B46FAF2389E4B80088D1FD /* CaregiverMedicationScreen.storyboard */,
+				70B46FB32389F2440088D1FD /* CaregiverPatientsViewController.swift */,
 				9DF3F8A12367D82D003CF8B9 /* LaunchScreen.storyboard */,
 				CDBC4012236E4FE8008934AF /* Settings.storyboard */,
 				9E4EAB31237E5E8400FC051B /* ModeChoice.storyboard */,
 				9E9138982380D5B5006AD1F9 /* Connect.storyboard */,
 				9DF3F8C62367D880003CF8B9 /* GoogleService-Info.plist */,
 				9DF3F8A42367D82D003CF8B9 /* Info.plist */,
+				CDECEE9A2389D29D0074620D /* EmergencyContact.storyboard */,
 			);
 			path = UnHindr;
 			sourceTree = "<group>";
@@ -401,6 +451,7 @@
 				9DF3F8B82367D82D003CF8B9 /* UnHindrUITests.swift */,
 				9DF3F8BA2367D82D003CF8B9 /* Info.plist */,
 				81A7340D238200320069FE24 /* CogGameUITests.swift */,
+				CD4A840C23932C6E00189605 /* EmergContactUITests.swift */,
 			);
 			path = UnHindrUITests;
 			sourceTree = "<group>";
@@ -409,12 +460,15 @@
 			isa = PBXGroup;
 			children = (
 				7013CBB82370D00E00A1231F /* ChartsViewController.swift */,
+				70C1FCEA23887E0600BF1CC6 /* MonthMedChartViewController.swift */,
 				9D627A0D236FD4240027B6B7 /* MedicationHomeViewController.swift */,
 				9DFB75BB236F7515006321B8 /* MedicationViewController.swift */,
 				2D5BBA762389E7B20074A202 /* FullMedicationViewController.swift */,
 				2D5BBA782389F4530074A202 /* MedicationTableViewCell.swift */,
 				2D7A40E5238B316100958659 /* Medication.swift */,
 				2D2E7E792393617900BC32A9 /* FullMedicationList.storyboard */,
+				9DAEB52D237FC407008A94BD /* FullMedicationViewController.swift */,
+				70C1FCEE238884E700BF1CC6 /* YearMedChartViewController.swift */,
 			);
 			path = Medication;
 			sourceTree = "<group>";
@@ -442,7 +496,9 @@
 		9E4EAB36237E5FE400FC051B /* ModeChoice */ = {
 			isa = PBXGroup;
 			children = (
+				CDD946F3238B41C600A865D0 /* SignUpViewController.swift */,
 				9E4EAB34237E5FDE00FC051B /* ModeChoiceViewController.swift */,
+				9E04C08D238A1D5B0011A572 /* User.swift */,
 			);
 			path = ModeChoice;
 			sourceTree = "<group>";
@@ -470,11 +526,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9DF3F8BD2367D82D003CF8B9 /* Build configuration list for PBXNativeTarget "UnHindr" */;
 			buildPhases = (
-				73E448D8AD6F94F43FD0BE16 /* [CP] Check Pods Manifest.lock */,
+				5976294022D0B8BD2946566F /* [CP] Check Pods Manifest.lock */,
 				9DF3F8912367D826003CF8B9 /* Sources */,
 				9DF3F8922367D826003CF8B9 /* Frameworks */,
 				9DF3F8932367D826003CF8B9 /* Resources */,
-				04C0D504A1150BA36A8DB35A /* [CP] Embed Pods Frameworks */,
+				BE24F3F8FD8A4261C836FBA1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -489,7 +545,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9DF3F8C02367D82D003CF8B9 /* Build configuration list for PBXNativeTarget "UnHindrTests" */;
 			buildPhases = (
-				AEAB30A080AE0BAAB21B4664 /* [CP] Check Pods Manifest.lock */,
+				2D6A9655BEAD304B5F630D8E /* [CP] Check Pods Manifest.lock */,
 				9DF3F8A52367D82D003CF8B9 /* Sources */,
 				9DF3F8A62367D82D003CF8B9 /* Frameworks */,
 				9DF3F8A72367D82D003CF8B9 /* Resources */,
@@ -508,11 +564,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9DF3F8C32367D82D003CF8B9 /* Build configuration list for PBXNativeTarget "UnHindrUITests" */;
 			buildPhases = (
-				38D0531E16AA3097AB3EE945 /* [CP] Check Pods Manifest.lock */,
+				61EB77E40ECD793626253C3D /* [CP] Check Pods Manifest.lock */,
 				9DF3F8B02367D82D003CF8B9 /* Sources */,
 				9DF3F8B12367D82D003CF8B9 /* Frameworks */,
 				9DF3F8B22367D82D003CF8B9 /* Resources */,
-				45F7433AB4CEE531F7367F60 /* [CP] Embed Pods Frameworks */,
+				81A0A1073AECDD9583E11826 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -575,6 +631,7 @@
 				81BDBD9F237F8E9C00F4C970 /* shuffle.wav in Resources */,
 				98F67921236E85AF00517099 /* Profile.storyboard in Resources */,
 				2DD6710C236BCD41005948DF /* HomeScreen.storyboard in Resources */,
+				817B5F702388C117009BF125 /* MessageCell.xib in Resources */,
 				98F115D8236CCDF80082A1B1 /* Mood.storyboard in Resources */,
 				81BDBDA0237F8E9C00F4C970 /* dingcorrect.wav in Resources */,
 				2DD6710B236BCD41005948DF /* Login.storyboard in Resources */,
@@ -585,14 +642,17 @@
 				81BDBDA1237F8E9C00F4C970 /* dingwrong.wav in Resources */,
 				707E9F6223827EF2006A3AF5 /* CogGameGraphs.storyboard in Resources */,
 				707E9F6023827EF2006A3AF5 /* WellnessGraphs.storyboard in Resources */,
+				817B5F6723889CB5009BF125 /* Chat.storyboard in Resources */,
 				9E286A312382957600473055 /* MotorGame.storyboard in Resources */,
 				9DF3F8A32367D82D003CF8B9 /* LaunchScreen.storyboard in Resources */,
 				9DF3F8C72367D880003CF8B9 /* GoogleService-Info.plist in Resources */,
 				9E4EAB33237E5E8400FC051B /* ModeChoice.storyboard in Resources */,
+				70B46FB02389E4B80088D1FD /* CaregiverMedicationScreen.storyboard in Resources */,
 				CDBC4013236E4FE8008934AF /* Settings.storyboard in Resources */,
 				9E286A322382957600473055 /* MotorGameScene.sks in Resources */,
 				2D2E7E7A2393617900BC32A9 /* FullMedicationList.storyboard in Resources */,
 				9DFB75B9236F74D0006321B8 /* Medication.storyboard in Resources */,
+				CDECEE9B2389D29D0074620D /* EmergencyContact.storyboard in Resources */,
 				9E9138992380D5B5006AD1F9 /* Connect.storyboard in Resources */,
 				707E9F5F23827EF2006A3AF5 /* WellnessTestHome.storyboard in Resources */,
 				81BDBDA2237F8E9C00F4C970 /* cardflip.wav in Resources */,
@@ -617,85 +677,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		04C0D504A1150BA36A8DB35A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-UnHindr/Pods-UnHindr-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-UnHindr/Pods-UnHindr-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UnHindr/Pods-UnHindr-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		38D0531E16AA3097AB3EE945 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-UnHindr-UnHindrUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		45F7433AB4CEE531F7367F60 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-UnHindr-UnHindrUITests/Pods-UnHindr-UnHindrUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-UnHindr-UnHindrUITests/Pods-UnHindr-UnHindrUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UnHindr-UnHindrUITests/Pods-UnHindr-UnHindrUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		73E448D8AD6F94F43FD0BE16 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-UnHindr-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AEAB30A080AE0BAAB21B4664 /* [CP] Check Pods Manifest.lock */ = {
+		2D6A9655BEAD304B5F630D8E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -717,6 +699,84 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		5976294022D0B8BD2946566F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UnHindr-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		61EB77E40ECD793626253C3D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UnHindr-UnHindrUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		81A0A1073AECDD9583E11826 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UnHindr-UnHindrUITests/Pods-UnHindr-UnHindrUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UnHindr-UnHindrUITests/Pods-UnHindr-UnHindrUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UnHindr-UnHindrUITests/Pods-UnHindr-UnHindrUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE24F3F8FD8A4261C836FBA1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UnHindr/Pods-UnHindr-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UnHindr/Pods-UnHindr-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UnHindr/Pods-UnHindr-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -728,9 +788,11 @@
 				707E9F6723827F6B006A3AF5 /* CogGameMonthlyViewController.swift in Sources */,
 				9E286A302382957600473055 /* MotorGameScene.swift in Sources */,
 				707E9F7523827F85006A3AF5 /* MoodGraphsViewController.swift in Sources */,
+				70C1FCEF238884E700BF1CC6 /* YearMedChartViewController.swift in Sources */,
 				9EE42465237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift in Sources */,
 				9DF3F89B2367D826003CF8B9 /* LoginViewController.swift in Sources */,
 				9D6C641C2378B50F00F0C058 /* Constants.swift in Sources */,
+				817B5F6C2388A478009BF125 /* Message.swift in Sources */,
 				98F115EB236D2B770082A1B1 /* MoodQ5ViewController.swift in Sources */,
 				8176FAB7237B8A9C0083B445 /* Card.swift in Sources */,
 				9E91389C2380D6C5006AD1F9 /* ConnectViewController.swift in Sources */,
@@ -741,24 +803,32 @@
 				81BDBDA6237F8FDB00F4C970 /* SoundManager.swift in Sources */,
 				215C15DC236F6E5F0063F3E4 /* WellnessTestHomeViewController.swift in Sources */,
 				9E286A2F2382957600473055 /* MotorGameViewController.swift in Sources */,
+				817B5F6F2388C117009BF125 /* MessageCell.swift in Sources */,
 				8176FAB5237B896B0083B445 /* CardModel.swift in Sources */,
+				9DAEB52E237FC408008A94BD /* FullMedicationViewController.swift in Sources */,
+				9E04C08E238A1D5B0011A572 /* User.swift in Sources */,
 				707E9F6823827F6B006A3AF5 /* CogGameGraphViewController.swift in Sources */,
 				98F115DA236CCED00082A1B1 /* MoodViewController.swift in Sources */,
 				8176FAB9237B94FC0083B445 /* CardCollectionViewCell.swift in Sources */,
 				98F115E7236D23520082A1B1 /* MoodQ3ViewController.swift in Sources */,
+				70C1FCEB23887E0600BF1CC6 /* MonthMedChartViewController.swift in Sources */,
 				9DF3F8992367D826003CF8B9 /* AppDelegate.swift in Sources */,
 				9E4EAB35237E5FDE00FC051B /* ModeChoiceViewController.swift in Sources */,
 				2DD67104236BC4C5005948DF /* HomeScreenViewController.swift in Sources */,
 				2D5BBA772389E7B20074A202 /* FullMedicationViewController.swift in Sources */,
+				CDD946F4238B41C600A865D0 /* SignUpViewController.swift in Sources */,
 				7013CBB92370D00E00A1231F /* ChartsViewController.swift in Sources */,
+				70B46FB42389F2440088D1FD /* CaregiverPatientsViewController.swift in Sources */,
 				707E9F7623827F85006A3AF5 /* YearMoodGraphViewController.swift in Sources */,
 				2D5BBA792389F4530074A202 /* MedicationTableViewCell.swift in Sources */,
 				2DE6A77D236E402B00B76282 /* Services.swift in Sources */,
 				8176FAB3237B88D80083B445 /* CogGameViewController.swift in Sources */,
+				CDECEE9D2389D2CE0074620D /* EmergencyContactViewController.swift in Sources */,
 				707E9F6A23827F6B006A3AF5 /* cogYearlyGraphViewController.swift in Sources */,
 				9DFB75BD236F7515006321B8 /* MedicationViewController.swift in Sources */,
 				9D627A0E236FD4240027B6B7 /* MedicationHomeViewController.swift in Sources */,
 				98F115E9236D29B50082A1B1 /* MoodQ4ViewController.swift in Sources */,
+				817B5F6923889CE9009BF125 /* ChatViewController.swift in Sources */,
 				707E9F7023827F77006A3AF5 /* MotorGameGraphViewController.swift in Sources */,
 				707E9F6F23827F77006A3AF5 /* MotorGameYearlyViewController.swift in Sources */,
 				98F6791D236E849900517099 /* ProfileViewController.swift in Sources */,
@@ -781,6 +851,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DFA139F2370F17D00F8B7B5 /* UnHindrUITests.swift in Sources */,
+				CD4A840D23932C6E00189605 /* EmergContactUITests.swift in Sources */,
 				9E286A352382968A00473055 /* MotGameUITests.swift in Sources */,
 				81A7340E238200320069FE24 /* CogGameUITests.swift in Sources */,
 			);
@@ -955,13 +1026,14 @@
 		};
 		9DF3F8BE2367D82D003CF8B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B4A52706C5DFD3854AB3653D /* Pods-UnHindr.debug.xcconfig */;
+			baseConfigurationReference = 9500CD9CD9F0148DE44F8BF8 /* Pods-UnHindr.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = UnHindr/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -976,13 +1048,14 @@
 		};
 		9DF3F8BF2367D82D003CF8B9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D67DC310DD2C16DCFB8FDD88 /* Pods-UnHindr.release.xcconfig */;
+			baseConfigurationReference = DFCCB05E78CA6EE40144300E /* Pods-UnHindr.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = UnHindr/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -997,7 +1070,7 @@
 		};
 		9DF3F8C12367D82D003CF8B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 070601D3D77C38C0722FE935 /* Pods-UnHindrTests.debug.xcconfig */;
+			baseConfigurationReference = D63F99425B3E2EFCA5604695 /* Pods-UnHindrTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1018,7 +1091,7 @@
 		};
 		9DF3F8C22367D82D003CF8B9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BC2051C061649210EBAEDB5D /* Pods-UnHindrTests.release.xcconfig */;
+			baseConfigurationReference = DED04B884E18297F4A8774D1 /* Pods-UnHindrTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1039,7 +1112,7 @@
 		};
 		9DF3F8C42367D82D003CF8B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F1C3785DD264C27DA744F93C /* Pods-UnHindr-UnHindrUITests.debug.xcconfig */;
+			baseConfigurationReference = 1470CE3451D5AB4F262D5392 /* Pods-UnHindr-UnHindrUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1059,7 +1132,7 @@
 		};
 		9DF3F8C52367D82D003CF8B9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6CD8E5234FA9D115EE968692 /* Pods-UnHindr-UnHindrUITests.release.xcconfig */;
+			baseConfigurationReference = 9CC98A083DBCA38C513B60AD /* Pods-UnHindr-UnHindrUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

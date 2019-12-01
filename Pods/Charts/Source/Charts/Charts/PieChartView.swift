@@ -196,7 +196,7 @@ open class PieChartView: PieRadarChartViewBase
         
         let yValueSum = (_data as! PieChartData).yValueSum
         
-        let dataSets = data.dataSets
+        var dataSets = data.dataSets
 
         var cnt = 0
 
@@ -282,7 +282,7 @@ open class PieChartView: PieRadarChartViewBase
     /// - returns: The index of the DataSet this x-index belongs to.
     @objc open func dataSetIndexForIndex(_ xValue: Double) -> Int
     {
-        let dataSets = _data?.dataSets ?? []
+        var dataSets = _data?.dataSets ?? []
         
         for i in 0 ..< dataSets.count
         {
