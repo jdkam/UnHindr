@@ -57,7 +57,6 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BjU-9F-vfA" userLabel="EmergencyContact">
                                                 <rect key="frame" x="176.66666666666663" y="0.0" width="194.33333333333337" height="171.66666666666666"/>
-                                                <accessibility key="accessibilityConfiguration" label="EmergencyContact"/>
                                                 <state key="normal" image="Emergency"/>
                                                 <connections>
                                                     <segue destination="9RS-15-nGq" kind="show" id="FPB-T9-307"/>

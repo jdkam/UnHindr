@@ -36,7 +36,7 @@ class EmergencyContactUITests: XCTestCase {
         let app = XCUIApplication()
         loginToHomeScreen(app)
         
-        app.buttons["EmergencyContact"].tap()
+        app.buttons["Emergency"].tap()
         XCTAssert(app.buttons["Timer"].waitForExistence(timeout: 5))
     }
     
@@ -49,10 +49,10 @@ class EmergencyContactUITests: XCTestCase {
         let app = XCUIApplication()
         loginToHomeScreen(app)
         
-        app.buttons["EmergencyContact"].tap()
+        app.buttons["Emergency"].tap()
         sleep(20)
         XCTAssert(app.staticTexts["The Emergency Notification has been sent."].waitForExistence(timeout: 5))
-        XCTAssert(app.buttons["EmergencyContact"].waitForExistence(timeout: 5))
+        XCTAssert(app.buttons["Emergency"].waitForExistence(timeout: 5))
     }
     
     // MARK: - Test holding the screen to cancel the notification
@@ -64,10 +64,10 @@ class EmergencyContactUITests: XCTestCase {
         let app = XCUIApplication()
         loginToHomeScreen(app)
         
-        app.buttons["EmergencyContact"].tap()
+        app.buttons["Emergency"].tap()
         app.press(forDuration: 3.5)
         XCTAssertFalse(app.staticTexts["The Emergency Notification has been sent."].waitForExistence(timeout: 5))
-        XCTAssert(app.buttons["EmergencyContact"].waitForExistence(timeout: 5))
+        XCTAssert(app.buttons["Emergency"].waitForExistence(timeout: 5))
     }
     
     // MARK: - Helper Functions
@@ -83,7 +83,7 @@ class EmergencyContactUITests: XCTestCase {
         app.secureTextFields["Password"].typeText("testtest\n")
         app.buttons["Login Button"].tap()
         //Wait
-        XCTAssert(app.buttons["EmergencyContact"].waitForExistence(timeout: 5))
+        XCTAssert(app.buttons["Emergency"].waitForExistence(timeout: 5))
         
         
     }
