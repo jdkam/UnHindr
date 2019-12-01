@@ -21,6 +21,7 @@ class MotorGameGraphViewController: UIViewController {
 
     @IBOutlet weak var motorWeeklyGraph: BarChartView!
     @IBOutlet weak var monthLabel: UILabel!
+    @IBOutlet weak var WeekView: UILabel!
     
     // gets the correct user database values
     //let motorRef = Services.db.collection("users").document(Services.userRef!).collection("MotorGameData")
@@ -39,6 +40,8 @@ class MotorGameGraphViewController: UIViewController {
     // MARK: - View controller lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.WeekView.text = "Week"
         
         let motorRef = Services.checkUserIDMotorGame()
         Services.getisPatient() {(success) in
@@ -109,17 +112,17 @@ class MotorGameGraphViewController: UIViewController {
                     let nameOfMonth = dateFormatter.string(from: Date())
                     
                     // commented out block from line 90 - 101 is a test for other dates
-                    //let otherdate = DateFormatter()
-                    //otherdate.dateFormat = "yyyy/MM/dd HH:mm"
-                    //let someDateTime = otherdate.date(from: "2019/11/3 22:31")
-                    //let calendar = Calendar.current
-                    
-                    //let currentDay = calendar.component(.day, from: someDateTime!)
-                    //let currentMonth = calendar.component(.month, from: someDateTime!)
-                    //var previousMonth = currentMonth - 1
-                    //let previousMonthName = DateFormatter().monthSymbols[previousMonth-1]
-                    //let currentYear = calendar.component(.year, from: someDateTime!)
-                    //let lastWeekDay = currentDay - 7
+//                    let otherdate = DateFormatter()
+//                    otherdate.dateFormat = "yyyy/MM/dd HH:mm"
+//                    let someDateTime = otherdate.date(from: "2019/12/6 22:31")
+//                    let calendar = Calendar.current
+//
+//                    let currentDay = calendar.component(.day, from: someDateTime!)
+//                    let currentMonth = calendar.component(.month, from: someDateTime!)
+//                    let currentYear = calendar.component(.year, from: someDateTime!)
+//                    let lastWeekDay = currentDay - 6
+//                    let previousMonth = currentMonth - 1
+//                    let previousMonthName = DateFormatter().monthSymbols[previousMonth-1]
                     
                     // grabs todays date
                     let today = Date()
@@ -148,9 +151,10 @@ class MotorGameGraphViewController: UIViewController {
                             let dbDate: Date = timestamp.dateValue()
                             // gets the date of the database value
                             let dbDay = calendar.component(.day, from: dbDate)
+                            let dbMonth = calendar.component(.month, from: dbDate)
                             // checks if dbDay is inside the days array
                             // if dbDay is not inside the days array skip this entire if statement
-                            if (self.days.contains(dbDay))
+                            if (self.days.contains(dbDay) && ((dbMonth == currentMonth) || (dbMonth == previousMonth)) )
                             {
                                 // checks if dbDay is already inside motorData dictionary
                                 let keyExists = self.motorData[dbDay] != nil
@@ -170,25 +174,27 @@ class MotorGameGraphViewController: UIViewController {
                             }
                         }
                         // while loop is to place the mood values into the bar chart
-                        var i = 0
-                        while(i < self.days.count)
+                        var i = 6
+                        var j = 0
+                        while(i >= 0)
                         {
                             // checks if a key value of days[i] exists inside the dictionary
                             let dayExists = self.motorData[self.days[i]] != nil
                             if(dayExists)
                             {
                                 // places data into the graph data array
-                                let data = BarChartDataEntry(x: Double(i), y: (self.motorData[self.days[i]]!)/Double(self.dictDayAvg[self.days[i]]!))
+                                let data = BarChartDataEntry(x: Double(j), y: (self.motorData[self.days[i]]!)/Double(self.dictDayAvg[self.days[i]]!))
                                 self.GraphData.append(data)
                                 
                             }
                             else
                             {
                                 // if the key value days[i] does not exist, set the value equal to 0 for that day
-                                let data = BarChartDataEntry(x: Double(i), y: 0)
+                                let data = BarChartDataEntry(x: Double(j), y: 0)
                                 self.GraphData.append(data)
                             }
-                            i += 1
+                            i -= 1
+                            j += 1
                         }
                         // formats the x values to have the correct values
                         let dayFormat = BarChartFormatter(values: self.stringDays)
@@ -220,7 +226,6 @@ class MotorGameGraphViewController: UIViewController {
                                 let keyExists = self.motorData[dbDay] != nil
                                 if(keyExists)
                                 {
-                                    //print(dbDate)
                                     // if the key exists add the score from the database on top of the value found in the dictionary
                                     self.motorData[dbDay] = (self.motorData[dbDay]!) + (document.get("Score") as! Double)
                                     // increments the correct value inside the dayAverage array
@@ -280,7 +285,8 @@ class MotorGameGraphViewController: UIViewController {
         var year = inYear
         var day = inDay
         let forwardDay = inDay
-        var i = 1
+        var i = 0
+        let daysofWeek = 6
         // if the previous month was January of that year
         if(previousMonth == 0)
         {
@@ -297,9 +303,9 @@ class MotorGameGraphViewController: UIViewController {
         let range = calendar.range(of: .day, in: .month, for: date)!
         var numDays = range.count
         // appends the day values into the days array on the current month
-        while(abs(forwardDay)-i > 0)
+        while(daysofWeek-abs(forwardDay)-i > 0)
         {
-            days.append(abs(forwardDay)-i)
+            days.append(daysofWeek-abs(forwardDay)-i)
             i += 1
         }
         // appends the day values into the days array on the previous month
@@ -310,7 +316,7 @@ class MotorGameGraphViewController: UIViewController {
             numDays -= 1
         }
         // takes the days values and reverses the order for stringDays array
-        var j = 7
+        var j = 6
         while(j >= 0)
         {
             stringDays.append(String(days[j]))

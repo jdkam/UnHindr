@@ -87,6 +87,12 @@
                                     <segue destination="Md6-OM-5eA" kind="show" id="1ha-tl-ME5"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LCT-6f-CiN">
+                                <rect key="frame" x="352" y="176" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -97,6 +103,7 @@
                             <constraint firstItem="GeB-kW-dsR" firstAttribute="leading" secondItem="wja-BF-wDR" secondAttribute="leading" constant="9" id="BdI-dM-vt3"/>
                             <constraint firstItem="9KD-c7-PQH" firstAttribute="top" secondItem="1Ms-an-qI0" secondAttribute="bottom" constant="10" id="Bk0-NS-HMp"/>
                             <constraint firstItem="NId-og-twA" firstAttribute="leading" secondItem="wja-BF-wDR" secondAttribute="leading" id="Cci-s8-kpG"/>
+                            <constraint firstItem="LCT-6f-CiN" firstAttribute="top" secondItem="MSB-EC-k6d" secondAttribute="bottom" constant="9" id="Fgt-Yn-bwO"/>
                             <constraint firstItem="S5t-BS-zbq" firstAttribute="trailing" secondItem="wja-BF-wDR" secondAttribute="trailing" id="Jw8-Ei-Aey"/>
                             <constraint firstItem="NId-og-twA" firstAttribute="top" secondItem="JJY-Oi-AjF" secondAttribute="top" id="K2O-ZO-cQS"/>
                             <constraint firstItem="GeB-kW-dsR" firstAttribute="height" secondItem="NId-og-twA" secondAttribute="height" multiplier="0.5" id="LlR-ic-DvX"/>
@@ -109,6 +116,7 @@
                             <constraint firstItem="wja-BF-wDR" firstAttribute="bottom" secondItem="S5t-BS-zbq" secondAttribute="bottom" id="kB1-5X-YEG"/>
                             <constraint firstItem="wja-BF-wDR" firstAttribute="trailing" secondItem="MSB-EC-k6d" secondAttribute="trailing" constant="20" id="nLI-mj-0gN"/>
                             <constraint firstItem="UaV-Bi-Jav" firstAttribute="centerX" secondItem="JJY-Oi-AjF" secondAttribute="centerX" id="uAk-ga-ncG"/>
+                            <constraint firstItem="wja-BF-wDR" firstAttribute="trailing" secondItem="LCT-6f-CiN" secondAttribute="trailing" constant="20" id="vGu-MN-VsI"/>
                             <constraint firstItem="wja-BF-wDR" firstAttribute="trailing" secondItem="9Uy-HW-jek" secondAttribute="trailing" constant="15" id="wPX-Jj-3IG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wja-BF-wDR"/>
@@ -116,6 +124,7 @@
                     <connections>
                         <outlet property="motorYearlyGraph" destination="S5t-BS-zbq" id="QsS-40-ftp"/>
                         <outlet property="yearLabel" destination="9KD-c7-PQH" id="dxZ-q8-79b"/>
+                        <outlet property="yearView" destination="LCT-6f-CiN" id="ljH-tV-okt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xch-hY-E1g" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -208,6 +217,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onJ-pT-ei7">
+                                <rect key="frame" x="352" y="173" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -216,6 +231,7 @@
                             <constraint firstItem="vhF-3A-kQO" firstAttribute="trailing" secondItem="rZ8-9h-R2g" secondAttribute="trailing" constant="20" id="JyN-I0-oeA"/>
                             <constraint firstItem="Fh9-37-Flu" firstAttribute="top" secondItem="e1c-um-sBV" secondAttribute="bottom" constant="25" id="MJr-Lc-EqP"/>
                             <constraint firstItem="iUR-gQ-Vp4" firstAttribute="top" secondItem="9m0-P7-k3r" secondAttribute="bottom" constant="7" id="N19-wz-R0j"/>
+                            <constraint firstItem="vhF-3A-kQO" firstAttribute="trailing" secondItem="onJ-pT-ei7" secondAttribute="trailing" constant="20" id="Nbz-Y1-FIm"/>
                             <constraint firstItem="9m0-P7-k3r" firstAttribute="leading" secondItem="vhF-3A-kQO" secondAttribute="leading" constant="20" id="OIm-h2-wRI"/>
                             <constraint firstItem="Fh9-37-Flu" firstAttribute="top" secondItem="rBK-ZA-PwZ" secondAttribute="bottom" constant="40" id="OVi-cv-qCM"/>
                             <constraint firstItem="NGJ-v7-Owa" firstAttribute="trailing" secondItem="vhF-3A-kQO" secondAttribute="trailing" id="Oni-w2-NyO"/>
@@ -223,6 +239,7 @@
                             <constraint firstItem="9m0-P7-k3r" firstAttribute="top" secondItem="e1c-um-sBV" secondAttribute="bottom" constant="25" id="ThG-wQ-Z23"/>
                             <constraint firstItem="Fh9-37-Flu" firstAttribute="centerX" secondItem="msB-o6-PGs" secondAttribute="centerX" id="UgQ-Ec-H3D"/>
                             <constraint firstItem="vhF-3A-kQO" firstAttribute="trailing" secondItem="rBK-ZA-PwZ" secondAttribute="trailing" constant="15" id="Wc6-uS-GQc"/>
+                            <constraint firstItem="onJ-pT-ei7" firstAttribute="top" secondItem="rZ8-9h-R2g" secondAttribute="bottom" constant="6" id="ZnK-V6-aK5"/>
                             <constraint firstItem="e1c-um-sBV" firstAttribute="top" secondItem="msB-o6-PGs" secondAttribute="top" id="faz-1c-crP"/>
                             <constraint firstItem="ROO-AD-eJa" firstAttribute="height" secondItem="e1c-um-sBV" secondAttribute="height" multiplier="0.5" id="gQz-8r-QHp"/>
                             <constraint firstItem="e1c-um-sBV" firstAttribute="trailing" secondItem="vhF-3A-kQO" secondAttribute="trailing" id="iAJ-d9-Mmx"/>
@@ -236,6 +253,7 @@
                     </view>
                     <connections>
                         <outlet property="monthLabel" destination="iUR-gQ-Vp4" id="Sek-Qt-U1b"/>
+                        <outlet property="monthView" destination="onJ-pT-ei7" id="7xf-qF-GQX"/>
                         <outlet property="motorMonthGraph" destination="NGJ-v7-Owa" id="7mQ-4M-xf9"/>
                     </connections>
                 </viewController>
@@ -320,11 +338,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlm-dL-3T7">
+                                <rect key="frame" x="352" y="177" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="nc8-mp-Thz" firstAttribute="leading" secondItem="tpH-Sh-dZu" secondAttribute="leading" id="0y0-Fb-PZf"/>
                             <constraint firstItem="4rp-gP-gwo" firstAttribute="leading" secondItem="tpH-Sh-dZu" secondAttribute="leading" constant="20" id="18X-b1-i36"/>
+                            <constraint firstItem="tpH-Sh-dZu" firstAttribute="trailing" secondItem="qlm-dL-3T7" secondAttribute="trailing" constant="20" id="2pB-VX-5qx"/>
                             <constraint firstItem="4rp-gP-gwo" firstAttribute="top" secondItem="YzH-1F-0ba" secondAttribute="bottom" constant="25" id="6KJ-qn-oRV"/>
                             <constraint firstItem="tpH-Sh-dZu" firstAttribute="trailing" secondItem="fKb-RJ-Tec" secondAttribute="trailing" constant="15" id="6M4-tf-8BN"/>
                             <constraint firstItem="dLm-L4-9l3" firstAttribute="height" secondItem="YzH-1F-0ba" secondAttribute="height" multiplier="0.5" id="8Bc-hZ-snG"/>
@@ -338,6 +363,7 @@
                             <constraint firstItem="Qtq-4r-G4t" firstAttribute="centerX" secondItem="Uva-id-q4g" secondAttribute="centerX" id="dBQ-8r-UhG"/>
                             <constraint firstItem="YzH-1F-0ba" firstAttribute="top" secondItem="Uva-id-q4g" secondAttribute="top" id="kM2-In-eJj"/>
                             <constraint firstItem="tpH-Sh-dZu" firstAttribute="bottom" secondItem="nc8-mp-Thz" secondAttribute="bottom" id="kRj-Gp-4J4"/>
+                            <constraint firstItem="qlm-dL-3T7" firstAttribute="top" secondItem="pig-6j-FYH" secondAttribute="bottom" constant="10" id="kkw-ZC-sr5"/>
                             <constraint firstItem="Qtq-4r-G4t" firstAttribute="top" secondItem="YzH-1F-0ba" secondAttribute="bottom" constant="25" id="qys-Yg-dXJ"/>
                             <constraint firstItem="dLm-L4-9l3" firstAttribute="top" secondItem="YzH-1F-0ba" secondAttribute="bottom" constant="-79" id="sds-Sy-D5E"/>
                             <constraint firstItem="gTc-49-n5O" firstAttribute="top" secondItem="4rp-gP-gwo" secondAttribute="bottom" constant="10" id="w5x-fU-g4d"/>
@@ -347,6 +373,7 @@
                         <viewLayoutGuide key="safeArea" id="tpH-Sh-dZu"/>
                     </view>
                     <connections>
+                        <outlet property="WeekView" destination="qlm-dL-3T7" id="oNH-cA-JoO"/>
                         <outlet property="monthLabel" destination="gTc-49-n5O" id="V7E-yA-n9c"/>
                         <outlet property="motorWeeklyGraph" destination="nc8-mp-Thz" id="bhI-Jt-7AG"/>
                     </connections>
@@ -364,9 +391,9 @@
         <image name="greenBG" width="414" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RSB-Bo-mVW"/>
-        <segue reference="Pca-54-k00"/>
-        <segue reference="31w-5W-iuN"/>
-        <segue reference="q8a-M3-Mbn"/>
+        <segue reference="nnx-jG-tUt"/>
+        <segue reference="1ha-tl-ME5"/>
+        <segue reference="Enq-nB-NyG"/>
+        <segue reference="lAa-Pe-SEE"/>
     </inferredMetricsTieBreakers>
 </document>
