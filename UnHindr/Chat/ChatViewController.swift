@@ -1,10 +1,11 @@
-//
-//  ChatViewController.swift
-//  UnHindr
-//
-//  Created by Jordan Kam on 2019-11-22.
-//  Copyright © 2019 Sigma. All rights reserved.
-//
+/*
+ File: [ChatViewController.swift]
+ Creators: [Jordan]
+ Date created: [24/11/2019]
+ Date updated: [1/12/2019]
+ Updater name: [Jordan]
+ File description: [Controls the Chat view, by sending and retrieving message data from firestore and displaying the messages in the tableView]
+ */
 
 import Foundation
 import UIKit
@@ -20,6 +21,8 @@ class ChatViewController: UIViewController {
     
     var messages: [Message] = []
     
+    //create variables for storing unique IDs
+    //thread is the concatenated strings of current user ID + connected user ID
     var thread = ""
     let myUserID = Services.userRef!
     let theirUserID = user_ID
@@ -28,20 +31,17 @@ class ChatViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         
-        //get the current users UID///
-        //let myUserID = Auth.auth().currentUser!.uid
-        
-        print("CurrentUserID: \(myUserID)")
-        print("user2DocumentID: \(user_ID)")
-        
+        //concatenate the two userIDs
         thread = setOnetoOneChat(ID1: myUserID, ID2: theirUserID)
         
+        //init the custom message cell that we will use to display message bubbles
         tableView.register(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: "ReusableCell")
         
+        //if there is no user connected, then dont load chat history
         if(theirUserID != ""){
         loadMessages()
         }
-        else
+        else //display alert that you are not connected
         {
             let title = "Oops"
             let message = "Please connect to a user first using the 'Connect' Feature to send and view messages."
@@ -53,6 +53,10 @@ class ChatViewController: UIViewController {
         Services.transitionHome(self)
     }
     
+    
+    //MARK: - setOnetoOneChat
+    //Input: Two user IDs
+    //Output: Returns the concatenated string of the two user IDS
     func setOnetoOneChat(ID1:String, ID2:String) -> String
     {
         if(ID1 < ID2){
@@ -63,6 +67,9 @@ class ChatViewController: UIViewController {
         }
     }
     
+    //MARK: - showAlert
+    //input: title and body of alert message
+    //output: Presents an alert to the screen
     func showAlert(_ title:String, _ message: String){
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -74,6 +81,10 @@ class ChatViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    
+    //MARK: - loadMessages (Data Retrieval)
+    //input: None
+    //output: Updates the messages array with new messages from firestore
     func loadMessages() {
         
         Services.db.collection("messages").document(thread).collection("ChatHistory")
@@ -109,7 +120,10 @@ class ChatViewController: UIViewController {
     
     @IBOutlet weak var messageTextField: UITextField!
     
-    //When user presses send button, store the message to firestore
+    
+    //MARK: - sendPressed (Data Storage)
+    //input: on the send button press
+    //output: stores the message in the textField to firestore
     @IBAction func sendPressed(_ sender: UIButton) {
         
         //if neither of these fields are not nil, then send data to firestore
@@ -132,12 +146,21 @@ class ChatViewController: UIViewController {
     
 }
 
+//MARK: - TableView Management
+
+//input: none
+//output: manages various properties of the tableView and how objects will be populated and displayed
 //Protocol for managing the populating of the tableView
 extension ChatViewController: UITableViewDataSource {
+    
+    //input: none
+    //output: determines how many rows of the tableView to populate with data
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return messages.count
     }
     
+    //input: none
+    //output: Populates the tableView with custom tableView cells that will look like chat bubbles
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let message = messages[indexPath.row]
         
