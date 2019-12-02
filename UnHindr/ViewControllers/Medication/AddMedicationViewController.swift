@@ -2,8 +2,8 @@
  File: [MedicationViewController.swift]
  Creators: [Jake, Sina]
  Date created: [29/10/2019]
- Date updated: [17/11/2019]
- Updater name: [Sina, Allan]
+ Date updated: [01/12/2019]
+ Updater name: [Allan, Sina]
  File description: [Controls the Add New Med screen]
  */
 
@@ -19,8 +19,12 @@ protocol NewMedDelegate: class {
 }
 
 /// Class for the determining the behavior of the initial medication view
-class MedicationViewController: UIViewController {
+class AddMedicationViewController: UIViewController {
     
+    @IBOutlet weak var dosageStepperVar: UIStepper!
+    @IBOutlet weak var qtyStepperVar: UIStepper!
+    @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var actionNameLabel: UILabel!
     @IBOutlet weak var monButton: UIButton!
     @IBOutlet weak var tuesButton: UIButton!
     @IBOutlet weak var wedButton: UIButton!
@@ -42,6 +46,9 @@ class MedicationViewController: UIViewController {
     private var ReminderTime = ""
     private var timePicker: UIDatePicker?
     
+    // If snapshot is populated, it means we've transitioned from full med list
+    var snapshot: QueryDocumentSnapshot? = nil
+    
     // Link to Medication Home View Controller
     weak var delegate: NewMedDelegate? = nil
 
@@ -49,27 +56,16 @@ class MedicationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        print("Current snapshot value \(snapshot)")
+        configureDisplayElements(snapshot: snapshot)
         configureMedNameText()
         configureTapGesture()
         
         //Configure date picker text field to be a time picker instead
         timePicker = UIDatePicker()
         timePicker?.datePickerMode = .time
-        timePicker?.addTarget(self, action: #selector(MedicationViewController.timeChanged(timePicker:)), for: .valueChanged)
+        timePicker?.addTarget(self, action: #selector(AddMedicationViewController.timeChanged(timePicker:)), for: .valueChanged)
         timeInputTextField.inputView = timePicker
-        
-        // Create authentication listeneing handler
-        Services.handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
-            if user != nil {
-                self.user = user
-            }
-        })
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        // Delete authentication handler
-        Auth.auth().removeStateDidChangeListener(Services.handle!)
     }
     
     // MARK: - Stores the medication data to the database
@@ -83,22 +79,37 @@ class MedicationViewController: UIViewController {
         self.MedicationName = medFieldName.text!
         print(daysArr)
         var ref: DocumentReference? = nil
-        ref = Services.db.collection("users").document(Services.userRef!).collection("MedicationPlan").addDocument(data: [
+        // When add med is pressed
+        if (snapshot == nil){
+            ref = Services.fullUserRef.document(Services.userRef!).collection("MedicationPlan").addDocument(data: [
+                "Dosage": self.Dosage,
+                "Medication": self.MedicationName,
+                "Quantity": self.Quantity,
+                "ReminderTime": self.ReminderTime,
+                "Day" : daysArr
+            ]) { err in
+                if let err = err {
+                    print("Error adding document: \(err)")
+                    completionHandler(false)
+                } else {
+                    print("Document added with ID: \(ref!.documentID)")
+                    // Send data back to Medication Main View Controller
+                    self.delegate?.onMedAdded(documentID: ref!.documentID)
+                    completionHandler(true)
+                }
+            }
+        }
+        // Update med
+        else {
+            Services.fullUserRef.document(Services.userRef!).collection("MedicationPlan").document(snapshot!.documentID).setData(
+            [
             "Dosage": self.Dosage,
             "Medication": self.MedicationName,
             "Quantity": self.Quantity,
             "ReminderTime": self.ReminderTime,
             "Day" : daysArr
-        ]) { err in
-            if let err = err {
-                print("Error adding document: \(err)")
-                completionHandler(false)
-            } else {
-                print("Document added with ID: \(ref!.documentID)")
-                // Send data back to Medication Main View Controller
-                self.delegate?.onMedAdded(documentID: ref!.documentID)
-                completionHandler(true)
-            }
+            ])
+            completionHandler(true)
         }
     }
     
@@ -265,7 +276,14 @@ class MedicationViewController: UIViewController {
         self.storeToDB { (ret) in
             if (ret) {
                 self.view.endEditing(true)
-                self.performSegue(withIdentifier: "ToMedHome", sender: self)
+                if (self.snapshot == nil){
+                    self.performSegue(withIdentifier: "ToMedHome", sender: self)
+                }
+                else{
+                    let storyboard = UIStoryboard(name: "FullMedicationList", bundle: nil)
+                    let vc = storyboard.instantiateViewController(withIdentifier: "FullMedicationViewController") as UIViewController
+                    self.present(vc, animated: true, completion: nil)
+                }
             }
             //Error storing data
         }
@@ -278,7 +296,17 @@ class MedicationViewController: UIViewController {
     //      1. Returns User to MyMeds screen (done in stroyboard)
     @IBAction func cancelMedTapped(_ sender: Any) {
         view.endEditing(true)
-         performSegue(withIdentifier: "ToMedHome", sender: self)
+        if (self.snapshot != nil){
+            let storyboard = UIStoryboard(name: "Medication", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "MedicationHomeViewController") as UIViewController
+            self.present(vc, animated: true, completion: nil)
+        }
+        else {
+            let storyboard = UIStoryboard(name: "FullMedicationList", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "FullMedicationViewController") as UIViewController
+            self.present(vc, animated: true, completion: nil)
+        }
+//         performSegue(withIdentifier: "ToMedHome", sender: self)
     }
 
     // MARK: - Control the value of the dosage label through a stepper
@@ -327,8 +355,72 @@ class MedicationViewController: UIViewController {
     // Output:
     //      Enables a tap outside of the keyboard to call handleTapOutsideKeyboard()
     private func configureTapGesture() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(MedicationViewController.handleTapOutsideKeyboard))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(AddMedicationViewController.handleTapOutsideKeyboard))
         view.addGestureRecognizer(tapGesture)
+    }
+    
+    /// Modifies the Add medication UI element depending on if snapshot variable is populated
+    /// Input:
+    ///     1. snapshot
+    /// Output:
+    ///     1. nil -> does nothing, default layout
+    ///     2. document given -> changes add med to update, Add new med text to Edit med and fills in the table
+    private func configureDisplayElements(snapshot: QueryDocumentSnapshot?){
+        if (snapshot != nil) {
+            medFieldName.text = snapshot!.get("Medication") as? String
+            actionNameLabel.text = "Edit Medication"
+            // Update local dosage count and label
+            let retrDosage = snapshot!.get("Dosage") as! Int
+            self.Dosage = retrDosage
+            dosageLabel.text = String(retrDosage)
+            dosageStepperVar.value = Double(retrDosage)
+            // Update local quantity count and label
+            let retrQty = snapshot!.get("Quantity") as! Int
+            self.Quantity = retrQty
+            quantityLabel.text = String(retrQty)
+            addButton.setImage(UIImage(named: "UpdateMed"), for: UIControl.State.normal)
+            qtyStepperVar.value = Double(retrQty)
+            // Update the day of week in UI
+            let daysArr = snapshot!.get("Day") as! [String]
+            for day in 0..<daysArr.count {
+                self.dayOFWeek[daysArr[day]] = 1
+            }
+            updateDayOfWeek()
+
+            // Update remindertime in UI
+            self.ReminderTime = snapshot!.get("ReminderTime") as! String
+            var timeArr = self.ReminderTime.components(separatedBy: [":"])
+            var amPm = "AM"
+            if Int(timeArr[0])! > 12 {
+                timeArr[0] = String(Int(timeArr[0])! - 12)
+                amPm = "PM"
+            }
+            timeInputTextField.text = timeArr[0] + ":" + timeArr[1] + amPm
+        }
+    }
+    
+    func updateDayOfWeek(){
+        if (self.dayOFWeek["Sunday"] == 1){
+            sunButton.setImage(UIImage(named: "sunCheck.png"), for: UIControl.State.normal)
+        }
+        if (self.dayOFWeek["Saturday"] == 1){
+            satButton.setImage(UIImage(named: "satCheck.png"), for: UIControl.State.normal)
+        }
+        if (self.dayOFWeek["Friday"] == 1){
+            friButton.setImage(UIImage(named: "friCheck.png"), for: UIControl.State.normal)
+        }
+        if (self.dayOFWeek["Thursday"] == 1){
+            thursButton.setImage(UIImage(named: "thurCheck.png"), for: UIControl.State.normal)
+        }
+        if (self.dayOFWeek["Wednesday"] == 1){
+            wedButton.setImage(UIImage(named: "wedCheck.png"), for: UIControl.State.normal)
+        }
+        if (self.dayOFWeek["Tuesday"] == 1){
+            tuesButton.setImage(UIImage(named: "tuesCheck.png"), for: UIControl.State.normal)
+        }
+        if (self.dayOFWeek["Monday"] == 1){
+            monButton.setImage(UIImage(named: "MonCheck.png"), for: UIControl.State.normal)
+        }
     }
 }
 
@@ -337,7 +429,7 @@ class MedicationViewController: UIViewController {
 //      None
 // Output:
 //      Allows the return button in the keyboard to dismiss the keyboard
-extension MedicationViewController: UITextFieldDelegate {
+extension AddMedicationViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
