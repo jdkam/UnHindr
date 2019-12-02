@@ -46,6 +46,8 @@ class AddMedicationViewController: UIViewController {
     private var ReminderTime = ""
     private var timePicker: UIDatePicker?
     
+    var daysArr: [String]?
+    
     // If snapshot is populated, it means we've transitioned from full med list
     var snapshot: QueryDocumentSnapshot? = nil
     
@@ -75,7 +77,7 @@ class AddMedicationViewController: UIViewController {
     private func storeToDB(completionHandler: @escaping (_ result: Bool) -> Void){
         //User should be logged in with reference created
         // Add a new document with a generated id.
-        let daysArr = initArrayToPassDays()
+        daysArr = initArrayToPassDays()
         self.MedicationName = medFieldName.text!
         print(daysArr)
         var ref: DocumentReference? = nil
@@ -276,6 +278,7 @@ class AddMedicationViewController: UIViewController {
         self.storeToDB { (ret) in
             if (ret) {
                 self.view.endEditing(true)
+                Services.setMedNotifications(medName: self.MedicationName, daysArr: self.daysArr!, medTime: self.ReminderTime)
                 if (self.snapshot == nil){
                     self.performSegue(withIdentifier: "ToMedHome", sender: self)
                 }
@@ -422,6 +425,7 @@ class AddMedicationViewController: UIViewController {
             monButton.setImage(UIImage(named: "MonCheck.png"), for: UIControl.State.normal)
         }
     }
+    
 }
 
 // MARK: - Allows the return button in the keyboard to dismiss the keyboard

@@ -168,6 +168,12 @@ extension FullMedicationViewController: UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete", handler: { (ac: UIContextualAction, view: UIView, success:(Bool) -> Void) in
             let docRef = self.medicationPlanRef.document(self.medList!.documents[indexPath.row].documentID)
+            let manager = NotificationManager()
+            let medName = self.medList!.documents[indexPath.row].get("Medication") as! String
+            let daysArr = self.medList!.documents[indexPath.row].get("Day") as! [String]
+            for day in daysArr {
+                manager.unscheduleNotifications(id: "\(medName) - \(day)")
+            }
             self.batch.deleteDocument(docRef)
             print(self.batch)
             success(true)
