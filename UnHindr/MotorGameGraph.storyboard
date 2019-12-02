@@ -11,13 +11,13 @@
         <!--Motor Game Yearly View Controller-->
         <scene sceneID="g2A-gb-Ce4">
             <objects>
-                <viewController storyboardIdentifier="MotorGameYearlyViewController" id="dKu-7z-dd7" customClass="MotorGameYearlyViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MotorGameYearlyViewController" modalPresentationStyle="fullScreen" id="dKu-7z-dd7" customClass="MotorGameYearlyViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JJY-Oi-AjF">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S5t-BS-zbq" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="339.5" width="414" height="468.5"/>
+                                <rect key="frame" x="0.0" y="339.5" width="414" height="522.5"/>
                                 <color key="backgroundColor" red="0.99607843139999996" green="0.79607843140000001" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="414" id="gUZ-Ki-D3n"/>
@@ -86,7 +86,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LCT-6f-CiN">
-                                <rect key="frame" x="352" y="176" width="42" height="21"/>
+                                <rect key="frame" x="352" y="310" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -141,13 +141,13 @@
         <!--Motor Game Monthly View Controller-->
         <scene sceneID="7pt-l9-trc">
             <objects>
-                <viewController storyboardIdentifier="MotorGameMonthlyViewController" id="Md6-OM-5eA" customClass="MotorGameMonthlyViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MotorGameMonthlyViewController" modalPresentationStyle="fullScreen" id="Md6-OM-5eA" customClass="MotorGameMonthlyViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="msB-o6-PGs">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NGJ-v7-Owa" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="336.5" width="414" height="471.5"/>
+                                <rect key="frame" x="0.0" y="336.5" width="414" height="525.5"/>
                                 <color key="backgroundColor" red="0.99607843139999996" green="0.79607843140000001" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="414" id="GAj-lt-a0h"/>
@@ -216,7 +216,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onJ-pT-ei7">
-                                <rect key="frame" x="352" y="173" width="42" height="21"/>
+                                <rect key="frame" x="352" y="307" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -263,13 +263,13 @@
         <!--Motor Game Graph View Controller-->
         <scene sceneID="WzJ-0T-RJl">
             <objects>
-                <viewController storyboardIdentifier="MotorGameGraphViewController" id="tLe-i6-rUF" customClass="MotorGameGraphViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MotorGameGraphViewController" modalPresentationStyle="fullScreen" id="tLe-i6-rUF" customClass="MotorGameGraphViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Uva-id-q4g">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nc8-mp-Thz" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="339.5" width="414" height="468.5"/>
+                                <rect key="frame" x="0.0" y="339.5" width="414" height="522.5"/>
                                 <color key="backgroundColor" red="0.99607843139999996" green="0.79607843140000001" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="414" id="3iE-ZE-V96"/>
@@ -337,7 +337,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlm-dL-3T7">
-                                <rect key="frame" x="352" y="177" width="42" height="21"/>
+                                <rect key="frame" x="352" y="311" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -389,9 +389,9 @@
         <image name="greenBG" width="414" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RSB-Bo-mVW"/>
-        <segue reference="Pca-54-k00"/>
-        <segue reference="Hdk-8K-MWL"/>
-        <segue reference="q8a-M3-Mbn"/>
+        <segue reference="nnx-jG-tUt"/>
+        <segue reference="1ha-tl-ME5"/>
+        <segue reference="Enq-nB-NyG"/>
+        <segue reference="lAa-Pe-SEE"/>
     </inferredMetricsTieBreakers>
 </document>
