@@ -89,6 +89,70 @@ class GraphsUITests: XCTestCase {
         app.buttons["Year"].tap()
     }
     
+    func testNavigationtoMoodWeekGraph()
+    {
+        let app = XCUIApplication()
+        loginToHomeScreen(app)
+        app.buttons["Wellness"].tap()
+        let elementsQuery = app.scrollViews.otherElements
+        elementsQuery.buttons["Graph"].tap()
+        elementsQuery.buttons["Mood Graph Button"].tap()
+    }
+    
+    func testNavigationtoMoodMonthGraph()
+    {
+        let app = XCUIApplication()
+        loginToHomeScreen(app)
+        app.buttons["Wellness"].tap()
+        let elementsQuery = app.scrollViews.otherElements
+        elementsQuery.buttons["Graph"].tap()
+        elementsQuery.buttons["Mood Graph Button"].tap()
+        app.buttons["Month"].tap()
+    }
+    
+    func testNavigationtoMoodYearGraph()
+    {
+        let app = XCUIApplication()
+        loginToHomeScreen(app)
+        app.buttons["Wellness"].tap()
+        let elementsQuery = app.scrollViews.otherElements
+        elementsQuery.buttons["Graph"].tap()
+        elementsQuery.buttons["Mood Graph Button"].tap()
+        app.buttons["Year"].tap()
+    }
+    
+    func testNavigationtoMotorWeekGraph()
+    {
+        let app = XCUIApplication()
+        loginToHomeScreen(app)
+        app.buttons["Wellness"].tap()
+        let elementsQuery = app.scrollViews.otherElements
+        elementsQuery.buttons["Graph"].tap()
+        elementsQuery.buttons["Motorgame graph button"].tap()
+        
+    }
+    
+    func testNavigationtoMotorMonthGraph()
+    {
+        let app = XCUIApplication()
+        loginToHomeScreen(app)
+        app.buttons["Wellness"].tap()
+        let elementsQuery = app.scrollViews.otherElements
+        elementsQuery.buttons["Graph"].tap()
+        elementsQuery.buttons["Motorgame graph button"].tap()
+        app.buttons["Month 1"].tap()
+    }
+    
+    func testNavigationtoMotorYearGraph()
+    {
+        let app = XCUIApplication()
+        loginToHomeScreen(app)
+        app.buttons["Wellness"].tap()
+        let elementsQuery = app.scrollViews.otherElements
+        elementsQuery.buttons["Graph"].tap()
+        elementsQuery.buttons["Motorgame graph button"].tap()
+        app.buttons["Year 1"].tap()
+    }
     
     
     // MARK: - Helper Functions
