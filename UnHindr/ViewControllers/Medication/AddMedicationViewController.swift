@@ -54,11 +54,10 @@ class AddMedicationViewController: UIViewController {
     // Link to Medication Home View Controller
     weak var delegate: NewMedDelegate? = nil
 
-    
+    //MARK: - View controller lifecycle functions
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        print("Current snapshot value \(snapshot)")
         configureDisplayElements(snapshot: snapshot)
         configureMedNameText()
         configureTapGesture()
@@ -79,7 +78,6 @@ class AddMedicationViewController: UIViewController {
         // Add a new document with a generated id.
         daysArr = initArrayToPassDays()
         self.MedicationName = medFieldName.text!
-        print(daysArr)
         var ref: DocumentReference? = nil
         // When add med is pressed
         if (snapshot == nil){
@@ -88,7 +86,7 @@ class AddMedicationViewController: UIViewController {
                 "Medication": self.MedicationName,
                 "Quantity": self.Quantity,
                 "ReminderTime": self.ReminderTime,
-                "Day" : daysArr
+                "Day" : daysArr ?? []
             ]) { err in
                 if let err = err {
                     print("Error adding document: \(err)")
@@ -109,7 +107,7 @@ class AddMedicationViewController: UIViewController {
             "Medication": self.MedicationName,
             "Quantity": self.Quantity,
             "ReminderTime": self.ReminderTime,
-            "Day" : daysArr
+            "Day" : daysArr ?? []
             ])
             completionHandler(true)
         }
@@ -280,7 +278,9 @@ class AddMedicationViewController: UIViewController {
                 self.view.endEditing(true)
                 Services.setMedNotifications(medName: self.MedicationName, daysArr: self.daysArr!, medTime: self.ReminderTime)
                 if (self.snapshot == nil){
-                    self.performSegue(withIdentifier: "ToMedHome", sender: self)
+                    let storyboard = UIStoryboard(name: "Medication", bundle: nil)
+                    let vc = storyboard.instantiateViewController(withIdentifier: "MedicationHomeViewController") as UIViewController
+                    self.present(vc, animated: true, completion: nil)
                 }
                 else{
                     let storyboard = UIStoryboard(name: "FullMedicationList", bundle: nil)
@@ -299,7 +299,7 @@ class AddMedicationViewController: UIViewController {
     //      1. Returns User to MyMeds screen (done in stroyboard)
     @IBAction func cancelMedTapped(_ sender: Any) {
         view.endEditing(true)
-        if (self.snapshot != nil){
+        if (self.snapshot == nil){
             let storyboard = UIStoryboard(name: "Medication", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "MedicationHomeViewController") as UIViewController
             self.present(vc, animated: true, completion: nil)
