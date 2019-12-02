@@ -358,13 +358,13 @@
                                                 </constraints>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Menu_BG" translatesAutoresizingMaskIntoConstraints="NO" id="LCy-Ia-Nf1">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="199"/>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="bPQ-HG-tYb" userLabel="HeaderStack">
-                                                <rect key="frame" x="22" y="38" width="433" height="66"/>
+                                                <rect key="frame" x="22" y="38" width="451" height="145"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r36-Y5-L4A" userLabel="Home button">
-                                                        <rect key="frame" x="0.0" y="0.0" width="83" height="66"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="83" height="145"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="83" id="eSl-ef-fmq"/>
                                                         </constraints>
@@ -374,7 +374,7 @@
                                                         </connections>
                                                     </button>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myMeds-1" translatesAutoresizingMaskIntoConstraints="NO" id="2AO-mi-nOm">
-                                                        <rect key="frame" x="163" y="23" width="270" height="43"/>
+                                                        <rect key="frame" x="163" y="23" width="288" height="122"/>
                                                     </imageView>
                                                 </subviews>
                                                 <constraints>
@@ -382,10 +382,10 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="s0h-uB-EhZ" userLabel="Add/Edit">
-                                                <rect key="frame" x="28.5" y="138" width="357" height="79"/>
+                                                <rect key="frame" x="-150" y="217" width="714" height="0.0"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bUH-Nf-ohR" userLabel="Add">
-                                                        <rect key="frame" x="0.0" y="0.0" width="357" height="79"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="714" height="0.0"/>
                                                         <state key="normal" image="Add new"/>
                                                         <connections>
                                                             <segue destination="NLo-9v-eGk" kind="show" identifier="addMedSegue" id="NFb-ks-vAv"/>
@@ -394,10 +394,10 @@
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eAj-4S-mWl" userLabel="MedCardView">
-                                                <rect key="frame" x="0.0" y="238" width="440" height="297"/>
+                                                <rect key="frame" x="0.0" y="238" width="458" height="213"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="52" translatesAutoresizingMaskIntoConstraints="NO" id="zSc-KG-vax">
-                                                        <rect key="frame" x="30" y="9" width="380" height="279"/>
+                                                        <rect key="frame" x="30" y="-51" width="398" height="315"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="top" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="WnD-0n-6pH" userLabel="ClockStack">
                                                                 <rect key="frame" x="0.0" y="0.0" width="287" height="135"/>
@@ -437,10 +437,10 @@
                                                                 </constraints>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yFQ-Cb-J8k" userLabel="CheckStack">
-                                                                <rect key="frame" x="0.0" y="187" width="380" height="92"/>
+                                                                <rect key="frame" x="0.0" y="187" width="380" height="128"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00 Am" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bv-Km-FrJ" userLabel="MedicineTime">
-                                                                        <rect key="frame" x="0.0" y="25" width="250" height="42"/>
+                                                                        <rect key="frame" x="0.0" y="25" width="250" height="78"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="DrQ-oL-n8u"/>
                                                                         </constraints>
@@ -449,7 +449,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XcF-3B-oWj" userLabel="CheckButton">
-                                                                        <rect key="frame" x="250" y="0.0" width="130" height="92"/>
+                                                                        <rect key="frame" x="250" y="0.0" width="130" height="128"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="130" id="o6f-Nc-lGp"/>
                                                                         </constraints>
@@ -481,7 +481,7 @@
                                                 </connections>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZyL-3K-KSt" userLabel="MedSched">
-                                                <rect key="frame" x="28.5" y="550" width="357" height="94"/>
+                                                <rect key="frame" x="-150" y="466" width="714" height="94"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="94" id="6Wp-0i-rJS"/>
                                                 </constraints>
@@ -491,7 +491,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e6P-vQ-dU2" userLabel="MyLogButton">
-                                                <rect key="frame" x="160" y="652" width="120" height="84"/>
+                                                <rect key="frame" x="127" y="600" width="186" height="168"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="74" id="a5o-zh-Aa2"/>
                                                 </constraints>
@@ -507,8 +507,8 @@
                                             <constraint firstItem="eAj-4S-mWl" firstAttribute="top" secondItem="SKd-7d-qmM" secondAttribute="top" constant="238" id="58X-lv-Fwp"/>
                                             <constraint firstItem="ZyL-3K-KSt" firstAttribute="centerX" secondItem="s0h-uB-EhZ" secondAttribute="centerX" id="59h-Ea-oPB"/>
                                             <constraint firstAttribute="height" constant="1000" id="83I-UC-mSi"/>
-                                            <constraint firstItem="e6P-vQ-dU2" firstAttribute="top" secondItem="ZyL-3K-KSt" secondAttribute="bottom" constant="8" id="8wL-Az-sfc"/>
-                                            <constraint firstAttribute="bottom" secondItem="e6P-vQ-dU2" secondAttribute="bottom" constant="264" id="ByW-97-gFh"/>
+                                            <constraint firstItem="e6P-vQ-dU2" firstAttribute="top" secondItem="ZyL-3K-KSt" secondAttribute="bottom" constant="40" id="8wL-Az-sfc"/>
+                                            <constraint firstAttribute="bottom" secondItem="e6P-vQ-dU2" secondAttribute="bottom" constant="232" id="ByW-97-gFh"/>
                                             <constraint firstItem="e6P-vQ-dU2" firstAttribute="centerX" secondItem="ZyL-3K-KSt" secondAttribute="centerX" constant="13" id="Dsw-YW-hSU"/>
                                             <constraint firstItem="eAj-4S-mWl" firstAttribute="top" secondItem="s0h-uB-EhZ" secondAttribute="bottom" constant="21" id="Gih-aU-sGV"/>
                                             <constraint firstItem="eAj-4S-mWl" firstAttribute="top" secondItem="s0h-uB-EhZ" secondAttribute="bottom" constant="21" id="KQp-wS-0m3"/>
@@ -603,6 +603,6 @@
         <segue reference="tTP-lV-fst"/>
         <segue reference="o3N-z0-r3r"/>
         <segue reference="Gvb-cv-EC0"/>
-        <segue reference="g2W-fu-jIw"/>
+        <segue reference="sYE-w9-QPI"/>
     </inferredMetricsTieBreakers>
 </document>
