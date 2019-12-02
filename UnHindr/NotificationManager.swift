@@ -80,7 +80,11 @@ class NotificationManager: NSObject {
             }
         }
     }
-   // UNUserNotificationCenter.current().delegate = self
+   
+    private func unscheduleNotifications(id: String)
+    {
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [id])
+    }
 }
 
 extension NotificationManager: UNUserNotificationCenterDelegate
