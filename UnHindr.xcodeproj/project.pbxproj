@@ -493,10 +493,10 @@
 			children = (
 				9DDAA7C32394806000BB718A /* AddMed.storyboard */,
 				9D627A0D236FD4240027B6B7 /* MedicationHomeViewController.swift */,
+				7013CBB82370D00E00A1231F /* ChartsViewController.swift */,
 				9DFB75BB236F7515006321B8 /* AddMedicationViewController.swift */,
 				2D5BBA762389E7B20074A202 /* FullMedicationViewController.swift */,
 				2D5BBA782389F4530074A202 /* MedicationTableViewCell.swift */,
-				7013CBB82370D00E00A1231F /* ChartsViewController.swift */,
 				70C1FCEA23887E0600BF1CC6 /* MonthMedChartViewController.swift */,
 				2D7A40E5238B316100958659 /* Medication.swift */,
 				2D2E7E792393617900BC32A9 /* FullMedicationList.storyboard */,

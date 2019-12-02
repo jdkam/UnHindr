@@ -42,6 +42,7 @@
                             </button>
                             <textField opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search by Email" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="vG3-n5-MWc">
                                 <rect key="frame" x="20" y="149" width="374" height="40"/>
+                                <accessibility key="accessibilityConfiguration" label="Add new contact by email"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
@@ -85,6 +86,7 @@
                             </tableView>
                             <button opaque="NO" contentMode="scaleAspectFit" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXS-0y-qHg">
                                 <rect key="frame" x="84" y="199" width="246" height="109"/>
+                                <accessibility key="accessibilityConfiguration" label="addfriend"/>
                                 <state key="normal" image="Add New Connection Button">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
