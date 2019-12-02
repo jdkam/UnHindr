@@ -51,6 +51,7 @@ class Services {
     // Cognitive Game reference
     static let cogGameName = "CogGameData"
     
+    // Mood reference
     static let moodName = "Mood"
 
     
@@ -141,26 +142,35 @@ class Services {
         }
     }
     
-//    static func checkUserIDMed() -> CollectionReference
-//    {
-//        var medRef: CollectionReference
-//        if (user_ID == "")
-//        {
-//            medRef = Services.fullUserRef.document(Services.userRef!).collection(Services.medicationHistoryRef)
-//        }
-//        else
-//        {
-//            medRef = Services.fullUserRef.document(Services.userRef!).collection(Services.medicationHistoryRef)
-//        }
-//        return medRef
-//    }
+    //  Fetches the patient data from medication and medication plan
+    //  Input:
+    //      1. None
+    //  Output:
+    //      1. Returns the collection reference to the medication plan
+    //      2. Returns the collection reference to the medication history
+    static func checkUserIDMed() -> (CollectionReference,CollectionReference)
+    {
+        var medPlan: CollectionReference
+        var medHistory: CollectionReference
+        if (user_ID == "")
+        {
+            medPlan = Services.fullUserRef.document(Services.userRef!).collection(Services.medPlanName)
+            medHistory = Services.fullUserRef.document(Services.userRef!).collection(Services.medHistoryName)
+        }
+        else
+        {
+            medPlan = Services.fullUserRef.document(user_ID).collection(Services.medPlanName)
+            medHistory = Services.fullUserRef.document(user_ID).collection(Services.medHistoryName)
+        }
+        return (medPlan,medHistory)
+    }
     
     // Checks whether the current logged in user is a patient or not
     // Input:
     //      1. None
     // Output:
-    //      1. returns true if user is a patient
-    //      2. returns false if user is a caregiver
+    //      1. Returns true if user is a patient
+    //      2. Returns false if user is a caregiver
     static func getisPatient(completionHandler: @escaping (_ result: Bool) -> Void)
     {
         Services.db.collection("users").whereField("email", isEqualTo: userEmail).whereField("isPatient", isEqualTo: true).getDocuments() {
@@ -175,6 +185,11 @@ class Services {
         }
     }
     
+    //  Fetches the patient's motor game data
+    //  Input:
+    //      1. None
+    //  Output:
+    //      1. Returns the collection reference to the motor game data
     static func checkUserIDMotorGame() -> CollectionReference
     {
         var motorRef: CollectionReference
@@ -189,6 +204,11 @@ class Services {
         return motorRef
     }
     
+    //  Fetches the patient's cognitive game data
+    //  Input:
+    //      1. None
+    //  Output:
+    //      1. Returns the collcetion reference to the cognitive game data
     static func checkUserIDCogGame() -> CollectionReference
     {
         var cogRef: CollectionReference
@@ -202,6 +222,11 @@ class Services {
         return cogRef
     }
     
+    //  Fetches the patient's mood data
+    //  Input:
+    //      1. None
+    //  Output:
+    //      1. Returns the collection reference to the mood data
     static func checkUserIDMood() -> CollectionReference
     {
         var moodRef: CollectionReference
@@ -214,6 +239,25 @@ class Services {
             moodRef = Services.fullUserRef.document(user_ID).collection(Services.moodName)
         }
         return moodRef
+    }
+    
+    // Fetches the documents for the patient
+    //  Input:
+    //      1. None
+    //  Output:
+    //      1. Returns the document reference of that specific user
+    static func checkUserProfileID() -> DocumentReference
+    {
+        var userRef: DocumentReference
+        if(user_ID == "")
+        {
+            userRef = Services.fullUserRef.document(Services.userRef!)
+        }
+        else
+        {
+            userRef = Services.fullUserRef.document(user_ID)
+        }
+        return userRef
     }
     
 }

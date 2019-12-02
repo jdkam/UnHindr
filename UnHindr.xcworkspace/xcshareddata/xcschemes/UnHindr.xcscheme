@@ -85,8 +85,8 @@
       <AdditionalOptions>
       </AdditionalOptions>
       <LocationScenarioReference
-         identifier = "../../../Downloads/SFU.gpx"
-         referenceType = "0">
+         identifier = "San Francisco, CA, USA"
+         referenceType = "1">
       </LocationScenarioReference>
    </LaunchAction>
    <ProfileAction
