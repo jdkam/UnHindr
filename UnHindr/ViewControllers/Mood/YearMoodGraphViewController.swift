@@ -22,12 +22,15 @@ class YearMoodGraphViewController: UIViewController {
     
     @IBOutlet weak var yearGraph: BarChartView!
     @IBOutlet weak var numYear: UILabel!
+    @IBOutlet weak var yearView: UILabel!
     
     // MARK: - View controller lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
        
-       // grabs the mood reference for the user
+        
+        self.yearView.text = "Year"
+        
         let moodRef = Services.checkUserIDMood()
         
         // determines if the current user is a patient or caregiver

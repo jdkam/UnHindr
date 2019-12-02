@@ -15,6 +15,7 @@ class MotorGameMonthlyViewController: UIViewController {
     
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var motorMonthGraph: BarChartView!
+    @IBOutlet weak var monthView: UILabel!
     
     
     // storing the graph data
@@ -31,7 +32,8 @@ class MotorGameMonthlyViewController: UIViewController {
         // grabs the correct user_ID for a giver user
         let motorRef = Services.checkUserIDMotorGame()
         
-        // checks whether the current user is a patient or caregiver
+        self.monthView.text = "Month"
+        
         Services.getisPatient() {(success) in
             if (success)
             {

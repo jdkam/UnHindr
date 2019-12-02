@@ -46,11 +46,14 @@ class Services {
     static let motorGameName = "MotorGameData"
 //    static var motorGameRef = db.collection("users").document(userRef!).collection("MotorGameData")
     
+    static let locationName = "Location"
+    
     // Cognitive Game reference
     static let cogGameName = "CogGameData"
     
     // Mood reference
     static let moodName = "Mood"
+
     
     // MARK: - Retrieve reference to a patient's data
     // Input:
@@ -96,6 +99,22 @@ class Services {
             }
         }
         
+    }
+    
+    
+    static func transitionHomeErrMsg(_ UIVC: UIViewController, errTitle: String, errMsg: String){
+        Services.fetchModeStatus(Services.userRef!) { (result) in
+            if (result!) {
+                let storyboard = UIStoryboard(name: "HomeScreen", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "HomeScreenViewController") as UIViewController
+                UIVC.present(vc, animated: true, completion: nil)
+            }else{
+                let storyboard = UIStoryboard(name: "CaregiverHomeScreen", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "CaregiverHomeScreenViewController") as UIViewController
+                UIVC.present(vc, animated: true, completion: nil)
+            }
+        }
+        Services.showAlert(errTitle, errMsg, vc: UIVC)
     }
     
     

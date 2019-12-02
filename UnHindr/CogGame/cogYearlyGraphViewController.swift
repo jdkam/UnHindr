@@ -21,6 +21,7 @@ class cogYearlyGraphViewController: UIViewController {
 
     @IBOutlet weak var cogYearlyGraph: BarChartView!
     @IBOutlet weak var yearLabel: UILabel!
+    @IBOutlet weak var yearView: UILabel!
     
 
     var GraphData: [BarChartDataEntry] = []
@@ -35,7 +36,8 @@ class cogYearlyGraphViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // grabs the correct cognitive reference for the user
+        self.yearView.text = "Year"
+        
         let cogRef = Services.checkUserIDCogGame()
         
         // determines if the current user is a patient or caregiver

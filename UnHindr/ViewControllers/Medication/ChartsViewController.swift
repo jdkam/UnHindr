@@ -143,9 +143,10 @@ class ChartsViewController: UIViewController {
                             let dbDate: Date = timestamp.dateValue()
                             // gets the date of the database value
                             let dbDay = calendar.component(.day, from: dbDate)
+                            let dbMonth = calendar.component(.month, from: dbDate)
                             // checks if dbDay is inside the days array
                             // if dbDay is not inside the days array skip this entire if statement
-                            if (self.days.contains(dbDay))
+                            if (self.days.contains(dbDay) && ((dbMonth == currentMonth) || (dbMonth == previousMonth)) )
                             {
                                 // checks if dbDay is already inside medData dictionary
                                 let keyExists = self.medData[dbDay] != nil

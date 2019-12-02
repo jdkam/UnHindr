@@ -21,6 +21,7 @@ class CogGameMonthlyViewController: UIViewController {
 
     @IBOutlet weak var month: UILabel!
     @IBOutlet weak var cogMonthGraph: BarChartView!
+    @IBOutlet weak var monthView: UILabel!
     
     // storing the graph data
     var GraphData: [BarChartDataEntry] = []
@@ -33,7 +34,8 @@ class CogGameMonthlyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // grabs the correct cognitive reference for the user
+        self.monthView.text = "Month"
+        
         let cogRef = Services.checkUserIDCogGame()
         
         // determines if the current user is a patient or caregiver

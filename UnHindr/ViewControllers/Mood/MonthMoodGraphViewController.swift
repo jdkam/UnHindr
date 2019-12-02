@@ -14,6 +14,7 @@ class MonthMoodGraphViewController: UIViewController {
 
     @IBOutlet weak var monthGraph: BarChartView!
     @IBOutlet weak var monthName: UILabel!
+    @IBOutlet weak var monthView: UILabel!
     
 
     var GraphData: [BarChartDataEntry] = []
@@ -26,7 +27,8 @@ class MonthMoodGraphViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // grabs the mood reference for the user
+        self.monthView.text = "Month"
+        
         let moodRef = Services.checkUserIDMood()
         
         

@@ -21,7 +21,9 @@ class CogGameGraphViewController: UIViewController {
 
     @IBOutlet weak var cogGraph: BarChartView!
     @IBOutlet weak var month: UILabel!
-
+    @IBOutlet weak var week: UILabel!
+    
+    
     // storing the graph data
     var GraphData: [BarChartDataEntry] = []
     var cogData: [Int:Double] = [:]
@@ -35,7 +37,8 @@ class CogGameGraphViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // grabs the correct cognitive reference for the user
+        self.week.text = "Week"
+        
         let cogRef = Services.checkUserIDCogGame()
         
         // determines if the user is a patient or caregiver
@@ -151,9 +154,10 @@ class CogGameGraphViewController: UIViewController {
                             let dbDate: Date = timestamp.dateValue()
                             // gets the date of the database value
                             let dbDay = calendar.component(.day, from: dbDate)
+                            let dbMonth = calendar.component(.month, from: dbDate)
                             // checks if dbDay is inside the days array
                             // if dbDay is not inside the days array skip this entire if statement
-                            if (self.days.contains(dbDay))
+                            if (self.days.contains(dbDay) && ((dbMonth == currentMonth) || (dbMonth == previousMonth)))
                             {
                                 // checks if dbDay is already inside cogData dictionary
                                 let keyExists = self.cogData[dbDay] != nil
@@ -173,25 +177,27 @@ class CogGameGraphViewController: UIViewController {
                             }
                         }
                         // while loop is to place the mood values into the bar chart
-                        var i = 0
-                        while(i < self.days.count)
+                        var i = 6
+                        var j = 0
+                        while(i >= 0)
                         {
                             // checks if a key value of days[i] exists inside the dictionary
                             let dayExists = self.cogData[self.days[i]] != nil
                             if(dayExists)
                             {
                                 // places data into the graph data array
-                                let data = BarChartDataEntry(x: Double(i), y: (self.cogData[self.days[i]]!)/Double(self.dictDayAvg[self.days[i]]!))
+                                let data = BarChartDataEntry(x: Double(j), y: (self.cogData[self.days[i]]!)/Double(self.dictDayAvg[self.days[i]]!))
                                 self.GraphData.append(data)
                                 
                             }
                             else
                             {
                                 // if the key value days[i] does not exist, set the value equal to 0 for that day
-                                let data = BarChartDataEntry(x: Double(i), y: 0)
+                                let data = BarChartDataEntry(x: Double(j), y: 0)
                                 self.GraphData.append(data)
                             }
-                            i += 1
+                            i -= 1
+                            j += 1
                         }
                         // formats the x values to have the correct values
                         let dayFormat = BarChartFormatter(values: self.stringDays)
@@ -282,7 +288,8 @@ class CogGameGraphViewController: UIViewController {
         var year = inYear
         var day = inDay
         let forwardDay = inDay
-        var i = 1
+        var i = 0
+        let daysofWeek = 6
         // if the previous month was January of that year
         if(previousMonth == 0)
         {
@@ -299,9 +306,9 @@ class CogGameGraphViewController: UIViewController {
         let range = calendar.range(of: .day, in: .month, for: date)!
         var numDays = range.count
         // appends the day values into the days array on the current month
-        while(abs(forwardDay)-i > 0)
+        while(daysofWeek-abs(forwardDay)-i > 0)
         {
-            days.append(abs(forwardDay)-i)
+            days.append(daysofWeek-abs(forwardDay)-i)
             i += 1
         }
         // appends the day values into the days array on the previous month
@@ -312,7 +319,7 @@ class CogGameGraphViewController: UIViewController {
             numDays -= 1
         }
         // takes the days values and reverses the order for stringDays array
-        var j = 7
+        var j = 6
         while(j >= 0)
         {
             stringDays.append(String(days[j]))
