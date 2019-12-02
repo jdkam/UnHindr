@@ -23,8 +23,6 @@ class CogGameMonthlyViewController: UIViewController {
     @IBOutlet weak var cogMonthGraph: BarChartView!
     @IBOutlet weak var monthView: UILabel!
     
-    // gets the correct user database values
-    let cogRef = Services.db.collection("users").document(Services.userRef!).collection("CogGameData")
     // storing the graph data
     var GraphData: [BarChartDataEntry] = []
     
@@ -40,25 +38,29 @@ class CogGameMonthlyViewController: UIViewController {
         
         let cogRef = Services.checkUserIDCogGame()
         
+        // determines if the current user is a patient or caregiver
         Services.getisPatient() {(success) in
             if(success)
             {
+                // if the user is a patient
                 self.getCogGameData(reference: cogRef)
             }
             else
             {
+                // if the user is a caregiver
                 if(user_ID != "")
                 {
+                    // if the caregiver has selected a patient
                     self.getCogGameData(reference: cogRef)
                 }
                 else
                 {
+                    // if the caregiver has not selected a patient
                     self.cogMonthGraph.noDataText = "Please choose a patient in the Connect Screen"
                     self.month.text = ""
                 }
             }
         }
-        //getCogGameData()
         
         //Sets up the chart properties
         self.title = "Bar Chart"
@@ -86,7 +88,7 @@ class CogGameMonthlyViewController: UIViewController {
     
     // MARK: - Obtain the months cognitive data from firebase
     // Input:
-    //      1. None
+    //      1. The collection reference for the specific user
     // Output:
     //      1. The monthly cognitive graph is created and displayed for the user to see
     func getCogGameData(reference: CollectionReference)

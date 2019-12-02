@@ -11,9 +11,7 @@ import FirebaseFirestore
 import FirebaseAuth
 
 class MoodGraphsViewController: UIViewController {
-     
-    // gets the correct user database values
-    //let moodRef = Services.db.collection("users").document(userID).collection("Mood")
+    
     
     @IBOutlet weak var moodChart: BarChartView!
     @IBOutlet weak var month: UILabel!
@@ -36,19 +34,24 @@ class MoodGraphsViewController: UIViewController {
         self.weekView.text = "Week"
         let moodRef = Services.checkUserIDMood()
         
+        // determines if the current user is a patient or caregiver
         Services.getisPatient(){(success) in
             if (success)
             {
+                // if the user is a patient
                 self.getMoodData(reference: moodRef)
             }
             else
             {
+                // if the user is a caregiver
                 if(user_ID != "")
                 {
+                    // if the caregiver selected a patient
                     self.getMoodData(reference: moodRef)
                 }
                 else
                 {
+                    // if the caregiver has not selected a patient
                     self.moodChart.noDataText = "Please choose a patient in the Connect Screen"
                     self.month.text = ""
                 }
@@ -81,7 +84,7 @@ class MoodGraphsViewController: UIViewController {
     
     // MARK: - Obtain mood data from firebase
     // Input:
-    //      1. None
+    //      1. The collection reference for the specific user
     // Output:
     //      1. Mood Graph is created using the data from the user in firebase
     func getMoodData(reference: CollectionReference)

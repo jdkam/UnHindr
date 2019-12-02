@@ -16,9 +16,7 @@ class MonthMoodGraphViewController: UIViewController {
     @IBOutlet weak var monthName: UILabel!
     @IBOutlet weak var monthView: UILabel!
     
-    // gets the correct user database values
-    //let moodRef = Services.db.collection("users").document(Services.userRef!).collection("Mood")
-    // storing the graph data
+
     var GraphData: [BarChartDataEntry] = []
     
     var monthMoodValues: [Int:Double] = [:]
@@ -33,19 +31,25 @@ class MonthMoodGraphViewController: UIViewController {
         
         let moodRef = Services.checkUserIDMood()
         
+        
+        // determines if the current user is a patient or caregiver
         Services.getisPatient(){(success) in
             if(success)
             {
+                // if the user is a patient
                 self.getMoodData(reference: moodRef)
             }
             else
             {
+                // if the user is a caregiver
                 if(user_ID != "")
                 {
+                    // if the caregiver selected a patient
                     self.getMoodData(reference:moodRef)
                 }
                 else
                 {
+                    // if the caregiver has not selected a patient
                     self.monthGraph.noDataText = "Please choose a patient in the Connect Screen"
                     self.monthName.text = ""
                 }
@@ -78,7 +82,7 @@ class MonthMoodGraphViewController: UIViewController {
     
     // MARK: - Obtain the months mood data from firebase
     // Input:
-    //      1. None
+    //      1. The collection reference for the specific user
     // Output:
     //      1. The monthly mood graph is created and displayed for the user to see
     func getMoodData(reference: CollectionReference)
