@@ -1,22 +1,23 @@
-//
-//  Patient.swift
-//  UnHindr
-//
-//  Created by Lawrence Liu on 2019-11-30.
-//  Copyright © 2019 Sigma. All rights reserved.
-//
+/*
+ File: [Patient.swift]
+ Creators: [Sina]
+ Date created: [20/11/2019]
+ Date updated: [22/11/2019]
+ Updater name: [Sina]
+ File description: [Patient Class description]
+ */
 
 import Foundation
 import MapKit
 import Contacts
 
-
+// Class of Patient that contains their location and coordinates
 class Patient: NSObject, MKAnnotation {
     let title: String?
     let locationName: String
     let discipline: String
     let coordinate: CLLocationCoordinate2D
-    
+    // Constructor of Patient
     init(title: String, locationName: String, discipline: String, coordinate: CLLocationCoordinate2D) {
         self.title = title
         self.locationName = locationName

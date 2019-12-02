@@ -26,8 +26,9 @@ class LocationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        locationManager.requestWhenInUseAuthorization()//Ask user for authorisation.
+        
+        //Ask user for authorisation.
+        locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.distanceFilter = kCLDistanceFilterNone
         locationManager.startUpdatingLocation()
