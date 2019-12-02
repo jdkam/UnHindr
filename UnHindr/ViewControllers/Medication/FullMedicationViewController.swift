@@ -94,20 +94,18 @@ class FullMedicationViewController: UIViewController {
         
         // Parse the reminder time
         let timeString = medPlan.get("ReminderTime") as? String
-        var arr = timeString!.components(separatedBy: [":", " "])
+        var arr = timeString!.components(separatedBy: [":"])
+        var amPm = "AM"
         if (arr.count == 2){
             if Int(arr[0])! > 12 {
                 arr[0] = String(Int(arr[0])! - 12)
-                arr.append("PM")
-            }
-            else {
-                arr.append("AM")
+                amPm = "PM"
             }
         }
         else {
             print("Error parsing reminder time from firestore")
         }
-        let timeStr = arr[0] + ":" + arr[1] + " " + arr[2]
+        let timeStr = arr[0] + ":" + arr[1] + " " + amPm
         
         // Parse the days of the week
         let dayArr = medPlan.get("Day") as! [String]
