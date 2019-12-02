@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tye-N5-XUf">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--AddNewMed-->
+        <scene sceneID="vAO-Hk-P7Z">
+            <objects>
+                <viewController storyboardIdentifier="AddMedicationViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tye-N5-XUf" userLabel="AddNewMed" customClass="AddMedicationViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qTJ-e1-5yZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Menu_BG" translatesAutoresizingMaskIntoConstraints="NO" id="L3m-g0-awq">
+                                <rect key="frame" x="0.0" y="-20" width="414" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x9t-o9-Omp">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cy6-vf-z8P">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="700"/>
+                                        <userGuides>
+                                            <userLayoutGuide location="684" affinity="minY"/>
+                                        </userGuides>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Menu_BG" translatesAutoresizingMaskIntoConstraints="NO" id="kmf-lq-WmF">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="66"/>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="66" id="EWb-oH-gq2"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BlueBg" translatesAutoresizingMaskIntoConstraints="NO" id="dZU-bl-7Az">
+                                                <rect key="frame" x="7" y="94" width="400" height="900"/>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="t9n-wX-ZXC">
+                                                <rect key="frame" x="13" y="112" width="388" height="580"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Medication" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2eK-ru-Fjm">
+                                                        <rect key="frame" x="0.0" y="0.0" width="388" height="36"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Medication Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gPB-6V-0Dm">
+                                                        <rect key="frame" x="0.0" y="61" width="388" height="44"/>
+                                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Eun-cF-k1j" userLabel="DosageStack">
+                                                        <rect key="frame" x="0.0" y="130" width="388" height="32"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="     Dosage (mg)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yq8-rb-vIS">
+                                                                <rect key="frame" x="0.0" y="0.0" width="224.5" height="32"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rqA-hS-zXb">
+                                                                <rect key="frame" x="254.5" y="0.0" width="9.5" height="32"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <stepper opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="VJp-tE-cnP" userLabel="DosageStepper" colorLabel="IBBuiltInLabel-Gray">
+                                                                <rect key="frame" x="294" y="0.0" width="94" height="32"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <connections>
+                                                                    <action selector="dosageStepper:" destination="tye-N5-XUf" eventType="valueChanged" id="pfv-4C-Ac6"/>
+                                                                </connections>
+                                                            </stepper>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Ro6-vC-TNU" userLabel="QuantityStack">
+                                                        <rect key="frame" x="0.0" y="187" width="388" height="32"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="     Quantity         " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iSs-xj-ldD" userLabel="Quantity">
+                                                                <rect key="frame" x="0.0" y="0.0" width="224.5" height="32"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZo-1m-VdQ">
+                                                                <rect key="frame" x="254.5" y="0.0" width="9.5" height="32"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <stepper opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Xds-dP-aWV" userLabel="QuantityStepper" colorLabel="IBBuiltInLabel-Gray">
+                                                                <rect key="frame" x="294" y="0.0" width="94" height="32"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <connections>
+                                                                    <action selector="quantityStepper:" destination="tye-N5-XUf" eventType="valueChanged" id="P1G-ri-vUy"/>
+                                                                </connections>
+                                                            </stepper>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wPG-eq-LZN" userLabel="Mon-WedStack">
+                                                        <rect key="frame" x="0.0" y="244" width="388" height="73"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ytf-4X-cgJ" userLabel="MonButton">
+                                                                <rect key="frame" x="0.0" y="0.0" width="116" height="73"/>
+                                                                <state key="normal" image="monNoCheck">
+                                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="monButtonTapped:" destination="tye-N5-XUf" eventType="touchUpInside" id="plb-4u-xOg"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KFS-5L-tjf" userLabel="TuesButton">
+                                                                <rect key="frame" x="136" y="0.0" width="116" height="73"/>
+                                                                <state key="normal" image="tuesNoCheck">
+                                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="tuesButtonTapped:" destination="tye-N5-XUf" eventType="touchUpInside" id="ANH-g1-Mbb"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vob-Dy-spn" userLabel="WedButton">
+                                                                <rect key="frame" x="272" y="0.0" width="116" height="73"/>
+                                                                <state key="normal" image="wedNoCheck">
+                                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="wedButtonTapped:" destination="tye-N5-XUf" eventType="touchUpInside" id="MCv-r5-pWD"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="kYd-oy-NGw" userLabel="Thurs-SunStack">
+                                                        <rect key="frame" x="0.0" y="342" width="388" height="73"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gP0-Vy-F7T" userLabel="ThursButton">
+                                                                <rect key="frame" x="0.0" y="0.0" width="74" height="73"/>
+                                                                <state key="normal" image="thursNoCheck">
+                                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="thursButtonPressed:" destination="tye-N5-XUf" eventType="touchUpInside" id="dAv-4t-tMQ"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eOU-N9-Nli" userLabel="FriButton">
+                                                                <rect key="frame" x="104.5" y="0.0" width="74" height="73"/>
+                                                                <state key="normal" image="friNoCheck">
+                                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="friButtonPressed:" destination="tye-N5-XUf" eventType="touchUpInside" id="NnN-wl-XJG"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WYr-dJ-6Q5" userLabel="SatButton">
+                                                                <rect key="frame" x="209.5" y="0.0" width="74" height="73"/>
+                                                                <state key="normal" image="satNoCheck">
+                                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="satButtonPressed:" destination="tye-N5-XUf" eventType="touchUpInside" id="CNv-ae-aX3"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gJ-Ti-yQb" userLabel="SunButton">
+                                                                <rect key="frame" x="314" y="0.0" width="74" height="73"/>
+                                                                <state key="normal" image="sunNoCheck">
+                                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="sunButtonPressed:" destination="tye-N5-XUf" eventType="touchUpInside" id="Bdv-Vo-Yke"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="139" translatesAutoresizingMaskIntoConstraints="NO" id="3sc-E3-Mzf" userLabel="TimeStack">
+                                                        <rect key="frame" x="0.0" y="440" width="388" height="44"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="     Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYZ-8d-Mw0">
+                                                                <rect key="frame" x="0.0" y="0.0" width="81.5" height="44"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="00:00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uU9-K4-puv">
+                                                                <rect key="frame" x="220.5" y="0.0" width="167.5" height="44"/>
+                                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wJ9-XA-Hon" userLabel="Cancel/SaveStack">
+                                                        <rect key="frame" x="0.0" y="509" width="388" height="71"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ibe-lQ-hxs" userLabel="Cancel Button">
+                                                                <rect key="frame" x="0.0" y="0.0" width="184" height="71"/>
+                                                                <state key="normal" image="Cancel">
+                                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="cancelMedTapped:" destination="tye-N5-XUf" eventType="touchUpInside" id="I6S-kV-EA2"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nxc-Lj-8vX" userLabel="Add Button">
+                                                                <rect key="frame" x="204" y="0.0" width="184" height="71"/>
+                                                                <state key="normal" image="Add">
+                                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="addMedTapped:" destination="tye-N5-XUf" eventType="touchUpInside" id="LaZ-zj-4xu"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myMeds-1" translatesAutoresizingMaskIntoConstraints="NO" id="HAQ-4y-lTX" userLabel="Page Header">
+                                                <rect key="frame" x="9" y="17" width="144" height="42"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="700" id="26z-C3-jf6"/>
+                                            <constraint firstItem="kmf-lq-WmF" firstAttribute="top" secondItem="cy6-vf-z8P" secondAttribute="top" id="4WC-fq-78a"/>
+                                            <constraint firstItem="kmf-lq-WmF" firstAttribute="leading" secondItem="cy6-vf-z8P" secondAttribute="leading" id="7U6-Ue-U2X"/>
+                                            <constraint firstAttribute="height" constant="700" id="FwK-zx-wZH"/>
+                                            <constraint firstItem="kmf-lq-WmF" firstAttribute="top" secondItem="cy6-vf-z8P" secondAttribute="top" id="Hwb-2V-iNE"/>
+                                            <constraint firstItem="dZU-bl-7Az" firstAttribute="top" secondItem="kmf-lq-WmF" secondAttribute="bottom" constant="28" id="JaM-4J-KQJ"/>
+                                            <constraint firstItem="HAQ-4y-lTX" firstAttribute="leading" secondItem="cy6-vf-z8P" secondAttribute="leading" constant="9" id="KAE-qR-tBW"/>
+                                            <constraint firstItem="t9n-wX-ZXC" firstAttribute="bottom" secondItem="cy6-vf-z8P" secondAttribute="bottomMargin" id="L5X-JH-uaf"/>
+                                            <constraint firstItem="kmf-lq-WmF" firstAttribute="leading" secondItem="cy6-vf-z8P" secondAttribute="leading" id="TR1-Np-NEK"/>
+                                            <constraint firstItem="dZU-bl-7Az" firstAttribute="leading" secondItem="cy6-vf-z8P" secondAttribute="leading" constant="7" id="hvK-Bv-3TS"/>
+                                            <constraint firstItem="t9n-wX-ZXC" firstAttribute="leading" secondItem="cy6-vf-z8P" secondAttribute="leading" constant="13" id="i2j-7m-85M"/>
+                                            <constraint firstItem="kmf-lq-WmF" firstAttribute="top" secondItem="cy6-vf-z8P" secondAttribute="top" id="iBG-8J-Mty"/>
+                                            <constraint firstAttribute="trailing" secondItem="kmf-lq-WmF" secondAttribute="trailing" id="ktc-c4-1Dt"/>
+                                            <constraint firstAttribute="trailing" secondItem="kmf-lq-WmF" secondAttribute="trailing" id="muj-CM-EF4"/>
+                                            <constraint firstItem="HAQ-4y-lTX" firstAttribute="top" secondItem="cy6-vf-z8P" secondAttribute="top" constant="17" id="wHR-oD-f2k"/>
+                                            <constraint firstAttribute="trailing" secondItem="t9n-wX-ZXC" secondAttribute="trailing" constant="13" id="zMZ-pZ-zh0"/>
+                                            <constraint firstAttribute="trailing" secondItem="dZU-bl-7Az" secondAttribute="trailing" constant="7" id="zW2-NY-bBe"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="cy6-vf-z8P" secondAttribute="trailing" id="17X-hR-Wle"/>
+                                    <constraint firstAttribute="bottom" secondItem="cy6-vf-z8P" secondAttribute="bottom" id="TUt-kc-Nvm"/>
+                                    <constraint firstItem="cy6-vf-z8P" firstAttribute="top" secondItem="x9t-o9-Omp" secondAttribute="top" id="WS4-yK-wJl"/>
+                                    <constraint firstItem="cy6-vf-z8P" firstAttribute="leading" secondItem="x9t-o9-Omp" secondAttribute="leading" id="oIw-yn-I28"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="x9t-o9-Omp" firstAttribute="trailing" secondItem="w4T-aa-4BL" secondAttribute="trailing" id="12N-fL-bUU"/>
+                            <constraint firstItem="cy6-vf-z8P" firstAttribute="width" secondItem="qTJ-e1-5yZ" secondAttribute="width" id="AVg-8C-bWV"/>
+                            <constraint firstItem="x9t-o9-Omp" firstAttribute="top" secondItem="w4T-aa-4BL" secondAttribute="top" id="dFV-aB-Wy2"/>
+                            <constraint firstItem="x9t-o9-Omp" firstAttribute="bottom" secondItem="w4T-aa-4BL" secondAttribute="bottom" id="u80-Je-yF7"/>
+                            <constraint firstItem="x9t-o9-Omp" firstAttribute="leading" secondItem="w4T-aa-4BL" secondAttribute="leading" id="vhy-V4-Wse"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="w4T-aa-4BL"/>
+                    </view>
+                    <connections>
+                        <outlet property="actionNameLabel" destination="2eK-ru-Fjm" id="8rQ-H2-fPM"/>
+                        <outlet property="addButton" destination="Nxc-Lj-8vX" id="WlN-aw-duQ"/>
+                        <outlet property="dosageLabel" destination="rqA-hS-zXb" id="0lR-4g-4WE"/>
+                        <outlet property="dosageStepperVar" destination="VJp-tE-cnP" id="jaZ-SO-eYR"/>
+                        <outlet property="friButton" destination="eOU-N9-Nli" id="4sB-x8-qhR"/>
+                        <outlet property="medFieldName" destination="gPB-6V-0Dm" id="yeq-Lc-2KR"/>
+                        <outlet property="monButton" destination="ytf-4X-cgJ" id="M55-uA-VIj"/>
+                        <outlet property="qtyStepperVar" destination="Xds-dP-aWV" id="1i1-gA-8uY"/>
+                        <outlet property="quantityLabel" destination="gZo-1m-VdQ" id="FD3-Jy-hAW"/>
+                        <outlet property="satButton" destination="WYr-dJ-6Q5" id="kHK-eC-Szt"/>
+                        <outlet property="sunButton" destination="4gJ-Ti-yQb" id="FVK-kl-jNm"/>
+                        <outlet property="thursButton" destination="gP0-Vy-F7T" id="lBs-vi-RuN"/>
+                        <outlet property="timeInputTextField" destination="uU9-K4-puv" id="Qc2-6V-8r7"/>
+                        <outlet property="tuesButton" destination="KFS-5L-tjf" id="ton-4l-9Da"/>
+                        <outlet property="wedButton" destination="vob-Dy-spn" id="Ews-xF-hOP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NQR-mA-rzf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="381"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Add" width="158" height="71"/>
+        <image name="BlueBg" width="1080" height="900"/>
+        <image name="Cancel" width="158" height="71"/>
+        <image name="Menu_BG" width="414" height="120"/>
+        <image name="friNoCheck" width="74" height="73"/>
+        <image name="monNoCheck" width="73.5" height="73"/>
+        <image name="myMeds-1" width="144" height="42"/>
+        <image name="satNoCheck" width="74" height="73"/>
+        <image name="sunNoCheck" width="74" height="73"/>
+        <image name="thursNoCheck" width="74" height="73"/>
+        <image name="tuesNoCheck" width="74" height="73"/>
+        <image name="wedNoCheck" width="74" height="73"/>
+    </resources>
+</document>

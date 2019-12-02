@@ -169,11 +169,18 @@ extension FullMedicationViewController: UITableViewDataSource, UITableViewDelega
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete", handler: { (ac: UIContextualAction, view: UIView, success:(Bool) -> Void) in
             let docRef = self.medicationPlanRef.document(self.medList!.documents[indexPath.row].documentID)
             self.batch.deleteDocument(docRef)
+            print(self.batch)
             success(true)
         })
         
         let editAction = UIContextualAction(style: .normal, title: "Edit", handler: {(ac: UIContextualAction, view: UIView, success:(Bool) -> Void) in
-            print("Edit")
+            let storyboard = UIStoryboard.init(name: "AddMed", bundle: nil)
+            let destinationVC = storyboard.instantiateViewController(withIdentifier: "AddMedicationViewController") as! AddMedicationViewController
+            guard let snapshot = self.medList?.documents[indexPath.row] else {
+                return
+            }
+            destinationVC.snapshot = snapshot
+            self.present(destinationVC, animated:true, completion: nil)
             success(true)
         })
 
