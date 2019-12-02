@@ -28,42 +28,81 @@ class CaregiverGraphsUITests: XCTestCase {
 
     func testNoSelectedPatientMed()
     {
+        let app = XCUIApplication()
+        loginAsCaregiver(app)
+        app.buttons["Medication"].tap()
+        app.alerts["No Patient Selected"].buttons["Ok"].tap()
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
     func testNoSelectedPatientCog()
     {
-        
+        let app = XCUIApplication()
+        loginAsCaregiver(app)
+        app.buttons["Wellness"].tap()
+        app.scrollViews.otherElements.buttons["CogGame graph button"].tap()
     }
     
     func testNoSelectedPatientMood()
     {
-        
+        let app = XCUIApplication()
+        loginAsCaregiver(app)
+        app.buttons["Wellness"].tap()
+        app.scrollViews.otherElements.buttons["Mood Graph Button"].tap()
     }
     
     func testNoSelectedPatientMotor()
     {
-        
+        let app = XCUIApplication()
+        loginAsCaregiver(app)
+        app.buttons["Wellness"].tap()
+        app.scrollViews.otherElements.buttons["Motorgame graph button"].tap()
     }
     
     func testNavigationToMedWeek()
     {
-        
+        let app = XCUIApplication()
+        loginAsCaregiver(app)
+        app.buttons["Connect"].tap()
+        app.tables/*@START_MENU_TOKEN@*/.staticTexts["unittestacc@gmail.com"]/*[[".cells.staticTexts[\"unittestacc@gmail.com\"]",".staticTexts[\"unittestacc@gmail.com\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.alerts["Successfully Connected to User!"].buttons["Ok"].tap()
+        app.buttons["home white"].tap()
+        app.buttons["Medication"].tap()
     }
     
     func testNavigationToMedMonth()
     {
-        
+        let app = XCUIApplication()
+        loginAsCaregiver(app)
+        app.buttons["Connect"].tap()
+        app.tables/*@START_MENU_TOKEN@*/.staticTexts["unittestacc@gmail.com"]/*[[".cells.staticTexts[\"unittestacc@gmail.com\"]",".staticTexts[\"unittestacc@gmail.com\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.alerts["Successfully Connected to User!"].buttons["Ok"].tap()
+        app.buttons["home white"].tap()
+        app.buttons["Medication"].tap()
+        app.buttons["Month"].tap()
     }
     
     func testNavigationToMedYear()
     {
-        
+        let app = XCUIApplication()
+        loginAsCaregiver(app)
+        app.buttons["Connect"].tap()
+        app.tables/*@START_MENU_TOKEN@*/.staticTexts["unittestacc@gmail.com"]/*[[".cells.staticTexts[\"unittestacc@gmail.com\"]",".staticTexts[\"unittestacc@gmail.com\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.alerts["Successfully Connected to User!"].buttons["Ok"].tap()
+        app.buttons["home white"].tap()
+        app.buttons["Medication"].tap()
+        app.buttons["Year"].tap()
     }
     
     func testNavigationToCogWeek()
     {
+        let app = XCUIApplication()
+        loginAsCaregiver(app)
+        app.buttons["Connect"].tap()
+        app.tables/*@START_MENU_TOKEN@*/.staticTexts["unittestacc@gmail.com"]/*[[".cells.staticTexts[\"unittestacc@gmail.com\"]",".staticTexts[\"unittestacc@gmail.com\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.alerts["Successfully Connected to User!"].buttons["Ok"].tap()
+        app.buttons["home white"].tap()
         
     }
     

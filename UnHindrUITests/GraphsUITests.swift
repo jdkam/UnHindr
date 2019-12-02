@@ -30,32 +30,25 @@ class GraphsUITests: XCTestCase {
     {
         let app = XCUIApplication()
         loginToHomeScreen(app)
-        app.buttons["Wellness"].tap()
-        let elementsQuery = app.scrollViews.otherElements
-        elementsQuery.buttons["Graph"].tap()
-        elementsQuery.buttons["CogGame graph button"].tap()
+        app.buttons["Medication"].tap()
+        app.scrollViews.otherElements.containing(.image, identifier:"Menu_BG").children(matching: .other).element(boundBy: 3).children(matching: .button).matching(identifier: "Button").element(boundBy: 1).tap()
     }
     
     func testNavigationtoMedMonthGraph()
     {
         let app = XCUIApplication()
         loginToHomeScreen(app)
-        app.buttons["Wellness"].tap()
-        let elementsQuery = app.scrollViews.otherElements
-        elementsQuery.buttons["Graph"].tap()
-        elementsQuery.buttons["CogGame graph button"].tap()
-        app.buttons["Month"].tap()
+        app.buttons["Medication"].tap()
+        app.scrollViews.otherElements.containing(.image, identifier:"Menu_BG").children(matching: .other).element(boundBy: 3).children(matching: .button).matching(identifier: "Button").element(boundBy: 1).tap()
+        app.children(matching: .window).element(boundBy: 0).children(matching: .other).element(boundBy: 2).children(matching: .other).element.children(matching: .button).matching(identifier: "Button").element(boundBy: 1).tap()
     }
     
     func testNavigationtoMedYearGraph()
     {
         let app = XCUIApplication()
         loginToHomeScreen(app)
-        app.buttons["Wellness"].tap()
-        let elementsQuery = app.scrollViews.otherElements
-        elementsQuery.buttons["Graph"].tap()
-        elementsQuery.buttons["CogGame graph button"].tap()
-        app.buttons["Year"].tap()
+        app.buttons["Medication"].tap()
+        app.scrollViews.otherElements.containing(.image, identifier:"Menu_BG").children(matching: .other).element(boundBy: 3).children(matching: .button).matching(identifier: "Button").element(boundBy: 1).tap()
     }
     
     func testNavigationtoCogWeekGraph() {
@@ -75,7 +68,7 @@ class GraphsUITests: XCTestCase {
         let elementsQuery = app.scrollViews.otherElements
         elementsQuery.buttons["Graph"].tap()
         elementsQuery.buttons["CogGame graph button"].tap()
-        app.buttons["Month"].tap()
+        XCTAssert(app.buttons["Month"].waitForExistence(timeout: 10))
     }
     
     func testNavigationtoCogYearGraph()
