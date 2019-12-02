@@ -79,7 +79,9 @@ class MedicationHomeViewController: UIViewController, NewMedDelegate {
                         self.switchToNextCard(self.MedCardView)
                     }
                     else{
-                        assert(self.fetchAndUpdateCard())
+                        if(!self.fetchAndUpdateCard()){
+                            print("No cards to fetch")
+                        }
                     }
             }
         }
