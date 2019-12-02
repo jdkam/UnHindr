@@ -17,9 +17,6 @@ class ChartsViewController: UIViewController {
     @IBOutlet weak var chtChart: BarChartView!
     @IBOutlet weak var monthLabel: UILabel!
     
-    // gets the correct user database values
-    let medRef = Services.db.collection("users").document(Services.userRef!).collection("Medication")
-    
     // storing the graph data
     var GraphData: [BarChartDataEntry] = []
     var medData: [Int:Double] = [:]
@@ -30,27 +27,32 @@ class ChartsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let medRef = Services.checkUserIDMed(){(success) in
-//            if(success)
-//            {
-//                self.getMedicationData(reference: medRef)
-//            }
-//            else
-//            {
-//                if(user_ID == "")
-//                {
-//                    self.getMedicationData(reference: medRef)
-//                }
-//                else
-//                {
-//                    self.chtChart.noDataText = "Please choose a patient in the Conncet Screen"
-//                    self.monthLabel.text = ""
-//                }
-//            }
-//        }
+        // grabbing the medication reference for the specific patient
+        let (_,medRef) = Services.checkUserIDMed()
         
-        
-        getMedicationData()
+        // determines if the current user is a patient or caregiver
+        Services.getisPatient(){(success) in
+            if(success)
+            {
+                // if the user is a patient
+                self.getMedicationData(reference: medRef)
+            }
+            else
+            {
+                // if the user is a caregiver
+                if(user_ID != "")
+                {
+                    // if the caregiver selected a patient
+                    self.getMedicationData(reference: medRef)
+                }
+                else
+                {
+                    // if the caregiver has not selected a patient
+                    self.chtChart.noDataText = "Please choose a patient in the Conncet Screen"
+                    self.monthLabel.text = ""
+                }
+            }
+        }
         
         // Sets up the chart properties
         self.title = "Medication Bar Chart"
@@ -78,14 +80,14 @@ class ChartsViewController: UIViewController {
     
     // MARK: - Obtain motor data from firebase
     // Input:
-    //      1. None
+    //      1. The collection reference for the specific user
     // Output:
     //      1. Medication Graph displays data from one week ago
-    // func getMedcationData(reference: CollectionReference)
-    func getMedicationData()
+    func getMedicationData(reference: CollectionReference)
+    //func getMedicationData()
     {
         // gets all the documents for this particular user
-        medRef.getDocuments()
+        reference.getDocuments()
             {
                 (querySnapshot,err) in
                 // the program will go into this if statement if the user authentication fails
@@ -122,7 +124,7 @@ class ChartsViewController: UIViewController {
                     let currentMonth = calendar.component(.month, from: today)
                     let currentYear = calendar.component(.year, from: today)
                     // calculates 7 days in the past and gets the previous month's name
-                    let lastWeekDay = currentDay - 7
+                    let lastWeekDay = currentDay - 6
                     let previousMonth = currentMonth - 1
                     let previousMonthName = DateFormatter().monthSymbols[previousMonth-1]
                     
@@ -169,14 +171,14 @@ class ChartsViewController: UIViewController {
                             if(dayExists)
                             {
                                 // places data into the graph data array
-                                let data = BarChartDataEntry(x: Double(i), y: (self.medData[self.days[i]]!))
+                                let data = BarChartDataEntry(x: Double(j), y: (self.medData[self.days[i]]!))
                                 self.GraphData.append(data)
                                 
                             }
                             else
                             {
                                 // if the key value days[i] does not exist, set the value equal to 0 for that day
-                                let data = BarChartDataEntry(x: Double(i), y: 0)
+                                let data = BarChartDataEntry(x: Double(j), y: 0)
                                 self.GraphData.append(data)
                             }
                             i -= 1
@@ -268,7 +270,7 @@ class ChartsViewController: UIViewController {
         var day = inDay
         let forwardDay = inDay
         var i = 0
-        var daysofWeek = 6
+        let daysofWeek = 6
         // if the previous month was January of that year
         if(previousMonth == 0)
         {
@@ -324,4 +326,10 @@ class ChartsViewController: UIViewController {
             return values[Int(value)]
         }
     }
+    
+    @IBAction func homeButton(_ sender: Any) {
+        Services.transitionHome(self)
+    }
+    
+    
  }

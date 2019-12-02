@@ -59,6 +59,7 @@
 		81BDBDA6237F8FDB00F4C970 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BDBDA5237F8FDB00F4C970 /* SoundManager.swift */; };
 		81D15232238B5E6E00A762A7 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81D15231238B5E6E00A762A7 /* IQKeyboardManagerSwift.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		917005C6FF22DCC60112BF31 /* Pods_UnHindr_UnHindrUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60A7EE0DF36D68CB24C9574E /* Pods_UnHindr_UnHindrUITests.framework */; };
+		9802BD4C23937DC900D89633 /* WellnessGraphsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9802BD4B23937DC900D89633 /* WellnessGraphsViewController.swift */; };
 		98F115D8236CCDF80082A1B1 /* Mood.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98F115D7236CCDF80082A1B1 /* Mood.storyboard */; };
 		98F115DA236CCED00082A1B1 /* MoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F115D9236CCED00082A1B1 /* MoodViewController.swift */; };
 		98F115E5236D23380082A1B1 /* MoodQ2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F115E4236D23380082A1B1 /* MoodQ2ViewController.swift */; };
@@ -176,6 +177,7 @@
 		81BDBDA5237F8FDB00F4C970 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		81D15231238B5E6E00A762A7 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9500CD9CD9F0148DE44F8BF8 /* Pods-UnHindr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindr.debug.xcconfig"; path = "Target Support Files/Pods-UnHindr/Pods-UnHindr.debug.xcconfig"; sourceTree = "<group>"; };
+		9802BD4B23937DC900D89633 /* WellnessGraphsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellnessGraphsViewController.swift; sourceTree = "<group>"; };
 		98F115D7236CCDF80082A1B1 /* Mood.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mood.storyboard; sourceTree = "<group>"; };
 		98F115D9236CCED00082A1B1 /* MoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodViewController.swift; sourceTree = "<group>"; };
 		98F115E4236D23380082A1B1 /* MoodQ2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodQ2ViewController.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				215C15DB236F6E5F0063F3E4 /* WellnessTestHomeViewController.swift */,
+				9802BD4B23937DC900D89633 /* WellnessGraphsViewController.swift */,
 			);
 			path = WellnessTestHome;
 			sourceTree = "<group>";
@@ -817,6 +820,7 @@
 				707E9F7523827F85006A3AF5 /* MoodGraphsViewController.swift in Sources */,
 				70C1FCEF238884E700BF1CC6 /* YearMedChartViewController.swift in Sources */,
 				9EE42465237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift in Sources */,
+				9802BD4C23937DC900D89633 /* WellnessGraphsViewController.swift in Sources */,
 				9DF3F89B2367D826003CF8B9 /* LoginViewController.swift in Sources */,
 				9D6C641C2378B50F00F0C058 /* Constants.swift in Sources */,
 				817B5F6C2388A478009BF125 /* Message.swift in Sources */,

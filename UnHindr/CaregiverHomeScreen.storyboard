@@ -77,6 +77,9 @@
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ACE-xh-bIr" userLabel="medication">
                                                 <rect key="frame" x="186" y="0.0" width="185" height="160.5"/>
                                                 <state key="normal" image="Medication"/>
+                                                <connections>
+                                                    <segue destination="ppK-x3-VzO" kind="show" id="UAJ-Qv-4iv"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -93,9 +96,6 @@
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2jQ-Zw-CcF" userLabel="chat">
                                                 <rect key="frame" x="186.5" y="0.0" width="184.5" height="157"/>
                                                 <state key="normal" image="Chat"/>
-                                                <connections>
-                                                    <segue destination="FwM-qY-n8S" kind="show" id="C1g-Vf-XaP"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -137,13 +137,13 @@
             </objects>
             <point key="canvasLocation" x="69.599999999999994" y="130.88455772113943"/>
         </scene>
-        <!--Chat-->
-        <scene sceneID="aJk-Ra-tSd">
+        <!--Medication-->
+        <scene sceneID="b7y-L2-lyi">
             <objects>
-                <viewControllerPlaceholder storyboardName="Chat" id="FwM-qY-n8S" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="p8m-Ld-ah8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Medication" id="ppK-x3-VzO" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oqN-Jm-cjh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="842" y="109"/>
+            <point key="canvasLocation" x="724" y="63"/>
         </scene>
         <!--Settings-->
         <scene sceneID="WwD-co-uJT">
