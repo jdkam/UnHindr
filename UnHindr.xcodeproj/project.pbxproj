@@ -50,6 +50,7 @@
 		817B5F702388C117009BF125 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 817B5F6E2388C117009BF125 /* MessageCell.xib */; };
 		81A7340C2381E0840069FE24 /* CogGameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A7340B2381E0840069FE24 /* CogGameTest.swift */; };
 		81A7340E238200320069FE24 /* CogGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A7340D238200320069FE24 /* CogGameUITests.swift */; };
+		81A7A803239492E7000129FB /* ChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A7A802239492E7000129FB /* ChatUITests.swift */; };
 		81B5908E2378F8DD00BA49AF /* CogGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81B5908D2378F8DD00BA49AF /* CogGame.storyboard */; };
 		81BDBD9F237F8E9C00F4C970 /* shuffle.wav in Resources */ = {isa = PBXBuildFile; fileRef = 81BDBD9B237F8E9B00F4C970 /* shuffle.wav */; };
 		81BDBDA0237F8E9C00F4C970 /* dingcorrect.wav in Resources */ = {isa = PBXBuildFile; fileRef = 81BDBD9C237F8E9B00F4C970 /* dingcorrect.wav */; };
@@ -167,6 +168,7 @@
 		817B5F6E2388C117009BF125 /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
 		81A7340B2381E0840069FE24 /* CogGameTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CogGameTest.swift; sourceTree = "<group>"; };
 		81A7340D238200320069FE24 /* CogGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CogGameUITests.swift; sourceTree = "<group>"; };
+		81A7A802239492E7000129FB /* ChatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUITests.swift; sourceTree = "<group>"; };
 		81B5908D2378F8DD00BA49AF /* CogGame.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CogGame.storyboard; sourceTree = "<group>"; };
 		81BDBD9B237F8E9B00F4C970 /* shuffle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shuffle.wav; sourceTree = "<group>"; };
 		81BDBD9C237F8E9B00F4C970 /* dingcorrect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dingcorrect.wav; sourceTree = "<group>"; };
@@ -467,6 +469,7 @@
 				9DF3F8BA2367D82D003CF8B9 /* Info.plist */,
 				81A7340D238200320069FE24 /* CogGameUITests.swift */,
 				CD4A840C23932C6E00189605 /* EmergContactUITests.swift */,
+				81A7A802239492E7000129FB /* ChatUITests.swift */,
 			);
 			path = UnHindrUITests;
 			sourceTree = "<group>";
@@ -883,6 +886,7 @@
 				CD4A840D23932C6E00189605 /* EmergContactUITests.swift in Sources */,
 				9E286A352382968A00473055 /* MotGameUITests.swift in Sources */,
 				81A7340E238200320069FE24 /* CogGameUITests.swift in Sources */,
+				81A7A803239492E7000129FB /* ChatUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

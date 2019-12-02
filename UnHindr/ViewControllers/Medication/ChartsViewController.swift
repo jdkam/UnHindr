@@ -268,7 +268,7 @@ class ChartsViewController: UIViewController {
         var day = inDay
         let forwardDay = inDay
         var i = 0
-        var daysofWeek = 6
+        let daysofWeek = 6
         // if the previous month was January of that year
         if(previousMonth == 0)
         {

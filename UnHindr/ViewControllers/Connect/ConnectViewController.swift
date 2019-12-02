@@ -23,7 +23,6 @@ class ConnectViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     //list of user's connections
 //    var list = [""]
-    var list: [String] = []
 
 
     //determines number of sections for UITableView
