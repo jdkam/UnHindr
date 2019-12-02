@@ -356,6 +356,13 @@ class MedicationHomeViewController: UIViewController, NewMedDelegate {
             let addMedVC: AddMedicationViewController = segue.destination as! AddMedicationViewController
             addMedVC.delegate = self
         }
+        
+        if segue.identifier == "showListSegue" {
+            let showListVC: FullMedicationViewController = segue.destination as! FullMedicationViewController
+            showListVC.usedCards = self.usedCards
+            showListVC.curDayPlanSnapshot = self.planSnapshot
+        }
+        
     }
     
     @IBAction func homeButton(_ sender: Any) {

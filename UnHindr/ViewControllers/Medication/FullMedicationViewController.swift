@@ -23,6 +23,12 @@ class FullMedicationViewController: UIViewController {
     // Create the batch writing
     let batch = Services.db.batch()
     
+    // Current used card list
+    var usedCards: [Int] = []
+    
+    // Current day med plan
+    var curDayPlanSnapshot: QuerySnapshot?
+    
     // Snapshot of the current user's medication plan
     var medList: QuerySnapshot?
     
@@ -109,7 +115,7 @@ class FullMedicationViewController: UIViewController {
         
         // Parse the days of the week
         let dayArr = medPlan.get("Day") as! [String]
-        print(dayArr.count)
+//        print(dayArr.count)
         //cell.dayOfWeekLabel
         
         return Medication (medName: medName, dosage: dosage, quantity: quantity, reminderTime: timeStr, days: dayArr)
@@ -185,6 +191,31 @@ extension FullMedicationViewController: UITableViewDataSource, UITableViewDelega
                 manager.unscheduleNotifications(id: "\(medName) - \(day)")
             }
             self.batch.deleteDocument(docRef)
+            // Update the MedPlan array by deleting the entry if it exists and decrementing all subsequent array element
+            print("Old usedcards: \(self.usedCards)")
+            for index in 0..<(self.curDayPlanSnapshot!.count){
+                // Match index of cur day's plan with the full plan
+                if (self.curDayPlanSnapshot!.documents[index].documentID == self.medList!.documents[indexPath.row].documentID){
+                    // Delete index from usedCards
+                    for i in 0..<(self.usedCards.count) {
+                        if (self.usedCards[i] == index){
+                            self.usedCards.remove(at: i)
+                        }
+                            // Decrement subsequent indices in array
+                        else if(self.usedCards[i] > index){
+                            self.usedCards[i] = self.usedCards[i] - 1
+                        }
+                    }
+                    print("New Medplan: \(self.usedCards)")
+//                    // Add new usedcard array to batch
+                    if (user_ID == ""){
+                        self.batch.setData(["MedPlan": self.usedCards], forDocument: Services.fullUserRef.document(Services.userRef!), merge: true)
+                    }
+                    else {
+                        self.batch.setData(["MedPlan": self.usedCards], forDocument: Services.fullUserRef.document(user_ID), merge: true)
+                    }
+                }
+            }
             print(self.batch)
             success(true)
         })
