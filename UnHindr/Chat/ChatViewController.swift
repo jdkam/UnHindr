@@ -126,6 +126,7 @@ class ChatViewController: UIViewController {
     //output: stores the message in the textField to firestore
     @IBAction func sendPressed(_ sender: UIButton) {
         
+        if user_ID != ""{
         //if neither of these fields are not nil, then send data to firestore
         if let messageBody = messageTextField.text, let messageSender = Auth.auth().currentUser?.email {
             Services.db.collection("messages").document(thread).collection("ChatHistory").addDocument(data: ["sender":messageSender, "body": messageBody, "date": Date().timeIntervalSince1970]) {
@@ -141,6 +142,12 @@ class ChatViewController: UIViewController {
                     }
                 }
             }
+        }
+        }
+        else
+        {
+            //not connected to a user
+            Services.showAlert("Error", "First connect to a user in the connect screen before sending messsages", vc: self)
         }
     }
     
