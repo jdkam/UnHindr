@@ -310,7 +310,32 @@ class UnHindrUITests: XCTestCase {
     {
         let app = XCUIApplication()
         loginToHomeScreen(app)
-        
+        app.buttons["Wellness"].tap()
+        let elementsQuery = app.scrollViews.otherElements
+        elementsQuery.buttons["Graph"].tap()
+        elementsQuery.buttons["CogGame graph button"].tap()
+    }
+    
+    func testNavigationtoMedMonthGraph()
+    {
+        let app = XCUIApplication()
+        loginToHomeScreen(app)
+        app.buttons["Wellness"].tap()
+        let elementsQuery = app.scrollViews.otherElements
+        elementsQuery.buttons["Graph"].tap()
+        elementsQuery.buttons["CogGame graph button"].tap()
+        app.buttons["Month"].tap()
+    }
+    
+    func testNavigationtoMedYearGraph()
+    {
+        let app = XCUIApplication()
+        loginToHomeScreen(app)
+        app.buttons["Wellness"].tap()
+        let elementsQuery = app.scrollViews.otherElements
+        elementsQuery.buttons["Graph"].tap()
+        elementsQuery.buttons["CogGame graph button"].tap()
+        app.buttons["Year"].tap()
     }
     
     

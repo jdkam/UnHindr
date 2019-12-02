@@ -15,8 +15,8 @@ class MotorGameMonthlyViewController: UIViewController {
     
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var motorMonthGraph: BarChartView!
+    @IBOutlet weak var monthView: UILabel!
     
-    // gets the correct user database values
     
     // storing the graph data
     var GraphData: [BarChartDataEntry] = []
@@ -28,21 +28,29 @@ class MotorGameMonthlyViewController: UIViewController {
     // MARK: - View controller lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // grabs the correct user_ID for a giver user
         let motorRef = Services.checkUserIDMotorGame()
+        
+        self.monthView.text = "Month"
         
         Services.getisPatient() {(success) in
             if (success)
             {
+                // the user is a patient
                 self.getMotorGameData(reference: motorRef)
             }
             else
             {
+                // the user is a caregiver
                 if(user_ID != "")
                 {
+                    // if the caregiver has selected a user
                     self.getMotorGameData(reference: motorRef)
                 }
                 else
                 {
+                    // if the caregiver has not selected a user
                     self.motorMonthGraph.noDataText = "Please choose a patient in the Connect Screen"
                     self.monthLabel.text = ""
                 }
@@ -77,7 +85,7 @@ class MotorGameMonthlyViewController: UIViewController {
     
     // MARK: - Obtain the months motor data from firebase
     // Input:
-    //      1. None
+    //      1. The collection reference for the specific user
     // Output:
     //      1. The monthly motor graph is created and displayed for the user to see
     func getMotorGameData(reference: CollectionReference)

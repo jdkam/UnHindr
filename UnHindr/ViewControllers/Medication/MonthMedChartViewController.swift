@@ -16,8 +16,6 @@ class MonthMedChartViewController: UIViewController {
     @IBOutlet weak var monthChart: BarChartView!
     @IBOutlet weak var monthLabel: UILabel!
     
-    let medRef = Services.db.collection("users").document(Services.userRef!).collection("Medication")
-    
     var GraphData: [BarChartDataEntry] = []
     
     var monthMedValues: [Int:Double] = [:]
@@ -26,27 +24,33 @@ class MonthMedChartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //        let medRef = Services.checkUserIDMed(){(success) in
-        //            if(success)
-        //            {
-        //                self.getMedData(reference: medRef)
-        //            }
-        //            else
-        //            {
-        //                if(user_ID == "")
-        //                {
-        //                    self.getMedData(reference: medRef)
-        //                }
-        //                else
-        //                {
-        //                    self.monthChart.noDataText = "Please choose a patient in the Conncet Screen"
-        //                    self.monthLabel.text = ""
-        //                }
-        //            }
-        //        }
+        // grabbing the medication reference for the specific patient
+        let (_,medRef) = Services.checkUserIDMed()
         
+        // determines if the current user is a patient or caregiver
+        Services.getisPatient(){(success) in
+            if(success)
+            {
+                // if the user is a patient
+                self.getMedData(reference: medRef)
+            }
+            else
+            {
+                // if the user is a caregiver
+                if(user_ID != "")
+                {
+                    // if the caregiver selected a patient
+                    self.getMedData(reference: medRef)
+                }
+                else
+                {
+                    // if the caregiver has not selected a patient
+                    self.monthChart.noDataText = "Please choose a patient in the Conncet Screen"
+                    self.monthLabel.text = ""
+                }
+            }
+        }
         
-        getMedData()
         
         // Sets up the chart properties
         self.title = "Bar Chart"
@@ -74,13 +78,12 @@ class MonthMedChartViewController: UIViewController {
     
     // MARK: - Obtain the months medication data from firebase
     // Input:
-    //      1. None
+    //      1. The collection reference for the specific user
     // Output:
     //      1. The monthly medication graph is created and displayed for the user to see
-    // func getMedData(reference: CollectionReference)
-    func getMedData()
+    func getMedData(reference: CollectionReference)
     {
-        medRef.getDocuments()
+        reference.getDocuments()
             {
                 (querySnapshot,err) in
                 if err != nil{
@@ -155,7 +158,7 @@ class MonthMedChartViewController: UIViewController {
                         i += 1
                     }
                     // finalize setup of graph after the data has been inputted
-                    let set = BarChartDataSet(values: self.GraphData, label: "Medication Graph")
+                    let set = BarChartDataSet(values: self.GraphData, label: "Medication Taken")
                     set.colors = [UIColor.init(displayP3Red: 0/255, green: 128/255, blue: 255/255, alpha: 1)]
                     let chartData = BarChartData(dataSet: set)
                     self.monthChart.fitBars = true
@@ -165,4 +168,10 @@ class MonthMedChartViewController: UIViewController {
                 }
         }
     }
+    
+    @IBAction func homeButton(_ sender: Any) {
+        Services.transitionHome(self)
+    }
+    
+    
 }
