@@ -33,8 +33,7 @@
                                         </constraints>
                                         <state key="normal" image="home-white"/>
                                         <connections>
-                                            <action selector="goToHomeTapped:" destination="Eei-6T-tte" eventType="touchUpInside" id="57R-5c-V9K"/>
-                                            <action selector="homeButton:" destination="75M-Ul-Fkj" eventType="touchUpInside" id="dJN-TG-Dh2"/>
+                                            <segue destination="Eei-6T-tte" kind="presentation" id="bXw-aZ-RH0"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myMeds-1" translatesAutoresizingMaskIntoConstraints="NO" id="l7A-06-660">
@@ -106,6 +105,7 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBarItem key="tabBarItem" title="" image="myLog" selectedImage="myLog" id="UlJ-Xh-0eD"/>
+                    <navigationItem key="navigationItem" id="tHs-wY-zdz"/>
                     <connections>
                         <outlet property="chtChart" destination="UL0-lG-6Ai" id="UxC-Yt-xeX"/>
                         <outlet property="monthLabel" destination="zsK-nn-Sj3" id="11J-xH-Dhc"/>
@@ -140,7 +140,7 @@
                                         </constraints>
                                         <state key="normal" title="Button" image="home-white"/>
                                         <connections>
-                                            <action selector="homeButton:" destination="og3-Wz-cPL" eventType="touchUpInside" id="ECb-bA-80g"/>
+                                            <segue destination="Eei-6T-tte" kind="presentation" id="aYm-RB-8hT"/>
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myMeds-1" translatesAutoresizingMaskIntoConstraints="NO" id="kP7-RT-8ft">
@@ -212,6 +212,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fbx-zw-JPJ"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ABx-Uv-95Z"/>
                     <connections>
                         <outlet property="monthChart" destination="HzA-65-cON" id="M5c-b6-lfx"/>
                         <outlet property="monthLabel" destination="4On-fO-ma0" id="q6Z-uZ-5TC"/>
@@ -251,7 +252,7 @@
                                         </constraints>
                                         <state key="normal" title="Button" image="home-white"/>
                                         <connections>
-                                            <action selector="homeButton:" destination="Vwd-Ft-hIY" eventType="touchUpInside" id="PPc-wi-bZ8"/>
+                                            <segue destination="Eei-6T-tte" kind="presentation" id="tTP-lV-fst"/>
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myMeds-1" translatesAutoresizingMaskIntoConstraints="NO" id="s4Q-Lf-joT">
@@ -316,6 +317,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="D8p-GH-Nkf"/>
                     </view>
+                    <navigationItem key="navigationItem" id="QqR-XS-292"/>
                     <connections>
                         <outlet property="yearLabel" destination="hJl-8y-IlF" id="A77-0B-IoU"/>
                         <outlet property="yearMedGraph" destination="8hb-L6-iRL" id="Inf-Ar-viG"/>
@@ -349,18 +351,20 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SKd-7d-qmM">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="medBlue" translatesAutoresizingMaskIntoConstraints="NO" id="1xH-Ey-TUJ" userLabel="BlueBackground">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="medBlue" translatesAutoresizingMaskIntoConstraints="NO" id="1xH-Ey-TUJ" userLabel="BlueBackground">
                                                 <rect key="frame" x="-93" y="238" width="600" height="297"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="297" id="ZzK-bs-1J9"/>
+                                                </constraints>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Menu_BG" translatesAutoresizingMaskIntoConstraints="NO" id="LCy-Ia-Nf1">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="199"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="bPQ-HG-tYb" userLabel="HeaderStack">
-                                                <rect key="frame" x="22" y="38" width="451" height="145"/>
+                                                <rect key="frame" x="22" y="38" width="433" height="66"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r36-Y5-L4A" userLabel="Home button">
-                                                        <rect key="frame" x="0.0" y="0.0" width="83" height="145"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="83" height="66"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="83" id="eSl-ef-fmq"/>
                                                         </constraints>
@@ -370,7 +374,7 @@
                                                         </connections>
                                                     </button>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myMeds-1" translatesAutoresizingMaskIntoConstraints="NO" id="2AO-mi-nOm">
-                                                        <rect key="frame" x="163" y="23" width="288" height="122"/>
+                                                        <rect key="frame" x="163" y="23" width="270" height="43"/>
                                                     </imageView>
                                                 </subviews>
                                                 <constraints>
@@ -378,10 +382,10 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="s0h-uB-EhZ" userLabel="Add/Edit">
-                                                <rect key="frame" x="20" y="217" width="374" height="0.0"/>
+                                                <rect key="frame" x="28.5" y="138" width="357" height="79"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bUH-Nf-ohR" userLabel="Add">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="357" height="79"/>
                                                         <state key="normal" image="Add new"/>
                                                         <connections>
                                                             <segue destination="NLo-9v-eGk" kind="show" identifier="addMedSegue" id="NFb-ks-vAv"/>
@@ -390,10 +394,10 @@
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eAj-4S-mWl" userLabel="MedCardView">
-                                                <rect key="frame" x="0.0" y="238" width="458" height="297"/>
+                                                <rect key="frame" x="0.0" y="238" width="440" height="297"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="52" translatesAutoresizingMaskIntoConstraints="NO" id="zSc-KG-vax">
-                                                        <rect key="frame" x="30" y="-9" width="398" height="315"/>
+                                                        <rect key="frame" x="30" y="9" width="380" height="279"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="top" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="WnD-0n-6pH" userLabel="ClockStack">
                                                                 <rect key="frame" x="0.0" y="0.0" width="287" height="135"/>
@@ -433,10 +437,10 @@
                                                                 </constraints>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yFQ-Cb-J8k" userLabel="CheckStack">
-                                                                <rect key="frame" x="0.0" y="187" width="380" height="128"/>
+                                                                <rect key="frame" x="0.0" y="187" width="380" height="92"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00 Am" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bv-Km-FrJ" userLabel="MedicineTime">
-                                                                        <rect key="frame" x="0.0" y="25" width="250" height="78"/>
+                                                                        <rect key="frame" x="0.0" y="25" width="250" height="42"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="DrQ-oL-n8u"/>
                                                                         </constraints>
@@ -445,7 +449,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XcF-3B-oWj" userLabel="CheckButton">
-                                                                        <rect key="frame" x="250" y="0.0" width="130" height="128"/>
+                                                                        <rect key="frame" x="250" y="0.0" width="130" height="92"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="130" id="o6f-Nc-lGp"/>
                                                                         </constraints>
@@ -477,7 +481,7 @@
                                                 </connections>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZyL-3K-KSt" userLabel="MedSched">
-                                                <rect key="frame" x="20" y="550" width="374" height="94"/>
+                                                <rect key="frame" x="28.5" y="550" width="357" height="94"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="94" id="6Wp-0i-rJS"/>
                                                 </constraints>
@@ -486,22 +490,16 @@
                                                     <segue destination="egq-W1-AfT" kind="show" id="6jt-VB-l3j"/>
                                                 </connections>
                                             </button>
-                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="det-5R-9ty" userLabel="Footer">
-                                                <rect key="frame" x="20" y="681" width="374" height="168"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFo-Du-NM0" userLabel="MyMedsButton">
-                                                        <rect key="frame" x="0.0" y="0.0" width="138" height="168"/>
-                                                        <state key="normal" title="Button" image="myMeds"/>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e6P-vQ-dU2" userLabel="MyLogButton">
-                                                        <rect key="frame" x="188" y="0.0" width="186" height="168"/>
-                                                        <state key="normal" title="Button" image="myLog"/>
-                                                        <connections>
-                                                            <segue destination="75M-Ul-Fkj" kind="presentation" id="sYE-w9-QPI"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e6P-vQ-dU2" userLabel="MyLogButton">
+                                                <rect key="frame" x="160" y="652" width="120" height="84"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="74" id="a5o-zh-Aa2"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="myLog"/>
+                                                <connections>
+                                                    <segue destination="75M-Ul-Fkj" kind="presentation" id="sYE-w9-QPI"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -509,22 +507,23 @@
                                             <constraint firstItem="eAj-4S-mWl" firstAttribute="top" secondItem="SKd-7d-qmM" secondAttribute="top" constant="238" id="58X-lv-Fwp"/>
                                             <constraint firstItem="ZyL-3K-KSt" firstAttribute="centerX" secondItem="s0h-uB-EhZ" secondAttribute="centerX" id="59h-Ea-oPB"/>
                                             <constraint firstAttribute="height" constant="1000" id="83I-UC-mSi"/>
-                                            <constraint firstItem="det-5R-9ty" firstAttribute="top" secondItem="SKd-7d-qmM" secondAttribute="top" constant="681" id="9IT-Od-yiG"/>
+                                            <constraint firstItem="e6P-vQ-dU2" firstAttribute="top" secondItem="ZyL-3K-KSt" secondAttribute="bottom" constant="8" id="8wL-Az-sfc"/>
+                                            <constraint firstAttribute="bottom" secondItem="e6P-vQ-dU2" secondAttribute="bottom" constant="264" id="ByW-97-gFh"/>
+                                            <constraint firstItem="e6P-vQ-dU2" firstAttribute="centerX" secondItem="ZyL-3K-KSt" secondAttribute="centerX" constant="13" id="Dsw-YW-hSU"/>
                                             <constraint firstItem="eAj-4S-mWl" firstAttribute="top" secondItem="s0h-uB-EhZ" secondAttribute="bottom" constant="21" id="Gih-aU-sGV"/>
                                             <constraint firstItem="eAj-4S-mWl" firstAttribute="top" secondItem="s0h-uB-EhZ" secondAttribute="bottom" constant="21" id="KQp-wS-0m3"/>
-                                            <constraint firstItem="det-5R-9ty" firstAttribute="trailing" secondItem="ZyL-3K-KSt" secondAttribute="trailing" id="PUj-WY-cOd"/>
+                                            <constraint firstItem="1xH-Ey-TUJ" firstAttribute="leading" secondItem="SKd-7d-qmM" secondAttribute="leading" constant="-93" id="NeL-c0-mbS"/>
+                                            <constraint firstItem="e6P-vQ-dU2" firstAttribute="centerX" secondItem="1xH-Ey-TUJ" secondAttribute="centerX" constant="13" id="P0d-V1-8vS"/>
                                             <constraint firstItem="LCy-Ia-Nf1" firstAttribute="top" secondItem="SKd-7d-qmM" secondAttribute="top" id="Rt9-Sm-Sdc"/>
                                             <constraint firstItem="LCy-Ia-Nf1" firstAttribute="leading" secondItem="SKd-7d-qmM" secondAttribute="leading" id="Sfl-5E-raD"/>
-                                            <constraint firstAttribute="trailing" secondItem="det-5R-9ty" secondAttribute="trailing" constant="20" id="WnR-ih-unK"/>
                                             <constraint firstItem="s0h-uB-EhZ" firstAttribute="centerX" secondItem="SKd-7d-qmM" secondAttribute="centerX" id="XG1-Xj-R5w"/>
                                             <constraint firstItem="ZyL-3K-KSt" firstAttribute="top" secondItem="eAj-4S-mWl" secondAttribute="bottom" constant="15" id="Xgs-F7-vhv"/>
-                                            <constraint firstItem="det-5R-9ty" firstAttribute="width" secondItem="ZyL-3K-KSt" secondAttribute="width" id="Yss-pH-ZjJ"/>
+                                            <constraint firstItem="1xH-Ey-TUJ" firstAttribute="top" secondItem="eAj-4S-mWl" secondAttribute="top" id="YKG-IZ-lvS"/>
                                             <constraint firstAttribute="trailing" secondItem="LCy-Ia-Nf1" secondAttribute="trailing" id="dXM-yc-efH"/>
                                             <constraint firstItem="s0h-uB-EhZ" firstAttribute="top" secondItem="LCy-Ia-Nf1" secondAttribute="bottom" constant="18" id="e6b-C1-g5D"/>
                                             <constraint firstItem="bPQ-HG-tYb" firstAttribute="leading" secondItem="SKd-7d-qmM" secondAttribute="leading" constant="22" id="fcb-Y1-b8b"/>
                                             <constraint firstItem="eAj-4S-mWl" firstAttribute="leading" secondItem="SKd-7d-qmM" secondAttribute="leading" id="lES-et-bio"/>
                                             <constraint firstItem="bPQ-HG-tYb" firstAttribute="top" secondItem="SKd-7d-qmM" secondAttribute="top" constant="38" id="nGB-Y4-7yk"/>
-                                            <constraint firstItem="det-5R-9ty" firstAttribute="top" secondItem="ZyL-3K-KSt" secondAttribute="bottom" constant="37" id="pQj-sr-HX4"/>
                                             <constraint firstItem="eAj-4S-mWl" firstAttribute="centerX" secondItem="bPQ-HG-tYb" secondAttribute="centerX" constant="-18.5" id="sMp-26-VzT"/>
                                             <constraint firstItem="s0h-uB-EhZ" firstAttribute="trailing" secondItem="ZyL-3K-KSt" secondAttribute="trailing" id="sYJ-JW-nt1"/>
                                         </constraints>
@@ -568,7 +567,9 @@
         <!--FullMedicationList-->
         <scene sceneID="xVs-Hy-xXE">
             <objects>
-                <viewControllerPlaceholder storyboardName="FullMedicationList" id="egq-W1-AfT" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="FullMedicationList" id="egq-W1-AfT" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="kNc-2m-uIR"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dt5-oG-XRG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2710" y="414"/>
@@ -596,12 +597,12 @@
         <image name="home-white" width="400" height="312"/>
         <image name="medBlue" width="136" height="40"/>
         <image name="myLog" width="66" height="84"/>
-        <image name="myMeds" width="82" height="84"/>
         <image name="myMeds-1" width="144" height="42"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="tTP-lV-fst"/>
         <segue reference="o3N-z0-r3r"/>
         <segue reference="Gvb-cv-EC0"/>
-        <segue reference="sYE-w9-QPI"/>
+        <segue reference="g2W-fu-jIw"/>
     </inferredMetricsTieBreakers>
 </document>
