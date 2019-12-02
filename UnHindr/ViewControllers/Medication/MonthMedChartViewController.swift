@@ -158,7 +158,7 @@ class MonthMedChartViewController: UIViewController {
                         i += 1
                     }
                     // finalize setup of graph after the data has been inputted
-                    let set = BarChartDataSet(values: self.GraphData, label: "Medication Graph")
+                    let set = BarChartDataSet(values: self.GraphData, label: "Medication Taken")
                     set.colors = [UIColor.init(displayP3Red: 0/255, green: 128/255, blue: 255/255, alpha: 1)]
                     let chartData = BarChartData(dataSet: set)
                     self.monthChart.fitBars = true
