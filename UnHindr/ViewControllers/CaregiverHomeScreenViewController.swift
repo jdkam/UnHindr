@@ -4,7 +4,7 @@
  Date created: [14/11/2019]
  Date updated: [14/11/2019]
  Updater name: [Sina]
- File description: [Controls the Home Menu for CareGiver]
+ Class description: [Controls the Home Menu for CareGiver]
  */
 
 import UIKit

@@ -4,7 +4,7 @@ Creators: [Allan]
 Date created: [23/11/2019]
 Date updated: [30/11/2019]
 Updater name: [Allan]
-File description: [Defines the template for each cell under full medication list]
+Class description: [Defines the template for each cell under full medication list]
 */
 
 import UIKit

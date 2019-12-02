@@ -4,7 +4,7 @@
  Date created: [10/11/2019]
  Date updated: [10/11/2019]
  Updater name: [Jake]
- File description: [Controls the MotorGame View]
+ Class description: [Controls the MotorGame View]
  */
 
 import UIKit

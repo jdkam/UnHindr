@@ -1,9 +1,11 @@
-//File: [MotorGameMonthlyViewController]
-//Creators: [Johnston]
-//Date created: [11/17/2019]
-//Updater name: [Johnston]
-//File description: [Reads cognitive data values from fireabse]
-
+/*
+File: [MotorGameMonthlyViewController.swift]
+Creators: [Sina]
+Date created: [11/17/2019]
+Date updated: [22/11/2019]
+Updater name: [Sina]
+Class Description: [Reads cognitive data values from fireabse]
+*/
 
 import UIKit
 import Foundation

@@ -4,7 +4,7 @@ Creators: [Allan]
 Date created: [11/23/2019]
 Date updated: [11/30/2019]
 Updater name: [Allan]
-File description: [Controls the full medication list]
+Class description: [Controls the full medication list]
 */
 
 import UIKit

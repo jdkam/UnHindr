@@ -4,7 +4,7 @@
  Date created: [28/10/2018]
  Date updated: [28/10/2019]
  Updater name: [Allan]
- File description: [*Allan can you explain what this file is*]
+ Class description: [*Allan can you explain what this file is*]
  */
 
 import UIKit

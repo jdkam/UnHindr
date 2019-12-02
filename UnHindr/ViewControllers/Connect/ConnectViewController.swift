@@ -4,7 +4,7 @@
  Date created: [16/11/2019]
  Date updated: [16/11/2019]
  Updater name: [Sina]
- File description: [Controls connectivity features]
+ Class description: [Controls connectivity features]
  */
 
 import UIKit
@@ -20,10 +20,6 @@ class ConnectViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var connectionsTable: UITableView!
     @IBOutlet weak var connectEmail: UITextField!
-    
-    //list of user's connections
-//    var list = [""]
-
 
     //determines number of sections for UITableView
     func numberOfSections(in tableView: UITableView) -> Int {

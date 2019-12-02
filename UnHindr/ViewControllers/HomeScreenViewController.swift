@@ -4,7 +4,7 @@
  Date created: [31/10/2019]
  Date updated: [3/11/2019]
  Updater name: [Sina]
- File description: [Controls the Home Menu Navigation]
+ Class description: [Controls the Home Menu Navigation]
  */
 
 import Foundation

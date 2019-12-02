@@ -4,7 +4,7 @@
  Date created: [20/11/2019]
  Date updated: [22/11/2019]
  Updater name: [Sina]
- File description: [Patient Class description]
+ Class description: [Patient Class description]
  */
 
 import Foundation

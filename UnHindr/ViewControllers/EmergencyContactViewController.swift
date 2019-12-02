@@ -4,7 +4,7 @@
  Date created: [23/11/2019]
  Date updated: [24/11/2019]
  Updater name: [Jake]
- File description: [Controls functionality of the Emergency Contact screen]
+ Class description: [Controls functionality of the Emergency Contact screen]
  */
 
 import Foundation
