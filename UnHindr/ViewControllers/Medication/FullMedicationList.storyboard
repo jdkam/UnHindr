@@ -143,7 +143,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="75" id="hnu-dg-DAI"/>
                                         </constraints>
-                                        <state key="normal" title="Button" image="Back3"/>
+                                        <state key="normal" title="Button" image="backIcon"/>
                                         <connections>
                                             <segue destination="8y4-Xf-QDP" kind="show" id="ucv-X5-9t3"/>
                                         </connections>
@@ -181,6 +181,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Back3" width="237" height="237"/>
+        <image name="backIcon" width="400" height="400"/>
     </resources>
 </document>

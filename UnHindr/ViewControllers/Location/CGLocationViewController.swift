@@ -1,10 +1,12 @@
-//
-//  CGLocationViewController.swift
-//  UnHindr
-//
-//  Created by Sina Behrouz on 2019-11-30.
-//  Copyright © 2019 Sigma. All rights reserved.
-//
+/*
+ File: [CGLocationViewController.swift]
+ Creators: [Sina]
+ Date created: [20/11/2019]
+ Date updated: [22/11/2019]
+ Updater name: [Sina]
+ File description: [Displays physical location of Patient]
+ */
+
 
 
 import UIKit
@@ -33,27 +35,34 @@ class CGLocationViewController: UIViewController {
         Caregivermap.showsUserLocation = true
         /***grab the query of the user***/
         
+        
+        // checks if the user_ID is empty
         if(user_ID == ""){
             print("*****")
             print("userID is null" )
-            Services.transitionHomeErrMsg(self, errTitle: "Please pick a User", errMsg: "")//Error message if no patient is selected
+            //Error message if no patient is selected
+            Services.transitionHomeErrMsg(self, errTitle: "Please pick a User", errMsg: "")
         }else{
+            // the user_ID has been selected
             print("USER_ID DOES NOT EQUAL NULL")
             print(user_ID)
             //at this point we have the user ref
+            // gets the location from firebase
             getLocationDoc(user_ID) { (ret) in
                 if !ret {
                     print("Error fetching patient location data")//Error message if patient has not pass any location data to firebase
                 }else{
                     if (self.locationSnapshot!.count != 0){
+                        //get patient coordinates from firebase
                         self.latitude = self.locationSnapshot!.documents[0].get("latitude") as! Double
-                        self.longitude = self.locationSnapshot!.documents[0].get("longitude") as! Double//get patient coordinate
+                        self.longitude = self.locationSnapshot!.documents[0].get("longitude") as! Double
                         self.Caregivermap.delegate = self
                         let patient = Patient(title: "Patient",
                                               locationName: "Patient",
                                               discipline: "none",
                                               coordinate: CLLocationCoordinate2D(latitude: self.latitude, longitude: self.longitude))
-                        self.Caregivermap.addAnnotation(patient)//add pin on patient location in map.
+                        //add pin on patient location in map.
+                        self.Caregivermap.addAnnotation(patient)
                     }
                     else{
                         Services.showAlert("Error", "There is no recorded patient data", vc: self)
@@ -76,6 +85,7 @@ class CGLocationViewController: UIViewController {
         // Do any additional setup after loading the view.
     }//viewDidLoad
     
+    // The button when presses goes to the patients current location
     @IBAction func centerAtPatient(_ sender: UIButton) {
         let coordinateRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: latitude, longitude: longitude),latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
         Caregivermap.setRegion(coordinateRegion, animated: true)
@@ -109,6 +119,7 @@ class CGLocationViewController: UIViewController {
     
 }
 
+// Intializes the map for viewing
 extension CGLocationViewController: MKMapViewDelegate {
 
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {//marker configeration

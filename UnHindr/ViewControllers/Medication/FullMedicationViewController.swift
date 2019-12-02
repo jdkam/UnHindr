@@ -17,7 +17,8 @@ class FullMedicationViewController: UIViewController {
     @IBOutlet weak var medTableView: UITableView!
     
     // Static reference to the current user's medication plan
-    let medicationPlanRef = Services.fullUserRef.document(Services.userRef!).collection(Services.medPlanName)
+    let (medicationPlanRef, _) = Services.checkUserIDMed()
+//    let medicationPlanRef = Services.fullUserRef.document(Services.userRef!).collection(Services.medPlanName)
     
     // Create the batch writing
     let batch = Services.db.batch()
@@ -33,9 +34,18 @@ class FullMedicationViewController: UIViewController {
         medTableView.dataSource = self
         medTableView.delegate = self
         
-        getAllMedicationPlans(Services.userRef!) { (success) in
-            if (success) {
-                self.medTableView.reloadData()
+        if (user_ID == ""){
+            getAllMedicationPlans(Services.userRef!) { (success) in
+                if (success) {
+                    self.medTableView.reloadData()
+                }
+            }
+        }
+        else {
+            getAllMedicationPlans(user_ID) { (success) in
+                if (success) {
+                    self.medTableView.reloadData()
+                }
             }
         }
         
@@ -84,20 +94,18 @@ class FullMedicationViewController: UIViewController {
         
         // Parse the reminder time
         let timeString = medPlan.get("ReminderTime") as? String
-        var arr = timeString!.components(separatedBy: [":", " "])
+        var arr = timeString!.components(separatedBy: [":"])
+        var amPm = "AM"
         if (arr.count == 2){
             if Int(arr[0])! > 12 {
                 arr[0] = String(Int(arr[0])! - 12)
-                arr.append("PM")
-            }
-            else {
-                arr.append("AM")
+                amPm = "PM"
             }
         }
         else {
             print("Error parsing reminder time from firestore")
         }
-        let timeStr = arr[0] + ":" + arr[1] + " " + arr[2]
+        let timeStr = arr[0] + ":" + arr[1] + " " + amPm
         
         // Parse the days of the week
         let dayArr = medPlan.get("Day") as! [String]
@@ -136,30 +144,32 @@ extension FullMedicationViewController: UITableViewDataSource, UITableViewDelega
             fatalError("The dequeued cell is not an instance of MedicationTableViewCell")
         }
         
-        let med = self.medList?.documents[indexPath.row]
-        
-        let medPlan = generatePlan(medPlan: med!)
-        // Configure cell
-        cell.medicationNameLabel.text = medPlan.medName
-        cell.dosageLabel.text = "Dosage: \(medPlan.dosage)"
-        cell.quantityLabel.text = "Quantity: \(medPlan.quantity)"
-        // Parse the reminder time
-        cell.reminderTimeLabel.text = medPlan.ReminderTime
-        var dayOfWeek: String = ""
-        for i in 0..<medPlan.Day.count{
-            // Grab additional characters for days that start with T or S
-            let prefix = String(medPlan.Day[i].prefix(1))
-            if (prefix == "T" || prefix == "S") {
-                dayOfWeek.append(String(medPlan.Day[i].prefix(2)))
+        if (self.medList!.count >= 1){
+            let med = self.medList?.documents[indexPath.row]
+            
+            let medPlan = generatePlan(medPlan: med!)
+            // Configure cell
+            cell.medicationNameLabel.text = medPlan.medName
+            cell.dosageLabel.text = "Dosage: \(medPlan.dosage)"
+            cell.quantityLabel.text = "Quantity: \(medPlan.quantity)"
+            // Parse the reminder time
+            cell.reminderTimeLabel.text = medPlan.ReminderTime
+            var dayOfWeek: String = ""
+            for i in 0..<medPlan.Day.count{
+                // Grab additional characters for days that start with T or S
+                let prefix = String(medPlan.Day[i].prefix(1))
+                if (prefix == "T" || prefix == "S") {
+                    dayOfWeek.append(String(medPlan.Day[i].prefix(2)))
+                }
+                else {
+                    dayOfWeek.append(String(medPlan.Day[i].prefix(1)))
+                }
+                if (i != medPlan.Day.count - 1) {
+                    dayOfWeek.append(",")
+                }
             }
-            else {
-                dayOfWeek.append(String(medPlan.Day[i].prefix(1)))
-            }
-            if (i != medPlan.Day.count - 1) {
-                dayOfWeek.append(",")
-            }
+            cell.dayOfWeekLabel.text = dayOfWeek
         }
-        cell.dayOfWeekLabel.text = dayOfWeek
         
         return cell
     }

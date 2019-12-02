@@ -227,7 +227,7 @@ class UnHindrUITests: XCTestCase {
         XCTAssert(app.buttons["Connect"].waitForExistence(timeout: 5))
         app.buttons["Connect"].tap()
         
-        XCTAssert(app.buttons["addfriend"].exists)
+        XCTAssert(app.buttons["addfriend"].waitForExistence(timeout: 5))
         app.buttons["addfriend"].tap()
         XCTAssert(app.alerts["The Entered Email Does not Exist!"].buttons["Ok"].waitForExistence(timeout: 5))
         app.alerts["The Entered Email Does not Exist!"].buttons["Ok"].tap()

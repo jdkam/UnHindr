@@ -36,6 +36,7 @@
 		707E9F7523827F85006A3AF5 /* MoodGraphsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707E9F7223827F85006A3AF5 /* MoodGraphsViewController.swift */; };
 		707E9F7623827F85006A3AF5 /* YearMoodGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707E9F7323827F85006A3AF5 /* YearMoodGraphViewController.swift */; };
 		70A8676A2394A16100BDC231 /* GraphsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A867692394A16100BDC231 /* GraphsUITests.swift */; };
+		70A8676C2394B04C00BDC231 /* CaregiverGraphsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A8676B2394B04C00BDC231 /* CaregiverGraphsUITests.swift */; };
 		70B46FB02389E4B80088D1FD /* CaregiverMedicationScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70B46FAF2389E4B80088D1FD /* CaregiverMedicationScreen.storyboard */; };
 		70B46FB42389F2440088D1FD /* CaregiverPatientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B46FB32389F2440088D1FD /* CaregiverPatientsViewController.swift */; };
 		70C1FCEB23887E0600BF1CC6 /* MonthMedChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C1FCEA23887E0600BF1CC6 /* MonthMedChartViewController.swift */; };
@@ -158,6 +159,7 @@
 		707E9F7223827F85006A3AF5 /* MoodGraphsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodGraphsViewController.swift; sourceTree = "<group>"; };
 		707E9F7323827F85006A3AF5 /* YearMoodGraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YearMoodGraphViewController.swift; sourceTree = "<group>"; };
 		70A867692394A16100BDC231 /* GraphsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphsUITests.swift; sourceTree = "<group>"; };
+		70A8676B2394B04C00BDC231 /* CaregiverGraphsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaregiverGraphsUITests.swift; sourceTree = "<group>"; };
 		70B46FAF2389E4B80088D1FD /* CaregiverMedicationScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CaregiverMedicationScreen.storyboard; sourceTree = "<group>"; };
 		70B46FB32389F2440088D1FD /* CaregiverPatientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaregiverPatientsViewController.swift; sourceTree = "<group>"; };
 		70C1FCEA23887E0600BF1CC6 /* MonthMedChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthMedChartViewController.swift; sourceTree = "<group>"; };
@@ -481,6 +483,7 @@
 				CD4A840C23932C6E00189605 /* EmergContactUITests.swift */,
 				81A7A802239492E7000129FB /* ChatUITests.swift */,
 				70A867692394A16100BDC231 /* GraphsUITests.swift */,
+				70A8676B2394B04C00BDC231 /* CaregiverGraphsUITests.swift */,
 			);
 			path = UnHindrUITests;
 			sourceTree = "<group>";
@@ -490,10 +493,10 @@
 			children = (
 				9DDAA7C32394806000BB718A /* AddMed.storyboard */,
 				9D627A0D236FD4240027B6B7 /* MedicationHomeViewController.swift */,
+				7013CBB82370D00E00A1231F /* ChartsViewController.swift */,
 				9DFB75BB236F7515006321B8 /* AddMedicationViewController.swift */,
 				2D5BBA762389E7B20074A202 /* FullMedicationViewController.swift */,
 				2D5BBA782389F4530074A202 /* MedicationTableViewCell.swift */,
-				7013CBB82370D00E00A1231F /* ChartsViewController.swift */,
 				70C1FCEA23887E0600BF1CC6 /* MonthMedChartViewController.swift */,
 				2D7A40E5238B316100958659 /* Medication.swift */,
 				2D2E7E792393617900BC32A9 /* FullMedicationList.storyboard */,
@@ -898,6 +901,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DFA139F2370F17D00F8B7B5 /* UnHindrUITests.swift in Sources */,
+				70A8676C2394B04C00BDC231 /* CaregiverGraphsUITests.swift in Sources */,
 				CD4A840D23932C6E00189605 /* EmergContactUITests.swift in Sources */,
 				70A8676A2394A16100BDC231 /* GraphsUITests.swift in Sources */,
 				9E286A352382968A00473055 /* MotGameUITests.swift in Sources */,
