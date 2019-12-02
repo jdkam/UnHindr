@@ -121,7 +121,9 @@ class SignUpViewController: UIViewController , UIPickerViewDataSource,UIPickerVi
                                                               "dob": date!,
                                                               "uid": self.UID,
                                                               "MedPlan": [],
-                                                              "MedPlanTimestamp": Timestamp.init()
+                                                              "MedPlanTimestamp": Timestamp.init(),
+                                                              "MedHistoryTimestamp":
+                                                              Timestamp.init()
                                                               ])
                     //go back to login
                     let storyboard = UIStoryboard(name: "Login", bundle: nil)
