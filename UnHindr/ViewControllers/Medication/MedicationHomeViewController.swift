@@ -167,7 +167,7 @@ class MedicationHomeViewController: UIViewController, NewMedDelegate {
     // Precondition:
     //          1. Needs to be public function
     // Input:
-    //          1. Data passed from MedicationViewController using protocols
+    //          1. Data passed from AddMedicationViewController using protocols
     // Output:
     //          1. Sorts the usedCards array
     func onMedAdded(documentID: String) {
@@ -332,7 +332,8 @@ class MedicationHomeViewController: UIViewController, NewMedDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addMedSegue" {
-            let addMedVC: MedicationViewController = segue.destination as! MedicationViewController
+
+            let addMedVC: AddMedicationViewController = segue.destination as! AddMedicationViewController
             addMedVC.delegate = self
         }
     }
