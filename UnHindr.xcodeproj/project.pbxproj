@@ -101,6 +101,7 @@
 		9EE42465237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE42464237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift */; };
 		A2B5644B1E4149E09D599F82 /* Pods_UnHindr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7EAE4472764465EE4B52BD6 /* Pods_UnHindr.framework */; };
 		CD4A840D23932C6E00189605 /* EmergContactUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4A840C23932C6E00189605 /* EmergContactUITests.swift */; };
+		CD63FB822394B776007A6CF4 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD63FB812394B776007A6CF4 /* NotificationManager.swift */; };
 		CDBC4013236E4FE8008934AF /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDBC4012236E4FE8008934AF /* Settings.storyboard */; };
 		CDBC4016236E501B008934AF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBC4015236E501B008934AF /* SettingsViewController.swift */; };
 		CDD946F4238B41C600A865D0 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD946F3238B41C600A865D0 /* SignUpViewController.swift */; };
@@ -228,6 +229,7 @@
 		9EBEEDDC2393602C0065DFEB /* CGLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGLocationViewController.swift; sourceTree = "<group>"; };
 		9EE42464237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaregiverHomeScreenViewController.swift; sourceTree = "<group>"; };
 		CD4A840C23932C6E00189605 /* EmergContactUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergContactUITests.swift; sourceTree = "<group>"; };
+		CD63FB812394B776007A6CF4 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		CDBC4012236E4FE8008934AF /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		CDBC4015236E501B008934AF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		CDD946F3238B41C600A865D0 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -452,6 +454,7 @@
 				9DF3F8C62367D880003CF8B9 /* GoogleService-Info.plist */,
 				9DF3F8A42367D82D003CF8B9 /* Info.plist */,
 				CDECEE9A2389D29D0074620D /* EmergencyContact.storyboard */,
+				CD63FB812394B776007A6CF4 /* NotificationManager.swift */,
 			);
 			path = UnHindr;
 			sourceTree = "<group>";
@@ -486,8 +489,6 @@
 			isa = PBXGroup;
 			children = (
 				9DDAA7C32394806000BB718A /* AddMed.storyboard */,
-				2D2E7E792393617900BC32A9 /* FullMedicationList.storyboard */,
-				2D7A40E5238B316100958659 /* Medication.swift */,
 				9D627A0D236FD4240027B6B7 /* MedicationHomeViewController.swift */,
 				9DFB75BB236F7515006321B8 /* AddMedicationViewController.swift */,
 				2D5BBA762389E7B20074A202 /* FullMedicationViewController.swift */,
@@ -832,6 +833,7 @@
 				707E9F7523827F85006A3AF5 /* MoodGraphsViewController.swift in Sources */,
 				70C1FCEF238884E700BF1CC6 /* YearMedChartViewController.swift in Sources */,
 				9EE42465237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift in Sources */,
+				CD63FB822394B776007A6CF4 /* NotificationManager.swift in Sources */,
 				9802BD4C23937DC900D89633 /* WellnessGraphsViewController.swift in Sources */,
 				9DF3F89B2367D826003CF8B9 /* LoginViewController.swift in Sources */,
 				9D6C641C2378B50F00F0C058 /* Constants.swift in Sources */,
@@ -1077,15 +1079,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4UBP2K877A;
 				INFOPLIST_FILE = UnHindr/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Sigma.UnHindr5;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Sigma.UnHg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -1099,15 +1101,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4UBP2K877A;
 				INFOPLIST_FILE = UnHindr/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Sigma.UnHindr5;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Sigma.UnHg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;

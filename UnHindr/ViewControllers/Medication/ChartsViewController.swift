@@ -327,9 +327,4 @@ class ChartsViewController: UIViewController {
         }
     }
     
-    @IBAction func homeButton(_ sender: Any) {
-        Services.transitionHome(self)
-    }
-    
-    
  }
