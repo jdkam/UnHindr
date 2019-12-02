@@ -13,7 +13,7 @@ import FirebaseFirestore
 public var user_ID: String = ""
 
 class ConnectViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+    var list: [String] = []
     let connectionRef = Services.fullUserRef.document(Services.userRef!).collection(Services.connectionName)
     
     var connectionSnapshot: QuerySnapshot?
