@@ -29,31 +29,31 @@ class CGLocationViewController: UIViewController {
         locationManager.requestWhenInUseAuthorization()//Ask user for authorisation.
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.distanceFilter = kCLDistanceFilterNone
-        locationManager.startUpdatingLocation()
+        locationManager.startUpdatingLocation()//Initialize location for mapview
         Caregivermap.showsUserLocation = true
         /***grab the query of the user***/
         
         if(user_ID == ""){
             print("*****")
             print("userID is null" )
-            Services.transitionHomeErrMsg(self, errTitle: "Please pick a User", errMsg: "")
+            Services.transitionHomeErrMsg(self, errTitle: "Please pick a User", errMsg: "")//Error message if no patient is selected
         }else{
             print("USER_ID DOES NOT EQUAL NULL")
             print(user_ID)
             //at this point we have the user ref
             getLocationDoc(user_ID) { (ret) in
                 if !ret {
-                    print("Error fetching patient location data")
+                    print("Error fetching patient location data")//Error message if patient has not pass any location data to firebase
                 }else{
                     if (self.locationSnapshot!.count != 0){
                         self.latitude = self.locationSnapshot!.documents[0].get("latitude") as! Double
-                        self.longitude = self.locationSnapshot!.documents[0].get("longitude") as! Double
+                        self.longitude = self.locationSnapshot!.documents[0].get("longitude") as! Double//get patient coordinate
                         self.Caregivermap.delegate = self
                         let patient = Patient(title: "Patient",
                                               locationName: "Patient",
                                               discipline: "none",
                                               coordinate: CLLocationCoordinate2D(latitude: self.latitude, longitude: self.longitude))
-                        self.Caregivermap.addAnnotation(patient)
+                        self.Caregivermap.addAnnotation(patient)//add pin on patient location in map.
                     }
                     else{
                         Services.showAlert("Error", "There is no recorded patient data", vc: self)
@@ -79,7 +79,7 @@ class CGLocationViewController: UIViewController {
     @IBAction func centerAtPatient(_ sender: UIButton) {
         let coordinateRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: latitude, longitude: longitude),latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
         Caregivermap.setRegion(coordinateRegion, animated: true)
-        //Recenter to user's location
+        //Recenter to patient's location
     }
     
     
@@ -110,20 +110,16 @@ class CGLocationViewController: UIViewController {
 }
 
 extension CGLocationViewController: MKMapViewDelegate {
-    // 1
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        // 2
+
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {//marker configeration
         guard let annotation = annotation as? Patient else { return nil }
-        // 3
         let identifier = "marker"
         var view: MKMarkerAnnotationView
-        // 4
         if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
             as? MKMarkerAnnotationView {
             dequeuedView.annotation = annotation
             view = dequeuedView
         } else {
-            // 5
             view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
             view.canShowCallout = true
             view.calloutOffset = CGPoint(x: -5, y: 5)
@@ -133,7 +129,7 @@ extension CGLocationViewController: MKMapViewDelegate {
     }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView,
-                 calloutAccessoryControlTapped control: UIControl) {
+                 calloutAccessoryControlTapped control: UIControl) {//transit for app to map app to start navigation
         let location = view.annotation as! Patient
         let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
         location.mapItem().openInMaps(launchOptions: launchOptions)
