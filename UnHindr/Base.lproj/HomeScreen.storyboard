@@ -101,8 +101,9 @@
                                                     <segue destination="i16-AT-Re1" kind="presentation" id="lSx-9j-Ebp"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ch-IM-MQm" userLabel="chat">
+                                            <button opaque="NO" contentMode="scaleAspectFit" restorationIdentifier="Chat" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ch-IM-MQm" userLabel="Chat">
                                                 <rect key="frame" x="176.66666666666663" y="0.0" width="194.33333333333337" height="171.66666666666666"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="Chat" label="Chat"/>
                                                 <state key="normal" image="Chat"/>
                                                 <connections>
                                                     <segue destination="Lae-QK-ce8" kind="show" id="ZLK-Gz-84y"/>
@@ -169,7 +170,7 @@
         <!--Chat-->
         <scene sceneID="XbC-EY-4jT">
             <objects>
-                <viewControllerPlaceholder storyboardName="Chat" id="Lae-QK-ce8" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Chat" id="Lae-QK-ce8" userLabel="Chat" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="5qq-gA-D5j"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gvm-aC-17F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
