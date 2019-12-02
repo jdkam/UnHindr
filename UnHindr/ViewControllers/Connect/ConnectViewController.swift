@@ -25,7 +25,6 @@ class ConnectViewController: UIViewController, UITableViewDelegate, UITableViewD
 //    var list = [""]
 
 
-
     //determines number of sections for UITableView
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
