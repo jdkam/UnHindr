@@ -4,7 +4,7 @@
  Date created: [2/11/2019]
  Date updated: [3/11/2019]
  Updater name: [Jake]
- File description: [Controls functionality for Profile feature]
+ Class description: [Controls functionality for Profile feature]
  */
 
 //IMPORT FRAMEWORKS

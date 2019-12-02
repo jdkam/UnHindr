@@ -4,7 +4,7 @@
  Date created: [30/11/2019]
  Date updated: [1/12/2019]
  Updater name: [Jake]
- File description: [Controls functionality for scheduling local notifications]
+ Class description: [Controls functionality for scheduling local notifications]
  */
 
 import UIKit

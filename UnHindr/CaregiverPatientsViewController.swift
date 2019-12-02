@@ -1,10 +1,11 @@
-//
-//  CaregiverPatientsViewController.swift
-//  UnHindr
-//
-//  Created by Johnston Yang on 11/23/19.
-//  Copyright © 2019 Sigma. All rights reserved.
-//
+/*
+File: [CaregiversPatientsViewController.swift]
+Creators: [Sina]
+Date created: [14/11/2019]
+Date updated: [14/11/2019]
+Updater name: [Sina]
+Class description: [Controls the Home Menu for CareGiver's Patients]
+*/
 
 import UIKit
 import FirebaseFirestore

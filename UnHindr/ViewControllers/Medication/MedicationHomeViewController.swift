@@ -4,7 +4,7 @@
  Date created: [03/11/2019]
  Date updated: [17/11/2019]
  Updater name: [Allan, Jordan]
- File description: [Controls the MyMeds screen in UnHindr]
+ Class description: [Controls the MyMeds screen in UnHindr]
  */
 
 import UIKit

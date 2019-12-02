@@ -4,7 +4,7 @@
  Date created: [28/10/2019]
  Date updated: [15/11/2019]
  Updater name: [Sina]
- File description: [Controls funcitonality of the Login screen]
+ Class description: [Controls funcitonality of the Login screen]
  */
 
 import Foundation

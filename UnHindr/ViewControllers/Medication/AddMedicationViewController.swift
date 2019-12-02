@@ -4,7 +4,7 @@
  Date created: [29/10/2019]
  Date updated: [01/12/2019]
  Updater name: [Allan, Sina]
- File description: [Controls the Add New Med screen]
+ Class description: [Controls the Add New Med screen]
  */
 
 import Foundation

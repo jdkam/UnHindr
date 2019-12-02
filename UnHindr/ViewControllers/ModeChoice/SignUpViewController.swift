@@ -4,7 +4,7 @@
  Date created: [14/11/2019]
  Date updated: [16/11/2019]
  Updater name: [Sina]
- File description: [Controls funcitonality of Sign Up process]
+ Class description: [Controls funcitonality of Sign Up process]
  */
 
 import Foundation

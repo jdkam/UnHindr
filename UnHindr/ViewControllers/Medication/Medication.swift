@@ -4,7 +4,7 @@
  Date created: [11/14/2019]
  Date updated: [11/30/2019]
  Updater name: [Allan]
- File description: [Custom medication class that defines each instance of a medication plan]
+ Class description: [Custom medication class that defines each instance of a medication plan]
  */
 
 import Foundation

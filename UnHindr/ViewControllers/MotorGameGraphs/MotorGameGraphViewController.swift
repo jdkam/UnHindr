@@ -1,15 +1,11 @@
-//File: [MotorGameGraphViewController]
-//Creators: [Johnston]
-//Date created: [11/17/2019]
-//Updater name: [Johnston]
-//File description: [Reads mood data values from firebase]
-//
-//  MotorGameGraphViewController.swift
-//  UnHindr
-//
-//  Created by Johnston Yang on 2019-11-17.
-//  Copyright © 2019 Sigma. All rights reserved.
-//
+/*
+File: [MotorGameGraphViewController.swift]
+Creators: [Sina]
+Date created: [11/17/2019]
+Date updated: [22/11/2019]
+Updater name: [Sina]
+Class Description: [Reads mood data values from firebase]
+*/
 
 import UIKit
 import Foundation

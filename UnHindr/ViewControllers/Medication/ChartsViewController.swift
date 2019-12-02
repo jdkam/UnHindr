@@ -1,8 +1,9 @@
-//File: [ChartsViewController]
+//File: [ChartsViewController.swift]
 //Creators: [Allan, Johnston]
 //Date created: [29/10/2019]
+//Date updated: [17/11/2019]
 //Updater name: [Johnston]
-//File description: [Reads medication data and properly graphs them for a week]
+//Class description: [Reads medication data and properly graphs them for a week]
 
 import Foundation
 import UIKit

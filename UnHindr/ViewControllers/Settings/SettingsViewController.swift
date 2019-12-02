@@ -4,7 +4,7 @@
  Date created: [2/11/2019]
  Date updated: [15/11/2019]
  Updater name: [Sina]
- File description: [Controls the functionality of the Options feature]
+ Class description: [Controls the functionality of the Options feature]
  */
 
 import UIKit

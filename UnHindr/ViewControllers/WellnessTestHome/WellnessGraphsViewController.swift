@@ -4,7 +4,7 @@
  Date created: [19/11/2019]
  Date updated: [19/11/2019]
  Updater name: [Lawrence]
- File description: [Sends user to their corresponding graph controller]
+ Class description: [Sends user to their corresponding graph controller]
  */
 
 import UIKit

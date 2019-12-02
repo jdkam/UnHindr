@@ -1,8 +1,11 @@
-//File: [YearMedChartViewController]
-//Creators: [Johnston]
-//Date created: [22/11/2019]
-//Updater name: [Johnston]
-//File description: [Reads medication data and properly graphs them for an entire year]
+/*
+  File: [YearMedChartViewController.swift]
+  Creators: [Johnston]
+  Date created: [22/11/2019]
+  Date updated: [22/11/2019]
+  Updater name: [Johnston]
+  Class description: [Reads medication data and properly graphs them for an entire year]
+*/
 
 import UIKit
 import Foundation

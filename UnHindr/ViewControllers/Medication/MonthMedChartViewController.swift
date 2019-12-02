@@ -1,8 +1,11 @@
-//File: [MonthMedChartViewController]
-//Creators: [Johnston]
-//Date created: [22/11/2019]
-//Updater name: [Johnston]
-//File description: [Reads medication data and properly graphs them for an entire month]
+/*
+ File: [MonthMedChartViewController.swift]
+ Creators: [Johnston]
+ Date created: [22/11/2019]
+ Date updated: [22/11/2019]
+ Updater name: [Johnston]
+ Class description: [Reads medication data and properly graphs them for an entire month]
+*/
 
 import Foundation
 import UIKit

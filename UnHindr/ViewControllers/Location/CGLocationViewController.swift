@@ -4,7 +4,7 @@
  Date created: [20/11/2019]
  Date updated: [22/11/2019]
  Updater name: [Sina]
- File description: [Displays physical location of Patient]
+ Class description: [Displays physical location of Patient]
  */
 
 

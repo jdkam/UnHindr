@@ -4,7 +4,7 @@
  Date created: [5/11/2019]
  Date updated: [10/11/2019]
  Updater name: [Sina]
- File description: [Creates a user mode for the user upon sign up]
+ Class description: [Creates a user mode for the user upon sign up]
  */
 
 import UIKit
