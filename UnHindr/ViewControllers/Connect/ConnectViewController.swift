@@ -12,7 +12,6 @@ import FirebaseFirestore
 
 public var user_ID: String = ""
 
-
 class ConnectViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var list: [String] = []
     let connectionRef = Services.fullUserRef.document(Services.userRef!).collection(Services.connectionName)
@@ -24,6 +23,8 @@ class ConnectViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     //list of user's connections
 //    var list = [""]
+    var list: [String] = []
+
 
     //determines number of sections for UITableView
     func numberOfSections(in tableView: UITableView) -> Int {
