@@ -39,6 +39,7 @@ class ChatUITests: XCTestCase {
         let app = XCUIApplication()
         loginToHomeScreen(app)
         
+        XCTAssert(app.buttons["Chat"].waitForExistence(timeout: 5))
         app.buttons["Chat"].tap()
         XCTAssert(app.buttons["Send Button"].waitForExistence(timeout: 5))
         

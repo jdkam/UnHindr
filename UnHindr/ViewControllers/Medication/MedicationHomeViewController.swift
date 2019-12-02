@@ -32,6 +32,7 @@ class MedicationHomeViewController: UIViewController, NewMedDelegate {
     @IBOutlet weak var medicationDosage: UILabel!
     @IBOutlet weak var medicationName: UILabel!
     @IBOutlet weak var reminderTime: UILabel!
+    @IBOutlet weak var checkButton: UIButton!
     
     // Card view for panning
     @IBOutlet weak var MedCardView: UIView!
@@ -40,9 +41,14 @@ class MedicationHomeViewController: UIViewController, NewMedDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(userProfileRef)
-        print(medicationPlanRef)
-        print(medicationHistoryRef)
+        if (user_ID != ""){
+            self.checkButton.isEnabled = false
+            self.checkButton.alpha = 0
+        }
+        else{
+            self.checkButton.isEnabled = true
+            self.checkButton.alpha = 1
+        }
         
         // Define the center of the card view
         medViewCenter = MedCardView!.center
@@ -54,7 +60,7 @@ class MedicationHomeViewController: UIViewController, NewMedDelegate {
             // Need to update the indices if new meds are added for the current day
             if (Date.isToday(timestamp)){
                 self.usedCards = medTaken
-//                print(self.usedCards)
+                print(self.usedCards)
             }
             else {
                 self.usedCards = []
@@ -274,11 +280,19 @@ class MedicationHomeViewController: UIViewController, NewMedDelegate {
     private func indexToNextUnusedCard() -> Bool {
         let queryLength = planSnapshot!.count
         // If there is no medication plan or only 1 plan for the current day
-        if (queryLength == 1 || self.usedCards.count == queryLength) {
+        if (self.usedCards.count == queryLength) {
             // Return the card to center
             UIView.animate(withDuration: 1) {
                 self.MedCardView!.center = self.medViewCenter!
             }
+            return false
+        }
+        else if (queryLength == 1){
+            // Return the card to center
+            UIView.animate(withDuration: 1) {
+                self.MedCardView!.center = self.medViewCenter!
+            }
+            self.MedCardView.alpha = 1
             return false
         }
         

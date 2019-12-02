@@ -17,7 +17,8 @@ class FullMedicationViewController: UIViewController {
     @IBOutlet weak var medTableView: UITableView!
     
     // Static reference to the current user's medication plan
-    let medicationPlanRef = Services.fullUserRef.document(Services.userRef!).collection(Services.medPlanName)
+    let (medicationPlanRef, _) = Services.checkUserIDMed()
+//    let medicationPlanRef = Services.fullUserRef.document(Services.userRef!).collection(Services.medPlanName)
     
     // Create the batch writing
     let batch = Services.db.batch()
@@ -33,9 +34,18 @@ class FullMedicationViewController: UIViewController {
         medTableView.dataSource = self
         medTableView.delegate = self
         
-        getAllMedicationPlans(Services.userRef!) { (success) in
-            if (success) {
-                self.medTableView.reloadData()
+        if (user_ID == ""){
+            getAllMedicationPlans(Services.userRef!) { (success) in
+                if (success) {
+                    self.medTableView.reloadData()
+                }
+            }
+        }
+        else {
+            getAllMedicationPlans(user_ID) { (success) in
+                if (success) {
+                    self.medTableView.reloadData()
+                }
             }
         }
         
