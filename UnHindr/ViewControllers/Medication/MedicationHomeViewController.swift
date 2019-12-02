@@ -12,10 +12,6 @@ import FirebaseFirestore
 
 class MedicationHomeViewController: UIViewController, NewMedDelegate {
     
-    //let userProfileRef = Services.fullUserRef.document(Services.userRef!)
-    //let medicationPlanRef = Services.fullUserRef.document(Services.userRef!).collection(Services.medPlanName)
-    //let medicationHistoryRef = Services.fullUserRef.document(Services.userRef!).collection(Services.medHistoryName)
-    
     let (medicationPlanRef,medicationHistoryRef) = Services.checkUserIDMed()
     let userProfileRef = Services.checkUserProfileID()
     	

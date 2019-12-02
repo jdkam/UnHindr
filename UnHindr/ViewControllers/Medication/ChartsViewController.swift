@@ -124,7 +124,7 @@ class ChartsViewController: UIViewController {
                     let currentMonth = calendar.component(.month, from: today)
                     let currentYear = calendar.component(.year, from: today)
                     // calculates 7 days in the past and gets the previous month's name
-                    let lastWeekDay = currentDay - 7
+                    let lastWeekDay = currentDay - 6
                     let previousMonth = currentMonth - 1
                     let previousMonthName = DateFormatter().monthSymbols[previousMonth-1]
                     
@@ -161,25 +161,27 @@ class ChartsViewController: UIViewController {
                             }
                         }
                         // while loop is to place the mood values into the bar chart
-                        var i = 0
-                        while(i < self.days.count)
+                        var i = 6
+                        var j = 0
+                        while(i >= 0)
                         {
                             // checks if a key value of days[i] exists inside the dictionary
                             let dayExists = self.medData[self.days[i]] != nil
                             if(dayExists)
                             {
                                 // places data into the graph data array
-                                let data = BarChartDataEntry(x: Double(i), y: (self.medData[self.days[i]]!))
+                                let data = BarChartDataEntry(x: Double(j), y: (self.medData[self.days[i]]!))
                                 self.GraphData.append(data)
                                 
                             }
                             else
                             {
                                 // if the key value days[i] does not exist, set the value equal to 0 for that day
-                                let data = BarChartDataEntry(x: Double(i), y: 0)
+                                let data = BarChartDataEntry(x: Double(j), y: 0)
                                 self.GraphData.append(data)
                             }
-                            i += 1
+                            i -= 1
+                            j += 1
                         }
                         // formats the x values to have the correct values
                         let dayFormat = BarChartFormatter(values: self.stringDays)
@@ -266,7 +268,8 @@ class ChartsViewController: UIViewController {
         var year = inYear
         var day = inDay
         let forwardDay = inDay
-        var i = 1
+        var i = 0
+        let daysofWeek = 6
         // if the previous month was January of that year
         if(previousMonth == 0)
         {
@@ -283,9 +286,9 @@ class ChartsViewController: UIViewController {
         let range = calendar.range(of: .day, in: .month, for: date)!
         var numDays = range.count
         // appends the day values into the days array on the current month
-        while(abs(forwardDay)-i > 0)
+        while(daysofWeek-abs(forwardDay)-i > 0)
         {
-            days.append(abs(forwardDay)-i)
+            days.append(daysofWeek-abs(forwardDay)-i)
             i += 1
         }
         // appends the day values into the days array on the previous month
@@ -296,7 +299,7 @@ class ChartsViewController: UIViewController {
             numDays -= 1
         }
         // takes the days values and reverses the order for stringDays array
-        var j = 7
+        var j = 6
         while(j >= 0)
         {
             stringDays.append(String(days[j]))
