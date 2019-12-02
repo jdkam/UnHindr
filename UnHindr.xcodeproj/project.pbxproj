@@ -71,6 +71,7 @@
 		98F67921236E85AF00517099 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98F67920236E85AF00517099 /* Profile.storyboard */; };
 		9D627A0E236FD4240027B6B7 /* MedicationHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D627A0D236FD4240027B6B7 /* MedicationHomeViewController.swift */; };
 		9D6C641C2378B50F00F0C058 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6C641B2378B50F00F0C058 /* Constants.swift */; };
+		9DDAA7C42394806000BB718A /* AddMed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DDAA7C32394806000BB718A /* AddMed.storyboard */; };
 		9DE33C6E236F98BD00855C78 /* DatabaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE33C6D236F98BD00855C78 /* DatabaseTests.swift */; };
 		9DF3F8992367D826003CF8B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF3F8982367D826003CF8B9 /* AppDelegate.swift */; };
 		9DF3F89B2367D826003CF8B9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF3F89A2367D826003CF8B9 /* LoginViewController.swift */; };
@@ -79,7 +80,7 @@
 		9DF3F8C72367D880003CF8B9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9DF3F8C62367D880003CF8B9 /* GoogleService-Info.plist */; };
 		9DFA139F2370F17D00F8B7B5 /* UnHindrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF3F8B82367D82D003CF8B9 /* UnHindrUITests.swift */; };
 		9DFB75B9236F74D0006321B8 /* Medication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DFB75B7236F74CF006321B8 /* Medication.storyboard */; };
-		9DFB75BD236F7515006321B8 /* MedicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFB75BB236F7515006321B8 /* MedicationViewController.swift */; };
+		9DFB75BD236F7515006321B8 /* AddMedicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFB75BB236F7515006321B8 /* AddMedicationViewController.swift */; };
 		9DFB75C0236F7B15006321B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DFB75BF236F7B14006321B8 /* Assets.xcassets */; };
 		9E04C08E238A1D5B0011A572 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E04C08D238A1D5B0011A572 /* User.swift */; };
 		9E286A2F2382957600473055 /* MotorGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E286A2B2382957600473055 /* MotorGameViewController.swift */; };
@@ -99,6 +100,7 @@
 		9EE42465237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE42464237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift */; };
 		A2B5644B1E4149E09D599F82 /* Pods_UnHindr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7EAE4472764465EE4B52BD6 /* Pods_UnHindr.framework */; };
 		CD4A840D23932C6E00189605 /* EmergContactUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4A840C23932C6E00189605 /* EmergContactUITests.swift */; };
+		CD63FB822394B776007A6CF4 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD63FB812394B776007A6CF4 /* NotificationManager.swift */; };
 		CDBC4013236E4FE8008934AF /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDBC4012236E4FE8008934AF /* Settings.storyboard */; };
 		CDBC4016236E501B008934AF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBC4015236E501B008934AF /* SettingsViewController.swift */; };
 		CDD946F4238B41C600A865D0 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD946F3238B41C600A865D0 /* SignUpViewController.swift */; };
@@ -191,6 +193,7 @@
 		9CC98A083DBCA38C513B60AD /* Pods-UnHindr-UnHindrUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindr-UnHindrUITests.release.xcconfig"; path = "Target Support Files/Pods-UnHindr-UnHindrUITests/Pods-UnHindr-UnHindrUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9D627A0D236FD4240027B6B7 /* MedicationHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationHomeViewController.swift; sourceTree = "<group>"; };
 		9D6C641B2378B50F00F0C058 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9DDAA7C32394806000BB718A /* AddMed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddMed.storyboard; sourceTree = "<group>"; };
 		9DE33C6D236F98BD00855C78 /* DatabaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseTests.swift; sourceTree = "<group>"; };
 		9DF3F8952367D826003CF8B9 /* UnHindr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnHindr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DF3F8982367D826003CF8B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -205,7 +208,7 @@
 		9DF3F8BA2367D82D003CF8B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DF3F8C62367D880003CF8B9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9DFB75B8236F74CF006321B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Medication.storyboard; sourceTree = "<group>"; };
-		9DFB75BB236F7515006321B8 /* MedicationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationViewController.swift; sourceTree = "<group>"; };
+		9DFB75BB236F7515006321B8 /* AddMedicationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMedicationViewController.swift; sourceTree = "<group>"; };
 		9DFB75BF236F7B14006321B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9E04C08D238A1D5B0011A572 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9E286A2B2382957600473055 /* MotorGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotorGameViewController.swift; sourceTree = "<group>"; };
@@ -224,6 +227,7 @@
 		9EBEEDDC2393602C0065DFEB /* CGLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGLocationViewController.swift; sourceTree = "<group>"; };
 		9EE42464237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaregiverHomeScreenViewController.swift; sourceTree = "<group>"; };
 		CD4A840C23932C6E00189605 /* EmergContactUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergContactUITests.swift; sourceTree = "<group>"; };
+		CD63FB812394B776007A6CF4 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		CDBC4012236E4FE8008934AF /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		CDBC4015236E501B008934AF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		CDD946F3238B41C600A865D0 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -448,6 +452,7 @@
 				9DF3F8C62367D880003CF8B9 /* GoogleService-Info.plist */,
 				9DF3F8A42367D82D003CF8B9 /* Info.plist */,
 				CDECEE9A2389D29D0074620D /* EmergencyContact.storyboard */,
+				CD63FB812394B776007A6CF4 /* NotificationManager.swift */,
 			);
 			path = UnHindr;
 			sourceTree = "<group>";
@@ -480,12 +485,13 @@
 		9DFB75BA236F7515006321B8 /* Medication */ = {
 			isa = PBXGroup;
 			children = (
-				7013CBB82370D00E00A1231F /* ChartsViewController.swift */,
-				70C1FCEA23887E0600BF1CC6 /* MonthMedChartViewController.swift */,
+				9DDAA7C32394806000BB718A /* AddMed.storyboard */,
 				9D627A0D236FD4240027B6B7 /* MedicationHomeViewController.swift */,
-				9DFB75BB236F7515006321B8 /* MedicationViewController.swift */,
+				9DFB75BB236F7515006321B8 /* AddMedicationViewController.swift */,
 				2D5BBA762389E7B20074A202 /* FullMedicationViewController.swift */,
 				2D5BBA782389F4530074A202 /* MedicationTableViewCell.swift */,
+				7013CBB82370D00E00A1231F /* ChartsViewController.swift */,
+				70C1FCEA23887E0600BF1CC6 /* MonthMedChartViewController.swift */,
 				2D7A40E5238B316100958659 /* Medication.swift */,
 				2D2E7E792393617900BC32A9 /* FullMedicationList.storyboard */,
 				70C1FCEE238884E700BF1CC6 /* YearMedChartViewController.swift */,
@@ -665,6 +671,7 @@
 				98F115D8236CCDF80082A1B1 /* Mood.storyboard in Resources */,
 				81BDBDA0237F8E9C00F4C970 /* dingcorrect.wav in Resources */,
 				2DD6710B236BCD41005948DF /* Login.storyboard in Resources */,
+				9DDAA7C42394806000BB718A /* AddMed.storyboard in Resources */,
 				707E9F5E23827EF2006A3AF5 /* MoodGraphs.storyboard in Resources */,
 				9DFB75C0236F7B15006321B8 /* Assets.xcassets in Resources */,
 				707E9F6123827EF2006A3AF5 /* MotorGameGraph.storyboard in Resources */,
@@ -823,6 +830,7 @@
 				707E9F7523827F85006A3AF5 /* MoodGraphsViewController.swift in Sources */,
 				70C1FCEF238884E700BF1CC6 /* YearMedChartViewController.swift in Sources */,
 				9EE42465237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift in Sources */,
+				CD63FB822394B776007A6CF4 /* NotificationManager.swift in Sources */,
 				9802BD4C23937DC900D89633 /* WellnessGraphsViewController.swift in Sources */,
 				9DF3F89B2367D826003CF8B9 /* LoginViewController.swift in Sources */,
 				9D6C641C2378B50F00F0C058 /* Constants.swift in Sources */,
@@ -860,7 +868,7 @@
 				8176FAB3237B88D80083B445 /* CogGameViewController.swift in Sources */,
 				CDECEE9D2389D2CE0074620D /* EmergencyContactViewController.swift in Sources */,
 				707E9F6A23827F6B006A3AF5 /* cogYearlyGraphViewController.swift in Sources */,
-				9DFB75BD236F7515006321B8 /* MedicationViewController.swift in Sources */,
+				9DFB75BD236F7515006321B8 /* AddMedicationViewController.swift in Sources */,
 				9D627A0E236FD4240027B6B7 /* MedicationHomeViewController.swift in Sources */,
 				98F115E9236D29B50082A1B1 /* MoodQ4ViewController.swift in Sources */,
 				9EBEEDDD2393602C0065DFEB /* CGLocationViewController.swift in Sources */,
@@ -1067,15 +1075,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4UBP2K877A;
 				INFOPLIST_FILE = UnHindr/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Sigma.UnHindr5;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Sigma.UnHg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -1089,15 +1097,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4UBP2K877A;
 				INFOPLIST_FILE = UnHindr/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Sigma.UnHindr5;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Sigma.UnHg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
