@@ -80,6 +80,7 @@
                                                 <rect key="frame" x="186" y="0.0" width="185" height="156"/>
                                                 <state key="normal" image="Medication"/>
                                                 <connections>
+                                                    <action selector="noPatientSelected:" destination="8FY-gC-Gvs" eventType="touchUpInside" id="GY0-Yt-idy"/>
                                                     <segue destination="ppK-x3-VzO" kind="show" id="UAJ-Qv-4iv"/>
                                                 </connections>
                                             </button>
