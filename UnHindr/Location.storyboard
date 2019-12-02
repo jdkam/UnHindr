@@ -59,10 +59,10 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NcY-yd-Jy7">
-                                <rect key="frame" x="290.5" y="766" width="103.5" height="91"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NcY-yd-Jy7">
+                                <rect key="frame" x="281" y="756" width="113" height="106"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="NcY-yd-Jy7" secondAttribute="height" multiplier="91:80" id="Oam-qi-X1h"/>
+                                    <constraint firstAttribute="width" secondItem="NcY-yd-Jy7" secondAttribute="height" multiplier="113:106" id="8Gg-Mi-E4f"/>
                                 </constraints>
                                 <state key="normal" image="LocationCenter"/>
                                 <connections>
@@ -70,7 +70,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BrL-D7-h3G">
-                                <rect key="frame" x="290" y="663" width="103.5" height="91"/>
+                                <rect key="frame" x="286" y="657" width="103.5" height="91"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="BrL-D7-h3G" secondAttribute="height" multiplier="91:80" id="X4q-6x-Uaj"/>
                                 </constraints>
@@ -82,22 +82,22 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="NcY-yd-Jy7" firstAttribute="top" secondItem="mqv-mE-u7F" secondAttribute="bottom" constant="-130" id="1z4-Hf-yjQ"/>
                             <constraint firstItem="2zI-so-g0m" firstAttribute="top" secondItem="D6X-A4-znW" secondAttribute="bottom" constant="-83" id="4qe-z4-ec9"/>
                             <constraint firstItem="D6X-A4-znW" firstAttribute="leading" secondItem="MKI-iN-x9k" secondAttribute="leading" id="9ZP-1N-eS0"/>
+                            <constraint firstItem="BrL-D7-h3G" firstAttribute="width" secondItem="mqv-mE-u7F" secondAttribute="width" multiplier="0.25" id="A27-2n-ynd"/>
                             <constraint firstItem="D6X-A4-znW" firstAttribute="trailing" secondItem="MKI-iN-x9k" secondAttribute="trailing" id="A6R-Mw-1tH"/>
                             <constraint firstItem="MKI-iN-x9k" firstAttribute="trailing" secondItem="BrL-D7-h3G" secondAttribute="trailing" constant="20" id="Ggn-V8-jnu"/>
-                            <constraint firstItem="NcY-yd-Jy7" firstAttribute="width" secondItem="mqv-mE-u7F" secondAttribute="width" multiplier="0.25" id="Hik-R1-JIK"/>
                             <constraint firstItem="MKI-iN-x9k" firstAttribute="trailing" secondItem="NcY-yd-Jy7" secondAttribute="trailing" constant="20" id="JOj-hf-Eqg"/>
                             <constraint firstItem="SEa-3W-6cu" firstAttribute="top" secondItem="D6X-A4-znW" secondAttribute="bottom" constant="-60" id="JbF-16-yry"/>
                             <constraint firstItem="2zI-so-g0m" firstAttribute="leading" secondItem="MKI-iN-x9k" secondAttribute="leading" constant="20" id="Jmv-2G-dUK"/>
                             <constraint firstItem="mqv-mE-u7F" firstAttribute="top" secondItem="D6X-A4-znW" secondAttribute="bottom" id="X5A-Hy-sWx"/>
+                            <constraint firstItem="NcY-yd-Jy7" firstAttribute="top" secondItem="MKI-iN-x9k" secondAttribute="bottom" constant="-130" id="XVf-Nk-RKb"/>
                             <constraint firstItem="NcY-yd-Jy7" firstAttribute="top" secondItem="BrL-D7-h3G" secondAttribute="bottom" constant="15" id="Yth-jH-Cr1"/>
-                            <constraint firstItem="BrL-D7-h3G" firstAttribute="width" secondItem="NcY-yd-Jy7" secondAttribute="width" id="ZLZ-AV-bpW"/>
                             <constraint firstItem="MKI-iN-x9k" firstAttribute="trailing" secondItem="mqv-mE-u7F" secondAttribute="trailing" id="cFm-Po-dR9"/>
                             <constraint firstItem="D6X-A4-znW" firstAttribute="top" secondItem="D9b-bo-t7R" secondAttribute="top" id="dHc-8t-OEb"/>
                             <constraint firstItem="MKI-iN-x9k" firstAttribute="bottom" secondItem="mqv-mE-u7F" secondAttribute="bottom" constant="-34" id="fX1-lN-Cv7"/>
                             <constraint firstItem="MKI-iN-x9k" firstAttribute="trailing" secondItem="SEa-3W-6cu" secondAttribute="trailing" constant="10" id="gsK-mG-9Zy"/>
+                            <constraint firstItem="NcY-yd-Jy7" firstAttribute="width" secondItem="mqv-mE-u7F" secondAttribute="width" multiplier="0.25" id="huu-Wl-wxC"/>
                             <constraint firstItem="mqv-mE-u7F" firstAttribute="leading" secondItem="MKI-iN-x9k" secondAttribute="leading" id="qbL-EK-zHH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MKI-iN-x9k"/>
@@ -113,8 +113,8 @@
     </scenes>
     <resources>
         <image name="LocationBG" width="563" height="195"/>
-        <image name="LocationCenter" width="238" height="212"/>
-        <image name="Upload" width="251" height="201"/>
+        <image name="LocationCenter" width="400" height="374"/>
+        <image name="Upload" width="400" height="370"/>
         <image name="home-white" width="400" height="312"/>
     </resources>
 </document>

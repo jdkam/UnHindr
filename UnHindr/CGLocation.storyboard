@@ -90,7 +90,7 @@
     </scenes>
     <resources>
         <image name="LocationBG" width="563" height="195"/>
-        <image name="LocationCenter" width="238" height="212"/>
+        <image name="LocationCenter" width="400" height="374"/>
         <image name="home-white" width="400" height="312"/>
     </resources>
 </document>
