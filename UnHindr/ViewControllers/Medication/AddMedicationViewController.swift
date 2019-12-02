@@ -43,7 +43,7 @@ class AddMedicationViewController: UIViewController {
     private var Dosage = 0
     private var Quantity = 0
     private var MedicationName = ""
-    private var ReminderTime = ""
+    private var ReminderTime = "00:00"
     private var timePicker: UIDatePicker?
     
     var daysArr: [String]?
