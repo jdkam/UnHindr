@@ -63,3 +63,10 @@ Swift on Xcode IDE
 * Johnston Yang
 
 ## Acknowledgements
+
+# Screenshots
+![image](https://user-images.githubusercontent.com/31237137/139928116-f04c897a-ecc0-407b-a7fd-f4b28405045d.png)
+![image](https://user-images.githubusercontent.com/31237137/139928206-9089188c-8fe1-4ffa-b38e-044ec04f8f31.png)
+![image](https://user-images.githubusercontent.com/31237137/139927960-aa600f3d-b1cc-44b1-9992-dcb2edbf92a6.png)
+![image](https://user-images.githubusercontent.com/31237137/139928332-f08e2fe5-f5dd-4ebf-8620-a033381c6b6e.png)
+![image](https://user-images.githubusercontent.com/31237137/139928358-e5ec12a9-2882-4d5c-8489-40ffb88cfa3f.png)
